@@ -1,9 +1,5 @@
 ########################################
-pyroprocessing_discrete.event.simulation
-########################################
-
-########################################
-DES modeling for the pyroprocessing system
+**DES modeling for the pyroprocessing system**
 ########################################
 
 ########################################
