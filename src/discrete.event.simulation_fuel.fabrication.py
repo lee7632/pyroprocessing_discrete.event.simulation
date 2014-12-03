@@ -94,7 +94,7 @@
 ########################################################################
 ### System diagram
 #
-# https://raw.githubusercontent.com/TheDoctorRAB/des/master/des_fuel.fabrication.jpg
+# See fuel.fabrication.md on github.
 #
 # KMP(0): storage transfer to melter
 # KMP(1): melter to trimmer
