@@ -1,14 +1,11 @@
 ########################################
-pyroprocessing_discrete.event.simulation
+**DES modeling for the pyroprocessing system**
 ########################################
 
 ########################################
-DES modeling for the pyroprocessing system
-########################################
-
-########################################
-Fuel fabrication v1.0
-###
+*Fuel fabrication v1.0*
+<br>
 This is a 'bare bones' build, just to get the model working.
+<br>
 Many assumptions are made and listed in the comments.
 ########################################
