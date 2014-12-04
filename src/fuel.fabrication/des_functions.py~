@@ -74,7 +74,7 @@ def input_parameters():
     process_time=numpy.loadtxt('..\\..\\input\\fuel.fabrication\\process.time.inp',usecols=[1])
     measurement_threshold=numpy.loadtxt('..\\..\\input\\fuel.fabrication\\measurement.threshold.inp')
     system_false_alarm_threshold=numpy.loadtxt('..\\..\\input\\fuel.fabrication\\system.false.alarm.inp')
-    melter_cleaning_time_limit=numpy.loadtxt('..\\..\\input\\fuel.fabrication\\melter.cleaning.delay.time.inp')
+    melter_cleaning_time_limit=numpy.loadtxt('melter.cleaning.delay.time.inp')
 ###
 # only the melter will fail
 # there hypothetical failures with associated delay times
