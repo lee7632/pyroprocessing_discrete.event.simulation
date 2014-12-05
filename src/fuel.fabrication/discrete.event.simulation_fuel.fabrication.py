@@ -764,7 +764,7 @@ des_postproc.false_alarm_probability('system')
 ###
 #
 ### plots
-#des_postproc.make_plots(operation_time,total_campaign,storage_inventory_start,total_melter_failure,system_false_alarm_counter)
+des_postproc.make_plots(operation_time,total_campaign,storage_inventory_start,total_melter_failure,system_false_alarm_counter)
 ###
 #
 #
