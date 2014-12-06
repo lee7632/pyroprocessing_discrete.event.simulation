@@ -10,8 +10,7 @@
 ########################################################################
 ### Introduction
 #
-# Command and control module for the entire pyrprocessing system (eventually).
-# This file will set up all the input/output directories and allow for input parameter editing (eventually).
+# Functions for the pyropocessing command and control main module.
 #
 ########################################################################
 #
@@ -20,24 +19,6 @@
 ####### imports
 import os
 import shutil
-########################################################################
-#
-#
-#
-####### set the simulation directory
-simulation_dir=raw_input('set the simulation directory:')
-#######
-#
-####### set the home directory
-home_dir='C:\\ftp\git\\pyroprocessing_discrete.event.simulation\\src\\command.and.control'
-#######
-#
-#
-#
-########################################################################
-#
-# functions
-#
 ########################################################################
 #
 #
@@ -142,59 +123,6 @@ def write_simulation_dir(input_dir,output_dir):
 #
 ###
     return()
-########################################################################
-#
-#
-#
-########################################################################
-#
-# end functions
-#
-########################################################################
-#
-#
-#
-########################################################################
-#
-# fuel fabrication module
-#
-########################################################################
-#
-#
-#
-### set the file trees
-input_dir,output_dir=make_simulation_dir('fuel.fabrication',simulation_dir)
-###
-#
-### reset home directory
-os.chdir(home_dir)
-#
-### copy default input files to new simulation directory
-copy_input_files('fuel.fabrication',simulation_dir)
-###
-#
-### reset home directory
-os.chdir(home_dir)
-###
-#
-### make readme file
-make_readme(input_dir)
-###
-#
-### write input and output directories
-write_simulation_dir(input_dir,output_dir)
-###
-#
-### make readme file
-os.chdir(home_dir)
-###
-#
-#
-#
-########################################################################
-#
-# end modules
-#
 ########################################################################
 #
 #
