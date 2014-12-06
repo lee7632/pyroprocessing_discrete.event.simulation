@@ -868,10 +868,10 @@ def system_false_alarm_threshold_plot(plotdata,operation_time,threshold,xmin_tim
     ymax=threshold+0.03
 #
     xmajortick=xmajortick_time
-    ymajortick=0.10
+    ymajortick=0.05
 #
     xminortick=xminortick_time
-    yminortick=0.05
+    yminortick=0.025
 ###
     plot.xlim(xmin,xmax)
     left_axis.axis(ymin=ymin,ymax=ymax)

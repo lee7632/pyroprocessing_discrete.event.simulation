@@ -356,7 +356,8 @@
 # false_alarm_filename=name of file to output
 # false_alarm_threshold=sets the limit to trigger a false alarm...set in preprocessing
 # 
-# filename_base=part of the file name to be output
+# file_=part of the file names for saving, opening, writing, etc.; i.e., file_tree is directory structure
+# filename=same thing
 #
 ### G
 #
@@ -366,7 +367,8 @@
 ### I
 #
 # inspection_time=dummy variable for time to inspect facility or resolve false alarm...set in preprocessing
-#
+# input_dir=location of input files
+#     
 ### J
 ### K
 #
@@ -405,6 +407,7 @@
 #
 # _output is for output data files...there are a lot of them
 # operation_time=operation time of the facility 0<T<facility_operation...set in preprocessing
+# output_dir=location of output files (data and figures)
 #
 ### P
 #
@@ -764,7 +767,7 @@ des_postproc.false_alarm_probability('system')
 ###
 #
 ### plots
-des_postproc.make_plots(operation_time,total_campaign,storage_inventory_start,total_melter_failure,system_false_alarm_counter)
+#des_postproc.make_plots(operation_time,total_campaign,storage_inventory_start,total_melter_failure,system_false_alarm_counter)
 ###
 #
 #

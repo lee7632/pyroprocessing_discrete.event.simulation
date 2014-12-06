@@ -59,7 +59,6 @@ from scipy import stats
 def input_parameters():
 ###
     facility_configuration=numpy.loadtxt('..\\..\\input\\fuel.fabrication\\facility.configuration.inp',dtype=int)
-    print facility_configuration
     maximum_kmp=numpy.loadtxt('..\\..\\input\\fuel.fabrication\\kmp.inp',dtype=int)
     storage_inventory_start=numpy.loadtxt('..\\..\\input\\fuel.fabrication\\storage.inventory.inp')
     failure_number=numpy.loadtxt('..\\..\\input\\fuel.fabrication\\failure.number.inp')
@@ -129,6 +128,8 @@ def input_parameters():
     numpy.savetxt('..\\..\\output\\fuel.fabrication\\data\\measurement.kmp.out',measurement_kmp_output,fmt=['%.0f','%.4f','%.2f','%.4f'],header='KMP\tMeasurement uncertainty\tMeasurement delay time (h)\tMeasurement threshold',comments='',delimiter='\t\t\t')
     numpy.savetxt('..\\..\\output\\fuel.fabrication\\data\\system.false.alarm.out',system_false_alarm_output,fmt=['%.4f'],header='Fraction of MUF to trigger alarm for system inspection',comments='')
     numpy.savetxt('..\\..\\output\\fuel.fabrication\\data\\melter.cleaning.time.out',melter_cleaning_time_output,fmt=['%.4f'],header='Time to clean the melter additional to maintenance activity (h)',comments='')
+    numpy.savetxt('..\\..\\output\\fuel.fabrication\\data\\facility.operation.out',facility_operation,fmt=['%.0f'],header='Facility operational period (d)',comments='')
+    numpy.savetxt('..\\..\\output\\fuel.fabrication\\data\\batch.out',batch,fmt=['%.0f'],header='Batch per campaign (kg)',comments='')
 ###
     return (facility_configuration,maximum_kmp,storage_inventory_start,failure_probability,failure_delay_time,inspection_time,measurement_uncertainty,kmp_delay_time,crucible_fraction_limit,batch,facility_operation,process_time,measurement_threshold_system,system_false_alarm_limit,melter_cleaning_time)
 ########################################################################
