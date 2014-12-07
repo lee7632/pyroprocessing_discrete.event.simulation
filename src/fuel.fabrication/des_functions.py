@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB
-# rev.04.December.2014
+# rev.06.December.2014
 ########################################################################
 # These functions will be used to support DES modeling.
 ########################################################################
@@ -15,6 +15,7 @@
 ####### imports
 import numpy
 import scipy
+import os
 from scipy import stats
 ########################################################################
 #
@@ -43,6 +44,7 @@ from scipy import stats
 ####### (t): Maintenance
 ####### (u): KMP measurement recording write to file
 ####### (v): False alarm write
+####### (w): Get working directories
 #
 ########################################################################
 #
@@ -56,24 +58,32 @@ from scipy import stats
 ### 
 #
 ###            
-def input_parameters():
+def input_parameters(home_dir,input_dir,output_data_dir):
 ###
-    facility_configuration=numpy.loadtxt('..\\..\\input\\fuel.fabrication\\facility.configuration.inp',dtype=int)
-    maximum_kmp=numpy.loadtxt('..\\..\\input\\fuel.fabrication\\kmp.inp',dtype=int)
-    storage_inventory_start=numpy.loadtxt('..\\..\\input\\fuel.fabrication\\storage.inventory.inp')
-    failure_number=numpy.loadtxt('..\\..\\input\\fuel.fabrication\\failure.number.inp')
-    process_failure_probability=numpy.loadtxt('..\\..\\input\\fuel.fabrication\\failure.probability.inp')
-    process_failure_delay_time=numpy.loadtxt('..\\..\\input\\fuel.fabrication\\failure.delay.time.inp')
-    batch=numpy.loadtxt('..\\..\\input\\fuel.fabrication\\batch.inp')
-    facility_operation=numpy.loadtxt('..\\..\\input\\fuel.fabrication\\facility.operation.inp')
-    inspection_time_limit=numpy.loadtxt('..\\..\\input\\fuel.fabrication\\inspection.time.inp')
-    measurement_uncertainty_limit=numpy.loadtxt('..\\..\\input\\fuel.fabrication\\measurement.uncertainty.inp')
-    crucible_fraction_limit=numpy.loadtxt('..\\..\\input\\fuel.fabrication\\crucible.inp')
-    kmp_delay_time_limit=numpy.loadtxt('..\\..\\input\\fuel.fabrication\\kmp.delay.time.inp')
-    process_time=numpy.loadtxt('..\\..\\input\\fuel.fabrication\\process.time.inp',usecols=[1])
-    measurement_threshold=numpy.loadtxt('..\\..\\input\\fuel.fabrication\\measurement.threshold.inp')
-    system_false_alarm_threshold=numpy.loadtxt('..\\..\\input\\fuel.fabrication\\system.false.alarm.inp')
-    melter_cleaning_time_limit=numpy.loadtxt('..\\..\\input\\fuel.fabrication\\melter.cleaning.delay.time.inp')
+#
+#
+### go to input file directory
+    os.chdir(input_dir)
+###
+#
+### open data files
+    facility_configuration=numpy.loadtxt('facility.configuration.inp',dtype=int)
+    maximum_kmp=numpy.loadtxt('kmp.inp',dtype=int)
+    storage_inventory_start=numpy.loadtxt('storage.inventory.inp')
+    failure_number=numpy.loadtxt('failure.number.inp')
+    process_failure_probability=numpy.loadtxt('failure.probability.inp')
+    process_failure_delay_time=numpy.loadtxt('failure.delay.time.inp')
+    batch=numpy.loadtxt('batch.inp')
+    facility_operation=numpy.loadtxt('facility.operation.inp')
+    inspection_time_limit=numpy.loadtxt('inspection.time.inp')
+    measurement_uncertainty_limit=numpy.loadtxt('measurement.uncertainty.inp')
+    crucible_fraction_limit=numpy.loadtxt('crucible.inp')
+    kmp_delay_time_limit=numpy.loadtxt('kmp.delay.time.inp')
+    process_time=numpy.loadtxt('process.time.inp',usecols=[1])
+    measurement_threshold=numpy.loadtxt('measurement.threshold.inp')
+    system_false_alarm_threshold=numpy.loadtxt('system.false.alarm.inp')
+    melter_cleaning_time_limit=numpy.loadtxt('melter.cleaning.delay.time.inp')
+    readme_input=open('readme.md').readlines()
 ###
 # only the melter will fail
 # there hypothetical failures with associated delay times
@@ -107,6 +117,8 @@ def input_parameters():
     measurement_kmp_output=numpy.zeros((maximum_kmp,4))
     system_false_alarm_output=numpy.zeros((1))
     melter_cleaning_time_output=numpy.zeros((1))
+    batch_output=numpy.zeros((1))
+    facility_operation_output=numpy.zeros((1))
 #
     for k in range(0,failure_number):
         process_failures_output[k,0]=failure_probability[k]
@@ -116,20 +128,36 @@ def input_parameters():
     inspection_time_output[0]=24*inspection_time
     system_false_alarm_output[0]=system_false_alarm_limit
     melter_cleaning_time_output[0]=24*melter_cleaning_time
+    batch_output[0]=batch
+    facility_operation_output[0]=facility_operation
 #
     for l in range(0,maximum_kmp):
         measurement_kmp_output[l,0]=l
         measurement_kmp_output[l,1]=measurement_uncertainty[l]
         measurement_kmp_output[l,2]=24*kmp_delay_time[l]
         measurement_kmp_output[l,3]==measurement_threshold[l]        
+###
 #
-    numpy.savetxt('..\\..\\output\\fuel.fabrication\\data\\process.failures.out',process_failures_output,fmt=['%.4f','%.2f'],header='Failure probability\tMaintenance time (h)',comments='',delimiter='\t\t\t')
-    numpy.savetxt('..\\..\\output\\fuel.fabrication\\data\\inspection.time.out',inspection_time_output,fmt=['%.2f'],header='Inspection time (h)',comments='')
-    numpy.savetxt('..\\..\\output\\fuel.fabrication\\data\\measurement.kmp.out',measurement_kmp_output,fmt=['%.0f','%.4f','%.2f','%.4f'],header='KMP\tMeasurement uncertainty\tMeasurement delay time (h)\tMeasurement threshold',comments='',delimiter='\t\t\t')
-    numpy.savetxt('..\\..\\output\\fuel.fabrication\\data\\system.false.alarm.out',system_false_alarm_output,fmt=['%.4f'],header='Fraction of MUF to trigger alarm for system inspection',comments='')
-    numpy.savetxt('..\\..\\output\\fuel.fabrication\\data\\melter.cleaning.time.out',melter_cleaning_time_output,fmt=['%.4f'],header='Time to clean the melter additional to maintenance activity (h)',comments='')
-    numpy.savetxt('..\\..\\output\\fuel.fabrication\\data\\facility.operation.out',facility_operation,fmt=['%.0f'],header='Facility operational period (d)',comments='')
-    numpy.savetxt('..\\..\\output\\fuel.fabrication\\data\\batch.out',batch,fmt=['%.0f'],header='Batch per campaign (kg)',comments='')
+### save files
+# move to output directory
+    os.chdir(home_dir)
+    os.chdir(output_data_dir)
+#
+    numpy.savetxt('process.failures.out',process_failures_output,fmt=['%.4f','%.2f'],header='Failure probability\tMaintenance time (h)',comments='',delimiter='\t\t\t')
+    numpy.savetxt('inspection.time.out',inspection_time_output,fmt=['%.2f'],header='Inspection time (h)',comments='')
+    numpy.savetxt('measurement.kmp.out',measurement_kmp_output,fmt=['%.0f','%.4f','%.2f','%.4f'],header='KMP\tMeasurement uncertainty\tMeasurement delay time (h)\tMeasurement threshold',comments='',delimiter='\t\t\t')
+    numpy.savetxt('system.false.alarm.out',system_false_alarm_output,fmt=['%.4f'],header='Fraction of MUF to trigger alarm for system inspection',comments='')
+    numpy.savetxt('melter.cleaning.time.out',melter_cleaning_time_output,fmt=['%.4f'],header='Time to clean the melter additional to maintenance activity (h)',comments='')
+    numpy.savetxt('facility.operation.out',facility_operation_output,fmt=['%.1f'],header='Facility operational period (d)',comments='')
+    numpy.savetxt('batch.out',batch_output,fmt=['%.1f'],header='Batch per campaign (kg)',comments='')
+#
+    readme_output=open('readme.md','w+')
+    readme_output.write(readme_input[0])
+    readme_output.close()
+###
+#
+### go back to home directory
+    os.chdir(home_dir)
 ###
     return (facility_configuration,maximum_kmp,storage_inventory_start,failure_probability,failure_delay_time,inspection_time,measurement_uncertainty,kmp_delay_time,crucible_fraction_limit,batch,facility_operation,process_time,measurement_threshold_system,system_false_alarm_limit,melter_cleaning_time)
 ########################################################################
@@ -459,48 +487,58 @@ def reset_weight():
 ###
 #
 ###
-def open_files():
+def open_files(home_dir,output_data_dir):
 ###
-    time_output=open('..\\..\\output\\fuel.fabrication\\data\\facility.operation.time.out','w+')
-    campaign_output=open('..\\..\\output\\fuel.fabrication\\data\\facility.campaign.out','w+')
-    true_storage_inventory_output=open('..\\..\\output\\fuel.fabrication\\data\\true.storage.inventory.out','w+')
-    expected_storage_inventory_output=open('..\\..\\output\\fuel.fabrication\\data\\expected.storage.inventory.out','w+')
-    measured_storage_inventory_output=open('..\\..\\output\\fuel.fabrication\\data\\measured.storage.inventory.out','w+')
-    true_weight_output=open('..\\..\\output\\fuel.fabrication\\data\\true.weight.out','w+')
-    expected_weight_output=open('..\\..\\output\\fuel.fabrication\\data\\expected.weight.out','w+')
-    measured_weight_output=open('..\\..\\output\\fuel.fabrication\\data\\measured.weight.out','w+')
-    true_muf_output=open('..\\..\\output\\fuel.fabrication\\data\\true.muf.out','w+')
-    expected_muf_output=open('..\\..\\output\\fuel.fabrication\\data\\expected.muf.out','w+')
-    measured_muf_output=open('..\\..\\output\\fuel.fabrication\\data\\measured.muf.out','w+')
-    true_mufc_output=open('..\\..\\output\\fuel.fabrication\\data\\true.mufc.out','w+')
-    expected_mufc_output=open('..\\..\\output\\fuel.fabrication\\data\\expected.mufc.out','w+')
-    measured_mufc_output=open('..\\..\\output\\fuel.fabrication\\data\\measured.mufc.out','w+')
-    true_processed_inventory_output=open('..\\..\\output\\fuel.fabrication\\data\\true.processed.inventory.out','w+')
-    expected_processed_inventory_output=open('..\\..\\output\\fuel.fabrication\\data\\expected.processed.inventory.out','w+')
-    measured_processed_inventory_output=open('..\\..\\output\\fuel.fabrication\\data\\measured.processed.inventory.out','w+')
-    total_melter_failure_output=open('..\\..\\output\\fuel.fabrication\\data\\total.melter.failures.out','w+')
-    system_false_alarm_counter_output=open('..\\..\\output\\fuel.fabrication\\data\\system.false.alarm.counter.out','w+')
-    true_kmp0=open('..\\..\\output\\fuel.fabrication\\data\\true.kmp0.out','w+')
-    true_kmp1=open('..\\..\\output\\fuel.fabrication\\data\\true.kmp1.out','w+')
-    true_kmp2=open('..\\..\\output\\fuel.fabrication\\data\\true.kmp2.out','w+')
-    true_kmp3=open('..\\..\\output\\fuel.fabrication\\data\\true.kmp3.out','w+')
-    true_kmp4=open('..\\..\\output\\fuel.fabrication\\data\\true.kmp4.out','w+')
-    expected_kmp0=open('..\\..\\output\\fuel.fabrication\\data\\expected.kmp0.out','w+')
-    expected_kmp1=open('..\\..\\output\\fuel.fabrication\\data\\expected.kmp1.out','w+')
-    expected_kmp2=open('..\\..\\output\\fuel.fabrication\\data\\expected.kmp2.out','w+')
-    expected_kmp3=open('..\\..\\output\\fuel.fabrication\\data\\expected.kmp3.out','w+')
-    expected_kmp4=open('..\\..\\output\\fuel.fabrication\\data\\expected.kmp4.out','w+')
-    measured_kmp0=open('..\\..\\output\\fuel.fabrication\\data\\measured.kmp0.out','w+')
-    measured_kmp1=open('..\\..\\output\\fuel.fabrication\\data\\measured.kmp1.out','w+')
-    measured_kmp2=open('..\\..\\output\\fuel.fabrication\\data\\measured.kmp2.out','w+')
-    measured_kmp3=open('..\\..\\output\\fuel.fabrication\\data\\measured.kmp3.out','w+')
-    measured_kmp4=open('..\\..\\output\\fuel.fabrication\\data\\measured.kmp4.out','w+')
-    true_heel=open('..\\..\\output\\fuel.fabrication\\data\\true.heel.out','w+')
-    expected_heel=open('..\\..\\output\\fuel.fabrication\\data\\expected.heel.out','w+')
-    measured_heel=open('..\\..\\output\\fuel.fabrication\\data\\measured.heel.out','w+')
-    true_system_inventory_output=open('..\\..\\output\\fuel.fabrication\\data\\true.system.inventory.out','w+')
-    expected_system_inventory_output=open('..\\..\\output\\fuel.fabrication\\data\\expected.system.inventory.out','w+')
-    measured_system_inventory_output=open('..\\..\\output\\fuel.fabrication\\data\\measured.system.inventory.out','w+')
+#
+### change directory
+    os.chdir(output_data_dir)
+###
+#
+###
+    time_output=open('facility.operation.time.out','w+')
+    campaign_output=open('facility.campaign.out','w+')
+    true_storage_inventory_output=open('true.storage.inventory.out','w+')
+    expected_storage_inventory_output=open('expected.storage.inventory.out','w+')
+    measured_storage_inventory_output=open('measured.storage.inventory.out','w+')
+    true_weight_output=open('true.weight.out','w+')
+    expected_weight_output=open('expected.weight.out','w+')
+    measured_weight_output=open('measured.weight.out','w+')
+    true_muf_output=open('true.muf.out','w+')
+    expected_muf_output=open('expected.muf.out','w+')
+    measured_muf_output=open('measured.muf.out','w+')
+    true_mufc_output=open('true.mufc.out','w+')
+    expected_mufc_output=open('expected.mufc.out','w+')
+    measured_mufc_output=open('measured.mufc.out','w+')
+    true_processed_inventory_output=open('true.processed.inventory.out','w+')
+    expected_processed_inventory_output=open('expected.processed.inventory.out','w+')
+    measured_processed_inventory_output=open('measured.processed.inventory.out','w+')
+    total_melter_failure_output=open('total.melter.failures.out','w+')
+    system_false_alarm_counter_output=open('system.false.alarm.counter.out','w+')
+    true_kmp0=open('true.kmp0.out','w+')
+    true_kmp1=open('true.kmp1.out','w+')
+    true_kmp2=open('true.kmp2.out','w+')
+    true_kmp3=open('true.kmp3.out','w+')
+    true_kmp4=open('true.kmp4.out','w+')
+    expected_kmp0=open('expected.kmp0.out','w+')
+    expected_kmp1=open('expected.kmp1.out','w+')
+    expected_kmp2=open('expected.kmp2.out','w+')
+    expected_kmp3=open('expected.kmp3.out','w+')
+    expected_kmp4=open('expected.kmp4.out','w+')
+    measured_kmp0=open('measured.kmp0.out','w+')
+    measured_kmp1=open('measured.kmp1.out','w+')
+    measured_kmp2=open('measured.kmp2.out','w+')
+    measured_kmp3=open('measured.kmp3.out','w+')
+    measured_kmp4=open('measured.kmp4.out','w+')
+    true_heel=open('true.heel.out','w+')
+    expected_heel=open('expected.heel.out','w+')
+    measured_heel=open('measured.heel.out','w+')
+    true_system_inventory_output=open('true.system.inventory.out','w+')
+    expected_system_inventory_output=open('expected.system.inventory.out','w+')
+    measured_system_inventory_output=open('measured.system.inventory.out','w+')
+###
+#
+### return to home directory
+    os.chdir(home_dir)
 ###
     return(time_output,campaign_output,true_storage_inventory_output,expected_storage_inventory_output,measured_storage_inventory_output,true_weight_output,expected_weight_output,measured_weight_output,true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,total_melter_failure_output,system_false_alarm_counter_output,true_kmp0,true_kmp1,true_kmp2,true_kmp3,true_kmp4,expected_kmp0,expected_kmp1,expected_kmp2,expected_kmp3,expected_kmp4,measured_kmp0,measured_kmp1,measured_kmp2,measured_kmp3,measured_kmp4,true_heel,expected_heel,measured_heel,true_system_inventory_output,expected_system_inventory_output,measured_system_inventory_output)
 ########################################################################
@@ -712,6 +750,39 @@ def false_alarm_write(operation_time,total_campaign,false_alarm_counter,threshol
     false_alarm_counter_output.write(str.format('%i'%total_campaign)+'\t'+str.format('%i'%false_alarm_counter)+'\t'+str.format('%.4f'%threshold)+'\t'+str.format('%.4f'%alarm_test)+'\t'+str.format('%.4f'%operation_time)+'\n')
 ###
     return(false_alarm_counter_output)
+########################################################################
+#
+#
+#
+####### (w): Get working directories
+# Input and output files are in different directories than the system files.
+# Command and control file creates the directories and copies the input files into them from the default directory.
+# A system locator file is also created containing the relative (to the system files) paths. 
+###
+def get_working_directory():
+###
+#
+### get home directory
+# Home directory is where the system files are located.
+    home_dir=os.getcwd()
+###
+#
+### open path file
+# The path file contains the three directory locations split by commas, so it is all one string.
+# Writing the file with the '\n' made it 'stuck' so using os.chdir could not be done because the '\n' could not be removed.
+    directory_path_file=open('..\\..\\input\\fuel.fabrication\\simulation.dir.inp').readlines()
+###
+#
+### split the string
+    directory_paths=directory_path_file[0].split(',')
+###
+#
+### set directories
+    input_dir=directory_paths[0]
+    output_data_dir=directory_paths[1]
+    output_figure_dir=directory_paths[2]
+###
+    return(home_dir,input_dir,output_data_dir,output_figure_dir)
 ########################################################################
 #
 #

@@ -114,7 +114,7 @@ def write_simulation_dir(input_dir,output_dir):
 ###
 #
 ### write directories
-    simulation_dir_file.write(input_dir+'\n'+output_dir+'\\data'+'\n'+output_dir+'\\figures')
+    simulation_dir_file.write(input_dir+','+output_dir+'\\data'+','+output_dir+'\\figures')
 ###
 #
 ### close file

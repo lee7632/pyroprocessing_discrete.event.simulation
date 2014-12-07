@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB 
-# rev.03.December.2014
+# rev.06.December.2014
 # v1.0
 ########################################################################
 #
@@ -364,6 +364,9 @@
 # _graph=data files needed for plots
 #
 ### H
+#
+# home_dir=home directory for the system files
+#
 ### I
 #
 # inspection_time=dummy variable for time to inspect facility or resolve false alarm...set in preprocessing
@@ -476,15 +479,19 @@ import des_postprocessing as des_postproc
 #
 #
 #
+####### get working directories
+home_dir,input_dir,output_data_dir,output_figure_dir=des_f.get_working_directory()
+#######
+#
 ####### read in the input data
-facility_configuration,maximum_kmp,storage_inventory_start,failure_probability,failure_delay_time,inspection_time,measurement_uncertainty,kmp_delay_time,crucible_fraction_limit,batch,facility_operation,process_time,measurement_threshold_system,system_false_alarm_limit,melter_cleaning_time=des_f.input_parameters()
+facility_configuration,maximum_kmp,storage_inventory_start,failure_probability,failure_delay_time,inspection_time,measurement_uncertainty,kmp_delay_time,crucible_fraction_limit,batch,facility_operation,process_time,measurement_threshold_system,system_false_alarm_limit,melter_cleaning_time=des_f.input_parameters(home_dir,input_dir,output_data_dir)
 print 'input parameters complete','\n'
 #######
 #
 #
 #
 ####### open the output files for data export
-time_output,campaign_output,true_storage_inventory_output,expected_storage_inventory_output,measured_storage_inventory_output,true_weight_output,expected_weight_output,measured_weight_output,true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,total_melter_failure_output,system_false_alarm_counter_output,true_kmp0,true_kmp1,true_kmp2,true_kmp3,true_kmp4,expected_kmp0,expected_kmp1,expected_kmp2,expected_kmp3,expected_kmp4,measured_kmp0,measured_kmp1,measured_kmp2,measured_kmp3,measured_kmp4,true_heel,expected_heel,measured_heel,true_system_inventory_output,expected_system_inventory_output,measured_system_inventory_output=des_f.open_files()
+time_output,campaign_output,true_storage_inventory_output,expected_storage_inventory_output,measured_storage_inventory_output,true_weight_output,expected_weight_output,measured_weight_output,true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,total_melter_failure_output,system_false_alarm_counter_output,true_kmp0,true_kmp1,true_kmp2,true_kmp3,true_kmp4,expected_kmp0,expected_kmp1,expected_kmp2,expected_kmp3,expected_kmp4,measured_kmp0,measured_kmp1,measured_kmp2,measured_kmp3,measured_kmp4,true_heel,expected_heel,measured_heel,true_system_inventory_output,expected_system_inventory_output,measured_system_inventory_output=des_f.open_files(home_dir,output_data_dir)
 #######
 #
 #
@@ -763,11 +770,11 @@ time_output,campaign_output,true_storage_inventory_output,expected_storage_inven
 #
 #
 ### system false alarm probability
-des_postproc.false_alarm_probability('system')
+des_postproc.false_alarm_probability('system',home_dir,output_data_dir)
 ###
 #
 ### plots
-#des_postproc.make_plots(operation_time,total_campaign,storage_inventory_start,total_melter_failure,system_false_alarm_counter)
+des_postproc.make_plots(operation_time,total_campaign,storage_inventory_start,total_melter_failure,system_false_alarm_counter,home_dir,output_data_dir,output_figure_dir)
 ###
 #
 #

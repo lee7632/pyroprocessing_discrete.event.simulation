@@ -34,13 +34,15 @@ matplotlib.rcParams.update({'font.size': 14})
 #
 ####### make plots
 ### this is the function for the plots that is called in the main file
-def make_plots(operation_time,total_campaign,storage_inventory_start,total_melter_failure,system_false_alarm_counter):
+def make_plots(operation_time,total_campaign,storage_inventory_start,total_melter_failure,system_false_alarm_counter,home_dir,output_data_dir,output_figure_dir):
 ###
 #
-### set the file tree for saving the figures
-    file_tree='..\\..\\output\\fuel.fabrication\\figures\\'
 ### open data files
-    total_campaign_graph,true_storage_inventory_graph,expected_storage_inventory_graph,measured_storage_inventory_graph,true_weight_graph,expected_weight_graph,measured_weight_graph,true_processed_inventory_graph,expected_processed_inventory_graph,measured_processed_inventory_graph,true_muf_graph,expected_muf_graph,measured_muf_graph,total_melter_failure_graph,system_false_alarm_counter_graph,true_kmp0_graph,true_kmp1_graph,true_kmp2_graph,true_kmp3_graph,true_kmp4_graph,expected_kmp0_graph,expected_kmp1_graph,expected_kmp2_graph,expected_kmp3_graph,expected_kmp4_graph,measured_kmp0_graph,measured_kmp1_graph,measured_kmp2_graph,measured_kmp3_graph,measured_kmp4_graph,true_heel_graph,expected_heel_graph,measured_heel_graph,true_system_inventory_graph,expected_system_inventory_graph,measured_system_inventory_graph,system_false_alarm_threshold_graph=make_files_for_plot()
+    total_campaign_graph,true_storage_inventory_graph,expected_storage_inventory_graph,measured_storage_inventory_graph,true_weight_graph,expected_weight_graph,measured_weight_graph,true_processed_inventory_graph,expected_processed_inventory_graph,measured_processed_inventory_graph,true_muf_graph,expected_muf_graph,measured_muf_graph,total_melter_failure_graph,system_false_alarm_counter_graph,true_kmp0_graph,true_kmp1_graph,true_kmp2_graph,true_kmp3_graph,true_kmp4_graph,expected_kmp0_graph,expected_kmp1_graph,expected_kmp2_graph,expected_kmp3_graph,expected_kmp4_graph,measured_kmp0_graph,measured_kmp1_graph,measured_kmp2_graph,measured_kmp3_graph,measured_kmp4_graph,true_heel_graph,expected_heel_graph,measured_heel_graph,true_system_inventory_graph,expected_system_inventory_graph,measured_system_inventory_graph,system_false_alarm_threshold_graph=make_files_for_plot(home_dir,output_data_dir)
+###
+#
+### change to figure dir
+    os.chdir(output_figure_dir)
 ###
 #
 ### these are used to set the maximum y-axis
@@ -82,74 +84,78 @@ def make_plots(operation_time,total_campaign,storage_inventory_start,total_melte
 ###
 #
 ### total campaign
-    campaign_plot(total_campaign_graph,operation_time,total_campaign,xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
+    campaign_plot(total_campaign_graph,operation_time,total_campaign,xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
 ###
 #
 ### inventory in the storage buffer
-    storage_inventory_plot(true_storage_inventory_graph,operation_time,true_buffer_max,true_buffer_min,'True',xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
-    storage_inventory_plot(expected_storage_inventory_graph,operation_time,expected_buffer_max,expected_buffer_min,'Expected',xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
-    storage_inventory_plot(measured_storage_inventory_graph,operation_time,measured_buffer_max,measured_buffer_min,'Measured',xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
+    storage_inventory_plot(true_storage_inventory_graph,operation_time,true_buffer_max,true_buffer_min,'True',xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
+    storage_inventory_plot(expected_storage_inventory_graph,operation_time,expected_buffer_max,expected_buffer_min,'Expected',xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
+    storage_inventory_plot(measured_storage_inventory_graph,operation_time,measured_buffer_max,measured_buffer_min,'Measured',xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
 ###
 #
 ### batch weight plots
-    batch_weight_plot(true_weight_graph,operation_time,true_throughput,'True',xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
-    batch_weight_plot(expected_weight_graph,operation_time,expected_throughput,'Expected',xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
-    batch_weight_plot(measured_weight_graph,operation_time,measured_throughput,'Measured',xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
+    batch_weight_plot(true_weight_graph,operation_time,true_throughput,'True',xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
+    batch_weight_plot(expected_weight_graph,operation_time,expected_throughput,'Expected',xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
+    batch_weight_plot(measured_weight_graph,operation_time,measured_throughput,'Measured',xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
 ###
 #
 ### processed inventory plots
-    processed_inventory_plot(true_processed_inventory_graph,operation_time,true_processed,'True',xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
-    processed_inventory_plot(expected_processed_inventory_graph,operation_time,expected_processed,'Expected',xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
-    processed_inventory_plot(measured_processed_inventory_graph,operation_time,measured_processed,'Measured',xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
+    processed_inventory_plot(true_processed_inventory_graph,operation_time,true_processed,'True',xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
+    processed_inventory_plot(expected_processed_inventory_graph,operation_time,expected_processed,'Expected',xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
+    processed_inventory_plot(measured_processed_inventory_graph,operation_time,measured_processed,'Measured',xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
 ###
 #
 ### MUF plots
-    muf_plot(true_muf_graph,operation_time,true_muf,'True',xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
-    muf_plot(expected_muf_graph,operation_time,expected_muf,'Expected',xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
-    muf_plot(measured_muf_graph,operation_time,measured_muf,'Measured',xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
+    muf_plot(true_muf_graph,operation_time,true_muf,'True',xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
+    muf_plot(expected_muf_graph,operation_time,expected_muf,'Expected',xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
+    muf_plot(measured_muf_graph,operation_time,measured_muf,'Measured',xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
 ###
 #
 ### total melter failures
-    total_melter_failure_plot(total_melter_failure_graph,total_campaign,total_melter_failure,1,file_tree)
+    total_melter_failure_plot(total_melter_failure_graph,total_campaign,total_melter_failure,1)
 ###
 #
 ### system false alarms
-    system_false_alarm_plot(system_false_alarm_counter_graph,total_campaign,system_false_alarm_counter,1,file_tree)
-    system_false_alarm_threshold_plot(system_false_alarm_threshold_graph,operation_time,system_false_alarm_threshold,xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
+    system_false_alarm_plot(system_false_alarm_counter_graph,total_campaign,system_false_alarm_counter,1)
+    system_false_alarm_threshold_plot(system_false_alarm_threshold_graph,operation_time,system_false_alarm_threshold,xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
 ###
 #
 ### KMP measurements
-    kmp_plot(true_kmp0_graph,operation_time,true_throughput,'0','True',xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
-    kmp_plot(true_kmp1_graph,operation_time,true_throughput,'1','True',xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
-    kmp_plot(true_kmp2_graph,operation_time,true_throughput,'2','True',xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
-    kmp_plot(true_kmp3_graph,operation_time,true_throughput,'3','True',xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
-    kmp_plot(true_kmp4_graph,operation_time,true_throughput,'4','True',xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
+    kmp_plot(true_kmp0_graph,operation_time,true_throughput,'0','True',xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
+    kmp_plot(true_kmp1_graph,operation_time,true_throughput,'1','True',xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
+    kmp_plot(true_kmp2_graph,operation_time,true_throughput,'2','True',xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
+    kmp_plot(true_kmp3_graph,operation_time,true_throughput,'3','True',xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
+    kmp_plot(true_kmp4_graph,operation_time,true_throughput,'4','True',xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
 #
-    kmp_plot(expected_kmp0_graph,operation_time,expected_throughput,'0','Expected',xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
-    kmp_plot(expected_kmp1_graph,operation_time,expected_throughput,'1','Expected',xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
-    kmp_plot(expected_kmp2_graph,operation_time,expected_throughput,'2','Expected',xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
-    kmp_plot(expected_kmp3_graph,operation_time,expected_throughput,'3','Expected',xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
-    kmp_plot(expected_kmp4_graph,operation_time,expected_throughput,'4','Expected',xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
+    kmp_plot(expected_kmp0_graph,operation_time,expected_throughput,'0','Expected',xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
+    kmp_plot(expected_kmp1_graph,operation_time,expected_throughput,'1','Expected',xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
+    kmp_plot(expected_kmp2_graph,operation_time,expected_throughput,'2','Expected',xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
+    kmp_plot(expected_kmp3_graph,operation_time,expected_throughput,'3','Expected',xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
+    kmp_plot(expected_kmp4_graph,operation_time,expected_throughput,'4','Expected',xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
 #
-    kmp_plot(measured_kmp0_graph,operation_time,measured_throughput,'0','Measured',xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
-    kmp_plot(measured_kmp1_graph,operation_time,measured_throughput,'1','Measured',xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
-    kmp_plot(measured_kmp2_graph,operation_time,measured_throughput,'2','Measured',xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
-    kmp_plot(measured_kmp3_graph,operation_time,measured_throughput,'3','Measured',xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
-    kmp_plot(measured_kmp4_graph,operation_time,measured_throughput,'4','Measured',xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
+    kmp_plot(measured_kmp0_graph,operation_time,measured_throughput,'0','Measured',xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
+    kmp_plot(measured_kmp1_graph,operation_time,measured_throughput,'1','Measured',xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
+    kmp_plot(measured_kmp2_graph,operation_time,measured_throughput,'2','Measured',xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
+    kmp_plot(measured_kmp3_graph,operation_time,measured_throughput,'3','Measured',xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
+    kmp_plot(measured_kmp4_graph,operation_time,measured_throughput,'4','Measured',xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
 ###
 #
 ### Heel plots
 # currently heel = MUF
 # this will change when there is MUF in the trimmer
-    heel_plot(true_heel_graph,operation_time,true_heel,'True',xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
-    heel_plot(expected_heel_graph,operation_time,expected_heel,'Expected',xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
-    heel_plot(measured_heel_graph,operation_time,measured_heel,'Measured',xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
+    heel_plot(true_heel_graph,operation_time,true_heel,'True',xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
+    heel_plot(expected_heel_graph,operation_time,expected_heel,'Expected',xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
+    heel_plot(measured_heel_graph,operation_time,measured_heel,'Measured',xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
 ###
 #
 ### system inventory transferred from buffer to melter
-    system_inventory_plot(true_system_inventory_graph,operation_time,true_system,'True',xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
-    system_inventory_plot(expected_system_inventory_graph,operation_time,expected_system,'Expected',xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
-    system_inventory_plot(measured_system_inventory_graph,operation_time,measured_system,'Measured',xmin_time,xmax_time,xmajortick_time,xminortick_time,1,file_tree)
+    system_inventory_plot(true_system_inventory_graph,operation_time,true_system,'True',xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
+    system_inventory_plot(expected_system_inventory_graph,operation_time,expected_system,'Expected',xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
+    system_inventory_plot(measured_system_inventory_graph,operation_time,measured_system,'Measured',xmin_time,xmax_time,xmajortick_time,xminortick_time,1)
+###
+#
+### return to home directory
+    os.chdir(home_dir)
 ###
     return()
 ########################################################################
@@ -157,57 +163,66 @@ def make_plots(operation_time,total_campaign,storage_inventory_start,total_melte
 #
 #
 ####### make the data files
-def make_files_for_plot():
+def make_files_for_plot(home_dir,output_data_dir):
 ###
 #
-    total_campaign_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\facility.campaign.out',dtype=float,delimiter='\t')
+### change directory
+    os.chdir(output_data_dir)
+###
 #
-    true_storage_inventory_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\true.storage.inventory.out',dtype=float,delimiter='\t')
-    expected_storage_inventory_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\expected.storage.inventory.out',dtype=float,delimiter='\t')
-    measured_storage_inventory_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\measured.storage.inventory.out',dtype=float,delimiter='\t')
+###
+    total_campaign_graph=numpy.loadtxt('facility.campaign.out',dtype=float,delimiter='\t')
+#
+    true_storage_inventory_graph=numpy.loadtxt('true.storage.inventory.out',dtype=float,delimiter='\t')
+    expected_storage_inventory_graph=numpy.loadtxt('expected.storage.inventory.out',dtype=float,delimiter='\t')
+    measured_storage_inventory_graph=numpy.loadtxt('measured.storage.inventory.out',dtype=float,delimiter='\t')
 #    
-    true_weight_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\true.weight.out',dtype=float,delimiter='\t')
-    expected_weight_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\expected.weight.out',dtype=float,delimiter='\t')
-    measured_weight_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\measured.weight.out',dtype=float,delimiter='\t')
+    true_weight_graph=numpy.loadtxt('true.weight.out',dtype=float,delimiter='\t')
+    expected_weight_graph=numpy.loadtxt('expected.weight.out',dtype=float,delimiter='\t')
+    measured_weight_graph=numpy.loadtxt('measured.weight.out',dtype=float,delimiter='\t')
 #
-    true_processed_inventory_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\true.processed.inventory.out',dtype=float,delimiter='\t')
-    expected_processed_inventory_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\expected.processed.inventory.out',dtype=float,delimiter='\t')
-    measured_processed_inventory_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\measured.processed.inventory.out',dtype=float,delimiter='\t')
+    true_processed_inventory_graph=numpy.loadtxt('true.processed.inventory.out',dtype=float,delimiter='\t')
+    expected_processed_inventory_graph=numpy.loadtxt('expected.processed.inventory.out',dtype=float,delimiter='\t')
+    measured_processed_inventory_graph=numpy.loadtxt('measured.processed.inventory.out',dtype=float,delimiter='\t')
 #
-    true_muf_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\true.muf.out',dtype=float,delimiter='\t')
-    expected_muf_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\expected.muf.out',dtype=float,delimiter='\t')
-    measured_muf_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\measured.muf.out',dtype=float,delimiter='\t')
+    true_muf_graph=numpy.loadtxt('true.muf.out',dtype=float,delimiter='\t')
+    expected_muf_graph=numpy.loadtxt('expected.muf.out',dtype=float,delimiter='\t')
+    measured_muf_graph=numpy.loadtxt('measured.muf.out',dtype=float,delimiter='\t')
 #
-    total_melter_failure_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\total.melter.failures.out',dtype=float,delimiter='\t')
+    total_melter_failure_graph=numpy.loadtxt('total.melter.failures.out',dtype=float,delimiter='\t')
 #
-    system_false_alarm_counter_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\system.false.alarm.counter.out',dtype=float,delimiter='\t')
-    system_false_alarm_threshold_graph= numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\system.false.alarm.threshold.out',dtype=float,delimiter='\t')
+    system_false_alarm_counter_graph=numpy.loadtxt('system.false.alarm.counter.out',dtype=float,delimiter='\t')
+    system_false_alarm_threshold_graph= numpy.loadtxt('system.false.alarm.threshold.out',dtype=float,delimiter='\t')
 #
-    true_kmp0_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\true.kmp0.out',dtype=float,delimiter='\t')
-    true_kmp1_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\true.kmp1.out',dtype=float,delimiter='\t')
-    true_kmp2_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\true.kmp2.out',dtype=float,delimiter='\t')
-    true_kmp3_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\true.kmp3.out',dtype=float,delimiter='\t')
-    true_kmp4_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\true.kmp4.out',dtype=float,delimiter='\t')
+    true_kmp0_graph=numpy.loadtxt('true.kmp0.out',dtype=float,delimiter='\t')
+    true_kmp1_graph=numpy.loadtxt('true.kmp1.out',dtype=float,delimiter='\t')
+    true_kmp2_graph=numpy.loadtxt('true.kmp2.out',dtype=float,delimiter='\t')
+    true_kmp3_graph=numpy.loadtxt('true.kmp3.out',dtype=float,delimiter='\t')
+    true_kmp4_graph=numpy.loadtxt('true.kmp4.out',dtype=float,delimiter='\t')
 #
-    expected_kmp0_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\expected.kmp0.out',dtype=float,delimiter='\t')
-    expected_kmp1_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\expected.kmp1.out',dtype=float,delimiter='\t')
-    expected_kmp2_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\expected.kmp2.out',dtype=float,delimiter='\t')
-    expected_kmp3_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\expected.kmp3.out',dtype=float,delimiter='\t')
-    expected_kmp4_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\expected.kmp4.out',dtype=float,delimiter='\t')
+    expected_kmp0_graph=numpy.loadtxt('expected.kmp0.out',dtype=float,delimiter='\t')
+    expected_kmp1_graph=numpy.loadtxt('expected.kmp1.out',dtype=float,delimiter='\t')
+    expected_kmp2_graph=numpy.loadtxt('expected.kmp2.out',dtype=float,delimiter='\t')
+    expected_kmp3_graph=numpy.loadtxt('expected.kmp3.out',dtype=float,delimiter='\t')
+    expected_kmp4_graph=numpy.loadtxt('expected.kmp4.out',dtype=float,delimiter='\t')
 #
-    measured_kmp0_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\measured.kmp0.out',dtype=float,delimiter='\t')
-    measured_kmp1_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\measured.kmp1.out',dtype=float,delimiter='\t')
-    measured_kmp2_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\measured.kmp2.out',dtype=float,delimiter='\t')
-    measured_kmp3_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\measured.kmp3.out',dtype=float,delimiter='\t')
-    measured_kmp4_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\measured.kmp4.out',dtype=float,delimiter='\t')
+    measured_kmp0_graph=numpy.loadtxt('measured.kmp0.out',dtype=float,delimiter='\t')
+    measured_kmp1_graph=numpy.loadtxt('measured.kmp1.out',dtype=float,delimiter='\t')
+    measured_kmp2_graph=numpy.loadtxt('measured.kmp2.out',dtype=float,delimiter='\t')
+    measured_kmp3_graph=numpy.loadtxt('measured.kmp3.out',dtype=float,delimiter='\t')
+    measured_kmp4_graph=numpy.loadtxt('measured.kmp4.out',dtype=float,delimiter='\t')
 #
-    true_heel_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\true.heel.out',dtype=float,delimiter='\t')
-    expected_heel_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\expected.heel.out',dtype=float,delimiter='\t')
-    measured_heel_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\measured.heel.out',dtype=float,delimiter='\t')
+    true_heel_graph=numpy.loadtxt('true.heel.out',dtype=float,delimiter='\t')
+    expected_heel_graph=numpy.loadtxt('expected.heel.out',dtype=float,delimiter='\t')
+    measured_heel_graph=numpy.loadtxt('measured.heel.out',dtype=float,delimiter='\t')
 #
-    true_system_inventory_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\true.system.inventory.out',dtype=float,delimiter='\t')
-    expected_system_inventory_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\expected.system.inventory.out',dtype=float,delimiter='\t')
-    measured_system_inventory_graph=numpy.loadtxt('..\\..\\output\\fuel.fabrication\\data\\measured.system.inventory.out',dtype=float,delimiter='\t')
+    true_system_inventory_graph=numpy.loadtxt('true.system.inventory.out',dtype=float,delimiter='\t')
+    expected_system_inventory_graph=numpy.loadtxt('expected.system.inventory.out',dtype=float,delimiter='\t')
+    measured_system_inventory_graph=numpy.loadtxt('measured.system.inventory.out',dtype=float,delimiter='\t')
+###
+#
+### return to home dir
+    os.chdir(home_dir)
 ###
     return(total_campaign_graph,true_storage_inventory_graph,expected_storage_inventory_graph,measured_storage_inventory_graph,true_weight_graph,expected_weight_graph,measured_weight_graph,true_processed_inventory_graph,expected_processed_inventory_graph,measured_processed_inventory_graph,true_muf_graph,expected_muf_graph,measured_muf_graph,total_melter_failure_graph,system_false_alarm_counter_graph,true_kmp0_graph,true_kmp1_graph,true_kmp2_graph,true_kmp3_graph,true_kmp4_graph,expected_kmp0_graph,expected_kmp1_graph,expected_kmp2_graph,expected_kmp3_graph,expected_kmp4_graph,measured_kmp0_graph,measured_kmp1_graph,measured_kmp2_graph,measured_kmp3_graph,measured_kmp4_graph,true_heel_graph,expected_heel_graph,measured_heel_graph,true_system_inventory_graph,expected_system_inventory_graph,measured_system_inventory_graph,system_false_alarm_threshold_graph)
 ########################################################################    
@@ -223,7 +238,7 @@ def make_files_for_plot():
 #
 #
 ####### completed campaign v facility operation
-def campaign_plot(plotdata,operation_time,total_campaign,xmin_time,xmax_time,xmajortick_time,xminortick_time,grid_parameter,file_tree):
+def campaign_plot(plotdata,operation_time,total_campaign,xmin_time,xmax_time,xmajortick_time,xminortick_time,grid_parameter):
 ###
 #
 # set up for two y axis
@@ -275,14 +290,15 @@ def campaign_plot(plotdata,operation_time,total_campaign,xmin_time,xmax_time,xma
 ###
 #
 ### save
-    filename=file_tree+title
-    plot.savefig(filename)
+    plot.savefig(title)
+###
+    return()
 #######
 #
 #
 #
 ####### storage inventory in the buffer v facility operation
-def storage_inventory_plot(plotdata,operation_time,storage_buffer_max,storage_buffer_min,buffer_type,xmin_time,xmax_time,xmajortick_time,xminortick_time,grid_parameter,file_tree):
+def storage_inventory_plot(plotdata,operation_time,storage_buffer_max,storage_buffer_min,buffer_type,xmin_time,xmax_time,xmajortick_time,xminortick_time,grid_parameter):
 ###
 #
 # set up for two y axis
@@ -338,14 +354,15 @@ def storage_inventory_plot(plotdata,operation_time,storage_buffer_max,storage_bu
 ###
 #
 ### save
-    filename=file_tree+title
-    plot.savefig(filename)
+    plot.savefig(title)
+###
+    return()
 #######
 #
 #
 #
 ####### batch weight v facility operation
-def batch_weight_plot(plotdata,operation_time,throughput,batch_type,xmin_time,xmax_time,xmajortick_time,xminortick_time,grid_parameter,file_tree):
+def batch_weight_plot(plotdata,operation_time,throughput,batch_type,xmin_time,xmax_time,xmajortick_time,xminortick_time,grid_parameter):
 ###
 #
 # set up for two y axis
@@ -401,14 +418,15 @@ def batch_weight_plot(plotdata,operation_time,throughput,batch_type,xmin_time,xm
 ###
 #
 ### save
-    filename=file_tree+title
-    plot.savefig(filename)
+    plot.savefig(title)
+###
+    return()
 #######
 #
 #
 #
 ####### processed inventory v facility operation
-def processed_inventory_plot(plotdata,operation_time,processed_material,processed_type,xmin_time,xmax_time,xmajortick_time,xminortick_time,grid_parameter,file_tree):
+def processed_inventory_plot(plotdata,operation_time,processed_material,processed_type,xmin_time,xmax_time,xmajortick_time,xminortick_time,grid_parameter):
 ###
 #
 # set up for two y axis
@@ -464,14 +482,15 @@ def processed_inventory_plot(plotdata,operation_time,processed_material,processe
 ###
 #
 ### save
-    filename=file_tree+title
-    plot.savefig(filename)
+    plot.savefig(title)
+###
+    return()
 #######
 #
 #
 #
 ####### muf v facility operation
-def muf_plot(plotdata,operation_time,muf,muf_type,xmin_time,xmax_time,xmajortick_time,xminortick_time,grid_parameter,file_tree):
+def muf_plot(plotdata,operation_time,muf,muf_type,xmin_time,xmax_time,xmajortick_time,xminortick_time,grid_parameter):
 ###
 #
 # set up for two y axis
@@ -527,14 +546,15 @@ def muf_plot(plotdata,operation_time,muf,muf_type,xmin_time,xmax_time,xmajortick
 ###
 #
 ### save
-    filename=file_tree+title
-    plot.savefig(filename)
+    plot.savefig(title)
+###
+    return()
 #######
 #
 #
 #
 ####### total melter failures v campaign
-def total_melter_failure_plot(plotdata,total_campaign,total_melter_failure,grid_parameter,file_tree):
+def total_melter_failure_plot(plotdata,total_campaign,total_melter_failure,grid_parameter):
 ###
 #
 # set up for two y axis
@@ -586,14 +606,15 @@ def total_melter_failure_plot(plotdata,total_campaign,total_melter_failure,grid_
 ###
 #
 ### save
-    filename=file_tree+title
-    plot.savefig(filename)
+    plot.savefig(title)
+###
+    return()
 #######
 #
 #
 #
 ####### total system false alarms v campaign
-def system_false_alarm_plot(plotdata,total_campaign,system_false_alarm_counter,grid_parameter,file_tree):
+def system_false_alarm_plot(plotdata,total_campaign,system_false_alarm_counter,grid_parameter):
 ###
 #
 ### This is for the false alarms trigger due to system inspection, not at KMPs
@@ -646,14 +667,15 @@ def system_false_alarm_plot(plotdata,total_campaign,system_false_alarm_counter,g
 ###
 #
 ### save
-    filename=file_tree+title
-    plot.savefig(filename)
+    plot.savefig(title)
+###
+    return()
 #######
 #
 #
 #
 ####### kmp
-def kmp_plot(plotdata,operation_time,throughput,kmp_identifier,kmp_type,xmin_time,xmax_time,xmajortick_time,xminortick_time,grid_parameter,file_tree):
+def kmp_plot(plotdata,operation_time,throughput,kmp_identifier,kmp_type,xmin_time,xmax_time,xmajortick_time,xminortick_time,grid_parameter):
 ###
 #
 # set up for two y axis
@@ -709,8 +731,9 @@ def kmp_plot(plotdata,operation_time,throughput,kmp_identifier,kmp_type,xmin_tim
 ###
 #
 ### save
-    filename=file_tree+title
-    plot.savefig(filename)
+    plot.savefig(title)
+###
+    return()
 #######
 #
 #
@@ -718,7 +741,7 @@ def kmp_plot(plotdata,operation_time,throughput,kmp_identifier,kmp_type,xmin_tim
 ####### heel v facility operation
 # heel is the accumulated crucible measured at KMP3 when failure
 ###
-def heel_plot(plotdata,operation_time,heel,heel_type,xmin_time,xmax_time,xmajortick_time,xminortick_time,grid_parameter,file_tree):
+def heel_plot(plotdata,operation_time,heel,heel_type,xmin_time,xmax_time,xmajortick_time,xminortick_time,grid_parameter):
 ###
 #
 # set up for two y axis
@@ -774,14 +797,15 @@ def heel_plot(plotdata,operation_time,heel,heel_type,xmin_time,xmax_time,xmajort
 ###
 #
 ### save
-    filename=file_tree+title
-    plot.savefig(filename)
+    plot.savefig(title)
+###
+    return()
 #######
 #
 #
 #
 ####### system inventory v facility operation
-def system_inventory_plot(plotdata,operation_time,system,system_type,xmin_time,xmax_time,xmajortick_time,xminortick_time,grid_parameter,file_tree):
+def system_inventory_plot(plotdata,operation_time,system,system_type,xmin_time,xmax_time,xmajortick_time,xminortick_time,grid_parameter):
 ###
 #
 # set up for two y axis
@@ -835,15 +859,17 @@ def system_inventory_plot(plotdata,operation_time,system,system_type,xmin_time,x
     plot.get_current_fig_manager().resize(1024,800)    
     plot.show()
 ###
-#### save
-    filename=file_tree+title
-    plot.savefig(filename)
+#
+### save
+    plot.savefig(title)
+###
+    return()
 #######
 #
 #
 #
 ####### system thesholds v facility operation and user threshold
-def system_false_alarm_threshold_plot(plotdata,operation_time,threshold,xmin_time,xmax_time,xmajortick_time,xminortick_time,grid_parameter,file_tree):
+def system_false_alarm_threshold_plot(plotdata,operation_time,threshold,xmin_time,xmax_time,xmajortick_time,xminortick_time,grid_parameter):
 ###
 #
 # set up for two y axis
@@ -895,8 +921,9 @@ def system_false_alarm_threshold_plot(plotdata,operation_time,threshold,xmin_tim
 ###
 #
 ### save
-    filename=file_tree+title
-    plot.savefig(filename)
+    plot.savefig(title)
+###
+    return()
 ########################################################################
 #
 #
@@ -912,16 +939,19 @@ def system_false_alarm_threshold_plot(plotdata,operation_time,threshold,xmin_tim
 ####### system false alarm probability
 ### this is the function for the false alarm probability that is called in the main file
 # the identifier designates whether it is for system or KMP false alarms
-def false_alarm_probability(false_alarm_identifier):
+def false_alarm_probability(false_alarm_identifier,home_dir,output_data_dir):
 ###
 #
-### set file tree and file names for loading and writing
+### change directory
+    os.chdir(output_data_dir)
+###
+#    
+### set file name for loading and writing
     filename_base='.false.alarm.counter.out'
-    file_tree='..\\..\\output\\fuel.fabrication\\data\\'
 ###
 #
 ### load data
-    false_alarm_threshold,time_steps=make_false_alarm_threshold(false_alarm_identifier,filename_base,file_tree)
+    false_alarm_threshold,time_steps=make_false_alarm_threshold(false_alarm_identifier,filename_base)
 ###
 #
 ### initialize variables
@@ -931,10 +961,10 @@ def false_alarm_probability(false_alarm_identifier):
 ###
 #
 ### tally up attempts and triggers 
-    for j in range(0,time_steps):
-	if (false_alarm_threshold[j,1]!=0):
+    for i in range(0,time_steps):
+	if (false_alarm_threshold[i,1]!=0):
 	    false_alarm_attempt=false_alarm_attempt+1
-	    if (false_alarm_threshold[j,1]>false_alarm_threshold[j,2]):
+	    if (false_alarm_threshold[i,1]>false_alarm_threshold[i,2]):
 		false_alarm_trigger=false_alarm_trigger+1
 # end if
 # end if
@@ -945,7 +975,11 @@ def false_alarm_probability(false_alarm_identifier):
 #
 ### write false alarm error file
     threshold=false_alarm_threshold[0,2] # this is the threshold level that triggers the false alarm
-    write_false_alarm_error_file(threshold,false_alarm_error,false_alarm_trigger,false_alarm_attempt,false_alarm_identifier,file_tree)
+    write_false_alarm_error_file(threshold,false_alarm_error,false_alarm_trigger,false_alarm_attempt,false_alarm_identifier)
+###
+#
+### go to home directory
+    os.chdir(home_dir)
 ###
     return()
 ####### 
@@ -953,11 +987,11 @@ def false_alarm_probability(false_alarm_identifier):
 #
 #
 ######## construct alarm test v time for false alarm 
-def make_false_alarm_threshold(false_alarm_identifier,filename_base,file_tree):
+def make_false_alarm_threshold(false_alarm_identifier,filename_base):
 ###
 #
 ### set up file name for system or kmp and open the file
-    false_alarm_filename=file_tree+false_alarm_identifier+filename_base
+    false_alarm_filename=false_alarm_identifier+filename_base
     false_alarm_counter=numpy.loadtxt(false_alarm_filename,dtype=float,delimiter='\t')
 ###
 #
@@ -987,7 +1021,7 @@ def make_false_alarm_threshold(false_alarm_identifier,filename_base,file_tree):
 #
 ### save file
     filename_base='.false.alarm.threshold.out'
-    false_alarm_filename=file_tree+false_alarm_identifier+filename_base
+    false_alarm_filename=false_alarm_identifier+filename_base
     numpy.savetxt(false_alarm_filename,false_alarm_threshold,fmt=['%.4f','%.4f','%.4f'],delimiter='\t')
 ###
     return(false_alarm_threshold,time_steps)
@@ -996,23 +1030,24 @@ def make_false_alarm_threshold(false_alarm_identifier,filename_base,file_tree):
 #
 #
 ####### write false alarm probability file
-def write_false_alarm_error_file(threshold,false_alarm_error,false_alarm_trigger,false_alarm_attempt,false_alarm_identifier,file_tree): 
+def write_false_alarm_error_file(threshold,false_alarm_error,false_alarm_trigger,false_alarm_attempt,false_alarm_identifier): 
 ###
 #
 ### set up filename
     filename_base='.false.alarm.probability.out'
-    false_alarm_filename=file_tree+false_alarm_identifier+filename_base
+    false_alarm_filename=false_alarm_identifier+filename_base
 ###
 #
 ### check to see if the file already exists or create if not
     if os.path.isfile(false_alarm_filename):
-	print false_alarm_filename,' exists'
+        print false_alarm_filename,' exists'
 	false_alarm_file_output=open(false_alarm_filename,'a')
     else:
-	print false_alarm_filename,' does not exist'
-	false_alarm_file_output=open(false_alarm_filename,'w+')
-    false_alarm_file_output.write(str.format('%.4f'%threshold)+'\t'+str.format('%.4f'%false_alarm_error)+'\t'+str.format('%.4f'%false_alarm_trigger)+'\t'+str.format('%.4f'%false_alarm_attempt)+'\n') 
+        print false_alarm_filename,' does not exist'
+        false_alarm_file_output=open(false_alarm_filename,'w+')
 ### end if
+    false_alarm_file_output.write(str.format('%.4f'%threshold)+'\t'+str.format('%.4f'%false_alarm_error)+'\t'+str.format('%.4f'%false_alarm_trigger)+'\t'+str.format('%.4f'%false_alarm_attempt)+'\n') 
+###
 #
 ### close file
     false_alarm_file_output.close()
