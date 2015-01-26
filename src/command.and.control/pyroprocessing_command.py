@@ -71,6 +71,10 @@ command_and_control.write_simulation_dir(input_dir,output_dir)
 os.chdir(home_dir)
 ###
 #
+###
+# eventual control panel for facility design
+###
+#
 #
 #
 ########################################################################
