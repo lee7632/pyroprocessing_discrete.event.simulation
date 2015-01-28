@@ -47,6 +47,7 @@ from scipy import stats
 ####### (w): Get working directories
 ####### (x): Edge transition
 ####### (y): Weibull probability density function evaluation
+####### (z): Weibull unreliability function evaluation
 #
 ########################################################################
 #
@@ -876,12 +877,26 @@ def edge_transition(operation_time,delay):
 #
 #
 ####### (y): Weibull probability density function evaluation
-# Compute the pdf for the weibull distribution
+# Compute the probability density function [f(t)] for the weibull distribution
 ###
 #
 def weibull_probability_density_function(time_domain,weibull_beta,weibull_eta):
 ###
     function_evaluate=(weibull_beta/weibull_eta)*((time_domain/weibull_eta)**(weibull_beta-1))*numpy.exp(-(time_domain/weibull_eta)**(weibull_beta))
+###
+    return(function_evaluate)
+########################################################################
+#
+#
+#
+####### (y): Weibull unreliability function evaluation
+# Compute the unreliability function [Q(t)]for the weibull distribution
+# This is also the cumulative density function [F(t)]
+###
+#
+def weibull_unreliability_function(time_domain,weibull_beta,weibull_eta):
+###
+    function_evaluate=1-numpy.exp(-(time_domain/weibull_eta)**(weibull_beta)) 
 ###
     return(function_evaluate)
 ########################################################################
