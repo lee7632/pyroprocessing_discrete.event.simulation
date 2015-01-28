@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB 
-# rev.26.January.2015
+# rev.28.January.2015
 # v1.2
 ########################################################################
 #
@@ -132,7 +132,7 @@
 # 4.    batch transfer to melter...time lapse
 #	. failure test
 #
-### if failure start maintenance loop
+### if failure start maintenance loop; see failure section for more details
 #
 # 5.   batch weight measurement at KMP3 and comparision to expected weight...time lapse
 # 6.   batch transfer to recycle storage...time lapse
@@ -205,6 +205,44 @@
 #   . no diversion events
 #   . all false alarms are resolved
 #   . melter failure is sampled from a standard normal distribution and compared to a prescibed failure probability
+#
+########################################################################
+#
+#
+########################################################################
+### Failure
+#
+# Failure is currently only active for the melter.
+# A weibull distribution is used for the distribution.
+# 
+# Weibull is useful when there is not a lot of data available.
+#
+# weibull distribution pdf: f(t)=(beta/eta)*((t/eta)**(beta-1))*exp(-(t/eta)**beta)
+# weibull distribution cdf: F(t)=1-exp(-(t/eta)**beta)
+#
+# F(t) = unreliability function
+# With increasing time, F(t) approaches 1, so the probability of a failure increases; i.e, the equipment wears out.
+#
+# If failures are assumed to be random, then beta=1.0.
+# Then, eta=1/failure rate.
+#
+# Two times are recorded over the system:
+#   . operation_time is the 'real' time; i.e., the simulation ends when operation_time >= facility_operation
+#   . failure_time 'shadows' operation_time; it advances with the same time lapse for the edges and vertices
+#   . f(t) and F(t) are evaluated using failure_time
+#   . when a failure occurs, however, failure_time is reset; i.e., failure_time = 0
+#   . reset of failure_time implies that new equipment is installed with a 'new' failure distribution
+#   . so a new piece of equipment installed, for example, 0.75*facility_operation will not be as likely to fail, as it should not
+#
+# Procedure:
+#   . melter process begins
+#   . at halfway through the melter operation time, failure test is initiated
+#   . F(t=failure_time) is computed
+#   . a random number (n) between (0,1) is generated from the uniform distribution
+#   . failure occurs if n < F(t)
+#   . therefore, if F(t) is close to 1; i.e., later in facility operation, it is more likely n < F(t); i.e., more likely the equipment fails
+#   . if there is no failure the second half of the melter operation time elapses
+#   . if there is a failure, maintenance loop starts
 #
 ########################################################################
 #
@@ -346,6 +384,8 @@
 # expected_muf=total expected facility material unaccounted for
 # expected_mufc=expected muf per campagn
 #
+# _evaluate=function evaluate for whatever precedes _evaluate; also for dummy variables
+#
 ### F
 #
 # facility_operation=total number of days per year of facility operation...set in preprocessing 
@@ -431,7 +471,7 @@
 # melter_failure_type=type of melter failure...set in preprocessing
 #
 # melter_process_counter=counts the number of times the melting process is initiated
-#
+# 
 ### N
 ### O
 #
@@ -474,6 +514,8 @@
 #
 # trimmer_process_counter=counts the number of times the trimmer process is initiated
 #
+# time_domain=dummy for time variable
+#
 ### U
 #
 # uncertainty=dummy variable for measurement uncertainty
@@ -486,8 +528,11 @@
 ### V
 ### W
 #
-# weibull_beta=beta parameter for the weibull distribution for failure testing; beta=1.0 assumes failures are random
-# weibull_eta=eta parameter for the weibull distribution for failure testing; beta=1.0 means eta=1/failure_rate
+# weibull_beta_melter=beta parameter for the weibull distribution for failure testing
+# weibull_eta_melter=eta parameter for the weibull distribution for failure testing
+#
+# weibull_beta=dummy variable
+# weibull_eta+dummy variable
 #
 ### X
 ### Y
@@ -516,14 +561,14 @@ import des_postprocessing as des_postproc
 home_dir,input_dir,output_data_dir,output_figure_dir=des_f.get_working_directory()
 #######
 #
-####### read in the input data
-batch,crucible_fraction,edge_time,facility_operation,melter_failure_false_alarm_threshold,end_of_campaign_false_alarm_threshold,melter_failure_inspection_time,campaign_inspection_time,kmp_measurement_uncertainty,kmp_time,kmp_measurement_threshold,maximum_kmp,melter_failure_number,melter_failure_type,melter_failure_probability,melter_failure_maintenance_time,melter_cleaning_time,process_time,storage_inventory_start,weibull_beta,weibull_eta=des_f.input_parameters(home_dir,input_dir,output_data_dir)
+####### (a): Read input data
+batch,crucible_fraction,edge_time,facility_operation,melter_failure_false_alarm_threshold,end_of_campaign_false_alarm_threshold,melter_failure_inspection_time,campaign_inspection_time,kmp_measurement_uncertainty,kmp_time,kmp_measurement_threshold,maximum_kmp,melter_failure_number,melter_failure_type,melter_failure_probability,melter_failure_maintenance_time,melter_cleaning_time,process_time,storage_inventory_start,weibull_beta_melter,weibull_eta_melter=des_f.input_parameters(home_dir,input_dir,output_data_dir)
 #######
 #
 #
 #
-####### open the output files for data export
-time_output,campaign_output,true_storage_inventory_output,expected_storage_inventory_output,measured_storage_inventory_output,true_weight_output,expected_weight_output,measured_weight_output,true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,total_melter_failure_output,end_of_campaign_false_alarm_counter_output,melter_failure_false_alarm_counter_output,true_kmp0,true_kmp1,true_kmp2,true_kmp3,true_kmp4,expected_kmp0,expected_kmp1,expected_kmp2,expected_kmp3,expected_kmp4,measured_kmp0,measured_kmp1,measured_kmp2,measured_kmp3,measured_kmp4,true_heel,expected_heel,measured_heel,true_system_inventory_output,expected_system_inventory_output,measured_system_inventory_output,melter_process_counter_output,trimmer_process_counter_output,probability_density_function_output,unreliability_function_output=des_f.open_files(home_dir,output_data_dir)
+####### (o): Open output files 
+time_output,campaign_output,true_storage_inventory_output,expected_storage_inventory_output,measured_storage_inventory_output,true_weight_output,expected_weight_output,measured_weight_output,true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,total_melter_failure_output,end_of_campaign_false_alarm_counter_output,melter_failure_false_alarm_counter_output,true_kmp0,true_kmp1,true_kmp2,true_kmp3,true_kmp4,expected_kmp0,expected_kmp1,expected_kmp2,expected_kmp3,expected_kmp4,measured_kmp0,measured_kmp1,measured_kmp2,measured_kmp3,measured_kmp4,true_heel,expected_heel,measured_heel,true_system_inventory_output,expected_system_inventory_output,measured_system_inventory_output,melter_process_counter_output,trimmer_process_counter_output,melter_probability_density_function_output,melter_unreliability_function_output=des_f.open_files(home_dir,output_data_dir)
 #######
 #
 #
@@ -539,8 +584,8 @@ time_output,campaign_output,true_storage_inventory_output,expected_storage_inven
 #
 # 
 #
-### set the storage buffer and initialize time and KMPs
-operation_time,failure_time,true_processed_inventory,expected_processed_inventory,measured_processed_inventory,total_campaign,total_batch,melter_failure_counter,true_weight,expected_weight,measured_weight,true_crucible,expected_crucible,measured_crucible,accumulated_true_crucible,accumulated_expected_crucible,accumulated_measured_crucible,true_muf,expected_muf,measured_muf,true_mufc,expected_mufc,measured_mufc,end_of_campaign_false_alarm_counter,melter_failure_false_alarm_counter,end_of_campaign_false_alarm,melter_failure_false_alarm,melter_failure_event,true_storage_inventory,expected_storage_inventory,measured_storage_inventory,true_system_inventory,expected_system_inventory,measured_system_inventory,end_of_campaign_false_alarm_test,melter_failure_false_alarm_test,melter_process_counter,trimmer_process_counter,weibull_probability_density_function_evaluate,weibull_probability_density_function_failure_evaluate,weibull_unreliability_function_evaluate,weibull_unreliability_function_failure_evaluate=des_f.initialize_parameters(storage_inventory_start)
+### (r): Initialize parameters
+operation_time,failure_time,true_processed_inventory,expected_processed_inventory,measured_processed_inventory,total_campaign,total_batch,melter_failure_counter,true_weight,expected_weight,measured_weight,true_crucible,expected_crucible,measured_crucible,accumulated_true_crucible,accumulated_expected_crucible,accumulated_measured_crucible,true_muf,expected_muf,measured_muf,true_mufc,expected_mufc,measured_mufc,end_of_campaign_false_alarm_counter,melter_failure_false_alarm_counter,end_of_campaign_false_alarm,melter_failure_false_alarm,melter_failure_event,true_storage_inventory,expected_storage_inventory,measured_storage_inventory,true_system_inventory,expected_system_inventory,measured_system_inventory,end_of_campaign_false_alarm_test,melter_failure_false_alarm_test,melter_process_counter,trimmer_process_counter,melter_probability_density_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_evaluate,melter_unreliability_function_failure_evaluate=des_f.initialize_parameters(storage_inventory_start)
 ###
 #
 #

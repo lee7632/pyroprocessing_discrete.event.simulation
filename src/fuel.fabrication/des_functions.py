@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB
-# rev.27.January.2015
+# rev.28.January.2015
 ########################################################################
 # These functions will be used to support DES modeling.
 ########################################################################
@@ -46,6 +46,7 @@ from scipy import stats
 ####### (v): False alarm write
 ####### (w): Get working directories
 ####### (x): Edge transition
+####### (y): Weibull probability density function evaluation
 #
 ########################################################################
 #
@@ -85,7 +86,7 @@ def input_parameters(home_dir,input_dir,output_data_dir):
     melter_cleaning_time=numpy.loadtxt('melter.cleaning.time.inp') # time to clean the melter prior to equipment removal
     process_time=numpy.loadtxt('process.time.inp',usecols=[1]) # time for each vertex to process material
     storage_inventory_start=numpy.loadtxt('storage.inventory.inp') # total quantity of material in storage buffer at T = 0
-    weibull_beta=numpy.loadtxt('weibull.beta.inp') # weibull distribution beta parameter
+    weibull_beta_melter=numpy.loadtxt('weibull.beta.inp') # weibull distribution beta parameter for the melter
 ###
     readme_input=open('readme.md').readlines()
 ###
@@ -95,7 +96,7 @@ def input_parameters(home_dir,input_dir,output_data_dir):
     campaign_inspection_time=inspection_time[1]
     melter_failure_false_alarm_threshold=false_alarm_threshold[0]
     end_of_campaign_false_alarm_threshold=false_alarm_threshold[1]
-    weibull_eta=(1)/(melter_failure_rate) # the eta parameter for the weibull distribution is equal to the reciprocal of the failure rate if beta = 1; i.e., this assumes random failures
+    weibull_eta_melter=(1)/(melter_failure_rate) # the eta parameter for the weibull distribution is equal to the reciprocal of the failure rate if beta = 1; i.e., this assumes random failures
 ###
 #
 ### output
@@ -171,7 +172,7 @@ def input_parameters(home_dir,input_dir,output_data_dir):
 ###
     print 'Input parameters loaded.','\n'
 ###
-    return (batch,crucible_fraction,edge_time,facility_operation,melter_failure_false_alarm_threshold,end_of_campaign_false_alarm_threshold,melter_failure_inspection_time,campaign_inspection_time,kmp_measurement_uncertainty,kmp_time,kmp_measurement_threshold,maximum_kmp,melter_failure_number,melter_failure_type,melter_failure_probability,melter_failure_maintenance_time,melter_cleaning_time,process_time,storage_inventory_start,weibull_beta,weibull_eta)
+    return (batch,crucible_fraction,edge_time,facility_operation,melter_failure_false_alarm_threshold,end_of_campaign_false_alarm_threshold,melter_failure_inspection_time,campaign_inspection_time,kmp_measurement_uncertainty,kmp_time,kmp_measurement_threshold,maximum_kmp,melter_failure_number,melter_failure_type,melter_failure_probability,melter_failure_maintenance_time,melter_cleaning_time,process_time,storage_inventory_start,weibull_beta_melter,weibull_eta_melter)
 ########################################################################
 #
 #    
@@ -581,14 +582,14 @@ def open_files(home_dir,output_data_dir):
     measured_system_inventory_output=open('measured.system.inventory.out','w+')
     melter_process_counter_output=open('melter.process.counter.out','w+')
     trimmer_process_counter_output=open('trimmer.process.counter.out','w+')
-    probability_density_function_output=open('probability.density.function.out','w+')
-    unreliability_function_output=open('unreliability.function.out','w+')
+    melter_probability_density_function_output=open('melter.probability.density.function.out','w+')
+    melter_unreliability_function_output=open('melter.unreliability.function.out','w+')
 ###
 #
 ### return to home directory
     os.chdir(home_dir)
 ###
-    return(time_output,campaign_output,true_storage_inventory_output,expected_storage_inventory_output,measured_storage_inventory_output,true_weight_output,expected_weight_output,measured_weight_output,true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,total_melter_failure_output,end_of_campaign_false_alarm_counter_output,melter_failure_false_alarm_counter_output,true_kmp0,true_kmp1,true_kmp2,true_kmp3,true_kmp4,expected_kmp0,expected_kmp1,expected_kmp2,expected_kmp3,expected_kmp4,measured_kmp0,measured_kmp1,measured_kmp2,measured_kmp3,measured_kmp4,true_heel,expected_heel,measured_heel,true_system_inventory_output,expected_system_inventory_output,measured_system_inventory_output,melter_process_counter_output,trimmer_process_counter_output,probability_density_function_output,unreliability_function_output)
+    return(time_output,campaign_output,true_storage_inventory_output,expected_storage_inventory_output,measured_storage_inventory_output,true_weight_output,expected_weight_output,measured_weight_output,true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,total_melter_failure_output,end_of_campaign_false_alarm_counter_output,melter_failure_false_alarm_counter_output,true_kmp0,true_kmp1,true_kmp2,true_kmp3,true_kmp4,expected_kmp0,expected_kmp1,expected_kmp2,expected_kmp3,expected_kmp4,measured_kmp0,measured_kmp1,measured_kmp2,measured_kmp3,measured_kmp4,true_heel,expected_heel,measured_heel,true_system_inventory_output,expected_system_inventory_output,measured_system_inventory_output,melter_process_counter_output,trimmer_process_counter_output,melter_probability_density_function_output,melter_unreliability_function_output)
 ########################################################################
 #
 #
@@ -733,14 +734,14 @@ def initialize_parameters(storage_inventory_start):
     melter_failure_false_alarm_test=0
     melter_process_counter=0
     trimmer_process_counter=0
-    probability_density_function_evaluate=0
-    probability_density_function_failure_evaluate=0
-    unreliability_function_evaluate=0
-    unreliabilty_function_failure_evaluate=0
+    melter_probability_density_function_evaluate=0
+    melter_probability_density_function_failure_evaluate=0
+    melter_unreliability_function_evaluate=0
+    melter_unreliabilty_function_failure_evaluate=0
 ###
     print 'Initialization complete.'
 ###
-    return(operation_time,failure_time,true_processed_inventory,expected_processed_inventory,measured_processed_inventory,total_campaign,total_batch,melter_failure_counter,true_weight,expected_weight,measured_weight,true_crucible,expected_crucible,measured_crucible,accumulated_true_crucible,accumulated_expected_crucible,accumulated_measured_crucible,true_muf,expected_muf,measured_muf,true_mufc,expected_mufc,measured_mufc,end_of_campaign_false_alarm_counter,melter_failure_false_alarm_counter,end_of_campaign_false_alarm,melter_failure_false_alarm,melter_failure_event,true_storage_inventory,expected_storage_inventory,measured_storage_inventory,true_system_inventory,expected_system_inventory,measured_system_inventory,end_of_campaign_false_alarm_test,melter_failure_false_alarm_test,melter_process_counter,trimmer_process_counter,weibull_probability_density_function_evaluate,weibull_probability_function_failure_evaluate,weibull_unreliability_function_evaluate,weibull_unreliability_function_failure_evaluate)
+    return(operation_time,failure_time,true_processed_inventory,expected_processed_inventory,measured_processed_inventory,total_campaign,total_batch,melter_failure_counter,true_weight,expected_weight,measured_weight,true_crucible,expected_crucible,measured_crucible,accumulated_true_crucible,accumulated_expected_crucible,accumulated_measured_crucible,true_muf,expected_muf,measured_muf,true_mufc,expected_mufc,measured_mufc,end_of_campaign_false_alarm_counter,melter_failure_false_alarm_counter,end_of_campaign_false_alarm,melter_failure_false_alarm,melter_failure_event,true_storage_inventory,expected_storage_inventory,measured_storage_inventory,true_system_inventory,expected_system_inventory,measured_system_inventory,end_of_campaign_false_alarm_test,melter_failure_false_alarm_test,melter_process_counter,trimmer_process_counter,melter_probability_density_function_evaluate,melter_probability_function_failure_evaluate,melter_unreliability_function_evaluate,melter_unreliability_function_failure_evaluate)
 #########################################################################
 #
 #
@@ -874,6 +875,21 @@ def edge_transition(operation_time,delay):
 #
 #
 #
+####### (y): Weibull probability density function evaluation
+# Compute the pdf for the weibull distribution
+###
+#
+def weibull_probability_density_function(time_domain,weibull_beta,weibull_eta):
+###
+    function_evaluate=(weibull_beta/weibull_eta)*((time_domain/weibull_eta)**(weibull_beta-1))*numpy.exp(-(time_domain/weibull_eta)**(weibull_beta))
+###
+    return(function_evaluate)
 ########################################################################
+#
+#
+#
+########################################################################
+#
 #      EOF
+#
 ########################################################################
