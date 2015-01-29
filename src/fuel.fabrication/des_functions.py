@@ -889,7 +889,7 @@ def weibull_probability_density_function(time_domain,weibull_beta,weibull_eta):
 #
 #
 #
-####### (y): Weibull unreliability function evaluation
+####### (z): Weibull unreliability function evaluation
 # Compute the unreliability function [Q(t)]for the weibull distribution
 # This is also the cumulative density function [F(t)]
 ###
