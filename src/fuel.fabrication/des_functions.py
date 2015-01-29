@@ -25,7 +25,7 @@ from scipy import stats
 #
 ####### (a): Read input data
 ####### (b): Set facility configuration
-####### (d): storage preparation
+####### (d): Storage buffer preparation
 ####### (e): KMP measurement
 ####### (f): melter
 ####### (g): trimmer
@@ -193,7 +193,7 @@ def input_parameters(home_dir,input_dir,output_data_dir):
 #
 #
 #
-####### (d): storage preparation
+####### (d): Storage buffer preparation
 # Material leaves the storage buffer
 ###
 #
@@ -496,7 +496,7 @@ def failure_test(operation_time,equipment_failure_number,equipment_failure_type,
 #
 #
 ####### (n): End of campaign reset
-# This advances the counters
+# Advance the counters
 ###
 #
 ###
@@ -512,7 +512,7 @@ def end_of_campaign(total_campaign,total_batch):
 #
 #
 ####### (n): End of campaign reset weight
-# This zeros out the weights
+# Zero out the weights
 ###
 #
 ###
@@ -625,6 +625,8 @@ def write_output(operation_time,failure_time,total_campaign,true_storage_invento
     measured_system_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%measured_system_inventory)+'\n')
     melter_process_counter_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%i'%melter_process_counter)+'\n')
     trimmer_process_counter_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%i'%trimmer_process_counter)+'\n')
+    melter_probability_density_function_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%melter_probability_density_function_evaluate)+'\t'+str.format('%.4f'%failure_time)+'\t'+str.format('%.4f'%melter_probability_density_function_failure_evaluate)+'\n')
+    melter_unreliability_function_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%melter_unreliability_function_evaluate)+'\t'+str.format('%.4f'%failure_time)+'\t'+str.format('%.4f'%melter_unreliability_function_failure_evaluate)+'\n')
 ###
     return(time_output,campaign_output,true_storage_inventory_output,expected_storage_inventory_output,measured_storage_inventory_output,true_weight_output,expected_weight_output,measured_weight_output,true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,total_melter_failure_output,true_system_inventory_output,expected_system_inventory_output,measured_system_inventory_output,melter_process_counter_output,trimmer_process_counter_output,melter_probability_density_function_output,melter_unreliability_function_output)
 ########################################################################
