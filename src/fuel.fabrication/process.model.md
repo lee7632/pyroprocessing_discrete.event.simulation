@@ -22,7 +22,7 @@
 <br>		. failure test
 <br><br>if failure start maintenance loop; see failure section for more details
 <br>7.  edge transtion from Melter to KMP3...time lapse  
-<br>8.  batch weight measurement at KMP3 and comparision to expected weight...time lapse
+8.  batch weight measurement at KMP3 and comparision to expected weight...time lapse
 <br>9.  edge transition from KMP3 to Recycle Storage...time lapse
 <br><br>10. conduct inspection...time lapse
 <br>		. calculate MUFc, MUF
@@ -33,7 +33,7 @@
 <br>12.	edge transition of heel from Melter to KMP3...time lapse
 <br>13. heel weight measurement at KMP3 and comparision to expected weight...time lapse
 <br>13. edge transition of heel from KMP3 to Recycle Storage...time lapse
-<br><br>14. perform Maintenance...time lapse
+<br>14. perform Maintenance...time lapse
 <br><br>15. conduct inspection...time lapse (inspection is needed to restart operation) 
 <br>		. calculate MUFc, MUF
 <br>		. MUFc,MUF=0 because all unprocessed material is located in Recycle Storage
@@ -41,7 +41,7 @@
 <br><br> 16. edge transition from Recycle Storge of total material to KMP3...time lapse
 <br>17. total weight measurement (batch+heel) at KMP3 and comparision to expected weight...time lapse
 <br>18. edge transition of total material from KMP3 to Melter...time lapse
-<br>19. Melter process...time lapse
+<br><br>19. Melter process...time lapse
 <br>		. failure test
 <br><br>if failure repeat loop, else continue on in the system 
 <br>20. edge transition from Melter to KMP1...time lapse
