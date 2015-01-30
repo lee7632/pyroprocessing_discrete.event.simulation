@@ -15,7 +15,7 @@ MUF is calculated:
 <li>on failure after moving bulk material to recycle storage
 <li>after maintenance to verify all material is accounted for  
 </ul>
-<br>At the end of the campaign, MUF is calculated, but no further action is taken because it is 'known' that MUF is in the melter.
+At the end of the campaign, MUF is calculated, but no further action is taken because it is 'known' that MUF is in the melter.
 <br>This will not be the case once diversion is introduced into the model, since it would not be known if the MUF was in the melter or diverted. 
 <br>MUF is calculated based on initial and final inventories.
 <br>The inventories are determined by the state variables and location of material in the system.
