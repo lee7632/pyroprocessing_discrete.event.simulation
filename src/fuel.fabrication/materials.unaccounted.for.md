@@ -20,14 +20,16 @@ At the end of the campaign, MUF is calculated, but no further action is taken be
 <br>MUF is calculated based on initial and final inventories.
 <br>The inventories are determined by the state variables and location of material in the system.
 <br>MUF and MUFc are independently calculated in order to verify both.
-<br><br>Once through campaign (no failure): 
+<ul>
+Once through campaign (no failure): 
 <li>MUFc = KMP0 - KMP2
 <li>KMP0 records inventory transferred from storage buffer
 <li>KMP2 records product processed
 <li>MUF = system inventory - processed inventory
 <li>system inventory is running total transferred out of the storage buffer from KMP0
 <li>processed inventory is running total from KMP2
-<br>Failure inspection: If there is a failure, production stops, equpiment cleaned, and inventory verified
+</ul>
+<br>Failure inspection: If there is a failure, production stops, equpiment cleaned, and inventory verified.
 <li>MUFc = KMP3 - KMP0
 <li>KMP3 records material transferred out of melter to recycle storage
 <li>MUF = system inventory - (processed inventory + KMP3)
