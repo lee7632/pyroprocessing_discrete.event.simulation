@@ -11,7 +11,7 @@
 <br>There is a time lapse for each vertex and edge...set in preprocessing.
 <br>System variables are listed in the glossary.
 <ol>
-**preprocessing**
+<br>**preprocessing**
 <li>input parameters are read in, open data files  
 <li>storage_inventory_start is loaded into Storage Buffer at TIME=0
 <br><br>**start operation loop**
@@ -80,7 +80,7 @@ if failure repeat loop, else continue on in the system
 <li>compute false alarm probability
 <li>make plots
 </ol>
-<br><br>Data is written continutally with the write_output function as the code steps through the processes, but it is not indicated here because it would clutter up the process description.
+<br>Data is written continutally with the write_output function as the code steps through the processes, but it is not indicated here because it would clutter up the process description.
 <br><br>System false alarm data is written similarly in the false_alarm_write function.
 <br>End of campaign false alarm data is written separately from melter failure false alarm data.
 <br>KMP data is only recorded at a KMP event with the kmp_write function.
