@@ -9,8 +9,8 @@
 ########################################################################
 **MUF (system) and MUFc (campaign)**
 <br>
-MUF is calculated:
 <ul>
+MUF is calculated:
 <li>end of campaign
 <li>on failure after moving bulk material to recycle storage
 <li>after maintenance to verify all material is accounted for  
