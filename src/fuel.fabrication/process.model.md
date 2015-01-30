@@ -75,6 +75,7 @@
 </ul>
 <br><li>perform record keeping for batches, campaigns processed, reset campaign-based variables
 <br><br>if facility operation still active go to 2
+<br><b>end operation loop</b>
 <br><br><b>postprocessing</b>
 <li>close data files
 <li>compute false alarm probability
