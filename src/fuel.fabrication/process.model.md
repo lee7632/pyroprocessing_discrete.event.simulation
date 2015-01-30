@@ -11,7 +11,7 @@
 <br>There is a time lapse for each vertex and edge...set in preprocessing.
 <br>System variables are listed in the glossary.
 <ol>
-**preprocessing**
+<b>preprocessing</b>
 <li>input parameters are read in, open data files  
 <li>storage_inventory_start is loaded into Storage Buffer at TIME=0
 <br><br>**start operation loop**
