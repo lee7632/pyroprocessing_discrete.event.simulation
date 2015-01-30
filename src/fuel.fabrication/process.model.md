@@ -45,15 +45,15 @@
 <li>MUFc,MUF=0 because all unprocessed material is located in Recycle Storage
 <li>false alarm test
 </ul>
-<li>edge transition from Recycle Storge of total material to KMP3...time lapse
+<br><li>edge transition from Recycle Storge of total material to KMP3...time lapse
 <li>total weight measurement (batch+heel) at KMP3 and comparision to expected weight...time lapse
 <li>edge transition of total material from KMP3 to Melter...time lapse
 <br><br><li>Melter process...time lapse
 <ul>
 <li>failure test
 </ul>
-if failure repeat loop, else continue on in the system 
-<li>edge transition from Melter to KMP1...time lapse
+<br>if failure repeat loop, else continue on in the system 
+<br><br><li>edge transition from Melter to KMP1...time lapse
 <li> batch weight measurement at KMP1 and comparison to expected weight...time lapse
 <li> edge transition from KMP1 to Trimmer...time lapse
 <br><br><li>Trimmer process...time lapse
@@ -61,7 +61,7 @@ if failure repeat loop, else continue on in the system
 <li>failure test
 <li>currently inactive
 </ul>
-<br>**Trimmer failure loop description**
+<br><b>Trimmer failure loop description</b>
 <br><br><li>edge transition from Trimmer to KMP2...time lapse
 <li>batch weight measurement at KMP2 and comparison to expected weight...time lapse
 <li>edge transition from KMP2 to Product Storage Buffer...time lapse
@@ -73,9 +73,9 @@ if failure repeat loop, else continue on in the system
 <li>false alarm test
 <li>currently no action on false alarm
 </ul>
-<li>perform record keeping for batches, campaigns processed, reset campaign-based variables
+<br><li>perform record keeping for batches, campaigns processed, reset campaign-based variables
 <br><br>if facility operation still active go to 2
-<br><br>**postprocessing**
+<br><br><b>postprocessing</b>
 <li>close data files
 <li>compute false alarm probability
 <li>make plots
