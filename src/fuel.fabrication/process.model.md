@@ -14,7 +14,7 @@
 <b>preprocessing</b>
 <li>input parameters are read in, open data files  
 <li>storage_inventory_start is loaded into Storage Buffer at TIME=0
-<br><br>**start operation loop**
+<br><br><b>start operation loop</b>
 <li>batch preparation in Storage Buffer...time lapse
 <li>edge transition from Storage Buffer to KMP0...time lapse
 <li>batch weight measurement at KMP0 and comparison to expected weight...time lapse
@@ -24,7 +24,7 @@
 <li>failure test
 </ul>
 <br>if failure start maintenance loop; see failure section for more details
-<br><li>edge transtion from Melter to KMP3...time lapse  
+<br><br><li>edge transtion from Melter to KMP3...time lapse  
 <li>batch weight measurement at KMP3 and comparision to expected weight...time lapse
 <li>edge transition from KMP3 to Recycle Storage...time lapse
 <br><br><li>conduct inspection...time lapse
@@ -34,7 +34,7 @@
 <li>even if this is the first failure, there will be material left over in the equipment upon transfer to recycle
 <li>false alarm test
 </ul>
-<li>conduct cleaning procedure to extract heel...time lapse
+<br><li>conduct cleaning procedure to extract heel...time lapse
 <li>edge transition of heel from Melter to KMP3...time lapse
 <li>heel weight measurement at KMP3 and comparision to expected weight...time lapse
 <li>edge transition of heel from KMP3 to Recycle Storage...time lapse
