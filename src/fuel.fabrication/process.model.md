@@ -14,7 +14,7 @@
 <b>preprocessing</b>
 <li>input parameters are read in, open data files  
 <li>storage_inventory_start is loaded into Storage Buffer at TIME=0
-<br>**start operation loop**
+<br><br>**start operation loop**
 <li>batch preparation in Storage Buffer...time lapse
 <li>edge transition from Storage Buffer to KMP0...time lapse
 <li>batch weight measurement at KMP0 and comparison to expected weight...time lapse
