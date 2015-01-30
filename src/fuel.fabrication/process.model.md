@@ -1,5 +1,6 @@
 ########################################################################
 **R.A.Borrelli**
+<br>
 **@TheDoctorRAB* 
 ########################################################################
 
@@ -11,7 +12,7 @@
 <br> System variables are listed in the glossary.
 <br><br>**preprocessing**
 <br> 0.    input parameters are read in, open data files  
-<br> 1.    storage_inventory_start is loaded into Storage Buffer at TIME=0
+     1.    storage_inventory_start is loaded into Storage Buffer at TIME=0
 <br><br>**start operation loop**
 <br>2.	batch preparation in Storage Buffer...time lapse
 <br>3.  edge transition from Storage Buffer to KMP0...time lapse
