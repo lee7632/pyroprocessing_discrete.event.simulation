@@ -18,7 +18,7 @@ MUF is calculated:
 <br<MUF is calculated based on initial and final inventories:
 <li>the inventories are determined by the state variables and location of material in the system
 <br>MUF and MUFc are independently calculated in order to verify both.
-<br>Once through campaign (no failure): 
+<br><br>Once through campaign (no failure): 
 <li>MUFc = KMP0 - KMP2
 <li>KMP0 records inventory transferred from storage buffer
 <li>KMP2 records product processed
