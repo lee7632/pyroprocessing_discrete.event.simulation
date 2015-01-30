@@ -11,7 +11,7 @@
 <br>There is a time lapse for each vertex and edge...set in preprocessing.
 <br>System variables are listed in the glossary.
 <ol>
-<br>**preprocessing**
+**preprocessing**
 <li>input parameters are read in, open data files  
 <li>storage_inventory_start is loaded into Storage Buffer at TIME=0
 <br><br>**start operation loop**
@@ -23,7 +23,7 @@
 <ul>
 <li>failure test
 </ul>
-if failure start maintenance loop; see failure section for more details
+<br>if failure start maintenance loop; see failure section for more details
 <li>edge transtion from Melter to KMP3...time lapse  
 <li>batch weight measurement at KMP3 and comparision to expected weight...time lapse
 <li>edge transition from KMP3 to Recycle Storage...time lapse
