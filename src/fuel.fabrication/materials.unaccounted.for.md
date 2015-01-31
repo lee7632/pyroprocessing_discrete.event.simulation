@@ -29,11 +29,13 @@ At the end of the campaign, MUF is calculated, but no further action is taken be
 <li>system inventory is running total transferred out of the storage buffer from KMP0
 <li>processed inventory is running total from KMP2
 </ul>
-<br>Failure inspection: If there is a failure, production stops, equpiment cleaned, and inventory verified.
+<ul>
+<b>Failure</b>
 <li>MUFc = KMP3 - KMP0
 <li>KMP3 records material transferred out of melter to recycle storage
 <li>MUF = system inventory - (processed inventory + KMP3)
 <li>processed inventory is from prior campaign if the failure occurs
+</ul>
 <br>After the failure inspection, the melter is cleaned, the 'heel' is removed, also measured at KMP3, and transferred to recycle storage.
 <br>Note that KMP3 is needed twice: (1) measures batch from meleter and (2) measures heel from melter; i.e., equipment cleaning.
 <br>Therefore, all intracampaign material is in recycle storage at this point.
