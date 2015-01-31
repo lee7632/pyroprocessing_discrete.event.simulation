@@ -16,5 +16,6 @@
 <li>no diversion events
 <li>all false alarms are resolved
 <li>melter failure is sampled from a standard normal distribution and compared to a prescibed failure probability
+<li>MUF uncertainty is not currently calculated
 </ol>
 ########################################################################
