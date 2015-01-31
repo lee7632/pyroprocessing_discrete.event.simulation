@@ -38,7 +38,7 @@ At the end of the campaign, MUF is calculated, but no further action is taken be
 </ul>
 After the failure inspection, the melter is cleaned, the heel is removed, also measured at KMP3, and transferred to recycle storage.
 <ol>
-Note that KMP3 is needed twice
+<b>Note that KMP3 is needed twice</b>
 <li>measures batch from meleter
 <li>measures heel from melter; i.e., equipment cleaning.
 </ol>
