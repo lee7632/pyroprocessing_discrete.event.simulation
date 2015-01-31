@@ -46,7 +46,8 @@ Therefore, all intracampaign material is in recycle storage at this point.
 <br>The heel is the amount of material that accumulates in the melter (crucible), randomly during each melting event.
 <br>Maintenance is conducted.
 <ul>
-Restart inspection is needed upon completion of maintenance: Confirm all the material is in the recycle storage and MUF = 0
+<b>Restart inspection is needed upon completion of maintenance
+<br>Confirm all the material is in the recycle storage and MUF = 0</b>
 <li>MUFc = (KMP3(batch)+MUF)-(KMP3(batch)+KMP3(heel))
 <li>verifies that previous system MUF is equal to heel
 <li>use of KMP0 would not be correct here because KMP0 will always measure the the batch input quantity per campaign
