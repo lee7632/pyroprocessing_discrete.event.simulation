@@ -36,12 +36,17 @@ At the end of the campaign, MUF is calculated, but no further action is taken be
 <li>MUF = system inventory - (processed inventory + KMP3)
 <li>processed inventory is from prior campaign if the failure occurs
 </ul>
-<br>After the failure inspection, the melter is cleaned, the 'heel' is removed, also measured at KMP3, and transferred to recycle storage.
-<br>Note that KMP3 is needed twice: (1) measures batch from meleter and (2) measures heel from melter; i.e., equipment cleaning.
-<br>Therefore, all intracampaign material is in recycle storage at this point.
+After the failure inspection, the melter is cleaned, the heel is removed, also measured at KMP3, and transferred to recycle storage.
+<ol>
+Note that KMP3 is needed twice
+<li>measures batch from meleter
+<li>measures heel from melter; i.e., equipment cleaning.
+</ol>
+Therefore, all intracampaign material is in recycle storage at this point.
 <br>The heel is the amount of material that accumulates in the melter (crucible), randomly during each melting event.
-<br>Maintenance is conducted. This is essentially hypothetical and just is associated with a time delay.
-<br>Restart inspection is needed upon completion of maintenance: Confirm all the material is in the recycle storage and MUF =0
+<br>Maintenance is conducted.
+<ul>
+Restart inspection is needed upon completion of maintenance: Confirm all the material is in the recycle storage and MUF = 0
 <li>MUFc = (KMP3(batch)+MUF)-(KMP3(batch)+KMP3(heel))
 <li>verifies that previous system MUF is equal to heel
 <li>use of KMP0 would not be correct here because KMP0 will always measure the the batch input quantity per campaign
@@ -53,5 +58,4 @@ At the end of the campaign, MUF is calculated, but no further action is taken be
 <li>system MUF = 0 
 <li>processed and intracampaign material equals material input into the system over current facility time
 </ul>
-<br>MUF uncertainty is not currently calculated
 ########################################################################
