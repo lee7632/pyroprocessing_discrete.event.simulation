@@ -10,8 +10,8 @@
 **Melter failure**
 <br>A weibull distribution is used to simulate a general, random melter failure.
 <br>Weibull is useful when there is not a lot of data available.
-<br><br>weibull distribution pdf: f(t)=(beta/eta)*((t/eta)**(beta-1))*exp(-(t/eta)**beta)
-<br>weibull distribution cdf: F(t)=1-exp(-(t/eta)**beta)
+<br><br>weibull distribution pdf: f(t)=(beta/eta)((t/eta)^(beta-1))exp(-(t/eta)^beta)
+<br>weibull distribution cdf: F(t)=1-exp(-(t/eta)^beta)
 <br><br>F(t) = unreliability function
 <br>With increasing time, F(t) approaches 1, so the probability of a failure increases; i.e, the equipment wears out.
 <br><br>If failures are assumed to be random, then beta=1.0.
