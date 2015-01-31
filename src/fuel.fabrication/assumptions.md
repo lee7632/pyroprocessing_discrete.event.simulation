@@ -15,7 +15,7 @@
 <li>no failure of the trimmer
 <li>no diversion events
 <li>all false alarms are resolved
-<li>melter failure is sampled from a standard normal distribution and compared to a prescibed failure probability
+<li>melter is assumed to fail randomly with a constant failure rate
 <li>MUF uncertainty is not currently calculated
 </ol>
 ########################################################################
