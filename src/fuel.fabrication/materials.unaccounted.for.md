@@ -10,7 +10,7 @@
 **MUF (system) and MUFc (campaign)**
 <br>
 <ul>
-MUF is calculated:
+<b>MUF is calculated</b>
 <li>end of campaign
 <li>on failure after moving bulk material to recycle storage
 <li>after maintenance to verify all material is accounted for  
@@ -21,7 +21,7 @@ At the end of the campaign, MUF is calculated, but no further action is taken be
 <br>The inventories are determined by the state variables and location of material in the system.
 <br>MUF and MUFc are independently calculated in order to verify both.
 <ul>
-Once through campaign (no failure): 
+<b>Once through campaign (no failure)</b>
 <li>MUFc = KMP0 - KMP2
 <li>KMP0 records inventory transferred from storage buffer
 <li>KMP2 records product processed
