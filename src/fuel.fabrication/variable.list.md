@@ -182,6 +182,7 @@
 <ul>
 <b>U</b>
 <li>uncertainty=dummy variable for measurement uncertainty
+</ul>
 <ul>
 <b>V</b>
 </ul>
