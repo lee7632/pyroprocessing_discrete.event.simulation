@@ -79,7 +79,6 @@
 <li>_false_alarm_test=difference in selected material quantities...compared to threshold to trigger false alarm
 <li>file_=part of the file names for saving, opening, writing, etc.; i.e., file_tree is directory structure
 <li>filename=same thing
-<li>failure_time=time record to determine melter failure; if there is a failure, failure_time resets to 0; i.e., there is a new probability distribution
 </ul>
 <ul> 
 <b>G</b>
@@ -132,6 +131,7 @@
 <li>melter_failure_inspection_time=melter failure inspection time
 <li>melter_failure_type=type of melter failure...set in preprocessing
 <li>melter_process_counter=counts the number of times the melting process is initiated
+<li>melter_failure_time=time record to determine melter failure; if there is a failure, failure_time resets to 0; i.e., there is a new probability distribution
 </ul> 
 <ul>
 <b>N</b>
