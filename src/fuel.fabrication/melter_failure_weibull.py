@@ -63,29 +63,36 @@ import numpy
 ########################################################################
 #
 #
-####### write files
-def write_files(operation_time,failure_time,campaign,probability_density_function_evaluate,unreliability_function_evaluate,probability_density_function_failure_evaluate,unreliability_function_failure_evaluate,failure_counter,failure_testing,operation_time_output,failure_time_output,campaign_output,probability_density_function_output,unreliability_function_output,probability_density_function_failure_output,unreliability_function_failure_output,failure_record_output):
-###
-    operation_time_output.write(str.format('%.4f'%operation_time)+'\n')
-    failure_time_output.write(str.format('%.4f'%failure_time)+'\n')
-    campaign_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%i'%campaign)+'\n')
-    probability_density_function_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%probability_density_function_evaluate)+'\n')
-    unreliability_function_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%unreliability_function_evaluate)+'\n')
-    probability_density_function_failure_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%failure_time)+'\t'+str.format('%.4f'%probability_density_function_failure_evaluate)+'\n')
-    unreliability_function_failure_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%failure_time)+'\t'+str.format('%.4f'%unreliability_function_failure_evaluate)+'\n')
-    failure_record_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%failure_testing)+'\t'+str.format('%.4f'%unreliability_function_evaluate)+'\t'+str.format('%i'%failure_counter)+'\n')
-###
-    return(operation_time_output,failure_time_output,campaign_output,probability_density_function_output,unreliability_function_output,probability_density_function_failure_output,unreliability_function_failure_output,failure_record_output)
-#######
+#
+########################################################################
+#
+# function list
+#
+# (1): probability density function
+# (2): unreliability function
+#
+########################################################################
 #
 #
 #
-####### probability density function
+########################################################################
+#
+# (1): probability density function
+#
+# Computes weibull probability density function
+#
+### probability density function
 def probability_density_function(time_domain,weibull_beta,weibull_eta):
 ###
     function_evaluate=(weibull_beta/weibull_eta)*((time_domain/weibull_eta)**(weibull_beta-1))*numpy.exp(-(time_domain/weibull_eta)**(weibull_beta))
 ###
-    return(function_evaluate)
+    return(function_evaluate)i
+#
+########################################################################
+#
+#
+#
+########################################################################
 #######
 #
 #
