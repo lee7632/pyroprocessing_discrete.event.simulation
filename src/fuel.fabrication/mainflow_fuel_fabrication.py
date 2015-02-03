@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB 
-# rev.30.January.2015
+# rev.02.February.2015
 # v1.2
 ########################################################################
 #
@@ -29,8 +29,8 @@
 # imports
 #
 import numpy
-import postprocessing as postproc
 import io_functions as io
+import failure_analysis_weibull as melter_weibull
 #
 ########################################################################
 # 
@@ -74,6 +74,19 @@ operation_time,melter_failure_time,true_processed_inventory,expected_processed_i
 #
 ########################################################################
 #
+#
+#
+########################################################################
+#
+# calculations for TIME=0
+#
+melter_probabbility_density_function_evaluate=melter_weibull.somethingfunction(operation_time,weibull_beta_melter,weibull_eta_melter)
+melter_unreliability_function_evaluate=melter_weibuill.somethingfunction(operation_time,weibull_beta_melter,weibull_eta_melter)
+#
+melter_probability_density_function_failure_evaluate=melter_weibull.somethingfunction(failure_time,weibull_beta_melter,weibull_eta_melter)
+melter_unreliability_function_failure_evaluate=melter.weibull.somethingfunction(failure_time,weibull_beta_melter,weibull_eta_melter)
+#
+########################################################################
 ####### main process loop
 print 'Start facility operation.'
 ###

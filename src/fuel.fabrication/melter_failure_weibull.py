@@ -1,8 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB 
-# rev.23.January.2015
-# v1.0
+# rev.02.February.2015
 ########################################################################
 #
 # The Weibull distribution is used for a lot of failure analysis.
@@ -10,15 +9,18 @@
 #
 ########################################################################
 #
-# Objective
-# Test the Weibull distribution to determine if it can be used to simulate equipment failure in pyroprocessing.
-# There is not any real life data for failures with pyroprocessing equipment. 
-# The Weibull distribution is a typical go-to for these kinds of conditions. 
-# 
+#
+#
 ########################################################################
 #
-# Current conditions
-# Use the two-parameter Weibull distribution.
+# The two-parameter Weibull distribution is used for failure analysis in pyroprocessing equipment.
+# The main system file control to what equipment Weibull is applied.
+#
+########################################################################
+#
+#
+#
+########################################################################
 #
 # probability density function
 # f(t)=(beta/eta)*((time/eta)**(beta-1))*exp(-(time/eta)**(beta))
@@ -33,53 +35,32 @@
 #
 ########################################################################
 #
+#
+#
+########################################################################
+#
 # Assumption
+#
 # beta = 1 for random failures.
 # Then, MTTF = eta for this case and the failure rate = 1/eta.
 # With increasing time, failure is more likely due to wearing out of the equipment.
+# The parameters are read in through the main system file.
 #
 ########################################################################
 #
 #
 #
-####### imports
+########################################################################
+#
+# imports
+#
 import numpy
-import matplotlib
-import matplotlib.pyplot as plot
-from win32api import GetSystemMetrics
-from matplotlib.ticker import MultipleLocator
+#
 ########################################################################
 #
 #
 #
-####### controls
-matplotlib.rcParams.update({'font.size': 14}) # set plot font
-width=GetSystemMetrics (0) # get screen resolution
-height=GetSystemMetrics (1) # get screen resolution
-#######
-#
-#
-#
-####### initialize and set variables
-operation_time=0
-facility_operation=10
-failure_event=False
-failure_rate=float(1)/float(2.5)
-delta_time=numpy.random.random_sample() # the time interval is set randomly
-maintenance_time=2*delta_time
-failure_counter=0
-weibull_beta=1
-weibull_eta=(1)/(failure_rate)
-failure_testing=0
-maintenance_time=delta_time+numpy.random.random_sample()
-failure_time=0
-campaign=1
-probability_density_function_evaluate=0
-unreliability_function_evaluate=0
-probability_density_function_failure_evaluate=0
-unreliability_function_failure_evaluate=0
-#######
-#
+########################################################################
 #
 #
 ####### write files
