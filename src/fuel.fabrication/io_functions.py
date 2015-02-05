@@ -26,7 +26,8 @@
 # (1): get simulation directories 
 # (2): read input data
 # (3): open output files
-# (4): initialize paramters
+# (4): initialize parameters
+# (5): write system and material data
 #
 ########################################################################
 ####### (b): Set facility configuration
@@ -65,9 +66,9 @@
 # Directories are created and input files are copied into them from the default directory by pyroprocessing_command.py.
 # A system locator file is also created containing the relative (to the system files) directory paths. 
 #
-###
+#######
 def get_simulation_dir():
-###
+#######
 #
 ### get home directory
     home_dir=os.getcwd() #home directory is where the system files are located
@@ -100,9 +101,9 @@ def get_simulation_dir():
 #
 # All of the input data for the entire fuel fabrication system is consolidated here.
 #
-###
+#######
 def input_parameters(home_dir,input_dir,output_data_dir):
-###
+#######
 #
 ### go to input file directory
     os.chdir(input_dir)
@@ -229,9 +230,9 @@ def input_parameters(home_dir,input_dir,output_data_dir):
 #
 # All of the data to be written during the simulation is consolidated here.
 #
-###
+#######
 def open_output_files(home_dir,output_data_dir):
-###
+#######
 #
 ### change directory
     os.chdir(output_data_dir)
@@ -299,9 +300,10 @@ def open_output_files(home_dir,output_data_dir):
 #
 # (4): initialize parameters
 #
-###
+#######
 def initialize_parameters(storage_inventory_start):
-###
+#######
+#
     operation_time=0 #simulation time
     melter_failure_time=0 #time used to determine melter failures
     true_processed_inventory=0 #true quantity of processed material over facility operation
@@ -350,6 +352,48 @@ def initialize_parameters(storage_inventory_start):
     return(operation_time,melter_failure_time,true_processed_inventory,expected_processed_inventory,measured_processed_inventory,total_campaign,total_batch,melter_failure_counter,true_weight,expected_weight,measured_weight,true_crucible,expected_crucible,measured_crucible,accumulated_true_crucible,accumulated_expected_crucible,accumulated_measured_crucible,melter_true_muf,melter_expected_muf,melter_measured_muf,melter_true_mufc,melter_expected_mufc,melter_measured_mufc,end_of_campaign_false_alarm_counter,melter_failure_false_alarm_counter,end_of_campaign_false_alarm,melter_failure_false_alarm,melter_failure_event,true_storage_inventory,expected_storage_inventory,measured_storage_inventory,true_system_inventory,expected_system_inventory,measured_system_inventory,end_of_campaign_false_alarm_test,melter_failure_false_alarm_test,melter_process_counter,trimmer_process_counter,melter_probability_density_function_evaluate,melter_probability_function_failure_evaluate,melter_unreliability_function_evaluate,melter_unreliability_function_failure_evaluate)
 #
 #########################################################################
+#
+#
+#
+#########################################################################
+#
+# (5): write system and material data
+#
+# these data are consolidated all in this function because the files are written frequently
+#######
+def write_output(operation_time,failure_time,total_campaign,true_storage_inventory,expected_storage_inventory,measured_storage_inventory,true_weight,expected_weight,measured_weight,true_muf,expected_muf,measured_muf,true_mufc,expected_mufc,measured_mufc,true_processed_inventory,expected_processed_inventory,measured_processed_inventory,total_melter_failure,true_system_inventory,expected_system_inventory,measured_system_inventory,melter_process_counter,trimmer_process_counter,melter_probability_density_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_evaluate,melter_unreliability_function_failure_evaluate,time_output,campaign_output,true_storage_inventory_output,expected_storage_inventory_output,measured_storage_inventory_output,true_weight_output,expected_weight_output,measured_weight_output,true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,total_melter_failure_output,true_system_inventory_output,expected_system_inventory_output,measured_system_inventory_output,melter_process_counter_output,trimmer_process_counter_output,melter_probability_density_function_output,melter_unreliability_function_output):
+#######
+#
+    time_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%failure_time)+'\n')  
+    campaign_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%i'%total_campaign)+'\n')
+    true_storage_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%true_storage_inventory)+'\n')
+    expected_storage_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%expected_storage_inventory)+'\n')
+    measured_storage_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%measured_storage_inventory)+'\n')
+    true_weight_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%true_weight)+'\n')
+    expected_weight_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%expected_weight)+'\n')
+    measured_weight_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%measured_weight)+'\n')
+    true_muf_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%true_muf)+'\n')
+    expected_muf_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%expected_muf)+'\n')
+    measured_muf_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%measured_muf)+'\n')    
+    true_mufc_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%true_mufc)+'\n')
+    expected_mufc_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%expected_mufc)+'\n')
+    measured_mufc_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%measured_mufc)+'\n')    
+    true_processed_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%true_processed_inventory)+'\n')
+    expected_processed_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%expected_processed_inventory)+'\n')
+    measured_processed_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%measured_processed_inventory)+'\n')
+    total_melter_failure_output.write(str.format('%i'%total_campaign)+'\t'+str.format('%i'%total_melter_failure)+'\n')
+    true_system_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%true_system_inventory)+'\n')
+    expected_system_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%expected_system_inventory)+'\n')
+    measured_system_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%measured_system_inventory)+'\n')
+    melter_process_counter_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%i'%melter_process_counter)+'\n')
+    trimmer_process_counter_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%i'%trimmer_process_counter)+'\n')
+    melter_probability_density_function_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%melter_probability_density_function_evaluate)+'\t'+str.format('%.4f'%failure_time)+'\t'+str.format('%.4f'%melter_probability_density_function_failure_evaluate)+'\n')
+    melter_unreliability_function_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%melter_unreliability_function_evaluate)+'\t'+str.format('%.4f'%failure_time)+'\t'+str.format('%.4f'%melter_unreliability_function_failure_evaluate)+'\n')
+###
+    return(time_output,campaign_output,true_storage_inventory_output,expected_storage_inventory_output,measured_storage_inventory_output,true_weight_output,expected_weight_output,measured_weight_output,true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,total_melter_failure_output,true_system_inventory_output,expected_system_inventory_output,measured_system_inventory_output,melter_process_counter_output,trimmer_process_counter_output,melter_probability_density_function_output,melter_unreliability_function_output)
+########################################################################
+
+
 ######## (d): Storage buffer preparation
 # Material leaves the storage buffer
 ###
@@ -594,6 +638,7 @@ def recycle_storage(operation_time,delay):
 # This is meant to be generalized for multiple equipment 
 ###
 #
+# failure control should be its own module
 ###
 def failure_test(operation_time,equipment_failure_number,equipment_failure_type,equipment_failure_probability,failure_event,equipment_failure_counter,melter_process_counter):
 ###
@@ -687,41 +732,6 @@ def reset_weight():
 #
 #
 #
-####### (p): Write to output files
-# Writes data to output files
-### 
-#
-###
-def write_output(operation_time,failure_time,total_campaign,true_storage_inventory,expected_storage_inventory,measured_storage_inventory,true_weight,expected_weight,measured_weight,true_muf,expected_muf,measured_muf,true_mufc,expected_mufc,measured_mufc,true_processed_inventory,expected_processed_inventory,measured_processed_inventory,total_melter_failure,true_system_inventory,expected_system_inventory,measured_system_inventory,melter_process_counter,trimmer_process_counter,melter_probability_density_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_evaluate,melter_unreliability_function_failure_evaluate,time_output,campaign_output,true_storage_inventory_output,expected_storage_inventory_output,measured_storage_inventory_output,true_weight_output,expected_weight_output,measured_weight_output,true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,total_melter_failure_output,true_system_inventory_output,expected_system_inventory_output,measured_system_inventory_output,melter_process_counter_output,trimmer_process_counter_output,melter_probability_density_function_output,melter_unreliability_function_output):
-###
-    time_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%failure_time)+'\n')
-    campaign_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%i'%total_campaign)+'\n')
-    true_storage_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%true_storage_inventory)+'\n')
-    expected_storage_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%expected_storage_inventory)+'\n')
-    measured_storage_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%measured_storage_inventory)+'\n')
-    true_weight_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%true_weight)+'\n')
-    expected_weight_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%expected_weight)+'\n')
-    measured_weight_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%measured_weight)+'\n')
-    true_muf_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%true_muf)+'\n')
-    expected_muf_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%expected_muf)+'\n')
-    measured_muf_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%measured_muf)+'\n')    
-    true_mufc_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%true_mufc)+'\n')
-    expected_mufc_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%expected_mufc)+'\n')
-    measured_mufc_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%measured_mufc)+'\n')    
-    true_processed_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%true_processed_inventory)+'\n')
-    expected_processed_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%expected_processed_inventory)+'\n')
-    measured_processed_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%measured_processed_inventory)+'\n')
-    total_melter_failure_output.write(str.format('%i'%total_campaign)+'\t'+str.format('%i'%total_melter_failure)+'\n')
-    true_system_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%true_system_inventory)+'\n')
-    expected_system_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%expected_system_inventory)+'\n')
-    measured_system_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%measured_system_inventory)+'\n')
-    melter_process_counter_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%i'%melter_process_counter)+'\n')
-    trimmer_process_counter_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%i'%trimmer_process_counter)+'\n')
-    melter_probability_density_function_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%melter_probability_density_function_evaluate)+'\t'+str.format('%.4f'%failure_time)+'\t'+str.format('%.4f'%melter_probability_density_function_failure_evaluate)+'\n')
-    melter_unreliability_function_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%melter_unreliability_function_evaluate)+'\t'+str.format('%.4f'%failure_time)+'\t'+str.format('%.4f'%melter_unreliability_function_failure_evaluate)+'\n')
-###
-    return(time_output,campaign_output,true_storage_inventory_output,expected_storage_inventory_output,measured_storage_inventory_output,true_weight_output,expected_weight_output,measured_weight_output,true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,total_melter_failure_output,true_system_inventory_output,expected_system_inventory_output,measured_system_inventory_output,melter_process_counter_output,trimmer_process_counter_output,melter_probability_density_function_output,melter_unreliability_function_output)
-########################################################################
 #
 #
 #
@@ -847,6 +857,7 @@ def kmp_write(operation_time,true_quantity,expected_quantity,measured_quantity,t
 ####### (v): False alarm write
 # Writes data to output files for false alarms
 ###
+# put in flase alarm module
 #
 ###
 def false_alarm_write(operation_time,total_campaign,false_alarm_counter,threshold,false_alarm_counter_output,alarm_test):
