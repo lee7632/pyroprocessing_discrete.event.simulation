@@ -31,7 +31,7 @@ simulation_dir=raw_input('set the simulation directory:')
 #
 ####### set the home directory
 # The rest of the directory changes are relative to the home directory.
-home_dir='C:\\ftp\git\\pyroprocessing_discrete.event.simulation\\src\\command.and.control'
+home_dir='C:\\root\git\\pyroprocessing_discrete.event.simulation\\src\\command.and.control'
 #######
 #
 #
