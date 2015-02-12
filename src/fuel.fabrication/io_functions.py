@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB
-# rev.31.January.2015
+# rev.12.February.2015
 ########################################################################
 # 
 # Functions for in-simulation data processing
