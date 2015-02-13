@@ -145,7 +145,7 @@
 <ul>
 <b>P</b>
 <li>plot=data files needed to make plots
-<li>process_time=time elapsed at each process/vertex (not maintenance)...set in preprocessing
+<li>_process_time=time elapsed at each process/vertex (not maintenance)...set in preprocessing
 </ul>
 <ul>
 <b>Q</b>

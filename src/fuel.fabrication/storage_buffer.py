@@ -4,8 +4,18 @@
 # rev.07.February.2015
 ########################################################################
 # 
-# Functions for in-simulation data processing
+# Storage buffer vertex
 # 
+########################################################################
+#
+# The storage buffer contains the materials to be processed by the fuel fabrication subsystem.
+# Uranium, TRUs with REPFs, and Zr arrive in the buffer at different times in different quantities.
+# Fuel fabrication processes this material into a metal alloy fuel slug with a prescribed batch size.
+#
+########################################################################
+#
+# Currently, the simulation starts off with a fixed amount of unprocessed material in the buffer over the entire facility operation.
+#
 ########################################################################
 #
 # imports
@@ -15,14 +25,14 @@
 #
 # function list
 #
-# (1): get simulation directories 
-# (2): read input data
+# (1): read input data
 # (3): open output files
 # (4): initialize parameters
 # (5): write system and material flow data
 #
 ########################################################################
 ####### (b): Set facility configuration
+####### (d): Storage buffer preparation
 ####### (e): KMP measurement
 ####### (f): melter
 ####### (g): trimmer
@@ -50,44 +60,7 @@
 #
 ########################################################################
 #
-# (1): get simulation directories
-#
-# Input and output files are in different directories than the system files.
-# Directories are created and input files are copied into them from the default directory by pyroprocessing_command.py.
-# A system locator file is also created containing the relative (to the system files) directory paths. 
-#
-#######
-def get_simulation_dir():
-#######
-#
-### get home directory
-    home_dir=os.getcwd() #home directory is where the system files are located
-###
-#
-### open path file containing directory locations
-    directory_path_file=open('..\\..\\input\\fuel.fabrication\\simulation.dir.inp').readlines()
-###
-#
-### split the string
-    directory_paths=directory_path_file[0].split(',')
-###
-#
-### set directories
-    input_dir=directory_paths[0]
-    output_data_dir=directory_paths[1]
-    output_figure_dir=directory_paths[2]
-###
-    print 'Working directories processed.'
-    print 'Home directory:',home_dir
-    print 'Input directory:',input_dir
-    print 'Output data directory:',output_data_dir
-    print 'Output figure directory:',output_figure_dir
-###
-    return(home_dir,input_dir,output_data_dir,output_figure_dir)
-#
-########################################################################
-#
-# (2): read input data
+# (1): read input data
 #
 #######
 def input_parameters(home_dir,input_dir,output_data_dir):
@@ -98,28 +71,11 @@ def input_parameters(home_dir,input_dir,output_data_dir):
 ###
 #
 ### open data files
+# INCLUDE DIRECTORY LOCATION
+# SEE IF ONE VALUE CAN BE PULLED FROM ARRAY
     batch=numpy.loadtxt('batch.inp') #batch size
-    crucible_fraction=numpy.loadtxt('crucible.fraction.inp') #fraction of material left in the crucible during melting; 1st element is the expected quantity, 2nd and 3rd are the range for the true quantity
-    edge_time=numpy.loadtxt('edge.time.inp') #time elapsed on each edge transition
-    facility_operation=numpy.loadtxt('facility.operation.inp') #total time of facility operation; i.e., simulation time 
-    kmp_measurement_uncertainty=numpy.loadtxt('kmp.measurement.uncertainty.inp') #measurement uncertainty at each KMP
-    kmp_time=numpy.loadtxt('kmp.time.inp') #measurement time at each KMP
-    kmp_measurement_threshold=numpy.loadtxt('kmp.measurement.threshold.inp') #measurement threshold to trigger false alarms at each KMP
-    maximum_kmp=numpy.loadtxt('kmp.inp',dtype=int) #maximum number of KMPs
-    melter_failure_number=numpy.loadtxt('melter.failure.number.inp',dtype=int) #total number of possible melter failures
-    melter_failure_type=numpy.loadtxt('melter.failure.data.inp',usecols=[0],dtype=str) #type of melter failure
-    melter_failure_rate=numpy.loadtxt('melter.failure.data.inp',usecols=[1]) #corresponding melter failure rate
-    melter_failure_maintenance_time=numpy.loadtxt('melter.failure.data.inp',usecols=[2]) #time to repair each failure
-    melter_cleaning_time=numpy.loadtxt('melter.cleaning.time.inp') #time to clean the melter prior to equipment removal
     process_time=numpy.loadtxt('process.time.inp',usecols=[1]) #time for each vertex to process material
     storage_inventory_start=numpy.loadtxt('storage.inventory.inp') #total quantity of material in storage buffer at T = 0
-    weibull_beta_melter=numpy.loadtxt('weibull.beta.inp') #weibull distribution beta parameter for the melter
-###
-    readme_input=open('readme.md').readlines() #readme file is created in pyroprocessing_command.py and moved to the simulation directories
-###
-#
-### failure rate 
-    weibull_eta_melter=(1)/(melter_failure_rate) #the eta parameter for the weibull distribution is equal to the reciprocal of the failure rate if beta = 1; i.e., this assumes random failures
 ###
 #
 ###  prepare output files
@@ -130,35 +86,44 @@ def input_parameters(home_dir,input_dir,output_data_dir):
     melter_cleaning_time_output=numpy.zeros((1))
     batch_output=numpy.zeros((1))
     facility_operation_output=numpy.zeros((1))
+###
 #
+###
     for i in range(0,melter_failure_number):
         process_failures_output[i,0]=melter_failure_rate[i]
         process_failures_output[i,1]=24*melter_failure_maintenance_time[i]
-# end
+### end
+#
+###
     melter_cleaning_time_output[0]=24*melter_cleaning_time
     batch_output[0]=batch
     facility_operation_output[0]=facility_operation
+###
 #
+###
     for j in range(0,maximum_kmp):
         kmp_output[j,0]=j
         kmp_output[j,1]=kmp_measurement_uncertainty[j]
         kmp_output[j,2]=24*kmp_time[j]
         kmp_output[j,3]=kmp_measurement_threshold[j]        
-# end
+### end
+#
+###
     for k in range(0,2*maximum_kmp):
         edge_time_output[k]=24*edge_time[k]
-# end
+### end
+#
+###
     for l in range(0,2):
         crucible_fraction_output[l]=crucible_fraction[l]
-# end
-###
+### end
 #
 ### move to output directory
     os.chdir(home_dir)
     os.chdir(output_data_dir)
 ###
 #
-### save files USE THIS TO COMPILE DIAGNOSTIC DATA
+### save files
     numpy.savetxt('process.failures.out',process_failures_output,fmt=['%.4f','%.2f'],header='Failure probability\tMaintenance time (h)',comments='',delimiter='\t\t\t')
     numpy.savetxt('kmp.out',kmp_output,fmt=['%.0f','%.4f','%.2f','%.4f'],header='KMP\tMeasurement uncertainty\tMeasurement delay time (h)\tMeasurement threshold',comments='',delimiter='\t\t\t')
     numpy.savetxt('melter.cleaning.time.out',melter_cleaning_time_output,fmt=['%.4f'],header='Time to clean the melter additional to maintenance activity (h)',comments='')
@@ -176,8 +141,6 @@ def input_parameters(home_dir,input_dir,output_data_dir):
 #
 ### go back to home directory
     os.chdir(home_dir)
-###
-#
 ###
     print 'System parameters loaded.','\n'
 ###
@@ -199,7 +162,8 @@ def open_output_files(home_dir,output_data_dir):
     os.chdir(output_data_dir)
 ###
 #
-### open files: the functions for writing data to the files explain what is in each of them since the variables are listed
+### open files
+# the functions for writing data to the files explain what is in each of them since the variables are listed
     time_output=open('facility.operation.time.out','w+')
     campaign_output=open('facility.campaign.out','w+')
     true_storage_inventory_output=open('true.storage.inventory.out','w+')
@@ -342,6 +306,29 @@ def write_output(operation_time,failure_time,total_campaign,true_storage_invento
 ###
     return(time_output,campaign_output,true_storage_inventory_output,expected_storage_inventory_output,measured_storage_inventory_output,true_weight_output,expected_weight_output,measured_weight_output,true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,total_melter_failure_output,true_system_inventory_output,expected_system_inventory_output,measured_system_inventory_output,melter_process_counter_output,trimmer_process_counter_output,melter_probability_density_function_output,melter_unreliability_function_output)
 #
+########################################################################
+
+
+######## (d): Storage buffer preparation
+# Material leaves the storage buffer
+###
+#
+###
+def storage_transfer(operation_time,batch,delay,true_quantity,expected_quantity,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory):
+###
+    print 'Prepare batch in Storage Buffer for transfer.',batch,'kg','\n\n'    
+    operation_time=operation_time+delay
+#
+    true_quantity=batch
+    expected_quantity=batch
+#
+    true_storage_inventory=true_storage_inventory-true_quantity
+    expected_storage_inventory=expected_storage_inventory-expected_quantity
+#
+    true_system_inventory=true_system_inventory+true_quantity
+    expected_system_inventory=expected_system_inventory+expected_quantity
+###
+    return(operation_time,true_quantity,expected_quantity,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory)
 ########################################################################
 #
 #
