@@ -111,7 +111,7 @@ def input_parameters(home_dir,input_dir,output_data_dir):
     melter_failure_rate=numpy.loadtxt('melter.failure.data.inp',usecols=[1]) #corresponding melter failure rate
     melter_failure_maintenance_time=numpy.loadtxt('melter.failure.data.inp',usecols=[2]) #time to repair each failure
     melter_cleaning_time=numpy.loadtxt('melter.cleaning.time.inp') #time to clean the melter prior to equipment removal
-    process_time=numpy.loadtxt('process.time.inp',usecols=[1]) #time for each vertex to process material
+    process_time=numpy.loadtxt('process.operation.time.inp',usecols=[1]) #time for each vertex to process material
     storage_inventory_start=numpy.loadtxt('storage.inventory.inp') #total quantity of material in storage buffer at T = 0
     weibull_beta_melter=numpy.loadtxt('weibull.beta.inp') #weibull distribution beta parameter for the melter
 ###
