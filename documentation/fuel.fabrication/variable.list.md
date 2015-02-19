@@ -29,7 +29,6 @@
 </ul>
 <ul>
 <b>B</b>
-<li>batch=batch size to be processed...set in preprocessing
 </ul>
 <ul>
 <b>C</b>
@@ -140,6 +139,7 @@
 <b>O</b>
 <li>_output is for output data files...there are a lot of them
 <li>operation_time=operation time of the facility 0<T<facility_operation...set in preprocessing
+<li>_operation_time=vertex operation times...set in preprocessing
 <li>output_dir=location of output files (data and figures)
 </ul>
 <ul>
@@ -155,7 +155,6 @@
 </ul>
 <ul>
 <b>S</b>
-<li>storage_inventory_start=total amount of material in the storage buffer...currently fixed amount...to be material arrival vertex
 <li>storage_inventory=current inventory in the storage buffer at time=T...eventually this will change with time with arrival of material
 </ul>
 <ul>
@@ -178,10 +177,12 @@
 <li>true_initial/final_inventory=dummy variable used for mufc 
 <li>trimmer_process_counter=counts the number of times the trimmer process is initiated
 <li>time_domain=dummy for time variable
+<li>total_batch=batch size to be processed...set in preprocessing
 </ul>
 <ul>
 <b>U</b>
 <li>uncertainty=dummy variable for measurement uncertainty
+<li>unprocessed_storage_inventory=total amount of material in the storage buffer...currently fixed amount...to be material arrival vertex
 </ul>
 <ul>
 <b>V</b>

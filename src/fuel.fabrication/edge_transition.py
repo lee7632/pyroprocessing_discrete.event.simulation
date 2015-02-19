@@ -4,7 +4,8 @@
 # rev.17.February.2015
 ########################################################################
 # 
-# Functions for in-simulation data processing
+# Edge transitions occur between each vertex.
+# State variables do not change on the edges.
 # 
 ########################################################################
 #
@@ -16,75 +17,18 @@ import os
 #
 # function list
 #
-# (1): get simulation directories 
-# (2): read in input data
+# (1): read in input data
 # (3): open output files
 # (4): initialize parameters
 # (5): write system and material flow data
 #
 ########################################################################
-####### (b): Set facility configuration
-####### (e): KMP measurement
-####### (f): melter
-####### (g): trimmer
-####### (h): product processing
-####### (i): mass balance
-####### (k): recycle storage
-####### (m): Failure test
-####### (n): End of campaign reset
-####### (n): End of campaign reset weight
-####### (o): Open output files
-####### (q): Close output files
-####### (s): Melter cleaning procedure
-####### (t): Maintenance
-####### (u): KMP measurement recording write to file
-####### (y): Weibull probability density function evaluation
-####### (z): Weibull unreliability function evaluation
-#
-########################################################################
 #
 #
 #
 ########################################################################
 #
-# (1): get simulation directories
-#
-# Input and output files are in different directories than the system files.
-# Directories are created and input files are copied into them from the default directory by pyroprocessing_command.py.
-# A system locator file is also created containing the relative (to the system files) directory paths. 
-#
-#######
-def get_simulation_dir():
-#######
-#
-### get home directory
-    home_dir=os.getcwd() #home directory is where the system files are located
-###
-#
-### open path file containing directory locations
-    directory_path_file=open('..\\..\\input\\fuel.fabrication\\simulation.dir.inp').readlines()
-###
-#
-### split the string
-    directory_paths=directory_path_file[0].split(',')
-###
-#
-### set directories
-    input_dir=directory_paths[0]
-    output_data_dir=directory_paths[1]
-    output_figure_dir=directory_paths[2]
-###
-    print 'Working directories processed.'
-    print 'Home directory:',home_dir
-    print 'Input directory:',input_dir
-    print 'Output data directory:',output_data_dir
-    print 'Output figure directory:',output_figure_dir
-###
-    return(home_dir,input_dir,output_data_dir,output_figure_dir)
-#
-########################################################################
-#
-# (2): read input data
+# (1): read input data
 #
 #######
 def input_parameters(home_dir,input_dir,output_data_dir):
@@ -771,6 +715,28 @@ def kmp_write(operation_time,true_quantity,expected_quantity,measured_quantity,t
     measured_kmp.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%measured_quantity)+'\n')#
 ###
     return(true_kmp,expected_kmp,measured_kmp)
+########################################################################
+#
+#
+#
+#
+#
+#
+#
+#
+#
+####### (x): Edge transition
+# Material flows from one vertex to another (or KMP) via the edges
+# No state changes along the edges, but time lapse
+###
+#
+###
+def edge_transition(operation_time,delay):
+###
+    print 'Edge transition','\n\n'
+    operation_time=operation_time+delay
+###
+    return(operation_time)
 ########################################################################
 #
 #
