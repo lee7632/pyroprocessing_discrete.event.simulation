@@ -50,12 +50,7 @@ def input_parameters(home_dir,input_dir,output_data_dir):
 #
 ### open data files
     batch=numpy.loadtxt('process_states\\batch.inp') #batch size
-    process_time=numpy.loadtxt('process_states\\process.operation.time.inp',usecols=[1]) #time for each vertex to process material
     unprocessed_storage_inventory=numpy.loadtxt('process_states\\unprocessed.storage.inventory.inp') #total quantity of material in storage buffer at T = 0
-###
-#
-###
-    storage_buffer_operation_time=process_time[0]
 ###
 #
 ### go back to home directory
@@ -63,7 +58,7 @@ def input_parameters(home_dir,input_dir,output_data_dir):
 ###
     print 'Storage buffer parameters loaded.','\n'
 ###
-    return(batch,storage_buffer_operation_time,unprocessed_storage_inventory)
+    return(batch,unprocessed_storage_inventory)
 #
 ########################################################################
 #
