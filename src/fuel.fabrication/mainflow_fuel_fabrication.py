@@ -54,7 +54,7 @@ crucible_fraction,edge_time,facility_operation,kmp_measurement_uncertainty,kmp_t
 #
 ### storage buffer
 #
-batch,storage_buffer_operation_time,unprocessed_storage_inventory=storage_buffer.input_parameters(home_dir,input_dir,output_data_dir)
+batch,unprocessed_storage_inventory=storage_buffer.input_parameters(home_dir,input_dir,output_data_dir)
 #
 ### false alarm
 #
