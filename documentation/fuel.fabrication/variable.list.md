@@ -41,7 +41,7 @@
 </ul>
 <ul>
 <b>E</b>
-<li>edge_time=transfer times along each edge...see system...diagram...set in preprocessing
+<li>edge_transition=transfer times along each edge...see system diagram...set in preprocessing
 <li>equipment_failure_probability=dummy variable for equipment failures...set in preprocessing
 <li>equipment_failure_delay_time=dummy variable for equipment failures delay time...set in preprocessing
 <li>equipment_failure_number=dummy for number of failures for specific equipment
