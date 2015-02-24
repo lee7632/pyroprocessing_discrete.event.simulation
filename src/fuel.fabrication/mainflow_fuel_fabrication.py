@@ -26,9 +26,9 @@
 #
 import numpy
 import io_functions as io
-import failure_analysis_weibull as melter_weibull
-import system_false_alarm
+import total_system_false_alarm as false_alarm
 import vertex_storage_buffer as storage_buffer
+import edge_transition
 #
 ########################################################################
 # 
@@ -50,7 +50,7 @@ home_dir,input_dir,output_data_dir,output_figure_dir=io.get_simulation_dir()
 #
 ### system
 #
-crucible_fraction,edge_time,facility_operation,kmp_measurement_uncertainty,kmp_time,kmp_measurement_threshold,maximum_kmp,melter_failure_number,melter_failure_type,melter_failure_probability,melter_failure_maintenance_time,melter_cleaning_time,process_time,weibull_beta_melter,weibull_eta_melter=io.input_parameters(home_dir,input_dir,output_data_dir)
+crucible_fraction,facility_operation,kmp_measurement_uncertainty,kmp_time,kmp_measurement_threshold,maximum_kmp,melter_failure_number,melter_failure_type,melter_failure_probability,melter_failure_maintenance_time,melter_cleaning_time,process_time,weibull_beta_melter,weibull_eta_melter=io.input_parameters(home_dir,input_dir,output_data_dir)
 #
 ### storage buffer
 #
@@ -58,7 +58,11 @@ batch,unprocessed_storage_inventory=storage_buffer.input_parameters(home_dir,inp
 #
 ### false alarm
 #
-melter_failure_false_alarm_threshold,campaign_false_alarm_threshold,melter_failure_inspection_time,campaign_inspection_time=system_false_alarm.input_parameters(home_dir,input_dir,output_data_dir)
+melter_failure_false_alarm_threshold,campaign_false_alarm_threshold,melter_failure_inspection_time,campaign_inspection_time=false_alarm.input_parameters(home_dir,input_dir,output_data_dir)
+#
+### edge transition
+#
+edge_transition=edge_transtion.input_parameters(home_dir,input_dir,output_data_dir)
 #
 ########################################################################
 #
@@ -78,7 +82,7 @@ true_storage_inventory_output,expected_storage_inventory_output,true_system_inve
 #
 ### false alarm
 #
-melter_failure_false_alarm_counter_output,campaign_false_alarm_counter_output=system_false_alarm_output.open_output_files(home_dir,output_data_dir)
+melter_failure_false_alarm_counter_output,campaign_false_alarm_counter_output=false_alarm.open_output_files(home_dir,output_data_dir)
 #
 ########################################################################
 #
@@ -98,7 +102,7 @@ total_batch,true_storage_inventory,expected_storage_inventory,true_system_invent
 #
 ### false alarm
 #
-campaign_false_alarm_counter,melter_failure_false_alarm_counter,campaign_false_alarm,melter_failure_false_alarm,campaign_false_alarm_test,melter_failure_false_alarm_test=system_false_alarm.initialize_parameters()
+campaign_false_alarm_counter,melter_failure_false_alarm_counter,campaign_false_alarm,melter_failure_false_alarm,campaign_false_alarm_test,melter_failure_false_alarm_test=false_alarm.initialize_parameters()
 #
 ########################################################################
 #
@@ -130,9 +134,8 @@ batch_output,true_storage_inventory_output,expected_storage_inventory_output,tru
 #
 ### write false alarm
 # 
-campaign_false_alarm_counter_output=total_system_false_alarm.false_alarm_write(operation_time,total_campaign,campaign_false_alarm_counter,campaign_false_alarm_threshold,campaign_false_alarm_test,campaign_false_alarm_counter_output)
-#
-melter_failure_false_alarm_counter_output=des_f.false_alarm_write(operation_time,failure_time,total_campaign,melter_failure_false_alarm_counter,melter_failure_false_alarm_threshold,melter_failure_false_alarm_test,melter_failure_false_alarm_counter_output)
+campaign_false_alarm_counter_output=false_alarm.false_alarm_write(operation_time,total_campaign,campaign_false_alarm_counter,campaign_false_alarm_threshold,campaign_false_alarm_test,campaign_false_alarm_counter_output)
+melter_failure_false_alarm_counter_output=false_alarm.false_alarm_write(operation_time,failure_time,total_campaign,melter_failure_false_alarm_counter,melter_failure_false_alarm_threshold,melter_failure_false_alarm_test,melter_failure_false_alarm_counter_output)
 #
 ########################################################################
 #
@@ -173,17 +176,15 @@ batch_output,true_storage_inventory_output,expected_storage_inventory_output,tru
 #
 ### write false alarm
 # 
-campaign_false_alarm_counter_output=total_system_false_alarm.false_alarm_write(operation_time,total_campaign,campaign_false_alarm_counter,campaign_false_alarm_threshold,campaign_false_alarm_test,campaign_false_alarm_counter_output)
-#
-melter_failure_false_alarm_counter_output=des_f.false_alarm_write(operation_time,failure_time,total_campaign,melter_failure_false_alarm_counter,melter_failure_false_alarm_threshold,melter_failure_false_alarm_test,melter_failure_false_alarm_counter_output)
+campaign_false_alarm_counter_output=false_alarm.false_alarm_write(operation_time,total_campaign,campaign_false_alarm_counter,campaign_false_alarm_threshold,campaign_false_alarm_test,campaign_false_alarm_counter_output)
+melter_failure_false_alarm_counter_output=false_alarm.false_alarm_write(operation_time,failure_time,total_campaign,melter_failure_false_alarm_counter,melter_failure_false_alarm_threshold,melter_failure_false_alarm_test,melter_failure_false_alarm_counter_output)
 #
 ########################################################################
 #
 #
 #
-####### edge transition
-# Storage Buffer to KMP0
-    operation_time=des_f.edge_transition(operation_time,edge_time[0])
+####### edge transition: Storage Buffer to KMP0
+    operation_time=edge_transition.edge_transition(operation_time,edge_transition[0])
 #######
 #
 #
