@@ -29,6 +29,7 @@ import io_functions as io
 import total_system_false_alarm as false_alarm
 import vertex_storage_buffer as storage_buffer
 import edge_transition
+import key_measurement_points as kmps
 #
 ########################################################################
 # 
@@ -50,7 +51,7 @@ home_dir,input_dir,output_data_dir,output_figure_dir=io.get_simulation_dir()
 #
 ### system
 #
-crucible_fraction,facility_operation,kmp_measurement_uncertainty,kmp_time,kmp_measurement_threshold,maximum_kmp,melter_failure_number,melter_failure_type,melter_failure_probability,melter_failure_maintenance_time,melter_cleaning_time,process_time,weibull_beta_melter,weibull_eta_melter=io.input_parameters(home_dir,input_dir,output_data_dir)
+crucible_fraction,facility_operation,melter_failure_number,melter_failure_type,melter_failure_probability,melter_failure_maintenance_time,melter_cleaning_time,process_time,weibull_beta_melter,weibull_eta_melter=io.input_parameters(home_dir,input_dir,output_data_dir)
 #
 ### storage buffer
 #
@@ -63,6 +64,10 @@ melter_failure_false_alarm_threshold,campaign_false_alarm_threshold,melter_failu
 ### edge transition
 #
 edge_transition=edge_transtion.input_parameters(home_dir,input_dir,output_data_dir)
+#
+### KMPs
+#
+kmp_measurement_time,kmp_measurement_uncertainty,kmp_measurement_threshold=kmp.input_parameters(home_dir,input_dir,output_data_dir)
 #
 ########################################################################
 #
