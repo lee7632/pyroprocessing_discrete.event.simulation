@@ -98,7 +98,8 @@
 </ul>
 <ul>
 <b>K</b>
-<li>kmp_time=dummy variable for time at each kmp to conduct a measurement...set in preprocessing
+<li>kmp_data=reads in the number of KMPs in the input file to determine maximum KMPs for the facility design
+<li>kmp_measurement_time=dummy variable for time at each kmp to conduct a measurement...set in preprocessing
 <li>kmp_identifier=dummy variable for identifying the KMP location
 <li>kmp_measurement_threshold=threshold at each KMP determining false alarm...set in preprocessing
 <li>kmp_measurement_uncertainty=uncertainty at KMP...set in preprocessing...used as...true_quantity +/- N(0,measurement_uncertainty)
