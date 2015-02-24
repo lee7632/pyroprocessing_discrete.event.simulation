@@ -79,7 +79,7 @@ kmp_measurement_time,kmp_measurement_uncertainty,kmp_measurement_threshold=kmp.i
 #
 ### system
 #
-time_output,campaign_output,measured_storage_inventory_output,true_weight_output,expected_weight_output,measured_weight_output,true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,total_melter_failure_output,true_kmp0,true_kmp1,true_kmp2,true_kmp3,true_kmp4,expected_kmp0,expected_kmp1,expected_kmp2,expected_kmp3,expected_kmp4,measured_kmp0,measured_kmp1,measured_kmp2,measured_kmp3,measured_kmp4,true_heel,expected_heel,measured_heel,measured_system_inventory_output,melter_process_counter_output,trimmer_process_counter_output,melter_probability_density_function_output,melter_unreliability_function_output=io.open_output_files(home_dir,output_data_dir)
+time_output,campaign_output,measured_storage_inventory_output,true_weight_output,expected_weight_output,measured_weight_output,true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,total_melter_failure_output,true_heel,expected_heel,measured_heel,measured_system_inventory_output,melter_process_counter_output,trimmer_process_counter_output,melter_probability_density_function_output,melter_unreliability_function_output=io.open_output_files(home_dir,output_data_dir)
 #
 ### storage buffer
 #
@@ -88,6 +88,10 @@ true_storage_inventory_output,expected_storage_inventory_output,true_system_inve
 ### false alarm
 #
 melter_failure_false_alarm_counter_output,campaign_false_alarm_counter_output=false_alarm.open_output_files(home_dir,output_data_dir)
+#
+### KMPs
+#
+true_kmp,expected_kmp,measured_kmp=kmp.open_output_files(home_dir,output_data_dir)
 #
 ########################################################################
 #
