@@ -199,7 +199,7 @@ melter_failure_false_alarm_counter_output=false_alarm.false_alarm_write(operatio
 #
 #
 ####### KMP measurement if active (0)
-    operation_time,measured_weight,measured_storage_inventory,true_initial_inventory,expected_initial_inventory,measured_initial_inventory,measured_system_inventory=des_f.kmp_measurement(operation_time,kmp_measurement_uncertainty[0],kmp_time[0],kmp_measurement_threshold[0],true_weight,expected_weight,measured_storage_inventory,measured_system_inventory,0)
+    operation_time,measured_weight,measured_storage_inventory,measured_initial_inventory,measured_system_inventory=kmp.kmp_measurement(operation_time,kmp_measurement_time[0],kmp_measurement_uncertainty[0],kmp_measurement_threshold[0],true_weight,expected_weight,measured_storage_inventory,measured_system_inventory,0)
 ### data output routines
     true_kmp0,expected_kmp0,measured_kmp0=des_f.kmp_write(operation_time,true_weight,expected_weight,measured_weight,true_kmp0,expected_kmp0,measured_kmp0)
 #
