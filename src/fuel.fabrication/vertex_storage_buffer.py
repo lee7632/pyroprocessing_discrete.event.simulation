@@ -141,7 +141,7 @@ def write_output(operation_time,total_batch,true_storage_inventory,expected_stor
 # (5): storage buffer preparation
 #
 #######
-def storage_transfer(operation_time,total_batch,delay,true_quantity,expected_quantity,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory):
+def storage_transfer(operation_time,total_batch,delay,true_quantity,expected_quantity,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory):
 #######
     print 'Prepare batch in Storage Buffer for transfer.',total_batch,'kg','\n\n'    
     operation_time=operation_time+delay
@@ -154,8 +154,11 @@ def storage_transfer(operation_time,total_batch,delay,true_quantity,expected_qua
 #
     true_system_inventory=true_system_inventory+true_quantity
     expected_system_inventory=expected_system_inventory+expected_quantity
+#
+    true_initial_inventory=true_quantity
+    expected_initial_inventory=expected_quantity
 ###
-    return(operation_time,true_quantity,expected_quantity,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory)
+    return(operation_time,true_quantity,expected_quantity,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory)
 ########################################################################
 #
 #
