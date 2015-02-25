@@ -107,10 +107,12 @@ def initialize_parameters(unprocessed_storage_inventory):
     expected_storage_inventory=unprocessed_storage_inventory #expected quantity of unprocessed material over facility operation
     true_system_inventory=0 #true quantity of material transferred out of storage buffer over facility operation
     expected_system_inventory=0 #expected quantity of material transferred out of storage buffer over facility operation
+    true_initial_inventory=0 #true inventory used for MUFc calculation
+    expected_initial_inventory=0 #expected inventory used for MUFc calculation
 ###
     print 'Storage buffer initialization complete.'
 ###
-    return(total_batch,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory)
+    return(total_batch,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory)
 #
 #########################################################################
 #
