@@ -107,7 +107,7 @@ operation_time,melter_failure_time,true_processed_inventory,expected_processed_i
 #
 ### storage buffer
 #
-total_batch,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory=storage_buffer.initialize_parameters(unprocessed_storage_inventory)
+total_batch,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory=storage_buffer.initialize_parameters(unprocessed_storage_inventory)
 #
 ### false alarm
 #
@@ -167,7 +167,7 @@ while(operation_time<=facility_operation):
 #
 # storage buffer batch preparation
 #
-    operation_time,true_weight,expected_weight,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory=des_f.storage_transfer(operation_time,total_batch,storage_buffer_operation_time,true_weight,expected_weight,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory)
+    operation_time,true_weight,expected_weight,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory=des_f.storage_transfer(operation_time,total_batch,storage_buffer_operation_time,true_weight,expected_weight,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory)
 #
 ########################################################################
 #
