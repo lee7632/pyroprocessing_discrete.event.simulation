@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB
-# rev.25.February.2015
+# rev.26.February.2015
 ########################################################################
 # 
 # Functions for in-simulation data processing
@@ -17,7 +17,7 @@ import os
 # function list
 #
 # (1): get simulation directories 
-# (2): read in input data
+# (2): read in input data and prepare output data tables
 # (3): open output files
 # (4): initialize parameters
 # (5): write system and material flow data
@@ -83,7 +83,7 @@ def get_simulation_dir():
 #
 ########################################################################
 #
-# (2): read input data
+# (2): read input data and prepare output data tables
 #
 #######
 def input_parameters(home_dir,input_dir,output_data_dir):
