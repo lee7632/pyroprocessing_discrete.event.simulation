@@ -15,6 +15,7 @@
 ########################################################################
 #
 # Currently, the simulation starts off with a fixed amount of unprocessed material in the buffer over the entire facility operation.
+# Eventually materials will enter the storage buffer in differing quantities at different times.
 #
 ########################################################################
 #
@@ -51,7 +52,7 @@ def input_parameters(home_dir,input_dir,output_data_dir):
 #
 ### open data files
     batch=numpy.loadtxt('process_states\\batch.inp') #batch size
-    unprocessed_storage_inventory=numpy.loadtxt('process_states\\unprocessed.storage.inventory.inp') #total quantity of material in storage buffer at T = 0
+    unprocessed_storage_inventory=numpy.loadtxt('process_states\\unprocessed.storage.inventory.inp') #total quantity of material in storage buffer at TIME=0
 ###
 #
 ### go back to home directory
