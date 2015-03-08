@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB
-# rev.05.March.2015
+# rev.07.March.2015
 ########################################################################
 # 
 # Melter vertex 
@@ -33,8 +33,8 @@ import failure_analysis_weibull as failure_general
 # function list
 #
 # (1): read input data
-# (3): open output files
-# (4): initialize parameters
+# (2): open output files
+# (3): initialize parameters
 # (5): write operation time data
 # (6): write system and material flow data
 #
@@ -80,91 +80,15 @@ def input_parameters(home_dir,input_dir,output_data_dir):
     melter_cleaning_time=numpy.loadtxt('failure_distribution\\melter.failure.data.inp',usecols[3]) #time to clean the melter prior to equipment removal
     weibull_beta_melter=numpy.loadtxt('failure_distribution\\weibull.beta.inp',usecols[1]) #weibull distribution beta parameter for the melter
 ###
-    readme_input=open('readme.md').readlines()
-###
-#
-### 
-    melter_failure_inspection_time=inspection_time[0]
-    end_of_campaign_inspection_time=inspection_time[1]
-    melter_failure_false_alarm_threshold=false_alarm_threshold[0]
-    end_of_campaign_false_alarm_threshold=false_alarm_threshold[1]
     weibull_eta_melter=(1)/(melter_failure_rate) # the eta parameter for the weibull distribution is equal to the reciprocal of the failure rate if beta = 1; i.e., this assumes random failures
-###
-#
-### output
-    crucible_fraction_output=numpy.zeros((3))    
-    edge_time_output=numpy.zeros((2*maximum_kmp))    
-    kmp_output=numpy.zeros((maximum_kmp,4))
-    process_failures_output=numpy.zeros((melter_failure_number,2))
-    melter_failure_inspection_time_output=numpy.zeros((1))
-    end_of_campaign_inspection_time_output=numpy.zeros((1))
-    end_of_campaign_false_alarm_output=numpy.zeros(1)
-    melter_failure_false_alarm_output=numpy.zeros(1)
-    melter_cleaning_time_output=numpy.zeros((1))
-    batch_output=numpy.zeros((1))
-    facility_operation_output=numpy.zeros((1))
-#
-    for i in range(0,melter_failure_number):
-        process_failures_output[i,0]=melter_failure_rate[i]
-        process_failures_output[i,1]=24*melter_failure_maintenance_time[i]
-# end
-#
-    melter_failure_inspection_time_output[0]=24*melter_failure_inspection_time
-    end_of_campaign_inspection_time_output[0]=24*end_of_campaign_inspection_time    
-    end_of_campaign_false_alarm_output[0]=end_of_campaign_false_alarm_threshold
-    melter_failure_false_alarm_output[0]=melter_failure_false_alarm_threshold    
-    melter_cleaning_time_output[0]=24*melter_cleaning_time
-    batch_output[0]=batch
-    facility_operation_output[0]=facility_operation
-#
-    for j in range(0,maximum_kmp):
-        kmp_output[j,0]=j
-        kmp_output[j,1]=kmp_measurement_uncertainty[j]
-        kmp_output[j,2]=24*kmp_time[j]
-        kmp_output[j,3]=kmp_measurement_threshold[j]        
-# end
-###
-#
-###
-    for k in range(0,2*maximum_kmp):
-        edge_time_output[k]=24*edge_time[k]
-# end
-###
-#
-###
-    for l in range(0,2):
-        crucible_fraction_output[l]=crucible_fraction[l]
-# end
-###
-#
-### save files
-# move to output directory
-    os.chdir(home_dir)
-    os.chdir(output_data_dir)
-#
-    numpy.savetxt('process.failures.out',process_failures_output,fmt=['%.4f','%.2f'],header='Failure probability\tMaintenance time (h)',comments='',delimiter='\t\t\t')
-    numpy.savetxt('melter.failure.inspection.time.out',melter_failure_inspection_time_output,fmt=['%.2f'],header='Melter failure inspection time (h)',comments='')
-    numpy.savetxt('campaign.inspection.time.out',end_of_campaign_inspection_time_output,fmt=['%.2f'],header='End of campaign inspection time (h)',comments='')
-    numpy.savetxt('kmp.out',kmp_output,fmt=['%.0f','%.4f','%.2f','%.4f'],header='KMP\tMeasurement uncertainty\tMeasurement delay time (h)\tMeasurement threshold',comments='',delimiter='\t\t\t')
-    numpy.savetxt('end.of.campaign.false.alarm.out',end_of_campaign_false_alarm_output,fmt=['%.4f'],header='Fraction of MUF to trigger alarm for system inspection',comments='')
-    numpy.savetxt('melter.failure.false.alarm.out',melter_failure_false_alarm_output,fmt=['%.4f'],header='Fraction of MUF to trigger alarm for system inspection due to failure',comments='')
-    numpy.savetxt('melter.cleaning.time.out',melter_cleaning_time_output,fmt=['%.4f'],header='Time to clean the melter additional to maintenance activity (h)',comments='')
-    numpy.savetxt('facility.operation.out',facility_operation_output,fmt=['%.1f'],header='Facility operational period (d)',comments='')
-    numpy.savetxt('batch.out',batch_output,fmt=['%.1f'],header='Batch per campaign (kg)',comments='')
-    numpy.savetxt('edge.time.out',edge_time_output,fmt=['%.2f'],header='Transition time along edges (h); see system diagram',comments='')
-    numpy.savetxt('crucible.fraction.out',crucible_fraction_output,fmt=['%.4f'],header='Crucible fraction (kg)',comments='')
-#
-    readme_output=open('readme.md','w+')
-    readme_output.write(readme_input[0])
-    readme_output.close()
 ###
 #
 ### go back to home directory
     os.chdir(home_dir)
 ###
-    print 'System write complete.','\n'
+    print 'Melter parameters loaded.','\n'
 ###
-    return(crucible_fraction,edge_time,facility_operation,kmp_measurement_uncertainty,kmp_time,kmp_measurement_threshold,maximum_kmp,melter_failure_number,melter_failure_type,melter_failure_probability,melter_failure_maintenance_time,melter_cleaning_time,process_time,weibull_beta_melter,weibull_eta_melter)
+    return(crucible_fraction,melter_failure_type,melter_failure_rate,melter_failure_maintenance_time,melter_cleaning_time,weibull_beta_melter,weibull_eta_melter)
 #
 ########################################################################
 #
@@ -172,7 +96,7 @@ def input_parameters(home_dir,input_dir,output_data_dir):
 #
 ########################################################################
 #
-# (3): open output files
+# (2): open output files
 #
 #######
 def open_output_files(home_dir,output_data_dir):
@@ -183,28 +107,11 @@ def open_output_files(home_dir,output_data_dir):
 ###
 #
 ### open files: the functions for writing data to the files explain what is in each of them since the variables are listed
-    time_output=open('facility.operation.time.out','w+')
-    campaign_output=open('facility.campaign.out','w+')
-    measured_storage_inventory_output=open('measured.storage.inventory.out','w+')
-    true_weight_output=open('true.weight.out','w+')
-    expected_weight_output=open('expected.weight.out','w+')
-    measured_weight_output=open('measured.weight.out','w+')
-    true_muf_output=open('true.muf.out','w+')
-    expected_muf_output=open('expected.muf.out','w+')
-    measured_muf_output=open('measured.muf.out','w+')
-    true_mufc_output=open('true.mufc.out','w+')
-    expected_mufc_output=open('expected.mufc.out','w+')
-    measured_mufc_output=open('measured.mufc.out','w+')
-    true_processed_inventory_output=open('true.processed.inventory.out','w+')
-    expected_processed_inventory_output=open('expected.processed.inventory.out','w+')
-    measured_processed_inventory_output=open('measured.processed.inventory.out','w+')
     total_melter_failure_output=open('total.melter.failures.out','w+')
-    true_heel=open('true.heel.out','w+')
-    expected_heel=open('expected.heel.out','w+')
-    measured_heel=open('measured.heel.out','w+')
-    measured_system_inventory_output=open('measured.system.inventory.out','w+')
+    true_heel_output=open('true.heel.out','w+')
+    expected_heel_output=open('expected.heel.out','w+')
+    measured_heel_output=open('measured.heel.out','w+')
     melter_process_counter_output=open('melter.process.counter.out','w+')
-    trimmer_process_counter_output=open('trimmer.process.counter.out','w+')
     melter_probability_density_function_output=open('melter.probability.density.function.out','w+')
     melter_unreliability_function_output=open('melter.unreliability.function.out','w+')
 ###
@@ -212,7 +119,7 @@ def open_output_files(home_dir,output_data_dir):
 ### return to home directory
     os.chdir(home_dir)
 ###
-    return(time_output,campaign_output,measured_storage_inventory_output,true_weight_output,expected_weight_output,measured_weight_output,true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,total_melter_failure_output,true_kmp0,true_kmp1,true_kmp2,true_kmp3,true_kmp4,expected_kmp0,expected_kmp1,expected_kmp2,expected_kmp3,expected_kmp4,measured_kmp0,measured_kmp1,measured_kmp2,measured_kmp3,measured_kmp4,true_heel,expected_heel,measured_heel,measured_system_inventory_output,melter_process_counter_output,trimmer_process_counter_output,melter_probability_density_function_output,melter_unreliability_function_output)
+    return(total_melter_failure_output,true_heel_output,expected_heel_output,measured_heel_output,melter_process_counter_output,melter_probability_density_function_output,melter_unreliability_function_output)
 #
 ########################################################################
 #
@@ -220,46 +127,30 @@ def open_output_files(home_dir,output_data_dir):
 #
 ########################################################################
 #
-# (4): initialize parameters
+# (3): initialize parameters
 #
 #######
-def initialize_parameters(unprocessed_storage_inventory):
+def initialize_parameters():
 #######
 #
-    operation_time=0 #simulation time
     melter_failure_time=0 #time used to determine melter failures
-    true_processed_inventory=0 #true quantity of processed material over facility operation
-    expected_processed_inventory=0 #expected quantity of processed material over facility operation
-    measured_processed_inventory=0 #measured quantity of processed material over facility operation
-    total_campaign=1 #total campaigns processed over facility operation
     melter_failure_counter=0 #total times the melter failed over facility operation
-    true_weight=0 #true quantity processed per campaign
-    expected_weight=0 #expected quantity processed per campaign
-    measured_weight=0 #measured quantity processed per campaign
-    true_crucible=0 #true quantity of heel per campaign
-    expected_crucible=0 #expected quantity of heel per campaign
-    measured_crucible=0 #measured quantity of heel per campaign
-    accumulated_true_crucible=0 #accumulated quantity of heel prior to failure; zeroed out on cleaning 
-    accumulated_expected_crucible=0 #expected quantity of heel prior to failure; zeroed out on cleaning
-    accumulated_measured_crucible=0 #measured quantity of heel prior to failure; zeroed out on cleaning
-    melter_true_muf=0 #true quantity of muf over facility operation; zeroed out on cleaning; zeroed out on cleaning
-    melter_expected_muf=0 #expected quantity of muf over facility operation; zeroed out on cleaning
-    melter_measured_muf=0 #measured quantity of muf over facility operation; zeroed out on cleaning
-    melter_true_mufc=0 #true quantity of muf per campaign; zeroed out on cleaning
-    melter_expected_mufc=0 #expected quantity of muf per campaign; zeroed out on cleaning
-    melter_measured_mufc=0 #measured quantity of muf per campaign; zeroed out on cleaning
-    measured_storage_inventory=unprocessed_storage_inventory #measured quantity of unprocessed material over facility operation
-    measured_system_inventory=0 #measured quantity of material transferred out of storage buffer over facility operation
+    true_heel=0 #true quantity of heel per campaign
+    expected_heel=0 #expected quantity of heel per campaign
+    measured_heel=0 #measured quantity of heel per campaign
+    accumulated_true_heel=0 #accumulated quantity of heel prior to failure; zeroed out on cleaning 
+    accumulated_expected_heel=0 #expected quantity of heel prior to failure; zeroed out on cleaning
+    accumulated_measured_heel=0 #measured quantity of heel prior to failure; zeroed out on cleaning
+    melter_failure_event=False #melter failure flag for an equipment failure
     melter_process_counter=0 #total times the melter process was initiated over facility operation
-    trimmer_process_counter=0 #total times the trimmer process was initiated over facility operation
     melter_probability_density_function_evaluate=0 #pdf for melter failure distribution at operation_time
     melter_probability_density_function_failure_evaluate=0 #pdf for melter failure distribution at melter_failure_time
     melter_unreliability_function_evaluate=0 #cdf for melter failure distribution at operation_time
     melter_unreliabilty_function_failure_evaluate=0 #cdf for melter failure distribution at failure_time
 ###
-    print 'System initialization complete.'
+    print 'Melter initialization complete.'
 ###
-    return(operation_time,melter_failure_time,true_processed_inventory,expected_processed_inventory,measured_processed_inventory,total_campaign,melter_failure_counter,true_weight,expected_weight,measured_weight,true_crucible,expected_crucible,measured_crucible,accumulated_true_crucible,accumulated_expected_crucible,accumulated_measured_crucible,melter_true_muf,melter_expected_muf,melter_measured_muf,melter_true_mufc,melter_expected_mufc,melter_measured_mufc,melter_failure_event,measured_storage_inventory,measured_system_inventory,melter_process_counter,trimmer_process_counter,melter_probability_density_function_evaluate,melter_probability_function_failure_evaluate,melter_unreliability_function_evaluate,melter_unreliability_function_failure_evaluate)
+    return(melter_failure_time,melter_failure_counter,true_heel,expected_heel,measured_heel,accumulated_true_heel,accumulated_expected_heel,accumulated_measured_heel,melter_failure_event,melter_process_counter,melter_probability_density_function_evaluate,melter_probability_function_failure_evaluate,melter_unreliability_function_evaluate,melter_unreliability_function_failure_evaluate)
 #
 #########################################################################
 #

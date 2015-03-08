@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB 
-# rev.26.February.2015
+# rev.07.March.2015
 # v1.2
 ########################################################################
 #
@@ -30,6 +30,7 @@ import total_system_false_alarm as false_alarm
 import vertex_storage_buffer as storage_buffer
 import edge_transition
 import key_measurement_points as kmps
+import vertex_melter as melter
 #
 ########################################################################
 # 
@@ -49,15 +50,17 @@ home_dir,input_dir,output_data_dir,output_figure_dir=io.get_simulation_dir()
 #
 # read input data
 #
-crucible_fraction,facility_operation,melter_failure_number,melter_failure_type,melter_failure_probability,melter_failure_maintenance_time,melter_cleaning_time,process_time,weibull_beta_melter,weibull_eta_melter=io.input_parameters(home_dir,input_dir,output_data_dir) #system and material flow
+facility_operation,process_time=io.input_parameters(home_dir,input_dir,output_data_dir) #system and material flow
 ###
 batch,unprocessed_storage_inventory=storage_buffer.input_parameters(home_dir,input_dir,output_data_dir) #vertex storage buffer
 ###
-melter_failure_false_alarm_threshold,campaign_false_alarm_threshold,melter_failure_inspection_time,campaign_inspection_time=false_alarm.input_parameters(home_dir,input_dir,output_data_dir) #system false alarm
+melter_failure_false_alarm_threshold,end_of_campaign_false_alarm_threshold,melter_failure_inspection_time,end_of_campaign_inspection_time=false_alarm.input_parameters(home_dir,input_dir,output_data_dir) #system false alarm
 ###
 edge_transition=edge_transtion.input_parameters(home_dir,input_dir,output_data_dir) #edge transition
 ###
 kmp_measurement_time,kmp_measurement_uncertainty,kmp_measurement_threshold=kmp.input_parameters(home_dir,input_dir,output_data_dir) #key measurement points
+###
+crucible_fraction,melter_failure_number,melter_failure_type,melter_failure_rate,melter_failure_maintenance_time,melter_cleaning_time,weibull_beta_melter,weibull_eta_melter=melter.input_parameters(home_dir,input_dir,output_data_dir) #vertex melter
 #
 ########################################################################
 #
@@ -67,13 +70,15 @@ kmp_measurement_time,kmp_measurement_uncertainty,kmp_measurement_threshold=kmp.i
 #
 # open output files 
 #
-time_output,campaign_output,measured_storage_inventory_output,true_weight_output,expected_weight_output,measured_weight_output,true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,total_melter_failure_output,true_heel,expected_heel,measured_heel,measured_system_inventory_output,melter_process_counter_output,trimmer_process_counter_output,melter_probability_density_function_output,melter_unreliability_function_output=io.open_output_files(home_dir,output_data_dir) #system and material flow
+time_output,campaign_output,measured_storage_inventory_output,true_weight_output,expected_weight_output,measured_weight_output,true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,measured_system_inventory_output,trimmer_process_counter_output=io.open_output_files(home_dir,output_data_dir) #system and material flow
 ###
 true_storage_inventory_output,expected_storage_inventory_output,true_system_inventory_output,expected_system_inventory_output,batch_output=storage_buffer.open_output_files(home_dir,output_data_dir) #vertex storage buffer
 ###
-melter_failure_false_alarm_counter_output,campaign_false_alarm_counter_output=false_alarm.open_output_files(home_dir,output_data_dir) #system false alarm
+melter_failure_false_alarm_counter_output,end_of_campaign_false_alarm_counter_output=false_alarm.open_output_files(home_dir,output_data_dir) #system false alarm
 ###
 true_kmp,expected_kmp,measured_kmp=kmp.open_output_files(home_dir,output_data_dir) #key measurement points
+###
+total_melter_failure_output,true_heel_output,expected_heel_output,measured_heel_output,melter_process_counter_output,melter_probability_density_function_output,melter_unreliability_function_output=melter.open_output_files(home_dir,output_data_dir) #vertex melter
 #
 ########################################################################
 #
@@ -83,11 +88,13 @@ true_kmp,expected_kmp,measured_kmp=kmp.open_output_files(home_dir,output_data_di
 #
 # initialize parameters
 #
-operation_time,melter_failure_time,true_processed_inventory,expected_processed_inventory,measured_processed_inventory,total_campaign,total_batch,melter_failure_counter,true_weight,expected_weight,measured_weight,true_crucible,expected_crucible,measured_crucible,accumulated_true_crucible,accumulated_expected_crucible,accumulated_measured_crucible,melter_true_muf,melter_expected_muf,melter_measured_muf,melter_true_mufc,melter_expected_mufc,melter_measured_mufc,melter_failure_event,true_storage_inventory,expected_storage_inventory,measured_storage_inventory,true_system_inventory,expected_system_inventory,measured_system_inventory,melter_process_counter,trimmer_process_counter,melter_probability_density_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_evaluate,melter_unreliability_function_failure_evaluate=io.initialize_parameters(unprocessed_storage_inventory) #system and material flow
+operation_time,true_processed_inventory,expected_processed_inventory,measured_processed_inventory,total_campaign,total_batch,true_weight,expected_weight,measured_weight,melter_true_muf,melter_expected_muf,melter_measured_muf,melter_true_mufc,melter_expected_mufc,melter_measured_mufc,true_storage_inventory,expected_storage_inventory,measured_storage_inventory,true_system_inventory,expected_system_inventory,measured_system_inventory,trimmer_process_counter=io.initialize_parameters(unprocessed_storage_inventory) #system and material flow
 ###
 total_batch,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory=storage_buffer.initialize_parameters(unprocessed_storage_inventory) #vertex storage buffer
 ###
-campaign_false_alarm_counter,melter_failure_false_alarm_counter,campaign_false_alarm,melter_failure_false_alarm,campaign_false_alarm_test,melter_failure_false_alarm_test=false_alarm.initialize_parameters() #system false alarm
+end_of_campaign_false_alarm_counter,melter_failure_false_alarm_counter,end_of_campaign_false_alarm,melter_failure_false_alarm,end_of_campaign_false_alarm_test,melter_failure_false_alarm_test=false_alarm.initialize_parameters() #system false alarm
+###
+melter_failure_time,melter_failure_counter,true_heel,expected_heel,measured_heel,accumulated_true_heel,accumulated_expected_heel,accumulated_measured_heel,melter_failure_event,melter_process_counter,melter_probability_density_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_evaluate,melter_unreliability_function_failure_evaluate=melter.initialize_parameters() #vertex melter
 #
 ########################################################################
 #
@@ -117,7 +124,7 @@ campaign_output,measured_storage_inventory_output,true_weight_output,expected_we
 ###
 batch_output,true_storage_inventory_output,expected_storage_inventory_output,true_system_inventory_output,expected_system_inventory_output=storage_buffer.write_output(operation_time,total_batch,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,batch_output,true_storage_inventory_output,expected_storage_inventory_output,true_system_inventory_output,expected_system_inventory_output) #vertex storage buffer
 ###
-campaign_false_alarm_counter_output=false_alarm.false_alarm_write(operation_time,total_campaign,campaign_false_alarm_counter,campaign_false_alarm_threshold,campaign_false_alarm_test,campaign_false_alarm_counter_output) #end of campaign false alarm
+end_of_campaign_false_alarm_counter_output=false_alarm.false_alarm_write(operation_time,total_campaign,end_of_campaign_false_alarm_counter,end_of_campaign_false_alarm_threshold,end_of_campaign_false_alarm_test,end_of_campaign_false_alarm_counter_output) #end of campaign false alarm
 ###
 melter_failure_false_alarm_counter_output=false_alarm.false_alarm_write(operation_time,failure_time,total_campaign,melter_failure_false_alarm_counter,melter_failure_false_alarm_threshold,melter_failure_false_alarm_test,melter_failure_false_alarm_counter_output) #melter failure false alarm
 #
@@ -158,7 +165,7 @@ campaign_output,measured_storage_inventory_output,true_weight_output,expected_we
 ###
 batch_output,true_storage_inventory_output,expected_storage_inventory_output,true_system_inventory_output,expected_system_inventory_output=storage_buffer.write_output(operation_time,total_batch,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,batch_output,true_storage_inventory_output,expected_storage_inventory_output,true_system_inventory_output,expected_system_inventory_output) #vertex storage buffer
 ###
-campaign_false_alarm_counter_output=false_alarm.false_alarm_write(operation_time,total_campaign,campaign_false_alarm_counter,campaign_false_alarm_threshold,campaign_false_alarm_test,campaign_false_alarm_counter_output) #end of campaign false alarm
+end_of_campaign_false_alarm_counter_output=false_alarm.false_alarm_write(operation_time,total_campaign,end_of_campaign_false_alarm_counter,end_of_campaign_false_alarm_threshold,end_of_campaign_false_alarm_test,end_of_campaign_false_alarm_counter_output) #end of campaign false alarm
 ###
 melter_failure_false_alarm_counter_output=false_alarm.false_alarm_write(operation_time,failure_time,total_campaign,melter_failure_false_alarm_counter,melter_failure_false_alarm_threshold,melter_failure_false_alarm_test,melter_failure_false_alarm_counter_output) #melter failure false alarm
 #
@@ -199,6 +206,7 @@ operation_time,measured_weight,measured_storage_inventory,measured_initial_inven
 #######
 #
 # data writing
+#
     true_kmp0,expected_kmp0,measured_kmp0=des_f.kmp_write(operation_time,true_weight,expected_weight,measured_weight,true_kmp0,expected_kmp0,measured_kmp0) #kmp measurement data
 ###
     time_output=io.write_time_output(operation_time,failure_time,time_output) #operation and failure time
@@ -489,18 +497,6 @@ operation_time,measured_weight,measured_storage_inventory,measured_initial_inven
 #
 # close output files
 #
-### system
-#
-time_output,campaign_output,measured_storage_inventory_output,true_weight_output,expected_weight_output,measured_weight_output,true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,total_melter_failure_output,true_kmp0,true_kmp1,true_kmp2,true_kmp3,true_kmp4,expected_kmp0,expected_kmp1,expected_kmp2,expected_kmp3,expected_kmp4,measured_kmp0,measured_kmp1,measured_kmp2,measured_kmp3,measured_kmp4,true_heel,expected_heel,measured_heel,measured_system_inventory_output,melter_process_counter_output,trimmer_process_counter_output=io.close_files(time_output,campaign_output,measured_storage_inventory_output,true_weight_output,expected_weight_output,measured_weight_output,true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,total_melter_failure_output,true_kmp0,true_kmp1,true_kmp2,true_kmp3,true_kmp4,expected_kmp0,expected_kmp1,expected_kmp2,expected_kmp3,expected_kmp4,measured_kmp0,measured_kmp1,measured_kmp2,measured_kmp3,measured_kmp4,true_heel,expected_heel,measured_heel,measured_system_inventory_output,melter_process_counter_output,trimmer_process_counter_output)
-#
-### storage buffer
-#
-batch_output,true_storage_inventory_output,expected_storage_inventory_output,true_system_inventory_output,expected_system_inventory_output=storage_buffer.close_files(batch_output,true_storage_inventory_output,expected_storage_inventory_output,true_system_inventory_output,expected_system_inventory_output)
-#
-### false alarm
-#
-campaign_false_alarm_counter_output,melter_failure_false_alarm_counter_output=system_false_alarm.close_files(campaign_false_alarm_counter_output,melter_failure_false_alarm_counter_output)
-#
 ####################################################################### 
 #
 #
@@ -514,8 +510,8 @@ campaign_false_alarm_counter_output,melter_failure_false_alarm_counter_output=sy
 #
 #
 ########################################################################
-####### postprocessing
 #
+# postprocessing
 #
 #
 ### system false alarm probability
@@ -528,7 +524,7 @@ campaign_false_alarm_counter_output,melter_failure_false_alarm_counter_output=sy
 #
 #
 #
-####### end postprocessing
+#
 #######################################################################
 #
 #

@@ -194,7 +194,7 @@ def input_parameters(home_dir,input_dir,output_data_dir):
 ###
     print 'System write complete.','\n'
 ###
-    return(crucible_fraction,edge_time,facility_operation,kmp_measurement_uncertainty,kmp_time,kmp_measurement_threshold,maximum_kmp,melter_failure_number,melter_failure_type,melter_failure_probability,melter_failure_maintenance_time,melter_cleaning_time,process_time,weibull_beta_melter,weibull_eta_melter)
+    return(facility_operation,process_time)
 #
 ########################################################################
 #
@@ -228,21 +228,14 @@ def open_output_files(home_dir,output_data_dir):
     true_processed_inventory_output=open('true.processed.inventory.out','w+')
     expected_processed_inventory_output=open('expected.processed.inventory.out','w+')
     measured_processed_inventory_output=open('measured.processed.inventory.out','w+')
-    total_melter_failure_output=open('total.melter.failures.out','w+')
-    true_heel=open('true.heel.out','w+')
-    expected_heel=open('expected.heel.out','w+')
-    measured_heel=open('measured.heel.out','w+')
     measured_system_inventory_output=open('measured.system.inventory.out','w+')
-    melter_process_counter_output=open('melter.process.counter.out','w+')
     trimmer_process_counter_output=open('trimmer.process.counter.out','w+')
-    melter_probability_density_function_output=open('melter.probability.density.function.out','w+')
-    melter_unreliability_function_output=open('melter.unreliability.function.out','w+')
 ###
 #
 ### return to home directory
     os.chdir(home_dir)
 ###
-    return(time_output,campaign_output,measured_storage_inventory_output,true_weight_output,expected_weight_output,measured_weight_output,true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,total_melter_failure_output,true_kmp0,true_kmp1,true_kmp2,true_kmp3,true_kmp4,expected_kmp0,expected_kmp1,expected_kmp2,expected_kmp3,expected_kmp4,measured_kmp0,measured_kmp1,measured_kmp2,measured_kmp3,measured_kmp4,true_heel,expected_heel,measured_heel,measured_system_inventory_output,melter_process_counter_output,trimmer_process_counter_output,melter_probability_density_function_output,melter_unreliability_function_output)
+    return(time_output,campaign_output,measured_storage_inventory_output,true_weight_output,expected_weight_output,measured_weight_output,true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,measured_system_inventory_output,trimmer_process_counter_output)
 #
 ########################################################################
 #
@@ -257,21 +250,13 @@ def initialize_parameters(unprocessed_storage_inventory):
 #######
 #
     operation_time=0 #simulation time
-    melter_failure_time=0 #time used to determine melter failures
     true_processed_inventory=0 #true quantity of processed material over facility operation
     expected_processed_inventory=0 #expected quantity of processed material over facility operation
     measured_processed_inventory=0 #measured quantity of processed material over facility operation
     total_campaign=1 #total campaigns processed over facility operation
-    melter_failure_counter=0 #total times the melter failed over facility operation
     true_weight=0 #true quantity processed per campaign
     expected_weight=0 #expected quantity processed per campaign
     measured_weight=0 #measured quantity processed per campaign
-    true_crucible=0 #true quantity of heel per campaign
-    expected_crucible=0 #expected quantity of heel per campaign
-    measured_crucible=0 #measured quantity of heel per campaign
-    accumulated_true_crucible=0 #accumulated quantity of heel prior to failure; zeroed out on cleaning 
-    accumulated_expected_crucible=0 #expected quantity of heel prior to failure; zeroed out on cleaning
-    accumulated_measured_crucible=0 #measured quantity of heel prior to failure; zeroed out on cleaning
     melter_true_muf=0 #true quantity of muf over facility operation; zeroed out on cleaning; zeroed out on cleaning
     melter_expected_muf=0 #expected quantity of muf over facility operation; zeroed out on cleaning
     melter_measured_muf=0 #measured quantity of muf over facility operation; zeroed out on cleaning
@@ -280,16 +265,11 @@ def initialize_parameters(unprocessed_storage_inventory):
     melter_measured_mufc=0 #measured quantity of muf per campaign; zeroed out on cleaning
     measured_storage_inventory=unprocessed_storage_inventory #measured quantity of unprocessed material over facility operation
     measured_system_inventory=0 #measured quantity of material transferred out of storage buffer over facility operation
-    melter_process_counter=0 #total times the melter process was initiated over facility operation
     trimmer_process_counter=0 #total times the trimmer process was initiated over facility operation
-    melter_probability_density_function_evaluate=0 #pdf for melter failure distribution at operation_time
-    melter_probability_density_function_failure_evaluate=0 #pdf for melter failure distribution at melter_failure_time
-    melter_unreliability_function_evaluate=0 #cdf for melter failure distribution at operation_time
-    melter_unreliabilty_function_failure_evaluate=0 #cdf for melter failure distribution at failure_time
 ###
     print 'System initialization complete.'
 ###
-    return(operation_time,melter_failure_time,true_processed_inventory,expected_processed_inventory,measured_processed_inventory,total_campaign,melter_failure_counter,true_weight,expected_weight,measured_weight,true_crucible,expected_crucible,measured_crucible,accumulated_true_crucible,accumulated_expected_crucible,accumulated_measured_crucible,melter_true_muf,melter_expected_muf,melter_measured_muf,melter_true_mufc,melter_expected_mufc,melter_measured_mufc,melter_failure_event,measured_storage_inventory,measured_system_inventory,melter_process_counter,trimmer_process_counter,melter_probability_density_function_evaluate,melter_probability_function_failure_evaluate,melter_unreliability_function_evaluate,melter_unreliability_function_failure_evaluate)
+    return(operation_time,true_processed_inventory,expected_processed_inventory,measured_processed_inventory,total_campaign,true_weight,expected_weight,measured_weight,melter_true_muf,melter_expected_muf,melter_measured_muf,melter_true_mufc,melter_expected_mufc,melter_measured_mufc,measured_storage_inventory,measured_system_inventory,trimmer_process_counter)
 #
 #########################################################################
 #

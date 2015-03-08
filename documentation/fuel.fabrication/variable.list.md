@@ -22,9 +22,9 @@
 <br><br>
 <ul>
 <b>A</b>
-<li>accumulated_true_crucible=true material accumulated in crucible
-<li>accumulated_expected_crucible=expected material accumulated in crucible
-<li>accumulated_measured_crucible=measured material accumulated in crucible
+<li>accumulated_true_heel=true material accumulated in crucible
+<li>accumulated_expected_heel=expected material accumulated in crucible
+<li>accumulated_measured_heel=measured material accumulated in crucible
 <li>alarm_test=dummy for false alarm testing
 </ul>
 <ul>
@@ -32,7 +32,6 @@
 </ul>
 <ul>
 <b>C</b>
-<li>campaign_inspection_time=end of campaign inspection time
 <li>crucible_fraction=expected_crucible,limits to true_crucible...set in preprocessing
 </ul>
 <ul>
@@ -41,6 +40,7 @@
 </ul>
 <ul>
 <b>E</b>
+<li>end_of_campaign_inspection_time=end of campaign inspection time
 <li>edge_transition=transfer times along each edge...see system diagram...set in preprocessing
 <li>equipment_failure_probability=dummy variable for equipment failures...set in preprocessing
 <li>equipment_failure_delay_time=dummy variable for equipment failures delay time...set in preprocessing
@@ -52,7 +52,7 @@
 <li>expected_kmpX=data file stores measured quantities at each KMP
 <li>expected_system_inventory=running total of mass transfer from storage
 <li>expected_storage_inventory=total expected mass in storage buffer
-<li>expected_crucible=expected material left in the crucible
+<li>expected_heel=expected material left in the crucible
 <li>expected_weight=expected weight processed per campaign
 <li>expected_crucible_fraction=expected fraction of material left in the crucible...set in preprocessing  
 <li>expected_processed_inventory=total expected mass processed
@@ -115,7 +115,7 @@
 <li>measured_quantity=dummy variable for KMP measurement, false alarm test
 <li>measured_kmpX=stores quantities at each KMP
 <li>measured_weight=measured weight of material at KMPx
-<li>measured_crucible=measured material left in the crucible
+<li>measured_heel=measured material left in the crucible
 <li>measured_storage_inventory=total measured mass in storage buffer...at KMP0 
 <li>measured_system_inventory=running total of mass transfer from storage
 <li>measured_processed_inventory=total measured mass processed
@@ -167,7 +167,7 @@
 <li>true_quantity=dummy variable for KMP measurement, false alarm test
 <li>true_kmpX=stores quantities at each KMP
 <li>true_storage_inventory=total mass in storage buffer
-<li>true_crucible=true material left in the crucible per campaign
+<li>true_heel=true material left in the crucible per campaign
 <li>true_weight=true weight of material transferred through the system
 <li>total_melter_failure=total failures per campaign for melter
 <li>true_crucible_fraction=quantity of material left in the crucible...randomized per melting process 

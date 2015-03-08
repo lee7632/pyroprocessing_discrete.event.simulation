@@ -55,37 +55,13 @@ def input_parameters(home_dir,input_dir,output_data_dir):
 ###
 #
 ### open data files
-    false_alarm_threshold=numpy.loadtxt('\\system_false_alarm\\false.alarm.threshold.inp',usecols=[1]) #false alarm thresholds
-    inspection_time=numpy.loadtxt('\\system_false_alarm\\inspection.time.inp',usecols=[1]) #time elapsed for each inspection
+    false_alarm_threshold=numpy.loadtxt('system_false_alarm\\false.alarm.threshold.inp',usecols=[1]) #false alarm thresholds
+    inspection_time=numpy.loadtxt('system_false_alarm\\inspection.time.inp',usecols=[1]) #time elapsed for each inspection
 #
     melter_failure_inspection_time=inspection_time[0]
-    campaign_inspection_time=inspection_time[1]
+    end_of_campaign_inspection_time=inspection_time[1]
     melter_failure_false_alarm_threshold=false_alarm_threshold[0]
-    campaign_false_alarm_threshold=false_alarm_threshold[1]
-###
-#
-###  prepare output files
-    melter_failure_inspection_time_output=numpy.zeros((1))
-    campaign_inspection_time_output=numpy.zeros((1))
-    campaign_false_alarm_output=numpy.zeros(1)
-    melter_failure_false_alarm_output=numpy.zeros(1)
-#
-    melter_failure_inspection_time_output[0]=24*melter_failure_inspection_time
-    campaign_inspection_time_output[0]=24*campaign_inspection_time    
-    campaign_false_alarm_output[0]=end_of_campaign_false_alarm_threshold
-    melter_failure_false_alarm_output[0]=melter_failure_false_alarm_threshold    
-###
-#
-### move to output directory
-    os.chdir(home_dir)
-    os.chdir(output_data_dir)
-###
-#
-### save files
-    numpy.savetxt('\\system_false_alarm\\melter.failure.inspection.time.out',melter_failure_inspection_time_output,fmt=['%.2f'],header='Melter failure inspection time (h)',comments='')
-    numpy.savetxt('\\system_false_alarm\\campaign.inspection.time.out',campaign_inspection_time_output,fmt=['%.2f'],header='End of campaign inspection time (h)',comments='')
-    numpy.savetxt('\\system_false_alarm\\campaign.false.alarm.out',end_of_campaign_false_alarm_output,fmt=['%.4f'],header='Fraction of MUF to trigger alarm for system inspection',comments='')
-    numpy.savetxt('\\system_false_alarm\\melter.failure.false.alarm.out',melter_failure_false_alarm_output,fmt=['%.4f'],header='Fraction of MUF to trigger alarm for system inspection due to failure',comments='')
+    end_of_campaign_false_alarm_threshold=false_alarm_threshold[1]
 ###
 #
 ### go back to home directory
@@ -95,7 +71,7 @@ def input_parameters(home_dir,input_dir,output_data_dir):
 ###
     print 'False alarm parameters loaded.','\n'
 ###
-    return (melter_failure_false_alarm_threshold,campaign_false_alarm_threshold,melter_failure_inspection_time,campaign_inspection_time)
+    return (melter_failure_false_alarm_threshold,end_of_campaign_false_alarm_threshold,melter_failure_inspection_time,end_of_campaign_inspection_time)
 #
 ########################################################################
 #
@@ -115,13 +91,13 @@ def open_output_files(home_dir,output_data_dir):
 #
 ### open files: the functions for writing data to the files explain what is in each of them since the variables are listed
     melter_failure_false_alarm_counter_output=open('system_false_alarm\\melter.failure.false.alarm.counter.out','w+')
-    campaign_false_alarm_counter_output=open('system_false_alarm\\campaign.false.alarm.counter.out','w+')
+    end_of_campaign_false_alarm_counter_output=open('system_false_alarm\\end.of.campaign.false.alarm.counter.out','w+')
 ###
 #
 ### return to home directory
     os.chdir(home_dir)
 ###
-    return(melter_failure_false_alarm_counter_output,campaign_false_alarm_counter_output)
+    return(melter_failure_false_alarm_counter_output,end_of_campaign_false_alarm_counter_output)
 #
 ########################################################################
 #
@@ -135,16 +111,16 @@ def open_output_files(home_dir,output_data_dir):
 def initialize_parameters():
 #######
 #
-    campaign_false_alarm_counter=0 #total false alarms due to end of campaign inspection
+    end_of_campaign_false_alarm_counter=0 #total false alarms due to end of campaign inspection
     melter_failure_false_alarm_counter=0 #total false alarms due to melter failures
-    campaign_false_alarm=False #end of campaign false alarm flag
+    end_of_campaign_false_alarm=False #end of campaign false alarm flag
     melter_failure_false_alarm=False #melter failure false alarm flag
-    campaign_false_alarm_test=0 #difference in selected material quantities compared to threshold to trigger false alarm for end of campaign inspection
+    end_of_campaign_false_alarm_test=0 #difference in selected material quantities compared to threshold to trigger false alarm for end of campaign inspection
     melter_failure_false_alarm_test=0 #difference in selected material quantities compared to threshold to trigger false alarm for melter failure inspection
 ###
     print 'False alarm initialization complete.'
 ###
-    return(campaign_false_alarm_counter,melter_failure_false_alarm_counter,campaign_false_alarm,melter_failure_false_alarm,campaign_false_alarm_test,melter_failure_false_alarm_test)
+    return(end_of_campaign_false_alarm_counter,melter_failure_false_alarm_counter,end_of_campaign_false_alarm,melter_failure_false_alarm,end_of_campaign_false_alarm_test,melter_failure_false_alarm_test)
 #
 #########################################################################
 #
@@ -201,13 +177,13 @@ def false_alarm_test(threshold,false_alarm_counter,expected_quantity,measured_qu
 # (6): close output files
 #
 #######
-def close_files(campaign_false_alarm_counter_output,melter_failure_false_alarm_counter_output):
+def close_files(end_of_campaign_false_alarm_counter_output,melter_failure_false_alarm_counter_output):
 #######
 #
-    campaign_false_alarm_counter_output.close()
+    end_of_campaign_false_alarm_counter_output.close()
     melter_failure_false_alarm_counter_output.close()
 ###
-    return(campaign_false_alarm_counter_output,melter_failure_false_alarm_counter_output)
+    return(end_of_campaign_false_alarm_counter_output,melter_failure_false_alarm_counter_output)
 #
 ########################################################################
 #
