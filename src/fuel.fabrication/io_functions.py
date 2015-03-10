@@ -280,9 +280,9 @@ def initialize_parameters(unprocessed_storage_inventory):
 # (5): write operation time data
 #
 #######
-def write_time_output(operation_time,failure_time,time_output):
+def write_time_output(operation_time,melter_failure_time,time_output):
 #######
-    time_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%failure_time)+'\n') #time data is written whenever operation time changes
+    time_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%melter_failure_time)+'\n') #time data is written whenever operation time changes
 ###
     return(time_output)
 #
@@ -295,7 +295,7 @@ def write_time_output(operation_time,failure_time,time_output):
 # (6): write system and material flow data
 #
 #######
-def write_system_output(operation_time,total_campaign,measured_storage_inventory,true_weight,expected_weight,measured_weight,true_muf,expected_muf,measured_muf,true_mufc,expected_mufc,measured_mufc,true_processed_inventory,expected_processed_inventory,measured_processed_inventory,total_melter_failure,measured_system_inventory,melter_process_counter,trimmer_process_counter,melter_probability_density_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_evaluate,melter_unreliability_function_failure_evaluate,campaign_output,measured_storage_inventory_output,true_weight_output,expected_weight_output,measured_weight_output,true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,total_melter_failure_output,measured_system_inventory_output,melter_process_counter_output,trimmer_process_counter_output,melter_probability_density_function_output,melter_unreliability_function_output):
+def write_system_output(operation_time,total_campaign,measured_storage_inventory,true_weight,expected_weight,measured_weight,true_muf,expected_muf,measured_muf,true_mufc,expected_mufc,measured_mufc,true_processed_inventory,expected_processed_inventory,measured_processed_inventory,measured_system_inventory,trimmer_process_counter,campaign_output,measured_storage_inventory_output,true_weight_output,expected_weight_output,measured_weight_output,true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,measured_system_inventory_output,trimmer_process_counter_output):
 #######
     campaign_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%i'%total_campaign)+'\n')
     measured_storage_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%measured_storage_inventory)+'\n')
@@ -311,14 +311,10 @@ def write_system_output(operation_time,total_campaign,measured_storage_inventory
     true_processed_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%true_processed_inventory)+'\n')
     expected_processed_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%expected_processed_inventory)+'\n')
     measured_processed_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%measured_processed_inventory)+'\n')
-    total_melter_failure_output.write(str.format('%i'%total_campaign)+'\t'+str.format('%i'%total_melter_failure)+'\n')
     measured_system_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%measured_system_inventory)+'\n')
-    melter_process_counter_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%i'%melter_process_counter)+'\n')
     trimmer_process_counter_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%i'%trimmer_process_counter)+'\n')
-    melter_probability_density_function_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%melter_probability_density_function_evaluate)+'\t'+str.format('%.4f'%failure_time)+'\t'+str.format('%.4f'%melter_probability_density_function_failure_evaluate)+'\n')
-    melter_unreliability_function_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%melter_unreliability_function_evaluate)+'\t'+str.format('%.4f'%failure_time)+'\t'+str.format('%.4f'%melter_unreliability_function_failure_evaluate)+'\n')
 ###
-    return(campaign_output,measured_storage_inventory_output,true_weight_output,expected_weight_output,measured_weight_output,true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,total_melter_failure_output,measured_system_inventory_output,melter_process_counter_output,trimmer_process_counter_output,melter_probability_density_function_output,melter_unreliability_function_output)
+    return(campaign_output,measured_storage_inventory_output,true_weight_output,expected_weight_output,measured_weight_output,true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,measured_system_inventory_output,trimmer_process_counter_output)
 #
 ########################################################################
 #
@@ -326,40 +322,6 @@ def write_system_output(operation_time,total_campaign,measured_storage_inventory
 #
 #
 #
-####### (f): melter
-# Alloy is melted and injected into quartz molds
-# There is a probability of failure(s)
-# Each failure has an associated failure time
-# Some fraction of material is held up in the crucible (heel)
-# The heel remains when material leaves
-###
-#
-###
-def melter(operation_time,true_weight,expected_weight,melter_failure_number,melter_failure_type,melter_failure_probability,delay,crucible_fraction,accumulated_true_crucible,accumulated_expected_crucible,melter_failure_event,melter_failure_counter,melter_process_counter):
-###
-    print 'Alloy melting'
-    operation_time=operation_time+0.5*delay
-    melter_process_counter=melter_process_counter+1
-###
-    true_crucible=(crucible_fraction[1]-crucible_fraction[2])*numpy.random.random_sample()+crucible_fraction[2] 
-    expected_crucible=crucible_fraction[0]
-#
-    true_weight=true_weight-true_crucible
-    expected_weight=expected_weight-expected_crucible  
-#
-    accumulated_true_crucible=accumulated_true_crucible+true_crucible
-    accumulated_expected_crucible=accumulated_expected_crucible+expected_crucible    
-###
-#
-###
-# failure testing
-# a failure will occur at 0.5 delay time
-    melter_failure_event,melter_failure_counter=failure_test(operation_time,melter_failure_number,melter_failure_type,melter_failure_probability,melter_failure_event,melter_failure_counter,melter_process_counter)
-###
-    if(melter_failure_event==False):
-        operation_time=operation_time+0.5*delay
-### end if
-    return(operation_time,true_weight,expected_weight,accumulated_true_crucible,accumulated_expected_crucible,melter_failure_event,melter_failure_counter,melter_process_counter)
 ########################################################################
 #
 #

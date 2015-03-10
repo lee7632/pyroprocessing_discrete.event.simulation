@@ -30,7 +30,7 @@ import os
 # (1): read input data
 # (2): open output files
 # (3): initialize parameters
-# (4): write system and material flow data
+# (4): write storage buffer process data 
 # (5): storage buffer preparation
 # (6): close output files
 #
@@ -121,7 +121,7 @@ def initialize_parameters(unprocessed_storage_inventory):
 #
 #########################################################################
 #
-# (4): write system and material flow data
+# (4): write storage buffer process data
 #
 #######
 def write_output(operation_time,total_batch,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,batch_output,true_storage_inventory_output,expected_storage_inventory_output,true_system_inventory_output,expected_system_inventory_output):
