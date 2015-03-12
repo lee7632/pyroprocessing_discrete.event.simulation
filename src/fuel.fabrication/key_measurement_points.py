@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB
-# rev.25.February.2015
+# rev.10.March.2015
 ########################################################################
 # 
 # Key measurement points (KMPs) are located based on the system diagram.
@@ -100,12 +100,12 @@ def open_output_files(home_dir,output_data_dir):
 # (3): kmp measurement
 #
 #######
-def kmp_measurement(operation_time,delay,uncertainty,threshold,true_quantity,expected_quantity,measured_inventory,measured_system_inventory,kmp_identifier):
+def kmp_measurement(operation_time,kmp_delay_time,uncertainty,threshold,true_quantity,expected_quantity,measured_inventory,measured_system_inventory,kmp_identifier):
 #######
 #
 ###    
     print 'Measurement event at KMP:',kmp_identifier
-    operation_time=operation_time+delay
+    operation_time=operation_time+kmp_delay_time
     measured_quantity=0
 ###
 #

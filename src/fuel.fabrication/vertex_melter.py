@@ -19,14 +19,13 @@
 #
 # Many failures could occur during this process.
 # Currenly, a single, general failure is assumed. 
-# Failure distributions are given in the imports.
 #
 ########################################################################
 #
 # imports
 #
 import os
-import failure_analysis_weibull as failure_general
+import failure_analysis_weibull as failure_analysis
 #
 ########################################################################
 #
@@ -36,7 +35,7 @@ import failure_analysis_weibull as failure_general
 # (2): open output files
 # (3): initialize parameters
 # (4): write melter process data 
-# (6): write system and material flow data
+# (5): melter injection casting process 
 #
 ########################################################################
 ####### (b): Set facility configuration
@@ -81,6 +80,8 @@ def input_parameters(home_dir,input_dir,output_data_dir):
     weibull_beta_melter=numpy.loadtxt('failure_distribution\\weibull.beta.inp',usecols[1]) #weibull distribution beta parameter for the melter
 ###
     weibull_eta_melter=(1)/(melter_failure_rate) # the eta parameter for the weibull distribution is equal to the reciprocal of the failure rate if beta = 1; i.e., this assumes random failures
+###
+    melter_failure_number=len(melter_failure_type) #total number of possible failures in the injection casting equipment
 ###
 #
 ### go back to home directory
@@ -174,19 +175,13 @@ def write_system_output(operation_time,melter_failure_time,total_campaign,melter
 #
 #
 #
+########################################################################
 #
-#
-####### (f): melter
-# Alloy is melted and injected into quartz molds
-# There is a probability of failure(s)
-# Each failure has an associated failure time
-# Some fraction of material is held up in the crucible (heel)
-# The heel remains when material leaves
-###
-#
-###
-def melter(operation_time,true_weight,expected_weight,melter_failure_number,melter_failure_type,melter_failure_probability,delay,crucible_fraction,accumulated_true_crucible,accumulated_expected_crucible,melter_failure_event,melter_failure_counter,melter_process_counter):
-###
+# (5): melter injection casting process
+# 
+#######
+def melter(operation_time,true_quantity,expected_quantity,melter_failure_number,melter_failure_type,melter_failure_probability,delay,crucible_fraction,accumulated_true_crucible,accumulated_expected_crucible,melter_failure_event,melter_failure_counter,melter_process_counter):
+#######
     print 'Alloy melting'
     operation_time=operation_time+0.5*delay
     melter_process_counter=melter_process_counter+1

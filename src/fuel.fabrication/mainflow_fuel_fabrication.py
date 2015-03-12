@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB 
-# rev.07.March.2015
+# rev.10.March.2015
 # v1.2
 ########################################################################
 #
@@ -104,7 +104,7 @@ melter_failure_time,melter_failure_counter,true_heel,expected_heel,measured_heel
 #
 # calculations for TIME=0
 #
-melter_probabbility_density_function_evaluate=melter_weibull.probability_density_function(operation_time,weibull_beta_melter,weibull_eta_melter)
+melter_probability_density_function_evaluate=melter_weibull.probability_density_function(operation_time,weibull_beta_melter,weibull_eta_melter)
 melter_unreliability_function_evaluate=melter_weibuill.unreliability_function(operation_time,weibull_beta_melter,weibull_eta_melter)
 ###
 melter_probability_density_function_failure_evaluate=melter_weibull.probability_density_function(failure_time,weibull_beta_melter,weibull_eta_melter)
@@ -149,7 +149,7 @@ while(operation_time<=facility_operation):
 #
 #######
 #
-# storage buffer batch preparation
+# storage buffer batch preparation process
 #
     operation_time,true_weight,expected_weight,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory=des_f.storage_transfer(operation_time,total_batch,storage_buffer_operation_time,true_weight,expected_weight,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory)
 #
@@ -240,6 +240,16 @@ operation_time,measured_weight,measured_storage_inventory,measured_initial_inven
 ####### Melter
 #
     operation_time,true_weight,expected_weight,accumulated_true_crucible,accumulated_expected_crucible,melter_failure_event,melter_failure_counter,melter_process_counter=des_f.melter(operation_time,true_weight,expected_weight,melter_failure_number,melter_failure_type,melter_failure_probability,process_time[1],crucible_fraction,accumulated_true_crucible,accumulated_expected_crucible,melter_failure_event,melter_failure_counter,melter_process_counter)
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
 ### data output routines
     time_output,campaign_output,true_storage_inventory_output,expected_storage_inventory_output,measured_storage_inventory_output,true_weight_output,expected_weight_output,measured_weight_output,true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,total_melter_failure_output,true_system_inventory_output,expected_system_inventory_output,measured_system_inventory_output,melter_process_counter_output,trimmer_process_counter_output=des_f.write_output(operation_time,total_campaign,true_storage_inventory,expected_storage_inventory,measured_storage_inventory,true_weight,expected_weight,measured_weight,true_muf,expected_muf,measured_muf,true_mufc,expected_mufc,measured_mufc,true_processed_inventory,expected_processed_inventory,measured_processed_inventory,melter_failure_counter,true_system_inventory,expected_system_inventory,measured_system_inventory,melter_process_counter,trimmer_process_counter,time_output,campaign_output,true_storage_inventory_output,expected_storage_inventory_output,measured_storage_inventory_output,true_weight_output,expected_weight_output,measured_weight_output,true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,total_melter_failure_output,true_system_inventory_output,expected_system_inventory_output,measured_system_inventory_output,melter_process_counter_output,trimmer_process_counter_output)
     end_of_campaign_false_alarm_counter_output=des_f.false_alarm_write(operation_time,total_campaign,end_of_campaign_false_alarm_counter,end_of_campaign_false_alarm_threshold,end_of_campaign_false_alarm_counter_output,end_of_campaign_false_alarm_test)

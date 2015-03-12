@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB
-# rev.23.February.2015
+# rev.10.March.2015
 ########################################################################
 # 
 # Edge transitions occur between each vertex.
@@ -52,10 +52,10 @@ def input_parameters(home_dir,input_dir,output_data_dir):
 # (2): edge transition
 #
 #######
-def edge_transition(operation_time,delay):
+def edge_transition(operation_time,edge_time_delay):
 #######
     print 'Edge transition','\n\n'
-    operation_time=operation_time+delay
+    operation_time=operation_time+edge_time_delay
 ###
     return(operation_time)
 ########################################################################

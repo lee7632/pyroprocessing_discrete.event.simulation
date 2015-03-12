@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB
-# rev.16.February.2015
+# rev.10.March.2015
 ########################################################################
 # 
 # Storage buffer vertex
@@ -31,7 +31,7 @@ import os
 # (2): open output files
 # (3): initialize parameters
 # (4): write storage buffer process data 
-# (5): storage buffer preparation
+# (5): storage buffer batch preparation process
 # (6): close output files
 #
 ########################################################################
@@ -141,13 +141,13 @@ def write_output(operation_time,total_batch,true_storage_inventory,expected_stor
 #
 ########################################################################
 #
-# (5): storage buffer preparation
+# (5): storage buffer batch preparation process
 #
 #######
-def storage_transfer(operation_time,total_batch,delay,true_quantity,expected_quantity,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory):
+def storage_transfer(operation_time,total_batch,vertex_delay_time,true_quantity,expected_quantity,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory):
 #######
     print 'Prepare batch in Storage Buffer for transfer.',total_batch,'kg','\n\n'    
-    operation_time=operation_time+delay
+    operation_time=operation_time+vertex_delay_time
 #
     true_quantity=total_batch
     expected_quantity=total_batch
