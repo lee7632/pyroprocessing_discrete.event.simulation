@@ -1,1 +1,3 @@
-**Input files for the fuel fabrication model simulation are located in each folder.**
+**edge.transition.inp**
+<br>
+starting.edge.location_ending.edge.location | edge transition time [d]

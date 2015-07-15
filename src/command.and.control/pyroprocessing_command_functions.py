@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB
-# rev.05.December.2014
+# rev.14.July.2015
 # v1.0
 ########################################################################
 #
@@ -24,13 +24,17 @@ import shutil
 #
 #
 ####### make simulation directories for input, output 
-def make_simulation_dir(subsystem,simulation_dir):
+def make_simulation_dir(home_dir,subsystem,simulation_dir):
+###
+#
+###
+    print 'creating simulation directories'
 ###
 #
 ### current directory is /src/command.and.control
 #
-    input_dir='..\\..\\input\\'+subsystem+'\\'+simulation_dir 
-    output_dir='..\\..\\output\\'+subsystem+'\\'+simulation_dir 
+    input_dir=home_dir+'\\input\\'+subsystem+'\\'+simulation_dir
+    output_dir=home_dir+'\\output\\'+subsystem+'\\'+simulation_dir 
 ###
 #
 ### make simulation directories
@@ -38,42 +42,65 @@ def make_simulation_dir(subsystem,simulation_dir):
     os.makedirs(output_dir)
 ###
 #
-### make data and figure output directories
-    os.chdir(output_dir)
-    os.makedirs('data')
-    os.makedirs('figures')
+### make input subdirectories
+    edge_transition_dir=make_subdirectory(input_dir,'edge_transition') 
+    failure_distribution_dir=make_subdirectory(input_dir,'failure_distribution') 
+    failure_equipment_dir=make_subdirectory(input_dir,'failure_equipment') 
+    kmps_dir=make_subdirectory(input_dir,'kmps') 
+    process_states_dir=make_subdirectory(input_dir,'process_states') 
+    system_false_alarm_dir=make_subdirectory(input_dir,'system_false_alarm') 
+#
+    os.makedirs(edge_transition_dir)
+    os.makedirs(failure_distribution_dir)
+    os.makedirs(failure_equipment_dir)
+    os.makedirs(kmps_dir)
+    os.makedirs(process_states_dir)
+    os.makedirs(system_false_alarm_dir)
 ###
-    return(input_dir,output_dir)
+#
+### make output directories
+    data_dir=make_subdirectory(output_dir,'data')
+    figures_dir=make_subdirectory(output_dir,'figures')
+#
+    os.makedirs(data_dir)
+    os.makedirs(figures_dir)
+###
+    return(input_dir,output_dir,edge_transition_dir,failure_distribution_dir,failure_equipment_dir,kmps_dir,process_states_dir,system_false_alarm_dir,data_dir,figures_dir)
 #######
 #
 #
 #
 ####### copy files from default directory to simulation directory
-def copy_input_files(subsystem,simulation_dir):
+def copy_input_files(home_dir,input_dir,subsystem,simulation_dir,edge_transition_dir,failure_distribution_dir,failure_equipment_dir,kmps_dir,process_states_dir,system_false_alarm_dir):
 ###
 #
-### move to default directory
-    default_dir_change='..\\..\\input\\'+subsystem+'\\'+'default'
-    os.chdir(default_dir_change)
-    default_dir=os.getcwd()
+###
+    print 'copying default input files to '+simulation_dir
 ###
 #
-### set destination directory
-    destination_dir='..\\'+simulation_dir
+### move to default directory for input data
+    default_dir=home_dir+'\\input\\'+subsystem+'\\'+'default'
+    os.chdir(default_dir)
 ###
 #
-    for files in os.listdir(default_dir):
-	if files.endswith('.inp'): # default readme.md file not to be copied
-	    shutil.copy(files,destination_dir)
-# end for
+### copy input files from default directory to simulation directory
+    copy_file('edge_transition',edge_transition_dir,default_dir)
+    copy_file('failure_distribution',failure_distribution_dir,default_dir)
+    copy_file('failure_equipment',failure_equipment_dir,default_dir)
+    copy_file('kmps',kmps_dir,default_dir)
+    copy_file('process_states',process_states_dir,default_dir)
+    copy_file('system_false_alarm',system_false_alarm_dir,default_dir)
+###
 #
+### copy readme file for input data
+    shutil.copy('readme.md',input_dir)
 ###
     return()
 #######
 #
 #
 #
-####### make read me file for the simulation
+####### make readme file for the simulation
 def make_readme(input_dir):
 ###
 #
@@ -100,7 +127,7 @@ def make_readme(input_dir):
 #
 #
 #
-####### write imput and output directories
+####### write input and output directories WRITE ALL OF THEM INCLUDING OUTPUT
 def write_simulation_dir(input_dir,output_dir):
 ###
 #
@@ -123,10 +150,41 @@ def write_simulation_dir(input_dir,output_dir):
 #
 ###
     return()
-########################################################################
+#######
 #
 #
 #
+####### make subdirectories
+def make_subdirectory(working_dir,subdirectory):
+###
+#
+### make subdirectory
+    dummy_subdirectory=working_dir+'\\'+subdirectory
+###
+    return(dummy_subdirectory)
+#######
+#
+#
+#
+####### copy input files from the default directory to the simulation directory
+def copy_file(local_dir,destination_dir,default_dir):
+###
+#
+### move to local subdirectory
+    local_subdir=default_dir+'\\'+local_dir
+    os.chdir(local_subdir)
+###
+#
+### copy file
+    for files in os.listdir(local_subdir):
+	shutil.copy(files,destination_dir)
+# end for
+###
+#
+### return to default directory for input data 
+    os.chdir(default_dir)
+###
+    return()
 ########################################################################
 #
 # EOF
