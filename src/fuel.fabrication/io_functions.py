@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB
-# rev.10.March.2015
+# rev.15.July.2015
 ########################################################################
 # 
 # Functions for in-simulation data processing
@@ -11,6 +11,7 @@
 # imports
 #
 import os
+import numpy
 #
 ########################################################################
 #
@@ -24,22 +25,8 @@ import os
 # (6): write system and material flow data
 #
 ########################################################################
-####### (b): Set facility configuration
-####### (f): melter
-####### (g): trimmer
-####### (h): product processing
-####### (i): mass balance
-####### (k): recycle storage
-####### (m): Failure test
-####### (n): End of campaign reset
-####### (n): End of campaign reset weight
-####### (o): Open output files
-####### (q): Close output files
-####### (s): Melter cleaning procedure
-####### (t): Maintenance
-####### (u): KMP measurement recording write to file
-####### (y): Weibull probability density function evaluation
-####### (z): Weibull unreliability function evaluation
+#
+# (1): Get simulation directories
 #
 ########################################################################
 #
@@ -49,38 +36,44 @@ import os
 #
 # (1): get simulation directories
 #
-# Input and output files are in different directories than the system files.
-# Directories are created and input files are copied into them from the default directory by pyroprocessing_command.py.
-# A system locator file is also created containing the relative (to the system files) directory paths. 
+# directories are created and input files are copied into them from the default directory by pyroprocessing_command.py
+# system locator file is created containing the directory paths in each subsystem folder
 #
 #######
-def get_simulation_dir():
+def get_simulation_dir(subsystem):
 #######
 #
 ### get home directory
-    home_dir=os.getcwd() #home directory is where the system files are located
+    os.chdir('C:\\root\\pyroDES')
+
+THIS IS LOADED WRONG
+home_dir=numpy.loadtxt('home.dir.inp',dtype='str')
 ###
 #
-### open path file containing directory locations
-    directory_path_file=open('..\\..\\input\\fuel.fabrication\\simulation.dir.inp').readlines()
+### get simulation directory paths 
+    simulation_dir=home_dir+'\\input\\'+subsystem
+    print simulation_dir
+#  os.chdir(home_dir+'\\input\\'+subsystem)
+    print os.getcwd()
+#    directory_path_file=open('..\\..\\input\\fuel.fabrication\\simulation.dir.inp').readlines()
 ###
 #
 ### split the string
-    directory_paths=directory_path_file[0].split(',')
+#    directory_paths=directory_path_file[0].split(',')
 ###
 #
 ### set directories
-    input_dir=directory_paths[0]
-    output_data_dir=directory_paths[1]
-    output_figure_dir=directory_paths[2]
+#    input_dir=directory_paths[0]
+#    output_data_dir=directory_paths[1]
+#    output_figure_dir=directory_paths[2]
 ###
-    print 'Working directories processed.'
-    print 'Home directory:',home_dir
-    print 'Input directory:',input_dir
-    print 'Output data directory:',output_data_dir
-    print 'Output figure directory:',output_figure_dir
+#    print 'Working directories processed.'
+#    print 'Home directory:',home_dir
+#    print 'Input directory:',input_dir
+#    print 'Output data directory:',output_data_dir
+#    print 'Output figure directory:',output_figure_dir
 ###
-    return(home_dir,input_dir,output_data_dir,output_figure_dir)
+    return()
 #
 ########################################################################
 #

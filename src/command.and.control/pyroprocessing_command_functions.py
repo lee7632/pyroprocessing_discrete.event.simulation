@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB
-# rev.14.July.2015
+# rev.15.July.2015
 # v1.0
 ########################################################################
 #
@@ -31,8 +31,7 @@ def make_simulation_dir(home_dir,subsystem,simulation_dir):
     print 'creating simulation directories'
 ###
 #
-### current directory is /src/command.and.control
-#
+###
     input_dir=home_dir+'\\input\\'+subsystem+'\\'+simulation_dir
     output_dir=home_dir+'\\output\\'+subsystem+'\\'+simulation_dir 
 ###
@@ -81,7 +80,7 @@ def copy_input_files(home_dir,input_dir,subsystem,simulation_dir,edge_transition
 ### move to default directory for input data
     default_dir=home_dir+'\\input\\'+subsystem+'\\'+'default'
     os.chdir(default_dir)
-###
+###input_dir,output_dir,edge_transition_dir,failure_distribution_dir,failure_equipment_dir,kmps_dir,process_states_dir,system_false_alarm_dir,data_dir,figures_dirtest
 #
 ### copy input files from default directory to simulation directory
     copy_file('edge_transition',edge_transition_dir,default_dir)
@@ -113,7 +112,7 @@ def make_readme(input_dir):
 ###
 #
 ### add statement
-    readme_statement=raw_input('enter a readme statement for the simulation:')
+    readme_statement=raw_input('enter a readme statement for the simulation: ')
 ###
 #
 ### write to file
@@ -127,13 +126,13 @@ def make_readme(input_dir):
 #
 #
 #
-####### write input and output directories WRITE ALL OF THEM INCLUDING OUTPUT
-def write_simulation_dir(input_dir,output_dir):
+####### write directory paths for subsystem module 
+def write_simulation_dir(home_dir,subsystem,input_dir,output_dir,edge_transition_dir,failure_distribution_dir,failure_equipment_dir,kmps_dir,process_states_dir,system_false_alarm_dir,data_dir,figures_dir):
 ###
 #
-### move up a level
-# this file needs to be stored outside of the simulation_dir so the module file knows where to look in the first place
-    os.chdir('..\\')
+### move to subsystem directory
+# the file has to be located here so the subsystem.py knows where to look
+    os.chdir(home_dir+'\\input\\'+subsystem)
 ###
 #
 ### open file
@@ -141,7 +140,7 @@ def write_simulation_dir(input_dir,output_dir):
 ###
 #
 ### write directories
-    simulation_dir_file.write(input_dir+','+output_dir+'\\data'+','+output_dir+'\\figures')
+    simulation_dir_file.write(input_dir+','+output_dir+','+edge_transition_dir+','+failure_distribution_dir+','+failure_equipment_dir+','+kmps_dir+','+process_states_dir+','+system_false_alarm_dir+','+data_dir+','+figures_dir)
 ###
 #
 ### close file
@@ -185,7 +184,38 @@ def copy_file(local_dir,destination_dir,default_dir):
     os.chdir(default_dir)
 ###
     return()
-########################################################################
+#######
+#
+#
+#
+####### write home directory information for pyroprocessing simulation 
+def write_home_dir(root_dir,home_dir):
+###
+#
+### move to high level directory
+# this location would not change, so eaqch subsystem.py can use the same function to get the home_dir
+# in case the home_dir does change the directory tree would still be the same
+#
+    os.chdir(root_dir)
+    os.makedirs('pyroDES')
+    os.chdir('pyroDES')
+###
+#
+### open file
+    home_dir_file=open('home.dir.inp','w+')
+###
+#
+### write directory 
+    home_dir_file.write(home_dir)
+###
+#
+### close file
+    home_dir_file.close()
+###
+#
+###
+    return()
+#######
 #
 # EOF
 #
