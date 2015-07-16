@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB
-# rev.10.March.2015
+# rev.16.July.2015
 ########################################################################
 # 
 # System false alarm module 
@@ -41,37 +41,6 @@ import os
 ########################################################################
 #
 #
-#
-########################################################################
-#
-# (1): read input data
-#
-#######
-def input_parameters(home_dir,input_dir,output_data_dir):
-#######
-#
-### go to input file directory
-    os.chdir(input_dir)
-###
-#
-### open data files
-    false_alarm_threshold=numpy.loadtxt('system_false_alarm\\false.alarm.threshold.inp',usecols=[1]) #false alarm thresholds
-    inspection_time=numpy.loadtxt('system_false_alarm\\inspection.time.inp',usecols=[1]) #time elapsed for each inspection
-#
-    melter_failure_inspection_time=inspection_time[0]
-    end_of_campaign_inspection_time=inspection_time[1]
-    melter_failure_false_alarm_threshold=false_alarm_threshold[0]
-    end_of_campaign_false_alarm_threshold=false_alarm_threshold[1]
-###
-#
-### go back to home directory
-    os.chdir(home_dir)
-###
-#
-###
-    print 'False alarm parameters loaded.','\n'
-###
-    return (melter_failure_false_alarm_threshold,end_of_campaign_false_alarm_threshold,melter_failure_inspection_time,end_of_campaign_inspection_time)
 #
 ########################################################################
 #

@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB
-# rev.10.March.2015
+# rev.16.July.2015
 ########################################################################
 # 
 # Key measurement points (KMPs) are located based on the system diagram.
@@ -29,40 +29,6 @@ import os
 # (3): kmp measurement
 # (4): write kmp measurement data
 # (5): close output files
-#
-########################################################################
-#
-#
-#
-########################################################################
-#
-# (1): read input data
-#
-#######
-def input_parameters(home_dir,input_dir,output_data_dir):
-#######
-#
-### go to input file directory
-    os.chdir(input_dir)
-###
-#
-### open data files
-    kmp_data=numpy.loadtext('kmps\\key.measurement.points.inp',usecols=[0]) #reads in the KMP lables to determine the total number of KMPs in the facility
-    kmp_measurement_time=numpy.loadtxt('kmps\\key.measurement.points.inp',usecols=[1]) #measurement time at each KMP
-    kmp_measurement_uncertainty=numpy.loadtxt('kmps\\key.measurement.points.inp',usecols=[2]) #measurement uncertainty at each KMP
-    kmp_measurement_threshold=numpy.loadtxt('kmps\\key.measurement.points.inp',usecols=[3]) #measurement threshold to trigger false alarms at each KMP
-###
-#
-### determine maximum KMPs
-    maximum_kmp=len(kmp_data) #total number of KMPs
-###
-#
-### go back to home directory
-    os.chdir(home_dir)
-###
-    print 'Key measurment point information read.','Total KMPs:',maximum_kmp,'\n'
-###
-    return(kmp_measurement_time,kmp_measurement_uncertainty,kmp_measurement_threshold)
 #
 ########################################################################
 #

@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB
-# rev.15.July.2015
+# rev.16.July.2015
 ########################################################################
 # 
 # Functions for in-simulation data processing
@@ -12,21 +12,19 @@
 #
 import os
 import numpy
+import shutil
 #
 ########################################################################
 #
 # function list
 #
-# (1): get simulation directories 
-# (2): read in input data and prepare output data tables
-# (3): open output files
-# (4): initialize parameters
-# (5): write operation time data
-# (6): write system and material flow data
-#
-########################################################################
-#
-# (1): Get simulation directories
+# (1): get simulation directories
+# (2): read system operation input data
+# (3): read storage buffer input data
+# (4): read melter input data
+# (5): read system false alarm input data
+# (6): read edge transition input data
+# (7): read kmp input data
 #
 ########################################################################
 #
@@ -45,160 +43,233 @@ def get_simulation_dir(subsystem):
 #
 ### get home directory
     os.chdir('C:\\root\\pyroDES')
-
-THIS IS LOADED WRONG
-home_dir=numpy.loadtxt('home.dir.inp',dtype='str')
+    home_dir=open('home.dir.inp').read()
 ###
 #
 ### get simulation directory paths 
     simulation_dir=home_dir+'\\input\\'+subsystem
-    print simulation_dir
-#  os.chdir(home_dir+'\\input\\'+subsystem)
-    print os.getcwd()
-#    directory_path_file=open('..\\..\\input\\fuel.fabrication\\simulation.dir.inp').readlines()
+    os.chdir(home_dir+'\\input\\'+subsystem)
+    directory_path_file=open('simulation.dir.inp').readlines()
 ###
 #
 ### split the string
-#    directory_paths=directory_path_file[0].split(',')
+    directory_paths=directory_path_file[0].split(',')
 ###
 #
 ### set directories
-#    input_dir=directory_paths[0]
-#    output_data_dir=directory_paths[1]
-#    output_figure_dir=directory_paths[2]
+    input_dir=directory_paths[0]
+    output_dir=directory_paths[1]
+#
+    edge_transition_dir=directory_paths[2]
+    failure_distribution_dir=directory_paths[3]
+    failure_equipment_dir=directory_paths[4]
+    kmps_dir=directory_paths[5]
+    process_states_dir=directory_paths[6]
+    system_false_alarm_dir=directory_paths[7]
+#    
+    data_dir=directory_paths[8]
+    figures_dir=directory_paths[9]
+#    
+    system_odir=directory_paths[10]
+    material_flow_odir=directory_paths[11]
+    inventory_odir=directory_paths[12]
+    false_alarm_odir=directory_paths[13]
+    kmps_odir=directory_paths[14]
+    muf_odir=directory_paths[15]
+    melter_failure_odir=directory_paths[16]
+#
+    system_gdir=directory_paths[17]
+    material_flow_gdir=directory_paths[18]
+    inventory_gdir=directory_paths[19]
+    false_alarm_gdir=directory_paths[20]
+    kmps_gdir=directory_paths[21]
+    muf_gdir=directory_paths[22]
+    melter_failure_gdir=directory_paths[23]
 ###
-#    print 'Working directories processed.'
-#    print 'Home directory:',home_dir
-#    print 'Input directory:',input_dir
-#    print 'Output data directory:',output_data_dir
-#    print 'Output figure directory:',output_figure_dir
+    print 'Working directories processed.'
+#   os.remove('simulation.dir.inp') 
+    print 
 ###
-    return()
+    return(input_dir,output_dir,edge_transition_dir,failure_distribution_dir,failure_equipment_dir,kmps_dir,process_states_dir,system_false_alarm_dir,data_dir,figures_dir,system_odir,material_flow_odir,inventory_odir,false_alarm_odir,kmps_odir,muf_odir,melter_failure_odir,system_gdir,material_flow_gdir,inventory_gdir,false_alarm_gdir,kmps_gdir,muf_gdir,melter_failure_gdir)
+########################################################################
+#
+#
 #
 ########################################################################
 #
-# (2): read input data and prepare output data tables
+# (2): read system operation input data
 #
 #######
-def input_parameters(home_dir,input_dir,output_data_dir):
+def input_system_operation(input_dir,process_states_dir,output_dir):
 #######
 #
-### go to input file directory
-    os.chdir(input_dir)
+### 
+    os.chdir(process_states_dir) #change dir
+#
+    facility_operation=numpy.loadtxt('facility.operation.inp') #total time of facility operation; i.e., simulation time 
+    process_time=numpy.loadtxt('process.operation.time.inp',usecols=[1]) #time for each vertex to process material
 ###
 #
-### open data files
+### copy readme to output dir 
+    os.chdir(input_dir) #change dir
+    shutil.copy('readme.md',output_dir) #copy file
+###
+    return(facility_operation,process_time)
+########################################################################
+#
+#
+#
+########################################################################
+#
+# (3): read storage buffer input data
+#
+#######
+def input_storage_buffer(process_states_dir):
+#######
+#
+### 
+    os.chdir(process_states_dir) #change dir
+#
     batch=numpy.loadtxt('batch.inp') #batch size
-    crucible_fraction=numpy.loadtxt('crucible.fraction.inp') #fraction of material left in the crucible during melting; 1st element is the expected quantity, 2nd and 3rd are the range for the true quantity
-    edge_transition=numpy.loadtxt('edge_transition\\edge.transition.inp') #time elapsed on each edge transition
-    facility_operation=numpy.loadtxt('facility.operation.inp') #total time of facility operation; i.e., simulation time 
-    false_alarm_threshold=numpy.loadtxt('false.alarm.threshold.inp',usecols=[1]) #false alarm thresholds
-    inspection_time=numpy.loadtxt('inspection.time.inp',usecols=[1]) #time elapsed for each inspection
-    kmp_data=numpy.loadtxt('kmps\\kmp.measurement.points.inp') #KMP data
-    melter_failure_number=numpy.loadtxt('melter.failure.number.inp',dtype=int) #total number of possible melter failures
+    unprocessed_storage_inventory=numpy.loadtxt('unprocessed.storage.inventory.inp') #total quantity of naterial in storage buffer at TIME=0
+###
+    print 'Storage buffer input data read.','\n'
+###
+    return(batch,unprocessed_storage_inventory)
+########################################################################
+#
+#
+#
+########################################################################
+#
+# (4): read melter input data
+#
+#######
+def input_melter(process_states_dir,failure_equipment_dir,failure_distribution_dir):
+#######
+#
+### 
+    os.chdir(process_states_dir) #change dir
+#
+    crucible_fraction=numpy.loadtxt('melter.crucible.fraction.inp',usecols=[1]) #fraction of material left in the crucible during melting; 1st element is the expected quantity, 2nd and 3rd are the range for the true quantity
+###
+#
+###
+    os.chdir(failure_equipment_dir) #change dir
+#
     melter_failure_type=numpy.loadtxt('melter.failure.data.inp',usecols=[0],dtype=str) #type of melter failure
     melter_failure_rate=numpy.loadtxt('melter.failure.data.inp',usecols=[1]) #corresponding melter failure rate
     melter_failure_maintenance_time=numpy.loadtxt('melter.failure.data.inp',usecols=[2]) #time to repair each failure
-    melter_cleaning_time=numpy.loadtxt('melter.cleaning.time.inp') #time to clean the melter prior to equipment removal
-    process_time=numpy.loadtxt('process.time.inp',usecols=[1]) #time for each vertex to process material
-    weibull_beta_melter=numpy.loadtxt('weibull.beta.inp') #weibull distribution beta parameter for the melter
-###
-    readme_input=open('readme.md').readlines()
+    melter_cleaning_time=numpy.loadtxt('melter.failure.data.inp',usecols=[3]) #time to clean the melter prior to equipment removal
 ###
 #
+###
+    os.chdir(failure_distribution_dir) #change dir
+#
+    weibull_beta_melter=numpy.loadtxt('weibull.beta.inp',usecols=[1]) #weibull distribution beta parameter for the melter
+###
+#
+### calculations
+    weibull_eta_melter=(1)/melter_failure_rate #eta for weibull distribution is reciprocal of failure rate if beta = 1; assumes random failure
+#    melter_failure_number=len(melter_failure_type) #total number of possible failures if > 1
+###
+#
+###
+    print 'Melter input data read.','\n'
+###
+    return(crucible_fraction,melter_failure_type,melter_failure_rate,melter_failure_maintenance_time,melter_cleaning_time,weibull_beta_melter,weibull_eta_melter) 
+########################################################################
+#
+#
+#
+########################################################################
+#
+# (5): read system false alarm input data
+#
+#######
+def input_system_false_alarm(system_false_alarm_dir):
+#######
+#
 ### 
+    os.chdir(system_false_alarm_dir) #change dir
+#
+    false_alarm_threshold=numpy.loadtxt('false.alarm.threshold.inp',usecols=[1]) #false alarm thresholds
+    inspection_time=numpy.loadtxt('inspection.time.inp',usecols=[1]) #time elapsed for each inspection
+###
+#
+### sort false alarms
     melter_failure_inspection_time=inspection_time[0]
     end_of_campaign_inspection_time=inspection_time[1]
     melter_failure_false_alarm_threshold=false_alarm_threshold[0]
     end_of_campaign_false_alarm_threshold=false_alarm_threshold[1]
-    weibull_eta_melter=(1)/(melter_failure_rate) # the eta parameter for the weibull distribution is equal to the reciprocal of the failure rate if beta = 1; i.e., this assumes random failures
-###
-#
-### output
-    crucible_fraction_output=numpy.zeros((3))    
-    edge_time_output=numpy.zeros((2*maximum_kmp))    
-    kmp_output=numpy.zeros((maximum_kmp,4))
-    process_failures_output=numpy.zeros((melter_failure_number,2))
-    melter_failure_inspection_time_output=numpy.zeros((1))
-    end_of_campaign_inspection_time_output=numpy.zeros((1))
-    end_of_campaign_false_alarm_output=numpy.zeros(1)
-    melter_failure_false_alarm_output=numpy.zeros(1)
-    melter_cleaning_time_output=numpy.zeros((1))
-    batch_output=numpy.zeros((1))
-    facility_operation_output=numpy.zeros((1))
-#
-    for i in range(0,melter_failure_number):
-        process_failures_output[i,0]=melter_failure_rate[i]
-        process_failures_output[i,1]=24*melter_failure_maintenance_time[i]
-# end
-#
-    melter_failure_inspection_time_output[0]=24*melter_failure_inspection_time
-    end_of_campaign_inspection_time_output[0]=24*end_of_campaign_inspection_time    
-    end_of_campaign_false_alarm_output[0]=end_of_campaign_false_alarm_threshold
-    melter_failure_false_alarm_output[0]=melter_failure_false_alarm_threshold    
-    melter_cleaning_time_output[0]=24*melter_cleaning_time
-    batch_output[0]=batch
-    facility_operation_output[0]=facility_operation
-#
-    for j in range(0,maximum_kmp):
-        kmp_output[j,0]=j
-        kmp_output[j,1]=kmp_measurement_uncertainty[j]
-        kmp_output[j,2]=24*kmp_time[j]
-        kmp_output[j,3]=kmp_measurement_threshold[j]        
-# end
 ###
 #
 ###
-    for k in range(0,2*maximum_kmp):
-        edge_time_output[k]=24*edge_time[k]
-# end
+    print 'System false alarm input data read.','\n'
 ###
-#
-###
-    for l in range(0,2):
-        crucible_fraction_output[l]=crucible_fraction[l]
-# end
-###
-#
-### save files
-# move to output directory
-    os.chdir(home_dir)
-    os.chdir(output_data_dir)
-#
-    numpy.savetxt('process.failures.out',process_failures_output,fmt=['%.4f','%.2f'],header='Failure probability\tMaintenance time (h)',comments='',delimiter='\t\t\t')
-    numpy.savetxt('melter.failure.inspection.time.out',melter_failure_inspection_time_output,fmt=['%.2f'],header='Melter failure inspection time (h)',comments='')
-    numpy.savetxt('campaign.inspection.time.out',end_of_campaign_inspection_time_output,fmt=['%.2f'],header='End of campaign inspection time (h)',comments='')
-    numpy.savetxt('kmp.out',kmp_output,fmt=['%.0f','%.4f','%.2f','%.4f'],header='KMP\tMeasurement uncertainty\tMeasurement delay time (h)\tMeasurement threshold',comments='',delimiter='\t\t\t')
-    numpy.savetxt('end.of.campaign.false.alarm.out',end_of_campaign_false_alarm_output,fmt=['%.4f'],header='Fraction of MUF to trigger alarm for system inspection',comments='')
-    numpy.savetxt('melter.failure.false.alarm.out',melter_failure_false_alarm_output,fmt=['%.4f'],header='Fraction of MUF to trigger alarm for system inspection due to failure',comments='')
-    numpy.savetxt('melter.cleaning.time.out',melter_cleaning_time_output,fmt=['%.4f'],header='Time to clean the melter additional to maintenance activity (h)',comments='')
-    numpy.savetxt('facility.operation.out',facility_operation_output,fmt=['%.1f'],header='Facility operational period (d)',comments='')
-    numpy.savetxt('batch.out',batch_output,fmt=['%.1f'],header='Batch per campaign (kg)',comments='')
-    numpy.savetxt('edge.time.out',edge_time_output,fmt=['%.2f'],header='Transition time along edges (h); see system diagram',comments='')
-    numpy.savetxt('crucible.fraction.out',crucible_fraction_output,fmt=['%.4f'],header='Crucible fraction (kg)',comments='')
-#
-    readme_output=open('readme.md','w+')
-    readme_output.write(readme_input[0])
-    readme_output.close()
-###
-#
-### go back to home directory
-    os.chdir(home_dir)
-###
-    print 'System write complete.','\n'
-###
-    return(facility_operation,process_time)
-#
+    return(melter_failure_false_alarm_threshold,end_of_campaign_false_alarm_threshold,melter_failure_inspection_time,end_of_campaign_inspection_time) 
 ########################################################################
 #
 #
 #
 ########################################################################
 #
-# (3): open output files
+# (6): read edge transition input data
 #
 #######
-def open_output_files(home_dir,output_data_dir):
+def input_edge_transition(edge_transition_dir):
+#######
+#
+### 
+    os.chdir(edge_transition_dir) #change dir
+#
+    edge_transition=numpy.loadtxt('edge.transition.inp',usecols=[1]) #time elapsed on each edge transition
+###
+#
+###
+    print 'Edge transition input data read.','\n'
+###
+    return(edge_transition) 
+########################################################################
+#
+#
+#
+########################################################################
+#
+# (7): read kmp input data
+#
+#######
+def input_kmps(kmps_dir):
+#######
+#
+### 
+    os.chdir(kmps_dir) #change dir
+#
+    kmp_id=numpy.loadtxt('key.measurement.points.inp',usecols=[0]) #kmp identification numbers
+    kmp_time=numpy.loadtxt('key.measurement.points.inp',usecols=[1]) #measurement time at each kmp
+    kmp_uncertainty=numpy.loadtxt('key.measurement.points.inp',usecols=[2]) #measurement uncertainty at each kmp
+    kmp_threshold=numpy.loadtxt('key.measurement.points.inp',usecols=[3]) #measurement threshold to trigger false alarms at each kmp
+
+###
+#
+### determine maximum number of kmps
+    maximum_kmp=len(kmp_id)
+### 
+#
+###
+    print 'Key measurement point input data read.','\n'
+###
+    return(kmp_id,kmp_time,kmp_uncertainty,kmp_threshold,maximum_kmp) 
+########################################################################
+#
+#
+#
+########################################################################
+#
+# (8): open system output files
+#
+#######
+def open_output_files(output_data_dir):
 #######
 #
 ### change directory

@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB
-# rev.07.March.2015
+# rev.16.July.2015
 ########################################################################
 # 
 # Melter vertex 
@@ -31,7 +31,6 @@ import failure_analysis_weibull as failure_analysis
 #
 # function list
 #
-# (1): read input data
 # (2): open output files
 # (3): initialize parameters
 # (4): write melter process data 
@@ -54,42 +53,6 @@ import failure_analysis_weibull as failure_analysis
 ####### (u): KMP measurement recording write to file
 ####### (y): Weibull probability density function evaluation
 ####### (z): Weibull unreliability function evaluation
-#
-########################################################################
-#
-#
-#
-########################################################################
-#
-# (1): read input data
-#
-#######
-def input_parameters(home_dir,input_dir,output_data_dir):
-#######
-#
-### go to input file directory
-    os.chdir(input_dir)
-###
-#
-### open data files
-    crucible_fraction=numpy.loadtxt('process_states\\melter.crucible.fraction.inp',usecols=[1]) #fraction of material left in the crucible during melting process
-    melter_failure_type=numpy.loadtxt('failure_distribution\\melter.failure.data.inp',usecols=[0],dtype=str) #type of melter failure
-    melter_failure_rate=numpy.loadtxt('failure_distribution\\melter.failure.data.inp',usecols=[1]) #corresponding melter failure rate
-    melter_failure_maintenance_time=numpy.loadtxt('failure_distribution\\melter.failure.data.inp',usecols=[2]) #time to repair each failure
-    melter_cleaning_time=numpy.loadtxt('failure_distribution\\melter.failure.data.inp',usecols[3]) #time to clean the melter prior to equipment removal
-    weibull_beta_melter=numpy.loadtxt('failure_distribution\\weibull.beta.inp',usecols[1]) #weibull distribution beta parameter for the melter
-###
-    weibull_eta_melter=(1)/(melter_failure_rate) # the eta parameter for the weibull distribution is equal to the reciprocal of the failure rate if beta = 1; i.e., this assumes random failures
-###
-    melter_failure_number=len(melter_failure_type) #total number of possible failures in the injection casting equipment
-###
-#
-### go back to home directory
-    os.chdir(home_dir)
-###
-    print 'Melter parameters loaded.','\n'
-###
-    return(crucible_fraction,melter_failure_type,melter_failure_rate,melter_failure_maintenance_time,melter_cleaning_time,weibull_beta_melter,weibull_eta_melter)
 #
 ########################################################################
 #

@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB
-# rev.10.March.2015
+# rev.16.July.2015
 ########################################################################
 # 
 # Storage buffer vertex
@@ -37,30 +37,6 @@ import os
 ########################################################################
 #
 #
-#
-########################################################################
-#
-# (1): read input data
-#
-#######
-def input_parameters(home_dir,input_dir,output_data_dir):
-#######
-#
-### go to input file directory
-    os.chdir(input_dir)
-###
-#
-### open data files
-    batch=numpy.loadtxt('process_states\\batch.inp') #batch size
-    unprocessed_storage_inventory=numpy.loadtxt('process_states\\unprocessed.storage.inventory.inp') #total quantity of material in storage buffer at TIME=0
-###
-#
-### go back to home directory
-    os.chdir(home_dir)
-###
-    print 'Storage buffer parameters loaded.','\n'
-###
-    return(batch,unprocessed_storage_inventory)
 #
 ########################################################################
 #

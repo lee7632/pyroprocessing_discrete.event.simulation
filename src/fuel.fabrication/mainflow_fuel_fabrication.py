@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB 
-# rev.15.July.2015
+# rev.16.July.2015
 # v1.2
 ########################################################################
 #
@@ -26,7 +26,7 @@
 #
 import numpy
 import io_functions as io
-import total_system_false_alarm as false_alarm
+import system_false_alarm 
 import vertex_storage_buffer as storage_buffer
 import edge_transition
 import key_measurement_points as kmps
@@ -41,7 +41,7 @@ import vertex_melter as melter
 #
 # get simulation directories 
 #
-io.get_simulation_dir('fuel.fabrication')
+input_dir,output_dir,edge_transition_dir,failure_distribution_dir,failure_equipment_dir,kmps_dir,process_states_dir,system_false_alarm_dir,data_dir,figures_dir,system_odir,material_flow_odir,inventory_odir,false_alarm_odir,kmps_odir,muf_odir,melter_failure_odir,system_gdir,material_flow_gdir,inventory_gdir,false_alarm_gdir,kmps_gdir,muf_gdir,melter_failure_gdir=io.get_simulation_dir('fuel.fabrication')
 #
 ########################################################################
 #
@@ -51,17 +51,17 @@ io.get_simulation_dir('fuel.fabrication')
 #
 # read input data
 #
-#facility_operation,process_time=io.input_parameters(home_dir,input_dir,output_data_dir) #system and material flow
-###
-#batch,unprocessed_storage_inventory=storage_buffer.input_parameters(home_dir,input_dir,output_data_dir) #vertex storage buffer
-###
-#melter_failure_false_alarm_threshold,end_of_campaign_false_alarm_threshold,melter_failure_inspection_time,end_of_campaign_inspection_time=false_alarm.input_parameters(home_dir,input_dir,output_data_dir) #system false alarm
-###
-#edge_transition=edge_transtion.input_parameters(home_dir,input_dir,output_data_dir) #edge transition
-###
-#kmp_measurement_time,kmp_measurement_uncertainty,kmp_measurement_threshold=kmp.input_parameters(home_dir,input_dir,output_data_dir) #key measurement points
-###
-#crucible_fraction,melter_failure_number,melter_failure_type,melter_failure_rate,melter_failure_maintenance_time,melter_cleaning_time,weibull_beta_melter,weibull_eta_melter=melter.input_parameters(home_dir,input_dir,output_data_dir) #vertex melter
+facility_operation,process_time=io.input_system_operation(input_dir,process_states_dir,output_dir)
+#
+batch,unprocessed_storage_inventory=io.input_storage_buffer(process_states_dir)
+#
+crucible_fraction,melter_failure_type,melter_failure_rate,melter_failure_maintenance_time,melter_cleaning_time,weibull_beta_melter,weibull_eta_melter=io.input_melter(process_states_dir,failure_equipment_dir,failure_distribution_dir) #vertex melter
+#
+melter_failure_false_alarm_threshold,end_of_campaign_false_alarm_threshold,melter_failure_inspection_time,end_of_campaign_inspection_time=io.input_system_false_alarm(system_false_alarm_dir) #system false alarm
+#
+edge_transition=io.input_edge_transition(edge_transition_dir) #edge transition
+#
+kmp_id,kmp_time,kmp_uncertainty,kmp_threshold,maximum_kmp=io.input_kmps(kmps_dir) #key measurement points
 #
 ########################################################################
 #
@@ -72,11 +72,11 @@ io.get_simulation_dir('fuel.fabrication')
 # open output files 
 #
 #time_output,campaign_output,measured_storage_inventory_output,true_weight_output,expected_weight_output,measured_weight_output,true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,measured_system_inventory_output,trimmer_process_counter_output=io.open_output_files(home_dir,output_data_dir) #system and material flow
-###
+#
 #true_storage_inventory_output,expected_storage_inventory_output,true_system_inventory_output,expected_system_inventory_output,batch_output=storage_buffer.open_output_files(home_dir,output_data_dir) #vertex storage buffer
-###
+#
 #melter_failure_false_alarm_counter_output,end_of_campaign_false_alarm_counter_output=false_alarm.open_output_files(home_dir,output_data_dir) #system false alarm
-###
+##
 #true_kmp,expected_kmp,measured_kmp=kmp.open_output_files(home_dir,output_data_dir) #key measurement points
 ###
 #total_melter_failure_output,true_heel_output,expected_heel_output,measured_heel_output,melter_process_counter_output,melter_probability_density_function_output,melter_unreliability_function_output=melter.open_output_files(home_dir,output_data_dir) #vertex melter
