@@ -27,45 +27,10 @@ import os
 #
 # function list
 #
-# (1): read input data
-# (2): open output files
 # (3): initialize parameters
 # (4): write storage buffer process data 
 # (5): storage buffer batch preparation process
 # (6): close output files
-#
-########################################################################
-#
-#
-#
-########################################################################
-#
-#
-#
-########################################################################
-#
-# (2): open output files
-#
-#######
-def open_output_files(home_dir,output_data_dir):
-#######
-#
-### change directory
-    os.chdir(output_data_dir)
-###
-#
-### open files: the functions for writing data to the files explain what is in each of them since the variables are listed
-    true_storage_inventory_output=open('process_states\\true.storage.inventory.out','w+')
-    expected_storage_inventory_output=open('process_states\\expected.storage.inventory.out','w+')
-    true_system_inventory_output=open('process_states\\true.system.inventory.out','w+')
-    expected_system_inventory_output=open('process_states\\expected.system.inventory.out','w+')
-    batch_output=open('process_states\\total.batch.out','w+')
-###
-#
-### return to home directory
-    os.chdir(home_dir)
-###
-    return(true_storage_inventory_output,expected_storage_inventory_output,true_system_inventory_output,expected_system_inventory_output,batch_output)
 #
 ########################################################################
 #

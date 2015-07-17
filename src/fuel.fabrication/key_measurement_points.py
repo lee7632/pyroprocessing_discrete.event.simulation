@@ -24,38 +24,9 @@ import os
 #
 # function list
 #
-# (1): read in input data
-# (2): open output files
 # (3): kmp measurement
 # (4): write kmp measurement data
 # (5): close output files
-#
-########################################################################
-#
-#
-#
-########################################################################
-#
-# (2): open output files
-#
-#######
-def open_output_files(home_dir,output_data_dir):
-#######
-#
-### change directory
-    os.chdir(output_data_dir)
-###
-#
-### open files: the functions for writing data to the files explain what is in each of them since the variables are listed
-    true_kmp=open('true.kmp.out','w+')
-    expected_kmp=open('expected.kmp.out','w+')
-    measured_kmp=open('measured.kmp.out','w+')
-###
-#
-### return to home directory
-    os.chdir(home_dir)
-###
-    return(true_kmp,expected_kmp,measured_kmp)
 #
 ########################################################################
 #

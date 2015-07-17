@@ -31,42 +31,10 @@ import os
 #
 # function list
 #
-# (1): read input data
-# (2): open output files
 # (3): initialize parameters
 # (4): write false alarm data
 # (5): false alarm test
 # (6): close output files
-#
-########################################################################
-#
-#
-#
-########################################################################
-#
-#
-#
-########################################################################
-#
-# (2): open output files
-#
-#######
-def open_output_files(home_dir,output_data_dir):
-#######
-#
-### change directory
-    os.chdir(output_data_dir)
-###
-#
-### open files: the functions for writing data to the files explain what is in each of them since the variables are listed
-    melter_failure_false_alarm_counter_output=open('system_false_alarm\\melter.failure.false.alarm.counter.out','w+')
-    end_of_campaign_false_alarm_counter_output=open('system_false_alarm\\end.of.campaign.false.alarm.counter.out','w+')
-###
-#
-### return to home directory
-    os.chdir(home_dir)
-###
-    return(melter_failure_false_alarm_counter_output,end_of_campaign_false_alarm_counter_output)
 #
 ########################################################################
 #

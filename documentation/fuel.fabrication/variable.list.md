@@ -37,6 +37,7 @@
 <ul>
 <b>D</b>
 <li>delay=dummy variable used in the functions for the time delays...all set in preprocessing
+<li>_dir=directory location (*o=output,*g=figures)
 </ul>
 <ul>
 <b>E</b>
@@ -121,7 +122,7 @@
 <li>measured_processed_inventory=total measured mass processed
 <li>measured_muf=total measured facility material unaccounted for
 <li>measured_mufc=muf for specific campaign
-<li>melter_failure_counter=total number of melter failures over operation time
+<li>melter_failure_total_counter=total number of melter failures over operation time
 <li>melter_failure_event=boolean to indicate a melter failure occurred
 <li>melter_failure_number=number of failures that could occur in the melter
 <li>melter_cleaning_time=time delay for the melter to be cleaned...set in preprocessing
@@ -132,6 +133,7 @@
 <li>melter_failure_type=type of melter failure...set in preprocessing
 <li>melter_process_counter=counts the number of times the melting process is initiated
 <li>melter_failure_time=time record to determine melter failure; if there is a failure, failure_time resets to 0; i.e., there is a new probability distribution
+<li>melter_failure_campaign_counter=total failures per campaign for melter
 </ul> 
 <ul>
 <b>N</b>
@@ -169,7 +171,6 @@
 <li>true_storage_inventory=total mass in storage buffer
 <li>true_heel=true material left in the crucible per campaign
 <li>true_weight=true weight of material transferred through the system
-<li>total_melter_failure=total failures per campaign for melter
 <li>true_crucible_fraction=quantity of material left in the crucible...randomized per melting process 
 <li>true_system_inventory=running total of mass transfer from storage
 <li>true_processed_inventory=total mass processed 

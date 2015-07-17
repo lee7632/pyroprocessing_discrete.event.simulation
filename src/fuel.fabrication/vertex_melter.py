@@ -31,7 +31,6 @@ import failure_analysis_weibull as failure_analysis
 #
 # function list
 #
-# (2): open output files
 # (3): initialize parameters
 # (4): write melter process data 
 # (5): melter injection casting process 
@@ -53,37 +52,6 @@ import failure_analysis_weibull as failure_analysis
 ####### (u): KMP measurement recording write to file
 ####### (y): Weibull probability density function evaluation
 ####### (z): Weibull unreliability function evaluation
-#
-########################################################################
-#
-#
-#
-########################################################################
-#
-# (2): open output files
-#
-#######
-def open_output_files(home_dir,output_data_dir):
-#######
-#
-### change directory
-    os.chdir(output_data_dir)
-###
-#
-### open files: the functions for writing data to the files explain what is in each of them since the variables are listed
-    total_melter_failure_output=open('total.melter.failures.out','w+')
-    true_heel_output=open('true.heel.out','w+')
-    expected_heel_output=open('expected.heel.out','w+')
-    measured_heel_output=open('measured.heel.out','w+')
-    melter_process_counter_output=open('melter.process.counter.out','w+')
-    melter_probability_density_function_output=open('melter.probability.density.function.out','w+')
-    melter_unreliability_function_output=open('melter.unreliability.function.out','w+')
-###
-#
-### return to home directory
-    os.chdir(home_dir)
-###
-    return(total_melter_failure_output,true_heel_output,expected_heel_output,measured_heel_output,melter_process_counter_output,melter_probability_density_function_output,melter_unreliability_function_output)
 #
 ########################################################################
 #
