@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB
-# rev.16.July.2015
+# rev.20.July.2015
 ########################################################################
 # 
 # Melter vertex 
@@ -31,27 +31,6 @@ import failure_analysis_weibull as failure_analysis
 #
 # function list
 #
-# (3): initialize parameters
-# (4): write melter process data 
-# (5): melter injection casting process 
-#
-########################################################################
-####### (b): Set facility configuration
-####### (f): melter
-####### (g): trimmer
-####### (h): product processing
-####### (i): mass balance
-####### (k): recycle storage
-####### (m): Failure test
-####### (n): End of campaign reset
-####### (n): End of campaign reset weight
-####### (o): Open output files
-####### (q): Close output files
-####### (s): Melter cleaning procedure
-####### (t): Maintenance
-####### (u): KMP measurement recording write to file
-####### (y): Weibull probability density function evaluation
-####### (z): Weibull unreliability function evaluation
 #
 ########################################################################
 #
@@ -96,7 +75,6 @@ def initialize_parameters():
 def write_system_output(operation_time,melter_failure_time,total_campaign,melter_failure_counter,melter_process_counter,melter_probability_density_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_evaluate,melter_unreliability_function_failure_evaluate,total_melter_failure_output,melter_process_counter_output,melter_probability_density_function_output,melter_unreliability_function_output):
 #######
     total_melter_failure_output.write(str.format('%i'%total_campaign)+'\t'+str.format('%i'%total_melter_failure)+'\n')
-    melter_process_counter_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%i'%melter_process_counter)+'\n')
     melter_probability_density_function_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%melter_probability_density_function_evaluate)+'\t'+str.format('%.4f'%failure_time)+'\t'+str.format('%.4f'%melter_probability_density_function_failure_evaluate)+'\n')
     melter_unreliability_function_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%melter_unreliability_function_evaluate)+'\t'+str.format('%.4f'%failure_time)+'\t'+str.format('%.4f'%melter_unreliability_function_failure_evaluate)+'\n')
 ###

@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB 
-# rev.10.March.2015
+# rev.20.July.2015
 ########################################################################
 #
 # The Weibull distribution is used for a lot of failure analysis.
@@ -87,11 +87,6 @@ def probability_density_function(time_domain,weibull_beta,weibull_eta):
     function_evaluate=(weibull_beta/weibull_eta)*((time_domain/weibull_eta)**(weibull_beta-1))*numpy.exp(-(time_domain/weibull_eta)**(weibull_beta))
 ###
     return(function_evaluate)
-#
-########################################################################
-#
-#
-#
 ########################################################################
 #
 # (2): unreliability function
@@ -104,11 +99,6 @@ def unreliability_function(time_domain,weibull_beta,weibull_eta):
     function_evaluate=1-numpy.exp(-(time_domain/weibull_eta)**(weibull_beta)) 
 ###
     return(function_evaluate)
-#
-########################################################################
-#
-#
-#
 ########################################################################
 #
 # EOF
