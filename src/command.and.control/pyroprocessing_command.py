@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB
-# rev.22.July.2015
+# rev.23.July.2015
 # v1.2
 ########################################################################
 #
@@ -27,21 +27,19 @@ import pyroprocessing_command_functions as command_and_control
 #
 ####### start command and control
 print 'Starting the command and control module for the pyroprocessing system.'
-print 'Make sure the home_dir was coded into this file.'
-raw_input('Hit a key to continue or break to code the home_dir ')
 #######
 #
 ####### set the root directory
-root_dir='/home/borrelli/python'
+root_dir='/home/borrelli/python/pyroprocessing_discrete.event.simulation'
+lib_dir='/home/borrelli/python/pyroprocessing_discrete.event.simulation/lib'
 #######
 #
 ####### set the simulation directory
-#simulation_dir=raw_input('set the simulation directory: ')
+simulation_dir=raw_input('set the simulation directory name: ')
 #######
 #
 ####### set the home directory
-#home_dir='C:\\root\git\\pyroprocessing_discrete.event.simulation'
-#command_and_control.write_home_dir(root_dir,home_dir)
+command_and_control.write_home_dir(root_dir,lib_dir,simulation_dir)
 #######
 #
 #

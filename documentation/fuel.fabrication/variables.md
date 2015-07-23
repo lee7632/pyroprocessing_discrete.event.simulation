@@ -86,7 +86,7 @@
 </ul>
 <ul>
 <b>H</b>
-<li>home_dir=home directory for the system files
+<li>home_dir=home directory for the simulation
 </ul>
 <ul>
 <b>I</b>
@@ -107,6 +107,7 @@
 </ul>
 <ul>
 <b>L</b>
+<li>lib_dir=lib directory where the default input files are
 </ul>
 <ul>
 <b>M</b>

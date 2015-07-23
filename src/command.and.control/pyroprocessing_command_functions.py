@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB
-# rev.22.July.2015
+# rev.23.July.2015
 # v1.0
 ########################################################################
 #
@@ -221,13 +221,12 @@ def copy_file(local_dir,destination_dir,default_dir):
 # (7): write home directory information for pyroprocessing simulation
 #
 #######
-def write_home_dir(root_dir,home_dir):
+def write_home_dir(root_dir,lib_dir,simulation_dir):
 #######
 #
-### move to high level directory
-# this location would not change, so eaqch subsystem.py can use the same function to get the home_dir
-# in case the home_dir does change the directory tree would still be the same
+### 
 #
+    home_dir=root_dir+'/simulation'+simulation_dir
     os.chdir(root_dir)
     os.makedirs('pyroDES')
     os.chdir('pyroDES')
