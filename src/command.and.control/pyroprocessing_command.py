@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB
-# rev.23.July.2015
+# rev.27.July.2015
 # v1.2
 ########################################################################
 #
@@ -29,17 +29,17 @@ import pyroprocessing_command_functions as command_and_control
 print 'Starting the command and control module for the pyroprocessing system.'
 #######
 #
-####### set the root directory
-root_dir='/home/borrelli/python/pyroprocessing_discrete.event.simulation'
-lib_dir='/home/borrelli/python/pyroprocessing_discrete.event.simulation/lib'
+####### set the root and lib directory
+root_dir='/home/borrelli/pyroprocessing_discrete.event.simulation'
+lib_dir='/home/borrelli/pyroprocessing_discrete.event.simulation/lib'
 #######
 #
 ####### set the simulation directory
 simulation_dir=raw_input('set the simulation directory name: ')
 #######
 #
-####### set the home directory
-command_and_control.write_home_dir(root_dir,lib_dir,simulation_dir)
+####### set the home directory where all the simulation data will go 
+home_dir=command_and_control.write_home_dir(root_dir,lib_dir,simulation_dir)
 #######
 #
 #
@@ -53,7 +53,7 @@ command_and_control.write_home_dir(root_dir,lib_dir,simulation_dir)
 #
 #
 ### set the file trees
-#input_dir,output_dir,edge_transition_dir,failure_distribution_dir,failure_equipment_dir,kmps_dir,process_states_dir,system_false_alarm_dir,data_dir,figures_dir,system_odir,material_flow_odir,inventory_odir,false_alarm_odir,kmps_odir,muf_odir,melter_failure_odir,system_gdir,material_flow_gdir,inventory_gdir,false_alarm_gdir,kmps_gdir,muf_gdir,melter_failure_gdir=command_and_control.make_simulation_dir(home_dir,'fuel.fabrication',simulation_dir)
+input_dir,output_dir,edge_transition_dir,failure_distribution_dir,failure_equipment_dir,kmps_dir,process_states_dir,system_false_alarm_dir,data_dir,figures_dir,system_odir,material_flow_odir,inventory_odir,false_alarm_odir,kmps_odir,muf_odir,melter_failure_odir,system_gdir,material_flow_gdir,inventory_gdir,false_alarm_gdir,kmps_gdir,muf_gdir,melter_failure_gdir=command_and_control.make_data_dir(home_dir,'fuel.fabrication')
 #
 ### copy default input files to new simulation directory
 #command_and_control.copy_input_files(home_dir,input_dir,'fuel.fabrication',simulation_dir,edge_transition_dir,failure_distribution_dir,failure_equipment_dir,kmps_dir,process_states_dir,system_false_alarm_dir)

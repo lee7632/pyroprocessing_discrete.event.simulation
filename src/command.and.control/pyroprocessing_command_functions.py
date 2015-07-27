@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB
-# rev.23.July.2015
+# rev.27.July.2015
 # v1.0
 ########################################################################
 #
@@ -22,7 +22,7 @@ import shutil
 #
 # function list
 #
-# (1): make simulation directories
+# (1): make data directories
 # (2): copy files from default directory to simulation directory
 # (3): make readme file for the simulation
 # (4): write directory paths for subsystem module 
@@ -36,18 +36,21 @@ import shutil
 #
 ########################################################################
 #
-# (1): make simulation directories for input, output 
+# (1): make data directories
 #
 #######
-def make_simulation_dir(home_dir,subsystem,simulation_dir):
+def make_data_dir(home_dir,subsystem):
 #######
 #
 ###
-    print 'creating simulation directories'
+    print 'creating data directories'
 #
 ###
-    input_dir=home_dir+'\\input\\'+subsystem+'\\'+simulation_dir
-    output_dir=home_dir+'\\output\\'+subsystem+'\\'+simulation_dir 
+    os.chdir(home_dir)
+    os.makedirs(subsystem)
+#
+    input_dir=home_dir+'/'+subsystem+'/input'
+    output_dir=home_dir+'/'+subsystem+'/output' 
 #
 ### make simulation directories
     os.makedirs(input_dir)
@@ -67,7 +70,6 @@ def make_simulation_dir(home_dir,subsystem,simulation_dir):
     os.makedirs(kmps_dir)
     os.makedirs(process_states_dir)
     os.makedirs(system_false_alarm_dir)
-
 #
 ### make output directories
     data_dir=make_subdirectory(output_dir,'data')
@@ -192,7 +194,7 @@ def make_subdirectory(working_dir,subdirectory):
 #######
 #
 ### make subdirectory
-    dummy_subdirectory=working_dir+'\\'+subdirectory
+    dummy_subdirectory=working_dir+'/'+subdirectory
 ###
     return(dummy_subdirectory)
 ########################################################################
@@ -224,23 +226,34 @@ def copy_file(local_dir,destination_dir,default_dir):
 def write_home_dir(root_dir,lib_dir,simulation_dir):
 #######
 #
-### 
+### check for simulation directory 
 #
-    home_dir=root_dir+'/simulation'+simulation_dir
     os.chdir(root_dir)
-    os.makedirs('pyroDES')
-    os.chdir('pyroDES')
+    dir_check=os.path.isdir(root_dir+'/simulation') 
 #
-### open file
+    if(dir_check==False):
+	os.makedirs('simulation')
+# end
+#
+### set home directory where all the simulation data will go
+    home_dir=root_dir+'/simulation/'+simulation_dir
+#
+### store directory path information
+    os.chdir('simulation')
+#
+    dir_check=os.path.isdir('meta.data')
+#
+    if(dir_check==False):
+	os.makedirs('meta.data') #this directory will store the simulation directory information for process modules
+# end
+    os.makedirs(simulation_dir)
+    os.chdir('meta.data')
+#
     home_dir_file=open('home.dir.inp','w+')
-#
-### write directory 
     home_dir_file.write(home_dir)
-#
-### close file
     home_dir_file.close()
 ###
-    return()
+    return(home_dir)
 ########################################################################
 #
 # EOF
