@@ -31,3 +31,8 @@
 <br>Upgraded to simulate the melter failure with Weibull distribution.
 <br>This version is ready for test cases. 
 ########################################
+
+########################################
+**Command and control v1.0**
+<br>Controls directory creation and default input file transfers for all modules.
+########################################

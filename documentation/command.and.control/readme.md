@@ -1,19 +1,14 @@
 ########################################
-**DES modeling for fuel fabrication**
+**DES command and control module**
 ########################################
 
 ########################################
 **Current version**
-<br>v1.2
+<br>v1.0
 <br>Main readme.md contains version description 
 ########################################
 
 ########################################
 **Comment list**
-<br>overview: general overview of the code
-<br>assumptions: assumptions for the model
-<br>materials unaccounted for: MUF calculation procedure
-<br>melter failure: how failures in the melter are simulated
-<br>process model: simulation procedure description
 <br>variable list: alphabetical list of all variables
 ########################################

@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB
-# rev.27.July.2015
+# rev.28.July.2015
 # v1.0
 ########################################################################
 #
@@ -23,7 +23,7 @@ import shutil
 # function list
 #
 # (1): make data directories
-# (2): copy files from default directory to simulation directory
+# (2): copy files from lib directory to home directory
 # (3): make readme file for the simulation
 # (4): write directory paths for subsystem module 
 # (5): make subdirectories
@@ -114,20 +114,17 @@ def make_data_dir(home_dir,subsystem):
     return(input_dir,output_dir,edge_transition_dir,failure_distribution_dir,failure_equipment_dir,kmps_dir,process_states_dir,system_false_alarm_dir,data_dir,figures_dir,system_odir,material_flow_odir,inventory_odir,false_alarm_odir,kmps_odir,muf_odir,melter_failure_odir,system_gdir,material_flow_gdir,inventory_gdir,false_alarm_gdir,kmps_gdir,muf_gdir,melter_failure_gdir)
 ########################################################################
 #
-# (2): copy files from default directory to simulation directory
+# (2): copy files from lib directory to simulation directory
 #
 #######
-def copy_input_files(home_dir,input_dir,subsystem,simulation_dir,edge_transition_dir,failure_distribution_dir,failure_equipment_dir,kmps_dir,process_states_dir,system_false_alarm_dir):
+def copy_input_files(lib_dir,input_dir,subsystem,simulation_dir,edge_transition_dir,failure_distribution_dir,failure_equipment_dir,kmps_dir,process_states_dir,system_false_alarm_dir):
 #######
 #
 ###
-    print 'copying default input files to '+simulation_dir
-#
-### move to default directory for input data
-    default_dir=home_dir+'\\input\\'+subsystem+'\\'+'default'
+    default_dir=lib_dir+'/'+subsystem
     os.chdir(default_dir)
 #
-### copy input files from default directory to simulation directory
+### copy input files from lib directory to simulation directory
     copy_file('edge_transition',edge_transition_dir,default_dir)
     copy_file('failure_distribution',failure_distribution_dir,default_dir)
     copy_file('failure_equipment',failure_equipment_dir,default_dir)
@@ -144,11 +141,11 @@ def copy_input_files(home_dir,input_dir,subsystem,simulation_dir,edge_transition
 # (3): make readme file for the simulation
 #
 #######
-def make_readme(input_dir):
+def make_readme(home_dir):
 #######
 #
 ### move to simulation directory
-    os.chdir(input_dir)
+    os.chdir(home_dir)
 #
 ### open file
     readme_information=open('readme.md','w+')
@@ -168,15 +165,16 @@ def make_readme(input_dir):
 # (4): write directory paths for subsystem module 
 #
 #######
-def write_simulation_dir(home_dir,subsystem,input_dir,output_dir,edge_transition_dir,failure_distribution_dir,failure_equipment_dir,kmps_dir,process_states_dir,system_false_alarm_dir,data_dir,figures_dir,system_odir,material_flow_odir,inventory_odir,false_alarm_odir,kmps_odir,muf_odir,melter_failure_odir,system_gdir,material_flow_gdir,inventory_gdir,false_alarm_gdir,kmps_gdir,muf_gdir,melter_failure_gdir):
+def write_simulation_dir(root_dir,subsystem,input_dir,output_dir,edge_transition_dir,failure_distribution_dir,failure_equipment_dir,kmps_dir,process_states_dir,system_false_alarm_dir,data_dir,figures_dir,system_odir,material_flow_odir,inventory_odir,false_alarm_odir,kmps_odir,muf_odir,melter_failure_odir,system_gdir,material_flow_gdir,inventory_gdir,false_alarm_gdir,kmps_gdir,muf_gdir,melter_failure_gdir):
 #######
 #
 ### move to subsystem directory
 # the file has to be located here so the subsystem.py knows where to look
-    os.chdir(home_dir+'\\input\\'+subsystem)
+    os.chdir(root_dir+'/simulation/meta.data') 
 #
 ### open file
-    simulation_dir_file=open('simulation.dir.inp','w+')
+    simulation_dir_filename=subsystem+'_simulation.dir.info.inp'
+    simulation_dir_file=open(simulation_dir_filename,'w+')
 #
 ### write directories
     simulation_dir_file.write(input_dir+','+output_dir+','+edge_transition_dir+','+failure_distribution_dir+','+failure_equipment_dir+','+kmps_dir+','+process_states_dir+','+system_false_alarm_dir+','+data_dir+','+figures_dir+','+system_odir+','+material_flow_odir+','+inventory_odir+','+false_alarm_odir+','+kmps_odir+','+muf_odir+','+melter_failure_odir+','+system_gdir+','+material_flow_gdir+','+inventory_gdir+','+false_alarm_gdir+','+kmps_gdir+','+muf_gdir+','+melter_failure_gdir)
@@ -206,7 +204,7 @@ def copy_file(local_dir,destination_dir,default_dir):
 #######
 #
 ### move to local subdirectory
-    local_subdir=default_dir+'\\'+local_dir
+    local_subdir=default_dir+'/'+local_dir
     os.chdir(local_subdir)
 #
 ### copy file

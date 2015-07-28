@@ -37,7 +37,7 @@
 <ul>
 <b>D</b>
 <li>delay=dummy variable used in the functions for the time delays...all set in preprocessing
-<li>_dir=directory location (*o=output,*g=figures)
+<li>_dir= any directory location...should be self explanatory (*o=output,*g=figures)
 </ul>
 <ul>
 <b>E</b>
@@ -86,13 +86,11 @@
 </ul>
 <ul>
 <b>H</b>
-<li>home_dir=home directory for the simulation
 </ul>
 <ul>
 <b>I</b>
 <li>inspection_time=dummy variable for time to inspect for end of campaign or failure...set in preprocessing
 <li>inspection_time=contains all the inspection times...set in preprocessing
-<li>input_dir=location of input files
 </ul>
 <ul>     
 <b>J</b>
@@ -107,7 +105,6 @@
 </ul>
 <ul>
 <b>L</b>
-<li>lib_dir=lib directory where the default input files are
 </ul>
 <ul>
 <b>M</b>
@@ -144,7 +141,6 @@
 <li>_output is for output data files...there are a lot of them
 <li>operation_time=operation time of the facility 0<T<facility_operation...set in preprocessing
 <li>_operation_time=vertex operation times...set in preprocessing
-<li>output_dir=location of output files (data and figures)
 </ul>
 <ul>
 <b>P</b>
