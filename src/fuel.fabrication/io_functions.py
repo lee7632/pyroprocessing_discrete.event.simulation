@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB
-# rev.20.July.2015
+# rev.03.August.2015
 ########################################################################
 # 
 # Functions for in-simulation data processing
@@ -18,7 +18,7 @@ import shutil
 #
 # function list
 #
-# (1): get simulation directories
+# (1): get directory paths 
 #
 # input regime
 # (2a): read system operation input data
@@ -56,23 +56,21 @@ import shutil
 #
 ########################################################################
 #
-# (1): get simulation directories
+# (1): get directory paths
 #
-# directories are created and input files are copied into them from the default directory by pyroprocessing_command.py
+# directories are created and input files are copied into them from the lib directory by pyroprocessing_command.py
 # system locator file is created containing the directory paths in each subsystem folder
 #
 #######
-def get_simulation_dir(subsystem):
+def get_dir_path(root_dir,subsystem):
 #######
 #
 ### get home directory
-    os.chdir('C:\\root\\pyroDES')
+    os.chdir(root_dir+'/simulation/meta.data')
     home_dir=open('home.dir.inp').read()
 #
-### get simulation directory paths 
-    simulation_dir=home_dir+'\\input\\'+subsystem
-    os.chdir(home_dir+'\\input\\'+subsystem)
-    directory_path_file=open('simulation.dir.inp').readlines()
+### get directory paths 
+    directory_path_file=open('fuel.fabrication_simulation.dir.inp').readlines()
 #
 ### split the string
     directory_paths=directory_path_file[0].split(',')
@@ -107,7 +105,6 @@ def get_simulation_dir(subsystem):
     muf_gdir=directory_paths[22]
     melter_failure_gdir=directory_paths[23]
 #
-#   os.remove('simulation.dir.inp') 
 ###
     return(input_dir,output_dir,edge_transition_dir,failure_distribution_dir,failure_equipment_dir,kmps_dir,process_states_dir,system_false_alarm_dir,data_dir,figures_dir,system_odir,material_flow_odir,inventory_odir,false_alarm_odir,kmps_odir,muf_odir,melter_failure_odir,system_gdir,material_flow_gdir,inventory_gdir,false_alarm_gdir,kmps_gdir,muf_gdir,melter_failure_gdir)
 ########################################################################
@@ -115,7 +112,7 @@ def get_simulation_dir(subsystem):
 # (2a): read system operation input data
 #
 #######
-def input_system_operation(input_dir,process_states_dir,output_dir):
+def input_system_operation(process_states_dir):
 #######
 #
 ### 
@@ -123,10 +120,6 @@ def input_system_operation(input_dir,process_states_dir,output_dir):
 #
     facility_operation=numpy.loadtxt('facility.operation.inp') #total time of facility operation; i.e., simulation time 
     process_time=numpy.loadtxt('process.operation.time.inp',usecols=[1]) #time for each vertex to process material
-#
-### copy readme to output dir 
-    os.chdir(input_dir) #change dir
-    shutil.copy('readme.md',output_dir) #copy file
 ###
     return(facility_operation,process_time)
 ########################################################################
@@ -524,13 +517,13 @@ def write_inventory(operation_time,true_storage_inventory,expected_storage_inven
 #######
 #
 ###
-    _output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%)+'\n') 
-    _output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%)+'\n')
-    _output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%)+'\n')
-    _output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%)+'\n')
-    _output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%)+'\n')
-    _output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%)+'\n')
-    _output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%)+'\n')
+#    _output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%)+'\n') 
+#    _output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%)+'\n')
+#    _output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%)+'\n')
+#    _output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%)+'\n')
+#    _output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%)+'\n')
+#    _output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%)+'\n')
+#    _output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%)+'\n')
 ###
     return(true_storage_inventory_output,expected_storage_inventory_output,measured_storage_inventory_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,true_system_inventory_output,expected_system_inventory_output,measured_system_inventory_output,true_initial_inventory_output,expected_initial_inventory_output,measured_initial_inventory_output)
 ########################################################################

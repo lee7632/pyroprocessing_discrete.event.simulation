@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB
-# rev.28.July.2015
+# rev.03.August.2015
 # v1.0
 ########################################################################
 #
@@ -173,7 +173,7 @@ def write_simulation_dir(root_dir,subsystem,input_dir,output_dir,edge_transition
     os.chdir(root_dir+'/simulation/meta.data') 
 #
 ### open file
-    simulation_dir_filename=subsystem+'_simulation.dir.info.inp'
+    simulation_dir_filename=subsystem+'_simulation.dir.inp'
     simulation_dir_file=open(simulation_dir_filename,'w+')
 #
 ### write directories

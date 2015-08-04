@@ -30,8 +30,12 @@ print 'Starting the command and control module for the pyroprocessing system.'
 #######
 #
 ####### set the root and lib directory
-root_dir='/home/borrelli/pyroprocessing_discrete.event.simulation'
-lib_dir='/home/borrelli/pyroprocessing_discrete.event.simulation/lib'
+root_dir='/home/usr/borrelli/pyroprocessing_discrete.event.simulation'
+lib_dir=root_dir+'/lib'
+#
+print 'root dir is: ',root_dir
+print 'root dir is hard coded into each of the mainflow files'
+raw_input('hit a key to continue or break to change root dir')
 #######
 #
 ####### set the simulation directory

@@ -38,6 +38,7 @@
 <b>D</b>
 <li>delay=dummy variable used in the functions for the time delays...all set in preprocessing
 <li>_dir= any directory location...should be self explanatory (*o=output,*g=figures)
+<li>directory_path_file=contains the directory paths for input and output...always in meta.data
 </ul>
 <ul>
 <b>E</b>

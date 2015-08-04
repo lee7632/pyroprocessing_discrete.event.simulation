@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB
-# rev.20.July.2015
+# rev.03.August.2015
 ########################################################################
 # 
 # Melter vertex 
@@ -33,37 +33,6 @@ import failure_analysis_weibull as failure_analysis
 #
 #
 ########################################################################
-#
-#
-#
-########################################################################
-#
-# (3): initialize parameters
-#
-#######
-def initialize_parameters():
-#######
-#
-    melter_failure_time=0 #time used to determine melter failures
-    melter_failure_counter=0 #total times the melter failed over facility operation
-    true_heel=0 #true quantity of heel per campaign
-    expected_heel=0 #expected quantity of heel per campaign
-    measured_heel=0 #measured quantity of heel per campaign
-    accumulated_true_heel=0 #accumulated quantity of heel prior to failure; zeroed out on cleaning 
-    accumulated_expected_heel=0 #expected quantity of heel prior to failure; zeroed out on cleaning
-    accumulated_measured_heel=0 #measured quantity of heel prior to failure; zeroed out on cleaning
-    melter_failure_event=False #melter failure flag for an equipment failure
-    melter_process_counter=0 #total times the melter process was initiated over facility operation
-    melter_probability_density_function_evaluate=0 #pdf for melter failure distribution at operation_time
-    melter_probability_density_function_failure_evaluate=0 #pdf for melter failure distribution at melter_failure_time
-    melter_unreliability_function_evaluate=0 #cdf for melter failure distribution at operation_time
-    melter_unreliabilty_function_failure_evaluate=0 #cdf for melter failure distribution at failure_time
-###
-    print 'Melter initialization complete.'
-###
-    return(melter_failure_time,melter_failure_counter,true_heel,expected_heel,measured_heel,accumulated_true_heel,accumulated_expected_heel,accumulated_measured_heel,melter_failure_event,melter_process_counter,melter_probability_density_function_evaluate,melter_probability_function_failure_evaluate,melter_unreliability_function_evaluate,melter_unreliability_function_failure_evaluate)
-#
-#########################################################################
 #
 #
 #
