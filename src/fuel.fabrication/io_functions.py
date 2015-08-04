@@ -513,19 +513,21 @@ def write_material_flow(operation_time,total_batch,true_weight,expected_weight,m
 # (5c): write inventory 
 #
 #######
-def write_inventory(operation_time,true_storage_inventory,expected_storage_inventory,measured_storage_inventory,true_processed_inventory,expected_processed_inventory,measured_processed_inventory,true_system_inventory,expected_system_inventory,measured_system_inventory,true_initial_inventory,expected_initial_inventory,measured_initial_inventory,true_storage_inventory_output,expected_storage_inventory_output,measured_storage_inventory_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,true_system_inventory_output,expected_system_inventory_output,measured_system_inventory_output,true_initial_inventory_output,expected_initial_inventory_output,measured_initial_inventory_output):
+def write_inventory(operation_time,true_storage_inventory,expected_storage_inventory,measured_storage_inventory,true_processed_inventory,expected_processed_inventory,measured_processed_inventory,true_system_inventory,expected_system_inventory,measured_system_inventory,true_storage_inventory_output,expected_storage_inventory_output,measured_storage_inventory_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,true_system_inventory_output,expected_system_inventory_output,measured_system_inventory_output):
 #######
 #
 ###
-#    _output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%)+'\n') 
-#    _output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%)+'\n')
-#    _output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%)+'\n')
-#    _output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%)+'\n')
-#    _output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%)+'\n')
-#    _output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%)+'\n')
-#    _output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%)+'\n')
+    true_storage_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%true_storage_inventory)+'\n') 
+    expected_storage_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%expected_storage_inventory)+'\n')
+    measured_storage_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%measured_storage_inventory)+'\n')
+    true_processed_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%true_processed_inventory)+'\n')
+    expected_processed_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%expected_processed_inventory)+'\n')
+    measured_processed_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%measured_processed_inventory)+'\n')
+    true_system_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%true_system_inventory)+'\n')
+    expected_system_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%expected_system_inventory)+'\n')
+    measured_system_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%measured_system_inventory)+'\n')
 ###
-    return(true_storage_inventory_output,expected_storage_inventory_output,measured_storage_inventory_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,true_system_inventory_output,expected_system_inventory_output,measured_system_inventory_output,true_initial_inventory_output,expected_initial_inventory_output,measured_initial_inventory_output)
+    return(true_storage_inventory_output,expected_storage_inventory_output,measured_storage_inventory_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,true_system_inventory_output,expected_system_inventory_output,measured_system_inventory_output)
 ########################################################################
 #
 #
