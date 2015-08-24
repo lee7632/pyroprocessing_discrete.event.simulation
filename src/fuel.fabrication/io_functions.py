@@ -49,6 +49,9 @@ import shutil
 # (5a): write system operation 
 # (5b): write material flow 
 # (5c): write inventory 
+# (5d): write muf
+# (5e): write end of campaign false alarm
+# (5f): write melter failure false alarm
 #
 ########################################################################
 #
@@ -345,15 +348,15 @@ def output_muf(muf_odir):
 ### 
     os.chdir(muf_odir) #change dir
 #
-    true_muf_output=open('true.muf.out','w+')
-    expected_muf_output=open('expected.muf.out','w+')
-    measured_muf_output=open('measured.muf.out','w+')
+    melter_true_muf_output=open('melter.true.muf.out','w+')
+    melter_expected_muf_output=open('melter.expected.muf.out','w+')
+    melter_measured_muf_output=open('melter.measured.muf.out','w+')
 #
-    true_mufc_output=open('true.mufc.out','w+')
-    expected_mufc_output=open('expected.mufc.out','w+')
-    measured_mufc_output=open('measured.mufc.out','w+')
+    melter_true_mufc_output=open('melter.true.mufc.out','w+')
+    melter_expected_mufc_output=open('melter.expected.mufc.out','w+')
+    melter_measured_mufc_output=open('melter.measured.mufc.out','w+')
 ###
-    return(true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output)  
+    return(melter_true_muf_output,melter_expected_muf_output,melter_measured_muf_output,melter_true_mufc_output,melter_expected_mufc_output,melter_measured_mufc_output)  
 ########################################################################
 #
 # (4a): initialize system parameters
@@ -530,19 +533,48 @@ def write_inventory(operation_time,true_storage_inventory,expected_storage_inven
     return(true_storage_inventory_output,expected_storage_inventory_output,measured_storage_inventory_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,true_system_inventory_output,expected_system_inventory_output,measured_system_inventory_output)
 ########################################################################
 #
+# (5d): write muf 
 #
-#    measured_storage_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%measured_storage_inventory)+'\n')
+#######
+def write_muf(operation_time,melter_true_muf,melter_expected_muf,melter_measured_muf,melter_true_mufc,melter_expected_mufc,melter_measured_mufc,melter_true_muf_output,melter_expected_muf_output,melter_measured_muf_output,melter_true_mufc_output,melter_expected_mufc_output,melter_measured_mufc_output):
+#######
 #
-    #true_muf_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%true_muf)+'\n')
-    #expected_muf_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%expected_muf)+'\n')
-    #measured_muf_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%measured_muf)+'\n')    
-    #true_mufc_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%true_mufc)+'\n')
-    #expected_mufc_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%expected_mufc)+'\n')
-    #measured_mufc_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%measured_mufc)+'\n')    
-    #true_processed_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%true_processed_inventory)+'\n')
-    #expected_processed_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%expected_processed_inventory)+'\n')
-    #measured_processed_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%measured_processed_inventory)+'\n')
-    #measured_system_inventory_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%measured_system_inventory)+'\n')
+###
+    melter_true_muf_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%melter_true_muf)+'\n')
+    melter_expected_muf_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%melter_expected_muf)+'\n')
+    melter_measured_muf_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%melter_measured_muf)+'\n')    
+#
+    melter_true_mufc_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%melter_true_mufc)+'\n')
+    melter_expected_mufc_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%melter_expected_mufc)+'\n')
+    melter_measured_mufc_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%melter_measured_mufc)+'\n')    
+###
+    return(melter_true_muf_output,melter_expected_muf_output,melter_measured_muf_output,melter_true_mufc_output,melter_expected_mufc_output,melter_measured_mufc_output)
+########################################################################
+#
+# (5e): write end of campaign false alarm 
+#
+#######
+def write_end_of_campaign_false_alarm(operation_time,total_campaign,end_of_campaign_false_alarm_counter,end_of_campaign_false_alarm_threshold,end_of_campaign_false_alarm_test,end_of_campaign_false_alarm_counter_output):
+#######
+#
+###
+    end_of_campaign_false_alarm_counter_output.write(str.format('%i'%total_campaign)+'\t'+str.format('%i'%end_of_campaign_false_alarm_counter)+'\t'+str.format('%.4f'%end_of_campaign_false_alarm_threshold)+'\t'+str.format('%.4f'%end_of_campaign_false_alarm_test)+'\t'+str.format('%.4f'%operation_time)+'\n')
+###
+    return(end_of_campaign_false_alarm_counter_output)
+########################################################################
+#
+# (5f): write melter failure false alarm 
+#
+#######
+def write_melter_failure_false_alarm(operation_time,failure_time,total_campaign,melter_failure_false_alarm_counter,melter_failure_false_alarm_threshold,melter_failure_false_alarm_test,melter_failure_false_alarm_counter_output):
+#######
+#
+###
+    melter_failure_false_alarm_counter_output.write(str.format('%i'%total_campaign)+'\t'+str.format('%i'%melter_failure_false_alarm_counter)+'\t'+str.format('%.4f'%melter_failure_false_alarm_threshold)+'\t'+str.format('%.4f'%melter_failure_false_alarm_test)+'\t'+str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%failure_time)+'\n')
+###
+    return(melter_failure_false_alarm_counter_output)
+########################################################################
+#
 #
 #
 ########################################################################

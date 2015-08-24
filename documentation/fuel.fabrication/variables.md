@@ -58,8 +58,8 @@
 <li>expected_weight=expected weight processed per campaign
 <li>expected_crucible_fraction=expected fraction of material left in the crucible...set in preprocessing  
 <li>expected_processed_inventory=total expected mass processed
-<li>expected_muf=total expected facility material unaccounted for
-<li>expected_mufc=expected muf per campagn
+<li>_expected_muf=total expected facility material unaccounted for per subsystem
+<li>_expected_mufc=expected muf per campaign per subsystem
 <li>_evaluate=function evaluate for whatever precedes _evaluate; also for dummy variables
 </ul>
 <ul>
@@ -119,8 +119,8 @@
 <li>measured_storage_inventory=total measured mass in storage buffer...at KMP0 
 <li>measured_system_inventory=running total of mass transfer from storage
 <li>measured_processed_inventory=total measured mass processed
-<li>measured_muf=total measured facility material unaccounted for
-<li>measured_mufc=muf for specific campaign
+<li>_measured_muf=total measured facility material unaccounted for per subsystem
+<li>_measured_mufc=muf for specific campaign per subsystem
 <li>melter_failure_total_counter=total number of melter failures over operation time
 <li>melter_failure_event=boolean to indicate a melter failure occurred
 <li>melter_failure_number=number of failures that could occur in the melter
@@ -172,8 +172,8 @@
 <li>true_crucible_fraction=quantity of material left in the crucible...randomized per melting process 
 <li>true_system_inventory=running total of mass transfer from storage
 <li>true_processed_inventory=total mass processed 
-<li>true_muf=total material unaccounted for
-<li>true_mufc=muf for specific campaign
+<li>_true_muf=total material unaccounted for per subsystem
+<li>_true_mufc=muf for specific campaign per subsystem
 <li>true_initial/final_inventory=dummy variable used for mufc 
 <li>trimmer_process_counter=counts the number of times the trimmer process is initiated
 <li>time_domain=dummy for time variable
