@@ -132,7 +132,7 @@
 <li>melter_failure_type=type of melter failure...set in preprocessing
 <li>melter_process_counter=counts the number of times the melting process is initiated
 <li>melter_failure_time=time record to determine melter failure; if there is a failure, failure_time resets to 0; i.e., there is a new probability distribution
-<li>melter_failure_campaign_counter=total failures per campaign for melter
+<li>melter_failure_campaign_counter=total melter failure per campaign
 </ul> 
 <ul>
 <b>N</b>

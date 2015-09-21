@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB 
-# rev.03.August.2015
+# rev.18.September.2015
 # v1.2
 ########################################################################
 #
@@ -34,10 +34,6 @@ import vertex_melter as melter
 import failure_analysis_weibull as melter_weibull
 #
 ########################################################################
-# 
-#
-#
-########################################################################
 #
 #
 #
@@ -47,7 +43,7 @@ import failure_analysis_weibull as melter_weibull
 #
 ########################################################################
 #
-print 'Fuel fabrication PREPROCESSING'
+print 'Fuel fabrication','\n','PREPROCESSING'
 #
 root_dir='/home/usr/borrelli/pyroprocessing_discrete.event.simulation'
 #
@@ -56,7 +52,7 @@ input_dir,output_dir,edge_transition_dir,failure_distribution_dir,failure_equipm
 #######
 #
 ####### read input data
-facility_operation,process_time=io.input_system_operation(process_states_dir) #system
+facility_operation,storage_buffer_operation_time=io.input_system_operation(process_states_dir) #system
 #
 batch,unprocessed_storage_inventory=io.input_storage_buffer(process_states_dir) #material flow
 #
@@ -80,7 +76,7 @@ melter_failure_false_alarm_counter_output,end_of_campaign_false_alarm_counter_ou
 #
 true_kmp_output,expected_kmp_output,measured_kmp_output=io.output_kmps(kmps_odir) #key measurement points
 #
-melter_failure_campaign_counter_output,melter_failure_total_counter_output,melter_probability_density_function_output,melter_unreliability_function_output=io.output_melter_failure(melter_failure_odir) #melter failure
+melter_failure_total_counter_output,melter_probability_density_function_output,melter_unreliability_function_output=io.output_melter_failure(melter_failure_odir) #melter failure
 #
 melter_true_muf_output,melter_expected_muf_output,melter_measured_muf_output,melter_true_mufc_output,melter_expected_mufc_output,melter_measured_mufc_output=io.output_muf(muf_odir) #muf
 #######
@@ -122,22 +118,27 @@ end_of_campaign_false_alarm_counter_output=io.write_end_of_campaign_false_alarm(
 #
 melter_failure_false_alarm_counter_output=io.write_melter_failure_false_alarm(operation_time,failure_time,total_campaign,melter_failure_false_alarm_counter,melter_failure_false_alarm_threshold,melter_failure_false_alarm_test,melter_failure_false_alarm_counter_output) #melter failure false alarm
 #
-#total_melter_failure_output,melter_process_counter_output,melter_probability_density_function_output,melter_unreliability_function_output=melter.write_system_output(operation_time,melter_failure_time,total_campaign,melter_failure_counter,melter_process_counter,melter_probability_density_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_evaluate,melter_unreliability_function_failure_evaluate,total_melter_failure_output,melter_process_counter_output,melter_probability_density_function_output,melter_unreliability_function_output) #vertex melter
+melter_failure_total_counter_output,melter_probability_density_function_output,melter_unreliability_function_output=io.write_melter_failure(operation_time,melter_failure_time,total_campaign,melter_failure_counter,melter_process_counter,melter_probability_density_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_evaluate,melter_unreliability_function_failure_evaluate,melter_failure_total_counter_output,melter_probability_density_function_output,melter_unreliability_function_output) #melter failure
+#
+print 'END PREPROCESSING'
 #
 ########################################################################
 #
 #
-#
-########################################################################
 #
 # main process loop start
+print 'Start facility operation.'
 #
-#print 'Start facility operation.'
 #
-#while(operation_time<=facility_operation):
-#    print 'Starting campaign:',total_campaign,'\n'
 #
-#######
+########################################################################
+#
+# process loop
+#
+while(operation_time<=facility_operation):
+    print 'Starting campaign:',total_campaign,'at time: ',operation_time,' days','\n'
+#
+########################################################################
 #
 #
 #
@@ -145,7 +146,9 @@ melter_failure_false_alarm_counter_output=io.write_melter_failure_false_alarm(op
 #
 # storage buffer batch preparation process
 #
-#    operation_time,true_weight,expected_weight,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory=des_f.storage_transfer(operation_time,total_batch,storage_buffer_operation_time,true_weight,expected_weight,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory)
+    operation_time,true_weight,expected_weight,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory=storage_buffer.batch_preparation(operation_time,storage_buffer_operation_time,batch,true_weight,expected_weight,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory)
+#
+    true_storage_inventory_output,expected_storage_inventory_output,measured_storage_inventory_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,true_system_inventory_output,expected_system_inventory_output,measured_system_inventory_output=io.write_inventory(operation_time,true_storage_inventory,expected_storage_inventory,measured_storage_inventory,true_processed_inventory,expected_processed_inventory,measured_processed_inventory,true_system_inventory,expected_system_inventory,measured_system_inventory,true_storage_inventory_output,expected_storage_inventory_output,measured_storage_inventory_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,true_system_inventory_output,expected_system_inventory_output,measured_system_inventory_output) #inventory 
 #
 #######
 #
@@ -513,6 +516,7 @@ melter_failure_false_alarm_counter_output=io.write_melter_failure_false_alarm(op
 #
 # end main fuel fabrication model
 #
+print 'end campaign'
 #######################################################################
 #
 #

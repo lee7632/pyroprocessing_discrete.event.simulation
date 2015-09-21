@@ -36,19 +36,6 @@ import failure_analysis_weibull as failure_analysis
 #
 #
 #
-#########################################################################
-#
-# (4): write melter process data 
-#
-#######
-def write_system_output(operation_time,melter_failure_time,total_campaign,melter_failure_counter,melter_process_counter,melter_probability_density_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_evaluate,melter_unreliability_function_failure_evaluate,total_melter_failure_output,melter_process_counter_output,melter_probability_density_function_output,melter_unreliability_function_output):
-#######
-    total_melter_failure_output.write(str.format('%i'%total_campaign)+'\t'+str.format('%i'%total_melter_failure)+'\n')
-    melter_probability_density_function_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%melter_probability_density_function_evaluate)+'\t'+str.format('%.4f'%failure_time)+'\t'+str.format('%.4f'%melter_probability_density_function_failure_evaluate)+'\n')
-    melter_unreliability_function_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%melter_unreliability_function_evaluate)+'\t'+str.format('%.4f'%failure_time)+'\t'+str.format('%.4f'%melter_unreliability_function_failure_evaluate)+'\n')
-###
-    return(total_melter_failure_output,melter_process_counter_output,melter_probability_density_function_output,melter_unreliability_function_output)
-#
 ########################################################################
 #
 #
