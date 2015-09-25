@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB
-# rev.16.July.2015
+# rev.25.Septemebr.2015
 ########################################################################
 # 
 # Key measurement points (KMPs) are located based on the system diagram.
@@ -17,15 +17,14 @@
 ########################################################################
 #
 # imports
-#
-import os
+import numpy
 #
 ########################################################################
 #
 # function list
 #
-# (3): kmp measurement
-# (4): write kmp measurement data
+# (1): kmp measurement
+# (4): write kmp measurement data MOVE TO IO
 # (5): close output files
 #
 ########################################################################
@@ -34,7 +33,7 @@ import os
 #
 #########################################################################
 #
-# (3): kmp measurement
+# (1): kmp measurement
 #
 #######
 def kmp_measurement(operation_time,kmp_delay_time,uncertainty,threshold,true_quantity,expected_quantity,measured_inventory,measured_system_inventory,kmp_identifier):

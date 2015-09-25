@@ -46,13 +46,16 @@ import shutil
 # (4f): initialize muf parameters
 #
 # data writing regime
-# (5a): write system operation 
-# (5b): write material flow 
-# (5c): write inventory 
-# (5d): write muf
-# (5e): write end of campaign false alarm
-# (5f): write melter failure false alarm
-# (5g): write melter failure
+# (5a): write system time  
+# (5b): write campaign 
+# (5c): write process counter 
+# (5d): write material flow 
+# (5e): write heel
+# (5f): write inventory 
+# (5g): write muf
+# (5h): write end of campaign false alarm
+# (5i): write melter failure false alarm
+# (5j): write melter failure
 #
 ########################################################################
 #
@@ -392,36 +395,63 @@ def initialize_muf():
     return(melter_true_muf,melter_expected_muf,melter_measured_muf,melter_true_mufc,melter_expected_mufc,melter_measured_mufc)
 #########################################################################
 #
-# (5a): write system operation 
+# (5a): write system time 
 #
 #######
-def write_system_operation(operation_time,melter_failure_time,total_campaign,melter_process_counter,trimmer_process_counter,time_output,campaign_output,melter_process_counter_output,trimmer_process_counter_output):
+def write_system_time(operation_time,melter_failure_time,time_output):
 #######
     time_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%melter_failure_time)+'\n') #time data is written whenever operation time changes
+###
+    return(time_output)
+########################################################################
+#
+# (5b): write campaign 
+#
+#######
+def write_campaign(operation_time,total_campaign,campaign_output):
+#######
     campaign_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%i'%total_campaign)+'\n')
+###
+    return(campaign_output)
+########################################################################
+#
+# (5c): write process counter 
+#
+#######
+def write_process_counter(operation_time,melter_process_counter,trimmer_process_counter,melter_process_counter_output,trimmer_process_counter_output):
+#######
     melter_process_counter_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%i'%melter_process_counter)+'\n')
     trimmer_process_counter_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%i'%trimmer_process_counter)+'\n')
 ###
-    return(time_output,campaign_output,melter_process_counter_output,trimmer_process_counter_output)
+    return(melter_process_counter_output,trimmer_process_counter_output)
 ########################################################################
 #
-# (5b): write material flow
+# (5d): write material flow
 #
 #######
-def write_material_flow(operation_time,total_batch,true_weight,expected_weight,measured_weight,true_heel,expected_heel,measured_heel,batch_output,true_weight_output,expected_weight_output,measured_weight_output,true_heel_output,expected_heel_output,measured_heel_output):
+def write_material_flow(operation_time,total_batch,true_weight,expected_weight,measured_weight,batch_output,true_weight_output,expected_weight_output,measured_weight_output):
 #######
     batch_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%i'%total_batch)+'\n') 
     true_weight_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%true_weight)+'\n')
     expected_weight_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%expected_weight)+'\n')
     measured_weight_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%measured_weight)+'\n')
+###
+    return(batch_output,true_weight_output,expected_weight_output,measured_weight_output)
+########################################################################
+#
+# (5e): write heel 
+#
+#######
+def write_heel(operation_time,true_heel,expected_heel,measured_heel,true_heel_output,expected_heel_output,measured_heel_output):
+#######
     true_heel_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%true_heel)+'\n')
     expected_heel_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%expected_heel)+'\n')
     measured_heel_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%measured_heel)+'\n')
 ###
-    return(batch_output,true_weight_output,expected_weight_output,measured_weight_output,true_heel_output,expected_heel_output,measured_heel_output)
+    return(true_heel_output,expected_heel_output,measured_heel_output)
 ########################################################################
 #
-# (5c): write inventory 
+# (5f): write inventory 
 #
 #######
 def write_inventory(operation_time,true_storage_inventory,expected_storage_inventory,measured_storage_inventory,true_processed_inventory,expected_processed_inventory,measured_processed_inventory,true_system_inventory,expected_system_inventory,measured_system_inventory,true_storage_inventory_output,expected_storage_inventory_output,measured_storage_inventory_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,true_system_inventory_output,expected_system_inventory_output,measured_system_inventory_output):
@@ -439,7 +469,7 @@ def write_inventory(operation_time,true_storage_inventory,expected_storage_inven
     return(true_storage_inventory_output,expected_storage_inventory_output,measured_storage_inventory_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,true_system_inventory_output,expected_system_inventory_output,measured_system_inventory_output)
 ########################################################################
 #
-# (5d): write muf 
+# (5g): write muf 
 #
 #######
 def write_muf(operation_time,melter_true_muf,melter_expected_muf,melter_measured_muf,melter_true_mufc,melter_expected_mufc,melter_measured_mufc,melter_true_muf_output,melter_expected_muf_output,melter_measured_muf_output,melter_true_mufc_output,melter_expected_mufc_output,melter_measured_mufc_output):
@@ -454,7 +484,7 @@ def write_muf(operation_time,melter_true_muf,melter_expected_muf,melter_measured
     return(melter_true_muf_output,melter_expected_muf_output,melter_measured_muf_output,melter_true_mufc_output,melter_expected_mufc_output,melter_measured_mufc_output)
 ########################################################################
 #
-# (5e): write end of campaign false alarm 
+# (5h): write end of campaign false alarm 
 #
 #######
 def write_end_of_campaign_false_alarm(operation_time,total_campaign,end_of_campaign_false_alarm_counter,end_of_campaign_false_alarm_threshold,end_of_campaign_false_alarm_test,end_of_campaign_false_alarm_counter_output):
@@ -464,7 +494,7 @@ def write_end_of_campaign_false_alarm(operation_time,total_campaign,end_of_campa
     return(end_of_campaign_false_alarm_counter_output)
 ########################################################################
 #
-# (5f): write melter failure false alarm 
+# (5i): write melter failure false alarm 
 #
 #######
 def write_melter_failure_false_alarm(operation_time,failure_time,total_campaign,melter_failure_false_alarm_counter,melter_failure_false_alarm_threshold,melter_failure_false_alarm_test,melter_failure_false_alarm_counter_output):
@@ -474,7 +504,7 @@ def write_melter_failure_false_alarm(operation_time,failure_time,total_campaign,
     return(melter_failure_false_alarm_counter_output)
 ########################################################################
 #
-# (5g): write melter failure
+# (5j): write melter failure
 #
 #######
 def write_melter_failure(operation_time,melter_failure_time,total_campaign,melter_failure_counter,melter_process_counter,melter_probability_density_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_evaluate,melter_unreliability_function_failure_evaluate,melter_failure_total_counter_output,melter_probability_density_function_output,melter_unreliability_function_output):
