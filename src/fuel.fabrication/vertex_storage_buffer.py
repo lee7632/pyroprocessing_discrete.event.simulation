@@ -40,7 +40,7 @@ import os
 #######
 def batch_preparation(operation_time,vertex_delay_time,batch,true_quantity,expected_quantity,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory):
 #######
-    print 'Prepare batch in Storage Buffer for transfer.',batch,'kg','\n\n'    
+    print 'Prepare batch in Storage Buffer for transfer',batch,'kg','\n\n'    
     operation_time=operation_time+vertex_delay_time
     true_quantity=batch
     expected_quantity=batch

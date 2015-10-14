@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB 
-# rev.25.September.2015
+# rev.13.October.2015
 # v1.2
 ########################################################################
 #
@@ -31,7 +31,14 @@ import vertex_storage_buffer as storage_buffer
 import edge_transition as edge_trans
 import key_measurement_points as kmp
 import vertex_melter as melter
-import failure_analysis_weibull as melter_weibull
+import melter_failure_distribution_calculation as melter_failure_calc
+import sys
+#
+########################################################################
+#
+# diagnostics 
+# 
+sys.stdout=open('log.txt','w+') #all the print statements will write to file 
 #
 ########################################################################
 #
@@ -43,7 +50,7 @@ import failure_analysis_weibull as melter_weibull
 #
 ########################################################################
 #
-print 'Fuel fabrication','\n','PREPROCESSING'
+print 'Fuel fabrication','\n\n','PREPROCESSING'
 #
 root_dir='/home/usr/borrelli/pyroprocessing_discrete.event.simulation'
 #
@@ -52,11 +59,11 @@ input_dir,output_dir,edge_transition_dir,failure_distribution_dir,failure_equipm
 #######
 #
 ####### read input data
-facility_operation,storage_buffer_operation_time=io.input_system_operation(process_states_dir) #system
+facility_operation,storage_buffer_process_time,injection_casting_process_time=io.input_system_operation(process_states_dir) #system
 #
 batch,unprocessed_storage_inventory=io.input_storage_buffer(process_states_dir) #material flow
 #
-crucible_fraction,melter_failure_type,melter_failure_rate,melter_failure_maintenance_time,melter_cleaning_time,weibull_beta_melter,weibull_eta_melter=io.input_melter(process_states_dir,failure_equipment_dir,failure_distribution_dir) #vertex melter
+crucible_fraction,melter_failure_type,melter_failure_rate,melter_failure_maintenance_time,melter_cleaning_time,weibull_beta_melter,weibull_eta_melter,melter_failure_number=io.input_melter(process_states_dir,failure_equipment_dir,failure_distribution_dir) #vertex melter
 #
 melter_failure_false_alarm_threshold,end_of_campaign_false_alarm_threshold,melter_failure_inspection_time,end_of_campaign_inspection_time=io.input_system_false_alarm(system_false_alarm_dir) #system false alarm
 #
@@ -82,7 +89,7 @@ melter_true_muf_output,melter_expected_muf_output,melter_measured_muf_output,mel
 #######
 #
 ####### initialize parameters
-operation_time,failure_time,total_campaign,melter_process_counter,trimmer_process_counter=io.initialize_system() #system
+operation_time,total_campaign,melter_process_counter,trimmer_process_counter=io.initialize_system() #system
 #
 total_batch,true_weight,expected_weight,measured_weight,true_heel,expected_heel,measured_heel,accumulated_true_heel,accumulated_expected_heel,accumulated_measured_heel=io.initialize_material_flow() #material flow 
 #
@@ -95,14 +102,8 @@ melter_failure_time,melter_failure_counter,melter_failure_event,melter_process_c
 melter_true_muf,melter_expected_muf,melter_measured_muf,melter_true_mufc,melter_expected_mufc,melter_measured_mufc=io.initialize_muf() #muf 
 #######
 #
-####### calculations for TIME=0
-melter_probability_density_function_evaluate=melter_weibull.probability_density_function(operation_time,weibull_beta_melter,weibull_eta_melter)
-#
-melter_unreliability_function_evaluate=melter_weibull.unreliability_function(operation_time,weibull_beta_melter,weibull_eta_melter)
-#
-melter_probability_density_function_failure_evaluate=melter_weibull.probability_density_function(failure_time,weibull_beta_melter,weibull_eta_melter)
-#
-melter_unreliability_function_failure_evaluate=melter_weibull.unreliability_function(failure_time,weibull_beta_melter,weibull_eta_melter)
+####### melter failure distribution calculations
+melter_probability_density_function_evaluate,melter_unreliability_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_failure_evaluate=melter_failure_calc.failure_distribution_calculation(operation_time,melter_failure_time,weibull_beta_melter,weibull_eta_melter)
 #######
 #
 ####### data writing for TIME=0
@@ -122,18 +123,18 @@ melter_true_muf_output,melter_expected_muf_output,melter_measured_muf_output,mel
 #
 end_of_campaign_false_alarm_counter_output=io.write_end_of_campaign_false_alarm(operation_time,total_campaign,end_of_campaign_false_alarm_counter,end_of_campaign_false_alarm_threshold,end_of_campaign_false_alarm_test,end_of_campaign_false_alarm_counter_output) #end of campaign false alarm
 #
-melter_failure_false_alarm_counter_output=io.write_melter_failure_false_alarm(operation_time,failure_time,total_campaign,melter_failure_false_alarm_counter,melter_failure_false_alarm_threshold,melter_failure_false_alarm_test,melter_failure_false_alarm_counter_output) #melter failure false alarm
+melter_failure_false_alarm_counter_output=io.write_melter_failure_false_alarm(operation_time,melter_failure_time,total_campaign,melter_failure_false_alarm_counter,melter_failure_false_alarm_threshold,melter_failure_false_alarm_test,melter_failure_false_alarm_counter_output) #melter failure false alarm
 #
 melter_failure_total_counter_output,melter_probability_density_function_output,melter_unreliability_function_output=io.write_melter_failure(operation_time,melter_failure_time,total_campaign,melter_failure_counter,melter_process_counter,melter_probability_density_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_evaluate,melter_unreliability_function_failure_evaluate,melter_failure_total_counter_output,melter_probability_density_function_output,melter_unreliability_function_output) #melter failure
 #
-print 'END PREPROCESSING'
+print 'END PREPROCESSING','\n\n'
 #
 ########################################################################
 #
 #
 #
 # main process loop start
-print 'Start facility operation.'
+print 'Start facility operation'
 #
 #
 #
@@ -152,7 +153,9 @@ while(operation_time<=facility_operation):
 #
 # storage buffer batch preparation process
 #
-    operation_time,true_weight,expected_weight,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory=storage_buffer.batch_preparation(operation_time,storage_buffer_operation_time,batch,true_weight,expected_weight,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory)
+    operation_time,true_weight,expected_weight,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory=storage_buffer.batch_preparation(operation_time,storage_buffer_process_time,batch,true_weight,expected_weight,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory)
+#
+# data writing
 #
     time_output=io.write_system_time(operation_time,melter_failure_time,time_output) #system time 
 #
@@ -180,68 +183,58 @@ while(operation_time<=facility_operation):
 #
     operation_time=edge_trans.edge_transition(operation_time,edge_transition[0])
 #
+# data writing
+#
     time_output=io.write_system_time(operation_time,melter_failure_time,time_output) #system time 
 #
 #######
 #
 # KMP measurement (0)
 #
-    operation_time,measured_weight,measured_storage_inventory,measured_initial_inventory,measured_system_inventory=kmp.kmp_measurement(operation_time,kmp_measurement_time[0],kmp_measurement_uncertainty[0],kmp_measurement_threshold[0],true_weight,expected_weight,measured_storage_inventory,measured_system_inventory,0)
-#
-#######
-#
-#
-#
-#######
+    operation_time,measured_weight,measured_storage_inventory,measured_initial_inventory,measured_system_inventory=kmp.kmp_measurement(operation_time,kmp_time[0],kmp_uncertainty[0],kmp_threshold[0],true_weight,expected_weight,measured_storage_inventory,measured_system_inventory,0)
 #
 # data writing
 #
-#    true_kmp0,expected_kmp0,measured_kmp0=des_f.kmp_write(operation_time,true_weight,expected_weight,measured_weight,true_kmp0,expected_kmp0,measured_kmp0) #kmp measurement data
-###
-#    time_output=io.write_time_output(operation_time,failure_time,time_output) #operation and failure time
+    true_kmp_output,expected_kmp_output,measured_kmp_output=io.kmp_write(operation_time,true_weight,expected_weight,measured_weight,true_kmp_output,expected_kmp_output,measured_kmp_output,0) #kmp measurement data
+    time_output=io.write_system_time(operation_time,melter_failure_time,time_output) #system time 
 #
 #######
 #
-#
-#
-####### edge transition: KMP0 to Melter
+# edge transition: KMP0 to Melter
 # 
-#    operation_time=des_f.edge_transition(operation_time,edge_time[1])
-#
-#######
-#
-#
-#
-#######
+    operation_time=edge_trans.edge_transition(operation_time,edge_transition[1])
 #
 # data writing
 #
-#    time_output=io.write_time_output(operation_time,failure_time,time_output) #operation and failure time
+    time_output=io.write_system_time(operation_time,melter_failure_time,time_output) #system time 
 #
 #######
 #
+# Melter
 #
+    operation_time,true_weight,expected_weight,accumulated_true_heel,accumulated_expected_heel,melter_failure_event,melter_failure_counter,melter_process_counter=melter.injection_casting(operation_time,true_weight,expected_weight,melter_failure_number,melter_failure_type,melter_failure_rate,injection_casting_process_time,crucible_fraction,accumulated_true_heel,accumulated_expected_heel,melter_failure_event,melter_failure_counter,melter_process_counter)
 #
-####### Melter
+# data writing
 #
-#    operation_time,true_weight,expected_weight,accumulated_true_crucible,accumulated_expected_crucible,melter_failure_event,melter_failure_counter,melter_process_counter=des_f.melter(operation_time,true_weight,expected_weight,melter_failure_number,melter_failure_type,melter_failure_probability,process_time[1],crucible_fraction,accumulated_true_crucible,accumulated_expected_crucible,melter_failure_event,melter_failure_counter,melter_process_counter)
+    time_output=io.write_system_time(operation_time,melter_failure_time,time_output) #system time 
 #
+    campaign_output=io.write_campaign(operation_time,total_campaign,campaign_output) #campaign
 #
+    melter_process_counter_output,trimmer_process_counter_output=io.write_process_counter(operation_time,melter_process_counter,trimmer_process_counter,melter_process_counter_output,trimmer_process_counter_output) #process counter 
 #
+    batch_output,true_weight_output,expected_weight_output,measured_weight_output=io.write_material_flow(operation_time,total_batch,true_weight,expected_weight,measured_weight,batch_output,true_weight_output,expected_weight_output,measured_weight_output) #material flow
 #
+    true_heel_output,expected_heel_output,measured_heel_output=io.write_heel(operation_time,true_heel,expected_heel,measured_heel,true_heel_output,expected_heel_output,measured_heel_output) #heel
 #
+    true_storage_inventory_output,expected_storage_inventory_output,measured_storage_inventory_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,true_system_inventory_output,expected_system_inventory_output,measured_system_inventory_output=io.write_inventory(operation_time,true_storage_inventory,expected_storage_inventory,measured_storage_inventory,true_processed_inventory,expected_processed_inventory,measured_processed_inventory,true_system_inventory,expected_system_inventory,measured_system_inventory,true_storage_inventory_output,expected_storage_inventory_output,measured_storage_inventory_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,true_system_inventory_output,expected_system_inventory_output,measured_system_inventory_output) #inventory 
 #
+    melter_true_muf_output,melter_expected_muf_output,melter_measured_muf_output,melter_true_mufc_output,melter_expected_mufc_output,melter_measured_mufc_output=io.write_muf(operation_time,melter_true_muf,melter_expected_muf,melter_measured_muf,melter_true_mufc,melter_expected_mufc,melter_measured_mufc,melter_true_muf_output,melter_expected_muf_output,melter_measured_muf_output,melter_true_mufc_output,melter_expected_mufc_output,melter_measured_mufc_output) #muf 
 #
+    end_of_campaign_false_alarm_counter_output=io.write_end_of_campaign_false_alarm(operation_time,total_campaign,end_of_campaign_false_alarm_counter,end_of_campaign_false_alarm_threshold,end_of_campaign_false_alarm_test,end_of_campaign_false_alarm_counter_output) #end of campaign false alarm
 #
+    melter_failure_false_alarm_counter_output=io.write_melter_failure_false_alarm(operation_time,failure_time,total_campaign,melter_failure_false_alarm_counter,melter_failure_false_alarm_threshold,melter_failure_false_alarm_test,melter_failure_false_alarm_counter_output) #melter failure false alarm
 #
-#
-### data output routines
-#    time_output,campaign_output,true_storage_inventory_output,expected_storage_inventory_output,measured_storage_inventory_output,true_weight_output,expected_weight_output,measured_weight_output,true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,total_melter_failure_output,true_system_inventory_output,expected_system_inventory_output,measured_system_inventory_output,melter_process_counter_output,trimmer_process_counter_output=des_f.write_output(operation_time,total_campaign,true_storage_inventory,expected_storage_inventory,measured_storage_inventory,true_weight,expected_weight,measured_weight,true_muf,expected_muf,measured_muf,true_mufc,expected_mufc,measured_mufc,true_processed_inventory,expected_processed_inventory,measured_processed_inventory,melter_failure_counter,true_system_inventory,expected_system_inventory,measured_system_inventory,melter_process_counter,trimmer_process_counter,time_output,campaign_output,true_storage_inventory_output,expected_storage_inventory_output,measured_storage_inventory_output,true_weight_output,expected_weight_output,measured_weight_output,true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,total_melter_failure_output,true_system_inventory_output,expected_system_inventory_output,measured_system_inventory_output,melter_process_counter_output,trimmer_process_counter_output)
-#    end_of_campaign_false_alarm_counter_output=des_f.false_alarm_write(operation_time,total_campaign,end_of_campaign_false_alarm_counter,end_of_campaign_false_alarm_threshold,end_of_campaign_false_alarm_counter_output,end_of_campaign_false_alarm_test)
-#    melter_failure_false_alarm_counter_output=des_f.false_alarm_write(operation_time,total_campaign,melter_failure_false_alarm_counter,melter_failure_false_alarm_threshold,melter_failure_false_alarm_counter_output,melter_failure_false_alarm_test)
-#######
-#
-#
+    melter_failure_total_counter_output,melter_probability_density_function_output,melter_unreliability_function_output=io.write_melter_failure(operation_time,melter_failure_time,total_campaign,melter_failure_counter,melter_process_counter,melter_probability_density_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_evaluate,melter_unreliability_function_failure_evaluate,melter_failure_total_counter_output,melter_probability_density_function_output,melter_unreliability_function_output) #melter failure
 #
 #######
 # need to fix the frequency analysis for the failure
@@ -479,32 +472,26 @@ while(operation_time<=facility_operation):
 #
 #
 #
-####### Loop back to start next campaign
+####### loop back to start next campaign
+#
 # reset campaign based variables and advance campaign counter
-#    total_campaign,total_batch=des_f.end_of_campaign(total_campaign,total_batch)
-#    true_weight,expected_weight,measured_weight=des_f.reset_weight()
+    total_campaign,total_batch=io.end_of_campaign(total_campaign,total_batch)
+    true_weight,expected_weight,measured_weight=io.reset_batch_weight()
+#
 #######
 #
+# end facility operation loop
 #
-#
-####### end facility operation loop
-########################################################################
-#
-#
-#    
 ########################################################################
 #
 # close output files
 #
 ####################################################################### 
 #
-#
-#
-#######################################################################
-#
 # end main fuel fabrication model
 #
-print 'end campaign'
+print 'End facility operation'
+#
 #######################################################################
 #
 #

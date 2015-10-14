@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB
-# rev.25.Septemebr.2015
+# rev.25.September.2015
 ########################################################################
 # 
 # Key measurement points (KMPs) are located based on the system diagram.
@@ -73,22 +73,6 @@ def kmp_measurement(operation_time,kmp_delay_time,uncertainty,threshold,true_qua
         return(operation_time,measured_quantity,measured_inventory,measured_initial_inventory,measured_system_inventory)
     else:
         return(operation_time,measured_quantity,measured_inventory)
-########################################################################
-#
-#
-#
-########################################################################
-#
-# (4): write kmp measurement data 
-# 
-#######
-def kmp_write(operation_time,true_quantity,expected_quantity,measured_quantity,true_kmp,expected_kmp,measured_kmp,kmp_identifier):
-#######
-    true_kmp.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%true_quantity)+'\t'+kmp_identifier+'\n')
-    expected_kmp.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%expected_quantity)+'\t'+kmp_identifier+'\n')
-    measured_kmp.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%measured_quantity)+'\t'+kmp_identifier+'\n')
-###
-    return(true_kmp,expected_kmp,measured_kmp)
 ########################################################################
 #
 #

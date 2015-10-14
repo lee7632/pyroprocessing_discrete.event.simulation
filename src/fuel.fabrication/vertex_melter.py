@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB
-# rev.03.August.2015
+# rev.09.October.2015
 ########################################################################
 # 
 # Melter vertex 
@@ -24,13 +24,14 @@
 #
 # imports
 #
-import os
+import numpy 
 import failure_analysis_weibull as failure_analysis
 #
 ########################################################################
 #
 # function list
 #
+# (1): injection casting
 #
 ########################################################################
 #
@@ -38,38 +39,38 @@ import failure_analysis_weibull as failure_analysis
 #
 ########################################################################
 #
-#
-#
-########################################################################
-#
-# (5): melter injection casting process
+# (1): injection casting
 # 
 #######
-def melter(operation_time,true_quantity,expected_quantity,melter_failure_number,melter_failure_type,melter_failure_probability,delay,crucible_fraction,accumulated_true_crucible,accumulated_expected_crucible,melter_failure_event,melter_failure_counter,melter_process_counter):
+def injection_casting(operation_time,melter_failure_time,true_quantity,expected_quantity,melter_failure_number,melter_failure_type,melter_failure_rate,delay,crucible_fraction,accumulated_true_heel,accumulated_expected_heel,melter_failure_event,melter_failure_counter,melter_process_counter):
 #######
     print 'Alloy melting'
     operation_time=operation_time+0.5*delay
     melter_process_counter=melter_process_counter+1
-###
-    true_crucible=(crucible_fraction[1]-crucible_fraction[2])*numpy.random.random_sample()+crucible_fraction[2] 
-    expected_crucible=crucible_fraction[0]
 #
-    true_weight=true_weight-true_crucible
-    expected_weight=expected_weight-expected_crucible  
+    true_heel=(crucible_fraction[1]-crucible_fraction[2])*numpy.random.random_sample()+crucible_fraction[2] 
+    expected_heel=crucible_fraction[0]
 #
-    accumulated_true_crucible=accumulated_true_crucible+true_crucible
-    accumulated_expected_crucible=accumulated_expected_crucible+expected_crucible    
+    true_quantity=true_quantity-true_heel
+    expected_quantity=expected_quantity-expected_heel
+#
+    accumulated_true_heel=accumulated_true_heel+true_heel
+    accumulated_expected_heel=accumulated_expected_heel+expected_heel    
 ###
 #
+# failure testing at 0.5 delay time
+# if no failure rest of delay time is added
+# if failure then failure times occur
+#
 ###
-# failure testing
-# a failure will occur at 0.5 delay time
-    melter_failure_event,melter_failure_counter=failure_test(operation_time,melter_failure_number,melter_failure_type,melter_failure_probability,melter_failure_event,melter_failure_counter,melter_process_counter)
+#    melter_failure_event,melter_failure_counter=failure_analysis(operation_time,melter_failure_number,melter_failure_type,melter_failure_probability,melter_failure_event,melter_failure_counter,melter_process_counter)
 ###
     if(melter_failure_event==False):
-        operation_time=operation_time+0.5*delay
-### end if
-    return(operation_time,true_weight,expected_weight,accumulated_true_crucible,accumulated_expected_crucible,melter_failure_event,melter_failure_counter,melter_process_counter)
+	operation_time=operation_time+0.5*delay
+# end if
+    print 'Melter failure: ',melter_failure_event,'\n'
+###
+    return(operation_time,melter_failure_time,true_quantity,expected_quantity,accumulated_true_heel,accumulated_expected_heel,melter_failure_event,melter_failure_counter,melter_process_counter)
 ########################################################################
 #
 #
