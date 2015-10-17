@@ -44,11 +44,7 @@
 <b>E</b>
 <li>end_of_campaign_inspection_time=end of campaign inspection time
 <li>edge_transition=transfer times along each edge...see system diagram...set in preprocessing
-<li>equipment_failure_probability=dummy variable for equipment failures...set in preprocessing
-<li>equipment_failure_delay_time=dummy variable for equipment failures delay time...set in preprocessing
-<li>equipment_failure_number=dummy for number of failures for specific equipment
-<li>equipment_failure_type=dummy for specific failure
-<li>equipment_failure_counter=number of total failures for specific equipment over operation time
+<li>equipment_=dummy variable for various equipment modules
 <li>expected_initial/final_inventory=dummy variable used for MUFc calculation 
 <li>expected_quantity=dummy variable for KMP measurement, false alarm test
 <li>expected_kmpX=data file stores measured quantities at each KMP
@@ -78,6 +74,7 @@
 <li>false_alarm_identifier=dummy to indicate whether to use system false alarm or kmp false alarm
 <li> _false_alarm_filename=name of file to output
 <li>_false_alarm_test=difference in selected material quantities...compared to threshold to trigger false alarm
+<li>_failure_time=time record to determine equipment failure; if there is a failure, failure_time resets to 0; i.e., there is a new probability distribution
 <li>file_=part of the file names for saving, opening, writing, etc.; i.e., file_tree is directory structure
 <li>filename=same thing
 </ul>
@@ -131,7 +128,6 @@
 <li>melter_failure_inspection_time=melter failure inspection time
 <li>melter_failure_type=type of melter failure...set in preprocessing
 <li>melter_process_counter=counts the number of times the melting process is initiated
-<li>melter_failure_time=time record to determine melter failure; if there is a failure, failure_time resets to 0; i.e., there is a new probability distribution
 <li>melter_failure_campaign_counter=total melter failure per campaign
 </ul> 
 <ul>

@@ -38,10 +38,12 @@ import os
 # (1): storage buffer batch preparation process
 #
 #######
-def batch_preparation(operation_time,vertex_delay_time,batch,true_quantity,expected_quantity,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory):
+def batch_preparation(operation_time,melter_failure_time,trimmer_failure_time,vertex_delay_time,batch,true_quantity,expected_quantity,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory):
 #######
     print 'Prepare batch in Storage Buffer for transfer',batch,'kg','\n\n'    
     operation_time=operation_time+vertex_delay_time
+    melter_failure_time=melter_failure_time+vertex_delay_time
+    trimmer_failure_time=trimmer_failure_time+vertex_delay_time
     true_quantity=batch
     expected_quantity=batch
     true_storage_inventory=true_storage_inventory-true_quantity
@@ -51,7 +53,7 @@ def batch_preparation(operation_time,vertex_delay_time,batch,true_quantity,expec
     true_initial_inventory=true_quantity
     expected_initial_inventory=expected_quantity
 ###
-    return(operation_time,true_quantity,expected_quantity,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory)
+    return(operation_time,melter_failure_time,trimmer_failure_time,true_quantity,expected_quantity,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory)
 ########################################################################
 #
 #
