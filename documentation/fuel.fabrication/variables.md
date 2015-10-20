@@ -77,6 +77,7 @@
 <li>_failure_time=time record to determine equipment failure; if there is a failure, failure_time resets to 0; i.e., there is a new probability distribution
 <li>file_=part of the file names for saving, opening, writing, etc.; i.e., file_tree is directory structure
 <li>filename=same thing
+<li>_fines=process losses from trimming; i.e., muf
 </ul>
 <ul> 
 <b>G</b>

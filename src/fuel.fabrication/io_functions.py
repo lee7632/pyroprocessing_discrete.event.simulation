@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB
-# rev.16.October.2015
+# rev.20.October.2015
 ########################################################################
 # 
 # Functions for in-simulation data processing
@@ -32,6 +32,7 @@ import shutil
 # (3a):   open system output files
 # (3a.i): open equipment output files
 # (3b):   open material flow output files
+# (3b.i): open process loss output files
 # (3c):   open inventory output files
 # (3d):   open system false alarm output files
 # (3e):   open kmp output files
@@ -39,12 +40,13 @@ import shutil
 # (3g):   open muf output files
 #
 # initialization regime
-# (4a): initialize system parameters
-# (4b): initialize material flow parameters
-# (4c): initialize inventory parameters
-# (4d): initialize system false alarm parameters
-# (4e): initialize equipment parameters
-# (4f): initialize muf parameters
+# (4a):   initialize system parameters
+# (4b):   initialize material flow parameters
+# (4b.i): initialize equipment process loss 
+# (4c):   initialize inventory parameters
+# (4d):   initialize system false alarm parameters
+# (4e):   initialize equipment parameters
+# (4f):   initialize muf parameters
 #
 # data writing regime
 # (5a):   write system time
@@ -52,7 +54,7 @@ import shutil
 # (5b):   write campaign 
 # (5c):   write process counter 
 # (5d):   write material flow 
-# (5e):   write heel
+# (5e):   write process loss 
 # (5f):   write inventory 
 # (5g):   write muf
 # (5h):   write end of campaign false alarm
@@ -98,16 +100,16 @@ def get_dir_path(root_dir,subsystem):
     false_alarm_odir=directory_paths[13]
     kmps_odir=directory_paths[14]
     muf_odir=directory_paths[15]
-    melter_failure_odir=directory_paths[16]
+    equipment_failure_odir=directory_paths[16]
     system_gdir=directory_paths[17]
     material_flow_gdir=directory_paths[18]
     inventory_gdir=directory_paths[19]
     false_alarm_gdir=directory_paths[20]
     kmps_gdir=directory_paths[21]
     muf_gdir=directory_paths[22]
-    melter_failure_gdir=directory_paths[23]
+    equipment_failure_gdir=directory_paths[23]
 ###
-    return(input_dir,output_dir,edge_transition_dir,failure_distribution_dir,failure_equipment_dir,kmps_dir,process_states_dir,system_false_alarm_dir,data_dir,figures_dir,system_odir,material_flow_odir,inventory_odir,false_alarm_odir,kmps_odir,muf_odir,melter_failure_odir,system_gdir,material_flow_gdir,inventory_gdir,false_alarm_gdir,kmps_gdir,muf_gdir,melter_failure_gdir)
+    return(input_dir,output_dir,edge_transition_dir,failure_distribution_dir,failure_equipment_dir,kmps_dir,process_states_dir,system_false_alarm_dir,data_dir,figures_dir,system_odir,material_flow_odir,inventory_odir,false_alarm_odir,kmps_odir,muf_odir,equipment_failure_odir,system_gdir,material_flow_gdir,inventory_gdir,false_alarm_gdir,kmps_gdir,muf_gdir,equipment_failure_gdir)
 ########################################################################
 #
 # (2a): read system operation input data
@@ -141,26 +143,17 @@ def input_storage_buffer(process_states_dir):
 # (2c): read equipment input data
 #
 #######
-def input_equipment(process_states_dir,failure_equipment_dir,failure_distribution_dir):
+def input_equipment(process_states_dir,failure_equipment_dir,failure_distribution_dir,equipment):
 #######	
-#
-# add data files for trimmer
-# add identifier to this module
-# change crucible filename
-# add to original lib file 
-# add time files in mainflow
-# add failure distribution calculations in mainflow
-# split weibull to equipment_weibull
-#
     os.chdir(process_states_dir) #change dir
-    equipment_loss_fraction=numpy.loadtxt('melter.crucible.fraction.inp',usecols=[1]) #fraction of material left in/at/around the equipment; 1st element is the expected quantity, 2nd and 3rd are the range for the true quantity
+    equipment_loss_fraction=numpy.loadtxt(equipment+'.loss.fraction.inp',usecols=[1]) #fraction of material left in/at/around the equipment; 1st element is the expected quantity, 2nd and 3rd are the range for the true quantity
     os.chdir(failure_equipment_dir) #change dir
-    equipment_failure_type=numpy.loadtxt('melter.failure.data.inp',usecols=[0],dtype=str) #type of equipment failure
-    equipment_failure_rate=numpy.loadtxt('melter.failure.data.inp',usecols=[1]) #corresponding equipment failure rate
-    equipment_failure_maintenance_time=numpy.loadtxt('melter.failure.data.inp',usecols=[2]) #time to repair each failure
-    equipment_cleaning_time=numpy.loadtxt('melter.failure.data.inp',usecols=[3]) #time to clean the equipment prior to equipment removal
+    equipment_failure_type=numpy.loadtxt(equipment+'.failure.data.inp',usecols=[0],dtype=str) #type of equipment failure
+    equipment_failure_rate=numpy.loadtxt(equipment+'.failure.data.inp',usecols=[1]) #corresponding equipment failure rate
+    equipment_failure_maintenance_time=numpy.loadtxt(equipment+'.failure.data.inp',usecols=[2]) #time to repair each failure
+    equipment_cleaning_time=numpy.loadtxt(equipment+'.failure.data.inp',usecols=[3]) #time to clean the equipment prior to equipment removal
     os.chdir(failure_distribution_dir) #change dir
-    weibull_beta=numpy.loadtxt('weibull.beta.inp',usecols=[1]) #weibull distribution beta parameter for the melter
+    weibull_beta=numpy.loadtxt(equipment+'.weibull.beta.inp',usecols=[1]) #weibull distribution beta parameter for the melter
     weibull_eta=(1)/equipment_failure_rate #eta for weibull distribution is reciprocal of failure rate if beta = 1; assumes random failure
     equipment_failure_number=1
 #    equipment_failure_number=len(int(equipment_failure_type)) #total number of possible failures, used if > 1
@@ -242,11 +235,21 @@ def output_material_flow(material_flow_odir):
     true_weight_output=open('true.weight.out','w+')
     expected_weight_output=open('expected.weight.out','w+')
     measured_weight_output=open('measured.weight.out','w+')
-    true_heel_output=open('true.heel.out','w+')
-    expected_heel_output=open('expected.heel.out','w+')
-    measured_heel_output=open('measured.heel.out','w+')
 ###
-    return(batch_output,true_weight_output,expected_weight_output,measured_weight_output,true_heel_output,expected_heel_output,measured_heel_output)
+    return(batch_output,true_weight_output,expected_weight_output,measured_weight_output)
+########################################################################
+#
+# (3b.i): open process loss output files
+#
+#######
+def output_process_loss(material_flow_odir,equipment):
+#######
+    os.chdir(material_flow_odir) #change dir
+    true_process_loss_output=open(equipment+'true.loss.out','w+')
+    expected_process_loss_output=open(equipment+'expected.loss.out','w+')
+    measured_process_loss_output=open(equipment+'measured.loss.out','w+')
+###
+    return(true_process_loss_output,expected_process_loss_output,measured_process_loss_output)
 ########################################################################
 #
 # (3c): open inventory output files
@@ -341,14 +344,23 @@ def initialize_material_flow():
     true_weight=0 #true quantity processed per campaign
     expected_weight=0 #expected quantity processed per campaign
     measured_weight=0 #measured quantity processed per campaign
-    true_heel=0 #true quantity of heel per campaign
-    expected_heel=0 #expected quantity of heel per campaign
-    measured_heel=0 #measured quantity of heel per campaign
-    accumulated_true_heel=0 #accumulated quantity of heel prior to failure; zeroed out on cleaning 
-    accumulated_expected_heel=0 #expected quantity of heel prior to failure; zeroed out on cleaning
-    accumulated_measured_heel=0 #measured quantity of heel prior to failure; zeroed out on cleaning 
 ###
-    return(total_batch,true_weight,expected_weight,measured_weight,true_heel,expected_heel,measured_heel,accumulated_true_heel,accumulated_expected_heel,accumulated_measured_heel)
+    return(total_batch,true_weight,expected_weight,measured_weight)
+########################################################################
+#
+# (4b.i): initialize equipment process loss 
+#
+#######
+def initialize_equipment_process_loss():
+#######
+    true_process_loss=0 #true quantity of heel per campaign
+    expected_process_loss=0 #expected quantity of heel per campaign
+    measured_process_loss=0 #measured quantity of heel per campaign
+    accumulated_true_process_loss=0 #accumulated quantity of heel prior to failure; zeroed out on cleaning 
+    accumulated_expected_process_loss=0 #expected quantity of heel prior to failure; zeroed out on cleaning
+    accumulated_measured_process_loss=0 #measured quantity of heel prior to failure; zeroed out on cleaning 
+###
+    return(true_process_loss,expected_process_loss,measured_process_loss,accumulated_true_process_loss,accumulated_expected_process_loss,accumulated_measured_process_loss)
 ########################################################################
 #
 # (4c): initialize inventory parameters
@@ -470,16 +482,16 @@ def write_material_flow(operation_time,total_batch,true_weight,expected_weight,m
     return(batch_output,true_weight_output,expected_weight_output,measured_weight_output)
 ########################################################################
 #
-# (5e): write heel 
+# (5e): write process loss 
 #
 #######
-def write_heel(operation_time,true_heel,expected_heel,measured_heel,true_heel_output,expected_heel_output,measured_heel_output):
+def write_process_loss(operation_time,true_process_loss,expected_process_loss,measured_loss,true_process_loss_output,expected_process_loss_output,measured_process_loss_output):
 #######
-    true_heel_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%true_heel)+'\n')
-    expected_heel_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%expected_heel)+'\n')
-    measured_heel_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%measured_heel)+'\n')
+    true_process_loss_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%true_process_loss)+'\n')
+    expected_process_loss_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%expected_process_loss)+'\n')
+    measured_process_loss_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%measured_process_loss)+'\n')
 ###
-    return(true_heel_output,expected_heel_output,measured_heel_output)
+    return(true_process_loss_output,expected_process_loss_output,measured_process_loss_output)
 ########################################################################
 #
 # (5f): write inventory 

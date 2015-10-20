@@ -85,7 +85,7 @@ def make_data_dir(home_dir,subsystem):
     false_alarm_odir=make_subdirectory(data_dir,'false.alarm')
     kmps_odir=make_subdirectory(data_dir,'kmps')
     muf_odir=make_subdirectory(data_dir,'muf')
-    melter_failure_odir=make_subdirectory(data_dir,'melter.failure')
+    equipment_failure_odir=make_subdirectory(data_dir,'equipment.failure')
 #
     system_gdir=make_subdirectory(figures_dir,'system')
     material_flow_gdir=make_subdirectory(figures_dir,'material.flow')
@@ -93,7 +93,7 @@ def make_data_dir(home_dir,subsystem):
     false_alarm_gdir=make_subdirectory(figures_dir,'false.alarm')
     kmps_gdir=make_subdirectory(figures_dir,'kmps')
     muf_gdir=make_subdirectory(figures_dir,'muf')
-    melter_failure_gdir=make_subdirectory(figures_dir,'melter.failure')
+    equipment_failure_gdir=make_subdirectory(figures_dir,'equipment.failure')
 #
     os.makedirs(system_odir)
     os.makedirs(material_flow_odir)
@@ -101,7 +101,7 @@ def make_data_dir(home_dir,subsystem):
     os.makedirs(false_alarm_odir)
     os.makedirs(kmps_odir)
     os.makedirs(muf_odir)
-    os.makedirs(melter_failure_odir)
+    os.makedirs(equipment_failure_odir)
 #
     os.makedirs(system_gdir)
     os.makedirs(material_flow_gdir)
@@ -109,9 +109,9 @@ def make_data_dir(home_dir,subsystem):
     os.makedirs(false_alarm_gdir)
     os.makedirs(kmps_gdir)
     os.makedirs(muf_gdir)
-    os.makedirs(melter_failure_gdir)
+    os.makedirs(equipment_failure_gdir)
 ###
-    return(input_dir,output_dir,edge_transition_dir,failure_distribution_dir,failure_equipment_dir,kmps_dir,process_states_dir,system_false_alarm_dir,data_dir,figures_dir,system_odir,material_flow_odir,inventory_odir,false_alarm_odir,kmps_odir,muf_odir,melter_failure_odir,system_gdir,material_flow_gdir,inventory_gdir,false_alarm_gdir,kmps_gdir,muf_gdir,melter_failure_gdir)
+    return(input_dir,output_dir,edge_transition_dir,failure_distribution_dir,failure_equipment_dir,kmps_dir,process_states_dir,system_false_alarm_dir,data_dir,figures_dir,system_odir,material_flow_odir,inventory_odir,false_alarm_odir,kmps_odir,muf_odir,equipment_failure_odir,system_gdir,material_flow_gdir,inventory_gdir,false_alarm_gdir,kmps_gdir,muf_gdir,equipment_failure_gdir)
 ########################################################################
 #
 # (2): copy files from lib directory to simulation directory
@@ -165,7 +165,7 @@ def make_readme(home_dir):
 # (4): write directory paths for subsystem module 
 #
 #######
-def write_simulation_dir(root_dir,subsystem,input_dir,output_dir,edge_transition_dir,failure_distribution_dir,failure_equipment_dir,kmps_dir,process_states_dir,system_false_alarm_dir,data_dir,figures_dir,system_odir,material_flow_odir,inventory_odir,false_alarm_odir,kmps_odir,muf_odir,melter_failure_odir,system_gdir,material_flow_gdir,inventory_gdir,false_alarm_gdir,kmps_gdir,muf_gdir,melter_failure_gdir):
+def write_simulation_dir(root_dir,subsystem,input_dir,output_dir,edge_transition_dir,failure_distribution_dir,failure_equipment_dir,kmps_dir,process_states_dir,system_false_alarm_dir,data_dir,figures_dir,system_odir,material_flow_odir,inventory_odir,false_alarm_odir,kmps_odir,muf_odir,equipment_failure_odir,system_gdir,material_flow_gdir,inventory_gdir,false_alarm_gdir,kmps_gdir,muf_gdir,equipment_failure_gdir):
 #######
 #
 ### move to subsystem directory
@@ -177,7 +177,7 @@ def write_simulation_dir(root_dir,subsystem,input_dir,output_dir,edge_transition
     simulation_dir_file=open(simulation_dir_filename,'w+')
 #
 ### write directories
-    simulation_dir_file.write(input_dir+','+output_dir+','+edge_transition_dir+','+failure_distribution_dir+','+failure_equipment_dir+','+kmps_dir+','+process_states_dir+','+system_false_alarm_dir+','+data_dir+','+figures_dir+','+system_odir+','+material_flow_odir+','+inventory_odir+','+false_alarm_odir+','+kmps_odir+','+muf_odir+','+melter_failure_odir+','+system_gdir+','+material_flow_gdir+','+inventory_gdir+','+false_alarm_gdir+','+kmps_gdir+','+muf_gdir+','+melter_failure_gdir)
+    simulation_dir_file.write(input_dir+','+output_dir+','+edge_transition_dir+','+failure_distribution_dir+','+failure_equipment_dir+','+kmps_dir+','+process_states_dir+','+system_false_alarm_dir+','+data_dir+','+figures_dir+','+system_odir+','+material_flow_odir+','+inventory_odir+','+false_alarm_odir+','+kmps_odir+','+muf_odir+','+equipment_failure_odir+','+system_gdir+','+material_flow_gdir+','+inventory_gdir+','+false_alarm_gdir+','+kmps_gdir+','+muf_gdir+','+equipment_failure_gdir)
 #
 ### close file
     simulation_dir_file.close()
