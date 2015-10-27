@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB
-# rev.25.September.2015
+# rev.21.October.2015
 ########################################################################
 # 
 # Key measurement points (KMPs) are located based on the system diagram.
@@ -24,7 +24,6 @@ import numpy
 # function list
 #
 # (1): kmp measurement
-# (4): write kmp measurement data MOVE TO IO
 # (5): close output files
 #
 ########################################################################
@@ -36,12 +35,14 @@ import numpy
 # (1): kmp measurement
 #
 #######
-def kmp_measurement(operation_time,kmp_delay_time,uncertainty,threshold,true_quantity,expected_quantity,measured_inventory,measured_system_inventory,kmp_identifier):
+def kmp_measurement(operation_time,equipment_failure_time_0,equipment_failure_time_1,kmp_delay_time,uncertainty,threshold,true_quantity,expected_quantity,measured_inventory,measured_system_inventory,kmp_identifier):
 #######
 #
 ###    
     print 'Measurement event at KMP:',kmp_identifier
     operation_time=operation_time+kmp_delay_time
+    equipment_failure_time_0=equipment_failure_time_0+kmp_delay_time
+    equipment_failure_time_1=equipment_failure_time_1+kmp_delay_time
     measured_quantity=0
 ###
 #
@@ -70,9 +71,9 @@ def kmp_measurement(operation_time,kmp_delay_time,uncertainty,threshold,true_qua
     print 'Operation time','%.4f'%operation_time,'(d)','\n','True quantity','%.4f'%true_quantity,'(kg)','\n','Expected quantity','%.4f'%expected_quantity,'(kg)','\n','Measured quantity','%.4f'%measured_quantity,'(kg)','\n\n'
 ###
     if (kmp_identifier==0):
-        return(operation_time,measured_quantity,measured_inventory,measured_initial_inventory,measured_system_inventory)
+        return(operation_time,equipment_failure_time_0,equipment_failure_time_1,measured_quantity,measured_inventory,measured_initial_inventory,measured_system_inventory)
     else:
-        return(operation_time,measured_quantity,measured_inventory)
+        return(operation_time,equipment_failure_time_0,equipment_failure_time_1,measured_quantity,measured_inventory)
 ########################################################################
 #
 #

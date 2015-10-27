@@ -17,7 +17,6 @@
 #
 import numpy
 import failure_analysis_weibull_functions as failure_weibull
-import io_functions as io
 #
 ########################################################################
 #
@@ -34,12 +33,12 @@ import io_functions as io
 # (1): failure distribution calculation 
 #
 #######
-def failure_distribution_calculation(operation_time,failure_time,weibull_beta,weibull_eta):
+def failure_distribution_calculation(operation_time,equipment_failure_time,weibull_beta,weibull_eta):
 #######
     probability_density_function_evaluate=failure_weibull.probability_density_function(operation_time,weibull_beta,weibull_eta)
     unreliability_function_evaluate=failure_weibull.unreliability_function(operation_time,weibull_beta,weibull_eta)
-    probability_density_function_failure_evaluate=failure_weibull.probability_density_function(failure_time,weibull_beta,weibull_eta)
-    unreliability_function_failure_evaluate=failure_weibull.unreliability_function(failure_time,weibull_beta,weibull_eta)
+    probability_density_function_failure_evaluate=failure_weibull.probability_density_function(equipment_failure_time,weibull_beta,weibull_eta)
+    unreliability_function_failure_evaluate=failure_weibull.unreliability_function(equipment_failure_time,weibull_beta,weibull_eta)
 ###
     return(probability_density_function_evaluate,unreliability_function_evaluate,probability_density_function_failure_evaluate,unreliability_function_failure_evaluate)
 ########################################################################

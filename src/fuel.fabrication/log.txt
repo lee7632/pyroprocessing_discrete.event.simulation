@@ -1,3 +1,762 @@
 Fuel fabrication 
 
 PREPROCESSING
+END PREPROCESSING 
+
+
+Start facility operation
+Starting campaign: 1 at time:  0  days 
+
+Prepare batch in Storage Buffer for transfer 20.0 kg 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 0
+Operation time 0.0833 (d) 
+True quantity 20.0000 (kg) 
+Expected quantity 20.0000 (kg) 
+Measured quantity 19.9965 (kg) 
+
+
+Edge transition 
+
+
+Alloy melting
+Failure status:  False 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 1
+Operation time 0.4790 (d) 
+True quantity 19.9015 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 20.0598 (kg) 
+
+
+Edge transition 
+
+
+Slug trimming
+Failure status:  False 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 2
+Operation time 0.6664 (d) 
+True quantity 19.9015 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.9796 (kg) 
+
+
+Edge transition 
+
+
+Processing the final product 
+
+
+Campaign 1 complete 
+
+
+Starting campaign: 2 at time:  0.7705  days 
+
+Prepare batch in Storage Buffer for transfer 20.0 kg 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 0
+Operation time 0.8538 (d) 
+True quantity 20.0000 (kg) 
+Expected quantity 20.0000 (kg) 
+Measured quantity 19.9212 (kg) 
+
+
+Edge transition 
+
+
+Alloy melting
+Failure status:  False 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 1
+Operation time 1.2495 (d) 
+True quantity 19.8202 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.9224 (kg) 
+
+
+Edge transition 
+
+
+Slug trimming
+Failure status:  False 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 2
+Operation time 1.4369 (d) 
+True quantity 19.8202 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.7758 (kg) 
+
+
+Edge transition 
+
+
+Processing the final product 
+
+
+Campaign 2 complete 
+
+
+Starting campaign: 3 at time:  1.541  days 
+
+Prepare batch in Storage Buffer for transfer 20.0 kg 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 0
+Operation time 1.6243 (d) 
+True quantity 20.0000 (kg) 
+Expected quantity 20.0000 (kg) 
+Measured quantity 20.0072 (kg) 
+
+
+Edge transition 
+
+
+Alloy melting
+Failure status:  False 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 1
+Operation time 2.0200 (d) 
+True quantity 19.7828 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.8742 (kg) 
+
+
+Edge transition 
+
+
+Slug trimming
+Failure status:  False 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 2
+Operation time 2.2074 (d) 
+True quantity 19.7828 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.7614 (kg) 
+
+
+Edge transition 
+
+
+Processing the final product 
+
+
+Campaign 3 complete 
+
+
+Starting campaign: 4 at time:  2.3115  days 
+
+Prepare batch in Storage Buffer for transfer 20.0 kg 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 0
+Operation time 2.3948 (d) 
+True quantity 20.0000 (kg) 
+Expected quantity 20.0000 (kg) 
+Measured quantity 19.8667 (kg) 
+
+
+Edge transition 
+
+
+Alloy melting
+Failure status:  False 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 1
+Operation time 2.7905 (d) 
+True quantity 19.8553 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.7424 (kg) 
+
+
+Edge transition 
+
+
+Slug trimming
+Failure status:  False 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 2
+Operation time 2.9779 (d) 
+True quantity 19.8553 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.8310 (kg) 
+
+
+Edge transition 
+
+
+Processing the final product 
+
+
+Campaign 4 complete 
+
+
+Starting campaign: 5 at time:  3.082  days 
+
+Prepare batch in Storage Buffer for transfer 20.0 kg 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 0
+Operation time 3.1653 (d) 
+True quantity 20.0000 (kg) 
+Expected quantity 20.0000 (kg) 
+Measured quantity 20.1424 (kg) 
+
+
+Edge transition 
+
+
+Alloy melting
+Failure status:  False 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 1
+Operation time 3.5610 (d) 
+True quantity 19.5598 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.5309 (kg) 
+
+
+Edge transition 
+
+
+Slug trimming
+Failure status:  False 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 2
+Operation time 3.7484 (d) 
+True quantity 19.5598 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.5761 (kg) 
+
+
+Edge transition 
+
+
+Processing the final product 
+
+
+Campaign 5 complete 
+
+
+Starting campaign: 6 at time:  3.8525  days 
+
+Prepare batch in Storage Buffer for transfer 20.0 kg 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 0
+Operation time 3.9358 (d) 
+True quantity 20.0000 (kg) 
+Expected quantity 20.0000 (kg) 
+Measured quantity 19.9481 (kg) 
+
+
+Edge transition 
+
+
+Alloy melting
+Failure status:  False 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 1
+Operation time 4.3315 (d) 
+True quantity 19.9419 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.9188 (kg) 
+
+
+Edge transition 
+
+
+Slug trimming
+Failure status:  False 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 2
+Operation time 4.5189 (d) 
+True quantity 19.9419 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 20.0681 (kg) 
+
+
+Edge transition 
+
+
+Processing the final product 
+
+
+Campaign 6 complete 
+
+
+Starting campaign: 7 at time:  4.623  days 
+
+Prepare batch in Storage Buffer for transfer 20.0 kg 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 0
+Operation time 4.7063 (d) 
+True quantity 20.0000 (kg) 
+Expected quantity 20.0000 (kg) 
+Measured quantity 19.9041 (kg) 
+
+
+Edge transition 
+
+
+Alloy melting
+Failure status:  False 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 1
+Operation time 5.1020 (d) 
+True quantity 19.6550 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.6154 (kg) 
+
+
+Edge transition 
+
+
+Slug trimming
+Failure status:  False 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 2
+Operation time 5.2894 (d) 
+True quantity 19.6550 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.6761 (kg) 
+
+
+Edge transition 
+
+
+Processing the final product 
+
+
+Campaign 7 complete 
+
+
+Starting campaign: 8 at time:  5.3935  days 
+
+Prepare batch in Storage Buffer for transfer 20.0 kg 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 0
+Operation time 5.4768 (d) 
+True quantity 20.0000 (kg) 
+Expected quantity 20.0000 (kg) 
+Measured quantity 19.8908 (kg) 
+
+
+Edge transition 
+
+
+Alloy melting
+Failure status:  False 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 1
+Operation time 5.8725 (d) 
+True quantity 19.8441 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.9560 (kg) 
+
+
+Edge transition 
+
+
+Slug trimming
+Failure status:  False 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 2
+Operation time 6.0599 (d) 
+True quantity 19.8441 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.7982 (kg) 
+
+
+Edge transition 
+
+
+Processing the final product 
+
+
+Campaign 8 complete 
+
+
+Starting campaign: 9 at time:  6.164  days 
+
+Prepare batch in Storage Buffer for transfer 20.0 kg 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 0
+Operation time 6.2473 (d) 
+True quantity 20.0000 (kg) 
+Expected quantity 20.0000 (kg) 
+Measured quantity 19.9247 (kg) 
+
+
+Edge transition 
+
+
+Alloy melting
+Failure status:  False 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 1
+Operation time 6.6430 (d) 
+True quantity 19.5761 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.5901 (kg) 
+
+
+Edge transition 
+
+
+Slug trimming
+Failure status:  False 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 2
+Operation time 6.8304 (d) 
+True quantity 19.5761 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.4028 (kg) 
+
+
+Edge transition 
+
+
+Processing the final product 
+
+
+Campaign 9 complete 
+
+
+Starting campaign: 10 at time:  6.9345  days 
+
+Prepare batch in Storage Buffer for transfer 20.0 kg 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 0
+Operation time 7.0178 (d) 
+True quantity 20.0000 (kg) 
+Expected quantity 20.0000 (kg) 
+Measured quantity 19.9019 (kg) 
+
+
+Edge transition 
+
+
+Alloy melting
+Failure status:  False 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 1
+Operation time 7.4135 (d) 
+True quantity 19.5721 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.5297 (kg) 
+
+
+Edge transition 
+
+
+Slug trimming
+Failure status:  False 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 2
+Operation time 7.6009 (d) 
+True quantity 19.5721 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.6121 (kg) 
+
+
+Edge transition 
+
+
+Processing the final product 
+
+
+Campaign 10 complete 
+
+
+Starting campaign: 11 at time:  7.705  days 
+
+Prepare batch in Storage Buffer for transfer 20.0 kg 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 0
+Operation time 7.7883 (d) 
+True quantity 20.0000 (kg) 
+Expected quantity 20.0000 (kg) 
+Measured quantity 20.0831 (kg) 
+
+
+Edge transition 
+
+
+Alloy melting
+Failure status:  False 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 1
+Operation time 8.1840 (d) 
+True quantity 19.6251 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.5736 (kg) 
+
+
+Edge transition 
+
+
+Slug trimming
+Failure status:  False 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 2
+Operation time 8.3714 (d) 
+True quantity 19.6251 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.5031 (kg) 
+
+
+Edge transition 
+
+
+Processing the final product 
+
+
+Campaign 11 complete 
+
+
+Starting campaign: 12 at time:  8.4755  days 
+
+Prepare batch in Storage Buffer for transfer 20.0 kg 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 0
+Operation time 8.5588 (d) 
+True quantity 20.0000 (kg) 
+Expected quantity 20.0000 (kg) 
+Measured quantity 19.9292 (kg) 
+
+
+Edge transition 
+
+
+Alloy melting
+Failure status:  False 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 1
+Operation time 8.9545 (d) 
+True quantity 19.7312 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.6939 (kg) 
+
+
+Edge transition 
+
+
+Slug trimming
+Failure status:  False 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 2
+Operation time 9.1419 (d) 
+True quantity 19.7312 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.7674 (kg) 
+
+
+Edge transition 
+
+
+Processing the final product 
+
+
+Campaign 12 complete 
+
+
+Starting campaign: 13 at time:  9.246  days 
+
+Prepare batch in Storage Buffer for transfer 20.0 kg 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 0
+Operation time 9.3293 (d) 
+True quantity 20.0000 (kg) 
+Expected quantity 20.0000 (kg) 
+Measured quantity 19.9218 (kg) 
+
+
+Edge transition 
+
+
+Alloy melting
+Failure status:  False 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 1
+Operation time 9.7250 (d) 
+True quantity 19.9437 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.8701 (kg) 
+
+
+Edge transition 
+
+
+Slug trimming
+Failure status:  False 
+
+
+Edge transition 
+
+
+Measurement event at KMP: 2
+Operation time 9.9124 (d) 
+True quantity 19.9437 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.9777 (kg) 
+
+
+Edge transition 
+
+
+Processing the final product 
+
+
+Campaign 13 complete 
+
+
+End facility operation

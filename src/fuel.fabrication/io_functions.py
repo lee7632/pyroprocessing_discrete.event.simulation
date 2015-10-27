@@ -1,7 +1,7 @@
 ########################################################################
 # R.A.Borrelli
 # @TheDoctorRAB
-# rev.20.October.2015
+# rev.27.October.2015
 ########################################################################
 # 
 # Functions for in-simulation data processing
@@ -239,17 +239,17 @@ def output_material_flow(material_flow_odir):
     return(batch_output,true_weight_output,expected_weight_output,measured_weight_output)
 ########################################################################
 #
-# (3b.i): open process loss output files
+# (3b.i): open equipment loss output files
 #
 #######
-def output_process_loss(material_flow_odir,equipment):
+def output_equipment_loss(material_flow_odir,equipment):
 #######
     os.chdir(material_flow_odir) #change dir
-    true_process_loss_output=open(equipment+'true.loss.out','w+')
-    expected_process_loss_output=open(equipment+'expected.loss.out','w+')
-    measured_process_loss_output=open(equipment+'measured.loss.out','w+')
+    true_equipment_loss_output=open(equipment+'true.loss.out','w+')
+    expected_equipment_loss_output=open(equipment+'expected.loss.out','w+')
+    measured_equipment_loss_output=open(equipment+'measured.loss.out','w+')
 ###
-    return(true_process_loss_output,expected_process_loss_output,measured_process_loss_output)
+    return(true_equipment_loss_output,expected_equipment_loss_output,measured_equipment_loss_output)
 ########################################################################
 #
 # (3c): open inventory output files
@@ -314,14 +314,10 @@ def output_equipment_failure(equipment_failure_odir,equipment):
 def output_muf(muf_odir,equipment):
 #######
     os.chdir(muf_odir) #change dir
-    equipment_true_muf_output=open(equipment+'.true.muf.out','w+')
-    equipment_expected_muf_output=open(equipment+'.expected.muf.out','w+')
-    equipment_measured_muf_output=open(equipment+'.measured.muf.out','w+')
-    equipment_true_mufc_output=open(equipment+'.true.mufc.out','w+')
-    equipment_expected_mufc_output=open(equipment+'.expected.mufc.out','w+')
-    equipment_measured_mufc_output=open(equipment+'.measured.mufc.out','w+')
+    equipment_muf_output=open(equipment+'.muf.out','w+')
+    equipment_mufc_output=open(equipment+'.mufc.out','w+')
 ###
-    return(equipment_true_muf_output,equipment_expected_muf_output,equipment_measured_muf_output,equipment_true_mufc_output,equipment_expected_mufc_output,equipment_measured_mufc_output)  
+    return(equipment_muf_output,equipment_mufc_output)  
 ########################################################################
 #
 # (4a): initialize system parameters
@@ -406,7 +402,7 @@ def initialize_equipment():
     equipment_failure_event=False #melter failure flag for an equipment failure
     equipment_process_counter=0 #total times the melter process was initiated over facility operation
     equipment_probability_density_function_evaluate=0 #pdf for melter failure distribution at operation_time
-    equipment_probability_density_function_failure_evaluate=0 #pdf for melter failure distribution at melter_failure_time
+    equipment_probability_density_function_failure_evaluate=0 #pdf for melter failure distribution at failure_time
     equipment_unreliability_function_evaluate=0 #cdf for melter failure distribution at operation_time
     equipment_unreliability_function_failure_evaluate=0 #cdf for melter failure distribution at failure_time
     equipment_process_counter=0 #total times the process was initiated over facility operation
@@ -422,9 +418,9 @@ def initialize_muf():
     true_muf=0 #true quantity of muf over facility operation; zeroed out on cleaning; zeroed out on cleaning
     expected_muf=0 #expected quantity of muf over facility operation; zeroed out on cleaning
     measured_muf=0 #measured quantity of muf over facility operation; zeroed out on cleaning
-    true_mufc=0 #true quantity of muf per campaign; zeroed out on cleaning
-    expected_mufc=0 #expected quantity of muf per campaign; zeroed out on cleaning
-    measured_mufc=0 #measured quantity of muf per campaign; zeroed out on cleaning
+    true_mufc=0 #true quantity of muf over facility campaign 
+    expected_mufc=0 #expected quantity of muf over facility campaign; zeroed out on cleaning
+    measured_mufc=0 #measured quantity of muf over facility campaign; zeroed out on cleaning
 ###
     return(true_muf,expected_muf,measured_muf,true_mufc,expected_mufc,measured_mufc)
 #########################################################################
@@ -485,7 +481,7 @@ def write_material_flow(operation_time,total_batch,true_weight,expected_weight,m
 # (5e): write process loss 
 #
 #######
-def write_process_loss(operation_time,true_process_loss,expected_process_loss,measured_loss,true_process_loss_output,expected_process_loss_output,measured_process_loss_output):
+def write_process_loss(operation_time,true_process_loss,expected_process_loss,measured_process_loss,true_process_loss_output,expected_process_loss_output,measured_process_loss_output):
 #######
     true_process_loss_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%true_process_loss)+'\n')
     expected_process_loss_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%expected_process_loss)+'\n')
@@ -515,16 +511,12 @@ def write_inventory(operation_time,true_storage_inventory,expected_storage_inven
 # (5g): write muf 
 #
 #######
-def write_muf(operation_time,true_muf,expected_muf,measured_muf,true_mufc,expected_mufc,measured_mufc,true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output):
+def write_muf(operation_time,true_muf,expected_muf,measured_muf,true_mufc,expected_mufc,measured_mufc,muf_output,mufc_output):
 #######
-    true_muf_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%true_muf)+'\n')
-    expected_muf_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%expected_muf)+'\n')
-    measured_muf_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%measured_muf)+'\n')    
-    true_mufc_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%true_mufc)+'\n')
-    expected_mufc_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%expected_mufc)+'\n')
-    measured_mufc_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%measured_mufc)+'\n')    
+    muf_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%true_muf)+'\t'+str.format('%.4f'%expected_muf)+'\t'+str.format('%.4f'%measured_muf)+'\n')    
+    mufc_output.write(str.format('%.4f'%operation_time)+'\t'+str.format('%.4f'%true_mufc)+'\t'+str.format('%.4f'%expected_mufc)+'\t'+str.format('%.4f'%measured_mufc)+'\n')    
 ###
-    return(true_muf_output,expected_muf_output,measured_muf_output,true_mufc_output,expected_mufc_output,measured_mufc_output)
+    return(muf_output,mufc_output)
 ########################################################################
 #
 # (5h): write end of campaign false alarm 

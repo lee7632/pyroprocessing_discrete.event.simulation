@@ -7,7 +7,13 @@
 
 
 ########################################################################
-**System variables**
+**Equipment is a subset of process.**
+<br>
+**Processes are assembled into the system.**
+<br>
+**System > Processes > Equipment**
+<br><br>
+**Process variables**
 <br>Variables are listed in alphabetical order because there are so many.
 <br>A dummy variable means ones that are called in the function; i.e., multi-use.
 <br>Variable list is for all files for the fuel fabrication model.
@@ -54,8 +60,20 @@
 <li>expected_weight=expected weight processed per campaign
 <li>expected_crucible_fraction=expected fraction of material left in the crucible...set in preprocessing  
 <li>expected_processed_inventory=total expected mass processed
-<li>_expected_muf=total expected facility material unaccounted for per subsystem
-<li>_expected_mufc=expected muf per campaign per subsystem
+<li>_expected_muf=total expected facility material unaccounted for per subsystem/equipment
+<li>_expected_mufc=expected muf per campaign per subsystem/equipment
+<li>_equipment_time=time elapsed at each equipment/vertex (not maintenance)...set in preprocessing
+<li>equipment_failure_total_counter=total number of equipment failures over operation time
+<li>equipment_failure_event=boolean to indicate a equipment failure occurred
+<li>equipment_failure_number=number of failures that could occur in the equipment
+<li>equipment_cleaning_time=time delay for the equipment to be cleaned...set in preprocessing
+<li>equipment_failure_probability=associated probability for each equipment failure...set in preprocessing
+<li>equipment_failure_maintenance_time=time for maintenance for each failure...set in preprocessing
+<li>equipment_failure_false_alarm_threshold=threshold to trigger false alarm due to equipment failure...compared to alarm test...set in preprocessing 
+<li>equipment_failure_inspection_time=equipment failure inspection time
+<li>equipment_failure_type=type of equipment failure...set in preprocessing
+<li>equipment_initiation_counter=counts the number of times the equipment is initiated
+<li>equipment_failure_campaign_counter=total equipment failure per campaign
 <li>_evaluate=function evaluate for whatever precedes _evaluate; also for dummy variables
 </ul>
 <ul>
@@ -90,6 +108,7 @@
 <b>I</b>
 <li>inspection_time=dummy variable for time to inspect for end of campaign or failure...set in preprocessing
 <li>inspection_time=contains all the inspection times...set in preprocessing
+<li>injection_casting_time=injecting casting normal operation time
 </ul>
 <ul>     
 <b>J</b>
@@ -117,19 +136,8 @@
 <li>measured_storage_inventory=total measured mass in storage buffer...at KMP0 
 <li>measured_system_inventory=running total of mass transfer from storage
 <li>measured_processed_inventory=total measured mass processed
-<li>_measured_muf=total measured facility material unaccounted for per subsystem
-<li>_measured_mufc=muf for specific campaign per subsystem
-<li>melter_failure_total_counter=total number of melter failures over operation time
-<li>melter_failure_event=boolean to indicate a melter failure occurred
-<li>melter_failure_number=number of failures that could occur in the melter
-<li>melter_cleaning_time=time delay for the melter to be cleaned...set in preprocessing
-<li>melter_failure_probability=associated probability for each melter failure...set in preprocessing
-<li>melter_failure_maintenance_time=time for maintenance for each failure...set in preprocessing
-<li>melter_failure_false_alarm_threshold=threshold to trigger false alarm due to melter failure...compared to alarm test...set in preprocessing 
-<li>melter_failure_inspection_time=melter failure inspection time
-<li>melter_failure_type=type of melter failure...set in preprocessing
-<li>melter_process_counter=counts the number of times the melting process is initiated
-<li>melter_failure_campaign_counter=total melter failure per campaign
+<li>_measured_muf=total measured facility material unaccounted for per subsystem/equipment
+<li>_measured_mufc=muf for specific campaign per subsystem/equipment
 </ul> 
 <ul>
 <b>N</b>
@@ -138,12 +146,11 @@
 <b>O</b>
 <li>_output is for output data files...there are a lot of them
 <li>operation_time=operation time of the facility 0<T<facility_operation...set in preprocessing
-<li>_operation_time=vertex operation times...set in preprocessing
+<li>_equipment_time=vertex operation times...set in preprocessing
 </ul>
 <ul>
 <b>P</b>
 <li>plot=data files needed to make plots
-<li>_process_time=time elapsed at each process/vertex (not maintenance)...set in preprocessing
 </ul>
 <ul>
 <b>Q</b>
@@ -154,6 +161,7 @@
 <ul>
 <b>S</b>
 <li>storage_inventory=current inventory in the storage buffer at time=T...eventually this will change with time with arrival of material
+<li>slug_trimming_time=slug trimming normal operation time
 </ul>
 <ul>
 <b>T</b>
@@ -169,11 +177,11 @@
 <li>true_crucible_fraction=quantity of material left in the crucible...randomized per melting process 
 <li>true_system_inventory=running total of mass transfer from storage
 <li>true_processed_inventory=total mass processed 
-<li>_true_muf=total material unaccounted for per subsystem
-<li>_true_mufc=muf for specific campaign per subsystem
+<li>_true_muf=total material unaccounted for per subsystem/equipment
+<li>_true_mufc=muf for specific campaign per subsystem/equipment
 <li>true_initial/final_inventory=dummy variable used for mufc 
-<li>trimmer_process_counter=counts the number of times the trimmer process is initiated
 <li>time_domain=dummy for time variable
+<li>time_delay=dummy for time variable
 <li>total_batch=batch size to be processed...set in preprocessing
 </ul>
 <ul>
