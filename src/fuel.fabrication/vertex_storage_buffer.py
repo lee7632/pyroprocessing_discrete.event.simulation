@@ -38,12 +38,12 @@ import os
 # (1): storage buffer batch preparation process
 #
 #######
-def batch_preparation(operation_time,melter_failure_time,trimmer_failure_time,vertex_delay_time,batch,true_quantity,expected_quantity,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory):
+def batch_preparation(operation_time,melter_failure_time,trimmer_failure_time,time_delay,batch,true_quantity,expected_quantity,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory):
 #######
-    print 'Prepare batch in Storage Buffer for transfer',batch,'kg','\n\n'    
-    operation_time=operation_time+vertex_delay_time
-    melter_failure_time=melter_failure_time+vertex_delay_time
-    trimmer_failure_time=trimmer_failure_time+vertex_delay_time
+    print 'Prepare batch in Storage Buffer for transfer:',batch,'kg','\n\n'    
+    operation_time=operation_time+time_delay
+    melter_failure_time=melter_failure_time+time_delay
+    trimmer_failure_time=trimmer_failure_time+time_delay
     true_quantity=batch
     expected_quantity=batch
     true_storage_inventory=true_storage_inventory-true_quantity
