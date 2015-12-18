@@ -245,9 +245,9 @@ def output_material_flow(material_flow_odir):
 def output_equipment_loss(material_flow_odir,equipment):
 #######
     os.chdir(material_flow_odir) #change dir
-    true_equipment_loss_output=open(equipment+'true.loss.out','w+')
-    expected_equipment_loss_output=open(equipment+'expected.loss.out','w+')
-    measured_equipment_loss_output=open(equipment+'measured.loss.out','w+')
+    true_equipment_loss_output=open(equipment+'.true.loss.out','w+')
+    expected_equipment_loss_output=open(equipment+'.expected.loss.out','w+')
+    measured_equipment_loss_output=open(equipment+'.measured.loss.out','w+')
 ###
     return(true_equipment_loss_output,expected_equipment_loss_output,measured_equipment_loss_output)
 ########################################################################
