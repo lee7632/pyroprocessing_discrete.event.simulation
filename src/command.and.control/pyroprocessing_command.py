@@ -29,12 +29,15 @@ print 'Starting the command and control module for the pyroprocessing system.'
 #######
 #
 ####### set the root and lib directory
-root_dir='/home/usr/borrelli/pyroprocessing_discrete.event.simulation'
-lib_dir=root_dir+'/lib'
+root_dir='C:/Users/Malachi/Documents/Research/NEUI/pyroprocessing_discrete.event.simulation'
 #
 print 'root dir is: ',root_dir
 print 'root dir is hard coded into each of the mainflow files'
-raw_input('hit a key to continue or break to change root dir')
+change_directory_input = raw_input('Would you like to change the root directory (y/n)? ')
+#
+if change_directory_input == 'y':
+    root_dir = raw_input('Please enter the desired root directory ')
+lib_dir=root_dir+'/lib'
 #######
 #
 ####### set the simulation directory
