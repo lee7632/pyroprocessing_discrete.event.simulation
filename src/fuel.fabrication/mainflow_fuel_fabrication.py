@@ -26,7 +26,7 @@
 #
 import numpy
 import io_functions as io
-import system_false_alarm 
+#import system_false_alarm 
 import vertex_storage_buffer as storage_buffer
 import edge_transition as edge_trans
 import key_measurement_points as kmp
@@ -56,7 +56,7 @@ sys.stdout=open('log.txt','w+') #all the print statements will write to file
 #
 print 'Fuel fabrication','\n\n','PREPROCESSING'
 #
-root_dir='/home/usr/borrelli/pyroprocessing_discrete.event.simulation'
+root_dir='C:/Users/Malachi/Documents/Research/NEUI/pyroprocessing_discrete.event.simulation'
 #
 ####### get directory paths  
 input_dir,output_dir,edge_transition_dir,failure_distribution_dir,failure_equipment_dir,kmps_dir,process_states_dir,system_false_alarm_dir,data_dir,figures_dir,system_odir,material_flow_odir,inventory_odir,false_alarm_odir,kmps_odir,muf_odir,equipment_failure_odir,system_gdir,material_flow_gdir,inventory_gdir,false_alarm_gdir,kmps_gdir,muf_gdir,equipment_failure_gdir=io.get_dir_path(root_dir,'fuel.fabrication')
