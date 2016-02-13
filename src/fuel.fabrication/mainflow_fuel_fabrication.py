@@ -42,7 +42,7 @@ import sys
 #
 # diagnostics 
 # 
-sys.stdout=open('log.txt','w+') #all the print statements will write to file 
+#sys.stdout=open('log.txt','w+') #all the print statements will write to file 
 #
 ########################################################################
 #
@@ -54,9 +54,12 @@ sys.stdout=open('log.txt','w+') #all the print statements will write to file
 #
 ########################################################################
 #
-print 'Fuel fabrication','\n\n','PREPROCESSING'
+#print 'Fuel fabriction','\n\n','PREPROCESSING'
 #
 root_dir='C:/Users/Malachi/Documents/Research/NEUI/pyroprocessing_discrete.event.simulation'
+log_file_destination = root_dir + '/log.txt'
+log_file = open(log_file_destination,'w')
+log_file.write('Fuel fabrication \n\nPREPROCESSING')
 #
 ####### get directory paths  
 input_dir,output_dir,edge_transition_dir,failure_distribution_dir,failure_equipment_dir,kmps_dir,process_states_dir,system_false_alarm_dir,data_dir,figures_dir,system_odir,material_flow_odir,inventory_odir,false_alarm_odir,kmps_odir,muf_odir,equipment_failure_odir,system_gdir,material_flow_gdir,inventory_gdir,false_alarm_gdir,kmps_gdir,muf_gdir,equipment_failure_gdir=io.get_dir_path(root_dir,'fuel.fabrication')
@@ -158,14 +161,16 @@ trimmer_failure_false_alarm_counter_output=io.write_equipment_failure_false_alar
 melter_failure_total_counter_output,melter_probability_density_function_output,melter_unreliability_function_output=io.write_equipment_failure(operation_time,melter_failure_time,total_campaign,melter_failure_counter,melter_initiation_counter,melter_probability_density_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_evaluate,melter_unreliability_function_failure_evaluate,melter_failure_total_counter_output,melter_probability_density_function_output,melter_unreliability_function_output) #failure melter
 trimmer_failure_total_counter_output,trimmer_probability_density_function_output,trimmer_unreliability_function_output=io.write_equipment_failure(operation_time,trimmer_failure_time,total_campaign,trimmer_failure_counter,trimmer_initiation_counter,trimmer_probability_density_function_evaluate,trimmer_probability_density_function_failure_evaluate,trimmer_unreliability_function_evaluate,trimmer_unreliability_function_failure_evaluate,trimmer_failure_total_counter_output,trimmer_probability_density_function_output,trimmer_unreliability_function_output) #failure trimmer
 #
-print 'END PREPROCESSING','\n\n'
+#print 'END PREPROCESSING','\n\n'
+log_file.write('END PREPROCESSING \n\n')
 #
 ########################################################################
 #
 #
 #
 # main process loop start
-print 'Start facility operation'
+#print 'Start facility operation'
+log_file.write('Start facility operation')
 #
 #
 #
@@ -174,7 +179,8 @@ print 'Start facility operation'
 # process loop
 #
 while(operation_time<=facility_operation):
-    print 'Starting campaign:',total_campaign,'at time: ',operation_time,' days','\n'
+    #print 'Starting campaign:',total_campaign,'at time: ',operation_time,' days','\n'
+    log_file.write('Starting campaign %i at time: %f days \n'%(total_campaign, operation_time))
 #
 ########################################################################
 #
@@ -222,7 +228,7 @@ while(operation_time<=facility_operation):
 #
 # edge transition: storage buffer to KMP0
 #
-    operation_time,melter_failure_time,trimmer_failure_time=edge_trans.edge_transition(operation_time,melter_failure_time,trimmer_failure_time,edge_transition[0])
+    operation_time,melter_failure_time,trimmer_failure_time=edge_trans.edge_transition(operation_time,melter_failure_time,trimmer_failure_time,edge_transition[0],log_file)
 #
 # failure distribution calculations
     melter_probability_density_function_evaluate,melter_unreliability_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,melter_failure_time,weibull_beta_melter,weibull_eta_melter) #failure melter
@@ -277,7 +283,7 @@ while(operation_time<=facility_operation):
 #
 # edge transition: KMP0 to melter
 #
-    operation_time,melter_failure_time,trimmer_failure_time=edge_trans.edge_transition(operation_time,melter_failure_time,trimmer_failure_time,edge_transition[1])
+    operation_time,melter_failure_time,trimmer_failure_time=edge_trans.edge_transition(operation_time,melter_failure_time,trimmer_failure_time,edge_transition[1],log_file)
 #
 # failure distribution calculations
     melter_probability_density_function_evaluate,melter_unreliability_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,melter_failure_time,weibull_beta_melter,weibull_eta_melter) #failure melter
@@ -494,7 +500,7 @@ while(operation_time<=facility_operation):
 #
 # edge transition: melter to KMP1
 #
-    operation_time,melter_failure_time,trimmer_failure_time=edge_trans.edge_transition(operation_time,melter_failure_time,trimmer_failure_time,edge_transition[2])
+    operation_time,melter_failure_time,trimmer_failure_time=edge_trans.edge_transition(operation_time,melter_failure_time,trimmer_failure_time,edge_transition[2],log_file)
 #
 # failure distribution calculations
     melter_probability_density_function_evaluate,melter_unreliability_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,melter_failure_time,weibull_beta_melter,weibull_eta_melter) #failure melter
@@ -549,7 +555,7 @@ while(operation_time<=facility_operation):
 #
 # edge transition: KMP1 to trimmer
 #
-    operation_time,melter_failure_time,trimmer_failure_time=edge_trans.edge_transition(operation_time,melter_failure_time,trimmer_failure_time,edge_transition[3])
+    operation_time,melter_failure_time,trimmer_failure_time=edge_trans.edge_transition(operation_time,melter_failure_time,trimmer_failure_time,edge_transition[3],log_file)
 #
 # failure distribution calculations
     melter_probability_density_function_evaluate,melter_unreliability_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,melter_failure_time,weibull_beta_melter,weibull_eta_melter) #failure melter
@@ -603,7 +609,7 @@ while(operation_time<=facility_operation):
 #
 # edge transition: trimmer to KMP2
 #
-    operation_time,melter_failure_time,trimmer_failure_time=edge_trans.edge_transition(operation_time,melter_failure_time,trimmer_failure_time,edge_transition[4])
+    operation_time,melter_failure_time,trimmer_failure_time=edge_trans.edge_transition(operation_time,melter_failure_time,trimmer_failure_time,edge_transition[4],log_file)
 #
 # failure distribution calculations
     melter_probability_density_function_evaluate,melter_unreliability_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,melter_failure_time,weibull_beta_melter,weibull_eta_melter) #failure melter
@@ -658,7 +664,7 @@ while(operation_time<=facility_operation):
 #
 # edge transition: KMP2 to product storage
 #
-    operation_time,melter_failure_time,trimmer_failure_time=edge_trans.edge_transition(operation_time,melter_failure_time,trimmer_failure_time,edge_transition[5])
+    operation_time,melter_failure_time,trimmer_failure_time=edge_trans.edge_transition(operation_time,melter_failure_time,trimmer_failure_time,edge_transition[5],log_file)
 #
 # failure distribution calculations
     melter_probability_density_function_evaluate,melter_unreliability_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,melter_failure_time,weibull_beta_melter,weibull_eta_melter) #failure melter
@@ -771,7 +777,8 @@ while(operation_time<=facility_operation):
 #
 # end main fuel fabrication model
 #
-print 'End facility operation'
+#print 'End facility operation'
+log_file.write('End facility operation')
 #
 #######################################################################
 #
@@ -800,3 +807,5 @@ print 'End facility operation'
 ########################################################################
 #      EOF
 ########################################################################
+
+log_file.close()

@@ -27,9 +27,10 @@
 # (1): edge transition
 #
 #######
-def edge_transition(operation_time,equipment_failure_time_0,equipment_failure_time_1,edge_time_delay):
+def edge_transition(operation_time,equipment_failure_time_0,equipment_failure_time_1,edge_time_delay,log_file):
 #######
-    print 'Edge transition','\n\n'
+    #print 'Edge transition','\n\n'
+    log_file.write('Edge transition \n\n')
     operation_time=operation_time+edge_time_delay
     equipment_failure_time_0=equipment_failure_time_0+edge_time_delay
     equipment_failure_time_1=equipment_failure_time_1+edge_time_delay
