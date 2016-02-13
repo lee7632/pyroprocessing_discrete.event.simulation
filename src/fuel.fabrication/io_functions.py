@@ -13,6 +13,7 @@
 import os
 import numpy
 import shutil
+from global_vars import *
 #
 ########################################################################
 #
@@ -79,9 +80,9 @@ import shutil
 #######
 def get_dir_path(root_dir,subsystem):
 #######
-    os.chdir(root_dir+'/simulation/meta.data') #get home directory
-    home_dir=open('home.dir.inp').read()
-    directory_path_file=open('fuel.fabrication_simulation.dir.inp').readlines() #get directory paths
+    #os.chdir(root_dir+'/simulation/meta.data') #get home directory
+    home_dir=open(root_dir+'/simulation/meta.data/home.dir.inp').read()
+    directory_path_file=open(root_dir+'/simulation/meta.data/fuel.fabrication_simulation.dir.inp').readlines() #get directory paths
     directory_paths=directory_path_file[0].split(',') #split path data and set directories
     input_dir=directory_paths[0]
     output_dir=directory_paths[1]
@@ -116,9 +117,9 @@ def get_dir_path(root_dir,subsystem):
 #######
 def input_system_operation(process_states_dir):
 #######
-    os.chdir(process_states_dir) #change dir
-    facility_operation=numpy.loadtxt('facility.operation.inp') #total time of facility operation; i.e., simulation time 
-    process_time=numpy.loadtxt('process.operation.time.inp',usecols=[1]) #time for each vertex to process material
+    #os.chdir(process_states_dir) #change dir
+    facility_operation=numpy.loadtxt(process_states_dir + '/facility.operation.inp') #total time of facility operation; i.e., simulation time 
+    process_time=numpy.loadtxt(process_states_dir + '/process.operation.time.inp',usecols=[1]) #time for each vertex to process material
     storage_buffer_process_time=process_time[0]
     injection_casting_process_time=process_time[1]
     trimming_process_time=process_time[2]
@@ -132,9 +133,9 @@ def input_system_operation(process_states_dir):
 #######
 def input_storage_buffer(process_states_dir):
 #######
-    os.chdir(process_states_dir) #change dir
-    batch=numpy.loadtxt('batch.inp') #batch size
-    unprocessed_storage_inventory=numpy.loadtxt('unprocessed.storage.inventory.inp') #total quantity of naterial in storage buffer at TIME=0
+    #os.chdir(process_states_dir) #change dir
+    batch=numpy.loadtxt(process_states_dir+'/batch.inp') #batch size
+    unprocessed_storage_inventory=numpy.loadtxt(process_states_dir + '/unprocessed.storage.inventory.inp') #total quantity of material in storage buffer at TIME=0
 ###
     return(batch,unprocessed_storage_inventory)
 ########################################################################
@@ -144,15 +145,16 @@ def input_storage_buffer(process_states_dir):
 #######
 def input_equipment(process_states_dir,failure_equipment_dir,failure_distribution_dir,equipment):
 #######	
-    os.chdir(process_states_dir) #change dir
-    equipment_loss_fraction=numpy.loadtxt(equipment+'.loss.fraction.inp',usecols=[1]) #fraction of material left in/at/around the equipment; 1st element is the expected quantity, 2nd and 3rd are the range for the true quantity
-    os.chdir(failure_equipment_dir) #change dir
-    equipment_failure_type=numpy.loadtxt(equipment+'.failure.data.inp',usecols=[0],dtype=str) #type of equipment failure
-    equipment_failure_rate=numpy.loadtxt(equipment+'.failure.data.inp',usecols=[1]) #corresponding equipment failure rate
-    equipment_failure_maintenance_time=numpy.loadtxt(equipment+'.failure.data.inp',usecols=[2]) #time to repair each failure
-    equipment_cleaning_time=numpy.loadtxt(equipment+'.failure.data.inp',usecols=[3]) #time to clean the equipment prior to equipment removal
-    os.chdir(failure_distribution_dir) #change dir
-    weibull_beta=numpy.loadtxt(equipment+'.weibull.beta.inp',usecols=[1]) #weibull distribution beta parameter for the melter
+    #os.chdir(process_states_dir) #change dir
+    equipment_loss_fraction=numpy.loadtxt(process_states_dir+'/'+equipment+'.loss.fraction.inp',usecols=[1]) #fraction of material left in/at/around the equipment; 1st element is the expected quantity, 2nd and 3rd are the range for the true quantity
+    #os.chdir(failure_equipment_dir) #change dir
+    file_header = failure_equipment_dir+'/'
+    equipment_failure_type=numpy.loadtxt(file_header+equipment+'.failure.data.inp',usecols=[0],dtype=str) #type of equipment failure
+    equipment_failure_rate=numpy.loadtxt(file_header+equipment+'.failure.data.inp',usecols=[1]) #corresponding equipment failure rate
+    equipment_failure_maintenance_time=numpy.loadtxt(file_header+equipment+'.failure.data.inp',usecols=[2]) #time to repair each failure
+    equipment_cleaning_time=numpy.loadtxt(file_header+equipment+'.failure.data.inp',usecols=[3]) #time to clean the equipment prior to equipment removal
+    #os.chdir(failure_distribution_dir) #change dir
+    weibull_beta=numpy.loadtxt(failure_distribution_dir+'/'+equipment+'.weibull.beta.inp',usecols=[1]) #weibull distribution beta parameter for the melter
     weibull_eta=(1)/equipment_failure_rate #eta for weibull distribution is reciprocal of failure rate if beta = 1; assumes random failure
     equipment_failure_number=1
 #    equipment_failure_number=len(int(equipment_failure_type)) #total number of possible failures, used if > 1

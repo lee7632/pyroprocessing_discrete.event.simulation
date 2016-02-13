@@ -15,3 +15,7 @@
 import numpy
 import sys
 
+root_dir = 'C:/Users/Malachi/Documents/Research/NEUI/pyroprocessing_discrete.event.simulation'
+simulation_dir = root_dir + '/simulation/sim3'
+
+log_file = open(root_dir+'log.txt','a')
