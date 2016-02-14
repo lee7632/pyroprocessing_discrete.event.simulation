@@ -42,9 +42,10 @@ import numpy
 # (1): injection casting
 # 
 #######
-def injection_casting(operation_time,equipment_failure_time_0,equipment_failure_time_1,delay_time,true_quantity,expected_quantity,equipment_failure_number,equipment_failure_type,equipment_failure_rate,equipment_loss_fraction,accumulated_true_equipment_loss,accumulated_expected_equipment_loss,equipment_failure_event,equipment_failure_counter,equipment_counter):
+def injection_casting(operation_time,equipment_failure_time_0,equipment_failure_time_1,delay_time,true_quantity,expected_quantity,equipment_failure_number,equipment_failure_type,equipment_failure_rate,equipment_loss_fraction,accumulated_true_equipment_loss,accumulated_expected_equipment_loss,equipment_failure_event,equipment_failure_counter,equipment_counter,log_file):
 #######
-    print 'Alloy melting'
+    #print 'Alloy melting'
+    log_file.write('Alloy melting')
     operation_time=operation_time+0.5*delay_time
     equipment_failure_time_0=equipment_failure_time_0+0.5*delay_time
     equipment_failure_time_1=equipment_failure_time_1+0.5*delay_time

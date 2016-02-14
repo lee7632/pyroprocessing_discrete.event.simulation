@@ -26,6 +26,7 @@
 # imports
 #
 import numpy 
+import global_vars as gv
 #
 ########################################################################
 #
@@ -42,9 +43,11 @@ import numpy
 # (1): slug trimming
 # 
 #######
-def slug_trimming(operation_time,equipment_failure_time_0,equipment_failure_time_1,delay_time,true_quantity,expected_quantity,equipment_failure_number,equipment_failure_type,equipment_failure_rate,equipment_loss_fraction,accumulated_true_equipment_loss,accumulated_expected_equipment_loss,equipment_failure_event,equipment_failure_counter,equipment_counter):
+def slug_trimming(operation_time,equipment_failure_time_0,equipment_failure_time_1,delay_time,true_quantity,expected_quantity,equipment_failure_number,equipment_failure_type,equipment_failure_rate,equipment_loss_fraction,accumulated_true_equipment_loss,accumulated_expected_equipment_loss,equipment_failure_event,equipment_failure_counter,equipment_counter,log_file):
 #######
-    print 'Slug trimming'
+    #print 'Slug trimming'
+    log_file.write('Slug trimming')
+    #gv.log_file.write('Slug trimming')
     operation_time=operation_time+0.5*delay_time
     equipment_failure_time_0=equipment_failure_time_0+0.5*delay_time
     equipment_failure_time_1=equipment_failure_time_1+0.5*delay_time

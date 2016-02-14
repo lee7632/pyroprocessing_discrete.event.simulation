@@ -13,7 +13,7 @@
 import os
 import numpy
 import shutil
-from global_vars import *
+#from global_vars import *
 #
 ########################################################################
 #
@@ -167,9 +167,9 @@ def input_equipment(process_states_dir,failure_equipment_dir,failure_distributio
 #######
 def input_system_false_alarm(system_false_alarm_dir,false_alarm_type):
 #######
-    os.chdir(system_false_alarm_dir) #change dir
-    false_alarm_threshold=numpy.loadtxt(false_alarm_type+'.false.alarm.threshold.inp',usecols=[1]) #false alarm thresholds
-    inspection_time=numpy.loadtxt(false_alarm_type+'.inspection.time.inp',usecols=[1]) #time elapsed for each inspection
+    #os.chdir(system_false_alarm_dir) #change dir
+    false_alarm_threshold=numpy.loadtxt(system_false_alarm_dir+'/'+false_alarm_type+'.false.alarm.threshold.inp',usecols=[1]) #false alarm thresholds
+    inspection_time=numpy.loadtxt(system_false_alarm_dir+'/'+false_alarm_type+'.inspection.time.inp',usecols=[1]) #time elapsed for each inspection
     false_alarm_inspection_time=inspection_time #change if there are multiple false alarms per process
     false_alarm_threshold=false_alarm_threshold
 ###
@@ -181,8 +181,8 @@ def input_system_false_alarm(system_false_alarm_dir,false_alarm_type):
 #######
 def input_edge_transition(edge_transition_dir):
 #######
-    os.chdir(edge_transition_dir) #change dir
-    edge_transition=numpy.loadtxt('edge.transition.inp',usecols=[1]) #time elapsed on each edge transition
+    #os.chdir(edge_transition_dir) #change dir
+    edge_transition=numpy.loadtxt(edge_transition_dir+'/edge.transition.inp',usecols=[1]) #time elapsed on each edge transition
 ###
     return(edge_transition) 
 ########################################################################
@@ -192,11 +192,11 @@ def input_edge_transition(edge_transition_dir):
 #######
 def input_kmps(kmps_dir):
 #######
-    os.chdir(kmps_dir) #change dir
-    kmp_id=numpy.loadtxt('key.measurement.points.inp',usecols=[0]) #kmp identification numbers
-    kmp_time=numpy.loadtxt('key.measurement.points.inp',usecols=[1]) #measurement time at each kmp
-    kmp_uncertainty=numpy.loadtxt('key.measurement.points.inp',usecols=[2]) #measurement uncertainty at each kmp
-    kmp_threshold=numpy.loadtxt('key.measurement.points.inp',usecols=[3]) #measurement threshold to trigger false alarms at each kmp
+    #os.chdir(kmps_dir) #change dir
+    kmp_id=numpy.loadtxt(kmps_dir+'/key.measurement.points.inp',usecols=[0]) #kmp identification numbers
+    kmp_time=numpy.loadtxt(kmps_dir+'/key.measurement.points.inp',usecols=[1]) #measurement time at each kmp
+    kmp_uncertainty=numpy.loadtxt(kmps_dir+'/key.measurement.points.inp',usecols=[2]) #measurement uncertainty at each kmp
+    kmp_threshold=numpy.loadtxt(kmps_dir+'/key.measurement.points.inp',usecols=[3]) #measurement threshold to trigger false alarms at each kmp
     maximum_kmp=len(kmp_id)
 ###
     return(kmp_id,kmp_time,kmp_uncertainty,kmp_threshold,maximum_kmp) 
@@ -207,9 +207,9 @@ def input_kmps(kmps_dir):
 #######
 def output_system_operation(system_odir):
 #######
-    os.chdir(system_odir) #change dir
-    system_time_output=open('facility.operation.time.out','w+')
-    campaign_output=open('facility.campaign.out','w+')
+    #os.chdir(system_odir) #change dir
+    system_time_output=open(system_odir+'/facility.operation.time.out','w+')
+    campaign_output=open(system_odir+'/facility.campaign.out','w+')
 ###
     return(system_time_output,campaign_output)
 ########################################################################
@@ -219,9 +219,9 @@ def output_system_operation(system_odir):
 #######
 def output_process_operation(system_odir,equipment):
 #######
-    os.chdir(system_odir) #change dir
-    failure_time_output=open(equipment+'failure.time.out','w+')
-    process_counter_output=open(equipment+'.process.counter.out','w+')
+    #os.chdir(system_odir) #change dir
+    failure_time_output=open(system_odir+'/'+equipment+'failure.time.out','w+')
+    process_counter_output=open(system_odir+'/'+equipment+'.process.counter.out','w+')
 ###
     return(failure_time_output,process_counter_output)
 ########################################################################
@@ -231,11 +231,11 @@ def output_process_operation(system_odir,equipment):
 #######
 def output_material_flow(material_flow_odir):
 #######
-    os.chdir(material_flow_odir) #change dir
-    batch_output=open('batch.out','w+')
-    true_weight_output=open('true.weight.out','w+')
-    expected_weight_output=open('expected.weight.out','w+')
-    measured_weight_output=open('measured.weight.out','w+')
+    #os.chdir(material_flow_odir) #change dir
+    batch_output=open(material_flow_odir+'/batch.out','w+')
+    true_weight_output=open(material_flow_odir+'/true.weight.out','w+')
+    expected_weight_output=open(material_flow_odir+'/expected.weight.out','w+')
+    measured_weight_output=open(material_flow_odir+'/measured.weight.out','w+')
 ###
     return(batch_output,true_weight_output,expected_weight_output,measured_weight_output)
 ########################################################################
@@ -245,10 +245,10 @@ def output_material_flow(material_flow_odir):
 #######
 def output_equipment_loss(material_flow_odir,equipment):
 #######
-    os.chdir(material_flow_odir) #change dir
-    true_equipment_loss_output=open(equipment+'.true.loss.out','w+')
-    expected_equipment_loss_output=open(equipment+'.expected.loss.out','w+')
-    measured_equipment_loss_output=open(equipment+'.measured.loss.out','w+')
+    #os.chdir(material_flow_odir) #change dir
+    true_equipment_loss_output=open(material_flow_odir+'/'+equipment+'.true.loss.out','w+')
+    expected_equipment_loss_output=open(material_flow_odir+'/'+equipment+'.expected.loss.out','w+')
+    measured_equipment_loss_output=open(material_flow_odir+'/'+equipment+'.measured.loss.out','w+')
 ###
     return(true_equipment_loss_output,expected_equipment_loss_output,measured_equipment_loss_output)
 ########################################################################
@@ -258,16 +258,16 @@ def output_equipment_loss(material_flow_odir,equipment):
 #######
 def output_inventory(inventory_odir):
 #######
-    os.chdir(inventory_odir) #change dir
-    true_storage_inventory_output=open('true.storage.inventory.out','w+')
-    expected_storage_inventory_output=open('expected.storage.inventory.out','w+')
-    measured_storage_inventory_output=open('measured.storage.inventory.out','w+')
-    true_processed_inventory_output=open('true.processed.inventory.out','w+')
-    expected_processed_inventory_output=open('expected.processed.inventory.out','w+')
-    measured_processed_inventory_output=open('measured.processed.inventory.out','w+')
-    true_system_inventory_output=open('true_system.inventory.out','w+')
-    expected_system_inventory_output=open('expected.system.inventory.out','w+')
-    measured_system_inventory_output=open('measured.system.inventory.out','w+')
+    #os.chdir(inventory_odir) #change dir
+    true_storage_inventory_output=open(inventory_odir+'/true.storage.inventory.out','w+')
+    expected_storage_inventory_output=open(inventory_odir+'/expected.storage.inventory.out','w+')
+    measured_storage_inventory_output=open(inventory_odir+'/measured.storage.inventory.out','w+')
+    true_processed_inventory_output=open(inventory_odir+'/true.processed.inventory.out','w+')
+    expected_processed_inventory_output=open(inventory_odir+'/expected.processed.inventory.out','w+')
+    measured_processed_inventory_output=open(inventory_odir+'/measured.processed.inventory.out','w+')
+    true_system_inventory_output=open(inventory_odir+'/true_system.inventory.out','w+')
+    expected_system_inventory_output=open(inventory_odir+'/expected.system.inventory.out','w+')
+    measured_system_inventory_output=open(inventory_odir+'/measured.system.inventory.out','w+')
 ###
     return(true_storage_inventory_output,expected_storage_inventory_output,measured_storage_inventory_output,true_processed_inventory_output,expected_processed_inventory_output,measured_processed_inventory_output,true_system_inventory_output,expected_system_inventory_output,measured_system_inventory_output)  
 ########################################################################
@@ -277,8 +277,8 @@ def output_inventory(inventory_odir):
 #######
 def output_false_alarm(false_alarm_odir,false_alarm_type):
 #######
-    os.chdir(false_alarm_odir) #change dir
-    false_alarm_counter_output=open(false_alarm_type+'.false.alarm.counter.out','w+')
+    #os.chdir(false_alarm_odir) #change dir
+    false_alarm_counter_output=open(false_alarm_odir+'/'+false_alarm_type+'.false.alarm.counter.out','w+')
 ###
     return(false_alarm_counter_output)  
 ########################################################################
@@ -288,10 +288,10 @@ def output_false_alarm(false_alarm_odir,false_alarm_type):
 #######
 def output_kmps(kmps_odir):
 #######
-    os.chdir(kmps_odir) #change dir
-    true_kmp_output=open('true.kmp.out','w+')
-    expected_kmp_output=open('expected.kmp.out','w+')
-    measured_kmp_output=open('measured.kmp.out','w+')
+    #os.chdir(kmps_odir) #change dir
+    true_kmp_output=open(kmps_odir+'/true.kmp.out','w+')
+    expected_kmp_output=open(kmps_odir+'/expected.kmp.out','w+')
+    measured_kmp_output=open(kmps_odir+'/measured.kmp.out','w+')
 ###
     return(true_kmp_output,expected_kmp_output,measured_kmp_output)  
 ########################################################################
@@ -301,10 +301,10 @@ def output_kmps(kmps_odir):
 #######
 def output_equipment_failure(equipment_failure_odir,equipment):
 #######
-    os.chdir(equipment_failure_odir) #change dir
-    equipment_failure_total_counter_output=open(equipment+'.failure.total.counter.out','w+')
-    equipment_probability_density_function_output=open(equipment+'.probability.density.function.out','w+')
-    equipment_unreliability_function_output=open(equipment+'.unreliability.function.out','w+')
+    #os.chdir(equipment_failure_odir) #change dir
+    equipment_failure_total_counter_output=open(equipment_failure_odir+'/'+equipment+'.failure.total.counter.out','w+')
+    equipment_probability_density_function_output=open(equipment_failure_odir+'/'+equipment+'.probability.density.function.out','w+')
+    equipment_unreliability_function_output=open(equipment_failure_odir+'/'+equipment+'.unreliability.function.out','w+')
 ###
     return(equipment_failure_total_counter_output,equipment_probability_density_function_output,equipment_unreliability_function_output)  
 ########################################################################
@@ -314,9 +314,9 @@ def output_equipment_failure(equipment_failure_odir,equipment):
 #######
 def output_muf(muf_odir,equipment):
 #######
-    os.chdir(muf_odir) #change dir
-    equipment_muf_output=open(equipment+'.muf.out','w+')
-    equipment_mufc_output=open(equipment+'.mufc.out','w+')
+    #os.chdir(muf_odir) #change dir
+    equipment_muf_output=open(muf_odir+'/'+equipment+'.muf.out','w+')
+    equipment_mufc_output=open(muf_odir+'/'+equipment+'.mufc.out','w+')
 ###
     return(equipment_muf_output,equipment_mufc_output)  
 ########################################################################
@@ -567,9 +567,10 @@ def kmp_write(operation_time,true_quantity,expected_quantity,measured_quantity,t
 # (6a): end of campaign diagnostics
 #
 #######
-def end_of_campaign(total_campaign,total_batch):
+def end_of_campaign(total_campaign,total_batch,log_file):
 #######
-    print 'Campaign',total_campaign,'complete','\n\n'
+    #print 'Campaign',total_campaign,'complete','\n\n'
+    log_file.write('Campaign %i complete \n\n'%(total_campaign))
     total_campaign=total_campaign+1
     total_batch=total_batch+1
 ###
@@ -596,9 +597,10 @@ def reset_batch_weight():
 ###
 #
 ###
-def trimmer(operation_time,delay,true_quantity,expected_quantity,trimmer_process_counter):
+def trimmer(operation_time,delay,true_quantity,expected_quantity,trimmer_process_counter,log_file):
 ###
-    print 'Slug trimming','\n\n'
+    #print 'Slug trimming','\n\n'
+    log_file.write('Slug trimming \n\n')
     operation_time=operation_time+delay
     trimmer_process_counter=trimmer_process_counter+1
 ###
@@ -613,9 +615,10 @@ def trimmer(operation_time,delay,true_quantity,expected_quantity,trimmer_process
 ###
 #
 ###    
-def product_processing(operation_time,delay,true_quantity,expected_quantity,true_processed_inventory,expected_processed_inventory):
+def product_processing(operation_time,delay,true_quantity,expected_quantity,true_processed_inventory,expected_processed_inventory,log_file):
 ###
-    print 'Processing the final product','\n\n'
+    #print 'Processing the final product','\n\n'
+    log_file.write('Processing the final product \n\n')
     operation_time=operation_time+delay
 #
     true_processed_inventory=true_processed_inventory+true_quantity

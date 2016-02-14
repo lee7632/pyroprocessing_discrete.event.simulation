@@ -39,9 +39,10 @@ import numpy
 # (1): product storage and final processing
 # 
 #######
-def product_storage(operation_time,equipment_failure_time_0,equipment_failure_time_1,time_delay,true_quantity,expected_quantity,measured_quantity,true_inventory,expected_inventory,measured_inventory):
+def product_storage(operation_time,equipment_failure_time_0,equipment_failure_time_1,time_delay,true_quantity,expected_quantity,measured_quantity,true_inventory,expected_inventory,measured_inventory,log_file):
 #######
-    print 'Processing the final product','\n\n'
+    #print 'Processing the final product','\n\n'
+    log_file.write('Processing the final product \n\n')
     operation_time=operation_time+time_delay
     equipment_failure_time_0=equipment_failure_time_0+time_delay
     equipment_failure_time_1=equipment_failure_time_1+time_delay

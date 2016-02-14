@@ -35,11 +35,12 @@ import numpy
 # (1): kmp measurement
 #
 #######
-def kmp_measurement(operation_time,equipment_failure_time_0,equipment_failure_time_1,kmp_delay_time,uncertainty,threshold,true_quantity,expected_quantity,measured_inventory,measured_system_inventory,kmp_identifier):
+def kmp_measurement(operation_time,equipment_failure_time_0,equipment_failure_time_1,kmp_delay_time,uncertainty,threshold,true_quantity,expected_quantity,measured_inventory,measured_system_inventory,kmp_identifier,log_file):
 #######
 #
 ###    
-    print 'Measurement event at KMP:',kmp_identifier
+    #print 'Measurement event at KMP:',kmp_identifier
+    log_file.write('Measurement event at KMP:%i'%(kmp_identifier))
     operation_time=operation_time+kmp_delay_time
     equipment_failure_time_0=equipment_failure_time_0+kmp_delay_time
     equipment_failure_time_1=equipment_failure_time_1+kmp_delay_time
@@ -68,7 +69,8 @@ def kmp_measurement(operation_time,equipment_failure_time_0,equipment_failure_ti
         measured_quantity=true_quantity+uncertainty*numpy.random.randn()
 # end
 ###
-    print 'Operation time','%.4f'%operation_time,'(d)','\n','True quantity','%.4f'%true_quantity,'(kg)','\n','Expected quantity','%.4f'%expected_quantity,'(kg)','\n','Measured quantity','%.4f'%measured_quantity,'(kg)','\n\n'
+    #print 'Operation time','%.4f'%operation_time,'(d)','\n','True quantity','%.4f'%true_quantity,'(kg)','\n','Expected quantity','%.4f'%expected_quantity,'(kg)','\n','Measured quantity','%.4f'%measured_quantity,'(kg)','\n\n'
+    log_file.write('Operation time %.4f (d) \nTrue quantity %.4f (kg) \nExpected quantity %.4f (kg) \nMeasured quantity %.4f (kg) \n\n'%(operation_time,true_quantity,expected_quantity,measured_quantity))
 ###
     if (kmp_identifier==0):
         return(operation_time,equipment_failure_time_0,equipment_failure_time_1,measured_quantity,measured_inventory,measured_initial_inventory,measured_system_inventory)
