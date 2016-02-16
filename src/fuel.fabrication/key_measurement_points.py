@@ -40,7 +40,7 @@ def kmp_measurement(operation_time,equipment_failure_time_0,equipment_failure_ti
 #
 ###    
     #print 'Measurement event at KMP:',kmp_identifier
-    log_file.write('Measurement event at KMP:%i'%(kmp_identifier))
+    log_file.write('Measurement event at KMP:%i\n'%(kmp_identifier))
     operation_time=operation_time+kmp_delay_time
     equipment_failure_time_0=equipment_failure_time_0+kmp_delay_time
     equipment_failure_time_1=equipment_failure_time_1+kmp_delay_time

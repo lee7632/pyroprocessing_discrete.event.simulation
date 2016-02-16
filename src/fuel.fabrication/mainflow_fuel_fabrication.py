@@ -61,7 +61,7 @@ import global_vars
 root_dir = global_vars.root_dir
 simulation_dir = global_vars.simulation_dir
 log_file = open(root_dir+'/log.txt','w')
-log_file.write('Fuel fabrication \n\nPREPROCESSING')
+log_file.write('Fuel fabrication \n\nPREPROCESSING\n\n')
 #
 ####### get directory paths  
 input_dir,output_dir,edge_transition_dir,failure_distribution_dir,failure_equipment_dir,kmps_dir,process_states_dir,system_false_alarm_dir,data_dir,figures_dir,system_odir,material_flow_odir,inventory_odir,false_alarm_odir,kmps_odir,muf_odir,equipment_failure_odir,system_gdir,material_flow_gdir,inventory_gdir,false_alarm_gdir,kmps_gdir,muf_gdir,equipment_failure_gdir=io.get_dir_path(root_dir,'fuel.fabrication')
@@ -171,8 +171,8 @@ log_file.write('END PREPROCESSING \n\n')
 #
 #
 # main process loop start
-#print 'Start facility operation'
-log_file.write('Start facility operation')
+#print 'Start facility operation\n\n'
+log_file.write('Start facility operation\n\n')
 #
 #
 #
@@ -182,7 +182,7 @@ log_file.write('Start facility operation')
 #
 while(operation_time<=facility_operation):
     #print 'Starting campaign:',total_campaign,'at time: ',operation_time,' days','\n'
-    log_file.write('Starting campaign %i at time: %f days \n'%(total_campaign, operation_time))
+    log_file.write('Starting campaign %i at time: %f days \n\n'%(total_campaign, operation_time))
     #log_file.write('Starting campaign %i at time: %f days \n'%(total_campaign, operation_time))
 #
 ########################################################################
@@ -193,7 +193,7 @@ while(operation_time<=facility_operation):
 #
 # storage buffer batch preparation process
 #
-    operation_time,melter_failure_time,trimmer_failure_time,true_weight,expected_weight,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory=storage_buffer.batch_preparation(operation_time,melter_failure_time,trimmer_failure_time,storage_buffer_preparation_time,batch,true_weight,expected_weight,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory)
+    operation_time,melter_failure_time,trimmer_failure_time,true_weight,expected_weight,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory=storage_buffer.batch_preparation(operation_time,melter_failure_time,trimmer_failure_time,storage_buffer_preparation_time,batch,true_weight,expected_weight,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory,log_file)
 #
 # failure distribution calculations
     melter_probability_density_function_evaluate,melter_unreliability_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,melter_failure_time,weibull_beta_melter,weibull_eta_melter) #failure melter

@@ -45,7 +45,7 @@ import numpy
 def injection_casting(operation_time,equipment_failure_time_0,equipment_failure_time_1,delay_time,true_quantity,expected_quantity,equipment_failure_number,equipment_failure_type,equipment_failure_rate,equipment_loss_fraction,accumulated_true_equipment_loss,accumulated_expected_equipment_loss,equipment_failure_event,equipment_failure_counter,equipment_counter,log_file):
 #######
     #print 'Alloy melting'
-    log_file.write('Alloy melting')
+    log_file.write('Alloy melting\n')
     operation_time=operation_time+0.5*delay_time
     equipment_failure_time_0=equipment_failure_time_0+0.5*delay_time
     equipment_failure_time_1=equipment_failure_time_1+0.5*delay_time
@@ -72,8 +72,9 @@ def injection_casting(operation_time,equipment_failure_time_0,equipment_failure_
         operation_time=operation_time+0.5*delay_time
 	equipment_failure_time_0=equipment_failure_time_0+0.5*delay_time
 	equipment_failure_time_1=equipment_failure_time_1+0.5*delay_time
-# end if
-    print 'Failure status: ',equipment_failure_event,'\n\n'
+    #print 'Failure status: ',equipment_failure_event,'\n\n'
+    log_file.write('Failure status: %s\n\n'%(equipment_failure_event))
+        
 ###
     return(operation_time,equipment_failure_time_0,equipment_failure_time_1,true_quantity,expected_quantity,accumulated_true_equipment_loss,accumulated_expected_equipment_loss,equipment_failure_event,equipment_failure_counter,equipment_counter)
 ########################################################################
