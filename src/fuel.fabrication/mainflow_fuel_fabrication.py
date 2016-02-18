@@ -27,8 +27,10 @@
 import numpy
 import io_functions as io
 #import system_false_alarm 
-import vertex_storage_buffer as storage_buffer
-import edge_transition as edge_trans
+#import vertex_storage_buffer as storage_buffer
+from storage_buffer_module import Storage_Buffer_Class
+#import edge_transition as edge_trans
+from edge_transition import Edge_Transition_Class
 import key_measurement_points as kmp
 import vertex_melter as melter
 import vertex_trimmer as trimmer
@@ -37,6 +39,7 @@ import materials_unaccounted_for as muf
 import failure_distribution_calculation as failure_calculation
 import false_alarm_test
 import sys
+from facility_module import Facility_Class
 import global_vars
 #
 ########################################################################
@@ -55,12 +58,21 @@ import global_vars
 #
 ########################################################################
 #
+####### Initialize objects
+#
+#Facility = Facility_Class()
+storage_buffer = Storage_Buffer_Class()
+edge_trans = Edge_Transition_Class()
+
+
+
 #print 'Fuel fabriction','\n\n','PREPROCESSING'
 #
 # root_dir='C:/Users/Malachi/Documents/Research/NEUI/pyroprocessing_discrete.event.simulation'
 root_dir = global_vars.root_dir
 simulation_dir = global_vars.simulation_dir
-log_file = open(root_dir+'/log.txt','w')
+#log_file = open(root_dir+'/log.txt','w')
+log_file = storage_buffer.log_file
 log_file.write('Fuel fabrication \n\nPREPROCESSING\n\n')
 #
 ####### get directory paths  
@@ -183,15 +195,17 @@ log_file.write('Start facility operation\n\n')
 while(operation_time<=facility_operation):
     #print 'Starting campaign:',total_campaign,'at time: ',operation_time,' days','\n'
     log_file.write('Starting campaign %i at time: %f days \n\n'%(total_campaign, operation_time))
-#
-########################################################################
-#
-#
-#
-#######
-#
-# storage buffer batch preparation process
-#
+    #
+    ########################################################################
+    #
+    #
+    #
+    #######
+    #
+    # storage buffer batch preparation process
+    #
+    storage_buffer.operation_time = operation_time
+
     operation_time,melter_failure_time,trimmer_failure_time,true_weight,expected_weight,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory=storage_buffer.batch_preparation(operation_time,melter_failure_time,trimmer_failure_time,storage_buffer_preparation_time,batch,true_weight,expected_weight,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory,log_file)
 #
 # failure distribution calculations

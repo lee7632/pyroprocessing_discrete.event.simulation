@@ -27,15 +27,23 @@
 # (1): edge transition
 #
 #######
-def edge_transition(operation_time,equipment_failure_time_0,equipment_failure_time_1,edge_time_delay,log_file):
-#######
-    #print 'Edge transition','\n\n'
-    log_file.write('Edge transition \n\n')
-    operation_time=operation_time+edge_time_delay
-    equipment_failure_time_0=equipment_failure_time_0+edge_time_delay
-    equipment_failure_time_1=equipment_failure_time_1+edge_time_delay
-###
-    return(operation_time,equipment_failure_time_0,equipment_failure_time_1)
+
+from facility_module import Facility_Class
+
+class Edge_Transition_Class(Facility_Class):
+
+    def edge_transition(self,operation_time,equipment_failure_time_0,equipment_failure_time_1,edge_time_delay,log_file):
+
+        #print 'Edge transition','\n\n'
+        #log_file.write('Edge transition \n\n')
+        self.write_to_log('Edge transition \n\n')
+        #operation_time=operation_time+edge_time_delay
+        self.increment_operation_time(edge_time_delay)
+        equipment_failure_time_0=equipment_failure_time_0+edge_time_delay
+        equipment_failure_time_1=equipment_failure_time_1+edge_time_delay
+
+        return(self.operation_time,equipment_failure_time_0,equipment_failure_time_1)
+
 ########################################################################
 #
 # EOF

@@ -14,6 +14,10 @@
 # Perhaps later I will fix it so that this program will run 
 # command and control like file input writing, but this works for now.  
 #
+# If different inputs are desired, than one could simply run the program
+# for those inputs, and then save the log file as "unit_test_log.txt"
+# under the "Unit_Test_Docs" folder in the source code.
+#
 # As of now, this only checks a few lines, since the whole file can't be
 # compared due to the random distribution.  I could go in an fix the 
 # seed, but I'm going with this solution for now.
@@ -22,18 +26,19 @@
 # Imports
 #
 import numpy
-from mainflow_fuel_fabrication import root_dir
+#from mainflow_fuel_fabrication import root_dir
+import global_vars
 #
 ########################################################################
 #
-new_log_file = open(root_dir+'/log.txt','r')
+new_log_file = open(global_vars.root_dir+'/log.txt','r')
 #unit_log_file = open('Unit_Test_Docs/unit_test_log.txt','r')
 
 n = 1
 did_fail = False
-line_test_array = [1,3,5,7,9,11,13,15,16,23,24,28,29,83,84,185,187,188,716,717,755,757]
+line_test_array = [1,3,5,7,9,11,13,15,16,23,24,28,29,83,84,185,187,188,716,717,729,731,732,734,735,739,742,743,751,755,757]
 
-with open(root_dir+'/src/fuel.fabrication/Unit_Test_Docs/unit_test_log.txt') as unit_log_file:
+with open(global_vars.root_dir+'/src/fuel.fabrication/Unit_Test_Docs/unit_test_log.txt') as unit_log_file:
     for unit_line in unit_log_file:
         log_file_line = new_log_file.readline()
         if log_file_line != unit_line and n in line_test_array:
