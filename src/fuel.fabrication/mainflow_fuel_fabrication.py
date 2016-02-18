@@ -183,7 +183,6 @@ log_file.write('Start facility operation\n\n')
 while(operation_time<=facility_operation):
     #print 'Starting campaign:',total_campaign,'at time: ',operation_time,' days','\n'
     log_file.write('Starting campaign %i at time: %f days \n\n'%(total_campaign, operation_time))
-    #log_file.write('Starting campaign %i at time: %f days \n'%(total_campaign, operation_time))
 #
 ########################################################################
 #
