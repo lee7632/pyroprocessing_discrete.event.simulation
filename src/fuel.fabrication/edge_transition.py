@@ -28,21 +28,22 @@
 #
 #######
 
-from facility_module import Facility_Class
+from facility_component_module import facility_component_class
+from facility_vars_module import facility_vars_class as facility_vars
 
-class Edge_Transition_Class(Facility_Class):
+class edge_transition_class(facility_component_class):
 
-    def edge_transition(self,operation_time,equipment_failure_time_0,equipment_failure_time_1,edge_time_delay,log_file):
+    def edge_transition(self,facility_vars,equipment_failure_time_0,equipment_failure_time_1,edge_time_delay,log_file):
 
         #print 'Edge transition','\n\n'
         #log_file.write('Edge transition \n\n')
-        self.write_to_log('Edge transition \n\n')
+        self.write_to_log(facility_vars,'Edge transition \n\n')
         #operation_time=operation_time+edge_time_delay
-        self.increment_operation_time(edge_time_delay)
+        self.increment_operation_time(facility_vars,edge_time_delay)
         equipment_failure_time_0=equipment_failure_time_0+edge_time_delay
         equipment_failure_time_1=equipment_failure_time_1+edge_time_delay
 
-        return(self.operation_time,equipment_failure_time_0,equipment_failure_time_1)
+        return(facility_vars.operation_time,equipment_failure_time_0,equipment_failure_time_1)
 
 ########################################################################
 #

@@ -4,22 +4,21 @@
 # rev.23.October.2015
 ########################################################################
 # 
-# Trimmer vertex 
+# Melter vertex 
 # 
 ########################################################################
 #
-# Then metal alloy rods fabricated by injection casting are trimmed into fuel slugs.
-# Quartz molds are loaded into the equipment.
-# The molds are then sheared to the right size for the slugs. 
-# Quartz molds are broken to obtain the metal slugs.
-# Broken molds are a waste stream. 
-# Sheared metal produces 'fines'; i.e., the process loss.
-# These fines have to be recovered for materials accounting.
+# Metal alloy rods are fabricated by injection casting. 
+# U, TRU-REFP, and Zr are loaded into the equipment.
+# Heat is induced, and the metals melt in a graphite crucible.
+# Quartz molds are inserted into the liquid alloy.
+# Induced vaccuum causes alloy to be injected in the molds.
+# Filled molds are removed and sent to Trimmer.
 #
 ########################################################################
 #
 # Many failures could occur during this process.
-# No failures assumed. 
+# Currenly, a single, general failure is assumed. 
 #
 ########################################################################
 #
@@ -28,12 +27,13 @@
 import numpy 
 from facility_component_module import facility_component_class
 from facility_vars_module import facility_vars_class as facility_vars
+# import failure_testing_weibull_distribution as failure_analysis
 #
 ########################################################################
 #
 # function list
 #
-# (1): slug trimming
+# (1): injection casting
 #
 ########################################################################
 #
@@ -41,22 +41,22 @@ from facility_vars_module import facility_vars_class as facility_vars
 #
 ########################################################################
 #
-# (1): slug trimming
+# (1): injection casting
 # 
 #######
 
-class trimmer_class(facility_component_class):
+class melter_class(facility_component_class):
 
-    def slug_trimming(self,facility_vars,equipment_failure_time_0,equipment_failure_time_1,delay_time,true_quantity,expected_quantity,equipment_failure_number,equipment_failure_type,equipment_failure_rate,equipment_loss_fraction,accumulated_true_equipment_loss,accumulated_expected_equipment_loss,equipment_failure_event,equipment_failure_counter,equipment_counter,log_file):
+    def injection_casting(self,facility_vars,equipment_failure_time_0,equipment_failure_time_1,delay_time,true_quantity,expected_quantity,equipment_failure_number,equipment_failure_type,equipment_failure_rate,equipment_loss_fraction,accumulated_true_equipment_loss,accumulated_expected_equipment_loss,equipment_failure_event,equipment_failure_counter,equipment_counter,log_file):
     #######
-        #print 'Slug trimming'
-        self.write_to_log(facility_vars,'Slug trimming\n')
-        #gv.self.write_to_log('Slug trimming')
-        self.increment_operation_time(facility_vars,operation_time+0.5*delay_time)
+    #print 'Alloy melting'
+        self.write_to_log(facility_vars,'Alloy melting\n')
+        #operation_time=operation_time+0.5*delay_time
+        self.increment_operation_time(facility_vars,0.5*delay_time)
         equipment_failure_time_0=equipment_failure_time_0+0.5*delay_time
         equipment_failure_time_1=equipment_failure_time_1+0.5*delay_time
         equipment_counter=equipment_counter+1
-    #
+        #
         true_equipment_loss=(equipment_loss_fraction[1]-equipment_loss_fraction[2])*numpy.random.random_sample()+equipment_loss_fraction[2] 
         expected_equipment_loss=equipment_loss_fraction[0]
     #
@@ -64,23 +64,25 @@ class trimmer_class(facility_component_class):
         expected_quantity=expected_quantity-expected_equipment_loss
     #
         accumulated_true_equipment_loss=accumulated_true_equipment_loss+true_equipment_loss
-        accumulated_expected_equipment_loss=accumulated_expected_equipment_loss+expected_equipment_loss   
+        accumulated_expected_equipment_loss=accumulated_expected_equipment_loss+expected_equipment_loss    
     ###
     #
-    # failure module
-    # 
     # failure testing at 0.5 delay time
     # if no failure rest of delay time is added
     # if failure then failure times occur
     #
     ###
+    #    melter_failure_event,melter_failure_counter=failure_analysis(operation_time,melter_failure_number,melter_failure_type,melter_failure_probability,melter_failure_event,melter_failure_counter,melter_process_counter)
+    ###
         if(equipment_failure_event==False):
-	        self.increment_operation_time(facility_vars,operation_time+0.5*delay_time)
-	    equipment_failure_time_0=operation_time+0.5*delay_time
-	    equipment_failure_time_1=operation_time+0.5*delay_time
-    # end if
+            #operation_time=operation_time+0.5*delay_time
+            self.increment_operation_time(facility_vars,0.5*delay_time)
+	    equipment_failure_time_0=equipment_failure_time_0+0.5*delay_time
+	    equipment_failure_time_1=equipment_failure_time_1+0.5*delay_time
         #print 'Failure status: ',equipment_failure_event,'\n\n'
+        #log_file.write('Failure status: %s\n\n'%(equipment_failure_event))
         self.write_to_log(facility_vars,'Failure status: %s\n\n'%(equipment_failure_event))
+            
     ###
         return(facility_vars.operation_time,equipment_failure_time_0,equipment_failure_time_1,true_quantity,expected_quantity,accumulated_true_equipment_loss,accumulated_expected_equipment_loss,equipment_failure_event,equipment_failure_counter,equipment_counter)
 ########################################################################

@@ -52,7 +52,7 @@ class trimmer_class(facility_component_class):
         #print 'Slug trimming'
         self.write_to_log(facility_vars,'Slug trimming\n')
         #gv.self.write_to_log('Slug trimming')
-        self.increment_operation_time(facility_vars,operation_time+0.5*delay_time)
+        self.increment_operation_time(facility_vars,0.5*delay_time)
         equipment_failure_time_0=equipment_failure_time_0+0.5*delay_time
         equipment_failure_time_1=equipment_failure_time_1+0.5*delay_time
         equipment_counter=equipment_counter+1
@@ -75,9 +75,9 @@ class trimmer_class(facility_component_class):
     #
     ###
         if(equipment_failure_event==False):
-	        self.increment_operation_time(facility_vars,operation_time+0.5*delay_time)
-	    equipment_failure_time_0=operation_time+0.5*delay_time
-	    equipment_failure_time_1=operation_time+0.5*delay_time
+            self.increment_operation_time(facility_vars,0.5*delay_time)
+        equipment_failure_time_0=facility_vars.operation_time+0.5*delay_time
+        equipment_failure_time_1=facility_vars.operation_time+0.5*delay_time
     # end if
         #print 'Failure status: ',equipment_failure_event,'\n\n'
         self.write_to_log(facility_vars,'Failure status: %s\n\n'%(equipment_failure_event))

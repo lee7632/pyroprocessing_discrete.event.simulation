@@ -22,7 +22,8 @@
 # imports
 #
 import os
-from facility_module import Facility_Class
+from facility_component_module import facility_component_class
+from facility_vars_module import facility_vars_class as facility_vars
 #
 ########################################################################
 #
@@ -30,17 +31,14 @@ from facility_module import Facility_Class
 #
 #######
 
-class Storage_Buffer_Class(Facility_Class):
+class storage_buffer_class(facility_component_class):
 
-    #def __init__(self):
-    #    Facility.__init__()
-
-    def batch_preparation(self,operation_time,melter_failure_time,trimmer_failure_time,time_delay,batch,true_quantity,expected_quantity,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory,log_file):
+    def batch_preparation(self,facility_vars,melter_failure_time,trimmer_failure_time,time_delay,batch,true_quantity,expected_quantity,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory,log_file):
 
         #log_file.write('Prepare batch in Storage Buffer for transfer: %.1f kg\n\n'%(batch))
-        self.write_to_log('Prepare batch in Storage Buffer for transfer: %.1f kg\n\n'%(batch))
+        self.write_to_log(facility_vars,'Prepare batch in Storage Buffer for transfer: %.1f kg\n\n'%(batch))
         #operation_time=operation_time+time_delay
-        self.increment_operation_time(time_delay)
+        self.increment_operation_time(facility_vars,time_delay)
         melter_failure_time=melter_failure_time+time_delay
         trimmer_failure_time=trimmer_failure_time+time_delay
         true_quantity=batch
@@ -52,7 +50,7 @@ class Storage_Buffer_Class(Facility_Class):
         true_initial_inventory=true_quantity
         expected_initial_inventory=expected_quantity
         
-        return(self.operation_time,melter_failure_time,trimmer_failure_time,true_quantity,expected_quantity,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory)
+        return(facility_vars.operation_time,melter_failure_time,trimmer_failure_time,true_quantity,expected_quantity,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory)
 
     def close_files(batch_output,true_storage_inventory_output,expected_storage_inventory_output,true_system_inventory_output,expected_system_inventory_output):
         batch_output.close()
