@@ -40,12 +40,10 @@ from facility_vars_module import facility_vars_class as facility_vars
 
 class materials_unaccounted_for_class(facility_component_class):
 
-    def system_mass_balance(self,facility_vars,melter_failure_time,trimmer_failure_time,time_delay,true_quantity,expected_quantity,measured_quantity,true_storage_inventory,expected_storage_inventory,measured_storage_inventory,true_processed_inventory,expected_processed_inventory,measured_processed_inventory,true_initial_inventory,expected_initial_inventory,measured_initial_inventory,true_system_inventory,expected_system_inventory,measured_system_inventory,true_muf,expected_muf,measured_muf,log_file):
+    def system_mass_balance(self,facility_vars,time_delay,true_quantity,expected_quantity,measured_quantity,true_storage_inventory,expected_storage_inventory,measured_storage_inventory,true_processed_inventory,expected_processed_inventory,measured_processed_inventory,true_initial_inventory,expected_initial_inventory,measured_initial_inventory,true_system_inventory,expected_system_inventory,measured_system_inventory,true_muf,expected_muf,measured_muf):
     ### 
         #operation_time=operation_time+time_delay
         self.increment_operation_time(facility_vars,time_delay)
-        melter_failure_time=melter_failure_time+time_delay
-        trimmer_failure_time=trimmer_failure_time+time_delay
     #
     ###
         true_mufc=0
@@ -85,7 +83,7 @@ class materials_unaccounted_for_class(facility_component_class):
         self.write_to_log(facility_vars,'True campaign MUF %.4f (kg) \nExpected campaign MUF %.4f (kg)\nMeasured campaign MUF %.4f (kg) \n\n'%(true_mufc,expected_mufc,measured_mufc))
         self.write_to_log(facility_vars,'True system MUF %.4f (kg)\nExpected system MUF %.4f (kg) \nMeasured system MUF %.4f (kg)\n\n\n'%(true_muf,expected_muf,measured_muf))
     ###
-        return(facility_vars.operation_time,melter_failure_time,trimmer_failure_time,true_muf,expected_muf,measured_muf,true_mufc,expected_mufc,measured_mufc)
+        return(true_muf,expected_muf,measured_muf,true_mufc,expected_mufc,measured_mufc)
 ########################################################################
 #
 # EOF

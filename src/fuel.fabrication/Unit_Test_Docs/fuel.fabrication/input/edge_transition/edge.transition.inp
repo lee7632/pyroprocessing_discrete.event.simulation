@@ -1,0 +1,8 @@
+StorageBuffer_KMP0	0.0208
+KMP0_Melter		0.0208
+Melter_KMP1		0.0208
+KMP1_Trimmer		0.0208
+Trimmer_KMP2		0.0208
+KMP2_ProductStorage	0.0208
+Melter_KMP3		0.0208
+KMP3_RecycleStorage	0.0208

@@ -47,14 +47,12 @@ from facility_vars_module import facility_vars_class as facility_vars
 
 class melter_class(facility_component_class):
 
-    def injection_casting(self,facility_vars,equipment_failure_time_0,equipment_failure_time_1,delay_time,true_quantity,expected_quantity,equipment_failure_number,equipment_failure_type,equipment_failure_rate,equipment_loss_fraction,accumulated_true_equipment_loss,accumulated_expected_equipment_loss,equipment_failure_event,equipment_failure_counter,equipment_counter,log_file):
+    def injection_casting(self,facility_vars,delay_time,true_quantity,expected_quantity,equipment_loss_fraction,accumulated_true_equipment_loss,accumulated_expected_equipment_loss,equipment_failure_event,equipment_counter):
     #######
     #print 'Alloy melting'
         self.write_to_log(facility_vars,'Alloy melting\n')
         #operation_time=operation_time+0.5*delay_time
         self.increment_operation_time(facility_vars,0.5*delay_time)
-        equipment_failure_time_0=equipment_failure_time_0+0.5*delay_time
-        equipment_failure_time_1=equipment_failure_time_1+0.5*delay_time
         equipment_counter=equipment_counter+1
         #
         true_equipment_loss=(equipment_loss_fraction[1]-equipment_loss_fraction[2])*numpy.random.random_sample()+equipment_loss_fraction[2] 
@@ -77,14 +75,12 @@ class melter_class(facility_component_class):
         if(equipment_failure_event==False):
             #operation_time=operation_time+0.5*delay_time
             self.increment_operation_time(facility_vars,0.5*delay_time)
-	    equipment_failure_time_0=equipment_failure_time_0+0.5*delay_time
-	    equipment_failure_time_1=equipment_failure_time_1+0.5*delay_time
         #print 'Failure status: ',equipment_failure_event,'\n\n'
         #log_file.write('Failure status: %s\n\n'%(equipment_failure_event))
         self.write_to_log(facility_vars,'Failure status: %s\n\n'%(equipment_failure_event))
             
     ###
-        return(facility_vars.operation_time,equipment_failure_time_0,equipment_failure_time_1,true_quantity,expected_quantity,accumulated_true_equipment_loss,accumulated_expected_equipment_loss,equipment_failure_event,equipment_failure_counter,equipment_counter)
+        return(facility_vars.operation_time,true_quantity,expected_quantity,accumulated_true_equipment_loss,accumulated_expected_equipment_loss,equipment_failure_event,equipment_counter)
 ########################################################################
 #
 # EOF

@@ -31,6 +31,9 @@ import global_vars
 #
 ########################################################################
 #
+# Test log file
+#
+########################################################################
 new_log_file = open(global_vars.root_dir+'/log.txt','r')
 #unit_log_file = open('Unit_Test_Docs/unit_test_log.txt','r')
 
@@ -42,14 +45,39 @@ with open(global_vars.root_dir+'/src/fuel.fabrication/Unit_Test_Docs/unit_test_l
     for unit_line in unit_log_file:
         log_file_line = new_log_file.readline()
         if log_file_line != unit_line and n in line_test_array:
-            print 'difference in ouput files in line %i\n'%(n)
-            print 'Unit test log file reads\n%s\n'%(unit_line)
+            print 'difference in log files in line %i'%(n)
+            print 'Unit test log file reads\n%s'%(unit_line)
             print 'Your log file reads\n%s\n'%(log_file_line)
             did_fail = True
         n = n+1
 
 if did_fail == False:
-    print 'No detected discrepancies in the log file with the unit test.'
+    print 'No detected discrepancies in the log file with the unit test.\n\n'
 
-            
-    
+########################################################################
+#
+# Test operation time output
+#
+########################################################################
+#
+# Note that this test breaks if it finds a single discrepancy.  That's because there really is no point
+# pointing out the inevitability that every single other number will be wrong in this list if even one is off.
+#
+########################################################################
+n = 1 
+
+new_operation_output = open(global_vars.simulation_dir+'/fuel.fabrication/output/data/system/facility.operation.time.out','r')
+
+with open(global_vars.root_dir+'/src/fuel.fabrication/Unit_Test_Docs/fuel.fabrication/output/data/system/facility.operation.time.out') as unit_operation_output:
+    for unit_line in unit_operation_output:
+        new_operation_output_line = new_operation_output.readline()
+        if unit_line != new_operation_output_line:
+            print 'difference in operation ouput files in line %i'%(n)
+            print 'Unit test operation time file reads\n%s'%(unit_line)
+            print 'Your operation time file reads\n%s\n'%(new_operation_output_line)
+            break
+        n = n+1
+
+    else:
+        print 'No detected discrepancies in the operation time file with the unit test.'
+

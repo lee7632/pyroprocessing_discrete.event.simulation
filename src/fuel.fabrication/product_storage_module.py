@@ -44,20 +44,18 @@ from facility_vars_module import facility_vars_class as facility_vars
 
 class product_storage_class(facility_component_class):
     
-    def product_storage(self,facility_vars,equipment_failure_time_0,equipment_failure_time_1,time_delay,true_quantity,expected_quantity,measured_quantity,true_inventory,expected_inventory,measured_inventory,log_file):
+    def product_storage(self,facility_vars,time_delay,true_quantity,expected_quantity,measured_quantity,true_inventory,expected_inventory,measured_inventory):
     #######
         #print 'Processing the final product','\n\n'
         self.write_to_log(facility_vars,'Processing the final product \n\n')
         #operation_time=operation_time+time_delay
         self.increment_operation_time(facility_vars,time_delay)
-        equipment_failure_time_0=equipment_failure_time_0+time_delay
-        equipment_failure_time_1=equipment_failure_time_1+time_delay
         true_inventory=true_inventory+true_quantity
         expected_inventory=expected_inventory+expected_quantity
         measured_inventory=measured_inventory+measured_quantity
     
     ###
-        return(facility_vars.operation_time,equipment_failure_time_0,equipment_failure_time_1,true_inventory,expected_inventory,measured_inventory)
+        return(true_inventory,expected_inventory,measured_inventory)
 ###########################################################################
 #
 # EOF

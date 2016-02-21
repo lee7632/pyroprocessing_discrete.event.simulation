@@ -33,14 +33,12 @@ from facility_vars_module import facility_vars_class as facility_vars
 
 class storage_buffer_class(facility_component_class):
 
-    def batch_preparation(self,facility_vars,melter_failure_time,trimmer_failure_time,time_delay,batch,true_quantity,expected_quantity,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory,log_file):
+    def batch_preparation(self,facility_vars,time_delay,batch,true_quantity,expected_quantity,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory):
 
         #log_file.write('Prepare batch in Storage Buffer for transfer: %.1f kg\n\n'%(batch))
         self.write_to_log(facility_vars,'Prepare batch in Storage Buffer for transfer: %.1f kg\n\n'%(batch))
         #operation_time=operation_time+time_delay
         self.increment_operation_time(facility_vars,time_delay)
-        melter_failure_time=melter_failure_time+time_delay
-        trimmer_failure_time=trimmer_failure_time+time_delay
         true_quantity=batch
         expected_quantity=batch
         true_storage_inventory=true_storage_inventory-true_quantity
@@ -50,7 +48,7 @@ class storage_buffer_class(facility_component_class):
         true_initial_inventory=true_quantity
         expected_initial_inventory=expected_quantity
         
-        return(facility_vars.operation_time,melter_failure_time,trimmer_failure_time,true_quantity,expected_quantity,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory)
+        return(true_quantity,expected_quantity,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory)
 
     def close_files(batch_output,true_storage_inventory_output,expected_storage_inventory_output,true_system_inventory_output,expected_system_inventory_output):
         batch_output.close()

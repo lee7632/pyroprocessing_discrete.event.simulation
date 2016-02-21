@@ -30,9 +30,9 @@ import io_functions as io
 #import vertex_storage_buffer as storage_buffer
 from storage_buffer_module import storage_buffer_class
 #import edge_transition as edge_trans
-from edge_transition import edge_transition_class
+from edge_transition_module import edge_transition_class
 #import key_measurement_points as kmp
-from key_measurement_points import kmp_class
+from key_measurement_points_module import kmp_class
 #import vertex_melter as melter
 from melter_module import melter_class
 #import vertex_trimmer as trimmer
@@ -66,7 +66,7 @@ from facility_vars_module import facility_vars_class
 #
 ####### Initialize objects
 #
-facility_vars = facility_vars_class(global_vars.root_dir)
+facility_vars = facility_vars_class(global_vars.root_dir,'fuel.fabrication')
 storage_buffer = storage_buffer_class()
 edge_trans = edge_transition_class()
 kmp = kmp_class()
@@ -74,6 +74,9 @@ melter = melter_class()
 trimmer = trimmer_class()
 final_prep = product_storage_class()
 muf = muf_class()
+
+operation_time = facility_vars.operation_time
+total_campaign = facility_vars.total_campaign
 
 #print 'Fuel fabriction','\n\n','PREPROCESSING'
 #
@@ -85,7 +88,7 @@ log_file = facility_vars.log_file
 log_file.write('Fuel fabrication \n\nPREPROCESSING\n\n')
 #
 ####### get directory paths  
-input_dir,output_dir,edge_transition_dir,failure_distribution_dir,failure_equipment_dir,kmps_dir,process_states_dir,system_false_alarm_dir,data_dir,figures_dir,system_odir,material_flow_odir,inventory_odir,false_alarm_odir,kmps_odir,muf_odir,equipment_failure_odir,system_gdir,material_flow_gdir,inventory_gdir,false_alarm_gdir,kmps_gdir,muf_gdir,equipment_failure_gdir=io.get_dir_path(root_dir,'fuel.fabrication')
+input_dir,output_dir,edge_transition_dir,failure_distribution_dir,failure_equipment_dir,kmps_dir,process_states_dir,system_false_alarm_dir,data_dir,figures_dir,system_odir,material_flow_odir,inventory_odir,false_alarm_odir,kmps_odir,muf_odir,equipment_failure_odir,system_gdir,material_flow_gdir,inventory_gdir,false_alarm_gdir,kmps_gdir,muf_gdir,equipment_failure_gdir=facility_vars.get_dir_path()
 #######
 #
 ####### read input data
@@ -106,7 +109,6 @@ kmp_id,kmp_time,kmp_uncertainty,kmp_threshold,maximum_kmp=io.input_kmps(kmps_dir
 #######
 #
 ####### open output files 
-system_time_output,campaign_output=io.output_system_operation(system_odir) #system
 melter_failure_time_output,melter_initiation_counter_output=io.output_process_operation(system_odir,'melter') #melter
 trimmer_failure_time_output,trimmer_initiation_counter_output=io.output_process_operation(system_odir,'trimmer') #trimmer 
 #
@@ -131,8 +133,6 @@ system_muf_output,system_mufc_output=io.output_muf(muf_odir,'system') #muf syste
 #######
 #
 ####### initialize parameters
-operation_time,total_campaign=io.initialize_system() #system
-#
 total_batch,true_weight,expected_weight,measured_weight=io.initialize_material_flow() #material flow 
 true_heel,expected_heel,measured_heel,accumulated_true_heel,accumulated_expected_heel,accumulated_measured_heel=io.initialize_equipment_process_loss() #process loss melter
 true_fines,expected_fines,measured_fines,accumulated_true_fines,accumulated_expected_fines,accumulated_measured_fines=io.initialize_equipment_process_loss() #process loss trimmer 
@@ -152,16 +152,14 @@ system_true_muf,system_expected_muf,system_measured_muf,system_true_mufc,system_
 #######
 #
 ####### failure distribution calculations
-melter_probability_density_function_evaluate,melter_unreliability_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,melter_failure_time,weibull_beta_melter,weibull_eta_melter) #failure melter
-trimmer_probability_density_function_evaluate,trimmer_unreliability_function_evaluate,trimmer_probability_density_function_failure_evaluate,trimmer_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,trimmer_failure_time,weibull_beta_trimmer,weibull_eta_trimmer) #failure trimmer
+#failure melter
+#failure trimmer
 #######
 #
 ####### data writing for TIME=0
-system_time_output=io.write_system_time(operation_time,system_time_output) #time system 
-melter_failure_time_output=io.write_system_time(melter_failure_time,melter_failure_time_output) #time melter 
-trimmer_failure_time_output=io.write_system_time(trimmer_failure_time,trimmer_failure_time_output) #time trimmer 
-#
-campaign_output=io.write_campaign(operation_time,total_campaign,campaign_output) #campaign
+#time system 
+#time melter 
+#time trimmer 
 #
 melter_initiation_counter_output=io.write_process_counter(operation_time,melter_initiation_counter,melter_initiation_counter_output) #process counter melter
 trimmer_initiation_counter_output=io.write_process_counter(operation_time,trimmer_initiation_counter,trimmer_initiation_counter_output) #process counter trimmer
@@ -201,9 +199,8 @@ log_file.write('Start facility operation\n\n')
 #
 # process loop
 #
-while(operation_time<=facility_operation):
-    #print 'Starting campaign:',total_campaign,'at time: ',operation_time,' days','\n'
-    log_file.write('Starting campaign %i at time: %f days \n\n'%(total_campaign, operation_time))
+while(facility_vars.operation_time<=facility_operation):
+    log_file.write('Starting campaign %i at time: %f days \n\n'%(facility_vars.total_campaign, facility_vars.operation_time))
     #
     ########################################################################
     #
@@ -213,21 +210,18 @@ while(operation_time<=facility_operation):
     #
     # storage buffer batch preparation process
     #
-    operation_time,melter_failure_time,trimmer_failure_time,true_weight,expected_weight,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory=storage_buffer.batch_preparation(facility_vars,melter_failure_time,trimmer_failure_time,storage_buffer_preparation_time,batch,true_weight,expected_weight,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory,log_file)
+    true_weight,expected_weight,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory=storage_buffer.batch_preparation(facility_vars,storage_buffer_preparation_time,batch,true_weight,expected_weight,true_storage_inventory,expected_storage_inventory,true_system_inventory,expected_system_inventory,true_initial_inventory,expected_initial_inventory)
 #
 # failure distribution calculations
-    melter_probability_density_function_evaluate,melter_unreliability_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,melter_failure_time,weibull_beta_melter,weibull_eta_melter) #failure melter
-    trimmer_probability_density_function_evaluate,trimmer_unreliability_function_evaluate,trimmer_probability_density_function_failure_evaluate,trimmer_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,trimmer_failure_time,weibull_beta_trimmer,weibull_eta_trimmer) #failure trimmer
+#
 #
 # data writing
-    system_time_output=io.write_system_time(operation_time,system_time_output) #time system 
-    melter_failure_time_output=io.write_system_time(melter_failure_time,melter_failure_time_output) #time melter 
-    trimmer_failure_time_output=io.write_system_time(trimmer_failure_time,trimmer_failure_time_output) #time trimmer 
+    #time system 
+    #time melter 
+    #time trimmer 
 #
-    campaign_output=io.write_campaign(operation_time,total_campaign,campaign_output) #campaign
-#
-    melter_initiation_counter_output=io.write_process_counter(operation_time,melter_initiation_counter,melter_initiation_counter_output) #process counter melter
-    trimmer_initiation_counter_output=io.write_process_counter(operation_time,trimmer_initiation_counter,trimmer_initiation_counter_output) #process counter trimmer
+#process counter melter
+ #process counter trimmer
 #
     batch_output,true_weight_output,expected_weight_output,measured_weight_output=io.write_material_flow(operation_time,total_batch,true_weight,expected_weight,measured_weight,batch_output,true_weight_output,expected_weight_output,measured_weight_output) #material flow
 #
@@ -251,35 +245,33 @@ while(operation_time<=facility_operation):
 #
 # edge transition: storage buffer to KMP0
 #
-    operation_time,melter_failure_time,trimmer_failure_time=edge_trans.edge_transition(facility_vars,melter_failure_time,trimmer_failure_time,edge_transition[0],log_file)
+    edge_trans.edge_transition(facility_vars,edge_transition[0])
 #
 # failure distribution calculations
-    melter_probability_density_function_evaluate,melter_unreliability_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,melter_failure_time,weibull_beta_melter,weibull_eta_melter) #failure melter
-    trimmer_probability_density_function_evaluate,trimmer_unreliability_function_evaluate,trimmer_probability_density_function_failure_evaluate,trimmer_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,trimmer_failure_time,weibull_beta_trimmer,weibull_eta_trimmer) #failure trimmer
+    #failure melter
+    #failure trimmer
 #
 # data writing
-    system_time_output=io.write_system_time(operation_time,system_time_output) #time system 
-    melter_failure_time_output=io.write_system_time(melter_failure_time,melter_failure_time_output) #time melter 
-    trimmer_failure_time_output=io.write_system_time(trimmer_failure_time,trimmer_failure_time_output) #time trimmer 
+    #time system 
+    #time melter 
+    #time trimmer 
 #
 #######
 #
 # KMP measurement (0)
 #
-    operation_time,melter_failure_time,trimmer_failure_time,measured_weight,measured_storage_inventory,measured_initial_inventory,measured_system_inventory=kmp.kmp_measurement(facility_vars,melter_failure_time,trimmer_failure_time,kmp_time[0],kmp_uncertainty[0],kmp_threshold[0],true_weight,expected_weight,measured_storage_inventory,measured_system_inventory,0,log_file)
+    measured_weight,measured_storage_inventory,measured_initial_inventory,measured_system_inventory=kmp.kmp_measurement(facility_vars,kmp_time[0],kmp_uncertainty[0],true_weight,expected_weight,measured_storage_inventory,measured_system_inventory,0)
 #
 # failure distribution calculations
-    melter_probability_density_function_evaluate,melter_unreliability_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,melter_failure_time,weibull_beta_melter,weibull_eta_melter) #failure melter
-    trimmer_probability_density_function_evaluate,trimmer_unreliability_function_evaluate,trimmer_probability_density_function_failure_evaluate,trimmer_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,trimmer_failure_time,weibull_beta_trimmer,weibull_eta_trimmer) #failure trimmer
+    #failure melter
+    #failure trimmer
 #
 # data writing
     true_kmp_output,expected_kmp_output,measured_kmp_output=io.kmp_write(operation_time,true_weight,expected_weight,measured_weight,true_kmp_output,expected_kmp_output,measured_kmp_output,0) #kmp measurement data
 #
-    system_time_output=io.write_system_time(operation_time,system_time_output) #time system 
-    melter_failure_time_output=io.write_system_time(melter_failure_time,melter_failure_time_output) #time melter 
-    trimmer_failure_time_output=io.write_system_time(trimmer_failure_time,trimmer_failure_time_output) #time trimmer 
-#
-    campaign_output=io.write_campaign(operation_time,total_campaign,campaign_output) #campaign
+    #time system 
+    #time melter 
+    #time trimmer 
 #
     melter_initiation_counter_output=io.write_process_counter(operation_time,melter_initiation_counter,melter_initiation_counter_output) #process counter melter
     trimmer_initiation_counter_output=io.write_process_counter(operation_time,trimmer_initiation_counter,trimmer_initiation_counter_output) #process counter trimmer
@@ -306,33 +298,31 @@ while(operation_time<=facility_operation):
 #
 # edge transition: KMP0 to melter
 #
-    operation_time,melter_failure_time,trimmer_failure_time=edge_trans.edge_transition(facility_vars,melter_failure_time,trimmer_failure_time,edge_transition[1],log_file)
+    edge_trans.edge_transition(facility_vars,edge_transition[1])
 #
 # failure distribution calculations
-    melter_probability_density_function_evaluate,melter_unreliability_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,melter_failure_time,weibull_beta_melter,weibull_eta_melter) #failure melter
-    trimmer_probability_density_function_evaluate,trimmer_unreliability_function_evaluate,trimmer_probability_density_function_failure_evaluate,trimmer_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,trimmer_failure_time,weibull_beta_trimmer,weibull_eta_trimmer) #failure trimmer
+    #failure melter
+    #failure trimmer
 #
 # data writing
-    system_time_output=io.write_system_time(operation_time,system_time_output) #time system 
-    melter_failure_time_output=io.write_system_time(melter_failure_time,melter_failure_time_output) #time melter 
-    trimmer_failure_time_output=io.write_system_time(trimmer_failure_time,trimmer_failure_time_output) #time trimmer 
+    #time system 
+    #time melter 
+    #time trimmer 
 #
 #######
 #
 # melter
 #
-    operation_time,melter_failure_time,trimmer_failure_time,true_weight,expected_weight,accumulated_true_heel,accumulated_expected_heel,melter_failure_event,melter_failure_counter,melter_initiation_counter=melter.injection_casting(facility_vars,melter_failure_time,trimmer_failure_time,injection_casting_time,true_weight,expected_weight,melter_failure_number,melter_failure_type,melter_failure_rate,crucible_fraction,accumulated_true_heel,accumulated_expected_heel,melter_failure_event,melter_failure_counter,melter_initiation_counter,log_file)
+    operation_time,true_weight,expected_weight,accumulated_true_heel,accumulated_expected_heel,melter_failure_event,melter_initiation_counter=melter.injection_casting(facility_vars,injection_casting_time,true_weight,expected_weight,crucible_fraction,accumulated_true_heel,accumulated_expected_heel,melter_failure_event,melter_initiation_counter)
 #
 # failure distribution calculations
-    melter_probability_density_function_evaluate,melter_unreliability_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,melter_failure_time,weibull_beta_melter,weibull_eta_melter) #failure melter
-    trimmer_probability_density_function_evaluate,trimmer_unreliability_function_evaluate,trimmer_probability_density_function_failure_evaluate,trimmer_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,trimmer_failure_time,weibull_beta_trimmer,weibull_eta_trimmer) #failure trimmer
+    #failure melter
+    #failure trimmer
 #
 # data writing
-    system_time_output=io.write_system_time(operation_time,system_time_output) #time system 
-    melter_failure_time_output=io.write_system_time(melter_failure_time,melter_failure_time_output) #time melter 
-    trimmer_failure_time_output=io.write_system_time(trimmer_failure_time,trimmer_failure_time_output) #time trimmer 
-#
-    campaign_output=io.write_campaign(operation_time,total_campaign,campaign_output) #campaign
+    #time system 
+    #time melter 
+    #time trimmer 
 #
     melter_initiation_counter_output=io.write_process_counter(operation_time,melter_initiation_counter,melter_initiation_counter_output) #process counter melter
     trimmer_initiation_counter_output=io.write_process_counter(operation_time,trimmer_initiation_counter,trimmer_initiation_counter_output) #process counter trimmer
@@ -523,35 +513,33 @@ while(operation_time<=facility_operation):
 #
 # edge transition: melter to KMP1
 #
-    operation_time,melter_failure_time,trimmer_failure_time=edge_trans.edge_transition(facility_vars,melter_failure_time,trimmer_failure_time,edge_transition[2],log_file)
+    edge_trans.edge_transition(facility_vars,edge_transition[2])
 #
 # failure distribution calculations
-    melter_probability_density_function_evaluate,melter_unreliability_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,melter_failure_time,weibull_beta_melter,weibull_eta_melter) #failure melter
-    trimmer_probability_density_function_evaluate,trimmer_unreliability_function_evaluate,trimmer_probability_density_function_failure_evaluate,trimmer_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,trimmer_failure_time,weibull_beta_trimmer,weibull_eta_trimmer) #failure trimmer
+    #failure melter
+    #failure trimmer
 #
 # data writing
-    system_time_output=io.write_system_time(operation_time,system_time_output) #time system 
-    melter_failure_time_output=io.write_system_time(melter_failure_time,melter_failure_time_output) #time melter 
-    trimmer_failure_time_output=io.write_system_time(trimmer_failure_time,trimmer_failure_time_output) #time trimmer 
+    #time system 
+    #time melter 
+    #time trimmer 
 #
 #######
 #
 # KMP measurement (1)
 #
-    operation_time,melter_failure_time,trimmer_failure_time,measured_weight,measured_storage_inventory=kmp.kmp_measurement(facility_vars,melter_failure_time,trimmer_failure_time,kmp_time[1],kmp_uncertainty[1],kmp_threshold[1],true_weight,expected_weight,measured_storage_inventory,measured_system_inventory,1,log_file)
+    measured_weight,measured_storage_inventory=kmp.kmp_measurement(facility_vars,kmp_time[1],kmp_uncertainty[1],true_weight,expected_weight,measured_storage_inventory,measured_system_inventory,1)
 #
 # failure distribution calculations
-    melter_probability_density_function_evaluate,melter_unreliability_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,melter_failure_time,weibull_beta_melter,weibull_eta_melter) #failure melter
-    trimmer_probability_density_function_evaluate,trimmer_unreliability_function_evaluate,trimmer_probability_density_function_failure_evaluate,trimmer_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,trimmer_failure_time,weibull_beta_trimmer,weibull_eta_trimmer) #failure trimmer
+    #failure melter
+    #failure trimmer
 #
 # data writing
     true_kmp_output,expected_kmp_output,measured_kmp_output=io.kmp_write(operation_time,true_weight,expected_weight,measured_weight,true_kmp_output,expected_kmp_output,measured_kmp_output,1) #kmp measurement data
 #
-    system_time_output=io.write_system_time(operation_time,system_time_output) #time system 
-    melter_failure_time_output=io.write_system_time(melter_failure_time,melter_failure_time_output) #time melter 
-    trimmer_failure_time_output=io.write_system_time(trimmer_failure_time,trimmer_failure_time_output) #time trimmer 
-#
-    campaign_output=io.write_campaign(operation_time,total_campaign,campaign_output) #campaign
+    #time system 
+    #time melter 
+    #time trimmer 
 #
     melter_initiation_counter_output=io.write_process_counter(operation_time,melter_initiation_counter,melter_initiation_counter_output) #process counter melter
     trimmer_initiation_counter_output=io.write_process_counter(operation_time,trimmer_initiation_counter,trimmer_initiation_counter_output) #process counter trimmer
@@ -578,34 +566,32 @@ while(operation_time<=facility_operation):
 #
 # edge transition: KMP1 to trimmer
 #
-    operation_time,melter_failure_time,trimmer_failure_time=edge_trans.edge_transition(facility_vars,melter_failure_time,trimmer_failure_time,edge_transition[3],log_file)
+    edge_trans.edge_transition(facility_vars,edge_transition[3])
 #
 # failure distribution calculations
-    melter_probability_density_function_evaluate,melter_unreliability_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,melter_failure_time,weibull_beta_melter,weibull_eta_melter) #failure melter
-    trimmer_probability_density_function_evaluate,trimmer_unreliability_function_evaluate,trimmer_probability_density_function_failure_evaluate,trimmer_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,trimmer_failure_time,weibull_beta_trimmer,weibull_eta_trimmer) #failure trimmer
+    #failure melter
+    #failure trimmer
 #
 # data writing
-    system_time_output=io.write_system_time(operation_time,system_time_output) #time system 
-    melter_failure_time_output=io.write_system_time(melter_failure_time,melter_failure_time_output) #time melter 
-    trimmer_failure_time_output=io.write_system_time(trimmer_failure_time,trimmer_failure_time_output) #time trimmer 
+    #time system 
+    #time melter 
+    #time trimmer 
 #
 #######
 #
 # trimmer
 # 
     
-    operation_time,melter_failure_time,trimmer_failure_time,true_weight,expected_weight,accumulated_true_fines,accumulated_expected_fines,trimmer_failure_event,trimmer_failure_counter,trimmer_initiation_counter=trimmer.slug_trimming(facility_vars,melter_failure_time,trimmer_failure_time,slug_trimming_time,true_weight,expected_weight,trimmer_failure_number,trimmer_failure_type,trimmer_failure_rate,fines_fraction,accumulated_true_fines,accumulated_expected_fines,trimmer_failure_event,trimmer_failure_counter,trimmer_initiation_counter,log_file)
+    true_weight,expected_weight,accumulated_true_fines,accumulated_expected_fines,trimmer_failure_event,trimmer_initiation_counter=trimmer.slug_trimming(facility_vars,slug_trimming_time,true_weight,expected_weight,fines_fraction,accumulated_true_fines,accumulated_expected_fines,trimmer_failure_event,trimmer_initiation_counter)
 #
 # failure distribution calculations
-    melter_probability_density_function_evaluate,melter_unreliability_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,melter_failure_time,weibull_beta_melter,weibull_eta_melter) #failure melter
-    trimmer_probability_density_function_evaluate,trimmer_unreliability_function_evaluate,trimmer_probability_density_function_failure_evaluate,trimmer_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,trimmer_failure_time,weibull_beta_trimmer,weibull_eta_trimmer) #failure trimmer
+    #failure melter
+    #failure trimmer
 #
 # data writing
-    system_time_output=io.write_system_time(operation_time,system_time_output) #time system 
-    melter_failure_time_output=io.write_system_time(melter_failure_time,melter_failure_time_output) #time melter 
-    trimmer_failure_time_output=io.write_system_time(trimmer_failure_time,trimmer_failure_time_output) #time trimmer 
-#
-    campaign_output=io.write_campaign(operation_time,total_campaign,campaign_output) #campaign
+    #time system 
+    #time melter 
+    #time trimmer 
 #
     melter_initiation_counter_output=io.write_process_counter(operation_time,melter_initiation_counter,melter_initiation_counter_output) #process counter melter
     trimmer_initiation_counter_output=io.write_process_counter(operation_time,trimmer_initiation_counter,trimmer_initiation_counter_output) #process counter trimmer
@@ -632,35 +618,33 @@ while(operation_time<=facility_operation):
 #
 # edge transition: trimmer to KMP2
 #
-    operation_time,melter_failure_time,trimmer_failure_time=edge_trans.edge_transition(facility_vars,melter_failure_time,trimmer_failure_time,edge_transition[4],log_file)
+    edge_trans.edge_transition(facility_vars,edge_transition[4])
 #
 # failure distribution calculations
-    melter_probability_density_function_evaluate,melter_unreliability_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,melter_failure_time,weibull_beta_melter,weibull_eta_melter) #failure melter
-    trimmer_probability_density_function_evaluate,trimmer_unreliability_function_evaluate,trimmer_probability_density_function_failure_evaluate,trimmer_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,trimmer_failure_time,weibull_beta_trimmer,weibull_eta_trimmer) #failure trimmer
+    #failure melter
+    #failure trimmer
 #
 # data writing
-    system_time_output=io.write_system_time(operation_time,system_time_output) #time system 
-    melter_failure_time_output=io.write_system_time(melter_failure_time,melter_failure_time_output) #time melter 
-    trimmer_failure_time_output=io.write_system_time(trimmer_failure_time,trimmer_failure_time_output) #time trimmer 
+    #time system 
+    #time melter 
+    #time trimmer 
 #
 #######
 #
 # KMP measurement (2)
 #
-    operation_time,melter_failure_time,trimmer_failure_time,measured_weight,measured_storage_inventory=kmp.kmp_measurement(facility_vars,melter_failure_time,trimmer_failure_time,kmp_time[2],kmp_uncertainty[2],kmp_threshold[2],true_weight,expected_weight,measured_storage_inventory,measured_system_inventory,2,log_file)
+    measured_weight,measured_storage_inventory=kmp.kmp_measurement(facility_vars,kmp_time[2],kmp_uncertainty[2],true_weight,expected_weight,measured_storage_inventory,measured_system_inventory,2)
 #
 # failure distribution calculations
-    melter_probability_density_function_evaluate,melter_unreliability_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,melter_failure_time,weibull_beta_melter,weibull_eta_melter) #failure melter
-    trimmer_probability_density_function_evaluate,trimmer_unreliability_function_evaluate,trimmer_probability_density_function_failure_evaluate,trimmer_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,trimmer_failure_time,weibull_beta_trimmer,weibull_eta_trimmer) #failure trimmer
+    #failure melter
+    #failure trimmer
 #
 # data writing
     true_kmp_output,expected_kmp_output,measured_kmp_output=io.kmp_write(operation_time,true_weight,expected_weight,measured_weight,true_kmp_output,expected_kmp_output,measured_kmp_output,1) #kmp measurement data
 #
-    system_time_output=io.write_system_time(operation_time,system_time_output) #time system 
-    melter_failure_time_output=io.write_system_time(melter_failure_time,melter_failure_time_output) #time melter 
-    trimmer_failure_time_output=io.write_system_time(trimmer_failure_time,trimmer_failure_time_output) #time trimmer 
-#
-    campaign_output=io.write_campaign(operation_time,total_campaign,campaign_output) #campaign
+    #time system 
+    #time melter 
+    #time trimmer 
 #
     melter_initiation_counter_output=io.write_process_counter(operation_time,melter_initiation_counter,melter_initiation_counter_output) #process counter melter
     trimmer_initiation_counter_output=io.write_process_counter(operation_time,trimmer_initiation_counter,trimmer_initiation_counter_output) #process counter trimmer
@@ -687,33 +671,31 @@ while(operation_time<=facility_operation):
 #
 # edge transition: KMP2 to product storage
 #
-    operation_time,melter_failure_time,trimmer_failure_time=edge_trans.edge_transition(facility_vars,melter_failure_time,trimmer_failure_time,edge_transition[5],log_file)
+    edge_trans.edge_transition(facility_vars,edge_transition[5])
 #
 # failure distribution calculations
-    melter_probability_density_function_evaluate,melter_unreliability_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,melter_failure_time,weibull_beta_melter,weibull_eta_melter) #failure melter
-    trimmer_probability_density_function_evaluate,trimmer_unreliability_function_evaluate,trimmer_probability_density_function_failure_evaluate,trimmer_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,trimmer_failure_time,weibull_beta_trimmer,weibull_eta_trimmer) #failure trimmer
+    #failure melter
+    #failure trimmer
 #
 # data writing
-    system_time_output=io.write_system_time(operation_time,system_time_output) #time system 
-    melter_failure_time_output=io.write_system_time(melter_failure_time,melter_failure_time_output) #time melter 
-    trimmer_failure_time_output=io.write_system_time(trimmer_failure_time,trimmer_failure_time_output) #time trimmer 
+    #time system 
+    #time melter 
+    #time trimmer 
 #
 #######
 #
 # product storage and final processing
 #
-    operation_time,melter_failure_time,trimmer_failure_time,true_processed_inventory,expected_processed_inventory,measured_processed_inventory=final_prep.product_storage(facility_vars,melter_failure_time,trimmer_failure_time,product_preparation_time,true_weight,expected_weight,measured_weight,true_processed_inventory,expected_processed_inventory,measured_processed_inventory,log_file)
+    true_processed_inventory,expected_processed_inventory,measured_processed_inventory=final_prep.product_storage(facility_vars,product_preparation_time,true_weight,expected_weight,measured_weight,true_processed_inventory,expected_processed_inventory,measured_processed_inventory)
 #
 # failure distribution calculations
-    melter_probability_density_function_evaluate,melter_unreliability_function_evaluate,melter_probability_density_function_failure_evaluate,melter_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,melter_failure_time,weibull_beta_melter,weibull_eta_melter) #failure melter
-    trimmer_probability_density_function_evaluate,trimmer_unreliability_function_evaluate,trimmer_probability_density_function_failure_evaluate,trimmer_unreliability_function_failure_evaluate=failure_calculation.failure_distribution_calculation(operation_time,trimmer_failure_time,weibull_beta_trimmer,weibull_eta_trimmer) #failure trimmer
+    #failure melter
+    #failure trimmer
 #
 # data writing
-    system_time_output=io.write_system_time(operation_time,system_time_output) #time system 
-    melter_failure_time_output=io.write_system_time(melter_failure_time,melter_failure_time_output) #time melter 
-    trimmer_failure_time_output=io.write_system_time(trimmer_failure_time,trimmer_failure_time_output) #time trimmer 
-#
-    campaign_output=io.write_campaign(operation_time,total_campaign,campaign_output) #campaign
+    #time system 
+    #time melter 
+    #time trimmer 
 #
     melter_initiation_counter_output=io.write_process_counter(operation_time,melter_initiation_counter,melter_initiation_counter_output) #process counter melter
     trimmer_initiation_counter_output=io.write_process_counter(operation_time,trimmer_initiation_counter,trimmer_initiation_counter_output) #process counter trimmer
@@ -739,14 +721,12 @@ while(operation_time<=facility_operation):
 #######
 #
 # end of campaign inspection
-    operation_time,melter_failure_time,trimmer_failure_time,system_true_muf,system_expected_muf,system_measured_muf,system_true_mufc,system_expected_mufc,system_measured_mufc=muf.system_mass_balance(facility_vars,melter_failure_time,trimmer_failure_time,end_of_campaign_false_alarm_inspection_time,true_weight,expected_weight,measured_weight,true_storage_inventory,expected_storage_inventory,measured_storage_inventory,true_processed_inventory,expected_processed_inventory,measured_processed_inventory,true_initial_inventory,expected_initial_inventory,measured_initial_inventory,true_system_inventory,expected_system_inventory,measured_system_inventory,system_true_muf,system_expected_muf,system_measured_muf,log_file)
+    system_true_muf,system_expected_muf,system_measured_muf,system_true_mufc,system_expected_mufc,system_measured_mufc=muf.system_mass_balance(facility_vars,end_of_campaign_false_alarm_inspection_time,true_weight,expected_weight,measured_weight,true_storage_inventory,expected_storage_inventory,measured_storage_inventory,true_processed_inventory,expected_processed_inventory,measured_processed_inventory,true_initial_inventory,expected_initial_inventory,measured_initial_inventory,true_system_inventory,expected_system_inventory,measured_system_inventory,system_true_muf,system_expected_muf,system_measured_muf)
 #
 # data writing
-    system_time_output=io.write_system_time(operation_time,system_time_output) #time system 
-    melter_failure_time_output=io.write_system_time(melter_failure_time,melter_failure_time_output) #time melter 
-    trimmer_failure_time_output=io.write_system_time(trimmer_failure_time,trimmer_failure_time_output) #time trimmer 
-#
-    campaign_output=io.write_campaign(operation_time,total_campaign,campaign_output) #campaign
+    #time system 
+    #time melter 
+    #time trimmer 
 #
     melter_initiation_counter_output=io.write_process_counter(operation_time,melter_initiation_counter,melter_initiation_counter_output) #process counter melter
     trimmer_initiation_counter_output=io.write_process_counter(operation_time,trimmer_initiation_counter,trimmer_initiation_counter_output) #process counter trimmer
@@ -785,7 +765,8 @@ while(operation_time<=facility_operation):
 ####### loop back to start next campaign
 #
 # reset campaign based variables and advance campaign counter
-    total_campaign,total_batch=io.end_of_campaign(total_campaign,total_batch,log_file)
+    facility_vars.end_of_campaign()
+    total_batch = total_batch+1
     true_weight,expected_weight,measured_weight=io.reset_batch_weight()
 #
 #######
@@ -832,4 +813,4 @@ log_file.write('End facility operation')
 ########################################################################
 
 #global_vars.log_file.close()
-log_file.close()
+facility_vars.close_files()
