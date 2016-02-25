@@ -14,10 +14,11 @@
 #
 # Imports
 #
-import numpy
+import numpy as np
 
 class facility_vars_class:
-    """This class represents the entire facility.  
+    """
+    This class represents the entire facility.  
 
     Initializing this object in a script starts up the entire facility, 
     which includes a large number of initializations that are derived from the input 
@@ -60,6 +61,12 @@ class facility_vars_class:
         self.kmps_gdir=directory_paths[21]
         self.muf_gdir=directory_paths[22]
         self.equipment_failure_gdir=directory_paths[23]
+        
+        #######
+        # read input data
+        #######
+        self.facility_operation=np.loadtxt(self.process_states_dir+'/facility.operation.inp') #total operation time
+        [self.storage_buffer_process_time, self.injection_casting_process_time, self.trimming_process_time, self.product_process_time] = np.loadtxt(self.process_states_dir+'/process.operation.time.inp',usecols=[1]) #time for each vertex to process material
 
         #######
         # open files
@@ -76,6 +83,10 @@ class facility_vars_class:
     def get_dir_path(self):
 
         return(self.input_dir,self.output_dir,self.edge_transition_dir,self.failure_distribution_dir,self.failure_equipment_dir,self.kmps_dir,self.process_states_dir,self.system_false_alarm_dir,self.data_dir,self.figures_dir,self.system_odir,self.material_flow_odir,self.inventory_odir,self.false_alarm_odir,self.kmps_odir,self.muf_odir,self.equipment_failure_odir,self.system_gdir,self.material_flow_gdir,self.inventory_gdir,self.false_alarm_gdir,self.kmps_gdir,self.muf_gdir,self.equipment_failure_gdir)
+
+    def get_process_times(self):
+
+        return(self.facility_operation,self.storage_buffer_process_time,self.injection_casting_process_time,self.trimming_process_time,self.product_process_time)
 
     def end_of_campaign(self):
         self.log_file.write('Campaign %i complete \n\n'%(self.total_campaign))

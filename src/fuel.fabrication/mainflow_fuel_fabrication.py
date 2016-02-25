@@ -75,8 +75,19 @@ trimmer = trimmer_class()
 final_prep = product_storage_class()
 muf = muf_class()
 
+
+
+#######
+# Temporary assignments while I transition procedural to oo program
+#######
 operation_time = facility_vars.operation_time
 total_campaign = facility_vars.total_campaign
+
+input_dir,output_dir,edge_transition_dir,failure_distribution_dir,failure_equipment_dir,kmps_dir,process_states_dir,system_false_alarm_dir,data_dir,figures_dir,system_odir,material_flow_odir,inventory_odir,false_alarm_odir,kmps_odir,muf_odir,equipment_failure_odir,system_gdir,material_flow_gdir,inventory_gdir,false_alarm_gdir,kmps_gdir,muf_gdir,equipment_failure_gdir=facility_vars.get_dir_path()
+
+
+
+
 
 #print 'Fuel fabriction','\n\n','PREPROCESSING'
 #
@@ -87,12 +98,10 @@ simulation_dir = global_vars.simulation_dir
 log_file = facility_vars.log_file
 log_file.write('Fuel fabrication \n\nPREPROCESSING\n\n')
 #
-####### get directory paths  
-input_dir,output_dir,edge_transition_dir,failure_distribution_dir,failure_equipment_dir,kmps_dir,process_states_dir,system_false_alarm_dir,data_dir,figures_dir,system_odir,material_flow_odir,inventory_odir,false_alarm_odir,kmps_odir,muf_odir,equipment_failure_odir,system_gdir,material_flow_gdir,inventory_gdir,false_alarm_gdir,kmps_gdir,muf_gdir,equipment_failure_gdir=facility_vars.get_dir_path()
 #######
 #
 ####### read input data
-facility_operation,storage_buffer_preparation_time,injection_casting_time,slug_trimming_time,product_preparation_time=io.input_system_operation(process_states_dir) #system
+facility_operation,storage_buffer_preparation_time,injection_casting_time,slug_trimming_time,product_preparation_time=facility_vars.get_process_times() #system
 #
 batch,unprocessed_storage_inventory=io.input_storage_buffer(process_states_dir) #material flow
 #
