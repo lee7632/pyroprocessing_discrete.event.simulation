@@ -1,8 +1,7 @@
 ########################################################################
 # Malachi Tolman
 # @tolman42
-# February 2, 2016
-# v1.2
+# rev.25.February.2016
 ########################################################################
 #
 # This file contains variables that can be easily passed to every
