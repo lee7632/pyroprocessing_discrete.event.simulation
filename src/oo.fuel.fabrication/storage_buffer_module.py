@@ -31,7 +31,7 @@ class storage_buffer_class(facility_component_class):
         self.time_delay = np.loadtxt(facility.process_states_dir+'/process.operation.time.inp',usecols=[1])[0]
 
     def batch_preparation(self,facility):
-        self.write_to_log(facility,'Prepare batch in Storage Buffer for transfer: %.1f kg\n\n\n'%(self.batch_size))
+        self.write_to_log(facility,'Prepare batch in Storage Buffer for transfer: %.1f kg \n\n\n'%(self.batch_size))
         self.increment_operation_time(facility,self.time_delay)
         self.inventory = self.inventory - self.batch_size
 

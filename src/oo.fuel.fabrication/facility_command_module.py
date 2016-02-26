@@ -30,6 +30,7 @@ class facility_command_class:
         self.log_file = open(root_dir + '/log.txt','w')
         self.root_dir = root_dir
         self.subsystem = subsystem
+        self.debugger = open(root_dir + '/debugger.txt','w')
 
         #######
         # Begin Preprocessing
@@ -67,13 +68,13 @@ class facility_command_class:
         self.muf_gdir=directory_paths[22]
         self.equipment_failure_gdir=directory_paths[23]
        
-        '''
         #######
         # read input data
         #######
-        self.facility_operation=np.loadtxt(self.process_states_dir+'/facility.operation.inp') #total operation time
-        [self.storage_buffer_process_time, self.injection_casting_process_time, self.trimming_process_time, self.product_process_time] = np.loadtxt(self.process_states_dir+'/process.operation.time.inp',usecols=[1]) #time for each vertex to process material
-        '''
+        self.total_operation_time=np.loadtxt(self.process_states_dir+'/facility.operation.inp')\
+                #Total time in days that the facility will run for
+        self.end_of_campaign_time_delay = np.loadtxt(self.system_false_alarm_dir+'/system.inspection.time.inp',
+                usecols=[1]) #Amount of time it takes to do end of campaign inspection
 
         #######
         # open files
@@ -96,7 +97,7 @@ class facility_command_class:
         #######
         # Log end of Preprocess
         #######
-        self.log_file.write('END PREPROCESSING\n\n\n')
+        self.log_file.write('END PREPROCESSING \n\n\n')
 
     def write_to_log(self,message):
         """
@@ -119,6 +120,12 @@ class facility_command_class:
                 self.trimming_process_time,self.product_process_time)
 
     def end_of_campaign(self,storage_buffer,kmp0,kmp2,product_storage):
+        """
+        This method brings in the relevant information from the facility components
+        in order to calculate relevant values at the end of a campaign.  Such
+        is outputted to the log file.
+        """
+        self.operation_time = self.operation_time + self.end_of_campaign_time_delay
         self.write_to_log('Facility inspection \nOperation time %.4f (d) \n\n'%(self.operation_time))
         ######
         # Calculate and output storage buffer inventory (measured comes from kmp0) 
@@ -166,4 +173,5 @@ class facility_command_class:
         self.log_file.close()
         self.system_time_output.close()
         self.campaign_output.close()
+        self.debugger.close()
 

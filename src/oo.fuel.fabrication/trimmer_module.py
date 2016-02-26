@@ -23,5 +23,5 @@ class trimmer_class(facility_component_class):
         self.write_to_log(facility,'Slug trimming\n')
         self.increment_operation_time(facility,self.time_delay)
         
-        self.write_to_log(facility,'Failure status: False \n\n\n')
+        self.write_to_log(facility,'Failure status:  False \n\n\n')
 

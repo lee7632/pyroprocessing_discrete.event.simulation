@@ -58,5 +58,5 @@ class melter_class(facility_component_class):
         ######
         # Log progress 
         ######
-        self.write_to_log(facility,'Failure status: False \n\n\n')
+        self.write_to_log(facility,'Failure status:  False \n\n\n')
 

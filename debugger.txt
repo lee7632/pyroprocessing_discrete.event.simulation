@@ -1,0 +1,99 @@
+Product storage processed batch
+True weight is 19.431583 
+expected weight is 19.750000 
+true campaign inventory is 19.431583 
+expected campaign inventory is 19.750000 
+true cumulative inventory is 19.431583
+expected cumulative inventory is 19.750000
+
+
+Product storage processed batch
+True weight is 19.007023 
+expected weight is 19.750000 
+true campaign inventory is 19.007023 
+expected campaign inventory is 19.750000 
+true cumulative inventory is 38.438605
+expected cumulative inventory is 39.500000
+
+
+Product storage processed batch
+True weight is 19.465340 
+expected weight is 19.750000 
+true campaign inventory is 19.465340 
+expected campaign inventory is 19.750000 
+true cumulative inventory is 57.903945
+expected cumulative inventory is 59.250000
+
+
+Product storage processed batch
+True weight is 19.356781 
+expected weight is 19.750000 
+true campaign inventory is 19.356781 
+expected campaign inventory is 19.750000 
+true cumulative inventory is 77.260726
+expected cumulative inventory is 79.000000
+
+
+Product storage processed batch
+True weight is 19.356111 
+expected weight is 19.750000 
+true campaign inventory is 19.356111 
+expected campaign inventory is 19.750000 
+true cumulative inventory is 96.616837
+expected cumulative inventory is 98.750000
+
+
+Product storage processed batch
+True weight is 19.101028 
+expected weight is 19.750000 
+true campaign inventory is 19.101028 
+expected campaign inventory is 19.750000 
+true cumulative inventory is 115.717865
+expected cumulative inventory is 118.500000
+
+
+Product storage processed batch
+True weight is 19.470240 
+expected weight is 19.750000 
+true campaign inventory is 19.470240 
+expected campaign inventory is 19.750000 
+true cumulative inventory is 135.188105
+expected cumulative inventory is 138.250000
+
+
+Product storage processed batch
+True weight is 19.438672 
+expected weight is 19.750000 
+true campaign inventory is 19.438672 
+expected campaign inventory is 19.750000 
+true cumulative inventory is 154.626777
+expected cumulative inventory is 158.000000
+
+
+Product storage processed batch
+True weight is 19.481719 
+expected weight is 19.750000 
+true campaign inventory is 19.481719 
+expected campaign inventory is 19.750000 
+true cumulative inventory is 174.108496
+expected cumulative inventory is 177.750000
+
+
+Product storage processed batch
+True weight is 19.148780 
+expected weight is 19.750000 
+true campaign inventory is 19.148780 
+expected campaign inventory is 19.750000 
+true cumulative inventory is 193.257276
+expected cumulative inventory is 197.500000
+
+
+Product storage processed batch
+True weight is 19.127312 
+expected weight is 19.750000 
+true campaign inventory is 19.127312 
+expected campaign inventory is 19.750000 
+true cumulative inventory is 212.384588
+expected cumulative inventory is 217.250000
+
+

@@ -39,7 +39,8 @@ unit_log_file = open(global_vars.root_dir+'/src/oo.fuel.fabrication/Unit_Test_Do
 
 n = 1
 did_fail = False
-line_test_array = [1,3,5,7,9,11,13,15,16,23,24,28,29,83,84,185,187,188,716,717,729,731,732,734,735,739,742,743,751,755,757]
+line_test_array = [1,3,4,7,10,13,16,17,18,19,23,26,27,30,33,34,36,40,43,44,47,50,51,53,64,66,67,71,75,79,83, \
+        86,89,229,241,245,294,296,874,876,877,881,884,855,889,893]
 
 with open(global_vars.root_dir+'/log.txt') as new_log_file:
     for test_line in new_log_file:
