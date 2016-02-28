@@ -1,14 +1,10 @@
 ########################################################################
 # Malachi Tolman
 # @tolman42
-# rev.25.February.2016
+# rev.27.February.2016
 ########################################################################
 #
-# This class will contain the variables associated with the entire
-# facility.  It will get declared first, and then will simply get passed
-# into each method that needs to act on any given variable.  It will act
-# as a package that gets passed around with the "batch" to help keep track
-# of a given number of state variables.
+# See class description
 #
 ########################################################################
 #
@@ -19,6 +15,12 @@ import numpy as np
 class facility_command_class:
     """
     This class represents the entire facility.  
+
+    This class will contain the variables associated with the entire
+    facility.  It will get declared first, and then will simply get passed
+    into each method that needs to act on any given variable.  It will act
+    as a package that gets passed around with the "batch" to help keep track
+    of a given number of state variables.
 
     Initializing this object in a script starts up the entire facility, 
     which includes a large number of initializations that are derived from the input 
@@ -105,26 +107,20 @@ class facility_command_class:
         """
         self.log_file.write(message)
 
-    def get_dir_path(self):
-
-        return(self.input_dir,self.output_dir,self.edge_transition_dir,self.failure_distribution_dir,
-                self.failure_equipment_dir,self.kmps_dir,self.process_states_dir,self.system_false_alarm_dir,
-                self.data_dir,self.figures_dir,self.system_odir,self.material_flow_odir,self.inventory_odir,
-                self.false_alarm_odir,self.kmps_odir,self.muf_odir,self.equipment_failure_odir,self.system_gdir,
-                self.material_flow_gdir,self.inventory_gdir,self.false_alarm_gdir,self.kmps_gdir,self.muf_gdir,
-                self.equipment_failure_gdir)
-
-    def get_process_times(self):
-
-        return(self.facility_operation,self.storage_buffer_process_time,self.injection_casting_process_time,
-                self.trimming_process_time,self.product_process_time)
-
-    def end_of_campaign(self,storage_buffer,kmp0,kmp2,product_storage):
+    def end_of_campaign(self,storage_buffer,fuel_fabricator,product_storage):
         """
         This method brings in the relevant information from the facility components
         in order to calculate relevant values at the end of a campaign.  Such
         is outputted to the log file.
         """
+        #######
+        # Reassign fuel_fabricator components for coding convenience 
+        #######
+        kmp0 = fuel_fabricator.kmp0
+        kmp2 = fuel_fabricator.kmp2
+        #######
+        # Account for inspection time and begin logging 
+        #######
         self.operation_time = self.operation_time + self.end_of_campaign_time_delay
         self.write_to_log('Facility inspection \nOperation time %.4f (d) \n\n'%(self.operation_time))
         ######
@@ -170,6 +166,9 @@ class facility_command_class:
         self.total_campaign=self.total_campaign+1
 
     def close_files(self):
+        """
+        Close the files used for logging events and data output.
+        """
         self.log_file.close()
         self.system_time_output.close()
         self.campaign_output.close()

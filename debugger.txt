@@ -1,99 +1,66 @@
-Product storage processed batch
-True weight is 19.431583 
-expected weight is 19.750000 
-true campaign inventory is 19.431583 
-expected campaign inventory is 19.750000 
-true cumulative inventory is 19.431583
-expected cumulative inventory is 19.750000
+time to calc is 0.437400 
+fail rate is 30.000000 
+cdf is 0.014474 
+fail check is 0.194454 
 
 
-Product storage processed batch
-True weight is 19.007023 
-expected weight is 19.750000 
-true campaign inventory is 19.007023 
-expected campaign inventory is 19.750000 
-true cumulative inventory is 38.438605
-expected cumulative inventory is 39.500000
+time to calc is 1.374600 
+fail rate is 30.000000 
+cdf is 0.044786 
+fail check is 0.215706 
 
 
-Product storage processed batch
-True weight is 19.465340 
-expected weight is 19.750000 
-true campaign inventory is 19.465340 
-expected campaign inventory is 19.750000 
-true cumulative inventory is 57.903945
-expected cumulative inventory is 59.250000
+time to calc is 2.311800 
+fail rate is 30.000000 
+cdf is 0.074166 
+fail check is 0.161975 
 
 
-Product storage processed batch
-True weight is 19.356781 
-expected weight is 19.750000 
-true campaign inventory is 19.356781 
-expected campaign inventory is 19.750000 
-true cumulative inventory is 77.260726
-expected cumulative inventory is 79.000000
+time to calc is 3.249000 
+fail rate is 30.000000 
+cdf is 0.102642 
+fail check is 0.052846 
 
 
-Product storage processed batch
-True weight is 19.356111 
-expected weight is 19.750000 
-true campaign inventory is 19.356111 
-expected campaign inventory is 19.750000 
-true cumulative inventory is 96.616837
-expected cumulative inventory is 98.750000
+time to calc is 0.937200 
+fail rate is 30.000000 
+cdf is 0.030757 
+fail check is 0.926619 
 
 
-Product storage processed batch
-True weight is 19.101028 
-expected weight is 19.750000 
-true campaign inventory is 19.101028 
-expected campaign inventory is 19.750000 
-true cumulative inventory is 115.717865
-expected cumulative inventory is 118.500000
+time to calc is 1.874400 
+fail rate is 30.000000 
+cdf is 0.060568 
+fail check is 0.826499 
 
 
-Product storage processed batch
-True weight is 19.470240 
-expected weight is 19.750000 
-true campaign inventory is 19.470240 
-expected campaign inventory is 19.750000 
-true cumulative inventory is 135.188105
-expected cumulative inventory is 138.250000
+time to calc is 2.811600 
+fail rate is 30.000000 
+cdf is 0.089462 
+fail check is 0.112238 
 
 
-Product storage processed batch
-True weight is 19.438672 
-expected weight is 19.750000 
-true campaign inventory is 19.438672 
-expected campaign inventory is 19.750000 
-true cumulative inventory is 154.626777
-expected cumulative inventory is 158.000000
+time to calc is 3.748800 
+fail rate is 30.000000 
+cdf is 0.117468 
+fail check is 0.144030 
 
 
-Product storage processed batch
-True weight is 19.481719 
-expected weight is 19.750000 
-true campaign inventory is 19.481719 
-expected campaign inventory is 19.750000 
-true cumulative inventory is 174.108496
-expected cumulative inventory is 177.750000
+time to calc is 4.686000 
+fail rate is 30.000000 
+cdf is 0.144612 
+fail check is 0.445316 
 
 
-Product storage processed batch
-True weight is 19.148780 
-expected weight is 19.750000 
-true campaign inventory is 19.148780 
-expected campaign inventory is 19.750000 
-true cumulative inventory is 193.257276
-expected cumulative inventory is 197.500000
+time to calc is 5.623200 
+fail rate is 30.000000 
+cdf is 0.170921 
+fail check is 0.706922 
 
 
-Product storage processed batch
-True weight is 19.127312 
-expected weight is 19.750000 
-true campaign inventory is 19.127312 
-expected campaign inventory is 19.750000 
-true cumulative inventory is 212.384588
-expected cumulative inventory is 217.250000
+time to calc is 6.560400 
+fail rate is 30.000000 
+cdf is 0.196421 
+fail check is 0.788716 
 
 
