@@ -1,66 +1,136 @@
-time to calc is 0.437400 
-fail rate is 30.000000 
-cdf is 0.014474 
-fail check is 0.194454 
+About to melt
+expected batch weight is 20.000000
+Melted batch at campaign 1
+heel true weight is 0.7724
+
+Successful melting
+expected batch weight is 19.750000
+Product storage processed batch at campaign 1
+last kmp expected weight is 19.750000
+new cumulative expected weight is 19.750000
 
 
-time to calc is 1.374600 
-fail rate is 30.000000 
-cdf is 0.044786 
-fail check is 0.215706 
+
+About to melt
+expected batch weight is 20.000000
+Melted batch at campaign 2
+heel true weight is 1.7183
+
+Successful melting
+expected batch weight is 19.750000
+Product storage processed batch at campaign 2
+last kmp expected weight is 19.750000
+new cumulative expected weight is 39.500000
 
 
-time to calc is 2.311800 
-fail rate is 30.000000 
-cdf is 0.074166 
-fail check is 0.161975 
+
+About to melt
+expected batch weight is 20.000000
+Melted batch at campaign 3
+heel true weight is 2.6811
+
+Successful melting
+expected batch weight is 19.750000
+Product storage processed batch at campaign 3
+last kmp expected weight is 19.750000
+new cumulative expected weight is 59.250000
 
 
-time to calc is 3.249000 
-fail rate is 30.000000 
-cdf is 0.102642 
-fail check is 0.052846 
+
+About to melt
+expected batch weight is 20.000000
+Melted batch at campaign 4
+heel true weight is 3.5807
+
+Successful melting
+expected batch weight is 19.750000
+Product storage processed batch at campaign 4
+last kmp expected weight is 19.750000
+new cumulative expected weight is 79.000000
 
 
-time to calc is 0.937200 
-fail rate is 30.000000 
-cdf is 0.030757 
-fail check is 0.926619 
+
+About to melt
+expected batch weight is 20.000000
+Melted batch at campaign 5
+heel true weight is 4.5530
+
+Successful melting
+expected batch weight is 19.750000
+Product storage processed batch at campaign 5
+last kmp expected weight is 19.750000
+new cumulative expected weight is 98.750000
 
 
-time to calc is 1.874400 
-fail rate is 30.000000 
-cdf is 0.060568 
-fail check is 0.826499 
+
+About to melt
+expected batch weight is 20.000000
+Melted batch at campaign 6
+heel true weight is 5.4402
+
+Successful melting
+expected batch weight is 19.750000
+Product storage processed batch at campaign 6
+last kmp expected weight is 19.750000
+new cumulative expected weight is 118.500000
 
 
-time to calc is 2.811600 
-fail rate is 30.000000 
-cdf is 0.089462 
-fail check is 0.112238 
+
+About to melt
+expected batch weight is 20.000000
+Melted batch at campaign 7
+heel true weight is 6.2486
+
+Successful melting
+expected batch weight is 19.750000
+Product storage processed batch at campaign 7
+last kmp expected weight is 19.750000
+new cumulative expected weight is 138.250000
 
 
-time to calc is 3.748800 
-fail rate is 30.000000 
-cdf is 0.117468 
-fail check is 0.144030 
+
+About to melt
+expected batch weight is 20.000000
+Melted batch at campaign 8
+heel true weight is 6.9671
+
+Successful melting
+expected batch weight is 19.750000
+Product storage processed batch at campaign 8
+last kmp expected weight is 19.750000
+new cumulative expected weight is 158.000000
 
 
-time to calc is 4.686000 
-fail rate is 30.000000 
-cdf is 0.144612 
-fail check is 0.445316 
+
+About to melt
+expected batch weight is 20.000000
+Melter failed
+expbw is 20.000000
+Recycled batch
+expbw is 22.000000
+Melted batch at campaign 9
+heel true weight is 0.7851
+
+melted in fail routine
+expbw is 21.750000
+Successful melting
+expected batch weight is 21.750000
+Product storage processed batch at campaign 9
+last kmp expected weight is 21.750000
+new cumulative expected weight is 179.750000
 
 
-time to calc is 5.623200 
-fail rate is 30.000000 
-cdf is 0.170921 
-fail check is 0.706922 
 
+About to melt
+expected batch weight is 20.000000
+Melted batch at campaign 10
+heel true weight is 1.6117
 
-time to calc is 6.560400 
-fail rate is 30.000000 
-cdf is 0.196421 
-fail check is 0.788716 
+Successful melting
+expected batch weight is 19.750000
+Product storage processed batch at campaign 10
+last kmp expected weight is 19.750000
+new cumulative expected weight is 199.500000
+
 
 

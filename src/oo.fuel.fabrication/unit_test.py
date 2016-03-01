@@ -1,7 +1,7 @@
 ########################################################################
 # Malachi Tolman
 # @tolman42
-# rev.25.February.2016
+# rev.29.February.2016
 #
 ########################################################################
 #
@@ -18,9 +18,8 @@
 # for those inputs, and then save the log file as "unit_test_log.txt"
 # under the "Unit_Test_Docs" folder in the source code.
 #
-# As of now, this only checks a few lines, since the whole file can't be
-# compared due to the random distribution.  I could go in an fix the 
-# seed, but I'm going with this solution for now.
+# Notice that for now, this is based off of setting the pseudo-random
+# seed to "0" in mainflow.
 ########################################################################
 #
 # Imports
@@ -39,13 +38,13 @@ unit_log_file = open(global_vars.root_dir+'/src/oo.fuel.fabrication/Unit_Test_Do
 
 n = 1
 did_fail = False
-line_test_array = [1,3,4,7,10,13,16,17,18,19,23,26,27,30,33,34,36,40,43,44,47,50,51,53,64,66,67,71,75,79,83, \
-        86,89,229,241,245,294,296,874,876,877,881,884,855,889,893]
+#line_test_array = [1,3,4,7,10,13,16,17,18,19,23,26,27,30,33,34,36,40,43,44,47,50,51,53,64,66,67,71,75,79,83, \
+        #86,89,229,241,245,294,296,874,876,877,881,884,855,889,893]
 
 with open(global_vars.root_dir+'/log.txt') as new_log_file:
     for test_line in new_log_file:
         unit_line = unit_log_file.readline()
-        if test_line != unit_line and n in line_test_array:
+        if test_line != unit_line:
             print 'difference in log files in line %i'%(n)
             print 'Unit test log file reads\n%s'%(unit_line)
             print 'Your log file reads\n%s\n'%(test_line)

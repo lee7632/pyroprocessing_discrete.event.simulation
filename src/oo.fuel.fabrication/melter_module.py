@@ -1,7 +1,7 @@
 ########################################################################
 # Malachi Tolman
 # @tolman42
-# rev.27.February.2016
+# rev.29.February.2016
 ########################################################################
 #
 # See class description
@@ -32,81 +32,77 @@ class melter_class(facility_component_class):
     """
 
     def __init__(self,facility):
-        self.expected_batch_loss = np.loadtxt(facility.process_states_dir+'/melter.loss.fraction.inp',usecols=[1])[0]
         self.batch_loss_bounds = np.loadtxt(facility.process_states_dir+'/melter.loss.fraction.inp',usecols=[1])[1:3] #upper bound and lower bound of the true material loss
-        self.time_delay = np.loadtxt(facility.process_states_dir+'/process.operation.time.inp',usecols=[1])[1] \
+        self.process_time_delay = np.loadtxt(facility.process_states_dir+ \
+                '/process.operation.time.inp',usecols=[1])[1] \
                 #amount of time it takes to process the batch uninterrupted
-        self.heel = batch_class(0,0)
+        self.heel = batch_class(0)
         self.failure_rate = np.loadtxt(facility.failure_equipment_dir+'/melter.failure.data.inp',usecols=[1]) \
                 #how often the melter is expected to fail (actual time selected from a weibull distribution
-        self.maintenance_time = np.loadtxt(facility.failure_equipment_dir+'/melter.failure.data.inp',usecols=[2]) \
+        self.maintenance_time_delay = np.loadtxt(facility.failure_equipment_dir+ \
+                '/melter.failure.data.inp',usecols=[2]) \
                 #How long it takes to repair the melter after a failure
-        self.cleaning_time = np.loadtxt(facility.failure_equipment_dir+'/melter.failure.data.inp',usecols=[2]) \
+        self.cleaning_time_delay = np.loadtxt(facility.failure_equipment_dir+ \
+                '/melter.failure.data.inp',usecols=[2]) \
                 #Amount of time it takes to remove the heel from the melter
         self.time_of_last_failure = 0
 
-    def process_batch(self,facility,batch):
+    def process_batch(self,facility,fuel_fabricator,batch):
+        """
+        The melter looses some of the SNM during this process.  Such is selected from a uniform distribution
+        dictated by the bounds from the input file.
+        """
         self.write_to_log(facility,'Alloy melting\n')
-        self.increment_operation_time(facility,self.time_delay)
-        
-        ######
-        # Calculate and assign true losses 
-        ######
-        true_batch_loss = (self.batch_loss_bounds[0] - self.batch_loss_bounds[1]) * \
-                np.random.random_sample() + self.batch_loss_bounds[0]
-        batch.true_weight = batch.true_weight - true_batch_loss
-        ######
-        # Assign expected losses 
-        ######
-        batch.expected_weight = batch.expected_weight - self.expected_batch_loss
-        #######
-        # Everything lost in batch is accumulated in the heel 
-        #######
-        self.heel.add_weight(true_batch_loss,self.expected_batch_loss)
-
+        self.increment_operation_time(facility,self.process_time_delay)
+         
         did_fail = self.check_equipment_failure(facility)
-
-        ######
-        # Log progress 
-        ######
         if did_fail:
             self.write_to_log(facility,'Failure status:  True \n\n\n')
         else:
-            self.write_to_log(facility,'Failure status:  True \n\n\n')
+            self.write_to_log(facility,'Failure status:  False \n\n\n')
+            ######
+            # Calculate and assign weight losses 
+            ######
+            true_batch_loss = (self.batch_loss_bounds[0] - self.batch_loss_bounds[1]) * \
+                    np.random.random_sample() + self.batch_loss_bounds[0]
+            batch.weight = batch.weight - true_batch_loss
+            #######
+            # Everything lost in batch is accumulated in the heel 
+            #######
+            self.heel.add_weight(true_batch_loss)
+            self.write_to_debug(facility,
+                    'Melted batch at campaign %i\nheel true weight is %.4f\n\n' \
+                            %(facility.total_campaign, self.heel.weight))
+            #######
+            # The fuel fabricator knows each time the melter succesfully processes a batch and accounts
+            # for such in its records to be passed along to the KMP's.
+            #######
+            fuel_fabricator.expected_batch_weight = fuel_fabricator.expected_batch_weight - \
+                    fuel_fabricator.expected_melter_loss
+            fuel_fabricator.expected_heel_weight = fuel_fabricator.expected_heel_weight + \
+                    fuel_fabricator.expected_melter_loss
 
         return did_fail
 
-
-    def check_equipment_failure(self,facility):
+    def clean_heel(self,facility):
         """
-        This method calculates the probability of an equipment failure by running the time through a cumulative
-        distribution function from the Weibull distribution.
-
-        Currently, beta (or k, depeding on who's syntax you use) is set to be 1.  That is the value
-        used when the actual failure distribution is unknown, and then eta (or lambda) represents a general
-        guess of the rate of failure
-
-        Whether or not an actual failure occurs is determined by whether or not the calculated probability is 
-        greater than a randomly selected number between 0-1 from a uniform distribution.
+        The accumulated SNM leftover from all previous campaigns (the heel) is cleaed out and returned.
         """
+        self.write_to_log(facility,'Cleaning the heel\n\n')
+        self.increment_operation_time(facility,self.cleaning_time_delay)
         #######
-        # Initialize the boolean 
+        # Create new batch instance, because the assignment variable only copies the pointer, not the 
+        # object itself.
         #######
-        did_fail = False
-        #######
-        # The time used to calculate the probability is the time that has passed since the last failure. 
-        #######
-        time = facility.operation_time - self.time_of_last_failure
-        #######
-        # The cumulative distribution function caclulated according to time 
-        #######
-        cdf = 1 - np.exp(-time / self.failure_rate)
-        fail_check = np.random.rand()
-        self.write_to_debug(facility,'time to calc is %f \nfail rate is %f \ncdf is %f \nfail check is %f \n\n\n' \
-                %(time, self.failure_rate,cdf,fail_check))
-        if cdf > fail_check:
-            did_fail = True
-            self.time_of_last_failure = facility.operation_time
+        cleaned_out_heel = batch_class(self.heel.weight) 
+        self.heel.weight = 0
 
-        return did_fail
+        return cleaned_out_heel 
+
+    def repair(self,facility):
+        """
+        Repair and maintain the melter after a failure has occurred.
+        """
+        self.write_to_log(facility,'Repairing melter\n\n')
+        self.increment_operation_time(facility,self.maintenance_time_delay)
 

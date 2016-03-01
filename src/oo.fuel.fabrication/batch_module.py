@@ -17,10 +17,8 @@ class batch_class:
     up over time.
     """
 
-    def __init__(self,true_weight,expected_weight):
-        self.true_weight = true_weight
-        self.expected_weight = expected_weight
+    def __init__(self,weight):
+        self.weight = weight
 
-    def add_weight(self,true_weight_2add,expected_weight_2add):
-        self.true_weight = self.true_weight + true_weight_2add
-        self.expected_weight = self.expected_weight + expected_weight_2add
+    def add_weight(self,weight_2add):
+        self.weight = self.weight + weight_2add

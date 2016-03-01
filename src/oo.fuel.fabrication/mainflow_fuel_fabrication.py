@@ -31,6 +31,8 @@ from edge_transition_module import edge_transition_class
 from fuel_fabricator_module import fuel_fabricator_class
 from product_storage_module import product_storage_class
 
+np.random.seed(0)
+
 ######## 
 # initialize objects to be used
 ######## 
@@ -52,7 +54,7 @@ while facility.operation_time <= facility.total_operation_time:
     edge.edge_transition(facility)
     fuel_fabricator.process_batch(facility,batch)
     edge.edge_transition(facility)
-    product_storage.process_batch(facility,batch)
-    facility.end_of_campaign(storage_buffer,fuel_fabricator,product_storage)
+    product_storage.process_batch(facility,fuel_fabricator.kmp[2],batch)
+    facility.end_of_campaign(storage_buffer,fuel_fabricator.kmp,product_storage)
     
 facility.close_files()

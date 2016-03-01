@@ -13,7 +13,7 @@
 #
 # Imports
 #
-import numpy
+import numpy as np
 
 class facility_component_class:
     """
@@ -41,4 +41,43 @@ class facility_component_class:
         facility.system_time_output.write('%.4f\n'%(facility.operation_time))
         facility.campaign_output.write('%.4f\t%i\n'%(facility.operation_time,facility.total_campaign))
         #print 'operation time is now %.4f\n\n'%(facility.operation_time)
+
+    def check_equipment_failure(self,facility):
+        """
+        This method calculates the probability of an equipment failure by running the time through a cumulative
+        distribution function from the Weibull distribution.
+
+        Currently, beta (or k, depeding on who's syntax you use) is set to be 1.  That is the value
+        used when the actual failure distribution is unknown, and then eta (or lambda) represents a general
+        guess of the rate of failure
+
+        Whether or not an actual failure occurs is determined by whether or not the calculated probability is 
+        greater than a randomly selected number between 0-1 from a uniform distribution.
+
         
+        *************DEVELOPER NOTES******************
+
+        Any object that calls this method will need the attributes time_of_last_failure
+        and failure_rate.
+        """
+        #######
+        # Initialize the boolean 
+        #######
+        did_fail = False
+        #######
+        # The time used to calculate the probability is the time that has passed since the last failure. 
+        #######
+        time = facility.operation_time - self.time_of_last_failure
+        #######
+        # The cumulative distribution function caclulated according to time 
+        #######
+        cdf = 1 - np.exp(-time / self.failure_rate)
+        fail_check = np.random.rand()
+        #self.write_to_debug(facility,'time to calc is %f \nfail rate is %f \ncdf is %f \nfail check is %f \n\n\n' \
+                #%(time, self.failure_rate,cdf,fail_check))
+        if cdf > fail_check:
+            did_fail = True
+            self.time_of_last_failure = facility.operation_time
+
+        return did_fail
+    

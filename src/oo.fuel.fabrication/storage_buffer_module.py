@@ -35,6 +35,6 @@ class storage_buffer_class(facility_component_class):
         self.increment_operation_time(facility,self.time_delay)
         self.inventory = self.inventory - self.batch_size
 
-        return batch_class(self.batch_size,self.batch_size)
+        return batch_class(self.batch_size)
         
 
