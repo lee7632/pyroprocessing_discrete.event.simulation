@@ -14,13 +14,35 @@
 # Imports
 #
 import numpy as np
+from expected_weight_module import expected_weight_class
 
 class facility_component_class:
     """
     This class will get inherited by most other classes used in fuel fabrication.
+
+    All objects that inherit this will need to initialize this object as well with the initial amount
+    of SNM weight the object is going to initially hold (this should almost always start off as zero) and
+    a short description of the component (i.e. "fuel fabricator", "melter", "storage buffer", etc.)
+
+    Variables:
+
+    Object type = a string describing the object type.  Can be either "manager", "storage", "kmp", or "processor".
+    Other methods utilize this in conditional statements.
     """
 
+    def __init__(self, expected_total_weight, expected_batch_weight, expected_residual_weight, 
+            description, object_type):
+        self.expected_weight = expected_weight_class(expected_total_weight, 
+                expected_batch_weight, expected_residual_weight) \
+                        #Class that keeps track of and has methods for the expected weight.  See expected weight \
+                        #class description
+        self.description = description
+        self.object_type = object_type
+
     def write_to_log(self,facility,message):
+        """
+        Write a message to the log file carried by the facility
+        """
         facility.log_file.write(message)
 
     def write_to_debug(self,facility,message):
@@ -41,6 +63,12 @@ class facility_component_class:
         facility.system_time_output.write('%.4f\n'%(facility.operation_time))
         facility.campaign_output.write('%.4f\t%i\n'%(facility.operation_time,facility.total_campaign))
         #print 'operation time is now %.4f\n\n'%(facility.operation_time)
+
+    def add_expected_weight(self,weight_added):
+        """
+        This method is to help streamline the expected weight
+        """
+        self.expected_weight = self.expected_weight + weight_added
 
     def check_equipment_failure(self,facility):
         """

@@ -118,6 +118,16 @@ class facility_command_class:
         #######
         self.operation_time = self.operation_time + self.end_of_campaign_time_delay
         self.write_to_log('Facility inspection \nOperation time %.4f (d) \n\n'%(self.operation_time))
+
+
+
+        self.write_to_log('True processed inventory %.4f (kg) \nExpected processed inventory %.4f (kg) \nMeasured processed inventory %.4f (kg) \n\n'\
+                %(product_storage.inventory, 
+                    product_storage.expected_weight.total_weight, product_storage.measured_inventory)) 
+        
+
+
+        '''
         ######
         # Calculate and output storage buffer inventory (measured comes from kmp0) 
         ######
@@ -157,8 +167,10 @@ class facility_command_class:
                     self.initial_inventory - storage_buffer.inventory - \
                             product_storage.expected_cumulative_inventory,
                     kmp[0].cumulative_weight - kmp[2].cumulative_weight))
+        '''
         self.write_to_log('Campaign %i complete \n\n\n'%(self.total_campaign))
         self.total_campaign=self.total_campaign+1
+
 
     def close_files(self):
         """

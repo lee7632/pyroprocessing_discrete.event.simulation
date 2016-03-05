@@ -24,6 +24,7 @@ class trimmer_class(facility_component_class):
 
     def __init__(self,facility):
         self.time_delay = np.loadtxt(facility.process_states_dir+'/process.operation.time.inp',usecols=[1])[2]
+        facility_component_class.__init__(self, 0, 0, 0, "trimmer", "processor")
 
     def process_batch(self,facility,batch):
         """

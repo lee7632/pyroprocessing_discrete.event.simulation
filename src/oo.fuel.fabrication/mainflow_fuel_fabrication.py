@@ -30,6 +30,7 @@ from storage_buffer_module import storage_buffer_class
 from edge_transition_module import edge_transition_class
 from fuel_fabricator_module import fuel_fabricator_class
 from product_storage_module import product_storage_class
+from key_measurement_point_module import key_measurement_point_class as kmp_class
 
 np.random.seed(0)
 
@@ -41,6 +42,7 @@ storage_buffer = storage_buffer_class(facility)
 edge = edge_transition_class(facility,0)
 fuel_fabricator = fuel_fabricator_class(facility)
 product_storage = product_storage_class(facility)
+kmp2 = kmp_class(facility,2) 
 
 
 ######
@@ -51,9 +53,11 @@ while facility.operation_time <= facility.total_operation_time:
     facility.write_to_log('Starting campaign: %i at time:  %.4f  days \n\n'%(facility.total_campaign, facility.operation_time))
     
     batch = storage_buffer.batch_preparation(facility)
-    edge.edge_transition(facility)
+    edge.edge_transition(facility,storage_buffer,fuel_fabricator)
     fuel_fabricator.process_batch(facility,batch)
-    edge.edge_transition(facility)
+    edge.edge_transition(facility,fuel_fabricator,kmp2)
+    kmp2.process_batch(facility,batch)
+    edge.edge_transition(facility,kmp2,product_storage)
     product_storage.process_batch(facility,fuel_fabricator.kmp[2],batch)
     facility.end_of_campaign(storage_buffer,fuel_fabricator.kmp,product_storage)
     

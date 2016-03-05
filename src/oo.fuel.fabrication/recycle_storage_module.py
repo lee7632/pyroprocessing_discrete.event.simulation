@@ -24,19 +24,28 @@ class recycle_storage_class(facility_component_class):
 
     def __init__(self,facility):
         self.time_delay = np.loadtxt(facility.process_states_dir+'/process.operation.time.inp',usecols=[1])[3]
+        self.inventory = 0
+        self.measured_inventory = 0
+        facility_component_class.__init__(self, 0, 0, 0, "recycle storage", "storage")
 
-    def process_batch(self,facility,fuel_fabricator,batch,heel):
+    def process_batch(self,facility,fuel_fabricator,batch):
         """
         See class description
         """
         self.write_to_log(facility,'Recycling batch and heel\n\n\n')
         self.increment_operation_time(facility,self.time_delay)
-        batch.add_weight(heel.weight)
-        #######
-        # The fuel fabricator monitors whether or not the recycle storage has accepted and processed materials
-        # and then accounts for such to relay the information to the KMP's.  After that, it knows the heel
-        # has been cleaned and can reset that given value.
-        #######
-        fuel_fabricator.expected_batch_weight = fuel_fabricator.expected_batch_weight + \
-                fuel_fabricator.expected_heel_weight
-        fuel_fabricator.expected_heel_weight = 0
+        batch.weight = self.inventory
+        self.expected_weight.batch_weight = self.expected_weight.residual_weight
+        self.inventory = 0
+        self.measured_inventory = 0
+        
+    def store_batch(self,facility,batch):
+        """
+        This is called whenever the recycle storage receives a batch of any size (whether a full batch itself
+        or just the heel cleaned out from the melter).  It stores the batch until it's called upon to process
+        everything it has in storage.
+        """
+        self.write_to_log(facility,'Recycle storage receiving batch \n\n\n')
+        self.increment_operation_time(facility,self.time_delay)
+        self.inventory = self.inventory + batch.weight
+        self.expected_weight.storage_batch_gain()

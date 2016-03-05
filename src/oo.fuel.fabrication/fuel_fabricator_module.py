@@ -11,6 +11,7 @@
 # Imports
 #
 ########################################################################
+import pdb
 import numpy as np
 import global_vars
 from facility_component_module import facility_component_class
@@ -56,11 +57,6 @@ class fuel_fabricator_class(facility_component_class):
         that it monitors the activities for those and accounts for such in its system.
         """
         self.new_batch_weight = np.loadtxt(facility.process_states_dir+'/batch.inp')
-        self.expected_melter_loss = np.loadtxt(facility.process_states_dir+ \
-                '/melter.loss.fraction.inp',usecols=[1])[0] \
-                #Amount of material the personnel expect the melter to lose each time it processes a batch
-        self.expected_batch_weight = 0
-        self.expected_heel_weight = 0
 
         self.edge = edge_transition_class(facility,0)
         self.kmp = []
@@ -69,7 +65,7 @@ class fuel_fabricator_class(facility_component_class):
         self.melter= melter_class(facility)
         self.trimmer = trimmer_class(facility)
         self.recycle_storage = recycle_storage_class(facility)
-
+        facility_component_class.__init__(self, 0, 0, 0, "fuel fabricator", "manager")
 
     def process_batch(self,facility,batch):
         """
@@ -78,24 +74,22 @@ class fuel_fabricator_class(facility_component_class):
         #######
         # Initialize the expected batch weight with how much weight is known to come from the storage buffer 
         #######
-        self.expected_batch_weight = self.new_batch_weight
-        self.kmp[0].process_batch(facility,batch,self.expected_batch_weight)
-        self.edge.edge_transition(facility)
+        self.edge.edge_transition(facility,self,self.kmp[0])
+        self.kmp[0].process_batch(facility,batch)
+        self.edge.edge_transition(facility,self.kmp[0],self.melter)
         #######
         # When the melter processes a batch,
         # it returns a boolean to indicate whether it
         # experienced an equpiment failure or not
         #######
-        self.write_to_debug(facility,'About to melt\nexpected batch weight is %f\n'%(self.expected_batch_weight))
-        if self.melter.process_batch(facility,self,batch):
+        if self.melter.process_batch(facility,batch):
             self.equipment_failure(facility,batch)
-        self.write_to_debug(facility,'Successful melting\nexpected batch weight is %f\n'%(self.expected_batch_weight))
-        self.edge.edge_transition(facility)
-        self.kmp[1].process_batch(facility,batch,self.expected_batch_weight)
-        self.edge.edge_transition(facility)
+        self.edge.edge_transition(facility,self.melter,self.kmp[1])
+        self.kmp[1].process_batch(facility,batch)
+        self.edge.edge_transition(facility,self.kmp[1],self.trimmer)
         self.trimmer.process_batch(facility,batch)
-        self.edge.edge_transition(facility)
-        self.kmp[2].process_batch(facility,batch,self.expected_batch_weight)
+        self.edge.edge_transition(facility,self.trimmer,self)
+        #self.kmp[2].process_batch(facility,batch,self.expected_batch_weight)
 
     def equipment_failure(self,facility,batch):
         """
@@ -105,21 +99,20 @@ class fuel_fabricator_class(facility_component_class):
         """
         did_fail = True
         while did_fail:
-            self.write_to_debug(facility,'Melter failed\nexpbw is %f\n'%(self.expected_batch_weight))
             self.write_to_log(facility,
                     'Melter failed at time %.4f, begin failure routine\n\n'%(facility.operation_time))
-            self.edge.edge_transition(facility)
-            self.kmp[3].process_batch(facility,batch,self.expected_batch_weight)
-            self.edge.edge_transition(facility)
+            self.edge.edge_transition(facility,self.melter,self.kmp[3])
+            self.kmp[3].process_batch(facility,batch)
+            self.edge.edge_transition(facility,self.kmp[3],self.recycle_storage)
+            self.recycle_storage.store_batch(facility,batch)
             heel = self.melter.clean_heel(facility)
-            self.edge.edge_transition(facility) 
-            self.kmp[3].process_batch(facility,heel,self.expected_heel_weight)
-            self.edge.edge_transition(facility)
+            self.edge.edge_transition(facility,self.melter,self.kmp[3]) 
+            self.kmp[3].process_batch(facility,heel)
+            self.edge.edge_transition(facility,self.kmp[3],self.recycle_storage)
+            self.recycle_storage.store_batch(facility,heel)
             self.melter.repair(facility)
-            self.recycle_storage.process_batch(facility,self,batch,heel)
-            self.edge.edge_transition(facility)
-            self.kmp[3].process_batch(facility,batch,self.expected_batch_weight)
-            self.edge.edge_transition(facility)
-            self.write_to_debug(facility,'Recycled batch\nexpbw is %f\n'%(self.expected_batch_weight))
-            did_fail = self.melter.process_batch(facility,self,batch)
-            self.write_to_debug(facility,'melted in fail routine\nexpbw is %f\n'%(self.expected_batch_weight))
+            self.recycle_storage.process_batch(facility,self,batch)
+            self.edge.edge_transition(facility,self.recycle_storage,self.kmp[3])
+            self.kmp[3].process_batch(facility,batch)
+            self.edge.edge_transition(facility,self.kmp[3],self.melter)
+            did_fail = self.melter.process_batch(facility,batch)

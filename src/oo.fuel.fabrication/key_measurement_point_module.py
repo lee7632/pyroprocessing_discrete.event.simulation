@@ -34,18 +34,17 @@ class key_measurement_point_class(facility_component_class):
         self.time_delay = np.loadtxt(facility.kmps_dir+'/key.measurement.points.inp',usecols=[1])[kmp_identifier]
         self.identifier = kmp_identifier
         self.measured_weight = 0
-        self.cumulative_weight = 0
-        self.expected_weight = 0
+        facility_component_class.__init__(self, 0, 0,0, "key measurement point %i"%(kmp_identifier), "kmp")
 
-    def process_batch(self,facility,batch,expected_weight):
+    def process_batch(self,facility,batch):
         """
         See class description
         """
         self.write_to_log(facility,'Measurement event at KMP: %i\n'%(self.identifier))
 
-        self.expected_weight = expected_weight
         self.measured_weight = batch.weight + self.uncertainty*np.random.randn()
-        self.cumulative_weight = self.cumulative_weight+self.measured_weight
+        #self.cumulative_weight = self.cumulative_weight+self.measured_weight
         self.increment_operation_time(facility,self.time_delay)
 
-        self.write_to_log(facility,'Operation time %.4f (d) \nTrue quantity %.4f (kg) \nExpected quantity %.4f (kg) \nMeasured quantity %.4f (kg) \n\n\n'%(facility.operation_time, batch.weight, self.expected_weight, self.measured_weight))
+        self.write_to_log(facility,'Operation time %.4f (d) \nTrue quantity %.4f (kg) \nExpected quantity %.4f (kg) \nMeasured quantity %.4f (kg) \n\n\n'\
+                %(facility.operation_time, batch.weight, self.expected_weight.batch_weight, self.measured_weight))

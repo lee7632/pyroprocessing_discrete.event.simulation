@@ -29,12 +29,16 @@ class storage_buffer_class(facility_component_class):
         self.batch_size = np.loadtxt(facility.process_states_dir+'/batch.inp')
         self.inventory = facility.initial_inventory
         self.time_delay = np.loadtxt(facility.process_states_dir+'/process.operation.time.inp',usecols=[1])[0]
+        facility_component_class.__init__(self, self.inventory, self.batch_size, 0, "storage buffer", "storage")
 
     def batch_preparation(self,facility):
         self.write_to_log(facility,'Prepare batch in Storage Buffer for transfer: %.1f kg \n\n\n'%(self.batch_size))
         self.increment_operation_time(facility,self.time_delay)
         self.inventory = self.inventory - self.batch_size
+        #######
+        # This variable must be set in order for the edge transition to function properly 
+        #######
+        self.expected_weight.batch_weight = self.batch_size
 
         return batch_class(self.batch_size)
-        
 
