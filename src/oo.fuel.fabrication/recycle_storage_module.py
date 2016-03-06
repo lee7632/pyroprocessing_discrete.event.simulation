@@ -38,6 +38,7 @@ class recycle_storage_class(facility_component_class):
         self.expected_weight.batch_weight = self.expected_weight.residual_weight
         self.inventory = 0
         self.measured_inventory = 0
+        self.expected_weight.storage_batch_loss()
         
     def store_batch(self,facility,batch):
         """
