@@ -25,8 +25,10 @@ class product_storage_class(facility_component_class):
         self.time_delay = np.loadtxt(facility.process_states_dir+'/process.operation.time.inp',usecols=[1])[3]
         facility_component_class.__init__(self, 0, 0, 0, "product storage", "storage")
 
-    def process_batch(self,facility,last_kmp,batch):
+    def process_batch(self,facility,batch):
         self.write_to_log(facility,'Processing the final product \n\n\n')
         self.increment_operation_time(facility,self.time_delay)
         self.inventory = self.inventory + batch.weight
         self.expected_weight.storage_batch_gain()
+
+    

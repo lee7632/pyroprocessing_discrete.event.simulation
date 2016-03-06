@@ -7,6 +7,7 @@
 # See class description
 #
 ########################################################################
+import pdb
 
 class expected_weight_class:
     """
@@ -16,6 +17,9 @@ class expected_weight_class:
     up the heirarchy will use an "inspect" method to gather the expected weight from each of the components
     its in charge of.
 
+    Equipment should call one of the methods found here whenever it changes or does anything significant
+    with the batch weight.
+
     Variables:
 
     total_weight = the total amount of weight the component is expecting to contain at any given point
@@ -24,15 +28,24 @@ class expected_weight_class:
 
     batch_weight = the expected weight that the batch being processed has.
 
-    residual_weight = the amount of SNM being leftover in a certain part of equipment everytime it 
-    processes a batch (ie the heel in the melter).  This is going to be used almost exclusively by
-    processes which unreliably leave a litle bit of SNM.
+    residual_weight = The amount of SNM being left in the equipment.  This applies to normal
+    processing equipment that normally leave a little bit of material behind when passing the batch,
+    and it applies to storage units who use this variable to keep track of their stored inventory (as opposed
+    to the weight of the batch being passed in or out).
     """
 
     def __init__(self,total_weight,batch_weight,residual_weight):
         self.total_weight = total_weight 
         self.batch_weight = batch_weight
         self.residual_weight = residual_weight
+
+    def update_total_weight(self):
+        """
+        Used by other methods to quickly update the total weight according to the current amount of expected
+        residual and batch weights.
+        """
+        self.total_weight = self.batch_weight + self.residual_weight
+
 
     def equipment_batch_loss(self,amount_2_lose):
         """
@@ -51,14 +64,17 @@ class expected_weight_class:
 
         Note that the storage unit will need to have set how much expected batch weight it has to subtract from.
         """
-        self.total_weight = self.total_weight - self.batch_weight
+        self.residual_weight = self.residual_weight - self.batch_weight
+        self.update_total_weight()
 
-    def update_total_weight(self):
+    def storage_batch_gain(self):
         """
-        Used by other methods to quickly update the total weight according to the current amount of expected
-        residual and batch weights.
+        Use this method whenever a storage unit obtains a batch.  It will update the expected weight accordingly
+        with respect the the expected batch weight passed in via the edge transition.
         """
-        self.total_weight = self.batch_weight + self.residual_weight
+        self.residual_weight = self.residual_weight + self.batch_weight
+        self.batch_weight = 0
+        self.update_total_weight()
 
     def batch_pass(self):
         """
@@ -80,7 +96,19 @@ class expected_weight_class:
         self.batch_weight = incoming_expected_batch_weight
         self.update_total_weight()
 
-    def storage_batch_gain(self):
-        self.residual_weight = self.residual_weight + self.batch_weight
+    def erase_expectations(self):
+        """
+        Used during inspections to ensure that the expected weight values are cleared before accumulating the
+        expected weight of constituent parts.
+        """
         self.batch_weight = 0
+        self.residual_weight = 0
+        self.update_total_weight()
 
+    def add_weight(self, object1):
+        """
+        Primarily used during inspections to accumulate the expected weights of constituent parts.
+        """
+        self.batch_weight = self.batch_weight + object1.expected_weight.batch_weight
+        self.residual_weight = self.residual_weight + object1.expected_weight.residual_weight
+        self.update_total_weight()

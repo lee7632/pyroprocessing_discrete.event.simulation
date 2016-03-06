@@ -36,29 +36,14 @@ class edge_transition_class(facility_component_class):
         other.
 
         It also helps keep track of the expected amount of weight the batch will have from one object to the
-        next.  If either object is a storage unit, then special procedures are taken to update the total
-        expected weight and the measured inventory weight.
+        next. 
+
+        Take special note that when an object passes the batch (both physical and expected weight), it resets
+        its own expected batch weight to zero.
         """
         self.write_to_log(facility,'Edge transition: \nMoving batch from %s to %s \n\n'%(object1.description,
             object2.description))
-        #######
-        # Decrement total expected weight if batch is coming from a storage unit 
-        #######
-        if object1.object_type == "storage":
-            object1.expected_weight.storage_batch_loss()
-        #######
-        # Pass the expected batch weight from one object to the next 
-        #######
+
         object2.expected_weight.batch_get( object1.expected_weight.batch_pass() )
-        #######
-        # Update the measured inventory of the storage unit if a kmp is passing the batch into it.  If not,
-        # then I'm not sure why an object is passing the batch into a storage unit (it needs to be measured first).
-        #######
-        if object2.object_type == "storage":
-            if object1.object_type == "kmp":
-                object2.measured_inventory = object2.measured_inventory + object1.measured_weight
-            else:
-                self.write_to_log(facility,'\n\n\n*******WARNING!!********\nATTEMPTING TO PASS A BATCH ' + \
-                        'FROM AN OBJECT THAT IS NOT A KEY MEASUREMENT POINT INTO A STORAGE UNIT WILL ' + \
-                        'YIELD UNRULY RESULTS!\n\n\n')
+
         self.increment_operation_time(facility,self.time_delay)

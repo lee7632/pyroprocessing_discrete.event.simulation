@@ -13,7 +13,6 @@
 ########################################################################
 import pdb
 import numpy as np
-import global_vars
 from facility_component_module import facility_component_class
 from edge_transition_module import edge_transition_class
 from key_measurement_point_module import key_measurement_point_class as kmp_class
@@ -67,6 +66,14 @@ class fuel_fabricator_class(facility_component_class):
         self.recycle_storage = recycle_storage_class(facility)
         facility_component_class.__init__(self, 0, 0, 0, "fuel fabricator", "manager")
 
+    def inspect(self):
+        self.expected_weight.erase_expectations()
+        self.expected_weight.add_weight(self.melter)
+        self.expected_weight.add_weight(self.trimmer)
+        self.expected_weight.add_weight(self.kmp[1])
+        self.expected_weight.add_weight(self.kmp[3])
+        self.expected_weight.add_weight(self.recycle_storage)
+
     def process_batch(self,facility,batch):
         """
         See the class description
@@ -74,9 +81,9 @@ class fuel_fabricator_class(facility_component_class):
         #######
         # Initialize the expected batch weight with how much weight is known to come from the storage buffer 
         #######
-        self.edge.edge_transition(facility,self,self.kmp[0])
-        self.kmp[0].process_batch(facility,batch)
-        self.edge.edge_transition(facility,self.kmp[0],self.melter)
+        #self.edge.edge_transition(facility,self,self.kmp[0])
+        #self.kmp[0].process_batch(facility,batch)
+        #self.edge.edge_transition(facility,self,self.melter)
         #######
         # When the melter processes a batch,
         # it returns a boolean to indicate whether it
@@ -88,7 +95,7 @@ class fuel_fabricator_class(facility_component_class):
         self.kmp[1].process_batch(facility,batch)
         self.edge.edge_transition(facility,self.kmp[1],self.trimmer)
         self.trimmer.process_batch(facility,batch)
-        self.edge.edge_transition(facility,self.trimmer,self)
+        #self.edge.edge_transition(facility,self.trimmer,self)
         #self.kmp[2].process_batch(facility,batch,self.expected_batch_weight)
 
     def equipment_failure(self,facility,batch):
@@ -104,11 +111,13 @@ class fuel_fabricator_class(facility_component_class):
             self.edge.edge_transition(facility,self.melter,self.kmp[3])
             self.kmp[3].process_batch(facility,batch)
             self.edge.edge_transition(facility,self.kmp[3],self.recycle_storage)
+            self.kmp[3].update_measured_inventory(facility, self.recycle_storage, "add")
             self.recycle_storage.store_batch(facility,batch)
             heel = self.melter.clean_heel(facility)
             self.edge.edge_transition(facility,self.melter,self.kmp[3]) 
             self.kmp[3].process_batch(facility,heel)
             self.edge.edge_transition(facility,self.kmp[3],self.recycle_storage)
+            self.kmp[3].update_measured_inventory(facility, self.recycle_storage, "add")
             self.recycle_storage.store_batch(facility,heel)
             self.melter.repair(facility)
             self.recycle_storage.process_batch(facility,self,batch)

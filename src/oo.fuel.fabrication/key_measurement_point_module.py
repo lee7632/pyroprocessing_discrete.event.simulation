@@ -13,17 +13,18 @@ from facility_component_module import facility_component_class
 class key_measurement_point_class(facility_component_class):
     """
     Key measurement points are the only points along the system that can actually weigh the materials and determine
-    if a discrepancy has occurred (aside from an actual inspection).  It needs confirmation from the system
-    component governing it (i.e. fuel fabricator) as to what the expected weigh of the measured batch is, because
-    this quantity changes depending on the situation (whether or not a failure or inspection has occurred.  Also
-    is it getting a whole batch, or just the heel?).
+    if a discrepancy has occurred (aside from an actual inspection).  How much weight should be detected is passed
+    to it from the previous object via the edge transition.  Thus it relies on the previous component to recognize
+    how much it expected to have changed the weight of the batch.
 
     Each kmp should be specified separately where it lies along the
     system.  Each one will measure the weight of the batch as it comes in.
     It will then keep record of the latest measurement until another one is made
-    (indicated by measured_weight),
-    but it will also log the total weight that it has made since the facility 
-    has started (indicated by cumulative_weight).
+    (indicated by measured_weight).
+
+    It can (and should) report to the storage buffer that it is linked to if such is the case.  In this manner,
+    the storage component keeps track of how much SNM it actually contains via the measurements made by
+    its own kmp.  This process is governed by the managing unit in charge of each.
 
     The kmp_indentifier is used for the log file and for getting the correct
     data from the input file.  It is zero indexed.
@@ -48,3 +49,23 @@ class key_measurement_point_class(facility_component_class):
 
         self.write_to_log(facility,'Operation time %.4f (d) \nTrue quantity %.4f (kg) \nExpected quantity %.4f (kg) \nMeasured quantity %.4f (kg) \n\n\n'\
                 %(facility.operation_time, batch.weight, self.expected_weight.batch_weight, self.measured_weight))
+
+    def update_measured_inventory(self, facility, storage_buffer, action):
+        """
+        This method should be called by the managing unit everytime a kmp processes a batch and passes that 
+        batch to or from a storage component.  It is only through this method that the storage units can 
+        update how much cumulative inventory they have gained.
+
+        The final argument "action" should be a string either saying "add" or "subtract" so that the managing
+        unit and kmp know what to do.
+        """
+        if action == "add":
+            storage_buffer.measured_inventory = storage_buffer.measured_inventory + self.measured_weight
+        elif action == "subtract":
+            storage_buffer.measured_inventory = storage_buffer.measured_inventory - self.measured_weight
+        else:
+            self.write_to_log(facility,'************** WARNING!! ***************\n' + \
+                    'Key measurement point %i incorrectly asked to update the measured inventory of %s.\n' \
+                     %(self.kmp_identifier, storage_buffer.description) + \
+                    'Please make sure that final argument of update inventory reads either add or subtract')
+

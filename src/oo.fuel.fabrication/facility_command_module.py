@@ -107,7 +107,16 @@ class facility_command_class:
         """
         self.log_file.write(message)
 
-    def end_of_campaign(self,storage_buffer,kmp,product_storage):
+    def inspect(self,storage_unit,fuel_fabricator,final_storage_unit):
+        """
+        Method that calls all the children to perform their respective inspections to ensure that they're
+        expected and measured inventories are current with their own constituent parts.
+        """
+        storage_unit.inspect()
+        fuel_fabricator.inspect()
+        final_storage_unit.inspect()
+
+    def end_of_campaign(self,storage_unit,fuel_fabricator,final_storage_unit):
         """
         This method brings in the relevant information from the facility components
         in order to calculate relevant values at the end of a campaign.  Such
@@ -117,57 +126,26 @@ class facility_command_class:
         # Account for inspection time and begin logging 
         #######
         self.operation_time = self.operation_time + self.end_of_campaign_time_delay
-        self.write_to_log('Facility inspection \nOperation time %.4f (d) \n\n'%(self.operation_time))
+        self.write_to_log('Facility inspection \nOperation time %.4f (d) \n\n\n'%(self.operation_time))
 
+        self.inspect(storage_unit, fuel_fabricator, final_storage_unit)
 
+        self.write_to_log('First Storage Unit:\n'+\
+                'True inventory - %.4f (kg)\nExpected inventory - %.4f (kg)\nMeasured inventory - %.4f (kg)\n\n' \
+                %(storage_unit.storage_buffer.inventory, storage_unit.expected_weight.total_weight,
+                    storage_unit.measured_inventory))
+        self.write_to_log('Last Storage Unit:\n'+\
+                'True inventory - %.4f (kg)\nExpected inventory - %.4f (kg)\nMeasured inventory - %.4f (kg)\n\n' \
+                %(final_storage_unit.product_storage.inventory, final_storage_unit.expected_weight.total_weight,
+                    final_storage_unit.measured_inventory))
+        self.write_to_log('MUF:\n' + \
+                'True weight - %.4f (kg)\nExpected weight - %.4f (kg)\nMeasured weight - %.4f (kg)\n\n\n' \
+                %(fuel_fabricator.melter.heel.weight,
+                    storage_unit.initial_inventory - storage_unit.expected_weight.total_weight - \
+                            final_storage_unit.expected_weight.total_weight,
+                    storage_unit.initial_inventory - storage_unit.measured_inventory - \
+                            final_storage_unit.measured_inventory))
 
-        self.write_to_log('True processed inventory %.4f (kg) \nExpected processed inventory %.4f (kg) \nMeasured processed inventory %.4f (kg) \n\n'\
-                %(product_storage.inventory, 
-                    product_storage.expected_weight.total_weight, product_storage.measured_inventory)) 
-        
-
-
-        '''
-        ######
-        # Calculate and output storage buffer inventory (measured comes from kmp0) 
-        ######
-        self.write_to_log('True storage buffer inventory %.4f (kg) \nExpected storage buffer inventory %.4f (kg) \nMeasured storage buffer inventory %.4f (kg) \n\n'\
-                %(storage_buffer.inventory, storage_buffer.inventory, 
-                    self.initial_inventory - kmp[0].cumulative_weight))
-        ######
-        # Output processed inventory
-        # True and expected are in product storage, measured comes from kmp2
-        ######
-        self.write_to_log('True processed inventory %.4f (kg) \nExpected processed inventory %.4f (kg) \nMeasured processed inventory %.4f (kg) \n\n'\
-                %(product_storage.cumulative_inventory, 
-                    product_storage.expected_cumulative_inventory, kmp[2].cumulative_weight))
-        ######
-        # Calculate and Output system inventory 
-        # True and expected system inventory is found from what left the storage buffer
-        # Meausred comes from kmp0
-        ######
-        self.write_to_log('True system inventory %.4f (kg) \nExpected system inventory %.4f (kg) \nMeasured system inventory %.4f (kg) \n\n'\
-                %(self.initial_inventory-storage_buffer.inventory, 
-                    self.initial_inventory-storage_buffer.inventory,
-                    kmp[0].cumulative_weight))
-        ######
-        # Calculate and output campaign MUF
-        # True and expected found from product storage and storage buffer batch size
-        # Measured comes from kmp0 and 2
-        ######
-        self.write_to_log('True campaign MUF %.4f (kg) \nExpected campaign MUF %.4f (kg) \nMeasured campaign MUF %.4f (kg) \n\n'\
-                %(storage_buffer.batch_size - product_storage.campaign_inventory,
-                    storage_buffer.batch_size - kmp[2].expected_weight,
-                    kmp[0].measured_weight - kmp[2].measured_weight))
-        ######
-        # Calculate and output total MUF thus far 
-        ######
-        self.write_to_log('True system MUF %.4f (kg) \nExpected system MUF %.4f (kg) \nMeasured system MUF %.4f (kg) \n\n'\
-                %(self.initial_inventory - storage_buffer.inventory - product_storage.cumulative_inventory,
-                    self.initial_inventory - storage_buffer.inventory - \
-                            product_storage.expected_cumulative_inventory,
-                    kmp[0].cumulative_weight - kmp[2].cumulative_weight))
-        '''
         self.write_to_log('Campaign %i complete \n\n\n'%(self.total_campaign))
         self.total_campaign=self.total_campaign+1
 
