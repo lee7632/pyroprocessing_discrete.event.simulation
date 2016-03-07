@@ -68,7 +68,7 @@ class melter_class(facility_component_class):
             # Calculate and assign weight losses 
             ######
             true_batch_loss = (self.batch_loss_bounds[0] - self.batch_loss_bounds[1]) * \
-                    np.random.random_sample() + self.batch_loss_bounds[0]
+                    np.random.random_sample() + self.batch_loss_bounds[1]
             batch.weight = batch.weight - true_batch_loss
             self.expected_weight.equipment_batch_loss(self.expected_loss)
             #######
