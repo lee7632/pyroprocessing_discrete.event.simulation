@@ -76,8 +76,8 @@ class facility_component_class:
         distribution function from the Weibull distribution.
 
         Currently, beta (or k, depeding on who's syntax you use) is set to be 1.  That is the value
-        used when the actual failure distribution is unknown, and then eta (or lambda) represents a general
-        guess of the rate of failure
+        used when the actual failure distribution is unknown, and then lambda (or eta) represents a general
+        guess of the rate of failure (units of 1/days).
 
         Whether or not an actual failure occurs is determined by whether or not the calculated probability is 
         greater than a randomly selected number between 0-1 from a uniform distribution.
@@ -85,8 +85,8 @@ class facility_component_class:
         
         *************DEVELOPER NOTES******************
 
-        Any object that calls this method will need the attributes time_of_last_failure
-        and failure_rate.
+        Any object that calls this method will need the attributes "time_of_last_failure"
+        and "failure_rate".
         """
         #######
         # Initialize the boolean 
@@ -99,7 +99,7 @@ class facility_component_class:
         #######
         # The cumulative distribution function caclulated according to time 
         #######
-        cdf = 1 - np.exp(-time / self.failure_rate)
+        cdf = 1 - np.exp(-time * self.failure_rate)
         fail_check = np.random.rand()
         #self.write_to_debug(facility,'time to calc is %f \nfail rate is %f \ncdf is %f \nfail check is %f \n\n\n' \
                 #%(time, self.failure_rate,cdf,fail_check))

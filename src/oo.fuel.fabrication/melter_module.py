@@ -39,7 +39,7 @@ class melter_class(facility_component_class):
         self.process_time_delay = np.loadtxt(facility.process_states_dir+ \
                 '/process.operation.time.inp',usecols=[1])[1] \
                 #amount of time it takes to process the batch uninterrupted
-        self.heel = batch_class(0)
+        self.heel = batch_class(0,"heel")
         self.failure_rate = np.loadtxt(facility.failure_equipment_dir+'/melter.failure.data.inp',usecols=[1]) \
                 #how often the melter is expected to fail (actual time selected from a weibull distribution
         self.maintenance_time_delay = np.loadtxt(facility.failure_equipment_dir+ \
@@ -88,7 +88,7 @@ class melter_class(facility_component_class):
         # Create new batch instance, because the assignment variable only copies the pointer, not the 
         # object itself.
         #######
-        cleaned_out_heel = batch_class(self.heel.weight) 
+        cleaned_out_heel = batch_class(self.heel.weight,"heel")
         #######
         # A little bit of variable shuffle to make sure that the edge transition with the heel occurs as expected
         #######

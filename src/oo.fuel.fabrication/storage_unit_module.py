@@ -36,7 +36,7 @@ class storage_unit_class(facility_component_class):
         then updates the known amount of materials left in the storage buffer.
         """
         batch = self.storage_buffer.batch_preparation(facility)
-        self.edge.edge_transition(facility, self.storage_buffer, self.kmp)
+        self.edge.edge_transition(facility, batch, self.storage_buffer, self.kmp)
         self.kmp.process_batch(facility,batch)
         self.kmp.update_measured_inventory(facility, self.storage_buffer, "subtract")
 

@@ -672,7 +672,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 8.2890 (d) 
@@ -682,7 +682,7 @@ Measured quantity 2.9286 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -1354,7 +1354,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 16.8904 (d) 
@@ -1364,7 +1364,7 @@ Measured quantity 1.8365 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -2036,7 +2036,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 25.4918 (d) 
@@ -2046,7 +2046,7 @@ Measured quantity 2.3619 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -2250,7 +2250,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 28.4700 (d) 
@@ -2260,7 +2260,7 @@ Measured quantity 0.6633 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -2776,7 +2776,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 35.1970 (d) 
@@ -2786,7 +2786,7 @@ Measured quantity 1.0370 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -3380,7 +3380,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 42.8612 (d) 
@@ -3390,7 +3390,7 @@ Measured quantity 1.4256 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -4062,7 +4062,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 51.4626 (d) 
@@ -4072,7 +4072,7 @@ Measured quantity 2.2159 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -4588,7 +4588,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 58.1896 (d) 
@@ -4598,7 +4598,7 @@ Measured quantity 0.7443 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -5348,7 +5348,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 67.7282 (d) 
@@ -5358,7 +5358,7 @@ Measured quantity 1.7976 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -6264,7 +6264,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 79.1412 (d) 
@@ -6274,7 +6274,7 @@ Measured quantity 2.6713 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -6946,7 +6946,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 87.7426 (d) 
@@ -6956,7 +6956,7 @@ Measured quantity 2.1187 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -7316,7 +7316,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 92.5952 (d) 
@@ -7326,7 +7326,7 @@ Measured quantity 0.5937 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -7842,7 +7842,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 99.3222 (d) 
@@ -7852,7 +7852,7 @@ Measured quantity 1.3464 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -8368,7 +8368,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 106.0492 (d) 
@@ -8378,7 +8378,7 @@ Measured quantity 1.3828 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -9050,7 +9050,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 114.6506 (d) 
@@ -9060,7 +9060,7 @@ Measured quantity 1.8048 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -9420,7 +9420,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 119.5032 (d) 
@@ -9430,7 +9430,7 @@ Measured quantity 1.0884 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -9634,7 +9634,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 122.4814 (d) 
@@ -9644,7 +9644,7 @@ Measured quantity 0.7049 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -9926,7 +9926,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 126.3968 (d) 
@@ -9936,7 +9936,7 @@ Measured quantity 0.6825 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -10608,7 +10608,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 134.9982 (d) 
@@ -10618,7 +10618,7 @@ Measured quantity 2.2703 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -11524,7 +11524,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 146.4112 (d) 
@@ -11534,7 +11534,7 @@ Measured quantity 2.3121 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -12050,7 +12050,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 153.1382 (d) 
@@ -12060,7 +12060,7 @@ Measured quantity 1.2674 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -12264,7 +12264,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 156.1164 (d) 
@@ -12274,7 +12274,7 @@ Measured quantity 0.5363 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -12712,7 +12712,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 161.9062 (d) 
@@ -12722,7 +12722,7 @@ Measured quantity 1.1431 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -13394,7 +13394,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 170.5076 (d) 
@@ -13404,7 +13404,7 @@ Measured quantity 2.3012 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -13452,7 +13452,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 171.6114 (d) 
@@ -13462,7 +13462,7 @@ Measured quantity -0.0311 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -14134,7 +14134,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 180.2128 (d) 
@@ -14144,7 +14144,7 @@ Measured quantity 2.4567 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -14894,7 +14894,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 189.7514 (d) 
@@ -14904,7 +14904,7 @@ Measured quantity 2.2605 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -15810,7 +15810,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 201.1644 (d) 
@@ -15820,7 +15820,7 @@ Measured quantity 3.1541 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -16180,7 +16180,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 206.0170 (d) 
@@ -16190,7 +16190,7 @@ Measured quantity 1.3922 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -17174,7 +17174,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 218.3672 (d) 
@@ -17184,7 +17184,7 @@ Measured quantity 3.4630 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -17310,7 +17310,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 220.4082 (d) 
@@ -17320,7 +17320,7 @@ Measured quantity 0.4330 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -17758,7 +17758,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 226.1980 (d) 
@@ -17768,7 +17768,7 @@ Measured quantity 1.4215 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -18050,7 +18050,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 230.1134 (d) 
@@ -18060,7 +18060,7 @@ Measured quantity 0.7805 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -18108,7 +18108,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 231.2172 (d) 
@@ -18118,7 +18118,7 @@ Measured quantity -0.0156 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -18634,7 +18634,7 @@ Recycle storage receiving batch
 Cleaning the heel
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving heel from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 237.9442 (d) 
@@ -18644,7 +18644,7 @@ Measured quantity 1.5703 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving heel from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 

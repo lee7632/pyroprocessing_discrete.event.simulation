@@ -30,7 +30,7 @@ class edge_transition_class(facility_component_class):
                 usecols=[1])[edge_number]
         facility_component_class.__init__(self, 0, 0, 0, "edge transition", "manager")
 
-    def edge_transition(self, facility, object1, object2):
+    def edge_transition(self, facility, batch, object1, object2):
         """
         This method is used to increment the time it takes to pass the physical batch from one object to the
         other.
@@ -41,8 +41,8 @@ class edge_transition_class(facility_component_class):
         Take special note that when an object passes the batch (both physical and expected weight), it resets
         its own expected batch weight to zero.
         """
-        self.write_to_log(facility,'Edge transition: \nMoving batch from %s to %s \n\n'%(object1.description,
-            object2.description))
+        self.write_to_log(facility,'Edge transition: \nMoving %s from %s to %s \n\n'%(batch.description, 
+            object1.description, object2.description))
 
         object2.expected_weight.batch_get( object1.expected_weight.batch_pass() )
 

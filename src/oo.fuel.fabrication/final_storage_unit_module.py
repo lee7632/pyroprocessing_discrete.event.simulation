@@ -28,7 +28,7 @@ class final_storage_unit_class(facility_component_class):
 
     def process_batch(self,facility,batch):
         self.kmp.process_batch(facility,batch)
-        self.edge.edge_transition(facility, self.kmp, self.product_storage)
+        self.edge.edge_transition(facility, batch, self.kmp, self.product_storage)
         self.kmp.update_measured_inventory(facility, self.product_storage, "add")
         self.product_storage.process_batch(facility,batch)
 

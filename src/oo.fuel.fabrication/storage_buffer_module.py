@@ -53,5 +53,5 @@ class storage_buffer_class(facility_component_class):
         self.expected_weight.batch_weight = self.batch_size
         self.expected_weight.storage_batch_loss()
 
-        return batch_class(self.batch_size)
+        return batch_class(self.batch_size,"batch")
 
