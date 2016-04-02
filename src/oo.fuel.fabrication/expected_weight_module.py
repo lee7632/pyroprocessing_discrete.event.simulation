@@ -70,7 +70,7 @@ class expected_weight_class:
     def storage_batch_gain(self):
         """
         Use this method whenever a storage unit obtains a batch.  It will update the expected weight accordingly
-        with respect the the expected batch weight passed in via the edge transition.
+        with respect to the expected batch weight passed in via the edge transition.
         """
         self.residual_weight = self.residual_weight + self.batch_weight
         self.batch_weight = 0

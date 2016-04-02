@@ -74,6 +74,11 @@ True inventory - 19.7276 (kg)
 Expected inventory - 19.7500 (kg)
 Measured inventory - 19.9143 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.0000 (kg)
+
 MUF:
 True weight - 0.2724 (kg)
 Expected weight - 0.2500 (kg)
@@ -151,6 +156,11 @@ Last Storage Unit:
 True inventory - 39.2817 (kg)
 Expected inventory - 39.5000 (kg)
 Measured inventory - 39.5095 (kg)
+
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.0000 (kg)
 
 MUF:
 True weight - 0.7183 (kg)
@@ -230,6 +240,11 @@ True inventory - 58.8189 (kg)
 Expected inventory - 59.2500 (kg)
 Measured inventory - 59.0911 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.0000 (kg)
+
 MUF:
 True weight - 1.1811 (kg)
 Expected weight - 0.7500 (kg)
@@ -307,6 +322,11 @@ Last Storage Unit:
 True inventory - 78.4193 (kg)
 Expected inventory - 79.0000 (kg)
 Measured inventory - 78.6710 (kg)
+
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.0000 (kg)
 
 MUF:
 True weight - 1.5807 (kg)
@@ -386,6 +406,11 @@ True inventory - 97.9470 (kg)
 Expected inventory - 98.7500 (kg)
 Measured inventory - 97.9433 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.0000 (kg)
+
 MUF:
 True weight - 2.0530 (kg)
 Expected weight - 1.2500 (kg)
@@ -463,6 +488,11 @@ Last Storage Unit:
 True inventory - 117.5598 (kg)
 Expected inventory - 118.5000 (kg)
 Measured inventory - 117.4108 (kg)
+
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.0000 (kg)
 
 MUF:
 True weight - 2.4402 (kg)
@@ -542,6 +572,11 @@ True inventory - 137.2514 (kg)
 Expected inventory - 138.2500 (kg)
 Measured inventory - 137.1178 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.0000 (kg)
+
 MUF:
 True weight - 2.7486 (kg)
 Expected weight - 1.7500 (kg)
@@ -620,6 +655,11 @@ True inventory - 157.0329 (kg)
 Expected inventory - 158.0000 (kg)
 Measured inventory - 156.9149 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.0000 (kg)
+
 MUF:
 True weight - 2.9671 (kg)
 Expected weight - 2.0000 (kg)
@@ -681,6 +721,10 @@ Expected quantity 2.0000 (kg)
 Measured quantity 2.9286 (kg) 
 
 
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
+
+
 Edge transition: 
 Moving heel from key measurement point 3 to recycle storage 
 
@@ -693,7 +737,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 8.6847 (d) 
@@ -702,15 +746,19 @@ Expected quantity 22.0000 (kg)
 Measured quantity 22.8896 (kg) 
 
 
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
+
+
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from melter to key measurement point 1 
+Moving recycled batch from melter to key measurement point 1 
 
 Measurement event at KMP: 1
 Operation time 9.0804 (d) 
@@ -719,15 +767,19 @@ Expected quantity 21.7500 (kg)
 Measured quantity 22.7069 (kg) 
 
 
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
+
+
 Edge transition: 
-Moving batch from key measurement point 1 to trimmer 
+Moving recycled batch from key measurement point 1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from trimmer to key measurement point 2 
+Moving recycled batch from trimmer to key measurement point 2 
 
 Measurement event at KMP: 2
 Operation time 9.2678 (d) 
@@ -736,8 +788,12 @@ Expected quantity 21.7500 (kg)
 Measured quantity 22.6789 (kg) 
 
 
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
+
+
 Edge transition: 
-Moving batch from key measurement point 2 to product storage 
+Moving recycled batch from key measurement point 2 to product storage 
 
 Processing the final product 
 
@@ -756,10 +812,15 @@ True inventory - 179.7149 (kg)
 Expected inventory - 179.7500 (kg)
 Measured inventory - 179.5939 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.1592 (kg)
+
 MUF:
 True weight - 0.2851 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 0.7947 (kg)
+Measured weight - 0.6355 (kg)
 
 
 Campaign 9 complete 
@@ -834,10 +895,15 @@ True inventory - 199.3883 (kg)
 Expected inventory - 199.5000 (kg)
 Measured inventory - 199.2447 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.1592 (kg)
+
 MUF:
 True weight - 0.6117 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 1.1299 (kg)
+Measured weight - 0.9707 (kg)
 
 
 Campaign 10 complete 
@@ -912,10 +978,15 @@ True inventory - 219.3089 (kg)
 Expected inventory - 219.2500 (kg)
 Measured inventory - 219.0876 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.1592 (kg)
+
 MUF:
 True weight - 0.6911 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 1.1215 (kg)
+Measured weight - 0.9623 (kg)
 
 
 Campaign 11 complete 
@@ -990,10 +1061,15 @@ True inventory - 238.8984 (kg)
 Expected inventory - 239.0000 (kg)
 Measured inventory - 238.7197 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.1592 (kg)
+
 MUF:
 True weight - 1.1016 (kg)
 Expected weight - 1.0000 (kg)
-Measured weight - 1.4587 (kg)
+Measured weight - 1.2995 (kg)
 
 
 Campaign 12 complete 
@@ -1068,10 +1144,15 @@ True inventory - 258.5287 (kg)
 Expected inventory - 258.7500 (kg)
 Measured inventory - 258.2822 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.1592 (kg)
+
 MUF:
 True weight - 1.4713 (kg)
 Expected weight - 1.2500 (kg)
-Measured weight - 1.8934 (kg)
+Measured weight - 1.7342 (kg)
 
 
 Campaign 13 complete 
@@ -1146,10 +1227,15 @@ True inventory - 278.4967 (kg)
 Expected inventory - 278.5000 (kg)
 Measured inventory - 278.3121 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.1592 (kg)
+
 MUF:
 True weight - 1.5033 (kg)
 Expected weight - 1.5000 (kg)
-Measured weight - 1.8282 (kg)
+Measured weight - 1.6689 (kg)
 
 
 Campaign 14 complete 
@@ -1224,10 +1310,15 @@ True inventory - 298.2350 (kg)
 Expected inventory - 298.2500 (kg)
 Measured inventory - 297.9645 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.1592 (kg)
+
 MUF:
 True weight - 1.7650 (kg)
 Expected weight - 1.7500 (kg)
-Measured weight - 2.3548 (kg)
+Measured weight - 2.1956 (kg)
 
 
 Campaign 15 complete 
@@ -1302,10 +1393,15 @@ True inventory - 318.1691 (kg)
 Expected inventory - 318.0000 (kg)
 Measured inventory - 317.7996 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.1592 (kg)
+
 MUF:
 True weight - 1.8309 (kg)
 Expected weight - 2.0000 (kg)
-Measured weight - 2.4992 (kg)
+Measured weight - 2.3399 (kg)
 
 
 Campaign 16 complete 
@@ -1375,7 +1471,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 17.2861 (d) 
@@ -1385,14 +1481,14 @@ Measured quantity 21.7143 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from melter to key measurement point 1 
+Moving recycled batch from melter to key measurement point 1 
 
 Measurement event at KMP: 1
 Operation time 17.6818 (d) 
@@ -1402,14 +1498,14 @@ Measured quantity 21.4399 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 1 to trimmer 
+Moving recycled batch from key measurement point 1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from trimmer to key measurement point 2 
+Moving recycled batch from trimmer to key measurement point 2 
 
 Measurement event at KMP: 2
 Operation time 17.8692 (d) 
@@ -1419,7 +1515,7 @@ Measured quantity 21.3963 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 2 to product storage 
+Moving recycled batch from key measurement point 2 to product storage 
 
 Processing the final product 
 
@@ -1438,10 +1534,15 @@ True inventory - 339.5189 (kg)
 Expected inventory - 339.7500 (kg)
 Measured inventory - 339.1959 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.2502 (kg)
+
 MUF:
 True weight - 0.4811 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 1.2046 (kg)
+Measured weight - 0.9544 (kg)
 
 
 Campaign 17 complete 
@@ -1516,10 +1617,15 @@ True inventory - 359.2328 (kg)
 Expected inventory - 359.5000 (kg)
 Measured inventory - 358.8918 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.2502 (kg)
+
 MUF:
 True weight - 0.7672 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 1.3551 (kg)
+Measured weight - 1.1049 (kg)
 
 
 Campaign 18 complete 
@@ -1594,10 +1700,15 @@ True inventory - 379.0345 (kg)
 Expected inventory - 379.2500 (kg)
 Measured inventory - 378.7143 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.2502 (kg)
+
 MUF:
 True weight - 0.9655 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 1.4255 (kg)
+Measured weight - 1.1753 (kg)
 
 
 Campaign 19 complete 
@@ -1672,10 +1783,15 @@ True inventory - 398.6883 (kg)
 Expected inventory - 399.0000 (kg)
 Measured inventory - 398.5467 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.2502 (kg)
+
 MUF:
 True weight - 1.3117 (kg)
 Expected weight - 1.0000 (kg)
-Measured weight - 1.6908 (kg)
+Measured weight - 1.4406 (kg)
 
 
 Campaign 20 complete 
@@ -1750,10 +1866,15 @@ True inventory - 418.3851 (kg)
 Expected inventory - 418.7500 (kg)
 Measured inventory - 418.1164 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.2502 (kg)
+
 MUF:
 True weight - 1.6149 (kg)
 Expected weight - 1.2500 (kg)
-Measured weight - 2.1337 (kg)
+Measured weight - 1.8835 (kg)
 
 
 Campaign 21 complete 
@@ -1828,10 +1949,15 @@ True inventory - 438.1707 (kg)
 Expected inventory - 438.5000 (kg)
 Measured inventory - 437.8273 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.2502 (kg)
+
 MUF:
 True weight - 1.8293 (kg)
 Expected weight - 1.5000 (kg)
-Measured weight - 2.5198 (kg)
+Measured weight - 2.2696 (kg)
 
 
 Campaign 22 complete 
@@ -1906,10 +2032,15 @@ True inventory - 457.8441 (kg)
 Expected inventory - 458.2500 (kg)
 Measured inventory - 457.4146 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.2502 (kg)
+
 MUF:
 True weight - 2.1559 (kg)
 Expected weight - 1.7500 (kg)
-Measured weight - 3.1248 (kg)
+Measured weight - 2.8746 (kg)
 
 
 Campaign 23 complete 
@@ -1984,10 +2115,15 @@ True inventory - 477.6603 (kg)
 Expected inventory - 478.0000 (kg)
 Measured inventory - 477.2153 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.2502 (kg)
+
 MUF:
 True weight - 2.3397 (kg)
 Expected weight - 2.0000 (kg)
-Measured weight - 3.5151 (kg)
+Measured weight - 3.2649 (kg)
 
 
 Campaign 24 complete 
@@ -2057,7 +2193,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 25.8875 (d) 
@@ -2067,14 +2203,14 @@ Measured quantity 22.3832 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from melter to key measurement point 1 
+Moving recycled batch from melter to key measurement point 1 
 
 Measurement event at KMP: 1
 Operation time 26.2832 (d) 
@@ -2084,14 +2220,14 @@ Measured quantity 22.2604 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 1 to trimmer 
+Moving recycled batch from key measurement point 1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from trimmer to key measurement point 2 
+Moving recycled batch from trimmer to key measurement point 2 
 
 Measurement event at KMP: 2
 Operation time 26.4706 (d) 
@@ -2101,7 +2237,7 @@ Measured quantity 22.2700 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 2 to product storage 
+Moving recycled batch from key measurement point 2 to product storage 
 
 Processing the final product 
 
@@ -2120,10 +2256,15 @@ True inventory - 499.9253 (kg)
 Expected inventory - 499.7500 (kg)
 Measured inventory - 499.4852 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.3211 (kg)
+
 MUF:
 True weight - 0.0747 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 1.3066 (kg)
+Measured weight - 0.9854 (kg)
 
 
 Campaign 25 complete 
@@ -2198,10 +2339,15 @@ True inventory - 519.5216 (kg)
 Expected inventory - 519.5000 (kg)
 Measured inventory - 518.8875 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.3211 (kg)
+
 MUF:
 True weight - 0.4784 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 1.8107 (kg)
+Measured weight - 1.4896 (kg)
 
 
 Campaign 26 complete 
@@ -2271,7 +2417,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 28.8657 (d) 
@@ -2281,14 +2427,14 @@ Measured quantity 20.5456 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from melter to key measurement point 1 
+Moving recycled batch from melter to key measurement point 1 
 
 Measurement event at KMP: 1
 Operation time 29.2614 (d) 
@@ -2298,14 +2444,14 @@ Measured quantity 20.0912 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 1 to trimmer 
+Moving recycled batch from key measurement point 1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from trimmer to key measurement point 2 
+Moving recycled batch from trimmer to key measurement point 2 
 
 Measurement event at KMP: 2
 Operation time 29.4488 (d) 
@@ -2315,7 +2461,7 @@ Measured quantity 19.9735 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 2 to product storage 
+Moving recycled batch from key measurement point 2 to product storage 
 
 Processing the final product 
 
@@ -2334,10 +2480,15 @@ True inventory - 539.5721 (kg)
 Expected inventory - 539.7500 (kg)
 Measured inventory - 538.8610 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.3953 (kg)
+
 MUF:
 True weight - 0.4279 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 1.9817 (kg)
+Measured weight - 1.5864 (kg)
 
 
 Campaign 27 complete 
@@ -2412,10 +2563,15 @@ True inventory - 559.5449 (kg)
 Expected inventory - 559.5000 (kg)
 Measured inventory - 558.9015 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.3953 (kg)
+
 MUF:
 True weight - 0.4551 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 1.9952 (kg)
+Measured weight - 1.5999 (kg)
 
 
 Campaign 28 complete 
@@ -2490,10 +2646,15 @@ True inventory - 579.5290 (kg)
 Expected inventory - 579.2500 (kg)
 Measured inventory - 578.9252 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.3953 (kg)
+
 MUF:
 True weight - 0.4710 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 2.0292 (kg)
+Measured weight - 1.6338 (kg)
 
 
 Campaign 29 complete 
@@ -2568,10 +2729,15 @@ True inventory - 599.4101 (kg)
 Expected inventory - 599.0000 (kg)
 Measured inventory - 598.8697 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.3953 (kg)
+
 MUF:
 True weight - 0.5899 (kg)
 Expected weight - 1.0000 (kg)
-Measured weight - 1.9753 (kg)
+Measured weight - 1.5800 (kg)
 
 
 Campaign 30 complete 
@@ -2646,10 +2812,15 @@ True inventory - 619.2541 (kg)
 Expected inventory - 618.7500 (kg)
 Measured inventory - 618.5822 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.3953 (kg)
+
 MUF:
 True weight - 0.7459 (kg)
 Expected weight - 1.2500 (kg)
-Measured weight - 2.5012 (kg)
+Measured weight - 2.1059 (kg)
 
 
 Campaign 31 complete 
@@ -2724,10 +2895,15 @@ True inventory - 638.7819 (kg)
 Expected inventory - 638.5000 (kg)
 Measured inventory - 638.2813 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.3953 (kg)
+
 MUF:
 True weight - 1.2181 (kg)
 Expected weight - 1.5000 (kg)
-Measured weight - 2.7559 (kg)
+Measured weight - 2.3605 (kg)
 
 
 Campaign 32 complete 
@@ -2797,7 +2973,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 35.5927 (d) 
@@ -2807,14 +2983,14 @@ Measured quantity 21.1550 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from melter to key measurement point 1 
+Moving recycled batch from melter to key measurement point 1 
 
 Measurement event at KMP: 1
 Operation time 35.9884 (d) 
@@ -2824,14 +3000,14 @@ Measured quantity 21.0488 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 1 to trimmer 
+Moving recycled batch from key measurement point 1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from trimmer to key measurement point 2 
+Moving recycled batch from trimmer to key measurement point 2 
 
 Measurement event at KMP: 2
 Operation time 36.1758 (d) 
@@ -2841,7 +3017,7 @@ Measured quantity 20.9821 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 2 to product storage 
+Moving recycled batch from key measurement point 2 to product storage 
 
 Processing the final product 
 
@@ -2860,10 +3036,15 @@ True inventory - 659.8111 (kg)
 Expected inventory - 659.7500 (kg)
 Measured inventory - 659.2634 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.1947 (kg)
+
 MUF:
 True weight - 0.1889 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 1.6993 (kg)
+Measured weight - 1.5047 (kg)
 
 
 Campaign 33 complete 
@@ -2938,10 +3119,15 @@ True inventory - 679.3160 (kg)
 Expected inventory - 679.5000 (kg)
 Measured inventory - 678.8333 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.1947 (kg)
+
 MUF:
 True weight - 0.6840 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 2.3106 (kg)
+Measured weight - 2.1160 (kg)
 
 
 Campaign 34 complete 
@@ -3016,10 +3202,15 @@ True inventory - 699.3056 (kg)
 Expected inventory - 699.2500 (kg)
 Measured inventory - 698.9346 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.1947 (kg)
+
 MUF:
 True weight - 0.6944 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 2.0963 (kg)
+Measured weight - 1.9016 (kg)
 
 
 Campaign 35 complete 
@@ -3094,10 +3285,15 @@ True inventory - 718.9911 (kg)
 Expected inventory - 719.0000 (kg)
 Measured inventory - 718.5817 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.1947 (kg)
+
 MUF:
 True weight - 1.0089 (kg)
 Expected weight - 1.0000 (kg)
-Measured weight - 2.5832 (kg)
+Measured weight - 2.3885 (kg)
 
 
 Campaign 36 complete 
@@ -3172,10 +3368,15 @@ True inventory - 738.8983 (kg)
 Expected inventory - 738.7500 (kg)
 Measured inventory - 738.5150 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.1947 (kg)
+
 MUF:
 True weight - 1.1017 (kg)
 Expected weight - 1.2500 (kg)
-Measured weight - 2.7130 (kg)
+Measured weight - 2.5184 (kg)
 
 
 Campaign 37 complete 
@@ -3250,10 +3451,15 @@ True inventory - 758.6392 (kg)
 Expected inventory - 758.5000 (kg)
 Measured inventory - 758.0659 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.1947 (kg)
+
 MUF:
 True weight - 1.3608 (kg)
 Expected weight - 1.5000 (kg)
-Measured weight - 3.0707 (kg)
+Measured weight - 2.8760 (kg)
 
 
 Campaign 38 complete 
@@ -3328,10 +3534,15 @@ True inventory - 778.5004 (kg)
 Expected inventory - 778.2500 (kg)
 Measured inventory - 777.9520 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.1947 (kg)
+
 MUF:
 True weight - 1.4996 (kg)
 Expected weight - 1.7500 (kg)
-Measured weight - 3.0708 (kg)
+Measured weight - 2.8761 (kg)
 
 
 Campaign 39 complete 
@@ -3401,7 +3612,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 43.2569 (d) 
@@ -3411,14 +3622,14 @@ Measured quantity 21.6539 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from melter to key measurement point 1 
+Moving recycled batch from melter to key measurement point 1 
 
 Measurement event at KMP: 1
 Operation time 43.6526 (d) 
@@ -3428,14 +3639,14 @@ Measured quantity 21.4040 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 1 to trimmer 
+Moving recycled batch from key measurement point 1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from trimmer to key measurement point 2 
+Moving recycled batch from trimmer to key measurement point 2 
 
 Measurement event at KMP: 2
 Operation time 43.8400 (d) 
@@ -3445,7 +3656,7 @@ Measured quantity 21.2911 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 2 to product storage 
+Moving recycled batch from key measurement point 2 to product storage 
 
 Processing the final product 
 
@@ -3464,10 +3675,15 @@ True inventory - 799.9084 (kg)
 Expected inventory - 799.7500 (kg)
 Measured inventory - 799.2432 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.1368 (kg)
+
 MUF:
 True weight - 0.0916 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 1.7843 (kg)
+Measured weight - 1.9211 (kg)
 
 
 Campaign 40 complete 
@@ -3542,10 +3758,15 @@ True inventory - 819.5340 (kg)
 Expected inventory - 819.5000 (kg)
 Measured inventory - 819.0852 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.1368 (kg)
+
 MUF:
 True weight - 0.4660 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 1.9946 (kg)
+Measured weight - 2.1315 (kg)
 
 
 Campaign 41 complete 
@@ -3620,10 +3841,15 @@ True inventory - 839.3880 (kg)
 Expected inventory - 839.2500 (kg)
 Measured inventory - 838.9152 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.1368 (kg)
+
 MUF:
 True weight - 0.6120 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 2.2983 (kg)
+Measured weight - 2.4351 (kg)
 
 
 Campaign 42 complete 
@@ -3698,10 +3924,15 @@ True inventory - 859.0947 (kg)
 Expected inventory - 859.0000 (kg)
 Measured inventory - 858.6195 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.1368 (kg)
+
 MUF:
 True weight - 0.9053 (kg)
 Expected weight - 1.0000 (kg)
-Measured weight - 2.7039 (kg)
+Measured weight - 2.8407 (kg)
 
 
 Campaign 43 complete 
@@ -3776,10 +4007,15 @@ True inventory - 878.6565 (kg)
 Expected inventory - 878.7500 (kg)
 Measured inventory - 878.1715 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.1368 (kg)
+
 MUF:
 True weight - 1.3435 (kg)
 Expected weight - 1.2500 (kg)
-Measured weight - 3.0782 (kg)
+Measured weight - 3.2150 (kg)
 
 
 Campaign 44 complete 
@@ -3854,10 +4090,19 @@ True inventory - 898.2320 (kg)
 Expected inventory - 898.5000 (kg)
 Measured inventory - 897.6525 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.1368 (kg)
+
 MUF:
 True weight - 1.7680 (kg)
 Expected weight - 1.5000 (kg)
-Measured weight - 3.6881 (kg)
+Measured weight - 3.8249 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 45 complete 
@@ -3932,10 +4177,19 @@ True inventory - 917.9928 (kg)
 Expected inventory - 918.2500 (kg)
 Measured inventory - 917.4091 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.1368 (kg)
+
 MUF:
 True weight - 2.0072 (kg)
 Expected weight - 1.7500 (kg)
-Measured weight - 3.8905 (kg)
+Measured weight - 4.0273 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 46 complete 
@@ -4010,10 +4264,19 @@ True inventory - 937.8979 (kg)
 Expected inventory - 938.0000 (kg)
 Measured inventory - 937.1601 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.1368 (kg)
+
 MUF:
 True weight - 2.1021 (kg)
 Expected weight - 2.0000 (kg)
-Measured weight - 4.0439 (kg)
+Measured weight - 4.1808 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 47 complete 
@@ -4083,7 +4346,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 51.8583 (d) 
@@ -4093,14 +4356,14 @@ Measured quantity 22.0852 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from melter to key measurement point 1 
+Moving recycled batch from melter to key measurement point 1 
 
 Measurement event at KMP: 1
 Operation time 52.2540 (d) 
@@ -4110,14 +4373,14 @@ Measured quantity 21.9594 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 1 to trimmer 
+Moving recycled batch from key measurement point 1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from trimmer to key measurement point 2 
+Moving recycled batch from trimmer to key measurement point 2 
 
 Measurement event at KMP: 2
 Operation time 52.4414 (d) 
@@ -4127,7 +4390,7 @@ Measured quantity 22.0622 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 2 to product storage 
+Moving recycled batch from key measurement point 2 to product storage 
 
 Processing the final product 
 
@@ -4146,10 +4409,15 @@ True inventory - 959.9338 (kg)
 Expected inventory - 959.7500 (kg)
 Measured inventory - 959.2224 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.0754 (kg)
+
 MUF:
 True weight - 0.0662 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 1.9880 (kg)
+Measured weight - 2.0634 (kg)
 
 
 Campaign 48 complete 
@@ -4224,10 +4492,15 @@ True inventory - 979.7235 (kg)
 Expected inventory - 979.5000 (kg)
 Measured inventory - 979.0297 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.0754 (kg)
+
 MUF:
 True weight - 0.2765 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 2.1177 (kg)
+Measured weight - 2.1931 (kg)
 
 
 Campaign 49 complete 
@@ -4302,10 +4575,15 @@ True inventory - 999.6958 (kg)
 Expected inventory - 999.2500 (kg)
 Measured inventory - 998.8958 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.0754 (kg)
+
 MUF:
 True weight - 0.3042 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 2.1576 (kg)
+Measured weight - 2.2330 (kg)
 
 
 Campaign 50 complete 
@@ -4380,10 +4658,15 @@ True inventory - 1019.3542 (kg)
 Expected inventory - 1019.0000 (kg)
 Measured inventory - 1018.6525 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.0754 (kg)
+
 MUF:
 True weight - 0.6458 (kg)
 Expected weight - 1.0000 (kg)
-Measured weight - 2.3122 (kg)
+Measured weight - 2.3876 (kg)
 
 
 Campaign 51 complete 
@@ -4458,10 +4741,15 @@ True inventory - 1039.3257 (kg)
 Expected inventory - 1038.7500 (kg)
 Measured inventory - 1038.7250 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.0754 (kg)
+
 MUF:
 True weight - 0.6743 (kg)
 Expected weight - 1.2500 (kg)
-Measured weight - 2.1238 (kg)
+Measured weight - 2.1992 (kg)
 
 
 Campaign 52 complete 
@@ -4536,10 +4824,15 @@ True inventory - 1059.1960 (kg)
 Expected inventory - 1058.5000 (kg)
 Measured inventory - 1058.4168 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.0754 (kg)
+
 MUF:
 True weight - 0.8040 (kg)
 Expected weight - 1.5000 (kg)
-Measured weight - 2.5033 (kg)
+Measured weight - 2.5787 (kg)
 
 
 Campaign 53 complete 
@@ -4597,6 +4890,10 @@ Expected quantity 1.5000 (kg)
 Measured quantity 0.7443 (kg) 
 
 
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
+
+
 Edge transition: 
 Moving heel from key measurement point 3 to recycle storage 
 
@@ -4609,7 +4906,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 58.5853 (d) 
@@ -4618,15 +4915,19 @@ Expected quantity 21.5000 (kg)
 Measured quantity 20.7987 (kg) 
 
 
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
+
+
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from melter to key measurement point 1 
+Moving recycled batch from melter to key measurement point 1 
 
 Measurement event at KMP: 1
 Operation time 58.9810 (d) 
@@ -4635,15 +4936,19 @@ Expected quantity 21.2500 (kg)
 Measured quantity 20.5719 (kg) 
 
 
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
+
+
 Edge transition: 
-Moving batch from key measurement point 1 to trimmer 
+Moving recycled batch from key measurement point 1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from trimmer to key measurement point 2 
+Moving recycled batch from trimmer to key measurement point 2 
 
 Measurement event at KMP: 2
 Operation time 59.1684 (d) 
@@ -4653,7 +4958,7 @@ Measured quantity 20.7844 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 2 to product storage 
+Moving recycled batch from key measurement point 2 to product storage 
 
 Processing the final product 
 
@@ -4672,10 +4977,15 @@ True inventory - 1079.9615 (kg)
 Expected inventory - 1079.7500 (kg)
 Measured inventory - 1079.2012 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.2698 (kg)
+
 MUF:
 True weight - 0.0385 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 1.6393 (kg)
+Measured weight - 1.9092 (kg)
 
 
 Campaign 54 complete 
@@ -4750,10 +5060,15 @@ True inventory - 1099.9438 (kg)
 Expected inventory - 1099.5000 (kg)
 Measured inventory - 1099.2234 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.2698 (kg)
+
 MUF:
 True weight - 0.0562 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 1.6695 (kg)
+Measured weight - 1.9393 (kg)
 
 
 Campaign 55 complete 
@@ -4828,10 +5143,15 @@ True inventory - 1119.6031 (kg)
 Expected inventory - 1119.2500 (kg)
 Measured inventory - 1118.8436 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.2698 (kg)
+
 MUF:
 True weight - 0.3969 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 1.7720 (kg)
+Measured weight - 2.0419 (kg)
 
 
 Campaign 56 complete 
@@ -4906,10 +5226,15 @@ True inventory - 1139.1512 (kg)
 Expected inventory - 1139.0000 (kg)
 Measured inventory - 1138.1886 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.2698 (kg)
+
 MUF:
 True weight - 0.8488 (kg)
 Expected weight - 1.0000 (kg)
-Measured weight - 2.4765 (kg)
+Measured weight - 2.7463 (kg)
 
 
 Campaign 57 complete 
@@ -4984,10 +5309,15 @@ True inventory - 1158.9219 (kg)
 Expected inventory - 1158.7500 (kg)
 Measured inventory - 1158.1129 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.2698 (kg)
+
 MUF:
 True weight - 1.0781 (kg)
 Expected weight - 1.2500 (kg)
-Measured weight - 2.7586 (kg)
+Measured weight - 3.0284 (kg)
 
 
 Campaign 58 complete 
@@ -5062,10 +5392,15 @@ True inventory - 1178.7580 (kg)
 Expected inventory - 1178.5000 (kg)
 Measured inventory - 1178.0180 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.2698 (kg)
+
 MUF:
 True weight - 1.2420 (kg)
 Expected weight - 1.5000 (kg)
-Measured weight - 2.8821 (kg)
+Measured weight - 3.1519 (kg)
 
 
 Campaign 59 complete 
@@ -5140,10 +5475,15 @@ True inventory - 1198.6777 (kg)
 Expected inventory - 1198.2500 (kg)
 Measured inventory - 1197.8318 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.2698 (kg)
+
 MUF:
 True weight - 1.3223 (kg)
 Expected weight - 1.7500 (kg)
-Measured weight - 3.1985 (kg)
+Measured weight - 3.4684 (kg)
 
 
 Campaign 60 complete 
@@ -5218,10 +5558,15 @@ True inventory - 1218.3898 (kg)
 Expected inventory - 1218.0000 (kg)
 Measured inventory - 1217.5040 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.2698 (kg)
+
 MUF:
 True weight - 1.6102 (kg)
 Expected weight - 2.0000 (kg)
-Measured weight - 3.5128 (kg)
+Measured weight - 3.7826 (kg)
 
 
 Campaign 61 complete 
@@ -5296,10 +5641,15 @@ True inventory - 1238.1906 (kg)
 Expected inventory - 1237.7500 (kg)
 Measured inventory - 1237.2367 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.2698 (kg)
+
 MUF:
 True weight - 1.8094 (kg)
 Expected weight - 2.2500 (kg)
-Measured weight - 3.8170 (kg)
+Measured weight - 4.0868 (kg)
 
 
 Campaign 62 complete 
@@ -5369,7 +5719,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 68.1239 (d) 
@@ -5379,14 +5729,14 @@ Measured quantity 21.8467 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from melter to key measurement point 1 
+Moving recycled batch from melter to key measurement point 1 
 
 Measurement event at KMP: 1
 Operation time 68.5196 (d) 
@@ -5396,14 +5746,14 @@ Measured quantity 21.7626 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 1 to trimmer 
+Moving recycled batch from key measurement point 1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from trimmer to key measurement point 2 
+Moving recycled batch from trimmer to key measurement point 2 
 
 Measurement event at KMP: 2
 Operation time 68.7070 (d) 
@@ -5413,7 +5763,7 @@ Measured quantity 21.6781 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 2 to product storage 
+Moving recycled batch from key measurement point 2 to product storage 
 
 Processing the final product 
 
@@ -5432,10 +5782,19 @@ True inventory - 1259.9918 (kg)
 Expected inventory - 1259.7500 (kg)
 Measured inventory - 1258.9149 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.3650 (kg)
+
 MUF:
 True weight - 0.0082 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 2.2055 (kg)
+Measured weight - 2.5705 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 63 complete 
@@ -5510,10 +5869,19 @@ True inventory - 1279.6846 (kg)
 Expected inventory - 1279.5000 (kg)
 Measured inventory - 1278.5357 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.3650 (kg)
+
 MUF:
 True weight - 0.3154 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 2.3889 (kg)
+Measured weight - 2.7538 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 64 complete 
@@ -5588,10 +5956,19 @@ True inventory - 1299.5740 (kg)
 Expected inventory - 1299.2500 (kg)
 Measured inventory - 1298.3867 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.3650 (kg)
+
 MUF:
 True weight - 0.4260 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 2.5259 (kg)
+Measured weight - 2.8909 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 65 complete 
@@ -5666,10 +6043,19 @@ True inventory - 1319.3695 (kg)
 Expected inventory - 1319.0000 (kg)
 Measured inventory - 1318.2250 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.3650 (kg)
+
 MUF:
 True weight - 0.6305 (kg)
 Expected weight - 1.0000 (kg)
-Measured weight - 2.7168 (kg)
+Measured weight - 3.0818 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 66 complete 
@@ -5744,10 +6130,19 @@ True inventory - 1338.8748 (kg)
 Expected inventory - 1338.7500 (kg)
 Measured inventory - 1337.6499 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.3650 (kg)
+
 MUF:
 True weight - 1.1252 (kg)
 Expected weight - 1.2500 (kg)
-Measured weight - 3.1880 (kg)
+Measured weight - 3.5529 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 67 complete 
@@ -5822,10 +6217,19 @@ True inventory - 1358.6161 (kg)
 Expected inventory - 1358.5000 (kg)
 Measured inventory - 1357.5426 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.3650 (kg)
+
 MUF:
 True weight - 1.3839 (kg)
 Expected weight - 1.5000 (kg)
-Measured weight - 3.1755 (kg)
+Measured weight - 3.5404 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 68 complete 
@@ -5900,10 +6304,19 @@ True inventory - 1378.2628 (kg)
 Expected inventory - 1378.2500 (kg)
 Measured inventory - 1377.0791 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.3650 (kg)
+
 MUF:
 True weight - 1.7372 (kg)
 Expected weight - 1.7500 (kg)
-Measured weight - 3.4289 (kg)
+Measured weight - 3.7939 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 69 complete 
@@ -5978,10 +6391,19 @@ True inventory - 1397.7784 (kg)
 Expected inventory - 1398.0000 (kg)
 Measured inventory - 1396.5664 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.3650 (kg)
+
 MUF:
 True weight - 2.2216 (kg)
 Expected weight - 2.0000 (kg)
-Measured weight - 4.0494 (kg)
+Measured weight - 4.4144 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 70 complete 
@@ -6056,10 +6478,19 @@ True inventory - 1417.6537 (kg)
 Expected inventory - 1417.7500 (kg)
 Measured inventory - 1416.3356 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.3650 (kg)
+
 MUF:
 True weight - 2.3463 (kg)
 Expected weight - 2.2500 (kg)
-Measured weight - 4.3362 (kg)
+Measured weight - 4.7012 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 71 complete 
@@ -6134,10 +6565,19 @@ True inventory - 1437.5174 (kg)
 Expected inventory - 1437.5000 (kg)
 Measured inventory - 1436.0515 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.3650 (kg)
+
 MUF:
 True weight - 2.4826 (kg)
 Expected weight - 2.5000 (kg)
-Measured weight - 4.6258 (kg)
+Measured weight - 4.9908 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 72 complete 
@@ -6212,10 +6652,19 @@ True inventory - 1457.3985 (kg)
 Expected inventory - 1457.2500 (kg)
 Measured inventory - 1455.8062 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.3650 (kg)
+
 MUF:
 True weight - 2.6015 (kg)
 Expected weight - 2.7500 (kg)
-Measured weight - 4.7288 (kg)
+Measured weight - 5.0938 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 73 complete 
@@ -6285,7 +6734,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 79.5369 (d) 
@@ -6295,14 +6744,14 @@ Measured quantity 22.6018 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from melter to key measurement point 1 
+Moving recycled batch from melter to key measurement point 1 
 
 Measurement event at KMP: 1
 Operation time 79.9326 (d) 
@@ -6312,14 +6761,14 @@ Measured quantity 22.1663 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 1 to trimmer 
+Moving recycled batch from key measurement point 1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from trimmer to key measurement point 2 
+Moving recycled batch from trimmer to key measurement point 2 
 
 Measurement event at KMP: 2
 Operation time 80.1200 (d) 
@@ -6329,7 +6778,7 @@ Measured quantity 22.1839 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 2 to product storage 
+Moving recycled batch from key measurement point 2 to product storage 
 
 Processing the final product 
 
@@ -6348,10 +6797,19 @@ True inventory - 1479.5664 (kg)
 Expected inventory - 1479.7500 (kg)
 Measured inventory - 1477.9901 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.3449 (kg)
+
 MUF:
 True weight - 0.4336 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 2.6306 (kg)
+Measured weight - 2.9755 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 74 complete 
@@ -6426,10 +6884,19 @@ True inventory - 1499.3576 (kg)
 Expected inventory - 1499.5000 (kg)
 Measured inventory - 1497.8094 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.3449 (kg)
+
 MUF:
 True weight - 0.6424 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 2.7923 (kg)
+Measured weight - 3.1372 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 75 complete 
@@ -6504,10 +6971,19 @@ True inventory - 1518.9099 (kg)
 Expected inventory - 1519.2500 (kg)
 Measured inventory - 1517.4111 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.3449 (kg)
+
 MUF:
 True weight - 1.0901 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 3.0913 (kg)
+Measured weight - 3.4362 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 76 complete 
@@ -6582,10 +7058,19 @@ True inventory - 1538.7066 (kg)
 Expected inventory - 1539.0000 (kg)
 Measured inventory - 1537.0379 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.3449 (kg)
+
 MUF:
 True weight - 1.2934 (kg)
 Expected weight - 1.0000 (kg)
-Measured weight - 3.5288 (kg)
+Measured weight - 3.8737 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 77 complete 
@@ -6660,10 +7145,19 @@ True inventory - 1558.5057 (kg)
 Expected inventory - 1558.7500 (kg)
 Measured inventory - 1556.6714 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.3449 (kg)
+
 MUF:
 True weight - 1.4943 (kg)
 Expected weight - 1.2500 (kg)
-Measured weight - 3.9340 (kg)
+Measured weight - 4.2789 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 78 complete 
@@ -6738,10 +7232,19 @@ True inventory - 1578.1304 (kg)
 Expected inventory - 1578.5000 (kg)
 Measured inventory - 1576.3528 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.3449 (kg)
+
 MUF:
 True weight - 1.8696 (kg)
 Expected weight - 1.5000 (kg)
-Measured weight - 4.1540 (kg)
+Measured weight - 4.4989 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 79 complete 
@@ -6816,10 +7319,19 @@ True inventory - 1598.1061 (kg)
 Expected inventory - 1598.2500 (kg)
 Measured inventory - 1596.1668 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.3449 (kg)
+
 MUF:
 True weight - 1.8939 (kg)
 Expected weight - 1.7500 (kg)
-Measured weight - 4.3178 (kg)
+Measured weight - 4.6627 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 80 complete 
@@ -6894,10 +7406,19 @@ True inventory - 1617.7658 (kg)
 Expected inventory - 1618.0000 (kg)
 Measured inventory - 1615.9732 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.3449 (kg)
+
 MUF:
 True weight - 2.2342 (kg)
 Expected weight - 2.0000 (kg)
-Measured weight - 4.4822 (kg)
+Measured weight - 4.8271 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 81 complete 
@@ -6967,7 +7488,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 88.1383 (d) 
@@ -6977,14 +7498,14 @@ Measured quantity 22.2461 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from melter to key measurement point 1 
+Moving recycled batch from melter to key measurement point 1 
 
 Measurement event at KMP: 1
 Operation time 88.5340 (d) 
@@ -6994,14 +7515,14 @@ Measured quantity 22.3223 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 1 to trimmer 
+Moving recycled batch from key measurement point 1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from trimmer to key measurement point 2 
+Moving recycled batch from trimmer to key measurement point 2 
 
 Measurement event at KMP: 2
 Operation time 88.7214 (d) 
@@ -7011,7 +7532,7 @@ Measured quantity 22.2731 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 2 to product storage 
+Moving recycled batch from key measurement point 2 to product storage 
 
 Processing the final product 
 
@@ -7030,10 +7551,19 @@ True inventory - 1639.9849 (kg)
 Expected inventory - 1639.7500 (kg)
 Measured inventory - 1638.2463 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.3437 (kg)
+
 MUF:
 True weight - 0.0151 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 2.2944 (kg)
+Measured weight - 2.6381 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 82 complete 
@@ -7108,10 +7638,15 @@ True inventory - 1659.9401 (kg)
 Expected inventory - 1659.5000 (kg)
 Measured inventory - 1658.1947 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.3437 (kg)
+
 MUF:
 True weight - 0.0599 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 2.1208 (kg)
+Measured weight - 2.4645 (kg)
 
 
 Campaign 83 complete 
@@ -7186,10 +7721,15 @@ True inventory - 1679.8353 (kg)
 Expected inventory - 1679.2500 (kg)
 Measured inventory - 1678.1093 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.3437 (kg)
+
 MUF:
 True weight - 0.1647 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 2.3239 (kg)
+Measured weight - 2.6676 (kg)
 
 
 Campaign 84 complete 
@@ -7264,10 +7804,15 @@ True inventory - 1699.4993 (kg)
 Expected inventory - 1699.0000 (kg)
 Measured inventory - 1697.9412 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.3437 (kg)
+
 MUF:
 True weight - 0.5007 (kg)
 Expected weight - 1.0000 (kg)
-Measured weight - 2.3953 (kg)
+Measured weight - 2.7390 (kg)
 
 
 Campaign 85 complete 
@@ -7337,7 +7882,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 92.9909 (d) 
@@ -7347,14 +7892,14 @@ Measured quantity 20.5589 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from melter to key measurement point 1 
+Moving recycled batch from melter to key measurement point 1 
 
 Measurement event at KMP: 1
 Operation time 93.3866 (d) 
@@ -7364,14 +7909,14 @@ Measured quantity 20.3207 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 1 to trimmer 
+Moving recycled batch from key measurement point 1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from trimmer to key measurement point 2 
+Moving recycled batch from trimmer to key measurement point 2 
 
 Measurement event at KMP: 2
 Operation time 93.5740 (d) 
@@ -7381,7 +7926,7 @@ Measured quantity 20.3431 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 2 to product storage 
+Moving recycled batch from key measurement point 2 to product storage 
 
 Processing the final product 
 
@@ -7400,10 +7945,19 @@ True inventory - 1719.8330 (kg)
 Expected inventory - 1719.7500 (kg)
 Measured inventory - 1718.2843 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.2998 (kg)
+
 MUF:
 True weight - 0.1670 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 2.1000 (kg)
+Measured weight - 2.3998 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 86 complete 
@@ -7478,10 +8032,19 @@ True inventory - 1739.7876 (kg)
 Expected inventory - 1739.5000 (kg)
 Measured inventory - 1738.1922 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.2998 (kg)
+
 MUF:
 True weight - 0.2124 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 2.2864 (kg)
+Measured weight - 2.5862 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 87 complete 
@@ -7556,10 +8119,19 @@ True inventory - 1759.3441 (kg)
 Expected inventory - 1759.2500 (kg)
 Measured inventory - 1757.7802 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.2998 (kg)
+
 MUF:
 True weight - 0.6559 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 2.5567 (kg)
+Measured weight - 2.8565 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 88 complete 
@@ -7634,10 +8206,19 @@ True inventory - 1778.8824 (kg)
 Expected inventory - 1779.0000 (kg)
 Measured inventory - 1777.2790 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.2998 (kg)
+
 MUF:
 True weight - 1.1176 (kg)
 Expected weight - 1.0000 (kg)
-Measured weight - 3.1401 (kg)
+Measured weight - 3.4399 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 89 complete 
@@ -7712,10 +8293,19 @@ True inventory - 1798.7324 (kg)
 Expected inventory - 1798.7500 (kg)
 Measured inventory - 1797.1175 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.2998 (kg)
+
 MUF:
 True weight - 1.2676 (kg)
 Expected weight - 1.2500 (kg)
-Measured weight - 3.1856 (kg)
+Measured weight - 3.4854 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 90 complete 
@@ -7790,10 +8380,19 @@ True inventory - 1818.6942 (kg)
 Expected inventory - 1818.5000 (kg)
 Measured inventory - 1816.9738 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.2998 (kg)
+
 MUF:
 True weight - 1.3058 (kg)
 Expected weight - 1.5000 (kg)
-Measured weight - 3.3751 (kg)
+Measured weight - 3.6749 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 91 complete 
@@ -7863,7 +8462,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 99.7179 (d) 
@@ -7873,14 +8472,14 @@ Measured quantity 21.3358 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from melter to key measurement point 1 
+Moving recycled batch from melter to key measurement point 1 
 
 Measurement event at KMP: 1
 Operation time 100.1136 (d) 
@@ -7890,14 +8489,14 @@ Measured quantity 21.2227 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 1 to trimmer 
+Moving recycled batch from key measurement point 1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from trimmer to key measurement point 2 
+Moving recycled batch from trimmer to key measurement point 2 
 
 Measurement event at KMP: 2
 Operation time 100.3010 (d) 
@@ -7907,7 +8506,7 @@ Measured quantity 20.9248 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 2 to product storage 
+Moving recycled batch from key measurement point 2 to product storage 
 
 Processing the final product 
 
@@ -7926,10 +8525,19 @@ True inventory - 1839.8478 (kg)
 Expected inventory - 1839.7500 (kg)
 Measured inventory - 1837.8986 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.2653 (kg)
+
 MUF:
 True weight - 0.1522 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 2.5323 (kg)
+Measured weight - 2.7976 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 92 complete 
@@ -8004,10 +8612,19 @@ True inventory - 1859.7604 (kg)
 Expected inventory - 1859.5000 (kg)
 Measured inventory - 1857.6961 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.2653 (kg)
+
 MUF:
 True weight - 0.2396 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 2.6796 (kg)
+Measured weight - 2.9450 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 93 complete 
@@ -8082,10 +8699,19 @@ True inventory - 1879.6184 (kg)
 Expected inventory - 1879.2500 (kg)
 Measured inventory - 1877.5630 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.2653 (kg)
+
 MUF:
 True weight - 0.3816 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 2.8283 (kg)
+Measured weight - 3.0936 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 94 complete 
@@ -8160,10 +8786,19 @@ True inventory - 1899.3902 (kg)
 Expected inventory - 1899.0000 (kg)
 Measured inventory - 1897.3304 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.2653 (kg)
+
 MUF:
 True weight - 0.6098 (kg)
 Expected weight - 1.0000 (kg)
-Measured weight - 2.9003 (kg)
+Measured weight - 3.1657 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 95 complete 
@@ -8238,10 +8873,19 @@ True inventory - 1919.1916 (kg)
 Expected inventory - 1918.7500 (kg)
 Measured inventory - 1917.2169 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.2653 (kg)
+
 MUF:
 True weight - 0.8084 (kg)
 Expected weight - 1.2500 (kg)
-Measured weight - 3.1150 (kg)
+Measured weight - 3.3804 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 96 complete 
@@ -8316,10 +8960,19 @@ True inventory - 1938.7034 (kg)
 Expected inventory - 1938.5000 (kg)
 Measured inventory - 1936.7692 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.2653 (kg)
+
 MUF:
 True weight - 1.2966 (kg)
 Expected weight - 1.5000 (kg)
-Measured weight - 3.6999 (kg)
+Measured weight - 3.9652 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 97 complete 
@@ -8389,7 +9042,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 106.4449 (d) 
@@ -8399,14 +9052,14 @@ Measured quantity 21.0310 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from melter to key measurement point 1 
+Moving recycled batch from melter to key measurement point 1 
 
 Measurement event at KMP: 1
 Operation time 106.8406 (d) 
@@ -8416,14 +9069,14 @@ Measured quantity 20.9685 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 1 to trimmer 
+Moving recycled batch from key measurement point 1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from trimmer to key measurement point 2 
+Moving recycled batch from trimmer to key measurement point 2 
 
 Measurement event at KMP: 2
 Operation time 107.0280 (d) 
@@ -8433,7 +9086,7 @@ Measured quantity 20.8725 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 2 to product storage 
+Moving recycled batch from key measurement point 2 to product storage 
 
 Processing the final product 
 
@@ -8452,10 +9105,19 @@ True inventory - 1959.5206 (kg)
 Expected inventory - 1959.7500 (kg)
 Measured inventory - 1957.6417 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.2118 (kg)
+
 MUF:
 True weight - 0.4794 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 2.7234 (kg)
+Measured weight - 2.5115 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 98 complete 
@@ -8530,10 +9192,15 @@ True inventory - 1979.4467 (kg)
 Expected inventory - 1979.5000 (kg)
 Measured inventory - 1977.6778 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.2118 (kg)
+
 MUF:
 True weight - 0.5533 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 2.6827 (kg)
+Measured weight - 2.4709 (kg)
 
 
 Campaign 99 complete 
@@ -8608,10 +9275,15 @@ True inventory - 1999.3981 (kg)
 Expected inventory - 1999.2500 (kg)
 Measured inventory - 1997.6218 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.2118 (kg)
+
 MUF:
 True weight - 0.6019 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 2.8685 (kg)
+Measured weight - 2.6567 (kg)
 
 
 Campaign 100 complete 
@@ -8686,10 +9358,15 @@ True inventory - 2019.3688 (kg)
 Expected inventory - 2019.0000 (kg)
 Measured inventory - 2017.4907 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.2118 (kg)
+
 MUF:
 True weight - 0.6312 (kg)
 Expected weight - 1.0000 (kg)
-Measured weight - 2.9337 (kg)
+Measured weight - 2.7219 (kg)
 
 
 Campaign 101 complete 
@@ -8764,10 +9441,15 @@ True inventory - 2038.8788 (kg)
 Expected inventory - 2038.7500 (kg)
 Measured inventory - 2036.9773 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.2118 (kg)
+
 MUF:
 True weight - 1.1212 (kg)
 Expected weight - 1.2500 (kg)
-Measured weight - 3.4393 (kg)
+Measured weight - 3.2275 (kg)
 
 
 Campaign 102 complete 
@@ -8842,10 +9524,19 @@ True inventory - 2058.6789 (kg)
 Expected inventory - 2058.5000 (kg)
 Measured inventory - 2056.6595 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.2118 (kg)
+
 MUF:
 True weight - 1.3211 (kg)
 Expected weight - 1.5000 (kg)
-Measured weight - 3.7224 (kg)
+Measured weight - 3.5106 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 103 complete 
@@ -8920,10 +9611,19 @@ True inventory - 2078.3593 (kg)
 Expected inventory - 2078.2500 (kg)
 Measured inventory - 2076.1430 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.2118 (kg)
+
 MUF:
 True weight - 1.6407 (kg)
 Expected weight - 1.7500 (kg)
-Measured weight - 4.3690 (kg)
+Measured weight - 4.1572 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 104 complete 
@@ -8998,10 +9698,19 @@ True inventory - 2098.0326 (kg)
 Expected inventory - 2098.0000 (kg)
 Measured inventory - 2095.8448 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.2118 (kg)
+
 MUF:
 True weight - 1.9674 (kg)
 Expected weight - 2.0000 (kg)
-Measured weight - 4.6013 (kg)
+Measured weight - 4.3895 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 105 complete 
@@ -9071,7 +9780,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 115.0463 (d) 
@@ -9081,14 +9790,14 @@ Measured quantity 21.9159 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from melter to key measurement point 1 
+Moving recycled batch from melter to key measurement point 1 
 
 Measurement event at KMP: 1
 Operation time 115.4420 (d) 
@@ -9098,14 +9807,14 @@ Measured quantity 21.6470 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 1 to trimmer 
+Moving recycled batch from key measurement point 1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from trimmer to key measurement point 2 
+Moving recycled batch from trimmer to key measurement point 2 
 
 Measurement event at KMP: 2
 Operation time 115.6294 (d) 
@@ -9115,7 +9824,7 @@ Measured quantity 21.6560 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 2 to product storage 
+Moving recycled batch from key measurement point 2 to product storage 
 
 Processing the final product 
 
@@ -9134,10 +9843,19 @@ True inventory - 2119.6484 (kg)
 Expected inventory - 2119.7500 (kg)
 Measured inventory - 2117.5007 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.0612 (kg)
+
 MUF:
 True weight - 0.3516 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 3.1196 (kg)
+Measured weight - 3.1808 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 106 complete 
@@ -9212,10 +9930,19 @@ True inventory - 2139.2148 (kg)
 Expected inventory - 2139.5000 (kg)
 Measured inventory - 2137.0193 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.0612 (kg)
+
 MUF:
 True weight - 0.7852 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 3.6128 (kg)
+Measured weight - 3.6740 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 107 complete 
@@ -9290,10 +10017,19 @@ True inventory - 2159.1195 (kg)
 Expected inventory - 2159.2500 (kg)
 Measured inventory - 2156.9255 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.0612 (kg)
+
 MUF:
 True weight - 0.8805 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 3.7689 (kg)
+Measured weight - 3.8302 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 108 complete 
@@ -9368,10 +10104,19 @@ True inventory - 2178.9329 (kg)
 Expected inventory - 2179.0000 (kg)
 Measured inventory - 2176.7342 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.0612 (kg)
+
 MUF:
 True weight - 1.0671 (kg)
 Expected weight - 1.0000 (kg)
-Measured weight - 3.9212 (kg)
+Measured weight - 3.9825 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 109 complete 
@@ -9441,7 +10186,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 119.8989 (d) 
@@ -9451,14 +10196,14 @@ Measured quantity 20.9462 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from melter to key measurement point 1 
+Moving recycled batch from melter to key measurement point 1 
 
 Measurement event at KMP: 1
 Operation time 120.2946 (d) 
@@ -9468,14 +10213,14 @@ Measured quantity 20.8004 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 1 to trimmer 
+Moving recycled batch from key measurement point 1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from trimmer to key measurement point 2 
+Moving recycled batch from trimmer to key measurement point 2 
 
 Measurement event at KMP: 2
 Operation time 120.4820 (d) 
@@ -9485,7 +10230,7 @@ Measured quantity 20.7945 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 2 to product storage 
+Moving recycled batch from key measurement point 2 to product storage 
 
 Processing the final product 
 
@@ -9504,10 +10249,19 @@ True inventory - 2199.7718 (kg)
 Expected inventory - 2199.7500 (kg)
 Measured inventory - 2197.5287 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.0338 (kg)
+
 MUF:
 True weight - 0.2282 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 3.0990 (kg)
+Measured weight - 3.0652 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 110 complete 
@@ -9582,10 +10336,19 @@ True inventory - 2219.3811 (kg)
 Expected inventory - 2219.5000 (kg)
 Measured inventory - 2217.1543 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.0338 (kg)
+
 MUF:
 True weight - 0.6189 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 3.5812 (kg)
+Measured weight - 3.5474 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 111 complete 
@@ -9655,7 +10418,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 122.8771 (d) 
@@ -9665,14 +10428,14 @@ Measured quantity 20.6556 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from melter to key measurement point 1 
+Moving recycled batch from melter to key measurement point 1 
 
 Measurement event at KMP: 1
 Operation time 123.2728 (d) 
@@ -9682,14 +10445,14 @@ Measured quantity 20.3119 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 1 to trimmer 
+Moving recycled batch from key measurement point 1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from trimmer to key measurement point 2 
+Moving recycled batch from trimmer to key measurement point 2 
 
 Measurement event at KMP: 2
 Operation time 123.4602 (d) 
@@ -9699,7 +10462,7 @@ Measured quantity 20.2411 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 2 to product storage 
+Moving recycled batch from key measurement point 2 to product storage 
 
 Processing the final product 
 
@@ -9718,10 +10481,19 @@ True inventory - 2239.6204 (kg)
 Expected inventory - 2239.7500 (kg)
 Measured inventory - 2237.3954 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.0598 (kg)
+
 MUF:
 True weight - 0.3796 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 3.3497 (kg)
+Measured weight - 3.2899 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 112 complete 
@@ -9796,10 +10568,19 @@ True inventory - 2259.4379 (kg)
 Expected inventory - 2259.5000 (kg)
 Measured inventory - 2257.0412 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.0598 (kg)
+
 MUF:
 True weight - 0.5621 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 3.4753 (kg)
+Measured weight - 3.4156 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 113 complete 
@@ -9874,10 +10655,19 @@ True inventory - 2279.3792 (kg)
 Expected inventory - 2279.2500 (kg)
 Measured inventory - 2277.0236 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.0598 (kg)
+
 MUF:
 True weight - 0.6208 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 3.3777 (kg)
+Measured weight - 3.3179 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 114 complete 
@@ -9947,7 +10737,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 126.7925 (d) 
@@ -9957,14 +10747,14 @@ Measured quantity 20.6217 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from melter to key measurement point 1 
+Moving recycled batch from melter to key measurement point 1 
 
 Measurement event at KMP: 1
 Operation time 127.1882 (d) 
@@ -9974,14 +10764,14 @@ Measured quantity 20.3987 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 1 to trimmer 
+Moving recycled batch from key measurement point 1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from trimmer to key measurement point 2 
+Moving recycled batch from trimmer to key measurement point 2 
 
 Measurement event at KMP: 2
 Operation time 127.3756 (d) 
@@ -9991,7 +10781,7 @@ Measured quantity 20.3497 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 2 to product storage 
+Moving recycled batch from key measurement point 2 to product storage 
 
 Processing the final product 
 
@@ -10010,10 +10800,19 @@ True inventory - 2299.7252 (kg)
 Expected inventory - 2299.7500 (kg)
 Measured inventory - 2297.3733 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.1561 (kg)
+
 MUF:
 True weight - 0.2748 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 2.9111 (kg)
+Measured weight - 2.7550 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 115 complete 
@@ -10088,10 +10887,19 @@ True inventory - 2319.2866 (kg)
 Expected inventory - 2319.5000 (kg)
 Measured inventory - 2316.8228 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.1561 (kg)
+
 MUF:
 True weight - 0.7134 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 3.5384 (kg)
+Measured weight - 3.3823 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 116 complete 
@@ -10166,10 +10974,19 @@ True inventory - 2339.1185 (kg)
 Expected inventory - 2339.2500 (kg)
 Measured inventory - 2336.5407 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.1561 (kg)
+
 MUF:
 True weight - 0.8815 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 3.8073 (kg)
+Measured weight - 3.6512 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 117 complete 
@@ -10244,10 +11061,19 @@ True inventory - 2359.0355 (kg)
 Expected inventory - 2359.0000 (kg)
 Measured inventory - 2356.5023 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.1561 (kg)
+
 MUF:
 True weight - 0.9645 (kg)
 Expected weight - 1.0000 (kg)
-Measured weight - 3.9243 (kg)
+Measured weight - 3.7682 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 118 complete 
@@ -10322,10 +11148,19 @@ True inventory - 2378.6134 (kg)
 Expected inventory - 2378.7500 (kg)
 Measured inventory - 2376.0582 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.1561 (kg)
+
 MUF:
 True weight - 1.3866 (kg)
 Expected weight - 1.2500 (kg)
-Measured weight - 4.3291 (kg)
+Measured weight - 4.1731 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 119 complete 
@@ -10400,10 +11235,19 @@ True inventory - 2398.2043 (kg)
 Expected inventory - 2398.5000 (kg)
 Measured inventory - 2395.6275 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.1561 (kg)
+
 MUF:
 True weight - 1.7957 (kg)
 Expected weight - 1.5000 (kg)
-Measured weight - 4.6514 (kg)
+Measured weight - 4.4953 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 120 complete 
@@ -10478,10 +11322,19 @@ True inventory - 2418.0811 (kg)
 Expected inventory - 2418.2500 (kg)
 Measured inventory - 2415.4098 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.1561 (kg)
+
 MUF:
 True weight - 1.9189 (kg)
 Expected weight - 1.7500 (kg)
-Measured weight - 4.7761 (kg)
+Measured weight - 4.6200 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 121 complete 
@@ -10556,10 +11409,19 @@ True inventory - 2437.6148 (kg)
 Expected inventory - 2438.0000 (kg)
 Measured inventory - 2434.8845 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.1561 (kg)
+
 MUF:
 True weight - 2.3852 (kg)
 Expected weight - 2.0000 (kg)
-Measured weight - 5.3252 (kg)
+Measured weight - 5.1691 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 122 complete 
@@ -10629,7 +11491,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 135.3939 (d) 
@@ -10639,14 +11501,14 @@ Measured quantity 22.5603 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from melter to key measurement point 1 
+Moving recycled batch from melter to key measurement point 1 
 
 Measurement event at KMP: 1
 Operation time 135.7896 (d) 
@@ -10656,14 +11518,14 @@ Measured quantity 22.0565 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 1 to trimmer 
+Moving recycled batch from key measurement point 1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from trimmer to key measurement point 2 
+Moving recycled batch from trimmer to key measurement point 2 
 
 Measurement event at KMP: 2
 Operation time 135.9770 (d) 
@@ -10673,7 +11535,7 @@ Measured quantity 21.9522 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 2 to product storage 
+Moving recycled batch from key measurement point 2 to product storage 
 
 Processing the final product 
 
@@ -10692,10 +11554,19 @@ True inventory - 2459.5953 (kg)
 Expected inventory - 2459.7500 (kg)
 Measured inventory - 2456.8367 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.2999 (kg)
+
 MUF:
 True weight - 0.4047 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 3.3619 (kg)
+Measured weight - 3.6619 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 123 complete 
@@ -10770,10 +11641,19 @@ True inventory - 2479.4510 (kg)
 Expected inventory - 2479.5000 (kg)
 Measured inventory - 2476.6340 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.2999 (kg)
+
 MUF:
 True weight - 0.5490 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 3.4990 (kg)
+Measured weight - 3.7990 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 124 complete 
@@ -10848,10 +11728,19 @@ True inventory - 2499.0784 (kg)
 Expected inventory - 2499.2500 (kg)
 Measured inventory - 2496.5671 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.2999 (kg)
+
 MUF:
 True weight - 0.9216 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 3.5129 (kg)
+Measured weight - 3.8128 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 125 complete 
@@ -10926,10 +11815,19 @@ True inventory - 2518.7756 (kg)
 Expected inventory - 2519.0000 (kg)
 Measured inventory - 2516.2985 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.2999 (kg)
+
 MUF:
 True weight - 1.2244 (kg)
 Expected weight - 1.0000 (kg)
-Measured weight - 3.8141 (kg)
+Measured weight - 4.1141 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 126 complete 
@@ -11004,10 +11902,19 @@ True inventory - 2538.3696 (kg)
 Expected inventory - 2538.7500 (kg)
 Measured inventory - 2535.8882 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.2999 (kg)
+
 MUF:
 True weight - 1.6304 (kg)
 Expected weight - 1.2500 (kg)
-Measured weight - 4.1667 (kg)
+Measured weight - 4.4666 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 127 complete 
@@ -11082,10 +11989,19 @@ True inventory - 2558.1605 (kg)
 Expected inventory - 2558.5000 (kg)
 Measured inventory - 2555.6679 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.2999 (kg)
+
 MUF:
 True weight - 1.8395 (kg)
 Expected weight - 1.5000 (kg)
-Measured weight - 4.3795 (kg)
+Measured weight - 4.6795 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 128 complete 
@@ -11160,10 +12076,19 @@ True inventory - 2577.7939 (kg)
 Expected inventory - 2578.2500 (kg)
 Measured inventory - 2575.1756 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.2999 (kg)
+
 MUF:
 True weight - 2.2061 (kg)
 Expected weight - 1.7500 (kg)
-Measured weight - 5.0056 (kg)
+Measured weight - 5.3056 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 129 complete 
@@ -11238,10 +12163,19 @@ True inventory - 2597.7913 (kg)
 Expected inventory - 2598.0000 (kg)
 Measured inventory - 2595.2239 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.2999 (kg)
+
 MUF:
 True weight - 2.2087 (kg)
 Expected weight - 2.0000 (kg)
-Measured weight - 5.0573 (kg)
+Measured weight - 5.3572 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 130 complete 
@@ -11316,10 +12250,19 @@ True inventory - 2617.7028 (kg)
 Expected inventory - 2617.7500 (kg)
 Measured inventory - 2615.1301 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.2999 (kg)
+
 MUF:
 True weight - 2.2972 (kg)
 Expected weight - 2.2500 (kg)
-Measured weight - 5.1746 (kg)
+Measured weight - 5.4745 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 131 complete 
@@ -11394,10 +12337,19 @@ True inventory - 2637.5614 (kg)
 Expected inventory - 2637.5000 (kg)
 Measured inventory - 2635.0932 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.2999 (kg)
+
 MUF:
 True weight - 2.4386 (kg)
 Expected weight - 2.5000 (kg)
-Measured weight - 5.2669 (kg)
+Measured weight - 5.5669 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 132 complete 
@@ -11472,10 +12424,19 @@ True inventory - 2657.4875 (kg)
 Expected inventory - 2657.2500 (kg)
 Measured inventory - 2654.9823 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.2999 (kg)
+
 MUF:
 True weight - 2.5125 (kg)
 Expected weight - 2.7500 (kg)
-Measured weight - 5.2106 (kg)
+Measured weight - 5.5105 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 133 complete 
@@ -11545,7 +12506,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 146.8069 (d) 
@@ -11555,14 +12516,14 @@ Measured quantity 22.5502 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from melter to key measurement point 1 
+Moving recycled batch from melter to key measurement point 1 
 
 Measurement event at KMP: 1
 Operation time 147.2026 (d) 
@@ -11572,14 +12533,14 @@ Measured quantity 22.0945 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 1 to trimmer 
+Moving recycled batch from key measurement point 1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from trimmer to key measurement point 2 
+Moving recycled batch from trimmer to key measurement point 2 
 
 Measurement event at KMP: 2
 Operation time 147.3900 (d) 
@@ -11589,7 +12550,7 @@ Measured quantity 22.1978 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 2 to product storage 
+Moving recycled batch from key measurement point 2 to product storage 
 
 Processing the final product 
 
@@ -11608,10 +12569,19 @@ True inventory - 2679.7766 (kg)
 Expected inventory - 2679.7500 (kg)
 Measured inventory - 2677.1801 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.5400 (kg)
+
 MUF:
 True weight - 0.2234 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 3.1078 (kg)
+Measured weight - 3.6477 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 134 complete 
@@ -11686,10 +12656,19 @@ True inventory - 2699.6316 (kg)
 Expected inventory - 2699.5000 (kg)
 Measured inventory - 2697.1775 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.5400 (kg)
+
 MUF:
 True weight - 0.3684 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 3.1324 (kg)
+Measured weight - 3.6723 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 135 complete 
@@ -11764,10 +12743,19 @@ True inventory - 2719.4593 (kg)
 Expected inventory - 2719.2500 (kg)
 Measured inventory - 2717.0919 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.5400 (kg)
+
 MUF:
 True weight - 0.5407 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 3.2575 (kg)
+Measured weight - 3.7975 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 136 complete 
@@ -11842,10 +12830,19 @@ True inventory - 2739.1754 (kg)
 Expected inventory - 2739.0000 (kg)
 Measured inventory - 2736.8044 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.5400 (kg)
+
 MUF:
 True weight - 0.8246 (kg)
 Expected weight - 1.0000 (kg)
-Measured weight - 3.4794 (kg)
+Measured weight - 4.0193 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 137 complete 
@@ -11920,10 +12917,19 @@ True inventory - 2758.8615 (kg)
 Expected inventory - 2758.7500 (kg)
 Measured inventory - 2756.3128 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.5400 (kg)
+
 MUF:
 True weight - 1.1385 (kg)
 Expected weight - 1.2500 (kg)
-Measured weight - 4.2091 (kg)
+Measured weight - 4.7490 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 138 complete 
@@ -11998,10 +13004,19 @@ True inventory - 2778.8319 (kg)
 Expected inventory - 2778.5000 (kg)
 Measured inventory - 2776.2485 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.5400 (kg)
+
 MUF:
 True weight - 1.1681 (kg)
 Expected weight - 1.5000 (kg)
-Measured weight - 4.2201 (kg)
+Measured weight - 4.7601 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 139 complete 
@@ -12071,7 +13086,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 153.5339 (d) 
@@ -12081,14 +13096,14 @@ Measured quantity 21.2893 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from melter to key measurement point 1 
+Moving recycled batch from melter to key measurement point 1 
 
 Measurement event at KMP: 1
 Operation time 153.9296 (d) 
@@ -12098,14 +13113,14 @@ Measured quantity 20.7653 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 1 to trimmer 
+Moving recycled batch from key measurement point 1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from trimmer to key measurement point 2 
+Moving recycled batch from trimmer to key measurement point 2 
 
 Measurement event at KMP: 2
 Operation time 154.1170 (d) 
@@ -12114,8 +13129,12 @@ Expected quantity 21.2500 (kg)
 Measured quantity 20.6094 (kg) 
 
 
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
+
+
 Edge transition: 
-Moving batch from key measurement point 2 to product storage 
+Moving recycled batch from key measurement point 2 to product storage 
 
 Processing the final product 
 
@@ -12134,10 +13153,19 @@ True inventory - 2799.6713 (kg)
 Expected inventory - 2799.7500 (kg)
 Measured inventory - 2796.8579 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.7590 (kg)
+
 MUF:
 True weight - 0.3287 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 3.5313 (kg)
+Measured weight - 4.2903 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 140 complete 
@@ -12212,10 +13240,19 @@ True inventory - 2819.3940 (kg)
 Expected inventory - 2819.5000 (kg)
 Measured inventory - 2816.6595 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.7590 (kg)
+
 MUF:
 True weight - 0.6060 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 3.9948 (kg)
+Measured weight - 4.7538 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 141 complete 
@@ -12285,7 +13322,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 156.5121 (d) 
@@ -12295,14 +13332,14 @@ Measured quantity 20.5769 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from melter to key measurement point 1 
+Moving recycled batch from melter to key measurement point 1 
 
 Measurement event at KMP: 1
 Operation time 156.9078 (d) 
@@ -12312,14 +13349,14 @@ Measured quantity 20.1157 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 1 to trimmer 
+Moving recycled batch from key measurement point 1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from trimmer to key measurement point 2 
+Moving recycled batch from trimmer to key measurement point 2 
 
 Measurement event at KMP: 2
 Operation time 157.0952 (d) 
@@ -12329,7 +13366,7 @@ Measured quantity 20.1495 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 2 to product storage 
+Moving recycled batch from key measurement point 2 to product storage 
 
 Processing the final product 
 
@@ -12348,10 +13385,19 @@ True inventory - 2839.5900 (kg)
 Expected inventory - 2839.7500 (kg)
 Measured inventory - 2836.8091 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.8136 (kg)
+
 MUF:
 True weight - 0.4100 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 3.8652 (kg)
+Measured weight - 4.6788 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 142 complete 
@@ -12426,10 +13472,19 @@ True inventory - 2859.4763 (kg)
 Expected inventory - 2859.5000 (kg)
 Measured inventory - 2856.7138 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.8136 (kg)
+
 MUF:
 True weight - 0.5237 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 4.0626 (kg)
+Measured weight - 4.8763 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 143 complete 
@@ -12504,10 +13559,19 @@ True inventory - 2879.3209 (kg)
 Expected inventory - 2879.2500 (kg)
 Measured inventory - 2876.6827 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.8136 (kg)
+
 MUF:
 True weight - 0.6791 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 4.0552 (kg)
+Measured weight - 4.8688 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 144 complete 
@@ -12582,10 +13646,19 @@ True inventory - 2898.8340 (kg)
 Expected inventory - 2899.0000 (kg)
 Measured inventory - 2896.1453 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.8136 (kg)
+
 MUF:
 True weight - 1.1660 (kg)
 Expected weight - 1.0000 (kg)
-Measured weight - 4.6739 (kg)
+Measured weight - 5.4875 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 145 complete 
@@ -12660,10 +13733,19 @@ True inventory - 2918.6612 (kg)
 Expected inventory - 2918.7500 (kg)
 Measured inventory - 2915.7480 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.8136 (kg)
+
 MUF:
 True weight - 1.3388 (kg)
 Expected weight - 1.2500 (kg)
-Measured weight - 4.9896 (kg)
+Measured weight - 5.8032 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 146 complete 
@@ -12733,7 +13815,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 162.3019 (d) 
@@ -12743,14 +13825,14 @@ Measured quantity 21.2936 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from melter to key measurement point 1 
+Moving recycled batch from melter to key measurement point 1 
 
 Measurement event at KMP: 1
 Operation time 162.6976 (d) 
@@ -12760,14 +13842,14 @@ Measured quantity 21.0703 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 1 to trimmer 
+Moving recycled batch from key measurement point 1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from trimmer to key measurement point 2 
+Moving recycled batch from trimmer to key measurement point 2 
 
 Measurement event at KMP: 2
 Operation time 162.8850 (d) 
@@ -12777,7 +13859,7 @@ Measured quantity 21.1120 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 2 to product storage 
+Moving recycled batch from key measurement point 2 to product storage 
 
 Processing the final product 
 
@@ -12796,10 +13878,19 @@ True inventory - 2939.7587 (kg)
 Expected inventory - 2939.7500 (kg)
 Measured inventory - 2936.8600 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0926 (kg)
+
 MUF:
 True weight - 0.2413 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 3.9340 (kg)
+Measured weight - 5.0266 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 147 complete 
@@ -12874,10 +13965,19 @@ True inventory - 2959.2891 (kg)
 Expected inventory - 2959.5000 (kg)
 Measured inventory - 2956.3939 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0926 (kg)
+
 MUF:
 True weight - 0.7109 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 4.4357 (kg)
+Measured weight - 5.5283 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 148 complete 
@@ -12952,10 +14052,19 @@ True inventory - 2979.0217 (kg)
 Expected inventory - 2979.2500 (kg)
 Measured inventory - 2976.0175 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0926 (kg)
+
 MUF:
 True weight - 0.9783 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 4.8122 (kg)
+Measured weight - 5.9048 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 149 complete 
@@ -13030,10 +14139,19 @@ True inventory - 2998.6597 (kg)
 Expected inventory - 2999.0000 (kg)
 Measured inventory - 2995.7345 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0926 (kg)
+
 MUF:
 True weight - 1.3403 (kg)
 Expected weight - 1.0000 (kg)
-Measured weight - 5.1702 (kg)
+Measured weight - 6.2628 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 150 complete 
@@ -13108,10 +14226,19 @@ True inventory - 3018.2228 (kg)
 Expected inventory - 3018.7500 (kg)
 Measured inventory - 3015.3520 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0926 (kg)
+
 MUF:
 True weight - 1.7772 (kg)
 Expected weight - 1.2500 (kg)
-Measured weight - 5.5638 (kg)
+Measured weight - 6.6564 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 151 complete 
@@ -13186,10 +14313,19 @@ True inventory - 3037.8544 (kg)
 Expected inventory - 3038.5000 (kg)
 Measured inventory - 3034.9870 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0926 (kg)
+
 MUF:
 True weight - 2.1456 (kg)
 Expected weight - 1.5000 (kg)
-Measured weight - 5.8183 (kg)
+Measured weight - 6.9109 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 152 complete 
@@ -13264,10 +14400,19 @@ True inventory - 3057.7400 (kg)
 Expected inventory - 3058.2500 (kg)
 Measured inventory - 3055.0422 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0926 (kg)
+
 MUF:
 True weight - 2.2600 (kg)
 Expected weight - 1.7500 (kg)
-Measured weight - 5.6700 (kg)
+Measured weight - 6.7626 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 153 complete 
@@ -13342,10 +14487,19 @@ True inventory - 3077.7180 (kg)
 Expected inventory - 3078.0000 (kg)
 Measured inventory - 3075.0258 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0926 (kg)
+
 MUF:
 True weight - 2.2820 (kg)
 Expected weight - 2.0000 (kg)
-Measured weight - 5.6851 (kg)
+Measured weight - 6.7777 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 154 complete 
@@ -13415,7 +14569,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 170.9033 (d) 
@@ -13425,7 +14579,7 @@ Measured quantity 22.2454 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  True 
@@ -13434,7 +14588,7 @@ Failure status:  True
 Melter failed at time 171.2574, begin failure routine
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving recycled batch from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 171.2990 (d) 
@@ -13444,7 +14598,7 @@ Measured quantity 22.1028 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving recycled batch from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -13473,7 +14627,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 172.0071 (d) 
@@ -13483,14 +14637,14 @@ Measured quantity 22.0211 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from melter to key measurement point 1 
+Moving recycled batch from melter to key measurement point 1 
 
 Measurement event at KMP: 1
 Operation time 172.4028 (d) 
@@ -13500,14 +14654,14 @@ Measured quantity 21.9070 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 1 to trimmer 
+Moving recycled batch from key measurement point 1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from trimmer to key measurement point 2 
+Moving recycled batch from trimmer to key measurement point 2 
 
 Measurement event at KMP: 2
 Operation time 172.5902 (d) 
@@ -13517,7 +14671,7 @@ Measured quantity 22.0650 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 2 to product storage 
+Moving recycled batch from key measurement point 2 to product storage 
 
 Processing the final product 
 
@@ -13536,10 +14690,19 @@ True inventory - 3099.7057 (kg)
 Expected inventory - 3099.7500 (kg)
 Measured inventory - 3097.0907 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0781 (kg)
+
 MUF:
 True weight - 0.2943 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 3.7248 (kg)
+Measured weight - 4.8029 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 155 complete 
@@ -13614,10 +14777,19 @@ True inventory - 3119.3165 (kg)
 Expected inventory - 3119.5000 (kg)
 Measured inventory - 3116.6983 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0781 (kg)
+
 MUF:
 True weight - 0.6835 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 4.2684 (kg)
+Measured weight - 5.3465 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 156 complete 
@@ -13692,10 +14864,19 @@ True inventory - 3138.8186 (kg)
 Expected inventory - 3139.2500 (kg)
 Measured inventory - 3136.0918 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0781 (kg)
+
 MUF:
 True weight - 1.1814 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 4.9950 (kg)
+Measured weight - 6.0731 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 157 complete 
@@ -13770,10 +14951,19 @@ True inventory - 3158.7550 (kg)
 Expected inventory - 3159.0000 (kg)
 Measured inventory - 3155.9134 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0781 (kg)
+
 MUF:
 True weight - 1.2450 (kg)
 Expected weight - 1.0000 (kg)
-Measured weight - 5.0466 (kg)
+Measured weight - 6.1247 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 158 complete 
@@ -13848,10 +15038,19 @@ True inventory - 3178.4416 (kg)
 Expected inventory - 3178.7500 (kg)
 Measured inventory - 3175.5127 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0781 (kg)
+
 MUF:
 True weight - 1.5584 (kg)
 Expected weight - 1.2500 (kg)
-Measured weight - 5.4555 (kg)
+Measured weight - 6.5336 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 159 complete 
@@ -13926,10 +15125,19 @@ True inventory - 3198.3088 (kg)
 Expected inventory - 3198.5000 (kg)
 Measured inventory - 3195.3788 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0781 (kg)
+
 MUF:
 True weight - 1.6912 (kg)
 Expected weight - 1.5000 (kg)
-Measured weight - 5.5813 (kg)
+Measured weight - 6.6593 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 160 complete 
@@ -14004,10 +15212,19 @@ True inventory - 3217.8970 (kg)
 Expected inventory - 3218.2500 (kg)
 Measured inventory - 3214.8608 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0781 (kg)
+
 MUF:
 True weight - 2.1030 (kg)
 Expected weight - 1.7500 (kg)
-Measured weight - 6.0665 (kg)
+Measured weight - 7.1446 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 161 complete 
@@ -14082,10 +15299,19 @@ True inventory - 3237.5445 (kg)
 Expected inventory - 3238.0000 (kg)
 Measured inventory - 3234.5090 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0781 (kg)
+
 MUF:
 True weight - 2.4555 (kg)
 Expected weight - 2.0000 (kg)
-Measured weight - 6.4858 (kg)
+Measured weight - 7.5639 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 162 complete 
@@ -14155,7 +15381,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 180.6085 (d) 
@@ -14165,14 +15391,14 @@ Measured quantity 22.3717 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from melter to key measurement point 1 
+Moving recycled batch from melter to key measurement point 1 
 
 Measurement event at KMP: 1
 Operation time 181.0042 (d) 
@@ -14182,14 +15408,14 @@ Measured quantity 22.3419 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 1 to trimmer 
+Moving recycled batch from key measurement point 1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from trimmer to key measurement point 2 
+Moving recycled batch from trimmer to key measurement point 2 
 
 Measurement event at KMP: 2
 Operation time 181.1916 (d) 
@@ -14198,8 +15424,12 @@ Expected quantity 21.7500 (kg)
 Measured quantity 22.4341 (kg) 
 
 
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
+
+
 Edge transition: 
-Moving batch from key measurement point 2 to product storage 
+Moving recycled batch from key measurement point 2 to product storage 
 
 Processing the final product 
 
@@ -14218,10 +15448,19 @@ True inventory - 3259.9455 (kg)
 Expected inventory - 3259.7500 (kg)
 Measured inventory - 3256.9431 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.9943 (kg)
+
 MUF:
 True weight - 0.0545 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 4.0216 (kg)
+Measured weight - 5.0159 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 163 complete 
@@ -14296,10 +15535,19 @@ True inventory - 3279.5583 (kg)
 Expected inventory - 3279.5000 (kg)
 Measured inventory - 3276.6556 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.9943 (kg)
+
 MUF:
 True weight - 0.4417 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 4.5317 (kg)
+Measured weight - 5.5260 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 164 complete 
@@ -14374,10 +15622,19 @@ True inventory - 3299.2960 (kg)
 Expected inventory - 3299.2500 (kg)
 Measured inventory - 3296.3085 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.9943 (kg)
+
 MUF:
 True weight - 0.7040 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 4.8819 (kg)
+Measured weight - 5.8762 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 165 complete 
@@ -14452,10 +15709,19 @@ True inventory - 3318.8535 (kg)
 Expected inventory - 3319.0000 (kg)
 Measured inventory - 3315.8290 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.9943 (kg)
+
 MUF:
 True weight - 1.1465 (kg)
 Expected weight - 1.0000 (kg)
-Measured weight - 5.3288 (kg)
+Measured weight - 6.3231 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 166 complete 
@@ -14530,10 +15796,19 @@ True inventory - 3338.3889 (kg)
 Expected inventory - 3338.7500 (kg)
 Measured inventory - 3335.4399 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.9943 (kg)
+
 MUF:
 True weight - 1.6111 (kg)
 Expected weight - 1.2500 (kg)
-Measured weight - 5.8152 (kg)
+Measured weight - 6.8095 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 167 complete 
@@ -14608,10 +15883,19 @@ True inventory - 3357.9972 (kg)
 Expected inventory - 3358.5000 (kg)
 Measured inventory - 3355.0515 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.9943 (kg)
+
 MUF:
 True weight - 2.0028 (kg)
 Expected weight - 1.5000 (kg)
-Measured weight - 6.1497 (kg)
+Measured weight - 7.1440 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 168 complete 
@@ -14686,10 +15970,19 @@ True inventory - 3377.7854 (kg)
 Expected inventory - 3378.2500 (kg)
 Measured inventory - 3374.7364 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.9943 (kg)
+
 MUF:
 True weight - 2.2146 (kg)
 Expected weight - 1.7500 (kg)
-Measured weight - 6.2065 (kg)
+Measured weight - 7.2007 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 169 complete 
@@ -14764,10 +16057,19 @@ True inventory - 3397.6540 (kg)
 Expected inventory - 3398.0000 (kg)
 Measured inventory - 3394.6076 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.9943 (kg)
+
 MUF:
 True weight - 2.3460 (kg)
 Expected weight - 2.0000 (kg)
-Measured weight - 6.2916 (kg)
+Measured weight - 7.2859 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 170 complete 
@@ -14842,10 +16144,19 @@ True inventory - 3417.5987 (kg)
 Expected inventory - 3417.7500 (kg)
 Measured inventory - 3414.5544 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.9943 (kg)
+
 MUF:
 True weight - 2.4013 (kg)
 Expected weight - 2.2500 (kg)
-Measured weight - 6.4602 (kg)
+Measured weight - 7.4545 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 171 complete 
@@ -14915,7 +16226,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 190.1471 (d) 
@@ -14925,14 +16236,14 @@ Measured quantity 22.4109 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from melter to key measurement point 1 
+Moving recycled batch from melter to key measurement point 1 
 
 Measurement event at KMP: 1
 Operation time 190.5428 (d) 
@@ -14942,14 +16253,14 @@ Measured quantity 22.2318 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 1 to trimmer 
+Moving recycled batch from key measurement point 1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from trimmer to key measurement point 2 
+Moving recycled batch from trimmer to key measurement point 2 
 
 Measurement event at KMP: 2
 Operation time 190.7302 (d) 
@@ -14959,7 +16270,7 @@ Measured quantity 22.2120 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 2 to product storage 
+Moving recycled batch from key measurement point 2 to product storage 
 
 Processing the final product 
 
@@ -14978,10 +16289,19 @@ True inventory - 3439.8352 (kg)
 Expected inventory - 3439.7500 (kg)
 Measured inventory - 3436.7664 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0298 (kg)
+
 MUF:
 True weight - 0.1648 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 4.2581 (kg)
+Measured weight - 5.2879 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 172 complete 
@@ -15056,10 +16376,19 @@ True inventory - 3459.7246 (kg)
 Expected inventory - 3459.5000 (kg)
 Measured inventory - 3456.6864 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0298 (kg)
+
 MUF:
 True weight - 0.2754 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 4.3564 (kg)
+Measured weight - 5.3862 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 173 complete 
@@ -15134,10 +16463,19 @@ True inventory - 3479.5496 (kg)
 Expected inventory - 3479.2500 (kg)
 Measured inventory - 3476.3838 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0298 (kg)
+
 MUF:
 True weight - 0.4504 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 4.5060 (kg)
+Measured weight - 5.5358 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 174 complete 
@@ -15212,10 +16550,19 @@ True inventory - 3499.1495 (kg)
 Expected inventory - 3499.0000 (kg)
 Measured inventory - 3496.0085 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0298 (kg)
+
 MUF:
 True weight - 0.8505 (kg)
 Expected weight - 1.0000 (kg)
-Measured weight - 4.9447 (kg)
+Measured weight - 5.9745 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 175 complete 
@@ -15290,10 +16637,19 @@ True inventory - 3518.9365 (kg)
 Expected inventory - 3518.7500 (kg)
 Measured inventory - 3515.8007 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0298 (kg)
+
 MUF:
 True weight - 1.0635 (kg)
 Expected weight - 1.2500 (kg)
-Measured weight - 5.2850 (kg)
+Measured weight - 6.3148 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 176 complete 
@@ -15368,10 +16724,19 @@ True inventory - 3538.5371 (kg)
 Expected inventory - 3538.5000 (kg)
 Measured inventory - 3535.4473 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0298 (kg)
+
 MUF:
 True weight - 1.4629 (kg)
 Expected weight - 1.5000 (kg)
-Measured weight - 5.6110 (kg)
+Measured weight - 6.6408 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 177 complete 
@@ -15446,10 +16811,19 @@ True inventory - 3558.0452 (kg)
 Expected inventory - 3558.2500 (kg)
 Measured inventory - 3554.8684 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0298 (kg)
+
 MUF:
 True weight - 1.9548 (kg)
 Expected weight - 1.7500 (kg)
-Measured weight - 6.1601 (kg)
+Measured weight - 7.1899 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 178 complete 
@@ -15524,10 +16898,19 @@ True inventory - 3577.5729 (kg)
 Expected inventory - 3578.0000 (kg)
 Measured inventory - 3574.3275 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0298 (kg)
+
 MUF:
 True weight - 2.4271 (kg)
 Expected weight - 2.0000 (kg)
-Measured weight - 6.8564 (kg)
+Measured weight - 7.8862 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 179 complete 
@@ -15602,10 +16985,19 @@ True inventory - 3597.4734 (kg)
 Expected inventory - 3597.7500 (kg)
 Measured inventory - 3594.3699 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0298 (kg)
+
 MUF:
 True weight - 2.5266 (kg)
 Expected weight - 2.2500 (kg)
-Measured weight - 6.8358 (kg)
+Measured weight - 7.8656 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 180 complete 
@@ -15680,10 +17072,19 @@ True inventory - 3617.0094 (kg)
 Expected inventory - 3617.5000 (kg)
 Measured inventory - 3613.9330 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0298 (kg)
+
 MUF:
 True weight - 2.9906 (kg)
 Expected weight - 2.5000 (kg)
-Measured weight - 7.1818 (kg)
+Measured weight - 8.2116 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 181 complete 
@@ -15758,10 +17159,19 @@ True inventory - 3636.8195 (kg)
 Expected inventory - 3637.2500 (kg)
 Measured inventory - 3633.9339 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0298 (kg)
+
 MUF:
 True weight - 3.1805 (kg)
 Expected weight - 2.7500 (kg)
-Measured weight - 7.1564 (kg)
+Measured weight - 8.1862 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 182 complete 
@@ -15831,7 +17241,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 201.5601 (d) 
@@ -15841,14 +17251,14 @@ Measured quantity 23.2158 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from melter to key measurement point 1 
+Moving recycled batch from melter to key measurement point 1 
 
 Measurement event at KMP: 1
 Operation time 201.9558 (d) 
@@ -15858,14 +17268,14 @@ Measured quantity 22.7351 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 1 to trimmer 
+Moving recycled batch from key measurement point 1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from trimmer to key measurement point 2 
+Moving recycled batch from trimmer to key measurement point 2 
 
 Measurement event at KMP: 2
 Operation time 202.1432 (d) 
@@ -15875,7 +17285,7 @@ Measured quantity 22.6205 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 2 to product storage 
+Moving recycled batch from key measurement point 2 to product storage 
 
 Processing the final product 
 
@@ -15894,10 +17304,19 @@ True inventory - 3659.5698 (kg)
 Expected inventory - 3659.7500 (kg)
 Measured inventory - 3656.5544 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0970 (kg)
+
 MUF:
 True weight - 0.4302 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 4.6045 (kg)
+Measured weight - 5.7015 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 183 complete 
@@ -15972,10 +17391,19 @@ True inventory - 3679.1622 (kg)
 Expected inventory - 3679.5000 (kg)
 Measured inventory - 3676.3808 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0970 (kg)
+
 MUF:
 True weight - 0.8378 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 4.9058 (kg)
+Measured weight - 6.0028 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 184 complete 
@@ -16050,10 +17478,19 @@ True inventory - 3698.8784 (kg)
 Expected inventory - 3699.2500 (kg)
 Measured inventory - 3696.2562 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0970 (kg)
+
 MUF:
 True weight - 1.1216 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 5.0027 (kg)
+Measured weight - 6.0997 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 185 complete 
@@ -16128,10 +17565,19 @@ True inventory - 3718.5952 (kg)
 Expected inventory - 3719.0000 (kg)
 Measured inventory - 3715.8890 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0970 (kg)
+
 MUF:
 True weight - 1.4048 (kg)
 Expected weight - 1.0000 (kg)
-Measured weight - 5.3440 (kg)
+Measured weight - 6.4410 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 186 complete 
@@ -16201,7 +17647,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 206.4127 (d) 
@@ -16211,14 +17657,14 @@ Measured quantity 21.3799 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from melter to key measurement point 1 
+Moving recycled batch from melter to key measurement point 1 
 
 Measurement event at KMP: 1
 Operation time 206.8084 (d) 
@@ -16228,14 +17674,14 @@ Measured quantity 20.9584 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 1 to trimmer 
+Moving recycled batch from key measurement point 1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from trimmer to key measurement point 2 
+Moving recycled batch from trimmer to key measurement point 2 
 
 Measurement event at KMP: 2
 Operation time 206.9958 (d) 
@@ -16245,7 +17691,7 @@ Measured quantity 20.8809 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 2 to product storage 
+Moving recycled batch from key measurement point 2 to product storage 
 
 Processing the final product 
 
@@ -16264,10 +17710,19 @@ True inventory - 3739.5175 (kg)
 Expected inventory - 3739.7500 (kg)
 Measured inventory - 3736.7699 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.9166 (kg)
+
 MUF:
 True weight - 0.4825 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 4.3625 (kg)
+Measured weight - 5.2791 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 187 complete 
@@ -16342,10 +17797,19 @@ True inventory - 3759.0316 (kg)
 Expected inventory - 3759.5000 (kg)
 Measured inventory - 3756.4055 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.9166 (kg)
+
 MUF:
 True weight - 0.9684 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 4.8810 (kg)
+Measured weight - 5.7976 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 188 complete 
@@ -16420,10 +17884,19 @@ True inventory - 3778.8338 (kg)
 Expected inventory - 3779.2500 (kg)
 Measured inventory - 3776.2596 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.9166 (kg)
+
 MUF:
 True weight - 1.1662 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 4.9695 (kg)
+Measured weight - 5.8861 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 189 complete 
@@ -16498,10 +17971,19 @@ True inventory - 3798.4869 (kg)
 Expected inventory - 3799.0000 (kg)
 Measured inventory - 3795.8929 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.9166 (kg)
+
 MUF:
 True weight - 1.5131 (kg)
 Expected weight - 1.0000 (kg)
-Measured weight - 5.3150 (kg)
+Measured weight - 6.2316 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 190 complete 
@@ -16576,10 +18058,19 @@ True inventory - 3818.2569 (kg)
 Expected inventory - 3818.7500 (kg)
 Measured inventory - 3815.6721 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.9166 (kg)
+
 MUF:
 True weight - 1.7431 (kg)
 Expected weight - 1.2500 (kg)
-Measured weight - 5.5700 (kg)
+Measured weight - 6.4866 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 191 complete 
@@ -16654,10 +18145,19 @@ True inventory - 3838.0419 (kg)
 Expected inventory - 3838.5000 (kg)
 Measured inventory - 3835.6065 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.9166 (kg)
+
 MUF:
 True weight - 1.9581 (kg)
 Expected weight - 1.5000 (kg)
-Measured weight - 5.7181 (kg)
+Measured weight - 6.6347 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 192 complete 
@@ -16732,10 +18232,19 @@ True inventory - 3857.6452 (kg)
 Expected inventory - 3858.2500 (kg)
 Measured inventory - 3855.1466 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.9166 (kg)
+
 MUF:
 True weight - 2.3548 (kg)
 Expected weight - 1.7500 (kg)
-Measured weight - 6.1791 (kg)
+Measured weight - 7.0957 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 193 complete 
@@ -16810,10 +18319,19 @@ True inventory - 3877.6345 (kg)
 Expected inventory - 3878.0000 (kg)
 Measured inventory - 3875.1054 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.9166 (kg)
+
 MUF:
 True weight - 2.3655 (kg)
 Expected weight - 2.0000 (kg)
-Measured weight - 6.0782 (kg)
+Measured weight - 6.9948 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 194 complete 
@@ -16888,10 +18406,19 @@ True inventory - 3897.5646 (kg)
 Expected inventory - 3897.7500 (kg)
 Measured inventory - 3895.0212 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.9166 (kg)
+
 MUF:
 True weight - 2.4354 (kg)
 Expected weight - 2.2500 (kg)
-Measured weight - 6.1041 (kg)
+Measured weight - 7.0207 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 195 complete 
@@ -16966,10 +18493,19 @@ True inventory - 3917.1420 (kg)
 Expected inventory - 3917.5000 (kg)
 Measured inventory - 3914.5704 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.9166 (kg)
+
 MUF:
 True weight - 2.8580 (kg)
 Expected weight - 2.5000 (kg)
-Measured weight - 6.4323 (kg)
+Measured weight - 7.3490 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 196 complete 
@@ -17044,10 +18580,19 @@ True inventory - 3936.8118 (kg)
 Expected inventory - 3937.2500 (kg)
 Measured inventory - 3934.0651 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.9166 (kg)
+
 MUF:
 True weight - 3.1882 (kg)
 Expected weight - 2.7500 (kg)
-Measured weight - 6.9306 (kg)
+Measured weight - 7.8472 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 197 complete 
@@ -17122,10 +18667,19 @@ True inventory - 3956.5012 (kg)
 Expected inventory - 3957.0000 (kg)
 Measured inventory - 3953.8306 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -0.9166 (kg)
+
 MUF:
 True weight - 3.4988 (kg)
 Expected weight - 3.0000 (kg)
-Measured weight - 7.2279 (kg)
+Measured weight - 8.1445 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 198 complete 
@@ -17195,7 +18749,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 218.7629 (d) 
@@ -17205,14 +18759,14 @@ Measured quantity 23.5544 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from melter to key measurement point 1 
+Moving recycled batch from melter to key measurement point 1 
 
 Measurement event at KMP: 1
 Operation time 219.1586 (d) 
@@ -17222,14 +18776,14 @@ Measured quantity 23.1048 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 1 to trimmer 
+Moving recycled batch from key measurement point 1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from trimmer to key measurement point 2 
+Moving recycled batch from trimmer to key measurement point 2 
 
 Measurement event at KMP: 2
 Operation time 219.3460 (d) 
@@ -17239,7 +18793,7 @@ Measured quantity 22.9733 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 2 to product storage 
+Moving recycled batch from key measurement point 2 to product storage 
 
 Processing the final product 
 
@@ -17258,10 +18812,19 @@ True inventory - 3979.5167 (kg)
 Expected inventory - 3979.7500 (kg)
 Measured inventory - 3976.8039 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.1228 (kg)
+
 MUF:
 True weight - 0.4833 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 4.3513 (kg)
+Measured weight - 5.4740 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 199 complete 
@@ -17331,7 +18894,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 220.8039 (d) 
@@ -17341,14 +18904,14 @@ Measured quantity 20.4577 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from melter to key measurement point 1 
+Moving recycled batch from melter to key measurement point 1 
 
 Measurement event at KMP: 1
 Operation time 221.1996 (d) 
@@ -17358,14 +18921,14 @@ Measured quantity 20.0463 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 1 to trimmer 
+Moving recycled batch from key measurement point 1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from trimmer to key measurement point 2 
+Moving recycled batch from trimmer to key measurement point 2 
 
 Measurement event at KMP: 2
 Operation time 221.3870 (d) 
@@ -17375,7 +18938,7 @@ Measured quantity 20.1592 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 2 to product storage 
+Moving recycled batch from key measurement point 2 to product storage 
 
 Processing the final product 
 
@@ -17394,10 +18957,19 @@ True inventory - 3999.5088 (kg)
 Expected inventory - 3999.7500 (kg)
 Measured inventory - 3996.9631 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0444 (kg)
+
 MUF:
 True weight - 0.4912 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 4.2026 (kg)
+Measured weight - 5.2470 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 200 complete 
@@ -17472,10 +19044,19 @@ True inventory - 4019.1247 (kg)
 Expected inventory - 4019.5000 (kg)
 Measured inventory - 4016.5958 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0444 (kg)
+
 MUF:
 True weight - 0.8753 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 4.4696 (kg)
+Measured weight - 5.5140 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 201 complete 
@@ -17550,10 +19131,19 @@ True inventory - 4038.7731 (kg)
 Expected inventory - 4039.2500 (kg)
 Measured inventory - 4036.2558 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0444 (kg)
+
 MUF:
 True weight - 1.2269 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 4.7169 (kg)
+Measured weight - 5.7613 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 202 complete 
@@ -17628,10 +19218,19 @@ True inventory - 4058.6886 (kg)
 Expected inventory - 4059.0000 (kg)
 Measured inventory - 4055.9915 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0444 (kg)
+
 MUF:
 True weight - 1.3114 (kg)
 Expected weight - 1.0000 (kg)
-Measured weight - 5.0080 (kg)
+Measured weight - 6.0524 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 203 complete 
@@ -17706,10 +19305,19 @@ True inventory - 4078.5107 (kg)
 Expected inventory - 4078.7500 (kg)
 Measured inventory - 4075.8460 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.0444 (kg)
+
 MUF:
 True weight - 1.4893 (kg)
 Expected weight - 1.2500 (kg)
-Measured weight - 5.0398 (kg)
+Measured weight - 6.0842 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 204 complete 
@@ -17779,7 +19387,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 226.5937 (d) 
@@ -17789,14 +19397,14 @@ Measured quantity 21.5647 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from melter to key measurement point 1 
+Moving recycled batch from melter to key measurement point 1 
 
 Measurement event at KMP: 1
 Operation time 226.9894 (d) 
@@ -17806,14 +19414,14 @@ Measured quantity 21.2122 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 1 to trimmer 
+Moving recycled batch from key measurement point 1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from trimmer to key measurement point 2 
+Moving recycled batch from trimmer to key measurement point 2 
 
 Measurement event at KMP: 2
 Operation time 227.1768 (d) 
@@ -17823,7 +19431,7 @@ Measured quantity 21.1460 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 2 to product storage 
+Moving recycled batch from key measurement point 2 to product storage 
 
 Processing the final product 
 
@@ -17842,10 +19450,19 @@ True inventory - 4099.6164 (kg)
 Expected inventory - 4099.7500 (kg)
 Measured inventory - 4096.9920 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.2083 (kg)
+
 MUF:
 True weight - 0.3836 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 4.0235 (kg)
+Measured weight - 5.2318 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 205 complete 
@@ -17920,10 +19537,19 @@ True inventory - 4119.2466 (kg)
 Expected inventory - 4119.5000 (kg)
 Measured inventory - 4116.7337 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.2083 (kg)
+
 MUF:
 True weight - 0.7534 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 4.1042 (kg)
+Measured weight - 5.3126 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 206 complete 
@@ -17998,10 +19624,19 @@ True inventory - 4139.2282 (kg)
 Expected inventory - 4139.2500 (kg)
 Measured inventory - 4136.7589 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.2083 (kg)
+
 MUF:
 True weight - 0.7718 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 4.2224 (kg)
+Measured weight - 5.4307 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 207 complete 
@@ -18071,7 +19706,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 230.5091 (d) 
@@ -18081,7 +19716,7 @@ Measured quantity 20.8662 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  True 
@@ -18090,7 +19725,7 @@ Failure status:  True
 Melter failed at time 230.8632, begin failure routine
 
 Edge transition: 
-Moving batch from melter to key measurement point 3 
+Moving recycled batch from melter to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 230.9048 (d) 
@@ -18100,7 +19735,7 @@ Measured quantity 20.6662 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to recycle storage 
+Moving recycled batch from key measurement point 3 to recycle storage 
 
 Recycle storage receiving batch 
 
@@ -18129,7 +19764,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 231.6129 (d) 
@@ -18139,14 +19774,14 @@ Measured quantity 20.8767 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from melter to key measurement point 1 
+Moving recycled batch from melter to key measurement point 1 
 
 Measurement event at KMP: 1
 Operation time 232.0086 (d) 
@@ -18156,14 +19791,14 @@ Measured quantity 20.3669 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 1 to trimmer 
+Moving recycled batch from key measurement point 1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from trimmer to key measurement point 2 
+Moving recycled batch from trimmer to key measurement point 2 
 
 Measurement event at KMP: 2
 Operation time 232.1960 (d) 
@@ -18173,7 +19808,7 @@ Measured quantity 20.6282 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 2 to product storage 
+Moving recycled batch from key measurement point 2 to product storage 
 
 Processing the final product 
 
@@ -18192,10 +19827,19 @@ True inventory - 4159.7300 (kg)
 Expected inventory - 4159.7500 (kg)
 Measured inventory - 4157.3871 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.6719 (kg)
+
 MUF:
 True weight - 0.2700 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 3.5342 (kg)
+Measured weight - 5.2061 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 208 complete 
@@ -18270,10 +19914,19 @@ True inventory - 4179.4519 (kg)
 Expected inventory - 4179.5000 (kg)
 Measured inventory - 4177.1313 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.6719 (kg)
+
 MUF:
 True weight - 0.5481 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 3.7599 (kg)
+Measured weight - 5.4318 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 209 complete 
@@ -18348,10 +20001,19 @@ True inventory - 4199.1418 (kg)
 Expected inventory - 4199.2500 (kg)
 Measured inventory - 4196.8229 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.6719 (kg)
+
 MUF:
 True weight - 0.8582 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 4.0595 (kg)
+Measured weight - 5.7314 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 210 complete 
@@ -18426,10 +20088,19 @@ True inventory - 4218.9591 (kg)
 Expected inventory - 4219.0000 (kg)
 Measured inventory - 4216.6340 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.6719 (kg)
+
 MUF:
 True weight - 1.0409 (kg)
 Expected weight - 1.0000 (kg)
-Measured weight - 4.2769 (kg)
+Measured weight - 5.9488 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 211 complete 
@@ -18504,10 +20175,19 @@ True inventory - 4238.5030 (kg)
 Expected inventory - 4238.7500 (kg)
 Measured inventory - 4236.2718 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.6719 (kg)
+
 MUF:
 True weight - 1.4970 (kg)
 Expected weight - 1.2500 (kg)
-Measured weight - 4.4958 (kg)
+Measured weight - 6.1677 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 212 complete 
@@ -18582,10 +20262,19 @@ True inventory - 4258.4420 (kg)
 Expected inventory - 4258.5000 (kg)
 Measured inventory - 4256.1706 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.6719 (kg)
+
 MUF:
 True weight - 1.5580 (kg)
 Expected weight - 1.5000 (kg)
-Measured weight - 4.6577 (kg)
+Measured weight - 6.3296 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 213 complete 
@@ -18655,7 +20344,7 @@ Recycling batch and heel
 
 
 Edge transition: 
-Moving batch from recycle storage to key measurement point 3 
+Moving recycled batch from recycle storage to key measurement point 3 
 
 Measurement event at KMP: 3
 Operation time 238.3399 (d) 
@@ -18665,14 +20354,14 @@ Measured quantity 21.4428 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 3 to melter 
+Moving recycled batch from key measurement point 3 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from melter to key measurement point 1 
+Moving recycled batch from melter to key measurement point 1 
 
 Measurement event at KMP: 1
 Operation time 238.7356 (d) 
@@ -18682,14 +20371,14 @@ Measured quantity 21.0777 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 1 to trimmer 
+Moving recycled batch from key measurement point 1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving batch from trimmer to key measurement point 2 
+Moving recycled batch from trimmer to key measurement point 2 
 
 Measurement event at KMP: 2
 Operation time 238.9230 (d) 
@@ -18699,7 +20388,7 @@ Measured quantity 21.1833 (kg)
 
 
 Edge transition: 
-Moving batch from key measurement point 2 to product storage 
+Moving recycled batch from key measurement point 2 to product storage 
 
 Processing the final product 
 
@@ -18718,10 +20407,19 @@ True inventory - 4279.6247 (kg)
 Expected inventory - 4279.7500 (kg)
 Measured inventory - 4277.3539 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.5742 (kg)
+
 MUF:
 True weight - 0.3753 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 3.4427 (kg)
+Measured weight - 5.0169 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 214 complete 
@@ -18796,10 +20494,19 @@ True inventory - 4299.4264 (kg)
 Expected inventory - 4299.5000 (kg)
 Measured inventory - 4297.0655 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.5742 (kg)
+
 MUF:
 True weight - 0.5736 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 3.7392 (kg)
+Measured weight - 5.3134 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 215 complete 
@@ -18874,10 +20581,19 @@ True inventory - 4319.1959 (kg)
 Expected inventory - 4319.2500 (kg)
 Measured inventory - 4316.8253 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.5742 (kg)
+
 MUF:
 True weight - 0.8041 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 3.9733 (kg)
+Measured weight - 5.5475 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 216 complete 
@@ -18952,10 +20668,19 @@ True inventory - 4338.9974 (kg)
 Expected inventory - 4339.0000 (kg)
 Measured inventory - 4336.7263 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.5742 (kg)
+
 MUF:
 True weight - 1.0026 (kg)
 Expected weight - 1.0000 (kg)
-Measured weight - 4.2623 (kg)
+Measured weight - 5.8365 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 217 complete 
@@ -19030,10 +20755,19 @@ True inventory - 4358.5796 (kg)
 Expected inventory - 4358.7500 (kg)
 Measured inventory - 4356.4124 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.5742 (kg)
+
 MUF:
 True weight - 1.4204 (kg)
 Expected weight - 1.2500 (kg)
-Measured weight - 4.6593 (kg)
+Measured weight - 6.2335 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 218 complete 
@@ -19108,10 +20842,19 @@ True inventory - 4378.4438 (kg)
 Expected inventory - 4378.5000 (kg)
 Measured inventory - 4376.5149 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.5742 (kg)
+
 MUF:
 True weight - 1.5562 (kg)
 Expected weight - 1.5000 (kg)
-Measured weight - 4.5522 (kg)
+Measured weight - 6.1264 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 219 complete 
@@ -19186,10 +20929,19 @@ True inventory - 4397.9521 (kg)
 Expected inventory - 4398.2500 (kg)
 Measured inventory - 4396.0138 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.5742 (kg)
+
 MUF:
 True weight - 2.0479 (kg)
 Expected weight - 1.7500 (kg)
-Measured weight - 5.1250 (kg)
+Measured weight - 6.6992 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 220 complete 
@@ -19264,10 +21016,19 @@ True inventory - 4417.5676 (kg)
 Expected inventory - 4418.0000 (kg)
 Measured inventory - 4415.7452 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.5742 (kg)
+
 MUF:
 True weight - 2.4324 (kg)
 Expected weight - 2.0000 (kg)
-Measured weight - 5.4854 (kg)
+Measured weight - 7.0595 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 221 complete 
@@ -19342,10 +21103,19 @@ True inventory - 4437.5594 (kg)
 Expected inventory - 4437.7500 (kg)
 Measured inventory - 4435.6564 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.5742 (kg)
+
 MUF:
 True weight - 2.4406 (kg)
 Expected weight - 2.2500 (kg)
-Measured weight - 5.6332 (kg)
+Measured weight - 7.2074 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 222 complete 
@@ -19420,10 +21190,19 @@ True inventory - 4457.3987 (kg)
 Expected inventory - 4457.5000 (kg)
 Measured inventory - 4455.2040 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.5742 (kg)
+
 MUF:
 True weight - 2.6013 (kg)
 Expected weight - 2.5000 (kg)
-Measured weight - 6.2872 (kg)
+Measured weight - 7.8614 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 223 complete 
@@ -19498,10 +21277,19 @@ True inventory - 4477.3697 (kg)
 Expected inventory - 4477.2500 (kg)
 Measured inventory - 4475.1866 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.5742 (kg)
+
 MUF:
 True weight - 2.6303 (kg)
 Expected weight - 2.7500 (kg)
-Measured weight - 6.3478 (kg)
+Measured weight - 7.9220 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 224 complete 
@@ -19576,10 +21364,19 @@ True inventory - 4497.1040 (kg)
 Expected inventory - 4497.0000 (kg)
 Measured inventory - 4495.0411 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.5742 (kg)
+
 MUF:
 True weight - 2.8960 (kg)
 Expected weight - 3.0000 (kg)
-Measured weight - 6.5247 (kg)
+Measured weight - 8.0989 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 225 complete 
@@ -19654,10 +21451,19 @@ True inventory - 4516.9243 (kg)
 Expected inventory - 4516.7500 (kg)
 Measured inventory - 4514.8320 (kg)
 
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - -1.5742 (kg)
+
 MUF:
 True weight - 3.0757 (kg)
 Expected weight - 3.2500 (kg)
-Measured weight - 6.6081 (kg)
+Measured weight - 8.1823 (kg)
+
+
+
+MISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!
 
 
 Campaign 226 complete 

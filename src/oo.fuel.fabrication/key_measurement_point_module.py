@@ -28,11 +28,30 @@ class key_measurement_point_class(facility_component_class):
 
     The kmp_indentifier is used for the log file and for getting the correct
     data from the input file.  It is zero indexed.
+
+    #######
+    # Variables 
+    #######
+
+    uncertainty = standard deviation of noise that gets added to each measurement to simulate realistic 
+    equipment uncertainty when measuring the weight.
+
+    time_delay = time in days that the kmp takes to make the measurement
+
+    alarm_threshold = weight in kg that will make the kmp sound an alarm when the difference between
+    expected and measured weight is at least that much.
+
+    identifier = integer number labeling which kmp the object is.  Used in getting input data from files and
+    also keeping track in the log file.
+
+    measured_weight = the weight of the batch most recently measured in kg
     """
 
     def __init__(self,facility,kmp_identifier):
         self.uncertainty = np.loadtxt(facility.kmps_dir+'/key.measurement.points.inp',usecols=[2])[kmp_identifier]
         self.time_delay = np.loadtxt(facility.kmps_dir+'/key.measurement.points.inp',usecols=[1])[kmp_identifier]
+        self.alarm_threshold = np.loadtxt(facility.kmps_dir+'/key.measurement.points.inp',
+                usecols=[4])[kmp_identifier]
         self.identifier = kmp_identifier
         self.measured_weight = 0
         facility_component_class.__init__(self, 0, 0,0, "key measurement point %i"%(kmp_identifier), "kmp")
@@ -49,6 +68,8 @@ class key_measurement_point_class(facility_component_class):
 
         self.write_to_log(facility,'Operation time %.4f (d) \nTrue quantity %.4f (kg) \nExpected quantity %.4f (kg) \nMeasured quantity %.4f (kg) \n\n\n'\
                 %(facility.operation_time, batch.weight, self.expected_weight.batch_weight, self.measured_weight))
+        if abs(self.measured_weight - self.expected_weight.batch_weight) > self.alarm_threshold:
+            self.write_to_log(facility,'\nMISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!\n\n\n')
 
     def update_measured_inventory(self, facility, storage_buffer, action):
         """
@@ -67,5 +88,5 @@ class key_measurement_point_class(facility_component_class):
             self.write_to_log(facility,'************** WARNING!! ***************\n' + \
                     'Key measurement point %i incorrectly asked to update the measured inventory of %s.\n' \
                      %(self.kmp_identifier, storage_buffer.description) + \
-                    'Please make sure that final argument of update inventory reads either add or subtract')
+                    "Please make sure that final argument of update inventory reads either 'add' or 'subtract'")
 

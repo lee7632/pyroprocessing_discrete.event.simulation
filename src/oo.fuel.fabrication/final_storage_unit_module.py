@@ -32,7 +32,7 @@ class final_storage_unit_class(facility_component_class):
         self.kmp.update_measured_inventory(facility, self.product_storage, "add")
         self.product_storage.process_batch(facility,batch)
 
-    def inspect(self):
+    def update_accountability(self):
         self.expected_weight.erase_expectations()
         self.expected_weight.add_weight(self.product_storage)
         self.expected_weight.add_weight(self.kmp)

@@ -1,22 +1,21 @@
 ########################################################################
 # Malachi Tolman
 # @tolman42
-# rev.29.February.2016
+# rev.31.March.2016
 #
 ########################################################################
 #
-# This program will serve as the unit test while the fuel.fabrication
-# module undergoes heavy revisions to become object oriented instead
-# of being procedural.
+# This program simply compares the latest log.txt printed to the 
+# primary directory indicated by command and control to a stock
+# "unit_test_log" that can be saved as anything.  I normally update
+# the unit_test_log after I've made a significant change and have
+# confirmed that everything still runs correctly.
 #
-# Currently the log file in the unit test only has an "operation time"
-# of 10.  If you run the program differently, it will throw an error.
-# Perhaps later I will fix it so that this program will run 
-# command and control like file input writing, but this works for now.  
-#
-# If different inputs are desired, than one could simply run the program
-# for those inputs, and then save the log file as "unit_test_log.txt"
-# under the "Unit_Test_Docs" folder in the source code.
+# I've also set the program to break after one discrepancy is found,
+# because more often than not, a discrepancy at one place results
+# in the rest of the file being off.  So make sure to run the test
+# again after you fixed one problem, because it only detects one problem
+# at a time.
 #
 # Notice that for now, this is based off of setting the pseudo-random
 # seed to "0" in mainflow.
@@ -49,6 +48,7 @@ with open(global_vars.root_dir+'/log.txt') as new_log_file:
             print 'Unit test log file reads\n%s'%(unit_line)
             print 'Your log file reads\n%s\n'%(test_line)
             did_fail = True
+            break
         n = n+1
 
 if did_fail == False:

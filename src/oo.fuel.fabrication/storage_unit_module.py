@@ -42,8 +42,11 @@ class storage_unit_class(facility_component_class):
 
         return batch
 
-    def inspect(self):
+    def update_accountability(self):
         self.expected_weight.erase_expectations()
         self.expected_weight.add_weight(self.storage_buffer)
         self.expected_weight.add_weight(self.kmp)
         self.measured_inventory = self.storage_buffer.measured_inventory
+
+    def inspect(self):
+        storage_buffer.inspect()

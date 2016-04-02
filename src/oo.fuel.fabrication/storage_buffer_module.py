@@ -55,3 +55,6 @@ class storage_buffer_class(facility_component_class):
 
         return batch_class(self.batch_size,"batch")
 
+    def inspect(self):
+        self.expected_weight.residual_weight = self.inventory
+        self.measured_inventory = self.inventory
