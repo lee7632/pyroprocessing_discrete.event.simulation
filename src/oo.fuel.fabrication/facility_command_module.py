@@ -10,6 +10,7 @@
 #
 # Imports
 #
+import pdb
 import numpy as np
 
 class facility_command_class:
@@ -114,9 +115,9 @@ class facility_command_class:
         """
         This will get changed to verifying the actual amount of SNM.
         """
-        storage_unit.inspect()
-        fuel_fabricator.inspect()
-        final_storage_unit.inspect()
+        storage_unit.inspect(self)
+        fuel_fabricator.inspect(self)
+        final_storage_unit.inspect(self)
 
     def update_accountability(self,storage_unit,fuel_fabricator,final_storage_unit):
         """
@@ -127,7 +128,7 @@ class facility_command_class:
         fuel_fabricator.update_accountability()
         final_storage_unit.update_accountability()
 
-    def end_of_campaign(self,storage_unit,fuel_fabricator,final_storage_unit):
+    def end_of_campaign(self,storage_unit,fuel_fabricator,final_storage_unit, batch):
         """
         This method brings in the relevant information from the facility components
         in order to calculate relevant values at the end of a campaign.  Such
@@ -160,7 +161,8 @@ class facility_command_class:
                 %(fuel_fabricator.melter.heel.weight, self.expected_muf, self.measured_muf))
 
         if abs(self.expected_muf - self.measured_muf) > self.end_of_campaign_alarm_threshold:
-            self.write_to_log('\nMISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!\n\n\n') 
+            self.write_to_log('\nMISSING SNM DETECTED AT END OF CAMPAIGN!  CONDUCT INSPECTION IMMEDIATELY!\n\n\n') 
+            self.inspect(storage_unit, fuel_fabricator, final_storage_unit)
 
         self.write_to_log('Campaign %i complete \n\n\n'%(self.total_campaign))
         self.total_campaign=self.total_campaign+1

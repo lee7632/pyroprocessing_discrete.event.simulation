@@ -55,6 +55,13 @@ class storage_buffer_class(facility_component_class):
 
         return batch_class(self.batch_size,"batch")
 
-    def inspect(self):
+    def inspect(self,facility):
+        self.write_to_log(facility,'\nInspecting storage buffer: \n' + \
+                'Expected weight was %f\nMeasured weight was %f \n' %(self.expected_weight.total_weight,
+                    self.measured_inventory))
         self.expected_weight.residual_weight = self.inventory
+        self.expected_weight.update_total_weight()
         self.measured_inventory = self.inventory
+        self.write_to_log(facility,
+                '\nExpected weight now is %f \nMeasured weight now is %f\n'%(self.expected_weight.total_weight,
+                    self.measured_inventory))

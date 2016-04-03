@@ -69,7 +69,7 @@ class key_measurement_point_class(facility_component_class):
         self.write_to_log(facility,'Operation time %.4f (d) \nTrue quantity %.4f (kg) \nExpected quantity %.4f (kg) \nMeasured quantity %.4f (kg) \n\n\n'\
                 %(facility.operation_time, batch.weight, self.expected_weight.batch_weight, self.measured_weight))
         if abs(self.measured_weight - self.expected_weight.batch_weight) > self.alarm_threshold:
-            self.write_to_log(facility,'\nMISSING SNM DETECTED!  CONDUCT INSPECTION IMMEDIATELY!\n\n\n')
+            self.write_to_log(facility,'\nMISSING SNM DETECTED in %s!  CONDUCT INSPECTION IMMEDIATELY!\n\n\n'%(self.description))
 
     def update_measured_inventory(self, facility, storage_buffer, action):
         """

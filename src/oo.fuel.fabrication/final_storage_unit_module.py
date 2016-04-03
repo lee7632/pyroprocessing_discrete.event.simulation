@@ -37,3 +37,6 @@ class final_storage_unit_class(facility_component_class):
         self.expected_weight.add_weight(self.product_storage)
         self.expected_weight.add_weight(self.kmp)
         self.measured_inventory = self.product_storage.measured_inventory
+
+    def inspect(self,facility):
+        self.product_storage.inspect(facility)

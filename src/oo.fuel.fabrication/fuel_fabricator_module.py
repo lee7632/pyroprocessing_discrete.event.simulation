@@ -126,3 +126,13 @@ class fuel_fabricator_class(facility_component_class):
             self.kmp[3].update_measured_inventory(facility, self.recycle_storage, "subtract")
             self.edge.edge_transition(facility,batch, self.kmp[3],self.melter)
             did_fail = self.melter.process_batch(facility,batch)
+
+    def inspect(self,facility):
+        self.write_to_log(facility,'\nInspecting fuel fabricator: \n')
+        heel = self.melter.clean_heel(facility)
+        self.edge.edge_transition(facility,heel,self.melter,self.kmp[3])
+        self.kmp[3].process_batch(facility,heel)
+        self.edge.edge_transition(facility,heel,self.kmp[3],self.recycle_storage)
+        self.kmp[3].update_measured_inventory(facility,self.recycle_storage, "add")
+        self.recycle_storage.store_batch(facility,heel)
+        self.recycle_storage.inspect(facility)

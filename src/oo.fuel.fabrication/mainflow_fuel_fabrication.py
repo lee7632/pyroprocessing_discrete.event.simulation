@@ -57,6 +57,6 @@ while facility.operation_time <= facility.total_operation_time:
     fuel_fabricator.process_batch(facility,batch)
     edge.edge_transition(facility, batch, fuel_fabricator.trimmer, final_storage_unit.kmp)
     final_storage_unit.process_batch(facility,batch)
-    facility.end_of_campaign(storage_unit,fuel_fabricator,final_storage_unit)
+    facility.end_of_campaign(storage_unit,fuel_fabricator,final_storage_unit, batch)
     
 facility.close_files()

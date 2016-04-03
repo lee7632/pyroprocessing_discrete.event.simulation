@@ -108,4 +108,4 @@ class facility_component_class:
             self.time_of_last_failure = facility.operation_time
 
         return did_fail
-    
+
