@@ -30,14 +30,9 @@ from facility_command_module import facility_command_class
 np.random.seed(0)
 
 ######## 
-# initialize objects to be used
+# initialize facility
 ######## 
 facility = facility_command_class(global_vars.root_dir,'fuel.fabrication')
-#storage_unit = storage_unit_class(facility)
-#edge = edge_transition_class(facility,0)
-#fuel_fabricator = fuel_fabricator_class(facility)
-#final_storage_unit = final_storage_unit_class(facility) 
-
 
 ######
 # Process the materials  
@@ -47,11 +42,6 @@ while facility.operation_time <= facility.total_operation_time:
     facility.write_to_log('Starting campaign: %i at time:  %.4f  days \n\n' \
             %(facility.total_campaign, facility.operation_time))
     
-    #batch = storage_unit.batch_preparation(facility)
-    #edge.edge_transition(facility, batch, storage_unit.kmp, fuel_fabricator.melter)
-    #fuel_fabricator.process_batch(facility,batch)
-    #edge.edge_transition(facility, batch, fuel_fabricator.trimmer, final_storage_unit.kmp)
-    #final_storage_unit.process_batch(facility,batch)
     facility.process_batch()
     facility.end_of_campaign()
     

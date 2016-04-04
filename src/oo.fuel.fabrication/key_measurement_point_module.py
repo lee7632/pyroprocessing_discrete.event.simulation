@@ -63,13 +63,14 @@ class key_measurement_point_class(facility_component_class):
         self.write_to_log(facility,'Measurement event at KMP: %i\n'%(self.identifier))
 
         self.measured_weight = batch.weight + self.uncertainty*np.random.randn()
-        #self.cumulative_weight = self.cumulative_weight+self.measured_weight
         self.increment_operation_time(facility,self.time_delay)
 
         self.write_to_log(facility,'Operation time %.4f (d) \nTrue quantity %.4f (kg) \nExpected quantity %.4f (kg) \nMeasured quantity %.4f (kg) \n\n\n'\
                 %(facility.operation_time, batch.weight, self.expected_weight.batch_weight, self.measured_weight))
         if abs(self.measured_weight - self.expected_weight.batch_weight) > self.alarm_threshold:
-            self.write_to_log(facility,'\nMISSING SNM DETECTED in %s!  CONDUCT INSPECTION IMMEDIATELY!\n\n\n'%(self.description))
+            self.write_to_log(facility,
+                    '\nMISSING SNM DETECTED in %s!  CONDUCT INSPECTION IMMEDIATELY!\n\n\n'%(self.description))
+            facility.kmp_alarm(batch, self)
 
     def update_measured_inventory(self, facility, storage_buffer, action):
         """
