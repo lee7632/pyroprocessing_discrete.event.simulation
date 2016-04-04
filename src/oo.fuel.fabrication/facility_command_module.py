@@ -167,10 +167,11 @@ class facility_command_class:
         #######
         #  Calculate MUF and account for materials
         #######
+        self.update_accountability()
         if kmp == None:
             self.calculate_muf()
 
-            #self.write_to_log('--Accounting materials in facility--\n\n')
+            self.write_to_log('--Accounting materials in facility--\n\n')
             self.write_to_log('First Storage Unit:\nTrue inventory - ' + \
                     '%.4f (kg)\nExpected inventory - %.4f (kg)\nMeasured inventory - %.4f (kg)\n\n' \
                     %(storage_unit.storage_buffer.inventory, storage_unit.expected_weight.total_weight,
@@ -192,7 +193,7 @@ class facility_command_class:
         else:
             self.calculate_muf(kmp = kmp)
 
-            #self.write_to_log('--Accounting materials in facility--\n\n')
+            self.write_to_log('--Accounting materials in facility (including where the batch is)--\n\n')
             self.write_to_log('First Storage Unit:\nTrue inventory - ' + \
                     '%.4f (kg)\nExpected inventory - %.4f (kg)\nMeasured inventory - %.4f (kg)\n\n' \
                     %(storage_unit.storage_buffer.inventory, storage_unit.expected_weight.total_weight,
@@ -206,6 +207,9 @@ class facility_command_class:
                     %(fuel_fabricator.recycle_storage.inventory, 
                         fuel_fabricator.recycle_storage.expected_weight.total_weight,
                         fuel_fabricator.recycle_storage.measured_inventory))
+            self.write_to_log('%s:\nTrue inventory - '%(kmp.description) + \
+                    '%.4f (kg)\nExpected inventory - %.4f (kg)\nMeasured inventory - %.4f (kg)\n\n' \
+                    %(batch.weight, kmp.expected_weight.batch_weight, kmp.measured_weight))
             self.write_to_log('MUF:\n' + \
                     'True weight - %.4f (kg)\nExpected weight - %.4f (kg)\nMeasured weight - %.4f (kg)\n\n\n' \
                     %(fuel_fabricator.melter.heel.weight, self.expected_muf, self.measured_muf))
@@ -224,11 +228,12 @@ class facility_command_class:
         self.operation_time = self.operation_time + self.end_of_campaign_time_delay
         self.write_to_log('Facility inspection \nOperation time %.4f (d) \n\n\n'%(self.operation_time))
 
-        self.update_accountability()
-
         if self.account():
-            self.write_to_log('\nMISSING SNM DETECTED AT END OF CAMPAIGN!  CONDUCT INSPECTION IMMEDIATELY!\n\n\n') 
+            self.write_to_log('\nMISSING SNM DETECTED AT END OF CAMPAIGN %i!'%(self.total_campaign) + \
+                    'CONDUCT INSPECTION IMMEDIATELY!\n\n\n') 
             self.inspect()
+            if self.account():
+                self.write_to_log('\n\n\nWARNING! DIVERSION DETECTED! STOP OPERATION IMMEDIATELY!!\n\n\n\n')
 
         self.write_to_log('Campaign %i complete \n\n\n'%(self.total_campaign))
         self.total_campaign=self.total_campaign+1
@@ -244,7 +249,7 @@ class facility_command_class:
         storage_unit = self.storage_unit
         fuel_fabricator = self.fuel_fabricator
         final_storage_unit = self.final_storage_unit
-
+        
         if kmp == None:
             self.expected_muf = storage_unit.initial_inventory - storage_unit.expected_weight.total_weight - \
                     fuel_fabricator.recycle_storage.expected_weight.total_weight - \
@@ -262,6 +267,11 @@ class facility_command_class:
 
     def kmp_alarm(self, batch, kmp):
         self.inspect()
+        #######
+        # "Inspect" the kmp to get correct measured and expected weight 
+        #######
+        kmp.expected_weight.batch_weight = batch.weight
+        kmp.measured_weight = batch.weight
         if self.account(batch = batch, kmp = kmp):
             '\n\n\nWARNING! DIVERSION DETECTED! STOP ALL OPERATIONS IMMEDIATELY!\n\n\n\n'
 
