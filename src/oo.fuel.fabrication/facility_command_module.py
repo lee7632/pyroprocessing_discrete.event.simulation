@@ -270,8 +270,13 @@ class facility_command_class:
         #######
         # "Inspect" the kmp to get correct measured and expected weight 
         #######
+        self.write_to_log('\nInspecting %s: \n'%(kmp.description) + \
+                'Expected weight was %.4f \nMeasured weight was %.4f \n'%(kmp.expected_weight.batch_weight, 
+                    kmp.measured_weight))
         kmp.expected_weight.batch_weight = batch.weight
         kmp.measured_weight = batch.weight
+        self.write_to_log('\nExpected weight now is %.4f \nMeasured weight now is %.4f\n\n'\
+                %(kmp.expected_weight.batch_weight, kmp.measured_weight))
         if self.account(batch = batch, kmp = kmp):
             '\n\n\nWARNING! DIVERSION DETECTED! STOP ALL OPERATIONS IMMEDIATELY!\n\n\n\n'
 

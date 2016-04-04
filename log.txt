@@ -781,11 +781,11 @@ MISSING SNM DETECTED in key measurement point 1!  CONDUCT INSPECTION IMMEDIATELY
 
 
 Inspecting storage buffer: 
-Expected weight was 9820.000000
-Measured weight was 9819.611461 
+Expected weight was 9820.0000
+Measured weight was 9819.6115 
 
-Expected weight now is 9820.000000 
-Measured weight now is 9820.000000
+Expected weight now is 9820.0000 
+Measured weight now is 9820.0000
 
 Inspecting fuel fabricator: 
 Cleaning the heel
@@ -808,18 +808,26 @@ Storing heel in recycle storage
 
 
 Inspecting recycle storage: 
-Expected weight was 0.250000
-Measured weight was 0.441202 
+Expected weight was 0.2500
+Measured weight was 0.4412 
 
-Expected weight now is 0.285098 
-Measured weight now is 0.285098
+Expected weight now is 0.2851 
+Measured weight now is 0.2851
 
 Inspecting product storage: 
-Expected weight was 158.000000
-Measured weight was 156.914940 
+Expected weight was 158.0000
+Measured weight was 156.9149 
 
-Expected weight now is 157.032860 
-Measured weight now is 157.032860
+Expected weight now is 157.0329 
+Measured weight now is 157.0329
+
+
+Inspecting key measurement point 1: 
+Expected weight was 21.7500 
+Measured weight was 22.7069 
+
+Expected weight now is 22.6820 
+Measured weight now is 22.6820
 
 --Accounting materials in facility (including where the batch is)--
 
@@ -12914,11 +12922,11 @@ MISSING SNM DETECTED AT END OF CAMPAIGN 138!CONDUCT INSPECTION IMMEDIATELY!
 
 
 Inspecting storage buffer: 
-Expected weight was 7240.000000
-Measured weight was 7240.578701 
+Expected weight was 7240.0000
+Measured weight was 7240.5787 
 
-Expected weight now is 7240.000000 
-Measured weight now is 7240.000000
+Expected weight now is 7240.0000 
+Measured weight now is 7240.0000
 
 Inspecting fuel fabricator: 
 Cleaning the heel
@@ -12941,18 +12949,18 @@ Storing heel in recycle storage
 
 
 Inspecting recycle storage: 
-Expected weight was 0.785098
-Measured weight was 0.588486 
+Expected weight was 0.7851
+Measured weight was 0.5885 
 
-Expected weight now is 0.891080 
-Measured weight now is 0.891080
+Expected weight now is 0.8911 
+Measured weight now is 0.8911
 
 Inspecting product storage: 
-Expected weight was 2759.214902
-Measured weight was 2756.949322 
+Expected weight was 2759.2149
+Measured weight was 2756.9493 
 
-Expected weight now is 2759.108920 
-Measured weight now is 2759.108920
+Expected weight now is 2759.1089 
+Measured weight now is 2759.1089
 
 --Accounting materials in facility--
 
