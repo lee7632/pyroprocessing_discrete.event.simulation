@@ -24,7 +24,14 @@ class facility_component_class:
     of SNM weight the object is going to initially hold (this should almost always start off as zero) and
     a short description of the component (i.e. "fuel fabricator", "melter", "storage buffer", etc.)
 
-    Variables:
+    #######
+    #  Variables
+    #######
+    expected_weight = module that handles different types of expected weight for each class.  It also holds
+    several routines to help keep track of the expected weight during each different state variable change.
+
+    description = For now this is either "manager", "storage", "processor", or "kmp".  A short label that
+    can be used in identifying what kind of object is being passed in general routines.
 
     Object type = a string describing the object type.  Can be either "manager", "storage", "kmp", or "processor".
     Other methods utilize this in conditional statements.
@@ -33,9 +40,7 @@ class facility_component_class:
     def __init__(self, expected_total_weight, expected_batch_weight, expected_residual_weight, 
             description, object_type):
         self.expected_weight = expected_weight_class(expected_total_weight, 
-                expected_batch_weight, expected_residual_weight) \
-                        #Class that keeps track of and has methods for the expected weight.  See expected weight \
-                        #class description
+                expected_batch_weight, expected_residual_weight)
         self.description = description
         self.object_type = object_type
 
@@ -58,17 +63,9 @@ class facility_component_class:
 
         inputs: facility class, amount of time to increase operation time (float)
         """
-        #print 'funtion called, \noperation time is %.4f\ntime to add is %.4f\n'%(facility.operation_time,time_added)
         facility.operation_time = facility.operation_time + time_added
         facility.system_time_output.write('%.4f\n'%(facility.operation_time))
         facility.campaign_output.write('%.4f\t%i\n'%(facility.operation_time,facility.total_campaign))
-        #print 'operation time is now %.4f\n\n'%(facility.operation_time)
-
-    def add_expected_weight(self,weight_added):
-        """
-        This method is to help streamline the expected weight
-        """
-        self.expected_weight = self.expected_weight + weight_added
 
     def check_equipment_failure(self,facility):
         """
@@ -81,6 +78,14 @@ class facility_component_class:
 
         Whether or not an actual failure occurs is determined by whether or not the calculated probability is 
         greater than a randomly selected number between 0-1 from a uniform distribution.
+        
+        #######
+        # Return 
+        #######
+        True = Equipment did fail.  Need to run failure routine.
+
+        False = Equipment did not fial.  The facility may continue to run as normal.
+
 
         
         *************DEVELOPER NOTES******************
@@ -101,8 +106,7 @@ class facility_component_class:
         #######
         cdf = 1 - np.exp(-time * self.failure_rate)
         fail_check = np.random.rand()
-        #self.write_to_debug(facility,'time to calc is %f \nfail rate is %f \ncdf is %f \nfail check is %f \n\n\n' \
-                #%(time, self.failure_rate,cdf,fail_check))
+
         if cdf > fail_check:
             did_fail = True
             self.time_of_last_failure = facility.operation_time

@@ -22,17 +22,73 @@ class facility_command_class:
     """
     This class represents the entire facility.  
 
-    This class will contain the variables associated with the entire
-    facility.  It will get declared first, and then will simply get passed
-    into each method that needs to act on any given variable.  It will act
-    as a package that gets passed around with the "batch" to help keep track
-    of a given number of state variables.
+    Aside from keeping the variables pertinent to the entire facility, this class contains methods that its
+    constituent parts can call upon (the branches can "talk up" to the root). For the most part, all of
+    the facility operations are self contained in here.
 
     Initializing this object in a script starts up the entire facility, 
     which includes a large number of initializations that are derived from the input 
     files set by command and control.
+
+    #######
+    # Variables 
+    #######
+    operation_time = current amount of time in days that have passed.  Each method increments this by some
+    amount
+
+    total_campaign = essentially the number of batches that have been processed.  Each time a batch goes through
+    the entire fuel fabrication process, this number gets incremented.
+
+    expected_muf = used during inspections to determine how much muf (materials unaccounted for) resides
+    in the facility aside from the storage units.
+
+    measured_muf = used during inspections to determine how much muf resides in the facility as calculated
+    by the deficit in what the storage units have measured coming in and out.
+
+    log_file = file where every important activity gets written to.  This is the main file used to determine
+    how operations occurred after the program is run.
+
+    root_dir = directory specified in command and control where the log file gets written to.  Also this is
+    where the simulation directory should be found considering that all input data is pulled from such
+
+    subsystem = subsystem of the entire facility as specified by command and control.  For now, this can only
+    be fuel fabrication.
+
+    debugger = optional file available to write debugging statements to.
+
+    total_operation_time = total amount of time in days that the facility will run for.  Once operation time
+    has reached this number, the program will stop.
+
+    end_of_campaign_time_delay = amount of time it takes to conduct inspections at the end of each campaign.
+
+    end_of_campaign_alarm_threshold = weight of SNM in kg that will trigger the alarm.  This number is
+    compared to the difference between expected and measured weight.  If the absolute value of such is greater
+    than this, an alarm is triggered where the facility shuts down and conducts an inspection to verify the
+    location of the SNM.
+
+    facility_inspection_time = amount of time in days it takes to inspect the entire facility when an alarm
+    is triggered.
+
+    system_time_ouput = output file where just the operation time is written to.  Used for plotting.
+
+    campaign_output = same as above only for the campaign number
+
+    initial_inventory = total amont of SNM used at the beginning.  This number is important for calculating
+    the muf.
+
+    storage_unit = module that contains the storage buffer and one kmp (key measurement point).
+
+    fuel_fabricator = module that does most of the work.  Contains the melter, trimmer, recycle storage, and
+    two kmps.
+
+    final_storage_unit = module that holds the finished product.  Contains the product storage and one kmp.
     """
     def __init__(self,root_dir,subsystem):
+        """
+        Although large, all this part does is read in the number of input files required to start up the
+        facility.  A lot of these directories aren't used here, but are used in the initialization of 
+        the components modules.
+        """
         self.operation_time = 0
         self.total_campaign = 1
         self.expected_muf = 0
@@ -86,6 +142,7 @@ class facility_command_class:
         self.end_of_campaign_time_delay = np.loadtxt(self.system_false_alarm_dir+'/system.inspection.time.inp',
                 usecols=[1]) #Amount of time it takes to do end of campaign inspection
         self.end_of_campaign_alarm_threshold = np.loadtxt(self.system_false_alarm_dir+'/eoc.alarm.threshold.inp')
+        self.facility_inspection_time = np.loadtxt(self.system_false_alarm_dir+'/facility.inspection.time.inp')
 
         #######
         # open files
@@ -119,6 +176,10 @@ class facility_command_class:
         self.log_file.write('END PREPROCESSING \n\n\n')
 
     def process_batch(self):
+        """
+        Method that processes the batch.  This acts as a liason between the component modules that
+        do all the leg work.
+        """
         batch = self.storage_unit.batch_preparation(self)
         self.edge.edge_transition(self, batch, self.storage_unit.kmp, self.fuel_fabricator.melter)
         self.fuel_fabricator.process_batch(self,batch)
@@ -133,9 +194,11 @@ class facility_command_class:
 
     def inspect(self):
         """
-        The individual inspections take time to update their measured and expected inventories with
-        how much SNM there realy is.
+        Method that gets called whenever an alarm is set off.  Each components is inspected by personnel
+        to verify exactly how much SNM is in each part.  The expected and measured weight of the storage units
+        get updated to more accurately describe what they actually contain.
         """
+        self.operation_time = self.operation_time + self.facility_inspection_time
         self.storage_unit.inspect(self)
         self.fuel_fabricator.inspect(self)
         self.final_storage_unit.inspect(self)
@@ -156,6 +219,13 @@ class facility_command_class:
 
         Normally this routine simply inspects the materials found in the storage units.  But if a kmp is passed
         in, then it will also include the measured weights found there.
+
+        #######
+        # Return 
+        #######
+        True = discrepancy has been found and an inspection should occu.
+
+        False = no discrepancy detected, thus the facility can continue to run as normal
         """
         #######
         # Reassignments for coding convenience 
@@ -242,6 +312,8 @@ class facility_command_class:
         """
         Since the MUF (materials unaccounted for) is used in multiple instances, this routine calculates the
         expected and measured muf based off of the expected and measured values at the storage units.
+
+        If an alarm at a kmp was set off, then it and the batch it holds needs to be passed in as well.
         """
         #######
         # Reassignment for coding convenience 
@@ -266,6 +338,13 @@ class facility_command_class:
                     kmp.measured_weight
 
     def kmp_alarm(self, batch, kmp):
+        """
+        When a kmp discovers a discrepancy between the expected and measured weight, this routine is called.
+
+        The kmp gets inspected as the storage units normally do by personnel.  This updates the expected
+        and measured weight to be more accurate.  Than an entire facility inspection is conducted to ensure
+        that no SNM is actually missing.
+        """
         self.inspect()
         #######
         # "Inspect" the kmp to get correct measured and expected weight 

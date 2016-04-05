@@ -1,7 +1,7 @@
 ########################################################################
 # Malachi Tolman
 # @tolman42
-# rev.27.February.2016
+# rev.4.April.2016
 ########################################################################
 #
 # This program will simulate the fuel fabrication process.
@@ -13,10 +13,32 @@
 # as a single campaign.  Once that occurs, a brief end of campaign
 # inspection is held.
 #
-# Variables for the most part are stored in the facility component in
+# Variables for the most part are stored in the facility component moduble in
 # charge of operations pertaining to that state variable, altough
 # some variables important to the whole facility are stored in
 # the facility_command module that is passed from component to component.
+#
+########################################################################
+#
+# EDITOR'S NOTES:
+#
+# If you are viewing this code for one of the first times, I'd recommend
+# following the logic file by file.  Start with the facility command
+# module, follow the initializing routine and process batch, then view
+# the called module as it comes up.
+#
+# This code tries to be as straightforward as possible while maintaining
+# modularity and component hierarchy.  The only process that is a bit
+# of a black box is the edge transition. But all it really does is take
+# the expected batch weight of object 1, pass it to object 2, then
+# resets the expected batch weight of object 1.
+#
+# Again, aside from that, although the code is bloated, it tends to be
+# straightforward in describing itself.
+#
+# Most of the notes are found in the class and method descriptions. This
+# was done so that the readme of each object could be called from the
+# command line.
 #
 ########################################################################
 #

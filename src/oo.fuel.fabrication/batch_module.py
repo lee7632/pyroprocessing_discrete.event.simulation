@@ -1,7 +1,7 @@
 ########################################################################
 # Malachi Tolman
 # @tolman42
-# rev.27.February.2016
+# rev.4.April.2016
 ########################################################################
 #
 # See class description
@@ -16,8 +16,11 @@ class batch_class:
     the storage buffer.  But it also gets used as the heel in the melter, which is the melted alloy that builds
     up over time.
 
-    Variables:
+    #######
+    # Variables 
+    #######
     weight = amount of SNM in batch (kg)
+
     description = string to aid in keeping track of what the batch is during logging (ie "batch" vs "heel")
     """
 
@@ -26,4 +29,7 @@ class batch_class:
         self.description = description
 
     def add_weight(self,weight_2add):
+        """
+        Routine that changes the state variable.  Can add a negative weight is weight is lost.
+        """
         self.weight = self.weight + weight_2add

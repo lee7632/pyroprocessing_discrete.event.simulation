@@ -1,7 +1,7 @@
 ########################################################################
 # Malachi Tolman
 # @tolman42
-# rev.4.March.2016
+# rev.4.April.2016
 ########################################################################
 #
 # See class description
@@ -12,19 +12,21 @@ import pdb
 class expected_weight_class:
     """
     This is a class that will be found in facility_component that gets implemented by basically every
-    functional component of the facility.  How much weight in SNM each component will get will be
+    functional component of the facility.  How much weight of SNM each component will get will be
     passed to it through the edge transition along with the physical batch itself.  Components higher
-    up the heirarchy will use an "inspect" method to gather the expected weight from each of the components
+    up the heirarchy will use an "update accountability" method to gather the expected 
+    weight from each of the components
     its in charge of.
 
     Equipment should call one of the methods found here whenever it changes or does anything significant
     with the batch weight.
 
-    Variables:
-
+    #######
+    # Variables 
+    #######
     total_weight = the total amount of weight the component is expecting to contain at any given point
     in time.  This will be used extensively by storage units and "manager" components that will need
-    to know how much SNM is contained amount its branches during inspections.
+    to know how much SNM is contained among its branches during inspections.
 
     batch_weight = the expected weight that the batch being processed has.
 
@@ -71,6 +73,9 @@ class expected_weight_class:
         """
         Use this method whenever a storage unit obtains a batch.  It will update the expected weight accordingly
         with respect to the expected batch weight passed in via the edge transition.
+
+        Once the batch is processed, it is entirely in the residual weight with the previously processed batches, 
+        thus the batch weight is reset to avoid double counting.
         """
         self.residual_weight = self.residual_weight + self.batch_weight
         self.batch_weight = 0

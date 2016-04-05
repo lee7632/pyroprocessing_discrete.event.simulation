@@ -1,7 +1,7 @@
 ########################################################################
 # Malachi Tolman
 # @tolman42
-# rev.27.February.2016
+# rev.4.April.2016
 ########################################################################
 #
 # See class description
@@ -42,6 +42,23 @@ class fuel_fabricator_class(facility_component_class):
     If this happens, the batch and heel are sent to the recycle storage, then put together in one
     batch to be processed as normal.  In the mean time, operation time is lost while the melter undergoes
     maintenance.
+
+    #######
+    # Variables 
+    #######
+    edge = module that keeps track of the expected batch weight as it gets passed from object to object
+
+    kmp = modules that measure the weight of the batch between pertinent vertexes.
+
+    melter = module that melts down the batch and pours such into a crucible. It is at this point that
+    some SNM is left behind, thus changing the state variable.  This is also the only component thus far
+    that can experince a failure.
+
+    trimmer = module that sheers the crucibles to reveal the cooled slugs inside.  This currently does
+    nothing more than run the clock (no state variables are changed).
+
+    recycle_storage = module that both recycle the batch and heel together when a failure has occurred and
+    also indefinitely stores the heel whenever an alarm is set off.
     """
 
 
@@ -51,12 +68,8 @@ class fuel_fabricator_class(facility_component_class):
         trimmer, recycle storage, four kmp's, and the edge transitions between such.
 
         The expected batch and heel weights are changed everytime a component that changes those state variables
-        processes a batch.  Like the facility getting passed from component to component to account for the
-        overall state variables, so does the fuel fabricator get passed into a number of classes to indicate
-        that it monitors the activities for those and accounts for such in its system.
+        processes a batch.  
         """
-        self.new_batch_weight = np.loadtxt(facility.process_states_dir+'/batch.inp')
-
         self.edge = edge_transition_class(facility,0)
         self.kmp = []
         for n in range(4):
@@ -67,6 +80,10 @@ class fuel_fabricator_class(facility_component_class):
         facility_component_class.__init__(self, 0, 0, 0, "fuel fabricator", "manager")
 
     def update_accountability(self):
+        """
+        Method that makes each child unit update their known inventory of expected weight and measured weight
+        from their own children units.
+        """
         self.expected_weight.erase_expectations()
         self.expected_weight.add_weight(self.melter)
         self.expected_weight.add_weight(self.trimmer)
@@ -76,14 +93,11 @@ class fuel_fabricator_class(facility_component_class):
 
     def process_batch(self,facility,batch):
         """
-        See the class description
+        After getting the batch from storage, the fuel fabricator turns it into useable metal slugs as
+        described in the class description.
+
+        If the melter experiences a failure while processing the batch, the failure routine is called.
         """
-        #######
-        # Initialize the expected batch weight with how much weight is known to come from the storage buffer 
-        #######
-        #self.edge.edge_transition(facility,self,self.kmp[0])
-        #self.kmp[0].process_batch(facility,batch)
-        #self.edge.edge_transition(facility,self,self.melter)
         #######
         # When the melter processes a batch,
         # it returns a boolean to indicate whether it
@@ -95,8 +109,6 @@ class fuel_fabricator_class(facility_component_class):
         self.kmp[1].process_batch(facility,batch)
         self.edge.edge_transition(facility,batch, self.kmp[1],self.trimmer)
         self.trimmer.process_batch(facility,batch)
-        #self.edge.edge_transition(facility,self.trimmer,self)
-        #self.kmp[2].process_batch(facility,batch,self.expected_batch_weight)
 
     def equipment_failure(self,facility,batch):
         """
@@ -128,6 +140,12 @@ class fuel_fabricator_class(facility_component_class):
             did_fail = self.melter.process_batch(facility,batch)
 
     def inspect(self,facility):
+        """
+        Method that gets called whenever an alarm is set off.  The melter is cleaned out, then each 
+        components is inspected by personnel
+        to verify exactly how much SNM is in each part.  The expected and measured weight of the storage units
+        get updated to more accurately describe what they actually contain.
+        """
         self.write_to_log(facility,'\nInspecting fuel fabricator: \n')
         heel = self.melter.clean_heel(facility)
         self.edge.edge_transition(facility,heel,self.melter,self.kmp[3])

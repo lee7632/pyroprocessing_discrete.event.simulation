@@ -20,8 +20,23 @@ from key_measurement_point_module import key_measurement_point_class as kmp_clas
 class storage_unit_class(facility_component_class):
     """
     The storage unit is a managing unit that bundles a storage buffer with a key measurement point.
-    """
 
+    It does no more than pull a batch from the storage buffer, measure it, then pass it on to the fuel fabricator.
+
+    #######
+    # Variables 
+    #######
+    measured_inventory = Amount of SNM the storage buffer and kmp contain as measured by the kmp.  Only gets 
+    updated via the update_accountability routine.
+
+    edge = object that handles batch transitions between modules
+
+    intial_inventory = amount of SNM the storage buffer starts with
+
+    storage_buffer = component module that handles storing the SNM and creating a batch from such
+
+    kmp = key measurement point paired with the storage buffer
+    """
     def __init__(self,facility):
         self.measured_inventory = 0
         self.edge = edge_transition_class(facility,0)
@@ -43,10 +58,17 @@ class storage_unit_class(facility_component_class):
         return batch
 
     def update_accountability(self):
+        """
+        Update the unit expected and measured weight according to what's currently logged in the storage buffer
+        and kmp.
+        """
         self.expected_weight.erase_expectations()
         self.expected_weight.add_weight(self.storage_buffer)
         self.expected_weight.add_weight(self.kmp)
         self.measured_inventory = self.storage_buffer.measured_inventory
 
     def inspect(self,facility):
+        """
+        Routine called when an alarm is set off
+        """
         self.storage_buffer.inspect(facility)

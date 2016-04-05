@@ -13,9 +13,9 @@ from facility_component_module import facility_component_class
 class edge_transition_class(facility_component_class):
     """
     The edge transition serves as both the physical means by which the nuclear materials travels from vertex to 
-    vertex (component to component), but also as the communication link between components.  The hierchical
-    decomposition of the entire facility calls for individual components to be able to talk to each other
-    to let the proceeding component know what it should expect to receive.
+    vertex (component to component), but also as the communication link between components.  In spite of the
+    facility being set up in a hierchical decomposition, this is the one liason that allows components
+    to communicate laterally with each other.
 
     It also causes the appropriate time delay for that particular transition.
 
@@ -23,6 +23,11 @@ class edge_transition_class(facility_component_class):
     the edge number is required to dilineate which edge is being created.
 
     Edge number is indexed by zero.
+
+    #######
+    # Variables 
+    #######
+    time_delay = amount of time in days it takes for this specific edge to move the batch.
     """
 
     def __init__(self,facility,edge_number):

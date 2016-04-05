@@ -1,7 +1,7 @@
 ########################################################################
 # Malachi Tolman
 # @tolman42
-# rev.25.February.2016
+# rev.4.April.2016
 ########################################################################
 # 
 # Storage buffer vertex
@@ -32,6 +32,18 @@ class storage_buffer_class(facility_component_class):
     Currently, the simulation starts off with a fixed amount of unprocessed material in the buffer
     over the entire facility operation.
     Eventually materials will enter the storage buffer in differing quantities at different times.
+
+    #######
+    # Variables 
+    #######
+    batch_size = weight of batch in kg that the storage buffer will make each time
+
+    inventory = actual amount of SNM that the storage buffer is holding in kg
+
+    measured_inventory = the amount of SNM that the storage buffer thinks it has according to what is reported
+    by the kmp.
+
+    time_delay = amount of time it takes the storage buffer to create a batch
     """
 
     def __init__(self,facility,initial_inventory):
@@ -43,6 +55,10 @@ class storage_buffer_class(facility_component_class):
                 "storage buffer", "storage")
 
     def batch_preparation(self,facility):
+        """
+        The storage buffer takes some SNM from its inventory, creates it into a batch, then passes such on
+        to the next part.
+        """
         self.write_to_log(facility,'Prepare batch in Storage Buffer for transfer: %.1f kg \n\n\n'%(self.batch_size))
         self.increment_operation_time(facility,self.time_delay)
         self.inventory = self.inventory - self.batch_size
@@ -56,6 +72,10 @@ class storage_buffer_class(facility_component_class):
         return batch_class(self.batch_size,"batch")
 
     def inspect(self,facility):
+        """
+        Routine called when an alaram is set off.  This represents the personnel inspecting the storage buffer
+        to verify how much SNM is actually there.  This updates the expected and measured weights.
+        """
         self.write_to_log(facility,'\nInspecting storage buffer: \n' + \
                 'Expected weight was %.4f\nMeasured weight was %.4f \n' %(self.expected_weight.total_weight,
                     self.measured_inventory))

@@ -1,7 +1,7 @@
 ########################################################################
 # Malachi Tolman
 # @tolman42
-# rev.25.February.2016
+# rev.4.April.2016
 ########################################################################
 #
 # This file contains variables that can be easily passed to every
@@ -12,11 +12,6 @@
 # with new directories.
 #
 ########################################################################
-#
-# imports
-#
-import numpy
-import sys
 
 root_dir = "C:/Users/Malachi/Documents/Research/NEUI/pyroprocessing_discrete.event.simulation"
 simulation_dir = "C:/Users/Malachi/Documents/Research/NEUI/pyroprocessing_discrete.event.simulation/simulation/othertestsim"

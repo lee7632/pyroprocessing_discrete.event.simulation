@@ -58,7 +58,9 @@ class key_measurement_point_class(facility_component_class):
 
     def process_batch(self,facility,batch):
         """
-        See class description
+        The kmp weighs the batch, then checks to see if it is close enough to what is expected (what is expected
+        is passed in from the previous object via an edge transition).  If the difference is too large, an alarm
+        is triggered.
         """
         self.write_to_log(facility,'Measurement event at KMP: %i\n'%(self.identifier))
 

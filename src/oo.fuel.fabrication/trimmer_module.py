@@ -1,7 +1,7 @@
 ########################################################################
 # Malachi Tolman
 # @tolman42
-# rev.29.February.2016
+# rev.4.April.2016
 ########################################################################
 #
 # See class description
@@ -20,6 +20,11 @@ class trimmer_class(facility_component_class):
     For now, the trimmer doesn't experience equipment failure, nor does it lose any material during
     it's batch processing time.  It simply accepts the batch from kmp1 (from the melter), increments
     the operation time accordingly, then passes the product along to product storage.
+
+    #######
+    # Variables 
+    #######
+    time_delay = amount of time in days it takes to process the batch.
     """
 
     def __init__(self,facility):
