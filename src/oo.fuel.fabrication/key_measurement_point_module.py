@@ -72,7 +72,7 @@ class key_measurement_point_class(facility_component_class):
         if abs(self.measured_weight - self.expected_weight.batch_weight) > self.alarm_threshold:
             self.write_to_log(facility,
                     '\nMISSING SNM DETECTED in %s!  CONDUCT INSPECTION IMMEDIATELY!\n\n\n'%(self.description))
-            facility.kmp_alarm(batch, self)
+            #facility.kmp_alarm(batch, self)
 
     def update_measured_inventory(self, facility, storage_buffer, action):
         """
@@ -82,6 +82,11 @@ class key_measurement_point_class(facility_component_class):
 
         The final argument "action" should be a string either saying "add" or "subtract" so that the managing
         unit and kmp know what to do.
+
+        --NOTE--
+        Do not call this routine in conjunction with the recycle storage batch process. 
+        It depletes its entire inventory
+        everytime it exports a batch, thus it knows that its measured weight is zero.
         """
         if action == "add":
             storage_buffer.measured_inventory = storage_buffer.measured_inventory + self.measured_weight

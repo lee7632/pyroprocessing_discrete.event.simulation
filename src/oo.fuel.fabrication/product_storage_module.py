@@ -44,17 +44,3 @@ class product_storage_class(facility_component_class):
         self.inventory = self.inventory + batch.weight
         self.expected_weight.storage_batch_gain()
 
-    def inspect(self,facility):
-        """
-        Routine called when an alaram is set off.  This represents the personnel inspecting the storage buffer
-        to verify how much SNM is actually there.  This updates the expected and measured weights.
-        """
-        self.write_to_log(facility,'\nInspecting product storage: \n' + \
-                'Expected weight was %.4f\nMeasured weight was %.4f \n' %(self.expected_weight.total_weight,
-                    self.measured_inventory))
-        self.expected_weight.residual_weight = self.inventory
-        self.expected_weight.update_total_weight()
-        self.measured_inventory = self.inventory
-        self.write_to_log(facility,
-                '\nExpected weight now is %.4f \nMeasured weight now is %.4f\n\n'%(self.expected_weight.total_weight,
-                    self.measured_inventory))

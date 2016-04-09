@@ -124,33 +124,29 @@ class fuel_fabricator_class(facility_component_class):
             self.kmp[3].process_batch(facility,batch)
             self.edge.edge_transition(facility,batch, self.kmp[3],self.recycle_storage)
             self.kmp[3].update_measured_inventory(facility, self.recycle_storage, "add")
-            self.recycle_storage.hold_batch(facility,batch)
+            self.recycle_storage.store_batch(facility,batch)
             heel = self.melter.clean_heel(facility)
             self.edge.edge_transition(facility,heel,self.melter,self.kmp[3]) 
             self.kmp[3].process_batch(facility,heel)
             self.edge.edge_transition(facility,heel,self.kmp[3],self.recycle_storage)
             self.kmp[3].update_measured_inventory(facility, self.recycle_storage, "add")
-            self.recycle_storage.hold_batch(facility,heel)
+            self.recycle_storage.store_batch(facility,heel)
             self.melter.repair(facility)
             self.recycle_storage.process_batch(facility,batch)
             self.edge.edge_transition(facility,batch, self.recycle_storage,self.kmp[3])
             self.kmp[3].process_batch(facility,batch)
-            self.kmp[3].update_measured_inventory(facility, self.recycle_storage, "subtract")
             self.edge.edge_transition(facility,batch, self.kmp[3],self.melter)
             did_fail = self.melter.process_batch(facility,batch)
 
     def inspect(self,facility):
         """
-        Method that gets called whenever an alarm is set off.  The melter is cleaned out, then each 
-        components is inspected by personnel
-        to verify exactly how much SNM is in each part.  The expected and measured weight of the storage units
-        get updated to more accurately describe what they actually contain.
+        Method that gets called whenever an alarm is set off.  The melter is cleaned out, and the heel
+        moved to recycle storage for the mass balance.
         """
-        self.write_to_log(facility,'\nInspecting fuel fabricator: \n')
+        self.write_to_log(facility,'\nPreparing fuel fabricator for facility inspection: \n')
         heel = self.melter.clean_heel(facility)
         self.edge.edge_transition(facility,heel,self.melter,self.kmp[3])
         self.kmp[3].process_batch(facility,heel)
         self.edge.edge_transition(facility,heel,self.kmp[3],self.recycle_storage)
         self.kmp[3].update_measured_inventory(facility,self.recycle_storage, "add")
         self.recycle_storage.store_batch(facility,heel)
-        self.recycle_storage.inspect(facility)

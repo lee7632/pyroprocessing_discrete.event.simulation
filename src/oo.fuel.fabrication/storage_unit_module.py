@@ -67,8 +67,14 @@ class storage_unit_class(facility_component_class):
         self.expected_weight.add_weight(self.kmp)
         self.measured_inventory = self.storage_buffer.measured_inventory
 
-    def inspect(self,facility):
+    def store_batch(self, facility, batch):
         """
-        Routine called when an alarm is set off
+        As of thus far, only used during facility inspections.
+
+        A batch has been passed to the kmp, and this method goes about storing that batch into
+        the storage buffer.
         """
-        self.storage_buffer.inspect(facility)
+        self.kmp.process_batch(facility, batch)
+        self.edge.edge_transition(facility, batch, self.kmp, self.storage_buffer)
+        self.kmp.update_measured_inventory(facility, self.storage_buffer, "add")
+        self.storage_buffer.store_batch(facility, batch)

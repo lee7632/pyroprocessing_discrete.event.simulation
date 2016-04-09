@@ -16,6 +16,7 @@ from storage_unit_module import storage_unit_class
 from edge_transition_module import edge_transition_class
 from fuel_fabricator_module import fuel_fabricator_class
 from final_storage_unit_module import final_storage_unit_class
+from batch_module import batch_class
 
 
 class facility_command_class:
@@ -194,14 +195,17 @@ class facility_command_class:
 
     def inspect(self):
         """
-        Method that gets called whenever an alarm is set off.  Each components is inspected by personnel
-        to verify exactly how much SNM is in each part.  The expected and measured weight of the storage units
-        get updated to more accurately describe what they actually contain.
+        Method that gets called whenever an alarm is set off.  The melter is cleaned, the heel moved to
+        recycle storage, a mass balance is executed, and then the heel is moved back into the storage buffer.
         """
+        self.write_to_log('\n\n--Conducting Facility Inspection--\n\n\n')
         self.operation_time = self.operation_time + self.facility_inspection_time
-        self.storage_unit.inspect(self)
         self.fuel_fabricator.inspect(self)
-        self.final_storage_unit.inspect(self)
+        self.account()
+        batch = batch_class(0, "temprorary class for heel transfer")
+        self.fuel_fabricator.recycle_storage.process_batch(self, batch)
+        self.edge.edge_transition(self, batch, self.fuel_fabricator.recycle_storage, self.storage_unit.kmp)
+        self.storage_unit.store_batch(self, batch)
 
     def update_accountability(self):
         """
@@ -223,7 +227,7 @@ class facility_command_class:
         #######
         # Return 
         #######
-        True = discrepancy has been found and an inspection should occu.
+        True = discrepancy has been found and an inspection should occur.
 
         False = no discrepancy detected, thus the facility can continue to run as normal
         """
@@ -242,13 +246,14 @@ class facility_command_class:
             self.calculate_muf()
 
             self.write_to_log('--Accounting materials in facility--\n\n')
-            self.write_to_log('First Storage Unit:\nTrue inventory - ' + \
+            self.write_to_log('Storage Buffer:\nTrue inventory - ' + \
                     '%.4f (kg)\nExpected inventory - %.4f (kg)\nMeasured inventory - %.4f (kg)\n\n' \
                     %(storage_unit.storage_buffer.inventory, storage_unit.expected_weight.total_weight,
                         storage_unit.measured_inventory))
-            self.write_to_log('Last Storage Unit:\nTrue inventory - ' + \
+            self.write_to_log('Product Storage:\nTrue inventory - ' + \
                     '%.4f (kg)\nExpected inventory - %.4f (kg)\nMeasured inventory - %.4f (kg)\n\n' \
-                    %(final_storage_unit.product_storage.inventory, final_storage_unit.expected_weight.total_weight,
+                    %(final_storage_unit.product_storage.inventory, 
+                        final_storage_unit.expected_weight.total_weight,
                         final_storage_unit.measured_inventory))
             self.write_to_log('Recycle Storage:\nTrue inventory - ' + \
                     '%.4f (kg)\nExpected inventory - %.4f (kg)\nMeasured inventory - %.4f (kg)\n\n' \
@@ -270,7 +275,8 @@ class facility_command_class:
                         storage_unit.measured_inventory))
             self.write_to_log('Last Storage Unit:\nTrue inventory - ' + \
                     '%.4f (kg)\nExpected inventory - %.4f (kg)\nMeasured inventory - %.4f (kg)\n\n' \
-                    %(final_storage_unit.product_storage.inventory, final_storage_unit.expected_weight.total_weight,
+                    %(final_storage_unit.product_storage.inventory, 
+                        final_storage_unit.expected_weight.total_weight,
                         final_storage_unit.measured_inventory))
             self.write_to_log('Recycle Storage:\nTrue inventory - ' + \
                     '%.4f (kg)\nExpected inventory - %.4f (kg)\nMeasured inventory - %.4f (kg)\n\n' \

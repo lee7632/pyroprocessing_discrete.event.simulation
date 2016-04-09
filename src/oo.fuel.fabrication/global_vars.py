@@ -13,7 +13,5 @@
 #
 ########################################################################
 
-root_dir = "C:/Users/Malachi/Documents/Research/NEUI/pyroprocessing_discrete.event.simulation"
-simulation_dir = "C:/Users/Malachi/Documents/Research/NEUI/pyroprocessing_discrete.event.simulation/simulation/othertestsim"
-
-
+root_dir = "/home/tolman42/Documents/Research/NEUI/pyroprocessing_discrete.event.simulation"
+simulation_dir = "/home/tolman42/Documents/Research/NEUI/pyroprocessing_discrete.event.simulation/simulation/othertestsim"

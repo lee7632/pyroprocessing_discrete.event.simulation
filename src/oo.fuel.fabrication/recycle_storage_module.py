@@ -36,57 +36,31 @@ class recycle_storage_class(facility_component_class):
 
     def process_batch(self,facility,batch):
         """
-        This is the recycling part of the recycle storage, if you indicate which batches need to be processed,
-        it will take those out of storage, put them into one batch, and return such.
+        Here the recycle storage recycles all of its stored materials into one batch.
 
-        Note the it will store all of the batches into the first one passed in the array.  I wanted to pass back
-        a new batch, but Python is a bit of a pill when it comes to manipulating object references.
-
-        Note that it can only take the expected weight to be the actual weight.  This is more a convenient work
-        around to make things function under the moment, but I'm going to assume that this particular storage unit
-        has radiation detection to determine how much there actually is.  Although I will be updating the measured
-        inventory via the kmp as usual.
+        --NOTE--
+        A batch must be passed in becuase I ran into coding problems when creating a new batch class here
+        and trying to return such.  The address change does not carry over from function to function for
+        some weird reason, thus the batch being passed in is a coding work around.
         """
         self.write_to_log(facility,'Recycling batch and heel\n\n\n')
         self.increment_operation_time(facility,self.time_delay)
-        for batch_to_recycle in self.recycle_batches:
-            if batch_to_recycle.description != batch.description:
-                batch.add_weight(batch_to_recycle.weight)
-        self.expected_weight.batch_weight = self.recycle_expected_weight
-        self.recycle_expected_weight = 0
-        self.expected_weight.storage_batch_loss()
-        self.recycle_batches = []
+        batch.weight = 0
+        batch.add_weight( self.inventory )
         batch.description = "recycled batch"
+        self.expected_weight.batch_weight = self.expected_weight.residual_weight
+        self.inventory = 0
+        self.expected_weight.storage_batch_loss()
+        self.measured_inventory = 0
         
-    def hold_batch(self,facility,batch):
-        """
-        This method cues up any number of desired batches.  They will stay in the cue until the recyle storage
-        process them all.  Then it will combine all held batches into the first batch in the cue to be passed
-        back to kmp3.
-        """
-        self.write_to_log(facility,'Recycle storage receiving batch \n\n\n')
-        self.increment_operation_time(facility,self.time_delay)
-        self.recycle_batches.append(batch)
-        self.recycle_expected_weight = self.recycle_expected_weight + self.expected_weight.batch_weight
-        self.expected_weight.storage_batch_gain()
-
     def store_batch(self,facility,batch):
         """
-        This is called when you want to store the batch indefinitely.  For now, such occurs when a weight
-        discrepancy occurs and one wants to conduct an entire facility inspection.
+        This takes the batch and puts it into temporary storage.  Under the current code structure,
+        everything in here soon gets sent either back into the melter (in the case of equpiment failure)
+        or gets shipped back into the storage buffer (as is the case with facility alarms).
         """
         self.write_to_log(facility,'Storing %s in recycle storage \n\n\n' %(batch.description))
         self.increment_operation_time(facility,self.time_delay)
         self.inventory = self.inventory + batch.weight
         self.expected_weight.storage_batch_gain()
 
-    def inspect(self,facility):
-        self.write_to_log(facility,'\nInspecting recycle storage: \n' + \
-                'Expected weight was %.4f\nMeasured weight was %.4f \n' %(self.expected_weight.total_weight,
-                    self.measured_inventory))
-        self.expected_weight.residual_weight = self.inventory
-        self.expected_weight.update_total_weight()
-        self.measured_inventory = self.inventory
-        self.write_to_log(facility,
-                '\nExpected weight now is %.4f \nMeasured weight now is %.4f\n'%(self.expected_weight.total_weight,
-                    self.measured_inventory))

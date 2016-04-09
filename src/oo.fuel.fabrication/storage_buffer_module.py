@@ -71,17 +71,11 @@ class storage_buffer_class(facility_component_class):
 
         return batch_class(self.batch_size,"batch")
 
-    def inspect(self,facility):
+    def store_batch(self, facility, batch):
         """
-        Routine called when an alaram is set off.  This represents the personnel inspecting the storage buffer
-        to verify how much SNM is actually there.  This updates the expected and measured weights.
+        Store a batch back into the inventory
         """
-        self.write_to_log(facility,'\nInspecting storage buffer: \n' + \
-                'Expected weight was %.4f\nMeasured weight was %.4f \n' %(self.expected_weight.total_weight,
-                    self.measured_inventory))
-        self.expected_weight.residual_weight = self.inventory
-        self.expected_weight.update_total_weight()
-        self.measured_inventory = self.inventory
-        self.write_to_log(facility,
-                '\nExpected weight now is %.4f \nMeasured weight now is %.4f\n'%(self.expected_weight.total_weight,
-                    self.measured_inventory))
+        self.write_to_log(facility, '\nPlacing %s back into storage buffer\n\n'%(batch.description))
+        self.increment_operation_time(facility, self.time_delay)
+        self.inventory = self.inventory + batch.weight
+        self.expected_weight.storage_batch_gain()
