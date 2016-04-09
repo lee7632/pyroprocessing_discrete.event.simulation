@@ -53,6 +53,10 @@ class melter_class(facility_component_class):
     time_of_last_failure = the operation time clocked (in days) when the melter last failed.  This is used
     to keep track of how long its been since parts have been replaced, thus how likely it is for a failure to
     occur again.
+
+    true_batch_loss = variable that stores the true amount of batch loss.  Such is calculated as a uniform
+    distribution between the bounds, but it needs to be stored so that the managing unit can view and use
+    such.
     """
     def __init__(self,facility):
         self.expected_loss = np.loadtxt(facility.process_states_dir+ \
@@ -68,6 +72,7 @@ class melter_class(facility_component_class):
         self.cleaning_time_delay = np.loadtxt(facility.failure_equipment_dir+ \
                 '/melter.failure.data.inp',usecols=[2]) 
         self.time_of_last_failure = 0
+        self.true_batch_loss = 0
         facility_component_class.__init__(self, 0, 0, 0, "melter", "processor")
 
     def process_batch(self,facility,batch):
@@ -91,19 +96,20 @@ class melter_class(facility_component_class):
         did_fail = self.check_equipment_failure(facility)
         if did_fail:
             self.write_to_log(facility,'Failure status:  True \n\n\n')
+            facility.melter_did_fail = True
         else:
             self.write_to_log(facility,'Failure status:  False \n\n\n')
             ######
             # Calculate and assign weight losses 
             ######
-            true_batch_loss = (self.batch_loss_bounds[0] - self.batch_loss_bounds[1]) * \
+            self.true_batch_loss = (self.batch_loss_bounds[0] - self.batch_loss_bounds[1]) * \
                     np.random.random_sample() + self.batch_loss_bounds[1]
-            batch.weight = batch.weight - true_batch_loss
+            batch.weight = batch.weight - self.true_batch_loss
             self.expected_weight.equipment_batch_loss(self.expected_loss)
             #######
             # Everything lost in batch is accumulated in the heel 
             #######
-            self.heel.add_weight(true_batch_loss)
+            self.heel.add_weight(self.true_batch_loss)
             
         return did_fail
 

@@ -81,6 +81,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.2724 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4088 (kg)
+
 MUF:
 True weight - 0.2724 (kg)
 Expected weight - 0.2500 (kg)
@@ -165,6 +170,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.4459 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3585 (kg)
 
 MUF:
 True weight - 0.7183 (kg)
@@ -251,6 +261,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.4628 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3318 (kg)
+
 MUF:
 True weight - 1.1811 (kg)
 Expected weight - 0.7500 (kg)
@@ -335,6 +350,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.3996 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2835 (kg)
 
 MUF:
 True weight - 1.5807 (kg)
@@ -421,6 +441,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.4723 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.5891 (kg)
+
 MUF:
 True weight - 2.0530 (kg)
 Expected weight - 1.2500 (kg)
@@ -505,6 +530,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.3871 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2255 (kg)
 
 MUF:
 True weight - 2.4402 (kg)
@@ -591,6 +621,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.3085 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3318 (kg)
+
 MUF:
 True weight - 2.7486 (kg)
 Expected weight - 1.7500 (kg)
@@ -675,6 +710,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.2185 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2911 (kg)
 
 MUF:
 True weight - 2.9671 (kg)
@@ -819,6 +859,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.2851 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1827 (kg)
+
 MUF:
 True weight - 0.2851 (kg)
 Expected weight - 0.2500 (kg)
@@ -903,6 +948,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.3266 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3317 (kg)
 
 MUF:
 True weight - 0.6117 (kg)
@@ -989,6 +1039,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.0795 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - -0.1171 (kg)
+
 MUF:
 True weight - 0.6911 (kg)
 Expected weight - 0.7500 (kg)
@@ -1073,6 +1128,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.4105 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4164 (kg)
 
 MUF:
 True weight - 1.1016 (kg)
@@ -1159,6 +1219,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.3696 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4033 (kg)
+
 MUF:
 True weight - 1.4713 (kg)
 Expected weight - 1.2500 (kg)
@@ -1243,6 +1308,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.0321 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.0708 (kg)
 
 MUF:
 True weight - 1.5033 (kg)
@@ -1329,6 +1399,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.2616 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4247 (kg)
+
 MUF:
 True weight - 1.7650 (kg)
 Expected weight - 1.7500 (kg)
@@ -1413,6 +1488,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.0659 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - -0.0036 (kg)
 
 MUF:
 True weight - 1.8309 (kg)
@@ -1557,6 +1637,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.4811 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2745 (kg)
+
 MUF:
 True weight - 0.4811 (kg)
 Expected weight - 0.2500 (kg)
@@ -1641,6 +1726,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.2861 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.0146 (kg)
 
 MUF:
 True weight - 0.7672 (kg)
@@ -1727,6 +1817,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.1983 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - -0.0143 (kg)
+
 MUF:
 True weight - 0.9655 (kg)
 Expected weight - 0.7500 (kg)
@@ -1811,6 +1906,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.3463 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4429 (kg)
 
 MUF:
 True weight - 1.3117 (kg)
@@ -1897,6 +1997,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.3032 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2757 (kg)
+
 MUF:
 True weight - 1.6149 (kg)
 Expected weight - 1.2500 (kg)
@@ -1981,6 +2086,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.2144 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3527 (kg)
 
 MUF:
 True weight - 1.8293 (kg)
@@ -2067,6 +2177,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.3266 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3708 (kg)
+
 MUF:
 True weight - 2.1559 (kg)
 Expected weight - 1.7500 (kg)
@@ -2151,6 +2266,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.1838 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2801 (kg)
 
 MUF:
 True weight - 2.3397 (kg)
@@ -2295,6 +2415,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.0747 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1228 (kg)
+
 MUF:
 True weight - 0.0747 (kg)
 Expected weight - 0.2500 (kg)
@@ -2379,6 +2504,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.4037 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2814 (kg)
 
 MUF:
 True weight - 0.4784 (kg)
@@ -2523,6 +2653,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.4279 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4544 (kg)
+
 MUF:
 True weight - 0.4279 (kg)
 Expected weight - 0.2500 (kg)
@@ -2607,6 +2742,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.0272 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1447 (kg)
 
 MUF:
 True weight - 0.4551 (kg)
@@ -2693,6 +2833,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.0159 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.0944 (kg)
+
 MUF:
 True weight - 0.4710 (kg)
 Expected weight - 0.7500 (kg)
@@ -2777,6 +2922,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.1189 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - -0.0070 (kg)
 
 MUF:
 True weight - 0.5899 (kg)
@@ -2863,6 +3013,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.1560 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2998 (kg)
+
 MUF:
 True weight - 0.7459 (kg)
 Expected weight - 1.2500 (kg)
@@ -2947,6 +3102,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.4722 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4329 (kg)
 
 MUF:
 True weight - 1.2181 (kg)
@@ -3091,6 +3251,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.1889 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1062 (kg)
+
 MUF:
 True weight - 0.1889 (kg)
 Expected weight - 0.2500 (kg)
@@ -3175,6 +3340,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.4952 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.9058 (kg)
 
 MUF:
 True weight - 0.6840 (kg)
@@ -3261,6 +3431,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.0103 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - -0.0250 (kg)
+
 MUF:
 True weight - 0.6944 (kg)
 Expected weight - 0.7500 (kg)
@@ -3345,6 +3520,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.3145 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.6252 (kg)
 
 MUF:
 True weight - 1.0089 (kg)
@@ -3431,6 +3611,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.0928 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1452 (kg)
+
 MUF:
 True weight - 1.1017 (kg)
 Expected weight - 1.2500 (kg)
@@ -3516,6 +3701,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.2591 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.0818 (kg)
+
 MUF:
 True weight - 1.3608 (kg)
 Expected weight - 1.5000 (kg)
@@ -3600,6 +3790,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.1388 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - -0.0797 (kg)
 
 MUF:
 True weight - 1.4996 (kg)
@@ -3744,6 +3939,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.0916 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2499 (kg)
+
 MUF:
 True weight - 0.0916 (kg)
 Expected weight - 0.2500 (kg)
@@ -3828,6 +4028,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.3743 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4438 (kg)
 
 MUF:
 True weight - 0.4660 (kg)
@@ -3914,6 +4119,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.1461 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3166 (kg)
+
 MUF:
 True weight - 0.6120 (kg)
 Expected weight - 0.7500 (kg)
@@ -3998,6 +4208,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.2932 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3376 (kg)
 
 MUF:
 True weight - 0.9053 (kg)
@@ -4084,6 +4299,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.4383 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3365 (kg)
+
 MUF:
 True weight - 1.3435 (kg)
 Expected weight - 1.2500 (kg)
@@ -4168,6 +4388,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.4245 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4838 (kg)
 
 MUF:
 True weight - 1.7680 (kg)
@@ -4254,6 +4479,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.2392 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - -0.0278 (kg)
+
 MUF:
 True weight - 2.0072 (kg)
 Expected weight - 1.7500 (kg)
@@ -4338,6 +4568,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.0949 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.0339 (kg)
 
 MUF:
 True weight - 2.1021 (kg)
@@ -4482,6 +4717,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.0662 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1257 (kg)
+
 MUF:
 True weight - 0.0662 (kg)
 Expected weight - 0.2500 (kg)
@@ -4566,6 +4806,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.2103 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.0365 (kg)
 
 MUF:
 True weight - 0.2765 (kg)
@@ -4652,6 +4897,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.0277 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - -0.1593 (kg)
+
 MUF:
 True weight - 0.3042 (kg)
 Expected weight - 0.7500 (kg)
@@ -4736,6 +4986,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.3416 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3619 (kg)
 
 MUF:
 True weight - 0.6458 (kg)
@@ -4822,6 +5077,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.0284 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - -0.0438 (kg)
+
 MUF:
 True weight - 0.6743 (kg)
 Expected weight - 1.2500 (kg)
@@ -4906,6 +5166,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.1297 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.0771 (kg)
 
 MUF:
 True weight - 0.8040 (kg)
@@ -5050,6 +5315,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.0385 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2268 (kg)
+
 MUF:
 True weight - 0.0385 (kg)
 Expected weight - 0.2500 (kg)
@@ -5134,6 +5404,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.0177 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.0612 (kg)
 
 MUF:
 True weight - 0.0562 (kg)
@@ -5220,6 +5495,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.3407 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1287 (kg)
+
 MUF:
 True weight - 0.3969 (kg)
 Expected weight - 0.7500 (kg)
@@ -5304,6 +5584,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.4520 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.5130 (kg)
 
 MUF:
 True weight - 0.8488 (kg)
@@ -5390,6 +5675,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.2293 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.5050 (kg)
+
 MUF:
 True weight - 1.0781 (kg)
 Expected weight - 1.2500 (kg)
@@ -5474,6 +5764,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.1639 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1316 (kg)
 
 MUF:
 True weight - 1.2420 (kg)
@@ -5560,6 +5855,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.0803 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - -0.0199 (kg)
+
 MUF:
 True weight - 1.3223 (kg)
 Expected weight - 1.7500 (kg)
@@ -5645,6 +5945,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.2879 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1606 (kg)
+
 MUF:
 True weight - 1.6102 (kg)
 Expected weight - 2.0000 (kg)
@@ -5729,6 +6034,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.1992 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2480 (kg)
 
 MUF:
 True weight - 1.8094 (kg)
@@ -5873,6 +6183,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.0082 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.0841 (kg)
+
 MUF:
 True weight - 0.0082 (kg)
 Expected weight - 0.2500 (kg)
@@ -5957,6 +6272,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.3072 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1632 (kg)
 
 MUF:
 True weight - 0.3154 (kg)
@@ -6043,6 +6363,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.1106 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1561 (kg)
+
 MUF:
 True weight - 0.4260 (kg)
 Expected weight - 0.7500 (kg)
@@ -6127,6 +6452,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.2045 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2264 (kg)
 
 MUF:
 True weight - 0.6305 (kg)
@@ -6213,6 +6543,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.4947 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4890 (kg)
+
 MUF:
 True weight - 1.1252 (kg)
 Expected weight - 1.2500 (kg)
@@ -6297,6 +6632,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.2587 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.0622 (kg)
 
 MUF:
 True weight - 1.3839 (kg)
@@ -6383,6 +6723,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.3533 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3237 (kg)
+
 MUF:
 True weight - 1.7372 (kg)
 Expected weight - 1.7500 (kg)
@@ -6467,6 +6812,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.4845 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.6442 (kg)
 
 MUF:
 True weight - 2.2216 (kg)
@@ -6553,6 +6903,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.1247 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1052 (kg)
+
 MUF:
 True weight - 2.3463 (kg)
 Expected weight - 2.2500 (kg)
@@ -6638,6 +6993,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.1362 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1521 (kg)
+
 MUF:
 True weight - 2.4826 (kg)
 Expected weight - 2.5000 (kg)
@@ -6722,6 +7082,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.1189 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - -0.0039 (kg)
 
 MUF:
 True weight - 2.6015 (kg)
@@ -6866,6 +7231,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.4336 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4356 (kg)
+
 MUF:
 True weight - 0.4336 (kg)
 Expected weight - 0.2500 (kg)
@@ -6950,6 +7320,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.2087 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2292 (kg)
 
 MUF:
 True weight - 0.6424 (kg)
@@ -7036,6 +7411,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.4477 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3434 (kg)
+
 MUF:
 True weight - 1.0901 (kg)
 Expected weight - 0.7500 (kg)
@@ -7120,6 +7500,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.2034 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4248 (kg)
 
 MUF:
 True weight - 1.2934 (kg)
@@ -7206,6 +7591,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.2009 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2357 (kg)
+
 MUF:
 True weight - 1.4943 (kg)
 Expected weight - 1.2500 (kg)
@@ -7290,6 +7680,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.3753 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4239 (kg)
 
 MUF:
 True weight - 1.8696 (kg)
@@ -7376,6 +7771,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.0243 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.0374 (kg)
+
 MUF:
 True weight - 1.8939 (kg)
 Expected weight - 1.7500 (kg)
@@ -7460,6 +7860,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.3403 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3872 (kg)
 
 MUF:
 True weight - 2.2342 (kg)
@@ -7604,6 +8009,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.0151 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - -0.0762 (kg)
+
 MUF:
 True weight - 0.0151 (kg)
 Expected weight - 0.2500 (kg)
@@ -7688,6 +8098,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.0447 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - -0.1460 (kg)
 
 MUF:
 True weight - 0.0599 (kg)
@@ -7774,6 +8189,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.1049 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3740 (kg)
+
 MUF:
 True weight - 0.1647 (kg)
 Expected weight - 0.7500 (kg)
@@ -7858,6 +8278,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.3360 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1248 (kg)
 
 MUF:
 True weight - 0.5007 (kg)
@@ -8002,6 +8427,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.1670 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2382 (kg)
+
 MUF:
 True weight - 0.1670 (kg)
 Expected weight - 0.2500 (kg)
@@ -8086,6 +8516,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.0454 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4137 (kg)
 
 MUF:
 True weight - 0.2124 (kg)
@@ -8172,6 +8607,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.4435 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3989 (kg)
+
 MUF:
 True weight - 0.6559 (kg)
 Expected weight - 0.7500 (kg)
@@ -8256,6 +8696,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.4617 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.5433 (kg)
 
 MUF:
 True weight - 1.1176 (kg)
@@ -8342,6 +8787,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.1500 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - -0.0535 (kg)
+
 MUF:
 True weight - 1.2676 (kg)
 Expected weight - 1.2500 (kg)
@@ -8426,6 +8876,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.0382 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1804 (kg)
 
 MUF:
 True weight - 1.3058 (kg)
@@ -8570,6 +9025,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.1522 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1131 (kg)
+
 MUF:
 True weight - 0.1522 (kg)
 Expected weight - 0.2500 (kg)
@@ -8654,6 +9114,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.0873 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - -0.0886 (kg)
 
 MUF:
 True weight - 0.2396 (kg)
@@ -8740,6 +9205,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.1420 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2207 (kg)
+
 MUF:
 True weight - 0.3816 (kg)
 Expected weight - 0.7500 (kg)
@@ -8824,6 +9294,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.2283 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.0551 (kg)
 
 MUF:
 True weight - 0.6098 (kg)
@@ -8910,6 +9385,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.1986 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4741 (kg)
+
 MUF:
 True weight - 0.8084 (kg)
 Expected weight - 1.2500 (kg)
@@ -8994,6 +9474,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.4881 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.5978 (kg)
 
 MUF:
 True weight - 1.2966 (kg)
@@ -9138,6 +9623,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.4794 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.0625 (kg)
+
 MUF:
 True weight - 0.4794 (kg)
 Expected weight - 0.2500 (kg)
@@ -9222,6 +9712,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.0739 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.0473 (kg)
 
 MUF:
 True weight - 0.5533 (kg)
@@ -9308,6 +9803,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.0486 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - -0.0912 (kg)
+
 MUF:
 True weight - 0.6019 (kg)
 Expected weight - 0.7500 (kg)
@@ -9392,6 +9892,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.0293 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.0148 (kg)
 
 MUF:
 True weight - 0.6312 (kg)
@@ -9478,6 +9983,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.4900 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3726 (kg)
+
 MUF:
 True weight - 1.1212 (kg)
 Expected weight - 1.2500 (kg)
@@ -9562,6 +10072,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.1999 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2233 (kg)
 
 MUF:
 True weight - 1.3211 (kg)
@@ -9648,6 +10163,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.3196 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.5830 (kg)
+
 MUF:
 True weight - 1.6407 (kg)
 Expected weight - 1.7500 (kg)
@@ -9732,6 +10252,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.3267 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2431 (kg)
 
 MUF:
 True weight - 1.9674 (kg)
@@ -9876,6 +10401,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.3516 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2689 (kg)
+
 MUF:
 True weight - 0.3516 (kg)
 Expected weight - 0.2500 (kg)
@@ -9960,6 +10490,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.4336 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4418 (kg)
 
 MUF:
 True weight - 0.7852 (kg)
@@ -10046,6 +10581,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.0953 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4046 (kg)
+
 MUF:
 True weight - 0.8805 (kg)
 Expected weight - 0.7500 (kg)
@@ -10130,6 +10670,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.1866 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1507 (kg)
 
 MUF:
 True weight - 1.0671 (kg)
@@ -10274,6 +10819,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.2282 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1458 (kg)
+
 MUF:
 True weight - 0.2282 (kg)
 Expected weight - 0.2500 (kg)
@@ -10358,6 +10908,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.3907 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.7545 (kg)
 
 MUF:
 True weight - 0.6189 (kg)
@@ -10502,6 +11057,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.3796 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3436 (kg)
+
 MUF:
 True weight - 0.3796 (kg)
 Expected weight - 0.2500 (kg)
@@ -10587,6 +11147,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.1825 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - -0.0432 (kg)
+
 MUF:
 True weight - 0.5621 (kg)
 Expected weight - 0.5000 (kg)
@@ -10671,6 +11236,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.0587 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - -0.1507 (kg)
 
 MUF:
 True weight - 0.6208 (kg)
@@ -10815,6 +11385,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.2748 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2229 (kg)
+
 MUF:
 True weight - 0.2748 (kg)
 Expected weight - 0.2500 (kg)
@@ -10899,6 +11474,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.4387 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.5961 (kg)
 
 MUF:
 True weight - 0.7134 (kg)
@@ -10985,6 +11565,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.1681 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.0416 (kg)
+
 MUF:
 True weight - 0.8815 (kg)
 Expected weight - 0.7500 (kg)
@@ -11069,6 +11654,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.0830 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1832 (kg)
 
 MUF:
 True weight - 0.9645 (kg)
@@ -11155,6 +11745,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.4221 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.6875 (kg)
+
 MUF:
 True weight - 1.3866 (kg)
 Expected weight - 1.2500 (kg)
@@ -11239,6 +11834,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.4090 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3476 (kg)
 
 MUF:
 True weight - 1.7957 (kg)
@@ -11325,6 +11925,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.1233 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.0481 (kg)
+
 MUF:
 True weight - 1.9189 (kg)
 Expected weight - 1.7500 (kg)
@@ -11409,6 +12014,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.4663 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.6307 (kg)
 
 MUF:
 True weight - 2.3852 (kg)
@@ -11553,6 +12163,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.4047 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.5037 (kg)
+
 MUF:
 True weight - 0.4047 (kg)
 Expected weight - 0.2500 (kg)
@@ -11637,6 +12252,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.1443 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - -0.0455 (kg)
 
 MUF:
 True weight - 0.5490 (kg)
@@ -11723,6 +12343,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.3726 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4596 (kg)
+
 MUF:
 True weight - 0.9216 (kg)
 Expected weight - 0.7500 (kg)
@@ -11807,6 +12432,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.3029 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2969 (kg)
 
 MUF:
 True weight - 1.2244 (kg)
@@ -11893,6 +12523,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.4060 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2623 (kg)
+
 MUF:
 True weight - 1.6304 (kg)
 Expected weight - 1.2500 (kg)
@@ -11977,6 +12612,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.2091 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2179 (kg)
 
 MUF:
 True weight - 1.8395 (kg)
@@ -12063,6 +12703,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.3666 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.6765 (kg)
+
 MUF:
 True weight - 2.2061 (kg)
 Expected weight - 1.7500 (kg)
@@ -12147,6 +12792,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.0026 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.0985 (kg)
 
 MUF:
 True weight - 2.2087 (kg)
@@ -12233,6 +12883,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.0885 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2265 (kg)
+
 MUF:
 True weight - 2.2972 (kg)
 Expected weight - 2.2500 (kg)
@@ -12318,6 +12973,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.1414 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2148 (kg)
+
 MUF:
 True weight - 2.4386 (kg)
 Expected weight - 2.5000 (kg)
@@ -12402,6 +13062,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.0739 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - -0.1502 (kg)
 
 MUF:
 True weight - 2.5125 (kg)
@@ -12546,6 +13211,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.2234 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4557 (kg)
+
 MUF:
 True weight - 0.2234 (kg)
 Expected weight - 0.2500 (kg)
@@ -12630,6 +13300,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.1450 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1276 (kg)
 
 MUF:
 True weight - 0.3684 (kg)
@@ -12716,6 +13391,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.1723 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1363 (kg)
+
 MUF:
 True weight - 0.5407 (kg)
 Expected weight - 0.7500 (kg)
@@ -12800,6 +13480,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.2839 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.5017 (kg)
 
 MUF:
 True weight - 0.8246 (kg)
@@ -12886,6 +13571,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.3139 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.7022 (kg)
+
 MUF:
 True weight - 1.1385 (kg)
 Expected weight - 1.2500 (kg)
@@ -12970,6 +13660,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.0297 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - -0.1327 (kg)
 
 MUF:
 True weight - 1.1681 (kg)
@@ -13114,6 +13809,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.3287 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.5241 (kg)
+
 MUF:
 True weight - 0.3287 (kg)
 Expected weight - 0.2500 (kg)
@@ -13198,6 +13898,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.2773 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4880 (kg)
 
 MUF:
 True weight - 0.6060 (kg)
@@ -13342,6 +14047,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.4100 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4613 (kg)
+
 MUF:
 True weight - 0.4100 (kg)
 Expected weight - 0.2500 (kg)
@@ -13426,6 +14136,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.1137 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2711 (kg)
 
 MUF:
 True weight - 0.5237 (kg)
@@ -13512,6 +14227,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.1554 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2101 (kg)
+
 MUF:
 True weight - 0.6791 (kg)
 Expected weight - 0.7500 (kg)
@@ -13597,6 +14317,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.4869 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.5095 (kg)
+
 MUF:
 True weight - 1.1660 (kg)
 Expected weight - 1.0000 (kg)
@@ -13681,6 +14406,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.1728 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - -0.1585 (kg)
 
 MUF:
 True weight - 1.3388 (kg)
@@ -13825,6 +14555,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.2413 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2233 (kg)
+
 MUF:
 True weight - 0.2413 (kg)
 Expected weight - 0.2500 (kg)
@@ -13909,6 +14644,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.4696 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4477 (kg)
 
 MUF:
 True weight - 0.7109 (kg)
@@ -13995,6 +14735,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.2675 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3692 (kg)
+
 MUF:
 True weight - 0.9783 (kg)
 Expected weight - 0.7500 (kg)
@@ -14002,7 +14747,8 @@ Measured weight - 4.8122 (kg)
 
 
 
-MISSING SNM DETECTED AT END OF CAMPAIGN 149!CONDUCT INSPECTION IMMEDIATELY!
+MISSING SNM DETECTED AT END OF CAMPAIGN 149!
+CONDUCT INSPECTION IMMEDIATELY!
 
 
 
@@ -14046,6 +14792,11 @@ Recycle Storage:
 True inventory - 0.9783 (kg)
 Expected inventory - 0.7500 (kg)
 Measured inventory - 1.0534 (kg)
+
+Campaign MUF:
+True weight - 0.2675 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3692 (kg)
 
 MUF:
 True weight - 0.0000 (kg)
@@ -14174,6 +14925,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.4611 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4385 (kg)
+
 MUF:
 True weight - 0.4611 (kg)
 Expected weight - 0.2500 (kg)
@@ -14258,6 +15014,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.1069 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2152 (kg)
 
 MUF:
 True weight - 0.5681 (kg)
@@ -14402,6 +15163,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.3386 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3512 (kg)
+
 MUF:
 True weight - 0.3386 (kg)
 Expected weight - 0.2500 (kg)
@@ -14409,7 +15175,8 @@ Measured weight - 4.3518 (kg)
 
 
 
-MISSING SNM DETECTED AT END OF CAMPAIGN 152!CONDUCT INSPECTION IMMEDIATELY!
+MISSING SNM DETECTED AT END OF CAMPAIGN 152!
+CONDUCT INSPECTION IMMEDIATELY!
 
 
 
@@ -14453,6 +15220,11 @@ Recycle Storage:
 True inventory - 0.3386 (kg)
 Expected inventory - 0.2500 (kg)
 Measured inventory - 0.5235 (kg)
+
+Campaign MUF:
+True weight - 0.3386 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - -19.6958 (kg)
 
 MUF:
 True weight - 0.0000 (kg)
@@ -14588,6 +15360,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.4768 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4248 (kg)
+
 MUF:
 True weight - 0.4768 (kg)
 Expected weight - 0.2500 (kg)
@@ -14595,7 +15372,8 @@ Measured weight - 4.5535 (kg)
 
 
 
-MISSING SNM DETECTED AT END OF CAMPAIGN 153!CONDUCT INSPECTION IMMEDIATELY!
+MISSING SNM DETECTED AT END OF CAMPAIGN 153!
+CONDUCT INSPECTION IMMEDIATELY!
 
 
 
@@ -14639,6 +15417,11 @@ Recycle Storage:
 True inventory - 0.4768 (kg)
 Expected inventory - 0.2500 (kg)
 Measured inventory - 0.4961 (kg)
+
+Campaign MUF:
+True weight - 0.4768 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4248 (kg)
 
 MUF:
 True weight - 0.0000 (kg)
@@ -14832,6 +15615,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.1179 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3169 (kg)
+
 MUF:
 True weight - 0.1179 (kg)
 Expected weight - 0.2500 (kg)
@@ -14916,6 +15704,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.3891 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.5229 (kg)
 
 MUF:
 True weight - 0.5071 (kg)
@@ -15060,6 +15853,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.1327 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2564 (kg)
+
 MUF:
 True weight - 0.1327 (kg)
 Expected weight - 0.2500 (kg)
@@ -15144,6 +15942,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.3638 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4043 (kg)
 
 MUF:
 True weight - 0.4964 (kg)
@@ -15230,6 +16033,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.4266 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3377 (kg)
+
 MUF:
 True weight - 0.9230 (kg)
 Expected weight - 0.7500 (kg)
@@ -15315,6 +16123,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.1164 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - -0.0412 (kg)
+
 MUF:
 True weight - 1.0394 (kg)
 Expected weight - 1.0000 (kg)
@@ -15399,6 +16212,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.2790 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2800 (kg)
 
 MUF:
 True weight - 1.3185 (kg)
@@ -15543,6 +16361,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.3458 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3962 (kg)
+
 MUF:
 True weight - 0.3458 (kg)
 Expected weight - 0.2500 (kg)
@@ -15627,6 +16450,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.1990 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1856 (kg)
 
 MUF:
 True weight - 0.5447 (kg)
@@ -15713,6 +16541,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.4306 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.5157 (kg)
+
 MUF:
 True weight - 0.9753 (kg)
 Expected weight - 0.7500 (kg)
@@ -15797,6 +16630,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.1771 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2040 (kg)
 
 MUF:
 True weight - 1.1524 (kg)
@@ -15883,6 +16721,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.0501 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - -0.0089 (kg)
+
 MUF:
 True weight - 1.2025 (kg)
 Expected weight - 1.2500 (kg)
@@ -15967,6 +16810,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.1330 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - -0.0934 (kg)
 
 MUF:
 True weight - 1.3355 (kg)
@@ -16111,6 +16959,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.0818 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1824 (kg)
+
 MUF:
 True weight - 0.0818 (kg)
 Expected weight - 0.2500 (kg)
@@ -16195,6 +17048,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.0176 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - -0.1384 (kg)
 
 MUF:
 True weight - 0.0994 (kg)
@@ -16281,6 +17139,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.2916 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2838 (kg)
+
 MUF:
 True weight - 0.3910 (kg)
 Expected weight - 0.7500 (kg)
@@ -16365,6 +17228,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.1404 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.0632 (kg)
 
 MUF:
 True weight - 0.5314 (kg)
@@ -16451,6 +17319,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.3419 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4055 (kg)
+
 MUF:
 True weight - 0.8733 (kg)
 Expected weight - 1.2500 (kg)
@@ -16536,6 +17409,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.2532 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.0346 (kg)
+
 MUF:
 True weight - 1.1265 (kg)
 Expected weight - 1.5000 (kg)
@@ -16620,6 +17498,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.1344 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1616 (kg)
 
 MUF:
 True weight - 1.2608 (kg)
@@ -16764,6 +17647,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.0518 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1428 (kg)
+
 MUF:
 True weight - 0.0518 (kg)
 Expected weight - 0.2500 (kg)
@@ -16848,6 +17736,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.3993 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3937 (kg)
 
 MUF:
 True weight - 0.4511 (kg)
@@ -16934,6 +17827,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.4919 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.7046 (kg)
+
 MUF:
 True weight - 0.9431 (kg)
 Expected weight - 0.7500 (kg)
@@ -17018,6 +17916,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.4723 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.5863 (kg)
 
 MUF:
 True weight - 1.4154 (kg)
@@ -17104,6 +18007,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.0995 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.0649 (kg)
+
 MUF:
 True weight - 1.5149 (kg)
 Expected weight - 1.2500 (kg)
@@ -17188,6 +18096,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.4640 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3497 (kg)
 
 MUF:
 True weight - 1.9789 (kg)
@@ -17274,6 +18187,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.1899 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1205 (kg)
+
 MUF:
 True weight - 2.1688 (kg)
 Expected weight - 1.7500 (kg)
@@ -17359,6 +18277,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.0097 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2403 (kg)
+
 MUF:
 True weight - 2.1785 (kg)
 Expected weight - 2.0000 (kg)
@@ -17443,6 +18366,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.2744 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2220 (kg)
 
 MUF:
 True weight - 2.4530 (kg)
@@ -17587,6 +18515,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.2838 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2822 (kg)
+
 MUF:
 True weight - 0.2838 (kg)
 Expected weight - 0.2500 (kg)
@@ -17671,6 +18604,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.2832 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2885 (kg)
 
 MUF:
 True weight - 0.5670 (kg)
@@ -17815,6 +18753,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.4825 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4215 (kg)
+
 MUF:
 True weight - 0.4825 (kg)
 Expected weight - 0.2500 (kg)
@@ -17899,6 +18842,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.4859 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4485 (kg)
 
 MUF:
 True weight - 0.9684 (kg)
@@ -17985,6 +18933,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.1978 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1292 (kg)
+
 MUF:
 True weight - 1.1662 (kg)
 Expected weight - 0.7500 (kg)
@@ -18069,6 +19022,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.3469 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4233 (kg)
 
 MUF:
 True weight - 1.5131 (kg)
@@ -18155,6 +19113,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.2299 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2078 (kg)
+
 MUF:
 True weight - 1.7431 (kg)
 Expected weight - 1.2500 (kg)
@@ -18239,6 +19202,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.2150 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3274 (kg)
 
 MUF:
 True weight - 1.9581 (kg)
@@ -18325,6 +19293,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.3968 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3027 (kg)
+
 MUF:
 True weight - 2.3548 (kg)
 Expected weight - 1.7500 (kg)
@@ -18409,6 +19382,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.0107 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - -0.3914 (kg)
 
 MUF:
 True weight - 2.3655 (kg)
@@ -18495,6 +19473,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.0699 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.0495 (kg)
+
 MUF:
 True weight - 2.4354 (kg)
 Expected weight - 2.2500 (kg)
@@ -18579,6 +19562,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.4226 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4151 (kg)
 
 MUF:
 True weight - 2.8580 (kg)
@@ -18665,6 +19653,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.3303 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3783 (kg)
+
 MUF:
 True weight - 3.1882 (kg)
 Expected weight - 2.7500 (kg)
@@ -18749,6 +19742,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.3106 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2688 (kg)
 
 MUF:
 True weight - 3.4988 (kg)
@@ -18893,6 +19891,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.4833 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4496 (kg)
+
 MUF:
 True weight - 0.4833 (kg)
 Expected weight - 0.2500 (kg)
@@ -19036,6 +20039,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.4912 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4114 (kg)
+
 MUF:
 True weight - 0.4912 (kg)
 Expected weight - 0.2500 (kg)
@@ -19120,6 +20128,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.3841 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4428 (kg)
 
 MUF:
 True weight - 0.8753 (kg)
@@ -19206,6 +20219,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.3516 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3465 (kg)
+
 MUF:
 True weight - 1.2269 (kg)
 Expected weight - 0.7500 (kg)
@@ -19291,6 +20309,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.0845 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2344 (kg)
+
 MUF:
 True weight - 1.3114 (kg)
 Expected weight - 1.0000 (kg)
@@ -19375,6 +20398,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.1779 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - -0.0396 (kg)
 
 MUF:
 True weight - 1.4893 (kg)
@@ -19519,6 +20547,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.3836 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3525 (kg)
+
 MUF:
 True weight - 0.3836 (kg)
 Expected weight - 0.2500 (kg)
@@ -19604,6 +20637,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.3698 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1314 (kg)
+
 MUF:
 True weight - 0.7534 (kg)
 Expected weight - 0.5000 (kg)
@@ -19688,6 +20726,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.0183 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1198 (kg)
 
 MUF:
 True weight - 0.7718 (kg)
@@ -19890,6 +20933,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.2700 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.5098 (kg)
+
 MUF:
 True weight - 0.2700 (kg)
 Expected weight - 0.2500 (kg)
@@ -19974,6 +21022,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.2781 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3140 (kg)
 
 MUF:
 True weight - 0.5481 (kg)
@@ -20060,6 +21113,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.3101 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2945 (kg)
+
 MUF:
 True weight - 0.8582 (kg)
 Expected weight - 0.7500 (kg)
@@ -20144,6 +21202,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.1828 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1697 (kg)
 
 MUF:
 True weight - 1.0409 (kg)
@@ -20230,6 +21293,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.4561 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3040 (kg)
+
 MUF:
 True weight - 1.4970 (kg)
 Expected weight - 1.2500 (kg)
@@ -20314,6 +21382,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.0610 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2266 (kg)
 
 MUF:
 True weight - 1.5580 (kg)
@@ -20458,6 +21531,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.3753 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3651 (kg)
+
 MUF:
 True weight - 0.3753 (kg)
 Expected weight - 0.2500 (kg)
@@ -20542,6 +21620,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.1983 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2273 (kg)
 
 MUF:
 True weight - 0.5736 (kg)
@@ -20628,6 +21711,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.2305 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4137 (kg)
+
 MUF:
 True weight - 0.8041 (kg)
 Expected weight - 0.7500 (kg)
@@ -20712,6 +21800,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.1985 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4933 (kg)
 
 MUF:
 True weight - 1.0026 (kg)
@@ -20798,6 +21891,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.4178 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3503 (kg)
+
 MUF:
 True weight - 1.4204 (kg)
 Expected weight - 1.2500 (kg)
@@ -20882,6 +21980,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.1358 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.0723 (kg)
 
 MUF:
 True weight - 1.5562 (kg)
@@ -20968,6 +22071,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.4917 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.5572 (kg)
+
 MUF:
 True weight - 2.0479 (kg)
 Expected weight - 1.7500 (kg)
@@ -21053,6 +22161,11 @@ True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
+Campaign MUF:
+True weight - 0.3845 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.5937 (kg)
+
 MUF:
 True weight - 2.4324 (kg)
 Expected weight - 2.0000 (kg)
@@ -21137,6 +22250,11 @@ Recycle Storage:
 True inventory - 0.0000 (kg)
 Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.0081 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1718 (kg)
 
 MUF:
 True weight - 2.4406 (kg)

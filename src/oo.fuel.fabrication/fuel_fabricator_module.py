@@ -59,6 +59,14 @@ class fuel_fabricator_class(facility_component_class):
 
     recycle_storage = module that both recycle the batch and heel together when a failure has occurred and
     also indefinitely stores the heel whenever an alarm is set off.
+
+    expected_campaign_muf = expected amount of SNM left in a given campaign determined ahead of time
+    as to what any given component should lose in a campaign
+
+    measured_campaign_muf = measured amount of the batch left behind.  Found by taking the difference
+    amongst the pertinent kmps.
+
+    true_campaign_muf = actual amount of SNM left behind for this campaign
     """
 
 
@@ -77,6 +85,9 @@ class fuel_fabricator_class(facility_component_class):
         self.melter= melter_class(facility)
         self.trimmer = trimmer_class(facility)
         self.recycle_storage = recycle_storage_class(facility)
+        self.expected_campaign_muf = 0
+        self.measured_campaign_muf = 0
+        self.true_campaign_muf = 0
         facility_component_class.__init__(self, 0, 0, 0, "fuel fabricator", "manager")
 
     def update_accountability(self):
@@ -109,6 +120,16 @@ class fuel_fabricator_class(facility_component_class):
         self.kmp[1].process_batch(facility,batch)
         self.edge.edge_transition(facility,batch, self.kmp[1],self.trimmer)
         self.trimmer.process_batch(facility,batch)
+
+    def calculate_campaign_muf(self, previous_kmp):
+        """
+        This is called by the facility to calculate the campaign MUF.  The kmp that measured the batch
+        before passing it onto the fuel fabricator needs to be passed in here to calculate the measured
+        MUF.
+        """
+        self.expected_campaign_muf = self.melter.expected_loss
+        self.measured_campaign_muf = previous_kmp.measured_weight - self.kmp[1].measured_weight
+        self.true_campaign_muf = self.melter.true_batch_loss
 
     def equipment_failure(self,facility,batch):
         """
