@@ -30,9 +30,7 @@ class recycle_storage_class(facility_component_class):
         self.time_delay = np.loadtxt(facility.process_states_dir+'/process.operation.time.inp',usecols=[1])[3]
         self.inventory = 0
         self.measured_inventory = 0
-        self.recycle_expected_weight = 0
-        self.recycle_batches = []
-        facility_component_class.__init__(self, 0, 0, 0, "recycle storage", "storage")
+        facility_component_class.__init__(self, 0, 0, 0, "recycle_storage", "storage", facility.inventory_odir)
 
     def process_batch(self,facility,batch):
         """
@@ -52,6 +50,8 @@ class recycle_storage_class(facility_component_class):
         self.inventory = 0
         self.expected_weight.storage_batch_loss()
         self.measured_inventory = 0
+
+        self.data_output.storage_output(facility, self)
         
     def store_batch(self,facility,batch):
         """
@@ -63,4 +63,6 @@ class recycle_storage_class(facility_component_class):
         self.increment_operation_time(facility,self.time_delay)
         self.inventory = self.inventory + batch.weight
         self.expected_weight.storage_batch_gain()
+
+        self.data_output.storage_output(facility, self)
 

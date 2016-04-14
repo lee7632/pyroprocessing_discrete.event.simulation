@@ -10,6 +10,7 @@
 import numpy as np
 from facility_component_module import facility_component_class
 from batch_module import batch_class
+from data_output_module import data_output_class
 
 class melter_class(facility_component_class):
     """
@@ -57,6 +58,9 @@ class melter_class(facility_component_class):
     true_batch_loss = variable that stores the true amount of batch loss.  Such is calculated as a uniform
     distribution between the bounds, but it needs to be stored so that the managing unit can view and use
     such.
+
+    failure_data_output = object that handles the opening and writing to a file exclusively for variables
+    that deal with the equipment failure check.
     """
     def __init__(self,facility):
         self.expected_loss = np.loadtxt(facility.process_states_dir+ \
@@ -73,7 +77,8 @@ class melter_class(facility_component_class):
                 '/melter.failure.data.inp',usecols=[2]) 
         self.time_of_last_failure = 0
         self.true_batch_loss = 0
-        facility_component_class.__init__(self, 0, 0, 0, "melter", "processor")
+        self.failure_data_output = data_output_class("melter_failure_data", facility.equipment_failure_odir)
+        facility_component_class.__init__(self, 0, 0, 0, "melter", "processor", facility.material_flow_odir)
 
     def process_batch(self,facility,batch):
         """
@@ -110,7 +115,9 @@ class melter_class(facility_component_class):
             # Everything lost in batch is accumulated in the heel 
             #######
             self.heel.add_weight(self.true_batch_loss)
-            
+    
+        self.data_output.processor_output(facility, self, batch)
+
         return did_fail
 
     def clean_heel(self,facility):
@@ -131,6 +138,8 @@ class melter_class(facility_component_class):
         self.heel.weight = 0
         self.expected_weight.residual_weight = 0
         self.expected_weight.update_total_weight
+
+        self.data_output.processor_output(facility, self, cleaned_out_heel)
 
         return cleaned_out_heel 
 

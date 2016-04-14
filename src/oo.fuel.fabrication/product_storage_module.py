@@ -33,7 +33,7 @@ class product_storage_class(facility_component_class):
         self.inventory = 0
         self.measured_inventory = 0
         self.time_delay = np.loadtxt(facility.process_states_dir+'/process.operation.time.inp',usecols=[1])[3]
-        facility_component_class.__init__(self, 0, 0, 0, "product storage", "storage")
+        facility_component_class.__init__(self, 0, 0, 0, "product_storage", "storage", facility.inventory_odir)
 
     def process_batch(self,facility,batch):
         """
@@ -43,4 +43,5 @@ class product_storage_class(facility_component_class):
         self.increment_operation_time(facility,self.time_delay)
         self.inventory = self.inventory + batch.weight
         self.expected_weight.storage_batch_gain()
-
+        
+        self.data_output.storage_output(facility, self)

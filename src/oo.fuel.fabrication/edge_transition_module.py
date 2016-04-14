@@ -33,7 +33,7 @@ class edge_transition_class(facility_component_class):
     def __init__(self,facility,edge_number):
         self.time_delay = np.loadtxt(facility.edge_transition_dir+'/edge.transition.inp',
                 usecols=[1])[edge_number]
-        facility_component_class.__init__(self, 0, 0, 0, "edge transition", "manager")
+        facility_component_class.__init__(self, 0, 0, 0, "edge_transition", "manager", None)
 
     def edge_transition(self, facility, batch, object1, object2):
         """

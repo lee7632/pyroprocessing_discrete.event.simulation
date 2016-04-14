@@ -39,7 +39,7 @@ class final_storage_unit_class(facility_component_class):
         self.edge = edge_transition_class(facility,0)
         self.product_storage = product_storage_class(facility)
         self.kmp = kmp_class(facility,2)
-        facility_component_class.__init__(self, 0, 0, 0, "final storage unit", "manager")
+        facility_component_class.__init__(self, 0, 0, 0, "final_storage_unit", "manager", None)
 
     def process_batch(self,facility,batch):
         """

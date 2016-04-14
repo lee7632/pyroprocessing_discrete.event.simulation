@@ -17,6 +17,7 @@ from edge_transition_module import edge_transition_class
 from fuel_fabricator_module import fuel_fabricator_class
 from final_storage_unit_module import final_storage_unit_class
 from batch_module import batch_class
+from data_output_module import data_output_class
 
 
 class facility_command_class:
@@ -66,8 +67,7 @@ class facility_command_class:
     total_operation_time = total amount of time in days that the facility will run for.  Once operation time
     has reached this number, the program will stop.
 
-    end_of_campaign_time_delay = amount of time it takes to conduct inspections at the end of each campaign.
-
+    end_of_campaign_time_delay = amount of time it takes to conduct inspections at the end of each campaign.  
     end_of_campaign_alarm_threshold = weight of SNM in kg that will trigger the alarm.  This number is
     compared to the difference between expected and measured weight.  If the absolute value of such is greater
     than this, an alarm is triggered where the facility shuts down and conducts an inspection to verify the
@@ -146,10 +146,9 @@ class facility_command_class:
         #######
         # read input data 
         #######
-        self.total_operation_time=np.loadtxt(self.process_states_dir+'/facility.operation.inp')\
-                #Total time in days that the facility will run for
+        self.total_operation_time=np.loadtxt(self.process_states_dir+'/facility.operation.inp')
         self.end_of_campaign_time_delay = np.loadtxt(self.system_false_alarm_dir+'/system.inspection.time.inp',
-                usecols=[1]) #Amount of time it takes to do end of campaign inspection
+                usecols=[1]) 
         self.end_of_campaign_alarm_threshold = np.loadtxt(self.system_false_alarm_dir+'/eoc.alarm.threshold.inp')
         self.facility_inspection_time = np.loadtxt(self.system_false_alarm_dir+'/facility.inspection.time.inp')
 
@@ -158,6 +157,7 @@ class facility_command_class:
         #######
         self.system_time_output=open(self.system_odir+'/facility.operation.time.out','w+')
         self.campaign_output=open(self.system_odir+'/facility.campaign.out','w+')
+        self.muf_data_output = data_output_class("muf", self.muf_odir)
 
         #######
         # write data for TIME=Initial_Time
@@ -168,8 +168,7 @@ class facility_command_class:
         ######
         # Initial parameters (used more than once) 
         ######
-        self.initial_inventory = np.loadtxt(self.process_states_dir+'/unprocessed.storage.inventory.inp') \
-                #Total weight of the initial inventory found in the storage buffer at the start of the process
+        self.initial_inventory = np.loadtxt(self.process_states_dir+'/unprocessed.storage.inventory.inp')
 
         #######
         # Initialize facility components 
@@ -274,6 +273,8 @@ class facility_command_class:
                 'True weight - %.4f (kg)\nExpected weight - %.4f (kg)\nMeasured weight - %.4f (kg)\n\n\n' \
                 %(fuel_fabricator.melter.heel.weight, self.expected_muf, self.measured_muf))
 
+        self.muf_data_output.muf_output(self)
+
         return abs(self.expected_muf - self.measured_muf) > self.end_of_campaign_alarm_threshold
 
     def end_of_campaign(self):
@@ -314,7 +315,10 @@ class facility_command_class:
         storage_unit = self.storage_unit
         fuel_fabricator = self.fuel_fabricator
         final_storage_unit = self.final_storage_unit
-        
+    
+        #######
+        # MUF calculation  
+        #######
         self.expected_muf = storage_unit.initial_inventory - storage_unit.expected_weight.total_weight - \
                 fuel_fabricator.recycle_storage.expected_weight.total_weight - \
                 final_storage_unit.expected_weight.total_weight 

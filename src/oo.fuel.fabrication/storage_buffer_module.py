@@ -52,7 +52,7 @@ class storage_buffer_class(facility_component_class):
         self.measured_inventory = initial_inventory 
         self.time_delay = np.loadtxt(facility.process_states_dir+'/process.operation.time.inp',usecols=[1])[0]
         facility_component_class.__init__(self, self.inventory, self.batch_size, self.inventory, 
-                "storage buffer", "storage")
+                "storage_buffer", "storage", facility.inventory_odir)
 
     def batch_preparation(self,facility):
         """
@@ -68,6 +68,8 @@ class storage_buffer_class(facility_component_class):
         #######
         self.expected_weight.batch_weight = self.batch_size
         self.expected_weight.storage_batch_loss()
+
+        self.data_output.storage_output(facility, self)
 
         return batch_class(self.batch_size,"batch")
 

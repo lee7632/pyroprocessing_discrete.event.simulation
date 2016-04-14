@@ -54,7 +54,8 @@ class key_measurement_point_class(facility_component_class):
                 usecols=[4])[kmp_identifier]
         self.identifier = kmp_identifier
         self.measured_weight = 0
-        facility_component_class.__init__(self, 0, 0,0, "key measurement point %i"%(kmp_identifier), "kmp")
+        facility_component_class.__init__(self, 0, 0,0, "key_measurement_point_%i"%(kmp_identifier), "kmp",
+            facility.kmps_odir)
 
     def process_batch(self,facility,batch):
         """
@@ -67,8 +68,16 @@ class key_measurement_point_class(facility_component_class):
         self.measured_weight = batch.weight + self.uncertainty*np.random.randn()
         self.increment_operation_time(facility,self.time_delay)
 
+        #######
+        # Data Writing  
+        #######
         self.write_to_log(facility,'Operation time %.4f (d) \nTrue quantity %.4f (kg) \nExpected quantity %.4f (kg) \nMeasured quantity %.4f (kg) \n\n\n'\
                 %(facility.operation_time, batch.weight, self.expected_weight.batch_weight, self.measured_weight))
+        self.data_output.kmp_output(facility, self, batch)
+
+        #######
+        # Check for discrepancy  
+        #######
         if abs(self.measured_weight - self.expected_weight.batch_weight) > self.alarm_threshold:
             self.write_to_log(facility,
                     '\nMISSING SNM DETECTED in %s!  CONDUCT INSPECTION IMMEDIATELY!\n\n\n'%(self.description))

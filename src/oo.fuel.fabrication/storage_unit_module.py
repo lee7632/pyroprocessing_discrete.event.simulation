@@ -43,7 +43,7 @@ class storage_unit_class(facility_component_class):
         self.initial_inventory = facility.initial_inventory
         self.storage_buffer = storage_buffer_class(facility, self.initial_inventory)
         self.kmp = kmp_class(facility,0)
-        facility_component_class.__init__(self, 0, 0, 0, "first storage unit", "manager")
+        facility_component_class.__init__(self, 0, 0, 0, "first_storage_unit", "manager", None)
 
     def batch_preparation(self,facility):
         """

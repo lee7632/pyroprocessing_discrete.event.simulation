@@ -88,7 +88,7 @@ class fuel_fabricator_class(facility_component_class):
         self.expected_campaign_muf = 0
         self.measured_campaign_muf = 0
         self.true_campaign_muf = 0
-        facility_component_class.__init__(self, 0, 0, 0, "fuel fabricator", "manager")
+        facility_component_class.__init__(self, 0, 0, 0, "fuel_fabricator", "manager", None)
 
     def update_accountability(self):
         """

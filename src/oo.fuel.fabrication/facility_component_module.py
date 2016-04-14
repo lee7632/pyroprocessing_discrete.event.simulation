@@ -15,6 +15,7 @@
 #
 import numpy as np
 from expected_weight_module import expected_weight_class
+from data_output_module import data_output_class
 
 class facility_component_class:
     """
@@ -30,17 +31,29 @@ class facility_component_class:
     expected_weight = module that handles different types of expected weight for each class.  It also holds
     several routines to help keep track of the expected weight during each different state variable change.
 
-    description = For now this is either "manager", "storage", "processor", or "kmp".  A short label that
-    can be used in identifying what kind of object is being passed in general routines.
+    data_output = module that handles data output for this class.  It creates a data output file and
+    contains methods for writing important data to such.
+
+    description = a name that will be used in differentiating this object from any others of its kind.
+    This gets used in identification in the log file as well as naming the output file where data
+    for the specific class is written.
 
     Object type = a string describing the object type.  Can be either "manager", "storage", "kmp", or "processor".
     Other methods utilize this in conditional statements.
+
+    #######
+    # Coding Notes  
+    #######
+    Note that if you don't want an object to have a data output file, simply pass "None" in for the output
+    directory.
     """
 
     def __init__(self, expected_total_weight, expected_batch_weight, expected_residual_weight, 
-            description, object_type):
+            description, object_type, output_dir):
         self.expected_weight = expected_weight_class(expected_total_weight, 
                 expected_batch_weight, expected_residual_weight)
+        if output_dir != None:
+            self.data_output = data_output_class(description, output_dir)
         self.description = description
         self.object_type = object_type
 
@@ -111,5 +124,7 @@ class facility_component_class:
             did_fail = True
             self.time_of_last_failure = facility.operation_time
 
+        self.failure_data_output.failure_output(facility, self, cdf, fail_check)
+        
         return did_fail
 
