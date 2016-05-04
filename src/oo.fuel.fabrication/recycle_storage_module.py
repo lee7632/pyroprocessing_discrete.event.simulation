@@ -65,4 +65,3 @@ class recycle_storage_class(facility_component_class):
         self.expected_weight.storage_batch_gain()
 
         self.data_output.storage_output(facility, self)
-

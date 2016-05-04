@@ -45,3 +45,14 @@ class product_storage_class(facility_component_class):
         self.expected_weight.storage_batch_gain()
         
         self.data_output.storage_output(facility, self)
+
+    def measure_inventory(self, facility, uncertainty):
+        """
+        This method only gets called when an inspection occurs.  Since there is too much MUF, a personal
+        inspection of the inventory must occur.  This updates the measured inventory to be a lot closer
+        to what the true inventory is, although some uncertainty still exists.
+        """
+        self.write_to_log(facility,
+            '\n\nPersonnel measured product storage.  Measured inventory has been updated\n\n')
+                                                    
+        self.measured_inventory = self.inventory + uncertainty*np.random.randn()

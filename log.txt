@@ -14776,17 +14776,25 @@ Moving heel from key_measurement_point_3 to recycle_storage
 Storing heel in recycle storage 
 
 
+
+
+Personnel measured storage buffer.  Measured inventory has been updated
+
+
+
+Personnel measured product storage.  Measured inventory has been updated
+
 --Accounting materials in facility--
 
 Storage Buffer:
 True inventory - 7020.0000 (kg)
 Expected inventory - 7020.0000 (kg)
-Measured inventory - 7019.1704 (kg)
+Measured inventory - 7020.0081 (kg)
 
 Product Storage:
 True inventory - 2979.0217 (kg)
 Expected inventory - 2979.2500 (kg)
-Measured inventory - 2976.0175 (kg)
+Measured inventory - 2979.0529 (kg)
 
 Recycle Storage:
 True inventory - 0.9783 (kg)
@@ -14801,7 +14809,7 @@ Measured weight - 0.3692 (kg)
 MUF:
 True weight - 0.0000 (kg)
 Expected weight - 0.0000 (kg)
-Measured weight - 3.7588 (kg)
+Measured weight - -0.1144 (kg)
 
 
 Recycling batch and heel
@@ -14814,7 +14822,7 @@ Measurement event at KMP: 0
 Operation time 165.9675 (d) 
 True quantity 0.9783 (kg) 
 Expected quantity 0.7500 (kg) 
-Measured quantity 0.9945 (kg) 
+Measured quantity 1.0634 (kg) 
 
 
 Edge transition: 
@@ -14828,12 +14836,12 @@ Placing recycled batch back into storage buffer
 Storage Buffer:
 True inventory - 7020.9783 (kg)
 Expected inventory - 7020.7500 (kg)
-Measured inventory - 7020.1649 (kg)
+Measured inventory - 7021.0715 (kg)
 
 Product Storage:
 True inventory - 2979.0217 (kg)
 Expected inventory - 2979.2500 (kg)
-Measured inventory - 2976.0175 (kg)
+Measured inventory - 2979.0529 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -14843,7 +14851,7 @@ Measured inventory - 0.0000 (kg)
 MUF:
 True weight - 0.0000 (kg)
 Expected weight - 0.0000 (kg)
-Measured weight - 3.8176 (kg)
+Measured weight - -0.1243 (kg)
 
 
 Campaign 149 complete 
@@ -14861,7 +14869,7 @@ Measurement event at KMP: 0
 Operation time 166.1133 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
-Measured quantity 20.0624 (kg) 
+Measured quantity 20.0790 (kg) 
 
 
 Edge transition: 
@@ -14876,9 +14884,9 @@ Moving batch from melter to key_measurement_point_1
 
 Measurement event at KMP: 1
 Operation time 166.5090 (d) 
-True quantity 19.5389 (kg) 
+True quantity 19.5631 (kg) 
 Expected quantity 19.7500 (kg) 
-Measured quantity 19.6239 (kg) 
+Measured quantity 19.5742 (kg) 
 
 
 Edge transition: 
@@ -14893,9 +14901,9 @@ Moving batch from trimmer to key_measurement_point_2
 
 Measurement event at KMP: 2
 Operation time 166.6964 (d) 
-True quantity 19.5389 (kg) 
+True quantity 19.5631 (kg) 
 Expected quantity 19.7500 (kg) 
-Measured quantity 19.6466 (kg) 
+Measured quantity 19.5165 (kg) 
 
 
 Edge transition: 
@@ -14913,12 +14921,12 @@ Operation time 166.9672 (d)
 Storage Buffer:
 True inventory - 7000.9783 (kg)
 Expected inventory - 7000.7500 (kg)
-Measured inventory - 7000.1025 (kg)
+Measured inventory - 7000.9925 (kg)
 
 Product Storage:
-True inventory - 2998.5605 (kg)
+True inventory - 2998.5848 (kg)
 Expected inventory - 2999.0000 (kg)
-Measured inventory - 2995.6641 (kg)
+Measured inventory - 2998.5693 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -14926,14 +14934,14 @@ Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
 Campaign MUF:
-True weight - 0.4611 (kg)
+True weight - 0.4369 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 0.4385 (kg)
+Measured weight - 0.5049 (kg)
 
 MUF:
-True weight - 0.4611 (kg)
+True weight - 0.4369 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 4.2334 (kg)
+Measured weight - 0.4382 (kg)
 
 
 Campaign 150 complete 
@@ -14951,7 +14959,7 @@ Measurement event at KMP: 0
 Operation time 167.0505 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
-Measured quantity 19.9978 (kg) 
+Measured quantity 20.0544 (kg) 
 
 
 Edge transition: 
@@ -14966,9 +14974,9 @@ Moving batch from melter to key_measurement_point_1
 
 Measurement event at KMP: 1
 Operation time 167.4462 (d) 
-True quantity 19.8931 (kg) 
+True quantity 19.9939 (kg) 
 Expected quantity 19.7500 (kg) 
-Measured quantity 19.7826 (kg) 
+Measured quantity 19.8834 (kg) 
 
 
 Edge transition: 
@@ -14983,9 +14991,9 @@ Moving batch from trimmer to key_measurement_point_2
 
 Measurement event at KMP: 2
 Operation time 167.6336 (d) 
-True quantity 19.8931 (kg) 
+True quantity 19.9939 (kg) 
 Expected quantity 19.7500 (kg) 
-Measured quantity 19.8207 (kg) 
+Measured quantity 19.9215 (kg) 
 
 
 Edge transition: 
@@ -15003,12 +15011,12 @@ Operation time 167.9044 (d)
 Storage Buffer:
 True inventory - 6980.9783 (kg)
 Expected inventory - 6980.7500 (kg)
-Measured inventory - 6980.1047 (kg)
+Measured inventory - 6980.9381 (kg)
 
 Product Storage:
-True inventory - 3018.4536 (kg)
+True inventory - 3018.5787 (kg)
 Expected inventory - 3018.7500 (kg)
-Measured inventory - 3015.4848 (kg)
+Measured inventory - 3018.4909 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -15016,14 +15024,14 @@ Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
 Campaign MUF:
-True weight - 0.1069 (kg)
+True weight - 0.0061 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 0.2152 (kg)
+Measured weight - 0.1709 (kg)
 
 MUF:
-True weight - 0.5681 (kg)
+True weight - 0.4430 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 4.4105 (kg)
+Measured weight - 0.5710 (kg)
 
 
 Campaign 151 complete 
@@ -15076,9 +15084,9 @@ Moving heel from melter to key_measurement_point_3
 
 Measurement event at KMP: 3
 Operation time 168.6958 (d) 
-True quantity 0.5681 (kg) 
+True quantity 0.4430 (kg) 
 Expected quantity 0.5000 (kg) 
-Measured quantity 0.6404 (kg) 
+Measured quantity 0.5153 (kg) 
 
 
 Edge transition: 
@@ -15097,9 +15105,9 @@ Moving recycled batch from recycle_storage to key_measurement_point_3
 
 Measurement event at KMP: 3
 Operation time 169.0915 (d) 
-True quantity 20.5681 (kg) 
+True quantity 20.4430 (kg) 
 Expected quantity 20.5000 (kg) 
-Measured quantity 20.5705 (kg) 
+Measured quantity 20.4455 (kg) 
 
 
 Edge transition: 
@@ -15114,9 +15122,9 @@ Moving recycled batch from melter to key_measurement_point_1
 
 Measurement event at KMP: 1
 Operation time 169.4872 (d) 
-True quantity 20.2295 (kg) 
+True quantity 20.1044 (kg) 
 Expected quantity 20.2500 (kg) 
-Measured quantity 20.2193 (kg) 
+Measured quantity 20.0943 (kg) 
 
 
 Edge transition: 
@@ -15131,9 +15139,9 @@ Moving recycled batch from trimmer to key_measurement_point_2
 
 Measurement event at KMP: 2
 Operation time 169.6746 (d) 
-True quantity 20.2295 (kg) 
+True quantity 20.1044 (kg) 
 Expected quantity 20.2500 (kg) 
-Measured quantity 20.2314 (kg) 
+Measured quantity 20.1064 (kg) 
 
 
 Edge transition: 
@@ -15151,12 +15159,12 @@ Operation time 169.9454 (d)
 Storage Buffer:
 True inventory - 6960.9783 (kg)
 Expected inventory - 6960.7500 (kg)
-Measured inventory - 6959.9320 (kg)
+Measured inventory - 6960.7653 (kg)
 
 Product Storage:
 True inventory - 3038.6831 (kg)
 Expected inventory - 3039.0000 (kg)
-Measured inventory - 3035.7162 (kg)
+Measured inventory - 3038.5972 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -15171,120 +15179,13 @@ Measured weight - 0.3512 (kg)
 MUF:
 True weight - 0.3386 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 4.3518 (kg)
-
-
-
-MISSING SNM DETECTED AT END OF CAMPAIGN 152!
-CONDUCT INSPECTION IMMEDIATELY!
-
-
-
-
---Conducting Facility Inspection--
-
-
-
-Preparing fuel fabricator for facility inspection: 
-Cleaning the heel
-
-Edge transition: 
-Moving heel from melter to key_measurement_point_3 
-
-Measurement event at KMP: 3
-Operation time 170.6537 (d) 
-True quantity 0.3386 (kg) 
-Expected quantity 0.2500 (kg) 
-Measured quantity 0.5235 (kg) 
-
-
-Edge transition: 
-Moving heel from key_measurement_point_3 to recycle_storage 
-
-Storing heel in recycle storage 
-
-
---Accounting materials in facility--
-
-Storage Buffer:
-True inventory - 6960.9783 (kg)
-Expected inventory - 6960.7500 (kg)
-Measured inventory - 6959.9320 (kg)
-
-Product Storage:
-True inventory - 3038.6831 (kg)
-Expected inventory - 3039.0000 (kg)
-Measured inventory - 3035.7162 (kg)
-
-Recycle Storage:
-True inventory - 0.3386 (kg)
-Expected inventory - 0.2500 (kg)
-Measured inventory - 0.5235 (kg)
-
-Campaign MUF:
-True weight - 0.3386 (kg)
-Expected weight - 0.2500 (kg)
-Measured weight - -19.6958 (kg)
-
-MUF:
-True weight - 0.0000 (kg)
-Expected weight - 0.0000 (kg)
-Measured weight - 3.8283 (kg)
-
-
-Recycling batch and heel
-
-
-Edge transition: 
-Moving recycled batch from recycle_storage to key_measurement_point_0 
-
-Measurement event at KMP: 0
-Operation time 170.8827 (d) 
-True quantity 0.3386 (kg) 
-Expected quantity 0.2500 (kg) 
-Measured quantity 0.3172 (kg) 
-
-
-Edge transition: 
-Moving recycled batch from key_measurement_point_0 to storage_buffer 
-
-
-Placing recycled batch back into storage buffer
-
---Accounting materials in facility--
-
-Storage Buffer:
-True inventory - 6961.3169 (kg)
-Expected inventory - 6961.0000 (kg)
-Measured inventory - 6960.2491 (kg)
-
-Product Storage:
-True inventory - 3038.6831 (kg)
-Expected inventory - 3039.0000 (kg)
-Measured inventory - 3035.7162 (kg)
-
-Recycle Storage:
-True inventory - 0.0000 (kg)
-Expected inventory - 0.0000 (kg)
-Measured inventory - 0.0000 (kg)
-
-MUF:
-True weight - 0.0000 (kg)
-Expected weight - 0.0000 (kg)
-Measured weight - 4.0346 (kg)
-
-
-
-
-
-WARNING! DIVERSION DETECTED! STOP OPERATION IMMEDIATELY!!
-
+Measured weight - 0.6374 (kg)
 
 
 Campaign 152 complete 
 
 
-Starting campaign: 153 at time:  170.9452  days 
+Starting campaign: 153 at time:  169.9454  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -15293,207 +15194,10 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 171.0285 (d) 
+Operation time 170.0287 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
-Measured quantity 19.9501 (kg) 
-
-
-Edge transition: 
-Moving batch from key_measurement_point_0 to melter 
-
-Alloy melting
-Failure status:  False 
-
-
-Edge transition: 
-Moving batch from melter to key_measurement_point_1 
-
-Measurement event at KMP: 1
-Operation time 171.4242 (d) 
-True quantity 19.5232 (kg) 
-Expected quantity 19.7500 (kg) 
-Measured quantity 19.5253 (kg) 
-
-
-Edge transition: 
-Moving batch from key_measurement_point_1 to trimmer 
-
-Slug trimming
-Failure status:  False 
-
-
-Edge transition: 
-Moving batch from trimmer to key_measurement_point_2 
-
-Measurement event at KMP: 2
-Operation time 171.6116 (d) 
-True quantity 19.5232 (kg) 
-Expected quantity 19.7500 (kg) 
-Measured quantity 19.4313 (kg) 
-
-
-Edge transition: 
-Moving batch from key_measurement_point_2 to product_storage 
-
-Processing the final product 
-
-
-Facility inspection 
-Operation time 171.8824 (d) 
-
-
---Accounting materials in facility--
-
-Storage Buffer:
-True inventory - 6941.3169 (kg)
-Expected inventory - 6941.0000 (kg)
-Measured inventory - 6940.2990 (kg)
-
-Product Storage:
-True inventory - 3058.2063 (kg)
-Expected inventory - 3058.7500 (kg)
-Measured inventory - 3055.1475 (kg)
-
-Recycle Storage:
-True inventory - 0.0000 (kg)
-Expected inventory - 0.0000 (kg)
-Measured inventory - 0.0000 (kg)
-
-Campaign MUF:
-True weight - 0.4768 (kg)
-Expected weight - 0.2500 (kg)
-Measured weight - 0.4248 (kg)
-
-MUF:
-True weight - 0.4768 (kg)
-Expected weight - 0.2500 (kg)
-Measured weight - 4.5535 (kg)
-
-
-
-MISSING SNM DETECTED AT END OF CAMPAIGN 153!
-CONDUCT INSPECTION IMMEDIATELY!
-
-
-
-
---Conducting Facility Inspection--
-
-
-
-Preparing fuel fabricator for facility inspection: 
-Cleaning the heel
-
-Edge transition: 
-Moving heel from melter to key_measurement_point_3 
-
-Measurement event at KMP: 3
-Operation time 172.5907 (d) 
-True quantity 0.4768 (kg) 
-Expected quantity 0.2500 (kg) 
-Measured quantity 0.4961 (kg) 
-
-
-Edge transition: 
-Moving heel from key_measurement_point_3 to recycle_storage 
-
-Storing heel in recycle storage 
-
-
---Accounting materials in facility--
-
-Storage Buffer:
-True inventory - 6941.3169 (kg)
-Expected inventory - 6941.0000 (kg)
-Measured inventory - 6940.2990 (kg)
-
-Product Storage:
-True inventory - 3058.2063 (kg)
-Expected inventory - 3058.7500 (kg)
-Measured inventory - 3055.1475 (kg)
-
-Recycle Storage:
-True inventory - 0.4768 (kg)
-Expected inventory - 0.2500 (kg)
-Measured inventory - 0.4961 (kg)
-
-Campaign MUF:
-True weight - 0.4768 (kg)
-Expected weight - 0.2500 (kg)
-Measured weight - 0.4248 (kg)
-
-MUF:
-True weight - 0.0000 (kg)
-Expected weight - 0.0000 (kg)
-Measured weight - 4.0574 (kg)
-
-
-Recycling batch and heel
-
-
-Edge transition: 
-Moving recycled batch from recycle_storage to key_measurement_point_0 
-
-Measurement event at KMP: 0
-Operation time 172.8197 (d) 
-True quantity 0.4768 (kg) 
-Expected quantity 0.2500 (kg) 
-Measured quantity 0.4403 (kg) 
-
-
-Edge transition: 
-Moving recycled batch from key_measurement_point_0 to storage_buffer 
-
-
-Placing recycled batch back into storage buffer
-
---Accounting materials in facility--
-
-Storage Buffer:
-True inventory - 6941.7937 (kg)
-Expected inventory - 6941.2500 (kg)
-Measured inventory - 6940.7394 (kg)
-
-Product Storage:
-True inventory - 3058.2063 (kg)
-Expected inventory - 3058.7500 (kg)
-Measured inventory - 3055.1475 (kg)
-
-Recycle Storage:
-True inventory - 0.0000 (kg)
-Expected inventory - 0.0000 (kg)
-Measured inventory - 0.0000 (kg)
-
-MUF:
-True weight - 0.0000 (kg)
-Expected weight - 0.0000 (kg)
-Measured weight - 4.1131 (kg)
-
-
-
-
-
-WARNING! DIVERSION DETECTED! STOP OPERATION IMMEDIATELY!!
-
-
-
-Campaign 153 complete 
-
-
-Starting campaign: 154 at time:  172.8822  days 
-
-Prepare batch in Storage Buffer for transfer: 20.0 kg 
-
-
-Edge transition: 
-Moving batch from storage_buffer to key_measurement_point_0 
-
-Measurement event at KMP: 0
-Operation time 172.9655 (d) 
-True quantity 20.0000 (kg) 
-Expected quantity 20.0000 (kg) 
-Measured quantity 19.8209 (kg) 
+Measured quantity 20.1850 (kg) 
 
 
 Edge transition: 
@@ -15503,16 +15207,16 @@ Alloy melting
 Failure status:  True 
 
 
-Melter failed at time 173.3196, begin failure routine
+Melter failed at time 170.3828, begin failure routine
 
 Edge transition: 
 Moving batch from melter to key_measurement_point_3 
 
 Measurement event at KMP: 3
-Operation time 173.3612 (d) 
+Operation time 170.4244 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
-Measured quantity 19.9689 (kg) 
+Measured quantity 19.9786 (kg) 
 
 
 Edge transition: 
@@ -15527,10 +15231,10 @@ Edge transition:
 Moving heel from melter to key_measurement_point_3 
 
 Measurement event at KMP: 3
-Operation time 173.6736 (d) 
-True quantity 0.0000 (kg) 
-Expected quantity 0.0000 (kg) 
-Measured quantity -0.2609 (kg) 
+Operation time 170.7368 (d) 
+True quantity 0.3386 (kg) 
+Expected quantity 0.2500 (kg) 
+Measured quantity 0.3441 (kg) 
 
 
 Edge transition: 
@@ -15548,10 +15252,126 @@ Edge transition:
 Moving recycled batch from recycle_storage to key_measurement_point_3 
 
 Measurement event at KMP: 3
-Operation time 174.0693 (d) 
-True quantity 20.0000 (kg) 
-Expected quantity 20.0000 (kg) 
-Measured quantity 20.0511 (kg) 
+Operation time 171.1325 (d) 
+True quantity 20.3386 (kg) 
+Expected quantity 20.2500 (kg) 
+Measured quantity 20.4432 (kg) 
+
+
+Edge transition: 
+Moving recycled batch from key_measurement_point_3 to melter 
+
+Alloy melting
+Failure status:  True 
+
+
+Melter failed at time 171.4866, begin failure routine
+
+Edge transition: 
+Moving recycled batch from melter to key_measurement_point_3 
+
+Measurement event at KMP: 3
+Operation time 171.5282 (d) 
+True quantity 20.3386 (kg) 
+Expected quantity 20.2500 (kg) 
+Measured quantity 20.2467 (kg) 
+
+
+Edge transition: 
+Moving recycled batch from key_measurement_point_3 to recycle_storage 
+
+Storing recycled batch in recycle storage 
+
+
+Cleaning the heel
+
+Edge transition: 
+Moving heel from melter to key_measurement_point_3 
+
+Measurement event at KMP: 3
+Operation time 171.8406 (d) 
+True quantity 0.0000 (kg) 
+Expected quantity 0.0000 (kg) 
+Measured quantity 0.0193 (kg) 
+
+
+Edge transition: 
+Moving heel from key_measurement_point_3 to recycle_storage 
+
+Storing heel in recycle storage 
+
+
+Repairing melter
+
+Recycling batch and heel
+
+
+Edge transition: 
+Moving recycled batch from recycle_storage to key_measurement_point_3 
+
+Measurement event at KMP: 3
+Operation time 172.2363 (d) 
+True quantity 20.3386 (kg) 
+Expected quantity 20.2500 (kg) 
+Measured quantity 20.3021 (kg) 
+
+
+Edge transition: 
+Moving recycled batch from key_measurement_point_3 to melter 
+
+Alloy melting
+Failure status:  True 
+
+
+Melter failed at time 172.5904, begin failure routine
+
+Edge transition: 
+Moving recycled batch from melter to key_measurement_point_3 
+
+Measurement event at KMP: 3
+Operation time 172.6320 (d) 
+True quantity 20.3386 (kg) 
+Expected quantity 20.2500 (kg) 
+Measured quantity 20.1594 (kg) 
+
+
+Edge transition: 
+Moving recycled batch from key_measurement_point_3 to recycle_storage 
+
+Storing recycled batch in recycle storage 
+
+
+Cleaning the heel
+
+Edge transition: 
+Moving heel from melter to key_measurement_point_3 
+
+Measurement event at KMP: 3
+Operation time 172.9444 (d) 
+True quantity 0.0000 (kg) 
+Expected quantity 0.0000 (kg) 
+Measured quantity -0.0311 (kg) 
+
+
+Edge transition: 
+Moving heel from key_measurement_point_3 to recycle_storage 
+
+Storing heel in recycle storage 
+
+
+Repairing melter
+
+Recycling batch and heel
+
+
+Edge transition: 
+Moving recycled batch from recycle_storage to key_measurement_point_3 
+
+Measurement event at KMP: 3
+Operation time 173.3401 (d) 
+True quantity 20.3386 (kg) 
+Expected quantity 20.2500 (kg) 
+Measured quantity 20.0777 (kg) 
 
 
 Edge transition: 
@@ -15565,10 +15385,10 @@ Edge transition:
 Moving recycled batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 174.4650 (d) 
-True quantity 19.8821 (kg) 
-Expected quantity 19.7500 (kg) 
-Measured quantity 19.7343 (kg) 
+Operation time 173.7358 (d) 
+True quantity 20.0443 (kg) 
+Expected quantity 20.0000 (kg) 
+Measured quantity 19.9636 (kg) 
 
 
 Edge transition: 
@@ -15582,10 +15402,10 @@ Edge transition:
 Moving recycled batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 174.6524 (d) 
-True quantity 19.8821 (kg) 
-Expected quantity 19.7500 (kg) 
-Measured quantity 20.0333 (kg) 
+Operation time 173.9232 (d) 
+True quantity 20.0443 (kg) 
+Expected quantity 20.0000 (kg) 
+Measured quantity 20.1216 (kg) 
 
 
 Edge transition: 
@@ -15595,20 +15415,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 174.9232 (d) 
+Operation time 174.1940 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6921.7937 (kg)
-Expected inventory - 6921.2500 (kg)
-Measured inventory - 6920.9185 (kg)
+True inventory - 6940.9783 (kg)
+Expected inventory - 6940.7500 (kg)
+Measured inventory - 6940.5804 (kg)
 
 Product Storage:
-True inventory - 3078.0883 (kg)
-Expected inventory - 3078.5000 (kg)
-Measured inventory - 3075.1808 (kg)
+True inventory - 3058.7274 (kg)
+Expected inventory - 3059.0000 (kg)
+Measured inventory - 3058.7188 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -15616,20 +15436,20 @@ Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
 Campaign MUF:
-True weight - 0.1179 (kg)
+True weight - 0.2943 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 0.3169 (kg)
+Measured weight - 0.1141 (kg)
 
 MUF:
-True weight - 0.1179 (kg)
+True weight - 0.2943 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 3.9007 (kg)
+Measured weight - 0.7008 (kg)
 
 
-Campaign 154 complete 
+Campaign 153 complete 
 
 
-Starting campaign: 155 at time:  174.9232  days 
+Starting campaign: 154 at time:  174.1940  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -15638,10 +15458,10 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 175.0065 (d) 
+Operation time 174.2773 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
-Measured quantity 20.1305 (kg) 
+Measured quantity 20.1512 (kg) 
 
 
 Edge transition: 
@@ -15655,10 +15475,10 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 175.4022 (d) 
+Operation time 174.6730 (d) 
 True quantity 19.6109 (kg) 
 Expected quantity 19.7500 (kg) 
-Measured quantity 19.6076 (kg) 
+Measured quantity 19.7414 (kg) 
 
 
 Edge transition: 
@@ -15672,10 +15492,10 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 175.5896 (d) 
+Operation time 174.8604 (d) 
 True quantity 19.6109 (kg) 
 Expected quantity 19.7500 (kg) 
-Measured quantity 19.7310 (kg) 
+Measured quantity 19.6076 (kg) 
 
 
 Edge transition: 
@@ -15685,20 +15505,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 175.8604 (d) 
+Operation time 175.1312 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6901.7937 (kg)
-Expected inventory - 6901.2500 (kg)
-Measured inventory - 6900.7880 (kg)
+True inventory - 6920.9783 (kg)
+Expected inventory - 6920.7500 (kg)
+Measured inventory - 6920.4291 (kg)
 
 Product Storage:
-True inventory - 3097.6992 (kg)
-Expected inventory - 3098.2500 (kg)
-Measured inventory - 3094.9118 (kg)
+True inventory - 3078.3382 (kg)
+Expected inventory - 3078.7500 (kg)
+Measured inventory - 3078.3264 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -15708,18 +15528,108 @@ Measured inventory - 0.0000 (kg)
 Campaign MUF:
 True weight - 0.3891 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 0.5229 (kg)
+Measured weight - 0.4098 (kg)
 
 MUF:
-True weight - 0.5071 (kg)
+True weight - 0.6835 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 4.3002 (kg)
+Measured weight - 1.2445 (kg)
+
+
+Campaign 154 complete 
+
+
+Starting campaign: 155 at time:  175.1312  days 
+
+Prepare batch in Storage Buffer for transfer: 20.0 kg 
+
+
+Edge transition: 
+Moving batch from storage_buffer to key_measurement_point_0 
+
+Measurement event at KMP: 0
+Operation time 175.2145 (d) 
+True quantity 20.0000 (kg) 
+Expected quantity 20.0000 (kg) 
+Measured quantity 20.1201 (kg) 
+
+
+Edge transition: 
+Moving batch from key_measurement_point_0 to melter 
+
+Alloy melting
+Failure status:  False 
+
+
+Edge transition: 
+Moving batch from melter to key_measurement_point_1 
+
+Measurement event at KMP: 1
+Operation time 175.6102 (d) 
+True quantity 19.5021 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.4937 (kg) 
+
+
+Edge transition: 
+Moving batch from key_measurement_point_1 to trimmer 
+
+Slug trimming
+Failure status:  False 
+
+
+Edge transition: 
+Moving batch from trimmer to key_measurement_point_2 
+
+Measurement event at KMP: 2
+Operation time 175.7976 (d) 
+True quantity 19.5021 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.3935 (kg) 
+
+
+Edge transition: 
+Moving batch from key_measurement_point_2 to product_storage 
+
+Processing the final product 
+
+
+Facility inspection 
+Operation time 176.0684 (d) 
+
+
+--Accounting materials in facility--
+
+Storage Buffer:
+True inventory - 6900.9783 (kg)
+Expected inventory - 6900.7500 (kg)
+Measured inventory - 6900.3090 (kg)
+
+Product Storage:
+True inventory - 3097.8403 (kg)
+Expected inventory - 3098.5000 (kg)
+Measured inventory - 3097.7199 (kg)
+
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.4979 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.6264 (kg)
+
+MUF:
+True weight - 1.1814 (kg)
+Expected weight - 0.7500 (kg)
+Measured weight - 1.9711 (kg)
 
 
 Campaign 155 complete 
 
 
-Starting campaign: 156 at time:  175.8604  days 
+Starting campaign: 156 at time:  176.0684  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -15728,125 +15638,67 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 175.9437 (d) 
+Operation time 176.1517 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
-Measured quantity 19.9916 (kg) 
+Measured quantity 19.8731 (kg) 
 
 
 Edge transition: 
 Moving batch from key_measurement_point_0 to melter 
 
 Alloy melting
-Failure status:  True 
-
-
-Melter failed at time 176.2978, begin failure routine
-
-Edge transition: 
-Moving batch from melter to key_measurement_point_3 
-
-Measurement event at KMP: 3
-Operation time 176.3394 (d) 
-True quantity 20.0000 (kg) 
-Expected quantity 20.0000 (kg) 
-Measured quantity 19.8914 (kg) 
-
-
-Edge transition: 
-Moving batch from key_measurement_point_3 to recycle_storage 
-
-Storing batch in recycle storage 
-
-
-Cleaning the heel
-
-Edge transition: 
-Moving heel from melter to key_measurement_point_3 
-
-Measurement event at KMP: 3
-Operation time 176.6518 (d) 
-True quantity 0.5071 (kg) 
-Expected quantity 0.5000 (kg) 
-Measured quantity 0.4173 (kg) 
-
-
-Edge transition: 
-Moving heel from key_measurement_point_3 to recycle_storage 
-
-Storing heel in recycle storage 
-
-
-Repairing melter
-
-Recycling batch and heel
-
-
-Edge transition: 
-Moving recycled batch from recycle_storage to key_measurement_point_3 
-
-Measurement event at KMP: 3
-Operation time 177.0475 (d) 
-True quantity 20.5071 (kg) 
-Expected quantity 20.5000 (kg) 
-Measured quantity 20.6383 (kg) 
-
-
-Edge transition: 
-Moving recycled batch from key_measurement_point_3 to melter 
-
-Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving recycled batch from melter to key_measurement_point_1 
+Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 177.4432 (d) 
-True quantity 20.3744 (kg) 
-Expected quantity 20.2500 (kg) 
-Measured quantity 20.3819 (kg) 
+Operation time 176.5474 (d) 
+True quantity 19.9364 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.8589 (kg) 
 
 
 Edge transition: 
-Moving recycled batch from key_measurement_point_1 to trimmer 
+Moving batch from key_measurement_point_1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving recycled batch from trimmer to key_measurement_point_2 
+Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 177.6306 (d) 
-True quantity 20.3744 (kg) 
-Expected quantity 20.2500 (kg) 
-Measured quantity 20.2667 (kg) 
+Operation time 176.7348 (d) 
+True quantity 19.9364 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.8216 (kg) 
 
 
 Edge transition: 
-Moving recycled batch from key_measurement_point_2 to product_storage 
+Moving batch from key_measurement_point_2 to product_storage 
 
 Processing the final product 
 
 
 Facility inspection 
-Operation time 177.9014 (d) 
+Operation time 177.0056 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6881.7937 (kg)
-Expected inventory - 6881.2500 (kg)
-Measured inventory - 6880.7964 (kg)
+True inventory - 6880.9783 (kg)
+Expected inventory - 6880.7500 (kg)
+Measured inventory - 6880.4359 (kg)
 
 Product Storage:
-True inventory - 3118.0736 (kg)
-Expected inventory - 3118.5000 (kg)
-Measured inventory - 3115.1785 (kg)
+True inventory - 3117.7767 (kg)
+Expected inventory - 3118.2500 (kg)
+Measured inventory - 3117.5415 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -15854,20 +15706,20 @@ Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
 Campaign MUF:
-True weight - 0.1327 (kg)
+True weight - 0.0636 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 0.2564 (kg)
+Measured weight - 0.0143 (kg)
 
 MUF:
-True weight - 0.1327 (kg)
-Expected weight - 0.2500 (kg)
-Measured weight - 4.0252 (kg)
+True weight - 1.2450 (kg)
+Expected weight - 1.0000 (kg)
+Measured weight - 2.0226 (kg)
 
 
 Campaign 156 complete 
 
 
-Starting campaign: 157 at time:  177.9014  days 
+Starting campaign: 157 at time:  177.0056  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -15876,10 +15728,10 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 177.9847 (d) 
+Operation time 177.0889 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
-Measured quantity 19.9575 (kg) 
+Measured quantity 20.0083 (kg) 
 
 
 Edge transition: 
@@ -15893,10 +15745,10 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 178.3804 (d) 
-True quantity 19.6362 (kg) 
+Operation time 177.4846 (d) 
+True quantity 19.6866 (kg) 
 Expected quantity 19.7500 (kg) 
-Measured quantity 19.5532 (kg) 
+Measured quantity 19.8768 (kg) 
 
 
 Edge transition: 
@@ -15910,10 +15762,10 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 178.5678 (d) 
-True quantity 19.6362 (kg) 
+Operation time 177.6720 (d) 
+True quantity 19.6866 (kg) 
 Expected quantity 19.7500 (kg) 
-Measured quantity 19.6305 (kg) 
+Measured quantity 19.5993 (kg) 
 
 
 Edge transition: 
@@ -15923,20 +15775,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 178.8386 (d) 
+Operation time 177.9428 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6861.7937 (kg)
-Expected inventory - 6861.2500 (kg)
-Measured inventory - 6860.8388 (kg)
+True inventory - 6860.9783 (kg)
+Expected inventory - 6860.7500 (kg)
+Measured inventory - 6860.4276 (kg)
 
 Product Storage:
-True inventory - 3137.7098 (kg)
-Expected inventory - 3138.2500 (kg)
-Measured inventory - 3134.8089 (kg)
+True inventory - 3137.4633 (kg)
+Expected inventory - 3138.0000 (kg)
+Measured inventory - 3137.1408 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -15944,20 +15796,20 @@ Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
 Campaign MUF:
-True weight - 0.3638 (kg)
+True weight - 0.3134 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 0.4043 (kg)
+Measured weight - 0.1315 (kg)
 
 MUF:
-True weight - 0.4964 (kg)
-Expected weight - 0.5000 (kg)
-Measured weight - 4.3522 (kg)
+True weight - 1.5584 (kg)
+Expected weight - 1.2500 (kg)
+Measured weight - 2.4316 (kg)
 
 
 Campaign 157 complete 
 
 
-Starting campaign: 158 at time:  178.8386  days 
+Starting campaign: 158 at time:  177.9428  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -15966,10 +15818,10 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 178.9219 (d) 
+Operation time 178.0261 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
-Measured quantity 19.9609 (kg) 
+Measured quantity 19.9918 (kg) 
 
 
 Edge transition: 
@@ -15983,10 +15835,10 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 179.3176 (d) 
-True quantity 19.5734 (kg) 
+Operation time 178.4218 (d) 
+True quantity 19.8672 (kg) 
 Expected quantity 19.7500 (kg) 
-Measured quantity 19.6232 (kg) 
+Measured quantity 19.9844 (kg) 
 
 
 Edge transition: 
@@ -16000,10 +15852,10 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 179.5050 (d) 
-True quantity 19.5734 (kg) 
+Operation time 178.6092 (d) 
+True quantity 19.8672 (kg) 
 Expected quantity 19.7500 (kg) 
-Measured quantity 19.5708 (kg) 
+Measured quantity 19.8661 (kg) 
 
 
 Edge transition: 
@@ -16013,20 +15865,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 179.7758 (d) 
+Operation time 178.8800 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6841.7937 (kg)
-Expected inventory - 6841.2500 (kg)
-Measured inventory - 6840.8779 (kg)
+True inventory - 6840.9783 (kg)
+Expected inventory - 6840.7500 (kg)
+Measured inventory - 6840.4358 (kg)
 
 Product Storage:
-True inventory - 3157.2832 (kg)
-Expected inventory - 3158.0000 (kg)
-Measured inventory - 3154.3797 (kg)
+True inventory - 3157.3305 (kg)
+Expected inventory - 3157.7500 (kg)
+Measured inventory - 3157.0069 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -16034,20 +15886,20 @@ Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
 Campaign MUF:
-True weight - 0.4266 (kg)
+True weight - 0.1328 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 0.3377 (kg)
+Measured weight - 0.0074 (kg)
 
 MUF:
-True weight - 0.9230 (kg)
-Expected weight - 0.7500 (kg)
-Measured weight - 4.7424 (kg)
+True weight - 1.6912 (kg)
+Expected weight - 1.5000 (kg)
+Measured weight - 2.5573 (kg)
 
 
 Campaign 158 complete 
 
 
-Starting campaign: 159 at time:  179.7758  days 
+Starting campaign: 159 at time:  178.8800  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -16056,10 +15908,10 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 179.8591 (d) 
+Operation time 178.9633 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
-Measured quantity 19.8312 (kg) 
+Measured quantity 19.9673 (kg) 
 
 
 Edge transition: 
@@ -16073,10 +15925,10 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 180.2548 (d) 
-True quantity 19.8836 (kg) 
+Operation time 179.3590 (d) 
+True quantity 19.5881 (kg) 
 Expected quantity 19.7500 (kg) 
-Measured quantity 19.8724 (kg) 
+Measured quantity 19.5129 (kg) 
 
 
 Edge transition: 
@@ -16090,10 +15942,10 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 180.4422 (d) 
-True quantity 19.8836 (kg) 
+Operation time 179.5464 (d) 
+True quantity 19.5881 (kg) 
 Expected quantity 19.7500 (kg) 
-Measured quantity 19.9848 (kg) 
+Measured quantity 19.4820 (kg) 
 
 
 Edge transition: 
@@ -16103,20 +15955,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 180.7130 (d) 
+Operation time 179.8172 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6821.7937 (kg)
-Expected inventory - 6821.2500 (kg)
-Measured inventory - 6821.0468 (kg)
+True inventory - 6820.9783 (kg)
+Expected inventory - 6820.7500 (kg)
+Measured inventory - 6820.4685 (kg)
 
 Product Storage:
-True inventory - 3177.1668 (kg)
-Expected inventory - 3177.7500 (kg)
-Measured inventory - 3174.3645 (kg)
+True inventory - 3176.9186 (kg)
+Expected inventory - 3177.5000 (kg)
+Measured inventory - 3176.4889 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -16124,20 +15976,20 @@ Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
 Campaign MUF:
-True weight - 0.1164 (kg)
+True weight - 0.4119 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - -0.0412 (kg)
+Measured weight - 0.4543 (kg)
 
 MUF:
-True weight - 1.0394 (kg)
-Expected weight - 1.0000 (kg)
-Measured weight - 4.5887 (kg)
+True weight - 2.1030 (kg)
+Expected weight - 1.7500 (kg)
+Measured weight - 3.0426 (kg)
 
 
 Campaign 159 complete 
 
 
-Starting campaign: 160 at time:  180.7130  days 
+Starting campaign: 160 at time:  179.8172  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -16146,10 +15998,10 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 180.7963 (d) 
+Operation time 179.9005 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
-Measured quantity 19.9342 (kg) 
+Measured quantity 20.0675 (kg) 
 
 
 Edge transition: 
@@ -16163,10 +16015,10 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 181.1920 (d) 
-True quantity 19.7210 (kg) 
+Operation time 180.2962 (d) 
+True quantity 19.6475 (kg) 
 Expected quantity 19.7500 (kg) 
-Measured quantity 19.6542 (kg) 
+Measured quantity 19.7389 (kg) 
 
 
 Edge transition: 
@@ -16180,10 +16032,10 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 181.3794 (d) 
-True quantity 19.7210 (kg) 
+Operation time 180.4836 (d) 
+True quantity 19.6475 (kg) 
 Expected quantity 19.7500 (kg) 
-Measured quantity 19.8892 (kg) 
+Measured quantity 19.6482 (kg) 
 
 
 Edge transition: 
@@ -16193,20 +16045,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 181.6502 (d) 
+Operation time 180.7544 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6801.7937 (kg)
-Expected inventory - 6801.2500 (kg)
-Measured inventory - 6801.1126 (kg)
+True inventory - 6800.9783 (kg)
+Expected inventory - 6800.7500 (kg)
+Measured inventory - 6800.4010 (kg)
 
 Product Storage:
-True inventory - 3196.8878 (kg)
-Expected inventory - 3197.5000 (kg)
-Measured inventory - 3194.2537 (kg)
+True inventory - 3196.5662 (kg)
+Expected inventory - 3197.2500 (kg)
+Measured inventory - 3196.1371 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -16214,20 +16066,20 @@ Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
 Campaign MUF:
-True weight - 0.2790 (kg)
+True weight - 0.3525 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 0.2800 (kg)
+Measured weight - 0.3286 (kg)
 
 MUF:
-True weight - 1.3185 (kg)
-Expected weight - 1.2500 (kg)
-Measured weight - 4.6338 (kg)
+True weight - 2.4555 (kg)
+Expected weight - 2.0000 (kg)
+Measured weight - 3.4619 (kg)
 
 
 Campaign 160 complete 
 
 
-Starting campaign: 161 at time:  181.6502  days 
+Starting campaign: 161 at time:  180.7544  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -16236,10 +16088,10 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 181.7335 (d) 
+Operation time 180.8377 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
-Measured quantity 19.9147 (kg) 
+Measured quantity 19.9699 (kg) 
 
 
 Edge transition: 
@@ -16249,16 +16101,16 @@ Alloy melting
 Failure status:  True 
 
 
-Melter failed at time 182.0876, begin failure routine
+Melter failed at time 181.1918, begin failure routine
 
 Edge transition: 
 Moving batch from melter to key_measurement_point_3 
 
 Measurement event at KMP: 3
-Operation time 182.1292 (d) 
+Operation time 181.2334 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
-Measured quantity 20.0023 (kg) 
+Measured quantity 19.9989 (kg) 
 
 
 Edge transition: 
@@ -16273,10 +16125,10 @@ Edge transition:
 Moving heel from melter to key_measurement_point_3 
 
 Measurement event at KMP: 3
-Operation time 182.4416 (d) 
-True quantity 1.3185 (kg) 
-Expected quantity 1.2500 (kg) 
-Measured quantity 1.3087 (kg) 
+Operation time 181.5458 (d) 
+True quantity 2.4555 (kg) 
+Expected quantity 2.0000 (kg) 
+Measured quantity 2.4567 (kg) 
 
 
 Edge transition: 
@@ -16294,10 +16146,10 @@ Edge transition:
 Moving recycled batch from recycle_storage to key_measurement_point_3 
 
 Measurement event at KMP: 3
-Operation time 182.8373 (d) 
-True quantity 21.3185 (kg) 
-Expected quantity 21.2500 (kg) 
-Measured quantity 21.3378 (kg) 
+Operation time 181.9415 (d) 
+True quantity 22.4555 (kg) 
+Expected quantity 22.0000 (kg) 
+Measured quantity 22.3717 (kg) 
 
 
 Edge transition: 
@@ -16311,10 +16163,10 @@ Edge transition:
 Moving recycled batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 183.2330 (d) 
-True quantity 20.9727 (kg) 
-Expected quantity 21.0000 (kg) 
-Measured quantity 20.9416 (kg) 
+Operation time 182.3372 (d) 
+True quantity 22.4011 (kg) 
+Expected quantity 21.7500 (kg) 
+Measured quantity 22.3419 (kg) 
 
 
 Edge transition: 
@@ -16328,10 +16180,10 @@ Edge transition:
 Moving recycled batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 183.4204 (d) 
-True quantity 20.9727 (kg) 
-Expected quantity 21.0000 (kg) 
-Measured quantity 20.9210 (kg) 
+Operation time 182.5246 (d) 
+True quantity 22.4011 (kg) 
+Expected quantity 21.7500 (kg) 
+Measured quantity 22.4341 (kg) 
 
 
 Edge transition: 
@@ -16341,20 +16193,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 183.6912 (d) 
+Operation time 182.7954 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6781.7937 (kg)
-Expected inventory - 6781.2500 (kg)
-Measured inventory - 6781.1978 (kg)
+True inventory - 6780.9783 (kg)
+Expected inventory - 6780.7500 (kg)
+Measured inventory - 6780.4311 (kg)
 
 Product Storage:
-True inventory - 3217.8605 (kg)
-Expected inventory - 3218.5000 (kg)
-Measured inventory - 3215.1746 (kg)
+True inventory - 3218.9672 (kg)
+Expected inventory - 3219.0000 (kg)
+Measured inventory - 3218.5712 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -16362,20 +16214,20 @@ Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
 Campaign MUF:
-True weight - 0.3458 (kg)
+True weight - 0.0545 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 0.3962 (kg)
+Measured weight - 0.0298 (kg)
 
 MUF:
-True weight - 0.3458 (kg)
+True weight - 0.0545 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 3.6275 (kg)
+Measured weight - 0.9977 (kg)
 
 
 Campaign 161 complete 
 
 
-Starting campaign: 162 at time:  183.6912  days 
+Starting campaign: 162 at time:  182.7954  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -16384,10 +16236,10 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 183.7745 (d) 
+Operation time 182.8787 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
-Measured quantity 20.0056 (kg) 
+Measured quantity 20.2226 (kg) 
 
 
 Edge transition: 
@@ -16401,10 +16253,10 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 184.1702 (d) 
-True quantity 19.8010 (kg) 
+Operation time 183.2744 (d) 
+True quantity 19.6127 (kg) 
 Expected quantity 19.7500 (kg) 
-Measured quantity 19.8200 (kg) 
+Measured quantity 19.6452 (kg) 
 
 
 Edge transition: 
@@ -16418,10 +16270,10 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 184.3576 (d) 
-True quantity 19.8010 (kg) 
+Operation time 183.4618 (d) 
+True quantity 19.6127 (kg) 
 Expected quantity 19.7500 (kg) 
-Measured quantity 19.7505 (kg) 
+Measured quantity 19.7125 (kg) 
 
 
 Edge transition: 
@@ -16431,20 +16283,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 184.6284 (d) 
+Operation time 183.7326 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6761.7937 (kg)
-Expected inventory - 6761.2500 (kg)
-Measured inventory - 6761.1923 (kg)
+True inventory - 6760.9783 (kg)
+Expected inventory - 6760.7500 (kg)
+Measured inventory - 6760.2085 (kg)
 
 Product Storage:
-True inventory - 3237.6616 (kg)
-Expected inventory - 3238.2500 (kg)
-Measured inventory - 3234.9252 (kg)
+True inventory - 3238.5800 (kg)
+Expected inventory - 3238.7500 (kg)
+Measured inventory - 3238.2837 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -16452,20 +16304,20 @@ Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
 Campaign MUF:
-True weight - 0.1990 (kg)
+True weight - 0.3873 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 0.1856 (kg)
+Measured weight - 0.5774 (kg)
 
 MUF:
-True weight - 0.5447 (kg)
+True weight - 0.4417 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 3.8826 (kg)
+Measured weight - 1.5078 (kg)
 
 
 Campaign 162 complete 
 
 
-Starting campaign: 163 at time:  184.6284  days 
+Starting campaign: 163 at time:  183.7326  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -16474,10 +16326,10 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 184.7117 (d) 
+Operation time 183.8159 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
-Measured quantity 20.0386 (kg) 
+Measured quantity 20.0031 (kg) 
 
 
 Edge transition: 
@@ -16491,10 +16343,10 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 185.1074 (d) 
-True quantity 19.5694 (kg) 
+Operation time 184.2116 (d) 
+True quantity 19.7377 (kg) 
 Expected quantity 19.7500 (kg) 
-Measured quantity 19.5229 (kg) 
+Measured quantity 19.7307 (kg) 
 
 
 Edge transition: 
@@ -16508,10 +16360,10 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 185.2948 (d) 
-True quantity 19.5694 (kg) 
+Operation time 184.3990 (d) 
+True quantity 19.7377 (kg) 
 Expected quantity 19.7500 (kg) 
-Measured quantity 19.5814 (kg) 
+Measured quantity 19.6529 (kg) 
 
 
 Edge transition: 
@@ -16521,20 +16373,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 185.5656 (d) 
+Operation time 184.6698 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6741.7937 (kg)
-Expected inventory - 6741.2500 (kg)
-Measured inventory - 6741.1536 (kg)
+True inventory - 6740.9783 (kg)
+Expected inventory - 6740.7500 (kg)
+Measured inventory - 6740.2055 (kg)
 
 Product Storage:
-True inventory - 3257.2310 (kg)
-Expected inventory - 3258.0000 (kg)
-Measured inventory - 3254.5066 (kg)
+True inventory - 3258.3177 (kg)
+Expected inventory - 3258.5000 (kg)
+Measured inventory - 3257.9365 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -16542,20 +16394,20 @@ Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
 Campaign MUF:
-True weight - 0.4306 (kg)
+True weight - 0.2623 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 0.5157 (kg)
+Measured weight - 0.2723 (kg)
 
 MUF:
-True weight - 0.9753 (kg)
+True weight - 0.7040 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 4.3398 (kg)
+Measured weight - 1.8580 (kg)
 
 
 Campaign 163 complete 
 
 
-Starting campaign: 164 at time:  185.5656  days 
+Starting campaign: 164 at time:  184.6698  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -16564,10 +16416,10 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 185.6489 (d) 
+Operation time 184.7531 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
-Measured quantity 20.0523 (kg) 
+Measured quantity 19.9674 (kg) 
 
 
 Edge transition: 
@@ -16581,10 +16433,10 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 186.0446 (d) 
-True quantity 19.8229 (kg) 
+Operation time 185.1488 (d) 
+True quantity 19.5575 (kg) 
 Expected quantity 19.7500 (kg) 
-Measured quantity 19.8483 (kg) 
+Measured quantity 19.5814 (kg) 
 
 
 Edge transition: 
@@ -16598,10 +16450,10 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 186.2320 (d) 
-True quantity 19.8229 (kg) 
+Operation time 185.3362 (d) 
+True quantity 19.5575 (kg) 
 Expected quantity 19.7500 (kg) 
-Measured quantity 19.8562 (kg) 
+Measured quantity 19.5205 (kg) 
 
 
 Edge transition: 
@@ -16611,20 +16463,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 186.5028 (d) 
+Operation time 185.6070 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6721.7937 (kg)
-Expected inventory - 6721.2500 (kg)
-Measured inventory - 6721.1014 (kg)
+True inventory - 6720.9783 (kg)
+Expected inventory - 6720.7500 (kg)
+Measured inventory - 6720.2381 (kg)
 
 Product Storage:
-True inventory - 3277.0539 (kg)
-Expected inventory - 3277.7500 (kg)
-Measured inventory - 3274.3628 (kg)
+True inventory - 3277.8752 (kg)
+Expected inventory - 3278.2500 (kg)
+Measured inventory - 3277.4570 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -16632,20 +16484,20 @@ Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
 Campaign MUF:
-True weight - 0.1771 (kg)
+True weight - 0.4425 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 0.2040 (kg)
+Measured weight - 0.3860 (kg)
 
 MUF:
-True weight - 1.1524 (kg)
+True weight - 1.1465 (kg)
 Expected weight - 1.0000 (kg)
-Measured weight - 4.5359 (kg)
+Measured weight - 2.3049 (kg)
 
 
 Campaign 164 complete 
 
 
-Starting campaign: 165 at time:  186.5028  days 
+Starting campaign: 165 at time:  185.6070  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -16654,10 +16506,10 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 186.5861 (d) 
+Operation time 185.6903 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
-Measured quantity 19.9504 (kg) 
+Measured quantity 20.0973 (kg) 
 
 
 Edge transition: 
@@ -16671,10 +16523,10 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 186.9818 (d) 
-True quantity 19.9499 (kg) 
+Operation time 186.0860 (d) 
+True quantity 19.5354 (kg) 
 Expected quantity 19.7500 (kg) 
-Measured quantity 19.9593 (kg) 
+Measured quantity 19.7487 (kg) 
 
 
 Edge transition: 
@@ -16688,10 +16540,10 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 187.1692 (d) 
-True quantity 19.9499 (kg) 
+Operation time 186.2734 (d) 
+True quantity 19.5354 (kg) 
 Expected quantity 19.7500 (kg) 
-Measured quantity 19.9881 (kg) 
+Measured quantity 19.6109 (kg) 
 
 
 Edge transition: 
@@ -16701,20 +16553,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 187.4400 (d) 
+Operation time 186.5442 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6701.7937 (kg)
-Expected inventory - 6701.2500 (kg)
-Measured inventory - 6701.1510 (kg)
+True inventory - 6700.9783 (kg)
+Expected inventory - 6700.7500 (kg)
+Measured inventory - 6700.1408 (kg)
 
 Product Storage:
-True inventory - 3297.0038 (kg)
-Expected inventory - 3297.5000 (kg)
-Measured inventory - 3294.3508 (kg)
+True inventory - 3297.4105 (kg)
+Expected inventory - 3298.0000 (kg)
+Measured inventory - 3297.0680 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -16722,20 +16574,20 @@ Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
 Campaign MUF:
-True weight - 0.0501 (kg)
+True weight - 0.4646 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - -0.0089 (kg)
+Measured weight - 0.3485 (kg)
 
 MUF:
-True weight - 1.2025 (kg)
+True weight - 1.6111 (kg)
 Expected weight - 1.2500 (kg)
-Measured weight - 4.4982 (kg)
+Measured weight - 2.7912 (kg)
 
 
 Campaign 165 complete 
 
 
-Starting campaign: 166 at time:  187.4400  days 
+Starting campaign: 166 at time:  186.5442  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -16744,10 +16596,10 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 187.5233 (d) 
+Operation time 186.6275 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
-Measured quantity 19.8199 (kg) 
+Measured quantity 19.9461 (kg) 
 
 
 Edge transition: 
@@ -16761,10 +16613,10 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 187.9190 (d) 
-True quantity 19.8670 (kg) 
+Operation time 187.0232 (d) 
+True quantity 19.6083 (kg) 
 Expected quantity 19.7500 (kg) 
-Measured quantity 19.9133 (kg) 
+Measured quantity 19.5333 (kg) 
 
 
 Edge transition: 
@@ -16778,10 +16630,10 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 188.1064 (d) 
-True quantity 19.8670 (kg) 
+Operation time 187.2106 (d) 
+True quantity 19.6083 (kg) 
 Expected quantity 19.7500 (kg) 
-Measured quantity 19.8771 (kg) 
+Measured quantity 19.6116 (kg) 
 
 
 Edge transition: 
@@ -16791,20 +16643,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 188.3772 (d) 
+Operation time 187.4814 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6681.7937 (kg)
-Expected inventory - 6681.2500 (kg)
-Measured inventory - 6681.3310 (kg)
+True inventory - 6680.9783 (kg)
+Expected inventory - 6680.7500 (kg)
+Measured inventory - 6680.1947 (kg)
 
 Product Storage:
-True inventory - 3316.8708 (kg)
-Expected inventory - 3317.2500 (kg)
-Measured inventory - 3314.2279 (kg)
+True inventory - 3317.0188 (kg)
+Expected inventory - 3317.7500 (kg)
+Measured inventory - 3316.6796 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -16812,20 +16664,20 @@ Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
 Campaign MUF:
-True weight - 0.1330 (kg)
+True weight - 0.3917 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - -0.0934 (kg)
+Measured weight - 0.4128 (kg)
 
 MUF:
-True weight - 1.3355 (kg)
+True weight - 2.0028 (kg)
 Expected weight - 1.5000 (kg)
-Measured weight - 4.4410 (kg)
+Measured weight - 3.1257 (kg)
 
 
 Campaign 166 complete 
 
 
-Starting campaign: 167 at time:  188.3772  days 
+Starting campaign: 167 at time:  187.4814  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -16834,125 +16686,67 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 188.4605 (d) 
-True quantity 20.0000 (kg) 
-Expected quantity 20.0000 (kg) 
-Measured quantity 20.1501 (kg) 
-
-
-Edge transition: 
-Moving batch from key_measurement_point_0 to melter 
-
-Alloy melting
-Failure status:  True 
-
-
-Melter failed at time 188.8146, begin failure routine
-
-Edge transition: 
-Moving batch from melter to key_measurement_point_3 
-
-Measurement event at KMP: 3
-Operation time 188.8562 (d) 
+Operation time 187.5647 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 19.7417 (kg) 
 
 
 Edge transition: 
-Moving batch from key_measurement_point_3 to recycle_storage 
-
-Storing batch in recycle storage 
-
-
-Cleaning the heel
-
-Edge transition: 
-Moving heel from melter to key_measurement_point_3 
-
-Measurement event at KMP: 3
-Operation time 189.1686 (d) 
-True quantity 1.3355 (kg) 
-Expected quantity 1.5000 (kg) 
-Measured quantity 1.2201 (kg) 
-
-
-Edge transition: 
-Moving heel from key_measurement_point_3 to recycle_storage 
-
-Storing heel in recycle storage 
-
-
-Repairing melter
-
-Recycling batch and heel
-
-
-Edge transition: 
-Moving recycled batch from recycle_storage to key_measurement_point_3 
-
-Measurement event at KMP: 3
-Operation time 189.5643 (d) 
-True quantity 21.3355 (kg) 
-Expected quantity 21.5000 (kg) 
-Measured quantity 21.3007 (kg) 
-
-
-Edge transition: 
-Moving recycled batch from key_measurement_point_3 to melter 
+Moving batch from key_measurement_point_0 to melter 
 
 Alloy melting
 Failure status:  False 
 
 
 Edge transition: 
-Moving recycled batch from melter to key_measurement_point_1 
+Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 189.9600 (d) 
-True quantity 21.2536 (kg) 
-Expected quantity 21.2500 (kg) 
-Measured quantity 21.1183 (kg) 
+Operation time 187.9604 (d) 
+True quantity 19.7882 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.6728 (kg) 
 
 
 Edge transition: 
-Moving recycled batch from key_measurement_point_1 to trimmer 
+Moving batch from key_measurement_point_1 to trimmer 
 
 Slug trimming
 Failure status:  False 
 
 
 Edge transition: 
-Moving recycled batch from trimmer to key_measurement_point_2 
+Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 190.1474 (d) 
-True quantity 21.2536 (kg) 
-Expected quantity 21.2500 (kg) 
-Measured quantity 21.0893 (kg) 
+Operation time 188.1478 (d) 
+True quantity 19.7882 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.6849 (kg) 
 
 
 Edge transition: 
-Moving recycled batch from key_measurement_point_2 to product_storage 
+Moving batch from key_measurement_point_2 to product_storage 
 
 Processing the final product 
 
 
 Facility inspection 
-Operation time 190.4182 (d) 
+Operation time 188.4186 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6661.7937 (kg)
-Expected inventory - 6661.2500 (kg)
-Measured inventory - 6661.1810 (kg)
+True inventory - 6660.9783 (kg)
+Expected inventory - 6660.7500 (kg)
+Measured inventory - 6660.4530 (kg)
 
 Product Storage:
-True inventory - 3338.1244 (kg)
-Expected inventory - 3338.5000 (kg)
-Measured inventory - 3335.3173 (kg)
+True inventory - 3336.8070 (kg)
+Expected inventory - 3337.5000 (kg)
+Measured inventory - 3336.3645 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -16960,20 +16754,20 @@ Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
 Campaign MUF:
-True weight - 0.0818 (kg)
+True weight - 0.2118 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 0.1824 (kg)
+Measured weight - 0.0689 (kg)
 
 MUF:
-True weight - 0.0818 (kg)
-Expected weight - 0.2500 (kg)
-Measured weight - 3.5018 (kg)
+True weight - 2.2146 (kg)
+Expected weight - 1.7500 (kg)
+Measured weight - 3.1825 (kg)
 
 
 Campaign 167 complete 
 
 
-Starting campaign: 168 at time:  190.4182  days 
+Starting campaign: 168 at time:  188.4186  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -16982,10 +16776,10 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 190.5015 (d) 
+Operation time 188.5019 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
-Measured quantity 19.9594 (kg) 
+Measured quantity 19.9563 (kg) 
 
 
 Edge transition: 
@@ -16999,10 +16793,10 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 190.8972 (d) 
-True quantity 19.9824 (kg) 
+Operation time 188.8976 (d) 
+True quantity 19.8686 (kg) 
 Expected quantity 19.7500 (kg) 
-Measured quantity 20.0978 (kg) 
+Measured quantity 19.8151 (kg) 
 
 
 Edge transition: 
@@ -17016,10 +16810,10 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 191.0846 (d) 
-True quantity 19.9824 (kg) 
+Operation time 189.0850 (d) 
+True quantity 19.8686 (kg) 
 Expected quantity 19.7500 (kg) 
-Measured quantity 19.9997 (kg) 
+Measured quantity 19.8711 (kg) 
 
 
 Edge transition: 
@@ -17029,20 +16823,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 191.3554 (d) 
+Operation time 189.3558 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6641.7937 (kg)
-Expected inventory - 6641.2500 (kg)
-Measured inventory - 6641.2216 (kg)
+True inventory - 6640.9783 (kg)
+Expected inventory - 6640.7500 (kg)
+Measured inventory - 6640.4967 (kg)
 
 Product Storage:
-True inventory - 3358.1068 (kg)
-Expected inventory - 3358.2500 (kg)
-Measured inventory - 3355.3169 (kg)
+True inventory - 3356.6756 (kg)
+Expected inventory - 3357.2500 (kg)
+Measured inventory - 3356.2356 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -17050,20 +16844,20 @@ Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
 Campaign MUF:
-True weight - 0.0176 (kg)
+True weight - 0.1314 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - -0.1384 (kg)
+Measured weight - 0.1413 (kg)
 
 MUF:
-True weight - 0.0994 (kg)
-Expected weight - 0.5000 (kg)
-Measured weight - 3.4615 (kg)
+True weight - 2.3460 (kg)
+Expected weight - 2.0000 (kg)
+Measured weight - 3.2677 (kg)
 
 
 Campaign 168 complete 
 
 
-Starting campaign: 169 at time:  191.3554  days 
+Starting campaign: 169 at time:  189.3558  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -17072,10 +16866,10 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 191.4387 (d) 
+Operation time 189.4391 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
-Measured quantity 20.0021 (kg) 
+Measured quantity 20.1154 (kg) 
 
 
 Edge transition: 
@@ -17089,10 +16883,10 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 191.8344 (d) 
-True quantity 19.7084 (kg) 
+Operation time 189.8348 (d) 
+True quantity 19.9447 (kg) 
 Expected quantity 19.7500 (kg) 
-Measured quantity 19.7183 (kg) 
+Measured quantity 19.9620 (kg) 
 
 
 Edge transition: 
@@ -17106,10 +16900,10 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 192.0218 (d) 
-True quantity 19.7084 (kg) 
+Operation time 190.0222 (d) 
+True quantity 19.9447 (kg) 
 Expected quantity 19.7500 (kg) 
-Measured quantity 19.6969 (kg) 
+Measured quantity 19.9468 (kg) 
 
 
 Edge transition: 
@@ -17119,20 +16913,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 192.2926 (d) 
+Operation time 190.2930 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6621.7937 (kg)
-Expected inventory - 6621.2500 (kg)
-Measured inventory - 6621.2195 (kg)
+True inventory - 6620.9783 (kg)
+Expected inventory - 6620.7500 (kg)
+Measured inventory - 6620.3813 (kg)
 
 Product Storage:
-True inventory - 3377.8152 (kg)
-Expected inventory - 3378.0000 (kg)
-Measured inventory - 3375.0139 (kg)
+True inventory - 3376.6204 (kg)
+Expected inventory - 3377.0000 (kg)
+Measured inventory - 3376.1825 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -17140,20 +16934,20 @@ Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
 Campaign MUF:
-True weight - 0.2916 (kg)
+True weight - 0.0553 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 0.2838 (kg)
+Measured weight - 0.1534 (kg)
 
 MUF:
-True weight - 0.3910 (kg)
-Expected weight - 0.7500 (kg)
-Measured weight - 3.7667 (kg)
+True weight - 2.4013 (kg)
+Expected weight - 2.2500 (kg)
+Measured weight - 3.4363 (kg)
 
 
 Campaign 169 complete 
 
 
-Starting campaign: 170 at time:  192.2926  days 
+Starting campaign: 170 at time:  190.2930  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -17162,370 +16956,10 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 192.3759 (d) 
+Operation time 190.3763 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
-Measured quantity 20.0309 (kg) 
-
-
-Edge transition: 
-Moving batch from key_measurement_point_0 to melter 
-
-Alloy melting
-Failure status:  False 
-
-
-Edge transition: 
-Moving batch from melter to key_measurement_point_1 
-
-Measurement event at KMP: 1
-Operation time 192.7716 (d) 
-True quantity 19.8596 (kg) 
-Expected quantity 19.7500 (kg) 
-Measured quantity 19.9677 (kg) 
-
-
-Edge transition: 
-Moving batch from key_measurement_point_1 to trimmer 
-
-Slug trimming
-Failure status:  False 
-
-
-Edge transition: 
-Moving batch from trimmer to key_measurement_point_2 
-
-Measurement event at KMP: 2
-Operation time 192.9590 (d) 
-True quantity 19.8596 (kg) 
-Expected quantity 19.7500 (kg) 
-Measured quantity 19.7964 (kg) 
-
-
-Edge transition: 
-Moving batch from key_measurement_point_2 to product_storage 
-
-Processing the final product 
-
-
-Facility inspection 
-Operation time 193.2298 (d) 
-
-
---Accounting materials in facility--
-
-Storage Buffer:
-True inventory - 6601.7937 (kg)
-Expected inventory - 6601.2500 (kg)
-Measured inventory - 6601.1886 (kg)
-
-Product Storage:
-True inventory - 3397.6748 (kg)
-Expected inventory - 3397.7500 (kg)
-Measured inventory - 3394.8103 (kg)
-
-Recycle Storage:
-True inventory - 0.0000 (kg)
-Expected inventory - 0.0000 (kg)
-Measured inventory - 0.0000 (kg)
-
-Campaign MUF:
-True weight - 0.1404 (kg)
-Expected weight - 0.2500 (kg)
-Measured weight - 0.0632 (kg)
-
-MUF:
-True weight - 0.5314 (kg)
-Expected weight - 1.0000 (kg)
-Measured weight - 4.0011 (kg)
-
-
-Campaign 170 complete 
-
-
-Starting campaign: 171 at time:  193.2298  days 
-
-Prepare batch in Storage Buffer for transfer: 20.0 kg 
-
-
-Edge transition: 
-Moving batch from storage_buffer to key_measurement_point_0 
-
-Measurement event at KMP: 0
-Operation time 193.3131 (d) 
-True quantity 20.0000 (kg) 
-Expected quantity 20.0000 (kg) 
-Measured quantity 19.9759 (kg) 
-
-
-Edge transition: 
-Moving batch from key_measurement_point_0 to melter 
-
-Alloy melting
-Failure status:  False 
-
-
-Edge transition: 
-Moving batch from melter to key_measurement_point_1 
-
-Measurement event at KMP: 1
-Operation time 193.7088 (d) 
-True quantity 19.6581 (kg) 
-Expected quantity 19.7500 (kg) 
-Measured quantity 19.5703 (kg) 
-
-
-Edge transition: 
-Moving batch from key_measurement_point_1 to trimmer 
-
-Slug trimming
-Failure status:  False 
-
-
-Edge transition: 
-Moving batch from trimmer to key_measurement_point_2 
-
-Measurement event at KMP: 2
-Operation time 193.8962 (d) 
-True quantity 19.6581 (kg) 
-Expected quantity 19.7500 (kg) 
-Measured quantity 19.6359 (kg) 
-
-
-Edge transition: 
-Moving batch from key_measurement_point_2 to product_storage 
-
-Processing the final product 
-
-
-Facility inspection 
-Operation time 194.1670 (d) 
-
-
---Accounting materials in facility--
-
-Storage Buffer:
-True inventory - 6581.7937 (kg)
-Expected inventory - 6581.2500 (kg)
-Measured inventory - 6581.2127 (kg)
-
-Product Storage:
-True inventory - 3417.3330 (kg)
-Expected inventory - 3417.5000 (kg)
-Measured inventory - 3414.4462 (kg)
-
-Recycle Storage:
-True inventory - 0.0000 (kg)
-Expected inventory - 0.0000 (kg)
-Measured inventory - 0.0000 (kg)
-
-Campaign MUF:
-True weight - 0.3419 (kg)
-Expected weight - 0.2500 (kg)
-Measured weight - 0.4055 (kg)
-
-MUF:
-True weight - 0.8733 (kg)
-Expected weight - 1.2500 (kg)
-Measured weight - 4.3411 (kg)
-
-
-Campaign 171 complete 
-
-
-Starting campaign: 172 at time:  194.1670  days 
-
-Prepare batch in Storage Buffer for transfer: 20.0 kg 
-
-
-Edge transition: 
-Moving batch from storage_buffer to key_measurement_point_0 
-
-Measurement event at KMP: 0
-Operation time 194.2503 (d) 
-True quantity 20.0000 (kg) 
-Expected quantity 20.0000 (kg) 
-Measured quantity 19.9141 (kg) 
-
-
-Edge transition: 
-Moving batch from key_measurement_point_0 to melter 
-
-Alloy melting
-Failure status:  False 
-
-
-Edge transition: 
-Moving batch from melter to key_measurement_point_1 
-
-Measurement event at KMP: 1
-Operation time 194.6460 (d) 
-True quantity 19.7468 (kg) 
-Expected quantity 19.7500 (kg) 
-Measured quantity 19.8795 (kg) 
-
-
-Edge transition: 
-Moving batch from key_measurement_point_1 to trimmer 
-
-Slug trimming
-Failure status:  False 
-
-
-Edge transition: 
-Moving batch from trimmer to key_measurement_point_2 
-
-Measurement event at KMP: 2
-Operation time 194.8334 (d) 
-True quantity 19.7468 (kg) 
-Expected quantity 19.7500 (kg) 
-Measured quantity 19.6504 (kg) 
-
-
-Edge transition: 
-Moving batch from key_measurement_point_2 to product_storage 
-
-Processing the final product 
-
-
-Facility inspection 
-Operation time 195.1042 (d) 
-
-
---Accounting materials in facility--
-
-Storage Buffer:
-True inventory - 6561.7937 (kg)
-Expected inventory - 6561.2500 (kg)
-Measured inventory - 6561.2986 (kg)
-
-Product Storage:
-True inventory - 3437.0798 (kg)
-Expected inventory - 3437.2500 (kg)
-Measured inventory - 3434.0966 (kg)
-
-Recycle Storage:
-True inventory - 0.0000 (kg)
-Expected inventory - 0.0000 (kg)
-Measured inventory - 0.0000 (kg)
-
-Campaign MUF:
-True weight - 0.2532 (kg)
-Expected weight - 0.2500 (kg)
-Measured weight - 0.0346 (kg)
-
-MUF:
-True weight - 1.1265 (kg)
-Expected weight - 1.5000 (kg)
-Measured weight - 4.6048 (kg)
-
-
-Campaign 172 complete 
-
-
-Starting campaign: 173 at time:  195.1042  days 
-
-Prepare batch in Storage Buffer for transfer: 20.0 kg 
-
-
-Edge transition: 
-Moving batch from storage_buffer to key_measurement_point_0 
-
-Measurement event at KMP: 0
-Operation time 195.1875 (d) 
-True quantity 20.0000 (kg) 
-Expected quantity 20.0000 (kg) 
-Measured quantity 20.0060 (kg) 
-
-
-Edge transition: 
-Moving batch from key_measurement_point_0 to melter 
-
-Alloy melting
-Failure status:  False 
-
-
-Edge transition: 
-Moving batch from melter to key_measurement_point_1 
-
-Measurement event at KMP: 1
-Operation time 195.5832 (d) 
-True quantity 19.8656 (kg) 
-Expected quantity 19.7500 (kg) 
-Measured quantity 19.8444 (kg) 
-
-
-Edge transition: 
-Moving batch from key_measurement_point_1 to trimmer 
-
-Slug trimming
-Failure status:  False 
-
-
-Edge transition: 
-Moving batch from trimmer to key_measurement_point_2 
-
-Measurement event at KMP: 2
-Operation time 195.7706 (d) 
-True quantity 19.8656 (kg) 
-Expected quantity 19.7500 (kg) 
-Measured quantity 19.9593 (kg) 
-
-
-Edge transition: 
-Moving batch from key_measurement_point_2 to product_storage 
-
-Processing the final product 
-
-
-Facility inspection 
-Operation time 196.0414 (d) 
-
-
---Accounting materials in facility--
-
-Storage Buffer:
-True inventory - 6541.7937 (kg)
-Expected inventory - 6541.2500 (kg)
-Measured inventory - 6541.2926 (kg)
-
-Product Storage:
-True inventory - 3456.9454 (kg)
-Expected inventory - 3457.0000 (kg)
-Measured inventory - 3454.0558 (kg)
-
-Recycle Storage:
-True inventory - 0.0000 (kg)
-Expected inventory - 0.0000 (kg)
-Measured inventory - 0.0000 (kg)
-
-Campaign MUF:
-True weight - 0.1344 (kg)
-Expected weight - 0.2500 (kg)
-Measured weight - 0.1616 (kg)
-
-MUF:
-True weight - 1.2608 (kg)
-Expected weight - 1.7500 (kg)
-Measured weight - 4.6515 (kg)
-
-
-Campaign 173 complete 
-
-
-Starting campaign: 174 at time:  196.0414  days 
-
-Prepare batch in Storage Buffer for transfer: 20.0 kg 
-
-
-Edge transition: 
-Moving batch from storage_buffer to key_measurement_point_0 
-
-Measurement event at KMP: 0
-Operation time 196.1247 (d) 
-True quantity 20.0000 (kg) 
-Expected quantity 20.0000 (kg) 
-Measured quantity 19.9474 (kg) 
+Measured quantity 20.0099 (kg) 
 
 
 Edge transition: 
@@ -17535,16 +16969,16 @@ Alloy melting
 Failure status:  True 
 
 
-Melter failed at time 196.4788, begin failure routine
+Melter failed at time 190.7304, begin failure routine
 
 Edge transition: 
 Moving batch from melter to key_measurement_point_3 
 
 Measurement event at KMP: 3
-Operation time 196.5204 (d) 
+Operation time 190.7720 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
-Measured quantity 20.1325 (kg) 
+Measured quantity 20.1149 (kg) 
 
 
 Edge transition: 
@@ -17559,10 +16993,10 @@ Edge transition:
 Moving heel from melter to key_measurement_point_3 
 
 Measurement event at KMP: 3
-Operation time 196.8328 (d) 
-True quantity 1.2608 (kg) 
-Expected quantity 1.7500 (kg) 
-Measured quantity 1.3315 (kg) 
+Operation time 191.0844 (d) 
+True quantity 2.4013 (kg) 
+Expected quantity 2.2500 (kg) 
+Measured quantity 2.2605 (kg) 
 
 
 Edge transition: 
@@ -17580,10 +17014,10 @@ Edge transition:
 Moving recycled batch from recycle_storage to key_measurement_point_3 
 
 Measurement event at KMP: 3
-Operation time 197.2285 (d) 
-True quantity 21.2608 (kg) 
-Expected quantity 21.7500 (kg) 
-Measured quantity 21.2359 (kg) 
+Operation time 191.4801 (d) 
+True quantity 22.4013 (kg) 
+Expected quantity 22.2500 (kg) 
+Measured quantity 22.4109 (kg) 
 
 
 Edge transition: 
@@ -17597,10 +17031,10 @@ Edge transition:
 Moving recycled batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 197.6242 (d) 
-True quantity 21.2090 (kg) 
-Expected quantity 21.5000 (kg) 
-Measured quantity 21.0932 (kg) 
+Operation time 191.8758 (d) 
+True quantity 22.2365 (kg) 
+Expected quantity 22.0000 (kg) 
+Measured quantity 22.2318 (kg) 
 
 
 Edge transition: 
@@ -17614,10 +17048,10 @@ Edge transition:
 Moving recycled batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 197.8116 (d) 
-True quantity 21.2090 (kg) 
-Expected quantity 21.5000 (kg) 
-Measured quantity 21.2142 (kg) 
+Operation time 192.0632 (d) 
+True quantity 22.2365 (kg) 
+Expected quantity 22.0000 (kg) 
+Measured quantity 22.2120 (kg) 
 
 
 Edge transition: 
@@ -17627,20 +17061,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 198.0824 (d) 
+Operation time 192.3340 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6521.7937 (kg)
-Expected inventory - 6521.2500 (kg)
-Measured inventory - 6521.3452 (kg)
+True inventory - 6600.9783 (kg)
+Expected inventory - 6600.7500 (kg)
+Measured inventory - 6600.3713 (kg)
 
 Product Storage:
-True inventory - 3478.1545 (kg)
-Expected inventory - 3478.5000 (kg)
-Measured inventory - 3475.2701 (kg)
+True inventory - 3398.8568 (kg)
+Expected inventory - 3399.0000 (kg)
+Measured inventory - 3398.3945 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -17648,20 +17082,20 @@ Expected inventory - 0.0000 (kg)
 Measured inventory - 0.0000 (kg)
 
 Campaign MUF:
-True weight - 0.0518 (kg)
+True weight - 0.1648 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 0.1428 (kg)
+Measured weight - 0.1792 (kg)
 
 MUF:
-True weight - 0.0518 (kg)
+True weight - 0.1648 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 3.3848 (kg)
+Measured weight - 1.2342 (kg)
 
 
-Campaign 174 complete 
+Campaign 170 complete 
 
 
-Starting campaign: 175 at time:  198.0824  days 
+Starting campaign: 171 at time:  192.3340  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -17670,7 +17104,367 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 198.1657 (d) 
+Operation time 192.4173 (d) 
+True quantity 20.0000 (kg) 
+Expected quantity 20.0000 (kg) 
+Measured quantity 20.0182 (kg) 
+
+
+Edge transition: 
+Moving batch from key_measurement_point_0 to melter 
+
+Alloy melting
+Failure status:  False 
+
+
+Edge transition: 
+Moving batch from melter to key_measurement_point_1 
+
+Measurement event at KMP: 1
+Operation time 192.8130 (d) 
+True quantity 19.8894 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.8233 (kg) 
+
+
+Edge transition: 
+Moving batch from key_measurement_point_1 to trimmer 
+
+Slug trimming
+Failure status:  False 
+
+
+Edge transition: 
+Moving batch from trimmer to key_measurement_point_2 
+
+Measurement event at KMP: 2
+Operation time 193.0004 (d) 
+True quantity 19.8894 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.9199 (kg) 
+
+
+Edge transition: 
+Moving batch from key_measurement_point_2 to product_storage 
+
+Processing the final product 
+
+
+Facility inspection 
+Operation time 193.2712 (d) 
+
+
+--Accounting materials in facility--
+
+Storage Buffer:
+True inventory - 6580.9783 (kg)
+Expected inventory - 6580.7500 (kg)
+Measured inventory - 6580.3531 (kg)
+
+Product Storage:
+True inventory - 3418.7462 (kg)
+Expected inventory - 3418.7500 (kg)
+Measured inventory - 3418.3144 (kg)
+
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.1106 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1949 (kg)
+
+MUF:
+True weight - 0.2754 (kg)
+Expected weight - 0.5000 (kg)
+Measured weight - 1.3324 (kg)
+
+
+Campaign 171 complete 
+
+
+Starting campaign: 172 at time:  193.2712  days 
+
+Prepare batch in Storage Buffer for transfer: 20.0 kg 
+
+
+Edge transition: 
+Moving batch from storage_buffer to key_measurement_point_0 
+
+Measurement event at KMP: 0
+Operation time 193.3545 (d) 
+True quantity 20.0000 (kg) 
+Expected quantity 20.0000 (kg) 
+Measured quantity 19.8470 (kg) 
+
+
+Edge transition: 
+Moving batch from key_measurement_point_0 to melter 
+
+Alloy melting
+Failure status:  False 
+
+
+Edge transition: 
+Moving batch from melter to key_measurement_point_1 
+
+Measurement event at KMP: 1
+Operation time 193.7502 (d) 
+True quantity 19.8251 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.7545 (kg) 
+
+
+Edge transition: 
+Moving batch from key_measurement_point_1 to trimmer 
+
+Slug trimming
+Failure status:  False 
+
+
+Edge transition: 
+Moving batch from trimmer to key_measurement_point_2 
+
+Measurement event at KMP: 2
+Operation time 193.9376 (d) 
+True quantity 19.8251 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.6974 (kg) 
+
+
+Edge transition: 
+Moving batch from key_measurement_point_2 to product_storage 
+
+Processing the final product 
+
+
+Facility inspection 
+Operation time 194.2084 (d) 
+
+
+--Accounting materials in facility--
+
+Storage Buffer:
+True inventory - 6560.9783 (kg)
+Expected inventory - 6560.7500 (kg)
+Measured inventory - 6560.5061 (kg)
+
+Product Storage:
+True inventory - 3438.5713 (kg)
+Expected inventory - 3438.5000 (kg)
+Measured inventory - 3438.0119 (kg)
+
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.1749 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.0925 (kg)
+
+MUF:
+True weight - 0.4504 (kg)
+Expected weight - 0.7500 (kg)
+Measured weight - 1.4820 (kg)
+
+
+Campaign 172 complete 
+
+
+Starting campaign: 173 at time:  194.2084  days 
+
+Prepare batch in Storage Buffer for transfer: 20.0 kg 
+
+
+Edge transition: 
+Moving batch from storage_buffer to key_measurement_point_0 
+
+Measurement event at KMP: 0
+Operation time 194.2917 (d) 
+True quantity 20.0000 (kg) 
+Expected quantity 20.0000 (kg) 
+Measured quantity 20.0635 (kg) 
+
+
+Edge transition: 
+Moving batch from key_measurement_point_0 to melter 
+
+Alloy melting
+Failure status:  False 
+
+
+Edge transition: 
+Moving batch from melter to key_measurement_point_1 
+
+Measurement event at KMP: 1
+Operation time 194.6874 (d) 
+True quantity 19.5999 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.5899 (kg) 
+
+
+Edge transition: 
+Moving batch from key_measurement_point_1 to trimmer 
+
+Slug trimming
+Failure status:  False 
+
+
+Edge transition: 
+Moving batch from trimmer to key_measurement_point_2 
+
+Measurement event at KMP: 2
+Operation time 194.8748 (d) 
+True quantity 19.5999 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.6247 (kg) 
+
+
+Edge transition: 
+Moving batch from key_measurement_point_2 to product_storage 
+
+Processing the final product 
+
+
+Facility inspection 
+Operation time 195.1456 (d) 
+
+
+--Accounting materials in facility--
+
+Storage Buffer:
+True inventory - 6540.9783 (kg)
+Expected inventory - 6540.7500 (kg)
+Measured inventory - 6540.4426 (kg)
+
+Product Storage:
+True inventory - 3458.1712 (kg)
+Expected inventory - 3458.2500 (kg)
+Measured inventory - 3457.6366 (kg)
+
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.4001 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4736 (kg)
+
+MUF:
+True weight - 0.8505 (kg)
+Expected weight - 1.0000 (kg)
+Measured weight - 1.9208 (kg)
+
+
+Campaign 173 complete 
+
+
+Starting campaign: 174 at time:  195.1456  days 
+
+Prepare batch in Storage Buffer for transfer: 20.0 kg 
+
+
+Edge transition: 
+Moving batch from storage_buffer to key_measurement_point_0 
+
+Measurement event at KMP: 0
+Operation time 195.2289 (d) 
+True quantity 20.0000 (kg) 
+Expected quantity 20.0000 (kg) 
+Measured quantity 20.1325 (kg) 
+
+
+Edge transition: 
+Moving batch from key_measurement_point_0 to melter 
+
+Alloy melting
+Failure status:  False 
+
+
+Edge transition: 
+Moving batch from melter to key_measurement_point_1 
+
+Measurement event at KMP: 1
+Operation time 195.6246 (d) 
+True quantity 19.7870 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.8577 (kg) 
+
+
+Edge transition: 
+Moving batch from key_measurement_point_1 to trimmer 
+
+Slug trimming
+Failure status:  False 
+
+
+Edge transition: 
+Moving batch from trimmer to key_measurement_point_2 
+
+Measurement event at KMP: 2
+Operation time 195.8120 (d) 
+True quantity 19.7870 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.7922 (kg) 
+
+
+Edge transition: 
+Moving batch from key_measurement_point_2 to product_storage 
+
+Processing the final product 
+
+
+Facility inspection 
+Operation time 196.0828 (d) 
+
+
+--Accounting materials in facility--
+
+Storage Buffer:
+True inventory - 6520.9783 (kg)
+Expected inventory - 6520.7500 (kg)
+Measured inventory - 6520.3102 (kg)
+
+Product Storage:
+True inventory - 3477.9582 (kg)
+Expected inventory - 3478.0000 (kg)
+Measured inventory - 3477.4288 (kg)
+
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.2130 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.2748 (kg)
+
+MUF:
+True weight - 1.0635 (kg)
+Expected weight - 1.2500 (kg)
+Measured weight - 2.2611 (kg)
+
+
+Campaign 174 complete 
+
+
+Starting campaign: 175 at time:  196.0828  days 
+
+Prepare batch in Storage Buffer for transfer: 20.0 kg 
+
+
+Edge transition: 
+Moving batch from storage_buffer to key_measurement_point_0 
+
+Measurement event at KMP: 0
+Operation time 196.1661 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 19.9726 (kg) 
@@ -17687,7 +17481,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 198.5614 (d) 
+Operation time 196.5618 (d) 
 True quantity 19.6007 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.5789 (kg) 
@@ -17704,7 +17498,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 198.7488 (d) 
+Operation time 196.7492 (d) 
 True quantity 19.6007 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.6466 (kg) 
@@ -17717,20 +17511,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 199.0196 (d) 
+Operation time 197.0200 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6501.7937 (kg)
-Expected inventory - 6501.2500 (kg)
-Measured inventory - 6501.3726 (kg)
+True inventory - 6500.9783 (kg)
+Expected inventory - 6500.7500 (kg)
+Measured inventory - 6500.3376 (kg)
 
 Product Storage:
-True inventory - 3497.7551 (kg)
-Expected inventory - 3498.2500 (kg)
-Measured inventory - 3494.9167 (kg)
+True inventory - 3497.5588 (kg)
+Expected inventory - 3497.7500 (kg)
+Measured inventory - 3497.0754 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -17743,15 +17537,15 @@ Expected weight - 0.2500 (kg)
 Measured weight - 0.3937 (kg)
 
 MUF:
-True weight - 0.4511 (kg)
-Expected weight - 0.5000 (kg)
-Measured weight - 3.7107 (kg)
+True weight - 1.4629 (kg)
+Expected weight - 1.5000 (kg)
+Measured weight - 2.5870 (kg)
 
 
 Campaign 175 complete 
 
 
-Starting campaign: 176 at time:  199.0196  days 
+Starting campaign: 176 at time:  197.0200  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -17760,7 +17554,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 199.1029 (d) 
+Operation time 197.1033 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 19.9702 (kg) 
@@ -17777,7 +17571,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 199.4986 (d) 
+Operation time 197.4990 (d) 
 True quantity 19.5081 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.2656 (kg) 
@@ -17794,7 +17588,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 199.6860 (d) 
+Operation time 197.6864 (d) 
 True quantity 19.5081 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.4211 (kg) 
@@ -17807,20 +17601,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 199.9568 (d) 
+Operation time 197.9572 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6481.7937 (kg)
-Expected inventory - 6481.2500 (kg)
-Measured inventory - 6481.4025 (kg)
+True inventory - 6480.9783 (kg)
+Expected inventory - 6480.7500 (kg)
+Measured inventory - 6480.3674 (kg)
 
 Product Storage:
-True inventory - 3517.2632 (kg)
-Expected inventory - 3518.0000 (kg)
-Measured inventory - 3514.3377 (kg)
+True inventory - 3517.0669 (kg)
+Expected inventory - 3517.5000 (kg)
+Measured inventory - 3516.4964 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -17833,15 +17627,15 @@ Expected weight - 0.2500 (kg)
 Measured weight - 0.7046 (kg)
 
 MUF:
-True weight - 0.9431 (kg)
-Expected weight - 0.7500 (kg)
-Measured weight - 4.2598 (kg)
+True weight - 1.9548 (kg)
+Expected weight - 1.7500 (kg)
+Measured weight - 3.1361 (kg)
 
 
 Campaign 176 complete 
 
 
-Starting campaign: 177 at time:  199.9568  days 
+Starting campaign: 177 at time:  197.9572  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -17850,7 +17644,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 200.0401 (d) 
+Operation time 198.0405 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 20.1555 (kg) 
@@ -17867,7 +17661,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 200.4358 (d) 
+Operation time 198.4362 (d) 
 True quantity 19.5277 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.5691 (kg) 
@@ -17884,7 +17678,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 200.6232 (d) 
+Operation time 198.6236 (d) 
 True quantity 19.5277 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.4591 (kg) 
@@ -17897,20 +17691,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 200.8940 (d) 
+Operation time 198.8944 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6461.7937 (kg)
-Expected inventory - 6461.2500 (kg)
-Measured inventory - 6461.2470 (kg)
+True inventory - 6460.9783 (kg)
+Expected inventory - 6460.7500 (kg)
+Measured inventory - 6460.2120 (kg)
 
 Product Storage:
-True inventory - 3536.7909 (kg)
-Expected inventory - 3537.7500 (kg)
-Measured inventory - 3533.7968 (kg)
+True inventory - 3536.5946 (kg)
+Expected inventory - 3537.2500 (kg)
+Measured inventory - 3535.9555 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -17923,15 +17717,15 @@ Expected weight - 0.2500 (kg)
 Measured weight - 0.5863 (kg)
 
 MUF:
-True weight - 1.4154 (kg)
-Expected weight - 1.0000 (kg)
-Measured weight - 4.9561 (kg)
+True weight - 2.4271 (kg)
+Expected weight - 2.0000 (kg)
+Measured weight - 3.8325 (kg)
 
 
 Campaign 177 complete 
 
 
-Starting campaign: 178 at time:  200.8940  days 
+Starting campaign: 178 at time:  198.8944  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -17940,7 +17734,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 200.9773 (d) 
+Operation time 198.9777 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 20.0219 (kg) 
@@ -17957,7 +17751,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 201.3730 (d) 
+Operation time 199.3734 (d) 
 True quantity 19.9005 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.9570 (kg) 
@@ -17974,7 +17768,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 201.5604 (d) 
+Operation time 199.5608 (d) 
 True quantity 19.9005 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 20.0425 (kg) 
@@ -17987,20 +17781,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 201.8312 (d) 
+Operation time 199.8316 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6441.7937 (kg)
-Expected inventory - 6441.2500 (kg)
-Measured inventory - 6441.2251 (kg)
+True inventory - 6440.9783 (kg)
+Expected inventory - 6440.7500 (kg)
+Measured inventory - 6440.1901 (kg)
 
 Product Storage:
-True inventory - 3556.6914 (kg)
-Expected inventory - 3557.5000 (kg)
-Measured inventory - 3553.8393 (kg)
+True inventory - 3556.4951 (kg)
+Expected inventory - 3557.0000 (kg)
+Measured inventory - 3555.9980 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -18013,15 +17807,15 @@ Expected weight - 0.2500 (kg)
 Measured weight - 0.0649 (kg)
 
 MUF:
-True weight - 1.5149 (kg)
-Expected weight - 1.2500 (kg)
-Measured weight - 4.9356 (kg)
+True weight - 2.5266 (kg)
+Expected weight - 2.2500 (kg)
+Measured weight - 3.8119 (kg)
 
 
 Campaign 178 complete 
 
 
-Starting campaign: 179 at time:  201.8312  days 
+Starting campaign: 179 at time:  199.8316  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -18030,7 +17824,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 201.9145 (d) 
+Operation time 199.9149 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 19.9091 (kg) 
@@ -18047,7 +17841,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 202.3102 (d) 
+Operation time 200.3106 (d) 
 True quantity 19.5360 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.5593 (kg) 
@@ -18064,7 +17858,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 202.4976 (d) 
+Operation time 200.4980 (d) 
 True quantity 19.5360 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.5631 (kg) 
@@ -18077,20 +17871,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 202.7684 (d) 
+Operation time 200.7688 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6421.7937 (kg)
-Expected inventory - 6421.2500 (kg)
-Measured inventory - 6421.3161 (kg)
+True inventory - 6420.9783 (kg)
+Expected inventory - 6420.7500 (kg)
+Measured inventory - 6420.2811 (kg)
 
 Product Storage:
-True inventory - 3576.2274 (kg)
-Expected inventory - 3577.2500 (kg)
-Measured inventory - 3573.4024 (kg)
+True inventory - 3576.0311 (kg)
+Expected inventory - 3576.7500 (kg)
+Measured inventory - 3575.5611 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -18103,15 +17897,15 @@ Expected weight - 0.2500 (kg)
 Measured weight - 0.3497 (kg)
 
 MUF:
-True weight - 1.9789 (kg)
-Expected weight - 1.5000 (kg)
-Measured weight - 5.2815 (kg)
+True weight - 2.9906 (kg)
+Expected weight - 2.5000 (kg)
+Measured weight - 4.1579 (kg)
 
 
 Campaign 179 complete 
 
 
-Starting campaign: 180 at time:  202.7684  days 
+Starting campaign: 180 at time:  200.7688  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -18120,7 +17914,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 202.8517 (d) 
+Operation time 200.8521 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 19.9756 (kg) 
@@ -18137,7 +17931,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 203.2474 (d) 
+Operation time 201.2478 (d) 
 True quantity 19.8101 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.8550 (kg) 
@@ -18154,7 +17948,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 203.4348 (d) 
+Operation time 201.4352 (d) 
 True quantity 19.8101 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 20.0009 (kg) 
@@ -18167,20 +17961,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 203.7056 (d) 
+Operation time 201.7060 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6401.7937 (kg)
-Expected inventory - 6401.2500 (kg)
-Measured inventory - 6401.3405 (kg)
+True inventory - 6400.9783 (kg)
+Expected inventory - 6400.7500 (kg)
+Measured inventory - 6400.3055 (kg)
 
 Product Storage:
-True inventory - 3596.0375 (kg)
-Expected inventory - 3597.0000 (kg)
-Measured inventory - 3593.4033 (kg)
+True inventory - 3595.8411 (kg)
+Expected inventory - 3596.5000 (kg)
+Measured inventory - 3595.5620 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -18193,15 +17987,15 @@ Expected weight - 0.2500 (kg)
 Measured weight - 0.1205 (kg)
 
 MUF:
-True weight - 2.1688 (kg)
-Expected weight - 1.7500 (kg)
-Measured weight - 5.2562 (kg)
+True weight - 3.1805 (kg)
+Expected weight - 2.7500 (kg)
+Measured weight - 4.1325 (kg)
 
 
 Campaign 180 complete 
 
 
-Starting campaign: 181 at time:  203.7056  days 
+Starting campaign: 181 at time:  201.7060  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -18210,7 +18004,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 203.7889 (d) 
+Operation time 201.7893 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 20.0686 (kg) 
@@ -18220,199 +18014,19 @@ Edge transition:
 Moving batch from key_measurement_point_0 to melter 
 
 Alloy melting
-Failure status:  False 
-
-
-Edge transition: 
-Moving batch from melter to key_measurement_point_1 
-
-Measurement event at KMP: 1
-Operation time 204.1846 (d) 
-True quantity 19.9903 (kg) 
-Expected quantity 19.7500 (kg) 
-Measured quantity 19.8283 (kg) 
-
-
-Edge transition: 
-Moving batch from key_measurement_point_1 to trimmer 
-
-Slug trimming
-Failure status:  False 
-
-
-Edge transition: 
-Moving batch from trimmer to key_measurement_point_2 
-
-Measurement event at KMP: 2
-Operation time 204.3720 (d) 
-True quantity 19.9903 (kg) 
-Expected quantity 19.7500 (kg) 
-Measured quantity 19.9050 (kg) 
-
-
-Edge transition: 
-Moving batch from key_measurement_point_2 to product_storage 
-
-Processing the final product 
-
-
-Facility inspection 
-Operation time 204.6428 (d) 
-
-
---Accounting materials in facility--
-
-Storage Buffer:
-True inventory - 6381.7937 (kg)
-Expected inventory - 6381.2500 (kg)
-Measured inventory - 6381.2719 (kg)
-
-Product Storage:
-True inventory - 3616.0277 (kg)
-Expected inventory - 3616.7500 (kg)
-Measured inventory - 3613.3083 (kg)
-
-Recycle Storage:
-True inventory - 0.0000 (kg)
-Expected inventory - 0.0000 (kg)
-Measured inventory - 0.0000 (kg)
-
-Campaign MUF:
-True weight - 0.0097 (kg)
-Expected weight - 0.2500 (kg)
-Measured weight - 0.2403 (kg)
-
-MUF:
-True weight - 2.1785 (kg)
-Expected weight - 2.0000 (kg)
-Measured weight - 5.4197 (kg)
-
-
-Campaign 181 complete 
-
-
-Starting campaign: 182 at time:  204.6428  days 
-
-Prepare batch in Storage Buffer for transfer: 20.0 kg 
-
-
-Edge transition: 
-Moving batch from storage_buffer to key_measurement_point_0 
-
-Measurement event at KMP: 0
-Operation time 204.7261 (d) 
-True quantity 20.0000 (kg) 
-Expected quantity 20.0000 (kg) 
-Measured quantity 20.0387 (kg) 
-
-
-Edge transition: 
-Moving batch from key_measurement_point_0 to melter 
-
-Alloy melting
-Failure status:  False 
-
-
-Edge transition: 
-Moving batch from melter to key_measurement_point_1 
-
-Measurement event at KMP: 1
-Operation time 205.1218 (d) 
-True quantity 19.7256 (kg) 
-Expected quantity 19.7500 (kg) 
-Measured quantity 19.8166 (kg) 
-
-
-Edge transition: 
-Moving batch from key_measurement_point_1 to trimmer 
-
-Slug trimming
-Failure status:  False 
-
-
-Edge transition: 
-Moving batch from trimmer to key_measurement_point_2 
-
-Measurement event at KMP: 2
-Operation time 205.3092 (d) 
-True quantity 19.7256 (kg) 
-Expected quantity 19.7500 (kg) 
-Measured quantity 19.7749 (kg) 
-
-
-Edge transition: 
-Moving batch from key_measurement_point_2 to product_storage 
-
-Processing the final product 
-
-
-Facility inspection 
-Operation time 205.5800 (d) 
-
-
---Accounting materials in facility--
-
-Storage Buffer:
-True inventory - 6361.7937 (kg)
-Expected inventory - 6361.2500 (kg)
-Measured inventory - 6361.2333 (kg)
-
-Product Storage:
-True inventory - 3635.7533 (kg)
-Expected inventory - 3636.5000 (kg)
-Measured inventory - 3633.0832 (kg)
-
-Recycle Storage:
-True inventory - 0.0000 (kg)
-Expected inventory - 0.0000 (kg)
-Measured inventory - 0.0000 (kg)
-
-Campaign MUF:
-True weight - 0.2744 (kg)
-Expected weight - 0.2500 (kg)
-Measured weight - 0.2220 (kg)
-
-MUF:
-True weight - 2.4530 (kg)
-Expected weight - 2.2500 (kg)
-Measured weight - 5.6836 (kg)
-
-
-Campaign 182 complete 
-
-
-Starting campaign: 183 at time:  205.5800  days 
-
-Prepare batch in Storage Buffer for transfer: 20.0 kg 
-
-
-Edge transition: 
-Moving batch from storage_buffer to key_measurement_point_0 
-
-Measurement event at KMP: 0
-Operation time 205.6633 (d) 
-True quantity 20.0000 (kg) 
-Expected quantity 20.0000 (kg) 
-Measured quantity 20.0507 (kg) 
-
-
-Edge transition: 
-Moving batch from key_measurement_point_0 to melter 
-
-Alloy melting
 Failure status:  True 
 
 
-Melter failed at time 206.0174, begin failure routine
+Melter failed at time 202.1434, begin failure routine
 
 Edge transition: 
 Moving batch from melter to key_measurement_point_3 
 
 Measurement event at KMP: 3
-Operation time 206.0590 (d) 
+Operation time 202.1850 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
-Measured quantity 20.0045 (kg) 
+Measured quantity 19.9945 (kg) 
 
 
 Edge transition: 
@@ -18427,10 +18041,10 @@ Edge transition:
 Moving heel from melter to key_measurement_point_3 
 
 Measurement event at KMP: 3
-Operation time 206.3714 (d) 
-True quantity 2.4530 (kg) 
-Expected quantity 2.2500 (kg) 
-Measured quantity 2.6869 (kg) 
+Operation time 202.4974 (d) 
+True quantity 3.1805 (kg) 
+Expected quantity 2.7500 (kg) 
+Measured quantity 3.1541 (kg) 
 
 
 Edge transition: 
@@ -18448,10 +18062,10 @@ Edge transition:
 Moving recycled batch from recycle_storage to key_measurement_point_3 
 
 Measurement event at KMP: 3
-Operation time 206.7671 (d) 
-True quantity 22.4530 (kg) 
-Expected quantity 22.2500 (kg) 
-Measured quantity 22.4253 (kg) 
+Operation time 202.8931 (d) 
+True quantity 23.1805 (kg) 
+Expected quantity 22.7500 (kg) 
+Measured quantity 23.2158 (kg) 
 
 
 Edge transition: 
@@ -18465,10 +18079,10 @@ Edge transition:
 Moving recycled batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 207.1628 (d) 
-True quantity 22.1691 (kg) 
-Expected quantity 22.0000 (kg) 
-Measured quantity 22.1432 (kg) 
+Operation time 203.2888 (d) 
+True quantity 22.7504 (kg) 
+Expected quantity 22.5000 (kg) 
+Measured quantity 22.7351 (kg) 
 
 
 Edge transition: 
@@ -18482,10 +18096,10 @@ Edge transition:
 Moving recycled batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 207.3502 (d) 
-True quantity 22.1691 (kg) 
-Expected quantity 22.0000 (kg) 
-Measured quantity 22.3284 (kg) 
+Operation time 203.4762 (d) 
+True quantity 22.7504 (kg) 
+Expected quantity 22.5000 (kg) 
+Measured quantity 22.6205 (kg) 
 
 
 Edge transition: 
@@ -18495,20 +18109,200 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 207.6210 (d) 
+Operation time 203.7470 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6341.7937 (kg)
-Expected inventory - 6341.2500 (kg)
-Measured inventory - 6341.1826 (kg)
+True inventory - 6380.9783 (kg)
+Expected inventory - 6380.7500 (kg)
+Measured inventory - 6380.2369 (kg)
 
 Product Storage:
-True inventory - 3657.9224 (kg)
+True inventory - 3618.5915 (kg)
+Expected inventory - 3619.0000 (kg)
+Measured inventory - 3618.1825 (kg)
+
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.4302 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.4807 (kg)
+
+MUF:
+True weight - 0.4302 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 1.5806 (kg)
+
+
+Campaign 181 complete 
+
+
+Starting campaign: 182 at time:  203.7470  days 
+
+Prepare batch in Storage Buffer for transfer: 20.0 kg 
+
+
+Edge transition: 
+Moving batch from storage_buffer to key_measurement_point_0 
+
+Measurement event at KMP: 0
+Operation time 203.8303 (d) 
+True quantity 20.0000 (kg) 
+Expected quantity 20.0000 (kg) 
+Measured quantity 20.1276 (kg) 
+
+
+Edge transition: 
+Moving batch from key_measurement_point_0 to melter 
+
+Alloy melting
+Failure status:  False 
+
+
+Edge transition: 
+Moving batch from melter to key_measurement_point_1 
+
+Measurement event at KMP: 1
+Operation time 204.2260 (d) 
+True quantity 19.5924 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.5969 (kg) 
+
+
+Edge transition: 
+Moving batch from key_measurement_point_1 to trimmer 
+
+Slug trimming
+Failure status:  False 
+
+
+Edge transition: 
+Moving batch from trimmer to key_measurement_point_2 
+
+Measurement event at KMP: 2
+Operation time 204.4134 (d) 
+True quantity 19.5924 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.8263 (kg) 
+
+
+Edge transition: 
+Moving batch from key_measurement_point_2 to product_storage 
+
+Processing the final product 
+
+
+Facility inspection 
+Operation time 204.6842 (d) 
+
+
+--Accounting materials in facility--
+
+Storage Buffer:
+True inventory - 6360.9783 (kg)
+Expected inventory - 6360.7500 (kg)
+Measured inventory - 6360.1093 (kg)
+
+Product Storage:
+True inventory - 3638.1839 (kg)
+Expected inventory - 3638.7500 (kg)
+Measured inventory - 3638.0089 (kg)
+
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.4076 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.5307 (kg)
+
+MUF:
+True weight - 0.8378 (kg)
+Expected weight - 0.5000 (kg)
+Measured weight - 1.8818 (kg)
+
+
+Campaign 182 complete 
+
+
+Starting campaign: 183 at time:  204.6842  days 
+
+Prepare batch in Storage Buffer for transfer: 20.0 kg 
+
+
+Edge transition: 
+Moving batch from storage_buffer to key_measurement_point_0 
+
+Measurement event at KMP: 0
+Operation time 204.7675 (d) 
+True quantity 20.0000 (kg) 
+Expected quantity 20.0000 (kg) 
+Measured quantity 19.9724 (kg) 
+
+
+Edge transition: 
+Moving batch from key_measurement_point_0 to melter 
+
+Alloy melting
+Failure status:  False 
+
+
+Edge transition: 
+Moving batch from melter to key_measurement_point_1 
+
+Measurement event at KMP: 1
+Operation time 205.1632 (d) 
+True quantity 19.7162 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.6902 (kg) 
+
+
+Edge transition: 
+Moving batch from key_measurement_point_1 to trimmer 
+
+Slug trimming
+Failure status:  False 
+
+
+Edge transition: 
+Moving batch from trimmer to key_measurement_point_2 
+
+Measurement event at KMP: 2
+Operation time 205.3506 (d) 
+True quantity 19.7162 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.8754 (kg) 
+
+
+Edge transition: 
+Moving batch from key_measurement_point_2 to product_storage 
+
+Processing the final product 
+
+
+Facility inspection 
+Operation time 205.6214 (d) 
+
+
+--Accounting materials in facility--
+
+Storage Buffer:
+True inventory - 6340.9783 (kg)
+Expected inventory - 6340.7500 (kg)
+Measured inventory - 6340.1369 (kg)
+
+Product Storage:
+True inventory - 3657.9001 (kg)
 Expected inventory - 3658.5000 (kg)
-Measured inventory - 3655.4116 (kg)
+Measured inventory - 3657.8843 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -18521,15 +18315,15 @@ Expected weight - 0.2500 (kg)
 Measured weight - 0.2822 (kg)
 
 MUF:
-True weight - 0.2838 (kg)
-Expected weight - 0.2500 (kg)
-Measured weight - 3.4059 (kg)
+True weight - 1.1216 (kg)
+Expected weight - 0.7500 (kg)
+Measured weight - 1.9788 (kg)
 
 
 Campaign 183 complete 
 
 
-Starting campaign: 184 at time:  207.6210  days 
+Starting campaign: 184 at time:  205.6214  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -18538,7 +18332,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 207.7043 (d) 
+Operation time 205.7047 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 19.9741 (kg) 
@@ -18555,7 +18349,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 208.1000 (d) 
+Operation time 206.1004 (d) 
 True quantity 19.7168 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.6856 (kg) 
@@ -18572,7 +18366,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 208.2874 (d) 
+Operation time 206.2878 (d) 
 True quantity 19.7168 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.6328 (kg) 
@@ -18585,20 +18379,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 208.5582 (d) 
+Operation time 206.5586 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6321.7937 (kg)
-Expected inventory - 6321.2500 (kg)
-Measured inventory - 6321.2084 (kg)
+True inventory - 6320.9783 (kg)
+Expected inventory - 6320.7500 (kg)
+Measured inventory - 6320.1628 (kg)
 
 Product Storage:
-True inventory - 3677.6393 (kg)
+True inventory - 3677.6169 (kg)
 Expected inventory - 3678.2500 (kg)
-Measured inventory - 3675.0444 (kg)
+Measured inventory - 3677.5171 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -18611,15 +18405,15 @@ Expected weight - 0.2500 (kg)
 Measured weight - 0.2885 (kg)
 
 MUF:
-True weight - 0.5670 (kg)
-Expected weight - 0.5000 (kg)
-Measured weight - 3.7472 (kg)
+True weight - 1.4048 (kg)
+Expected weight - 1.0000 (kg)
+Measured weight - 2.3201 (kg)
 
 
 Campaign 184 complete 
 
 
-Starting campaign: 185 at time:  208.5582  days 
+Starting campaign: 185 at time:  206.5586  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -18628,7 +18422,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 208.6415 (d) 
+Operation time 206.6419 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 19.8993 (kg) 
@@ -18641,13 +18435,13 @@ Alloy melting
 Failure status:  True 
 
 
-Melter failed at time 208.9956, begin failure routine
+Melter failed at time 206.9960, begin failure routine
 
 Edge transition: 
 Moving batch from melter to key_measurement_point_3 
 
 Measurement event at KMP: 3
-Operation time 209.0372 (d) 
+Operation time 207.0376 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 20.1682 (kg) 
@@ -18665,10 +18459,10 @@ Edge transition:
 Moving heel from melter to key_measurement_point_3 
 
 Measurement event at KMP: 3
-Operation time 209.3496 (d) 
-True quantity 0.5670 (kg) 
-Expected quantity 0.5000 (kg) 
-Measured quantity 0.5544 (kg) 
+Operation time 207.3500 (d) 
+True quantity 1.4048 (kg) 
+Expected quantity 1.0000 (kg) 
+Measured quantity 1.3922 (kg) 
 
 
 Edge transition: 
@@ -18686,10 +18480,10 @@ Edge transition:
 Moving recycled batch from recycle_storage to key_measurement_point_3 
 
 Measurement event at KMP: 3
-Operation time 209.7453 (d) 
-True quantity 20.5670 (kg) 
-Expected quantity 20.5000 (kg) 
-Measured quantity 20.5421 (kg) 
+Operation time 207.7457 (d) 
+True quantity 21.4048 (kg) 
+Expected quantity 21.0000 (kg) 
+Measured quantity 21.3799 (kg) 
 
 
 Edge transition: 
@@ -18703,10 +18497,10 @@ Edge transition:
 Moving recycled batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 210.1410 (d) 
-True quantity 20.0845 (kg) 
-Expected quantity 20.2500 (kg) 
-Measured quantity 20.1207 (kg) 
+Operation time 208.1414 (d) 
+True quantity 20.9222 (kg) 
+Expected quantity 20.7500 (kg) 
+Measured quantity 20.9584 (kg) 
 
 
 Edge transition: 
@@ -18720,10 +18514,10 @@ Edge transition:
 Moving recycled batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 210.3284 (d) 
-True quantity 20.0845 (kg) 
-Expected quantity 20.2500 (kg) 
-Measured quantity 20.0431 (kg) 
+Operation time 208.3288 (d) 
+True quantity 20.9222 (kg) 
+Expected quantity 20.7500 (kg) 
+Measured quantity 20.8809 (kg) 
 
 
 Edge transition: 
@@ -18733,20 +18527,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 210.5992 (d) 
+Operation time 208.5996 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6301.7937 (kg)
-Expected inventory - 6301.2500 (kg)
-Measured inventory - 6301.3091 (kg)
+True inventory - 6300.9783 (kg)
+Expected inventory - 6300.7500 (kg)
+Measured inventory - 6300.2635 (kg)
 
 Product Storage:
-True inventory - 3697.7237 (kg)
-Expected inventory - 3698.5000 (kg)
-Measured inventory - 3695.0875 (kg)
+True inventory - 3698.5391 (kg)
+Expected inventory - 3699.0000 (kg)
+Measured inventory - 3698.3980 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -18761,13 +18555,13 @@ Measured weight - 0.4215 (kg)
 MUF:
 True weight - 0.4825 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 3.6034 (kg)
+Measured weight - 1.3385 (kg)
 
 
 Campaign 185 complete 
 
 
-Starting campaign: 186 at time:  210.5992  days 
+Starting campaign: 186 at time:  208.5996  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -18776,7 +18570,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 210.6825 (d) 
+Operation time 208.6829 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 20.1540 (kg) 
@@ -18793,7 +18587,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 211.0782 (d) 
+Operation time 209.0786 (d) 
 True quantity 19.5141 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.7056 (kg) 
@@ -18810,7 +18604,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 211.2656 (d) 
+Operation time 209.2660 (d) 
 True quantity 19.5141 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.6355 (kg) 
@@ -18823,20 +18617,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 211.5364 (d) 
+Operation time 209.5368 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6281.7937 (kg)
-Expected inventory - 6281.2500 (kg)
-Measured inventory - 6281.1551 (kg)
+True inventory - 6280.9783 (kg)
+Expected inventory - 6280.7500 (kg)
+Measured inventory - 6280.1094 (kg)
 
 Product Storage:
-True inventory - 3717.2378 (kg)
-Expected inventory - 3718.2500 (kg)
-Measured inventory - 3714.7230 (kg)
+True inventory - 3718.0532 (kg)
+Expected inventory - 3718.7500 (kg)
+Measured inventory - 3718.0335 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -18851,13 +18645,13 @@ Measured weight - 0.4485 (kg)
 MUF:
 True weight - 0.9684 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 4.1219 (kg)
+Measured weight - 1.8570 (kg)
 
 
 Campaign 186 complete 
 
 
-Starting campaign: 187 at time:  211.5364  days 
+Starting campaign: 187 at time:  209.5368  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -18866,7 +18660,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 211.6197 (d) 
+Operation time 209.6201 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 19.9426 (kg) 
@@ -18883,7 +18677,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 212.0154 (d) 
+Operation time 210.0158 (d) 
 True quantity 19.8022 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.8134 (kg) 
@@ -18900,7 +18694,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 212.2028 (d) 
+Operation time 210.2032 (d) 
 True quantity 19.8022 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.8541 (kg) 
@@ -18913,20 +18707,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 212.4736 (d) 
+Operation time 210.4740 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6261.7937 (kg)
-Expected inventory - 6261.2500 (kg)
-Measured inventory - 6261.2125 (kg)
+True inventory - 6260.9783 (kg)
+Expected inventory - 6260.7500 (kg)
+Measured inventory - 6260.1669 (kg)
 
 Product Storage:
-True inventory - 3737.0400 (kg)
-Expected inventory - 3738.0000 (kg)
-Measured inventory - 3734.5771 (kg)
+True inventory - 3737.8554 (kg)
+Expected inventory - 3738.5000 (kg)
+Measured inventory - 3737.8876 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -18941,13 +18735,13 @@ Measured weight - 0.1292 (kg)
 MUF:
 True weight - 1.1662 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 4.2104 (kg)
+Measured weight - 1.9455 (kg)
 
 
 Campaign 187 complete 
 
 
-Starting campaign: 188 at time:  212.4736  days 
+Starting campaign: 188 at time:  210.4740  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -18956,7 +18750,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 212.5569 (d) 
+Operation time 210.5573 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 19.9789 (kg) 
@@ -18973,7 +18767,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 212.9526 (d) 
+Operation time 210.9530 (d) 
 True quantity 19.6531 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.5556 (kg) 
@@ -18990,7 +18784,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 213.1400 (d) 
+Operation time 211.1404 (d) 
 True quantity 19.6531 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.6334 (kg) 
@@ -19003,20 +18797,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 213.4108 (d) 
+Operation time 211.4112 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6241.7937 (kg)
-Expected inventory - 6241.2500 (kg)
-Measured inventory - 6241.2336 (kg)
+True inventory - 6240.9783 (kg)
+Expected inventory - 6240.7500 (kg)
+Measured inventory - 6240.1879 (kg)
 
 Product Storage:
-True inventory - 3756.6931 (kg)
-Expected inventory - 3757.7500 (kg)
-Measured inventory - 3754.2105 (kg)
+True inventory - 3757.5086 (kg)
+Expected inventory - 3758.2500 (kg)
+Measured inventory - 3757.5210 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -19031,13 +18825,13 @@ Measured weight - 0.4233 (kg)
 MUF:
 True weight - 1.5131 (kg)
 Expected weight - 1.0000 (kg)
-Measured weight - 4.5559 (kg)
+Measured weight - 2.2911 (kg)
 
 
 Campaign 188 complete 
 
 
-Starting campaign: 189 at time:  213.4108  days 
+Starting campaign: 189 at time:  211.4112  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -19046,7 +18840,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 213.4941 (d) 
+Operation time 211.4945 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 20.0342 (kg) 
@@ -19063,7 +18857,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 213.8898 (d) 
+Operation time 211.8902 (d) 
 True quantity 19.7701 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.8264 (kg) 
@@ -19080,7 +18874,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 214.0772 (d) 
+Operation time 212.0776 (d) 
 True quantity 19.7701 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.7792 (kg) 
@@ -19093,20 +18887,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 214.3480 (d) 
+Operation time 212.3484 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6221.7937 (kg)
-Expected inventory - 6221.2500 (kg)
-Measured inventory - 6221.1994 (kg)
+True inventory - 6220.9783 (kg)
+Expected inventory - 6220.7500 (kg)
+Measured inventory - 6220.1537 (kg)
 
 Product Storage:
-True inventory - 3776.4632 (kg)
-Expected inventory - 3777.5000 (kg)
-Measured inventory - 3773.9897 (kg)
+True inventory - 3777.2786 (kg)
+Expected inventory - 3778.0000 (kg)
+Measured inventory - 3777.3002 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -19121,13 +18915,13 @@ Measured weight - 0.2078 (kg)
 MUF:
 True weight - 1.7431 (kg)
 Expected weight - 1.2500 (kg)
-Measured weight - 4.8109 (kg)
+Measured weight - 2.5461 (kg)
 
 
 Campaign 189 complete 
 
 
-Starting campaign: 190 at time:  214.3480  days 
+Starting campaign: 190 at time:  212.3484  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -19136,7 +18930,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 214.4313 (d) 
+Operation time 212.4317 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 20.0824 (kg) 
@@ -19153,7 +18947,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 214.8270 (d) 
+Operation time 212.8274 (d) 
 True quantity 19.7850 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.7550 (kg) 
@@ -19170,7 +18964,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 215.0144 (d) 
+Operation time 213.0148 (d) 
 True quantity 19.7850 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.9344 (kg) 
@@ -19183,20 +18977,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 215.2852 (d) 
+Operation time 213.2856 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6201.7937 (kg)
-Expected inventory - 6201.2500 (kg)
-Measured inventory - 6201.1169 (kg)
+True inventory - 6200.9783 (kg)
+Expected inventory - 6200.7500 (kg)
+Measured inventory - 6200.0713 (kg)
 
 Product Storage:
-True inventory - 3796.2482 (kg)
-Expected inventory - 3797.2500 (kg)
-Measured inventory - 3793.9241 (kg)
+True inventory - 3797.0636 (kg)
+Expected inventory - 3797.7500 (kg)
+Measured inventory - 3797.2346 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -19211,13 +19005,13 @@ Measured weight - 0.3274 (kg)
 MUF:
 True weight - 1.9581 (kg)
 Expected weight - 1.5000 (kg)
-Measured weight - 4.9590 (kg)
+Measured weight - 2.6941 (kg)
 
 
 Campaign 190 complete 
 
 
-Starting campaign: 191 at time:  215.2852  days 
+Starting campaign: 191 at time:  213.2856  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -19226,7 +19020,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 215.3685 (d) 
+Operation time 213.3689 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 20.0011 (kg) 
@@ -19243,7 +19037,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 215.7642 (d) 
+Operation time 213.7646 (d) 
 True quantity 19.6032 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.6984 (kg) 
@@ -19260,7 +19054,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 215.9516 (d) 
+Operation time 213.9520 (d) 
 True quantity 19.6032 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.5401 (kg) 
@@ -19273,20 +19067,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 216.2224 (d) 
+Operation time 214.2228 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6181.7937 (kg)
-Expected inventory - 6181.2500 (kg)
-Measured inventory - 6181.1158 (kg)
+True inventory - 6180.9783 (kg)
+Expected inventory - 6180.7500 (kg)
+Measured inventory - 6180.0702 (kg)
 
 Product Storage:
-True inventory - 3815.8514 (kg)
-Expected inventory - 3817.0000 (kg)
-Measured inventory - 3813.4642 (kg)
+True inventory - 3816.6668 (kg)
+Expected inventory - 3817.5000 (kg)
+Measured inventory - 3816.7747 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -19301,13 +19095,13 @@ Measured weight - 0.3027 (kg)
 MUF:
 True weight - 2.3548 (kg)
 Expected weight - 1.7500 (kg)
-Measured weight - 5.4200 (kg)
+Measured weight - 3.1551 (kg)
 
 
 Campaign 191 complete 
 
 
-Starting campaign: 192 at time:  216.2224  days 
+Starting campaign: 192 at time:  214.2228  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -19316,7 +19110,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 216.3057 (d) 
+Operation time 214.3061 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 19.8580 (kg) 
@@ -19333,7 +19127,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 216.7014 (d) 
+Operation time 214.7018 (d) 
 True quantity 19.9893 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 20.2494 (kg) 
@@ -19350,7 +19144,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 216.8888 (d) 
+Operation time 214.8892 (d) 
 True quantity 19.9893 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.9588 (kg) 
@@ -19363,20 +19157,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 217.1596 (d) 
+Operation time 215.1600 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6161.7937 (kg)
-Expected inventory - 6161.2500 (kg)
-Measured inventory - 6161.2579 (kg)
+True inventory - 6160.9783 (kg)
+Expected inventory - 6160.7500 (kg)
+Measured inventory - 6160.2122 (kg)
 
 Product Storage:
-True inventory - 3835.8407 (kg)
-Expected inventory - 3836.7500 (kg)
-Measured inventory - 3833.4230 (kg)
+True inventory - 3836.6562 (kg)
+Expected inventory - 3837.2500 (kg)
+Measured inventory - 3836.7335 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -19391,13 +19185,13 @@ Measured weight - -0.3914 (kg)
 MUF:
 True weight - 2.3655 (kg)
 Expected weight - 2.0000 (kg)
-Measured weight - 5.3191 (kg)
+Measured weight - 3.0542 (kg)
 
 
 Campaign 192 complete 
 
 
-Starting campaign: 193 at time:  217.1596  days 
+Starting campaign: 193 at time:  215.1600  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -19406,7 +19200,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 217.2429 (d) 
+Operation time 215.2433 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 19.9417 (kg) 
@@ -19423,7 +19217,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 217.6386 (d) 
+Operation time 215.6390 (d) 
 True quantity 19.9301 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.8922 (kg) 
@@ -19440,7 +19234,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 217.8260 (d) 
+Operation time 215.8264 (d) 
 True quantity 19.9301 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.9158 (kg) 
@@ -19453,20 +19247,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 218.0968 (d) 
+Operation time 216.0972 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6141.7937 (kg)
-Expected inventory - 6141.2500 (kg)
-Measured inventory - 6141.3162 (kg)
+True inventory - 6140.9783 (kg)
+Expected inventory - 6140.7500 (kg)
+Measured inventory - 6140.2706 (kg)
 
 Product Storage:
-True inventory - 3855.7709 (kg)
-Expected inventory - 3856.5000 (kg)
-Measured inventory - 3853.3388 (kg)
+True inventory - 3856.5863 (kg)
+Expected inventory - 3857.0000 (kg)
+Measured inventory - 3856.6493 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -19481,13 +19275,13 @@ Measured weight - 0.0495 (kg)
 MUF:
 True weight - 2.4354 (kg)
 Expected weight - 2.2500 (kg)
-Measured weight - 5.3450 (kg)
+Measured weight - 3.0801 (kg)
 
 
 Campaign 193 complete 
 
 
-Starting campaign: 194 at time:  218.0968  days 
+Starting campaign: 194 at time:  216.0972  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -19496,7 +19290,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 218.1801 (d) 
+Operation time 216.1805 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 19.8774 (kg) 
@@ -19513,7 +19307,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 218.5758 (d) 
+Operation time 216.5762 (d) 
 True quantity 19.5774 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.4623 (kg) 
@@ -19530,7 +19324,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 218.7632 (d) 
+Operation time 216.7636 (d) 
 True quantity 19.5774 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.5491 (kg) 
@@ -19543,20 +19337,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 219.0340 (d) 
+Operation time 217.0344 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6121.7937 (kg)
-Expected inventory - 6121.2500 (kg)
-Measured inventory - 6121.4388 (kg)
+True inventory - 6120.9783 (kg)
+Expected inventory - 6120.7500 (kg)
+Measured inventory - 6120.3932 (kg)
 
 Product Storage:
-True inventory - 3875.3483 (kg)
-Expected inventory - 3876.2500 (kg)
-Measured inventory - 3872.8879 (kg)
+True inventory - 3876.1637 (kg)
+Expected inventory - 3876.7500 (kg)
+Measured inventory - 3876.1984 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -19571,13 +19365,13 @@ Measured weight - 0.4151 (kg)
 MUF:
 True weight - 2.8580 (kg)
 Expected weight - 2.5000 (kg)
-Measured weight - 5.6733 (kg)
+Measured weight - 3.4084 (kg)
 
 
 Campaign 194 complete 
 
 
-Starting campaign: 195 at time:  219.0340  days 
+Starting campaign: 195 at time:  217.0344  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -19586,7 +19380,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 219.1173 (d) 
+Operation time 217.1177 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 19.9930 (kg) 
@@ -19603,7 +19397,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 219.5130 (d) 
+Operation time 217.5134 (d) 
 True quantity 19.6697 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.6148 (kg) 
@@ -19620,7 +19414,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 219.7004 (d) 
+Operation time 217.7008 (d) 
 True quantity 19.6697 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.4948 (kg) 
@@ -19633,20 +19427,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 219.9712 (d) 
+Operation time 217.9716 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6101.7937 (kg)
-Expected inventory - 6101.2500 (kg)
-Measured inventory - 6101.4458 (kg)
+True inventory - 6100.9783 (kg)
+Expected inventory - 6100.7500 (kg)
+Measured inventory - 6100.4002 (kg)
 
 Product Storage:
-True inventory - 3895.0180 (kg)
-Expected inventory - 3896.0000 (kg)
-Measured inventory - 3892.3827 (kg)
+True inventory - 3895.8334 (kg)
+Expected inventory - 3896.5000 (kg)
+Measured inventory - 3895.6932 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -19661,13 +19455,13 @@ Measured weight - 0.3783 (kg)
 MUF:
 True weight - 3.1882 (kg)
 Expected weight - 2.7500 (kg)
-Measured weight - 6.1715 (kg)
+Measured weight - 3.9067 (kg)
 
 
 Campaign 195 complete 
 
 
-Starting campaign: 196 at time:  219.9712  days 
+Starting campaign: 196 at time:  217.9716  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -19676,7 +19470,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 220.0545 (d) 
+Operation time 218.0549 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 20.0628 (kg) 
@@ -19693,7 +19487,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 220.4502 (d) 
+Operation time 218.4506 (d) 
 True quantity 19.6894 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.7940 (kg) 
@@ -19710,7 +19504,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 220.6376 (d) 
+Operation time 218.6380 (d) 
 True quantity 19.6894 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.7655 (kg) 
@@ -19723,20 +19517,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 220.9084 (d) 
+Operation time 218.9088 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6081.7937 (kg)
-Expected inventory - 6081.2500 (kg)
-Measured inventory - 6081.3830 (kg)
+True inventory - 6080.9783 (kg)
+Expected inventory - 6080.7500 (kg)
+Measured inventory - 6080.3373 (kg)
 
 Product Storage:
-True inventory - 3914.7075 (kg)
-Expected inventory - 3915.7500 (kg)
-Measured inventory - 3912.1482 (kg)
+True inventory - 3915.5229 (kg)
+Expected inventory - 3916.2500 (kg)
+Measured inventory - 3915.4587 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -19751,13 +19545,13 @@ Measured weight - 0.2688 (kg)
 MUF:
 True weight - 3.4988 (kg)
 Expected weight - 3.0000 (kg)
-Measured weight - 6.4688 (kg)
+Measured weight - 4.2040 (kg)
 
 
 Campaign 196 complete 
 
 
-Starting campaign: 197 at time:  220.9084  days 
+Starting campaign: 197 at time:  218.9088  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -19766,7 +19560,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 220.9917 (d) 
+Operation time 218.9921 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 20.0966 (kg) 
@@ -19779,13 +19573,13 @@ Alloy melting
 Failure status:  True 
 
 
-Melter failed at time 221.3458, begin failure routine
+Melter failed at time 219.3462, begin failure routine
 
 Edge transition: 
 Moving batch from melter to key_measurement_point_3 
 
 Measurement event at KMP: 3
-Operation time 221.3874 (d) 
+Operation time 219.3878 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 19.8852 (kg) 
@@ -19803,7 +19597,7 @@ Edge transition:
 Moving heel from melter to key_measurement_point_3 
 
 Measurement event at KMP: 3
-Operation time 221.6998 (d) 
+Operation time 219.7002 (d) 
 True quantity 3.4988 (kg) 
 Expected quantity 3.0000 (kg) 
 Measured quantity 3.4630 (kg) 
@@ -19824,7 +19618,7 @@ Edge transition:
 Moving recycled batch from recycle_storage to key_measurement_point_3 
 
 Measurement event at KMP: 3
-Operation time 222.0955 (d) 
+Operation time 220.0959 (d) 
 True quantity 23.4988 (kg) 
 Expected quantity 23.0000 (kg) 
 Measured quantity 23.5544 (kg) 
@@ -19841,7 +19635,7 @@ Edge transition:
 Moving recycled batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 222.4912 (d) 
+Operation time 220.4916 (d) 
 True quantity 23.0155 (kg) 
 Expected quantity 22.7500 (kg) 
 Measured quantity 23.1048 (kg) 
@@ -19858,7 +19652,7 @@ Edge transition:
 Moving recycled batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 222.6786 (d) 
+Operation time 220.6790 (d) 
 True quantity 23.0155 (kg) 
 Expected quantity 22.7500 (kg) 
 Measured quantity 22.9733 (kg) 
@@ -19871,20 +19665,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 222.9494 (d) 
+Operation time 220.9498 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6061.7937 (kg)
-Expected inventory - 6061.2500 (kg)
-Measured inventory - 6061.2863 (kg)
+True inventory - 6060.9783 (kg)
+Expected inventory - 6060.7500 (kg)
+Measured inventory - 6060.2407 (kg)
 
 Product Storage:
-True inventory - 3937.7230 (kg)
-Expected inventory - 3938.5000 (kg)
-Measured inventory - 3935.1215 (kg)
+True inventory - 3938.5384 (kg)
+Expected inventory - 3939.0000 (kg)
+Measured inventory - 3938.4320 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -19899,13 +19693,13 @@ Measured weight - 0.4496 (kg)
 MUF:
 True weight - 0.4833 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 3.5922 (kg)
+Measured weight - 1.3273 (kg)
 
 
 Campaign 197 complete 
 
 
-Starting campaign: 198 at time:  222.9494  days 
+Starting campaign: 198 at time:  220.9498  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -19914,7 +19708,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 223.0327 (d) 
+Operation time 221.0331 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 20.0105 (kg) 
@@ -19927,13 +19721,13 @@ Alloy melting
 Failure status:  True 
 
 
-Melter failed at time 223.3868, begin failure routine
+Melter failed at time 221.3872, begin failure routine
 
 Edge transition: 
 Moving batch from melter to key_measurement_point_3 
 
 Measurement event at KMP: 3
-Operation time 223.4284 (d) 
+Operation time 221.4288 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 20.1030 (kg) 
@@ -19951,7 +19745,7 @@ Edge transition:
 Moving heel from melter to key_measurement_point_3 
 
 Measurement event at KMP: 3
-Operation time 223.7408 (d) 
+Operation time 221.7412 (d) 
 True quantity 0.4833 (kg) 
 Expected quantity 0.2500 (kg) 
 Measured quantity 0.4330 (kg) 
@@ -19972,7 +19766,7 @@ Edge transition:
 Moving recycled batch from recycle_storage to key_measurement_point_3 
 
 Measurement event at KMP: 3
-Operation time 224.1365 (d) 
+Operation time 222.1369 (d) 
 True quantity 20.4833 (kg) 
 Expected quantity 20.2500 (kg) 
 Measured quantity 20.4577 (kg) 
@@ -19989,7 +19783,7 @@ Edge transition:
 Moving recycled batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 224.5322 (d) 
+Operation time 222.5326 (d) 
 True quantity 19.9921 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 20.0463 (kg) 
@@ -20006,7 +19800,7 @@ Edge transition:
 Moving recycled batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 224.7196 (d) 
+Operation time 222.7200 (d) 
 True quantity 19.9921 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 20.1592 (kg) 
@@ -20019,20 +19813,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 224.9904 (d) 
+Operation time 222.9908 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6041.7937 (kg)
-Expected inventory - 6041.2500 (kg)
-Measured inventory - 6041.2758 (kg)
+True inventory - 6040.9783 (kg)
+Expected inventory - 6040.7500 (kg)
+Measured inventory - 6040.2302 (kg)
 
 Product Storage:
-True inventory - 3957.7150 (kg)
-Expected inventory - 3958.5000 (kg)
-Measured inventory - 3955.2807 (kg)
+True inventory - 3958.5305 (kg)
+Expected inventory - 3959.0000 (kg)
+Measured inventory - 3958.5912 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -20047,13 +19841,13 @@ Measured weight - 0.4114 (kg)
 MUF:
 True weight - 0.4912 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 3.4435 (kg)
+Measured weight - 1.1786 (kg)
 
 
 Campaign 198 complete 
 
 
-Starting campaign: 199 at time:  224.9904  days 
+Starting campaign: 199 at time:  222.9908  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -20062,7 +19856,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 225.0737 (d) 
+Operation time 223.0741 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 19.8997 (kg) 
@@ -20079,7 +19873,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 225.4694 (d) 
+Operation time 223.4698 (d) 
 True quantity 19.6159 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.4569 (kg) 
@@ -20096,7 +19890,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 225.6568 (d) 
+Operation time 223.6572 (d) 
 True quantity 19.6159 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.6327 (kg) 
@@ -20109,20 +19903,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 225.9276 (d) 
+Operation time 223.9280 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6021.7937 (kg)
-Expected inventory - 6021.2500 (kg)
-Measured inventory - 6021.3761 (kg)
+True inventory - 6020.9783 (kg)
+Expected inventory - 6020.7500 (kg)
+Measured inventory - 6020.3305 (kg)
 
 Product Storage:
-True inventory - 3977.3309 (kg)
-Expected inventory - 3978.2500 (kg)
-Measured inventory - 3974.9134 (kg)
+True inventory - 3978.1464 (kg)
+Expected inventory - 3978.7500 (kg)
+Measured inventory - 3978.2239 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -20137,13 +19931,13 @@ Measured weight - 0.4428 (kg)
 MUF:
 True weight - 0.8753 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 3.7105 (kg)
+Measured weight - 1.4456 (kg)
 
 
 Campaign 199 complete 
 
 
-Starting campaign: 200 at time:  225.9276  days 
+Starting campaign: 200 at time:  223.9280  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -20152,7 +19946,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 226.0109 (d) 
+Operation time 224.0113 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 19.9073 (kg) 
@@ -20169,7 +19963,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 226.4066 (d) 
+Operation time 224.4070 (d) 
 True quantity 19.6484 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.5608 (kg) 
@@ -20186,7 +19980,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 226.5940 (d) 
+Operation time 224.5944 (d) 
 True quantity 19.6484 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.6600 (kg) 
@@ -20199,20 +19993,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 226.8648 (d) 
+Operation time 224.8652 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 6001.7937 (kg)
-Expected inventory - 6001.2500 (kg)
-Measured inventory - 6001.4688 (kg)
+True inventory - 6000.9783 (kg)
+Expected inventory - 6000.7500 (kg)
+Measured inventory - 6000.4232 (kg)
 
 Product Storage:
-True inventory - 3996.9794 (kg)
-Expected inventory - 3998.0000 (kg)
-Measured inventory - 3994.5734 (kg)
+True inventory - 3997.7948 (kg)
+Expected inventory - 3998.5000 (kg)
+Measured inventory - 3997.8839 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -20227,13 +20021,13 @@ Measured weight - 0.3465 (kg)
 MUF:
 True weight - 1.2269 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 3.9578 (kg)
+Measured weight - 1.6929 (kg)
 
 
 Campaign 200 complete 
 
 
-Starting campaign: 201 at time:  226.8648  days 
+Starting campaign: 201 at time:  224.8652  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -20242,7 +20036,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 226.9481 (d) 
+Operation time 224.9485 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 20.0269 (kg) 
@@ -20259,7 +20053,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 227.3438 (d) 
+Operation time 225.3442 (d) 
 True quantity 19.9155 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.7925 (kg) 
@@ -20276,7 +20070,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 227.5312 (d) 
+Operation time 225.5316 (d) 
 True quantity 19.9155 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.7358 (kg) 
@@ -20289,20 +20083,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 227.8020 (d) 
+Operation time 225.8024 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 5981.7937 (kg)
-Expected inventory - 5981.2500 (kg)
-Measured inventory - 5981.4420 (kg)
+True inventory - 5980.9783 (kg)
+Expected inventory - 5980.7500 (kg)
+Measured inventory - 5980.3963 (kg)
 
 Product Storage:
-True inventory - 4016.8949 (kg)
-Expected inventory - 4017.7500 (kg)
-Measured inventory - 4014.3091 (kg)
+True inventory - 4017.7103 (kg)
+Expected inventory - 4018.2500 (kg)
+Measured inventory - 4017.6196 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -20317,13 +20111,13 @@ Measured weight - 0.2344 (kg)
 MUF:
 True weight - 1.3114 (kg)
 Expected weight - 1.0000 (kg)
-Measured weight - 4.2489 (kg)
+Measured weight - 1.9840 (kg)
 
 
 Campaign 201 complete 
 
 
-Starting campaign: 202 at time:  227.8020  days 
+Starting campaign: 202 at time:  225.8024  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -20332,7 +20126,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 227.8853 (d) 
+Operation time 225.8857 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 19.8863 (kg) 
@@ -20349,7 +20143,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 228.2810 (d) 
+Operation time 226.2814 (d) 
 True quantity 19.8221 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.9259 (kg) 
@@ -20366,7 +20160,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 228.4684 (d) 
+Operation time 226.4688 (d) 
 True quantity 19.8221 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.8545 (kg) 
@@ -20379,20 +20173,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 228.7392 (d) 
+Operation time 226.7396 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 5961.7937 (kg)
-Expected inventory - 5961.2500 (kg)
-Measured inventory - 5961.5557 (kg)
+True inventory - 5960.9783 (kg)
+Expected inventory - 5960.7500 (kg)
+Measured inventory - 5960.5100 (kg)
 
 Product Storage:
-True inventory - 4036.7169 (kg)
-Expected inventory - 4037.5000 (kg)
-Measured inventory - 4034.1636 (kg)
+True inventory - 4037.5324 (kg)
+Expected inventory - 4038.0000 (kg)
+Measured inventory - 4037.4741 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -20407,13 +20201,13 @@ Measured weight - -0.0396 (kg)
 MUF:
 True weight - 1.4893 (kg)
 Expected weight - 1.2500 (kg)
-Measured weight - 4.2807 (kg)
+Measured weight - 2.0158 (kg)
 
 
 Campaign 202 complete 
 
 
-Starting campaign: 203 at time:  228.7392  days 
+Starting campaign: 203 at time:  226.7396  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -20422,7 +20216,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 228.8225 (d) 
+Operation time 226.8229 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 20.1297 (kg) 
@@ -20435,13 +20229,13 @@ Alloy melting
 Failure status:  True 
 
 
-Melter failed at time 229.1766, begin failure routine
+Melter failed at time 227.1770, begin failure routine
 
 Edge transition: 
 Moving batch from melter to key_measurement_point_3 
 
 Measurement event at KMP: 3
-Operation time 229.2182 (d) 
+Operation time 227.2186 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 19.9793 (kg) 
@@ -20459,7 +20253,7 @@ Edge transition:
 Moving heel from melter to key_measurement_point_3 
 
 Measurement event at KMP: 3
-Operation time 229.5306 (d) 
+Operation time 227.5310 (d) 
 True quantity 1.4893 (kg) 
 Expected quantity 1.2500 (kg) 
 Measured quantity 1.4215 (kg) 
@@ -20480,7 +20274,7 @@ Edge transition:
 Moving recycled batch from recycle_storage to key_measurement_point_3 
 
 Measurement event at KMP: 3
-Operation time 229.9263 (d) 
+Operation time 227.9267 (d) 
 True quantity 21.4893 (kg) 
 Expected quantity 21.2500 (kg) 
 Measured quantity 21.5647 (kg) 
@@ -20497,7 +20291,7 @@ Edge transition:
 Moving recycled batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 230.3220 (d) 
+Operation time 228.3224 (d) 
 True quantity 21.1057 (kg) 
 Expected quantity 21.0000 (kg) 
 Measured quantity 21.2122 (kg) 
@@ -20514,7 +20308,7 @@ Edge transition:
 Moving recycled batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 230.5094 (d) 
+Operation time 228.5098 (d) 
 True quantity 21.1057 (kg) 
 Expected quantity 21.0000 (kg) 
 Measured quantity 21.1460 (kg) 
@@ -20527,20 +20321,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 230.7802 (d) 
+Operation time 228.7806 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 5941.7937 (kg)
-Expected inventory - 5941.2500 (kg)
-Measured inventory - 5941.4260 (kg)
+True inventory - 5940.9783 (kg)
+Expected inventory - 5940.7500 (kg)
+Measured inventory - 5940.3804 (kg)
 
 Product Storage:
-True inventory - 4057.8227 (kg)
-Expected inventory - 4058.5000 (kg)
-Measured inventory - 4055.3096 (kg)
+True inventory - 4058.6381 (kg)
+Expected inventory - 4059.0000 (kg)
+Measured inventory - 4058.6201 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -20555,13 +20349,13 @@ Measured weight - 0.3525 (kg)
 MUF:
 True weight - 0.3836 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 3.2644 (kg)
+Measured weight - 0.9996 (kg)
 
 
 Campaign 203 complete 
 
 
-Starting campaign: 204 at time:  230.7802  days 
+Starting campaign: 204 at time:  228.7806  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -20570,7 +20364,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 230.8635 (d) 
+Operation time 228.8639 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 19.8224 (kg) 
@@ -20587,7 +20381,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 231.2592 (d) 
+Operation time 229.2596 (d) 
 True quantity 19.6302 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.6910 (kg) 
@@ -20604,7 +20398,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 231.4466 (d) 
+Operation time 229.4470 (d) 
 True quantity 19.6302 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.7417 (kg) 
@@ -20617,20 +20411,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 231.7174 (d) 
+Operation time 229.7178 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 5921.7937 (kg)
-Expected inventory - 5921.2500 (kg)
-Measured inventory - 5921.6036 (kg)
+True inventory - 5920.9783 (kg)
+Expected inventory - 5920.7500 (kg)
+Measured inventory - 5920.5579 (kg)
 
 Product Storage:
-True inventory - 4077.4528 (kg)
-Expected inventory - 4078.2500 (kg)
-Measured inventory - 4075.0513 (kg)
+True inventory - 4078.2683 (kg)
+Expected inventory - 4078.7500 (kg)
+Measured inventory - 4078.3618 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -20645,13 +20439,13 @@ Measured weight - 0.1314 (kg)
 MUF:
 True weight - 0.7534 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 3.3452 (kg)
+Measured weight - 1.0803 (kg)
 
 
 Campaign 204 complete 
 
 
-Starting campaign: 205 at time:  231.7174  days 
+Starting campaign: 205 at time:  229.7178  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -20660,7 +20454,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 231.8007 (d) 
+Operation time 229.8011 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 20.1433 (kg) 
@@ -20677,7 +20471,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 232.1964 (d) 
+Operation time 230.1968 (d) 
 True quantity 19.9817 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 20.0235 (kg) 
@@ -20694,7 +20488,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 232.3838 (d) 
+Operation time 230.3842 (d) 
 True quantity 19.9817 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 20.0252 (kg) 
@@ -20707,20 +20501,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 232.6546 (d) 
+Operation time 230.6550 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 5901.7937 (kg)
-Expected inventory - 5901.2500 (kg)
-Measured inventory - 5901.4602 (kg)
+True inventory - 5900.9783 (kg)
+Expected inventory - 5900.7500 (kg)
+Measured inventory - 5900.4146 (kg)
 
 Product Storage:
-True inventory - 4097.4345 (kg)
-Expected inventory - 4098.0000 (kg)
-Measured inventory - 4095.0765 (kg)
+True inventory - 4098.2499 (kg)
+Expected inventory - 4098.5000 (kg)
+Measured inventory - 4098.3870 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -20735,13 +20529,13 @@ Measured weight - 0.1198 (kg)
 MUF:
 True weight - 0.7718 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 3.4633 (kg)
+Measured weight - 1.1984 (kg)
 
 
 Campaign 205 complete 
 
 
-Starting campaign: 206 at time:  232.6546  days 
+Starting campaign: 206 at time:  230.6550  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -20750,7 +20544,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 232.7379 (d) 
+Operation time 230.7383 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 19.9401 (kg) 
@@ -20763,13 +20557,13 @@ Alloy melting
 Failure status:  True 
 
 
-Melter failed at time 233.0920, begin failure routine
+Melter failed at time 231.0924, begin failure routine
 
 Edge transition: 
 Moving batch from melter to key_measurement_point_3 
 
 Measurement event at KMP: 3
-Operation time 233.1336 (d) 
+Operation time 231.1340 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 19.8482 (kg) 
@@ -20787,7 +20581,7 @@ Edge transition:
 Moving heel from melter to key_measurement_point_3 
 
 Measurement event at KMP: 3
-Operation time 233.4460 (d) 
+Operation time 231.4464 (d) 
 True quantity 0.7718 (kg) 
 Expected quantity 0.7500 (kg) 
 Measured quantity 0.7805 (kg) 
@@ -20808,7 +20602,7 @@ Edge transition:
 Moving recycled batch from recycle_storage to key_measurement_point_3 
 
 Measurement event at KMP: 3
-Operation time 233.8417 (d) 
+Operation time 231.8421 (d) 
 True quantity 20.7718 (kg) 
 Expected quantity 20.7500 (kg) 
 Measured quantity 20.8662 (kg) 
@@ -20821,13 +20615,13 @@ Alloy melting
 Failure status:  True 
 
 
-Melter failed at time 234.1958, begin failure routine
+Melter failed at time 232.1962, begin failure routine
 
 Edge transition: 
 Moving recycled batch from melter to key_measurement_point_3 
 
 Measurement event at KMP: 3
-Operation time 234.2374 (d) 
+Operation time 232.2378 (d) 
 True quantity 20.7718 (kg) 
 Expected quantity 20.7500 (kg) 
 Measured quantity 20.6662 (kg) 
@@ -20845,7 +20639,7 @@ Edge transition:
 Moving heel from melter to key_measurement_point_3 
 
 Measurement event at KMP: 3
-Operation time 234.5498 (d) 
+Operation time 232.5502 (d) 
 True quantity 0.0000 (kg) 
 Expected quantity 0.0000 (kg) 
 Measured quantity -0.0156 (kg) 
@@ -20866,7 +20660,7 @@ Edge transition:
 Moving recycled batch from recycle_storage to key_measurement_point_3 
 
 Measurement event at KMP: 3
-Operation time 234.9455 (d) 
+Operation time 232.9459 (d) 
 True quantity 20.7718 (kg) 
 Expected quantity 20.7500 (kg) 
 Measured quantity 20.8767 (kg) 
@@ -20883,7 +20677,7 @@ Edge transition:
 Moving recycled batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 235.3412 (d) 
+Operation time 233.3416 (d) 
 True quantity 20.5017 (kg) 
 Expected quantity 20.5000 (kg) 
 Measured quantity 20.3669 (kg) 
@@ -20900,7 +20694,7 @@ Edge transition:
 Moving recycled batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 235.5286 (d) 
+Operation time 233.5290 (d) 
 True quantity 20.5017 (kg) 
 Expected quantity 20.5000 (kg) 
 Measured quantity 20.6282 (kg) 
@@ -20913,20 +20707,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 235.7994 (d) 
+Operation time 233.7998 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 5881.7937 (kg)
-Expected inventory - 5881.2500 (kg)
-Measured inventory - 5881.5202 (kg)
+True inventory - 5880.9783 (kg)
+Expected inventory - 5880.7500 (kg)
+Measured inventory - 5880.4745 (kg)
 
 Product Storage:
-True inventory - 4117.9362 (kg)
-Expected inventory - 4118.5000 (kg)
-Measured inventory - 4115.7047 (kg)
+True inventory - 4118.7516 (kg)
+Expected inventory - 4119.0000 (kg)
+Measured inventory - 4119.0152 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -20941,13 +20735,13 @@ Measured weight - 0.5098 (kg)
 MUF:
 True weight - 0.2700 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 2.7751 (kg)
+Measured weight - 0.5102 (kg)
 
 
 Campaign 206 complete 
 
 
-Starting campaign: 207 at time:  235.7994  days 
+Starting campaign: 207 at time:  233.7998  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -20956,7 +20750,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 235.8827 (d) 
+Operation time 233.8831 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 19.9699 (kg) 
@@ -20973,7 +20767,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 236.2784 (d) 
+Operation time 234.2788 (d) 
 True quantity 19.7219 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.6559 (kg) 
@@ -20990,7 +20784,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 236.4658 (d) 
+Operation time 234.4662 (d) 
 True quantity 19.7219 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.7442 (kg) 
@@ -21003,20 +20797,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 236.7366 (d) 
+Operation time 234.7370 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 5861.7937 (kg)
-Expected inventory - 5861.2500 (kg)
-Measured inventory - 5861.5502 (kg)
+True inventory - 5860.9783 (kg)
+Expected inventory - 5860.7500 (kg)
+Measured inventory - 5860.5046 (kg)
 
 Product Storage:
-True inventory - 4137.6582 (kg)
-Expected inventory - 4138.2500 (kg)
-Measured inventory - 4135.4489 (kg)
+True inventory - 4138.4736 (kg)
+Expected inventory - 4138.7500 (kg)
+Measured inventory - 4138.7594 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -21031,13 +20825,13 @@ Measured weight - 0.3140 (kg)
 MUF:
 True weight - 0.5481 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 3.0009 (kg)
+Measured weight - 0.7360 (kg)
 
 
 Campaign 207 complete 
 
 
-Starting campaign: 208 at time:  236.7366  days 
+Starting campaign: 208 at time:  234.7370  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -21046,7 +20840,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 236.8199 (d) 
+Operation time 234.8203 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 19.9912 (kg) 
@@ -21063,7 +20857,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 237.2156 (d) 
+Operation time 235.2160 (d) 
 True quantity 19.6899 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.6967 (kg) 
@@ -21080,7 +20874,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 237.4030 (d) 
+Operation time 235.4034 (d) 
 True quantity 19.6899 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.6916 (kg) 
@@ -21093,20 +20887,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 237.6738 (d) 
+Operation time 235.6742 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 5841.7937 (kg)
-Expected inventory - 5841.2500 (kg)
-Measured inventory - 5841.5591 (kg)
+True inventory - 5840.9783 (kg)
+Expected inventory - 5840.7500 (kg)
+Measured inventory - 5840.5134 (kg)
 
 Product Storage:
-True inventory - 4157.3481 (kg)
-Expected inventory - 4158.0000 (kg)
-Measured inventory - 4155.1405 (kg)
+True inventory - 4158.1635 (kg)
+Expected inventory - 4158.5000 (kg)
+Measured inventory - 4158.4510 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -21121,13 +20915,13 @@ Measured weight - 0.2945 (kg)
 MUF:
 True weight - 0.8582 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 3.3005 (kg)
+Measured weight - 1.0356 (kg)
 
 
 Campaign 208 complete 
 
 
-Starting campaign: 209 at time:  237.6738  days 
+Starting campaign: 209 at time:  235.6742  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -21136,7 +20930,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 237.7571 (d) 
+Operation time 235.7575 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 20.0284 (kg) 
@@ -21153,7 +20947,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 238.1528 (d) 
+Operation time 236.1532 (d) 
 True quantity 19.8172 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.8588 (kg) 
@@ -21170,7 +20964,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 238.3402 (d) 
+Operation time 236.3406 (d) 
 True quantity 19.8172 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.8111 (kg) 
@@ -21183,20 +20977,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 238.6110 (d) 
+Operation time 236.6114 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 5821.7937 (kg)
-Expected inventory - 5821.2500 (kg)
-Measured inventory - 5821.5306 (kg)
+True inventory - 5820.9783 (kg)
+Expected inventory - 5820.7500 (kg)
+Measured inventory - 5820.4850 (kg)
 
 Product Storage:
-True inventory - 4177.1653 (kg)
-Expected inventory - 4177.7500 (kg)
-Measured inventory - 4174.9515 (kg)
+True inventory - 4177.9808 (kg)
+Expected inventory - 4178.2500 (kg)
+Measured inventory - 4178.2620 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -21211,13 +21005,13 @@ Measured weight - 0.1697 (kg)
 MUF:
 True weight - 1.0409 (kg)
 Expected weight - 1.0000 (kg)
-Measured weight - 3.5178 (kg)
+Measured weight - 1.2529 (kg)
 
 
 Campaign 209 complete 
 
 
-Starting campaign: 210 at time:  238.6110  days 
+Starting campaign: 210 at time:  236.6114  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -21226,7 +21020,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 238.6943 (d) 
+Operation time 236.6947 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 19.8567 (kg) 
@@ -21243,7 +21037,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 239.0900 (d) 
+Operation time 237.0904 (d) 
 True quantity 19.5439 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.5527 (kg) 
@@ -21260,7 +21054,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 239.2774 (d) 
+Operation time 237.2778 (d) 
 True quantity 19.5439 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.6378 (kg) 
@@ -21273,20 +21067,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 239.5482 (d) 
+Operation time 237.5486 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 5801.7937 (kg)
-Expected inventory - 5801.2500 (kg)
-Measured inventory - 5801.6739 (kg)
+True inventory - 5800.9783 (kg)
+Expected inventory - 5800.7500 (kg)
+Measured inventory - 5800.6283 (kg)
 
 Product Storage:
-True inventory - 4196.7093 (kg)
-Expected inventory - 4197.5000 (kg)
-Measured inventory - 4194.5893 (kg)
+True inventory - 4197.5247 (kg)
+Expected inventory - 4198.0000 (kg)
+Measured inventory - 4197.8998 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -21301,13 +21095,13 @@ Measured weight - 0.3040 (kg)
 MUF:
 True weight - 1.4970 (kg)
 Expected weight - 1.2500 (kg)
-Measured weight - 3.7367 (kg)
+Measured weight - 1.4719 (kg)
 
 
 Campaign 210 complete 
 
 
-Starting campaign: 211 at time:  239.5482  days 
+Starting campaign: 211 at time:  237.5486  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -21316,7 +21110,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 239.6315 (d) 
+Operation time 237.6319 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 20.0607 (kg) 
@@ -21333,7 +21127,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 240.0272 (d) 
+Operation time 238.0276 (d) 
 True quantity 19.9390 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.8341 (kg) 
@@ -21350,7 +21144,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 240.2146 (d) 
+Operation time 238.2150 (d) 
 True quantity 19.9390 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.8988 (kg) 
@@ -21363,20 +21157,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 240.4854 (d) 
+Operation time 238.4858 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 5781.7937 (kg)
-Expected inventory - 5781.2500 (kg)
-Measured inventory - 5781.6132 (kg)
+True inventory - 5780.9783 (kg)
+Expected inventory - 5780.7500 (kg)
+Measured inventory - 5780.5676 (kg)
 
 Product Storage:
-True inventory - 4216.6482 (kg)
-Expected inventory - 4217.2500 (kg)
-Measured inventory - 4214.4882 (kg)
+True inventory - 4217.4636 (kg)
+Expected inventory - 4217.7500 (kg)
+Measured inventory - 4217.7987 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -21391,13 +21185,13 @@ Measured weight - 0.2266 (kg)
 MUF:
 True weight - 1.5580 (kg)
 Expected weight - 1.5000 (kg)
-Measured weight - 3.8986 (kg)
+Measured weight - 1.6338 (kg)
 
 
 Campaign 211 complete 
 
 
-Starting campaign: 212 at time:  240.4854  days 
+Starting campaign: 212 at time:  238.4858  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -21406,7 +21200,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 240.5687 (d) 
+Operation time 238.5691 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 19.9683 (kg) 
@@ -21419,13 +21213,13 @@ Alloy melting
 Failure status:  True 
 
 
-Melter failed at time 240.9228, begin failure routine
+Melter failed at time 238.9232, begin failure routine
 
 Edge transition: 
 Moving batch from melter to key_measurement_point_3 
 
 Measurement event at KMP: 3
-Operation time 240.9644 (d) 
+Operation time 238.9648 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 19.9702 (kg) 
@@ -21443,7 +21237,7 @@ Edge transition:
 Moving heel from melter to key_measurement_point_3 
 
 Measurement event at KMP: 3
-Operation time 241.2768 (d) 
+Operation time 239.2772 (d) 
 True quantity 1.5580 (kg) 
 Expected quantity 1.5000 (kg) 
 Measured quantity 1.5703 (kg) 
@@ -21464,7 +21258,7 @@ Edge transition:
 Moving recycled batch from recycle_storage to key_measurement_point_3 
 
 Measurement event at KMP: 3
-Operation time 241.6725 (d) 
+Operation time 239.6729 (d) 
 True quantity 21.5580 (kg) 
 Expected quantity 21.5000 (kg) 
 Measured quantity 21.4428 (kg) 
@@ -21481,7 +21275,7 @@ Edge transition:
 Moving recycled batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 242.0682 (d) 
+Operation time 240.0686 (d) 
 True quantity 21.1828 (kg) 
 Expected quantity 21.2500 (kg) 
 Measured quantity 21.0777 (kg) 
@@ -21498,7 +21292,7 @@ Edge transition:
 Moving recycled batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 242.2556 (d) 
+Operation time 240.2560 (d) 
 True quantity 21.1828 (kg) 
 Expected quantity 21.2500 (kg) 
 Measured quantity 21.1833 (kg) 
@@ -21511,20 +21305,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 242.5264 (d) 
+Operation time 240.5268 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 5761.7937 (kg)
-Expected inventory - 5761.2500 (kg)
-Measured inventory - 5761.6449 (kg)
+True inventory - 5760.9783 (kg)
+Expected inventory - 5760.7500 (kg)
+Measured inventory - 5760.5992 (kg)
 
 Product Storage:
-True inventory - 4237.8310 (kg)
-Expected inventory - 4238.5000 (kg)
-Measured inventory - 4235.6715 (kg)
+True inventory - 4238.6464 (kg)
+Expected inventory - 4239.0000 (kg)
+Measured inventory - 4238.9820 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -21539,13 +21333,13 @@ Measured weight - 0.3651 (kg)
 MUF:
 True weight - 0.3753 (kg)
 Expected weight - 0.2500 (kg)
-Measured weight - 2.6836 (kg)
+Measured weight - 0.4188 (kg)
 
 
 Campaign 212 complete 
 
 
-Starting campaign: 213 at time:  242.5264  days 
+Starting campaign: 213 at time:  240.5268  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -21554,7 +21348,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 242.6097 (d) 
+Operation time 240.6101 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 20.0081 (kg) 
@@ -21571,7 +21365,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 243.0054 (d) 
+Operation time 241.0058 (d) 
 True quantity 19.8017 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.7808 (kg) 
@@ -21588,7 +21382,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 243.1928 (d) 
+Operation time 241.1932 (d) 
 True quantity 19.8017 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.7116 (kg) 
@@ -21601,20 +21395,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 243.4636 (d) 
+Operation time 241.4640 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 5741.7937 (kg)
-Expected inventory - 5741.2500 (kg)
-Measured inventory - 5741.6368 (kg)
+True inventory - 5740.9783 (kg)
+Expected inventory - 5740.7500 (kg)
+Measured inventory - 5740.5912 (kg)
 
 Product Storage:
-True inventory - 4257.6327 (kg)
-Expected inventory - 4258.2500 (kg)
-Measured inventory - 4255.3831 (kg)
+True inventory - 4258.4481 (kg)
+Expected inventory - 4258.7500 (kg)
+Measured inventory - 4258.6936 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -21629,13 +21423,13 @@ Measured weight - 0.2273 (kg)
 MUF:
 True weight - 0.5736 (kg)
 Expected weight - 0.5000 (kg)
-Measured weight - 2.9801 (kg)
+Measured weight - 0.7152 (kg)
 
 
 Campaign 213 complete 
 
 
-Starting campaign: 214 at time:  243.4636  days 
+Starting campaign: 214 at time:  241.4640  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -21644,7 +21438,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 243.5469 (d) 
+Operation time 241.5473 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 19.9939 (kg) 
@@ -21661,7 +21455,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 243.9426 (d) 
+Operation time 241.9430 (d) 
 True quantity 19.7695 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.5802 (kg) 
@@ -21678,7 +21472,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 244.1300 (d) 
+Operation time 242.1304 (d) 
 True quantity 19.7695 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.7598 (kg) 
@@ -21691,20 +21485,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 244.4008 (d) 
+Operation time 242.4012 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 5721.7937 (kg)
-Expected inventory - 5721.2500 (kg)
-Measured inventory - 5721.6429 (kg)
+True inventory - 5720.9783 (kg)
+Expected inventory - 5720.7500 (kg)
+Measured inventory - 5720.5973 (kg)
 
 Product Storage:
-True inventory - 4277.4022 (kg)
-Expected inventory - 4278.0000 (kg)
-Measured inventory - 4275.1429 (kg)
+True inventory - 4278.2176 (kg)
+Expected inventory - 4278.5000 (kg)
+Measured inventory - 4278.4534 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -21719,13 +21513,13 @@ Measured weight - 0.4137 (kg)
 MUF:
 True weight - 0.8041 (kg)
 Expected weight - 0.7500 (kg)
-Measured weight - 3.2142 (kg)
+Measured weight - 0.9493 (kg)
 
 
 Campaign 214 complete 
 
 
-Starting campaign: 215 at time:  244.4008  days 
+Starting campaign: 215 at time:  242.4012  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -21734,7 +21528,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 244.4841 (d) 
+Operation time 242.4845 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 20.1900 (kg) 
@@ -21751,7 +21545,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 244.8798 (d) 
+Operation time 242.8802 (d) 
 True quantity 19.8015 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.6968 (kg) 
@@ -21768,7 +21562,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 245.0672 (d) 
+Operation time 243.0676 (d) 
 True quantity 19.8015 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.9010 (kg) 
@@ -21781,20 +21575,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 245.3380 (d) 
+Operation time 243.3384 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 5701.7937 (kg)
-Expected inventory - 5701.2500 (kg)
-Measured inventory - 5701.4529 (kg)
+True inventory - 5700.9783 (kg)
+Expected inventory - 5700.7500 (kg)
+Measured inventory - 5700.4073 (kg)
 
 Product Storage:
-True inventory - 4297.2037 (kg)
-Expected inventory - 4297.7500 (kg)
-Measured inventory - 4295.0439 (kg)
+True inventory - 4298.0191 (kg)
+Expected inventory - 4298.2500 (kg)
+Measured inventory - 4298.3544 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -21809,13 +21603,13 @@ Measured weight - 0.4933 (kg)
 MUF:
 True weight - 1.0026 (kg)
 Expected weight - 1.0000 (kg)
-Measured weight - 3.5032 (kg)
+Measured weight - 1.2384 (kg)
 
 
 Campaign 215 complete 
 
 
-Starting campaign: 216 at time:  245.3380  days 
+Starting campaign: 216 at time:  243.3384  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -21824,7 +21618,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 245.4213 (d) 
+Operation time 243.4217 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 20.0830 (kg) 
@@ -21841,7 +21635,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 245.8170 (d) 
+Operation time 243.8174 (d) 
 True quantity 19.5822 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.7328 (kg) 
@@ -21858,7 +21652,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 246.0044 (d) 
+Operation time 244.0048 (d) 
 True quantity 19.5822 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.6861 (kg) 
@@ -21871,20 +21665,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 246.2752 (d) 
+Operation time 244.2756 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 5681.7937 (kg)
-Expected inventory - 5681.2500 (kg)
-Measured inventory - 5681.3698 (kg)
+True inventory - 5680.9783 (kg)
+Expected inventory - 5680.7500 (kg)
+Measured inventory - 5680.3242 (kg)
 
 Product Storage:
-True inventory - 4316.7858 (kg)
-Expected inventory - 4317.5000 (kg)
-Measured inventory - 4314.7300 (kg)
+True inventory - 4317.6012 (kg)
+Expected inventory - 4318.0000 (kg)
+Measured inventory - 4318.0404 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -21899,13 +21693,13 @@ Measured weight - 0.3503 (kg)
 MUF:
 True weight - 1.4204 (kg)
 Expected weight - 1.2500 (kg)
-Measured weight - 3.9002 (kg)
+Measured weight - 1.6353 (kg)
 
 
 Campaign 216 complete 
 
 
-Starting campaign: 217 at time:  246.2752  days 
+Starting campaign: 217 at time:  244.2756  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -21914,7 +21708,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 246.3585 (d) 
+Operation time 244.3589 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 19.9955 (kg) 
@@ -21931,7 +21725,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 246.7542 (d) 
+Operation time 244.7546 (d) 
 True quantity 19.8642 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.9231 (kg) 
@@ -21948,7 +21742,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 246.9416 (d) 
+Operation time 244.9420 (d) 
 True quantity 19.8642 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 20.1026 (kg) 
@@ -21961,20 +21755,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 247.2124 (d) 
+Operation time 245.2128 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 5661.7937 (kg)
-Expected inventory - 5661.2500 (kg)
-Measured inventory - 5661.3744 (kg)
+True inventory - 5660.9783 (kg)
+Expected inventory - 5660.7500 (kg)
+Measured inventory - 5660.3287 (kg)
 
 Product Storage:
-True inventory - 4336.6501 (kg)
-Expected inventory - 4337.2500 (kg)
-Measured inventory - 4334.8325 (kg)
+True inventory - 4337.4655 (kg)
+Expected inventory - 4337.7500 (kg)
+Measured inventory - 4338.1430 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -21989,13 +21783,13 @@ Measured weight - 0.0723 (kg)
 MUF:
 True weight - 1.5562 (kg)
 Expected weight - 1.5000 (kg)
-Measured weight - 3.7931 (kg)
+Measured weight - 1.5283 (kg)
 
 
 Campaign 217 complete 
 
 
-Starting campaign: 218 at time:  247.2124  days 
+Starting campaign: 218 at time:  245.2128  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -22004,7 +21798,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 247.2957 (d) 
+Operation time 245.2961 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 20.0717 (kg) 
@@ -22021,7 +21815,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 247.6914 (d) 
+Operation time 245.6918 (d) 
 True quantity 19.5083 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.5145 (kg) 
@@ -22038,7 +21832,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 247.8788 (d) 
+Operation time 245.8792 (d) 
 True quantity 19.5083 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.4989 (kg) 
@@ -22051,20 +21845,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 248.1496 (d) 
+Operation time 246.1500 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 5641.7937 (kg)
-Expected inventory - 5641.2500 (kg)
-Measured inventory - 5641.3027 (kg)
+True inventory - 5640.9783 (kg)
+Expected inventory - 5640.7500 (kg)
+Measured inventory - 5640.2570 (kg)
 
 Product Storage:
-True inventory - 4356.1583 (kg)
-Expected inventory - 4357.0000 (kg)
-Measured inventory - 4354.3314 (kg)
+True inventory - 4356.9738 (kg)
+Expected inventory - 4357.5000 (kg)
+Measured inventory - 4357.6419 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -22079,13 +21873,13 @@ Measured weight - 0.5572 (kg)
 MUF:
 True weight - 2.0479 (kg)
 Expected weight - 1.7500 (kg)
-Measured weight - 4.3659 (kg)
+Measured weight - 2.1011 (kg)
 
 
 Campaign 218 complete 
 
 
-Starting campaign: 219 at time:  248.1496  days 
+Starting campaign: 219 at time:  246.1500  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -22094,7 +21888,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 248.2329 (d) 
+Operation time 246.2333 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 20.0917 (kg) 
@@ -22111,7 +21905,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 248.6286 (d) 
+Operation time 246.6290 (d) 
 True quantity 19.6155 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.4981 (kg) 
@@ -22128,7 +21922,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 248.8160 (d) 
+Operation time 246.8164 (d) 
 True quantity 19.6155 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.7314 (kg) 
@@ -22141,20 +21935,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 249.0868 (d) 
+Operation time 247.0872 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 5621.7937 (kg)
-Expected inventory - 5621.2500 (kg)
-Measured inventory - 5621.2109 (kg)
+True inventory - 5620.9783 (kg)
+Expected inventory - 5620.7500 (kg)
+Measured inventory - 5620.1653 (kg)
 
 Product Storage:
-True inventory - 4375.7738 (kg)
-Expected inventory - 4376.7500 (kg)
-Measured inventory - 4374.0628 (kg)
+True inventory - 4376.5892 (kg)
+Expected inventory - 4377.2500 (kg)
+Measured inventory - 4377.3733 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -22169,13 +21963,13 @@ Measured weight - 0.5937 (kg)
 MUF:
 True weight - 2.4324 (kg)
 Expected weight - 2.0000 (kg)
-Measured weight - 4.7263 (kg)
+Measured weight - 2.4614 (kg)
 
 
 Campaign 219 complete 
 
 
-Starting campaign: 220 at time:  249.0868  days 
+Starting campaign: 220 at time:  247.0872  days 
 
 Prepare batch in Storage Buffer for transfer: 20.0 kg 
 
@@ -22184,7 +21978,7 @@ Edge transition:
 Moving batch from storage_buffer to key_measurement_point_0 
 
 Measurement event at KMP: 0
-Operation time 249.1701 (d) 
+Operation time 247.1705 (d) 
 True quantity 20.0000 (kg) 
 Expected quantity 20.0000 (kg) 
 Measured quantity 20.0591 (kg) 
@@ -22201,7 +21995,7 @@ Edge transition:
 Moving batch from melter to key_measurement_point_1 
 
 Measurement event at KMP: 1
-Operation time 249.5658 (d) 
+Operation time 247.5662 (d) 
 True quantity 19.9919 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.8873 (kg) 
@@ -22218,7 +22012,7 @@ Edge transition:
 Moving batch from trimmer to key_measurement_point_2 
 
 Measurement event at KMP: 2
-Operation time 249.7532 (d) 
+Operation time 247.7536 (d) 
 True quantity 19.9919 (kg) 
 Expected quantity 19.7500 (kg) 
 Measured quantity 19.9112 (kg) 
@@ -22231,20 +22025,20 @@ Processing the final product
 
 
 Facility inspection 
-Operation time 250.0240 (d) 
+Operation time 248.0244 (d) 
 
 
 --Accounting materials in facility--
 
 Storage Buffer:
-True inventory - 5601.7937 (kg)
-Expected inventory - 5601.2500 (kg)
-Measured inventory - 5601.1519 (kg)
+True inventory - 5600.9783 (kg)
+Expected inventory - 5600.7500 (kg)
+Measured inventory - 5600.1062 (kg)
 
 Product Storage:
-True inventory - 4395.7657 (kg)
-Expected inventory - 4396.5000 (kg)
-Measured inventory - 4393.9740 (kg)
+True inventory - 4396.5811 (kg)
+Expected inventory - 4397.0000 (kg)
+Measured inventory - 4397.2845 (kg)
 
 Recycle Storage:
 True inventory - 0.0000 (kg)
@@ -22259,9 +22053,279 @@ Measured weight - 0.1718 (kg)
 MUF:
 True weight - 2.4406 (kg)
 Expected weight - 2.2500 (kg)
-Measured weight - 4.8741 (kg)
+Measured weight - 2.6093 (kg)
 
 
 Campaign 220 complete 
+
+
+Starting campaign: 221 at time:  248.0244  days 
+
+Prepare batch in Storage Buffer for transfer: 20.0 kg 
+
+
+Edge transition: 
+Moving batch from storage_buffer to key_measurement_point_0 
+
+Measurement event at KMP: 0
+Operation time 248.1077 (d) 
+True quantity 20.0000 (kg) 
+Expected quantity 20.0000 (kg) 
+Measured quantity 20.2016 (kg) 
+
+
+Edge transition: 
+Moving batch from key_measurement_point_0 to melter 
+
+Alloy melting
+Failure status:  False 
+
+
+Edge transition: 
+Moving batch from melter to key_measurement_point_1 
+
+Measurement event at KMP: 1
+Operation time 248.5034 (d) 
+True quantity 19.8393 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 20.0061 (kg) 
+
+
+Edge transition: 
+Moving batch from key_measurement_point_1 to trimmer 
+
+Slug trimming
+Failure status:  False 
+
+
+Edge transition: 
+Moving batch from trimmer to key_measurement_point_2 
+
+Measurement event at KMP: 2
+Operation time 248.6908 (d) 
+True quantity 19.8393 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.5476 (kg) 
+
+
+Edge transition: 
+Moving batch from key_measurement_point_2 to product_storage 
+
+Processing the final product 
+
+
+Facility inspection 
+Operation time 248.9616 (d) 
+
+
+--Accounting materials in facility--
+
+Storage Buffer:
+True inventory - 5580.9783 (kg)
+Expected inventory - 5580.7500 (kg)
+Measured inventory - 5579.9046 (kg)
+
+Product Storage:
+True inventory - 4416.4204 (kg)
+Expected inventory - 4416.7500 (kg)
+Measured inventory - 4416.8321 (kg)
+
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.1607 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1955 (kg)
+
+MUF:
+True weight - 2.6013 (kg)
+Expected weight - 2.5000 (kg)
+Measured weight - 3.2633 (kg)
+
+
+Campaign 221 complete 
+
+
+Starting campaign: 222 at time:  248.9616  days 
+
+Prepare batch in Storage Buffer for transfer: 20.0 kg 
+
+
+Edge transition: 
+Moving batch from storage_buffer to key_measurement_point_0 
+
+Measurement event at KMP: 0
+Operation time 249.0449 (d) 
+True quantity 20.0000 (kg) 
+Expected quantity 20.0000 (kg) 
+Measured quantity 20.0432 (kg) 
+
+
+Edge transition: 
+Moving batch from key_measurement_point_0 to melter 
+
+Alloy melting
+Failure status:  False 
+
+
+Edge transition: 
+Moving batch from melter to key_measurement_point_1 
+
+Measurement event at KMP: 1
+Operation time 249.4406 (d) 
+True quantity 19.9710 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.8981 (kg) 
+
+
+Edge transition: 
+Moving batch from key_measurement_point_1 to trimmer 
+
+Slug trimming
+Failure status:  False 
+
+
+Edge transition: 
+Moving batch from trimmer to key_measurement_point_2 
+
+Measurement event at KMP: 2
+Operation time 249.6280 (d) 
+True quantity 19.9710 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.9826 (kg) 
+
+
+Edge transition: 
+Moving batch from key_measurement_point_2 to product_storage 
+
+Processing the final product 
+
+
+Facility inspection 
+Operation time 249.8988 (d) 
+
+
+--Accounting materials in facility--
+
+Storage Buffer:
+True inventory - 5560.9783 (kg)
+Expected inventory - 5560.7500 (kg)
+Measured inventory - 5559.8614 (kg)
+
+Product Storage:
+True inventory - 4436.3914 (kg)
+Expected inventory - 4436.5000 (kg)
+Measured inventory - 4436.8147 (kg)
+
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.0290 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.1450 (kg)
+
+MUF:
+True weight - 2.6303 (kg)
+Expected weight - 2.7500 (kg)
+Measured weight - 3.3239 (kg)
+
+
+Campaign 222 complete 
+
+
+Starting campaign: 223 at time:  249.8988  days 
+
+Prepare batch in Storage Buffer for transfer: 20.0 kg 
+
+
+Edge transition: 
+Moving batch from storage_buffer to key_measurement_point_0 
+
+Measurement event at KMP: 0
+Operation time 249.9821 (d) 
+True quantity 20.0000 (kg) 
+Expected quantity 20.0000 (kg) 
+Measured quantity 20.0314 (kg) 
+
+
+Edge transition: 
+Moving batch from key_measurement_point_0 to melter 
+
+Alloy melting
+Failure status:  False 
+
+
+Edge transition: 
+Moving batch from melter to key_measurement_point_1 
+
+Measurement event at KMP: 1
+Operation time 250.3778 (d) 
+True quantity 19.7343 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.6842 (kg) 
+
+
+Edge transition: 
+Moving batch from key_measurement_point_1 to trimmer 
+
+Slug trimming
+Failure status:  False 
+
+
+Edge transition: 
+Moving batch from trimmer to key_measurement_point_2 
+
+Measurement event at KMP: 2
+Operation time 250.5652 (d) 
+True quantity 19.7343 (kg) 
+Expected quantity 19.7500 (kg) 
+Measured quantity 19.8545 (kg) 
+
+
+Edge transition: 
+Moving batch from key_measurement_point_2 to product_storage 
+
+Processing the final product 
+
+
+Facility inspection 
+Operation time 250.8360 (d) 
+
+
+--Accounting materials in facility--
+
+Storage Buffer:
+True inventory - 5540.9783 (kg)
+Expected inventory - 5540.7500 (kg)
+Measured inventory - 5539.8300 (kg)
+
+Product Storage:
+True inventory - 4456.1257 (kg)
+Expected inventory - 4456.2500 (kg)
+Measured inventory - 4456.6692 (kg)
+
+Recycle Storage:
+True inventory - 0.0000 (kg)
+Expected inventory - 0.0000 (kg)
+Measured inventory - 0.0000 (kg)
+
+Campaign MUF:
+True weight - 0.2657 (kg)
+Expected weight - 0.2500 (kg)
+Measured weight - 0.3472 (kg)
+
+MUF:
+True weight - 2.8960 (kg)
+Expected weight - 3.0000 (kg)
+Measured weight - 3.5008 (kg)
+
+
+Campaign 223 complete 
 
 

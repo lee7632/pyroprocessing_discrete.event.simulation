@@ -203,11 +203,14 @@ class facility_command_class:
     def inspect(self):
         """
         Method that gets called whenever an alarm is set off.  The melter is cleaned, the heel moved to
-        recycle storage, a mass balance is executed, and then the heel is moved back into the storage buffer.
+        recycle storage, the storage units are remeasured manually,
+        a mass balance is executed, and then the heel is moved back into the storage buffer.
         """
         self.write_to_log('\n\n--Conducting Facility Inspection--\n\n\n')
         self.operation_time = self.operation_time + self.facility_inspection_time
         self.fuel_fabricator.inspect(self)
+        self.storage_unit.storage_buffer.measure_inventory(self, 0.05)
+        self.final_storage_unit.product_storage.measure_inventory(self, 0.05)
         self.account()
         batch = batch_class(0, "temprorary class for heel transfer")
         self.fuel_fabricator.recycle_storage.process_batch(self, batch)
