@@ -27,12 +27,18 @@ class product_storage_class(facility_component_class):
     by the kmp.
 
     time_delay = amount of time it takes the storage buffer to create a batch
+
+    inspection_measurement_uncertainty = uncertainty associated with measuring the inventory during an inspection.
+    Note that this is NOT when the kmp updates the measured inventory, rather, it ONLY is used when
+    an inspection occurs.
     """
 
     def __init__(self,facility):
         self.inventory = 0
         self.measured_inventory = 0
         self.time_delay = np.loadtxt(facility.process_states_dir+'/process.operation.time.inp',usecols=[1])[3]
+        self.inspection_measurement_uncertainty = np.loadtxt(facility.process_states_dir+ \
+            '/measurement.uncertainty.inp')
         facility_component_class.__init__(self, 0, 0, 0, "product_storage", "storage", facility.inventory_odir)
 
     def process_batch(self,facility,batch):
@@ -46,7 +52,7 @@ class product_storage_class(facility_component_class):
         
         self.data_output.storage_output(facility, self)
 
-    def measure_inventory(self, facility, uncertainty):
+    def measure_inventory(self, facility):
         """
         This method only gets called when an inspection occurs.  Since there is too much MUF, a personal
         inspection of the inventory must occur.  This updates the measured inventory to be a lot closer
@@ -55,4 +61,4 @@ class product_storage_class(facility_component_class):
         self.write_to_log(facility,
             '\n\nPersonnel measured product storage.  Measured inventory has been updated\n\n')
                                                     
-        self.measured_inventory = self.inventory + uncertainty*np.random.randn()
+        self.measured_inventory = self.inventory + self.inspection_measurement_uncertainty*np.random.randn()

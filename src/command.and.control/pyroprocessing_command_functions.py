@@ -209,7 +209,7 @@ def copy_file(local_dir,destination_dir,default_dir):
 #
 ### copy file
     for files in os.listdir(local_subdir):
-	shutil.copy(files,destination_dir)
+	    shutil.copy(files,destination_dir)
 # end for
 #
 ### return to default directory for input data 
@@ -230,7 +230,7 @@ def write_home_dir(root_dir,lib_dir,simulation_dir):
     dir_check=os.path.isdir(root_dir+'/simulation') 
 #
     if(dir_check==False):
-	os.makedirs('simulation')
+	    os.makedirs('simulation')
 # end
 #
 ### set home directory where all the simulation data will go
@@ -242,7 +242,7 @@ def write_home_dir(root_dir,lib_dir,simulation_dir):
     dir_check=os.path.isdir('meta.data')
 #
     if(dir_check==False):
-	os.makedirs('meta.data') #this directory will store the simulation directory information for process modules
+	    os.makedirs('meta.data') #this directory will store the simulation directory information for process modules
 # end
     os.makedirs(simulation_dir)
     os.chdir('meta.data')

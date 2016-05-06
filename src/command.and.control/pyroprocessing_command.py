@@ -51,10 +51,9 @@ print 'Starting the command and control module for the pyroprocessing system.'
 #######
 #
 ####### set the root and lib directory
-root_dir='C:/Users/Malachi/Documents/Research/NEUI/pyroprocessing_discrete.event.simulation'
+root_dir= os.getcwd()
 #
 print 'root dir is: ',root_dir
-print 'root dir is hard coded into each of the mainflow files'
 change_directory_input = raw_input('Would you like to change the root directory (y/n)? ')
 #
 did_change_root_dir = False
@@ -70,10 +69,9 @@ simulation_dir=raw_input('set the simulation directory name: ')
 #######
 #
 if did_change_root_dir:
-    mainflow_dir_name = raw_input('What directory under src will you be running mainflow? ')
-    print '\nChanging global variables in %s'%(root_dir + '/src/' + mainflow_dir_name)
-    edit_global_vars(root_dir + '/src/' + mainflow_dir_name + '/global_vars.py',
-            root_dir + '/src/' + mainflow_dir_name, root_dir, simulation_dir)
+    print '\nChanging global variables in %s'%(root_dir)
+    edit_global_vars(root_dir + '/global_vars.py',
+            root_dir, root_dir, simulation_dir)
 
 
 

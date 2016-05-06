@@ -78,3 +78,10 @@ class storage_unit_class(facility_component_class):
         self.edge.edge_transition(facility, batch, self.kmp, self.storage_buffer)
         self.kmp.update_measured_inventory(facility, self.storage_buffer, "add")
         self.storage_buffer.store_batch(facility, batch)
+
+    def inspect(self, facility):
+        """
+        Routine that gets called everytime a facility inspection occurs.  For the time being, this
+        simply remeasures the storage buffer inventory to more accuretly portray the real inventory.
+        """
+        self.storage_buffer.measure_inventory(facility)

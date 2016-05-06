@@ -209,8 +209,8 @@ class facility_command_class:
         self.write_to_log('\n\n--Conducting Facility Inspection--\n\n\n')
         self.operation_time = self.operation_time + self.facility_inspection_time
         self.fuel_fabricator.inspect(self)
-        self.storage_unit.storage_buffer.measure_inventory(self, 0.05)
-        self.final_storage_unit.product_storage.measure_inventory(self, 0.05)
+        self.storage_unit.inspect(self)
+        self.final_storage_unit.inspect(self)
         self.account()
         batch = batch_class(0, "temprorary class for heel transfer")
         self.fuel_fabricator.recycle_storage.process_batch(self, batch)

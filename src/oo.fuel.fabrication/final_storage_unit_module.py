@@ -61,3 +61,10 @@ class final_storage_unit_class(facility_component_class):
         self.expected_weight.add_weight(self.kmp)
         self.measured_inventory = self.product_storage.measured_inventory
 
+    def inspect(self, facility):
+        """
+        Routine that gets called everytime a facility inspection occurs.  For the time being, this
+        simply remeasures the storage buffer inventory to more accuretly portray the real inventory.
+        """
+        self.product_storage.measure_inventory(facility)
+
