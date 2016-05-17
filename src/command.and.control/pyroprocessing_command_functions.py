@@ -244,6 +244,8 @@ def write_home_dir(root_dir,lib_dir,simulation_dir):
     if(dir_check==False):
 	    os.makedirs('meta.data') #this directory will store the simulation directory information for process modules
 # end
+    if(os.path.isdir(simulation_dir)): #If the directory exists, wipe it and write over it.
+        shutil.rmtree(simulation_dir)
     os.makedirs(simulation_dir)
     os.chdir('meta.data')
 #
