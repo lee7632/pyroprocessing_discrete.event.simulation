@@ -12,6 +12,7 @@
 #
 import pdb
 import numpy as np
+import matplotlib.pyplot as plt
 from storage_unit_module import storage_unit_class
 from edge_transition_module import edge_transition_class
 from fuel_fabricator_module import fuel_fabricator_class
@@ -89,7 +90,8 @@ class facility_command_class:
     two kmps.
 
     final_storage_unit = module that holds the finished product.  Contains the product storage and one kmp.
-    """
+    """ 
+    
     def __init__(self,root_dir,subsystem):
         """
         Although large, all this part does is read in the number of input files required to start up the
@@ -353,6 +355,22 @@ class facility_command_class:
                 %(kmp.expected_weight.batch_weight, kmp.measured_weight))
         if self.account(batch = batch, kmp = kmp):
             '\n\n\nWARNING! DIVERSION DETECTED! STOP ALL OPERATIONS IMMEDIATELY!\n\n\n\n'
+
+    def makePlots(self):
+        """
+        Routine that will get called by mainflow that causes the facility to make all relevant plots.
+        """
+        xData = np.loadtxt(self.system_odir+'/facility.campaign.out',usecols=[0])
+        yData = np.loadtxt(self.system_odir+'/facility.campaign.out',usecols=[1])
+        self.plotData(xData, yData)
+
+    def plotData(self, xData, yData):
+        """
+        Plots the data
+        """
+        plt.plot(xData, yData)
+        plt.title("This is the title of the plot")
+        plt.show()
 
     def close_files(self):
         """

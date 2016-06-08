@@ -69,5 +69,6 @@ while facility.operation_time <= facility.total_operation_time:
     
     facility.process_batch()
     facility.end_of_campaign()
-    
+
 facility.close_files()
+facility.makePlots()
