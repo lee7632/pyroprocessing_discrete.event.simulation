@@ -36,8 +36,8 @@ class data_output_class:
             facility.total_campaign, processor.heel.weight, processor.true_batch_loss, batch.weight))
 
     def failure_output(self, facility, processor, cdf, fail_check):
-        self.output_file.write('%.4f\t%i\t%.4f\t%.4f\t%.4f\n'%(facility.operation_time, 
-            facility.total_campaign, processor.time_of_last_failure, cdf, fail_check))
+        self.output_file.write('%.4f\t%i\t%.4f\t%.4f\t%.4f\t%.4f\n'%(facility.operation_time, 
+            facility.total_campaign, processor.time_of_last_failure, cdf, fail_check, processor.failure_count))
 
     def muf_output(self, facility):
         self.output_file.write('%.4f\t%i\t%.4f\t %.4f\t%.4f\t%.4f\t%.4f\t%.4f\n'%(facility.operation_time,

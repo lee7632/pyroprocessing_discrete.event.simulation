@@ -78,7 +78,8 @@ class facility_component_class:
         """
         facility.operation_time = facility.operation_time + time_added
         facility.system_time_output.write('%.4f\n'%(facility.operation_time))
-        facility.campaign_output.write('%.4f\t%i\n'%(facility.operation_time,facility.total_campaign))
+        facility.system_info_output.write('%.4f\t%i\t%i\n'%(facility.operation_time,facility.total_campaign,
+            facility.false_alarm_count))
 
     def check_equipment_failure(self,facility):
         """
@@ -123,6 +124,7 @@ class facility_component_class:
         if cdf > fail_check:
             did_fail = True
             self.time_of_last_failure = facility.operation_time
+            self.failure_count = self.failure_count + 1
 
         self.failure_data_output.failure_output(facility, self, cdf, fail_check)
         

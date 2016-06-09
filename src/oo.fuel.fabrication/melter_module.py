@@ -59,6 +59,8 @@ class melter_class(facility_component_class):
     distribution between the bounds, but it needs to be stored so that the managing unit can view and use
     such.
 
+    failure_count = number of times this component has failed.
+
     failure_data_output = object that handles the opening and writing to a file exclusively for variables
     that deal with the equipment failure check.
     """
@@ -77,6 +79,7 @@ class melter_class(facility_component_class):
                 '/melter.failure.data.inp',usecols=[2]) 
         self.time_of_last_failure = 0
         self.true_batch_loss = 0
+        self.failure_count = 0
         self.failure_data_output = data_output_class("melter_failure_data", facility.equipment_failure_odir)
         facility_component_class.__init__(self, 0, 0, 0, "melter", "processor", facility.material_flow_odir)
 

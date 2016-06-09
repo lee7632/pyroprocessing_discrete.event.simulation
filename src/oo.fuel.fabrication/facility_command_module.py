@@ -48,6 +48,9 @@ class facility_command_class:
     measured_muf = used during inspections to determine how much muf resides in the facility as calculated
     by the deficit in what the storage units have measured coming in and out.
 
+    false_alarm_count = number of times that a false alarm has been triggered.  This number is particularly
+    important for our results. It gets incremented in the inspect method.
+
     melter_did_fail = boolean to let the facility know whether or not the melter has failed in the
     given campaign.  This is used in calculating the campaign muf.
 
@@ -102,6 +105,7 @@ class facility_command_class:
         self.total_campaign = 1
         self.expected_muf = 0
         self.measured_muf = 0
+        self.false_alarm_count = 0
         self.melter_did_fail = False
         self.did_conduct_inspection = False
         self.log_file = open(root_dir + '/log.txt','w')
@@ -158,14 +162,15 @@ class facility_command_class:
         # open files
         #######
         self.system_time_output=open(self.system_odir+'/facility.operation.time.out','w+')
-        self.campaign_output=open(self.system_odir+'/facility.campaign.out','w+')
+        self.system_info_output=open(self.system_odir+'/system_info.out','w+')
         self.muf_data_output = data_output_class("muf", self.muf_odir)
 
         #######
         # write data for TIME=Initial_Time
         #######
         self.system_time_output.write('%.4f\n'%(self.operation_time))
-        self.campaign_output.write('%.4f\t%i\n'%(self.operation_time,self.total_campaign))
+        self.system_info_output.write('%.4f\t%i\t%i\n'%(self.operation_time,self.total_campaign,
+            self.false_alarm_count))
 
         ######
         # Initial parameters (used more than once) 
@@ -207,6 +212,8 @@ class facility_command_class:
         Method that gets called whenever an alarm is set off.  The melter is cleaned, the heel moved to
         recycle storage, the storage units are remeasured manually,
         a mass balance is executed, and then the heel is moved back into the storage buffer.
+
+        The false_alarm_count gets incremented here.
         """
         self.write_to_log('\n\n--Conducting Facility Inspection--\n\n\n')
         self.operation_time = self.operation_time + self.facility_inspection_time
@@ -219,6 +226,7 @@ class facility_command_class:
         self.edge.edge_transition(self, batch, self.fuel_fabricator.recycle_storage, self.storage_unit.kmp)
         self.storage_unit.store_batch(self, batch)
         self.did_conduct_inspection = True
+        self.false_alarm_count = self.false_alarm_count + 1
 
     def update_accountability(self):
         """
@@ -360,16 +368,25 @@ class facility_command_class:
         """
         Routine that will get called by mainflow that causes the facility to make all relevant plots.
         """
-        xData = np.loadtxt(self.system_odir+'/facility.campaign.out',usecols=[0])
-        yData = np.loadtxt(self.system_odir+'/facility.campaign.out',usecols=[1])
-        self.plotData(xData, yData)
+        #xData = np.loadtxt(self.system_odir+'/facility.campaign.out',usecols=[0])
+        #yData = np.loadtxt(self.system_odir+'/facility.campaign.out',usecols=[1])
+        xData = np.loadtxt(self.equipment_failure_odir+'/melter_failure_data.out',usecols=[0])
+        yData = np.loadtxt(self.equipment_failure_odir+'/melter_failure_data.out',usecols=[5])
+        self.plotData(xData, "Operation Time", yData, "# of failures", "Number of times the melter failed")
+        xData = np.loadtxt(self.system_odir+'/system_info.out',usecols=[0])
+        yData = np.loadtxt(self.system_odir+'/system_info.out',usecols=[2])
+        self.plotData(xData, "Operation Time", yData, "# of false alarms", 
+            "Number of times false alarms were triggered")
 
-    def plotData(self, xData, yData):
+    def plotData(self, xData, xLabel, yData, yLabel, plotTitle):
         """
         Plots the data
         """
         plt.plot(xData, yData)
-        plt.title("This is the title of the plot")
+        plt.title(plotTitle)
+        plt.xlabel(xLabel)
+        plt.ylabel(yLabel)
+        plt.axis([xData[0], xData[-1], yData[0], yData[-1] + 1])
         plt.show()
 
     def close_files(self):
@@ -378,6 +395,7 @@ class facility_command_class:
         """
         self.log_file.close()
         self.system_time_output.close()
-        self.campaign_output.close()
+        self.system_info_output.close()
+        self.fuel_fabricator.melter.failure_data_output.output_file.close()
         self.debugger.close()
 
