@@ -13,6 +13,7 @@
 import pdb
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib import rc
 from storage_unit_module import storage_unit_class
 from edge_transition_module import edge_transition_class
 from fuel_fabricator_module import fuel_fabricator_class
@@ -72,6 +73,7 @@ class facility_command_class:
     has reached this number, the program will stop.
 
     end_of_campaign_time_delay = amount of time it takes to conduct inspections at the end of each campaign.  
+
     end_of_campaign_alarm_threshold = weight of SNM in kg that will trigger the alarm.  This number is
     compared to the difference between expected and measured weight.  If the absolute value of such is greater
     than this, an alarm is triggered where the facility shuts down and conducts an inspection to verify the
@@ -372,11 +374,14 @@ class facility_command_class:
         #yData = np.loadtxt(self.system_odir+'/facility.campaign.out',usecols=[1])
         xData = np.loadtxt(self.equipment_failure_odir+'/melter_failure_data.out',usecols=[0])
         yData = np.loadtxt(self.equipment_failure_odir+'/melter_failure_data.out',usecols=[5])
-        self.plotData(xData, "Operation Time", yData, "# of failures", "Number of times the melter failed")
+        #self.plotData(xData, "Operation Time (days)", yData, "# of failures", 
+        #    r'Melter failure count: $\lambda$ = %.3f (fails/day)'\
+        #        %(self.fuel_fabricator.melter.failure_rate))
         xData = np.loadtxt(self.system_odir+'/system_info.out',usecols=[0])
         yData = np.loadtxt(self.system_odir+'/system_info.out',usecols=[2])
-        self.plotData(xData, "Operation Time", yData, "# of false alarms", 
-            "Number of times false alarms were triggered")
+        self.plotData(xData, "Operation Time (days)", yData, "# of false alarms", 
+            r'False alarm count: $\lambda$ = %.3f (fails/day), $\sigma_{meas}$ = %.3f , $\Delta_{threshold}$ = %.2f (kg)'\
+                %(self.fuel_fabricator.melter.failure_rate, self.storage_unit.kmp.uncertainty, self.end_of_campaign_alarm_threshold))
 
     def plotData(self, xData, xLabel, yData, yLabel, plotTitle):
         """

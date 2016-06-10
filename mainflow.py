@@ -52,7 +52,7 @@ import sys
 sys.path.insert(0, global_vars.root_dir+'/src/oo.fuel.fabrication')
 from facility_command_module import facility_command_class
 
-np.random.seed(0)
+#np.random.seed(0)
 
 ######## 
 # initialize facility
