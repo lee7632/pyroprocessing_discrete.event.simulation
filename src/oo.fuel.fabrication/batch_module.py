@@ -6,8 +6,6 @@
 #
 # See class description
 #
-# I am changing the code to show how git works.
-#
 ########################################################################
 
 class batch_class:
