@@ -14,4 +14,4 @@
 ########################################################################
 
 root_dir = "/home/tolman42/Documents/Research/NEUI/pyroprocessing_discrete.event.simulation"
-simulation_dir = "/home/tolman42/Documents/Research/NEUI/pyroprocessing_discrete.event.simulation/simulation/octTest1"
+simulation_dir = "/home/tolman42/Documents/Research/NEUI/pyroprocessing_discrete.event.simulation/simulation/sim3"

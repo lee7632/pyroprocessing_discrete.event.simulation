@@ -52,6 +52,13 @@ def edit_global_vars(file_to_change, dir_of_file, new_root_dir, new_simulation_d
 #
 ####### start command and control
 print 'Starting the command and control module for the pyroprocessing system.'
+print '*******NOTICE FOR NEW USERS************\n'
+print '"root directory" refers to the directory that contains "mainflow.py".\n\
+If the pyroprocessor code was directly cloned from github, it should be the directory\n\
+that you ran this file from ("simulation_set-up.py").\n\
+"Simulation directory is the directory that this program will create to hold input and output data from \n\
+the simulations that you run.\n'
+
 #######
 #
 ####### set the root and lib directory
@@ -60,10 +67,8 @@ root_dir= os.getcwd()
 print 'root dir is: ',root_dir
 change_directory_input = raw_input('Would you like to change the root directory (y/n)? ')
 #
-did_change_root_dir = False
 if change_directory_input == 'y':
     root_dir = raw_input('Please enter the desired root directory ')
-    did_change_root_dir = True
     
 lib_dir=root_dir+'/lib'
 #######
@@ -72,10 +77,9 @@ lib_dir=root_dir+'/lib'
 simulation_dir=raw_input('set the simulation directory name: ')
 #######
 #
-if did_change_root_dir:
-    print '\nChanging global variables in %s'%(root_dir)
-    edit_global_vars(root_dir + '/global_vars.py',
-            root_dir, root_dir, simulation_dir)
+print '\nChanging global variables in %s'%(root_dir)
+edit_global_vars(root_dir + '/global_vars.py',
+    root_dir, root_dir, simulation_dir)
 
 
 
@@ -108,6 +112,8 @@ command_and_control.write_simulation_dir(root_dir,'fuel.fabrication',input_dir,o
 #
 #
 
+#Change back to root directory so users aren't confused
+os.chdir(root_dir)
 
 ########################################################################
 #
